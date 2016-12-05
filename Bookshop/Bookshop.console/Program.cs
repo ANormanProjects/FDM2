@@ -14,7 +14,7 @@ namespace Bookshop.console
             //mybook.title = "Animal Farm";     // title - public string from book.cs
             //mybook.author = "George Orwell";
             mybook.isbn = "123ABC";
-            mybook.price = 10.00;
+            mybook.price = 12.50;
             mybook.numberOfPages = 200;
 
             System.Console.WriteLine(mybook.title);
