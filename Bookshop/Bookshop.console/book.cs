@@ -36,8 +36,8 @@ namespace Bookshop.console
             set { _price = value; }
         }
 
-        private string _numberOfPages;
-        public string numberOfPages
+        private int _numberOfPages;
+        public int numberOfPages
         {
             get { return _numberOfPages; }
             set { _numberOfPages = value; }
