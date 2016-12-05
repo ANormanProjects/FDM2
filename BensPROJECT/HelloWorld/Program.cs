@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading.Tasks;   // EXTRA CODE WE CAN USE // REFERENCE
 
-namespace HelloWorld    //
+
+namespace HelloWorld    // IDENTIFIER
 {
     class Program   //CLASS DECLARATION
     {
@@ -12,11 +13,13 @@ namespace HelloWorld    //
         {
             Console.WriteLine("Hello World!");      // TASK
 
-            string userInput = Console.ReadLine();     //READ TASK IN CONSOLE WINDOW - USER INPUT
+            var userInput = Console.ReadLine();     //READ TASK IN CONSOLE WINDOW - USER INPUT
 
             Console.WriteLine(userInput);    // Write out var
 
             Console.ReadLine();         //READ TASK
+
+            //Added new code here
 
         }
     }
