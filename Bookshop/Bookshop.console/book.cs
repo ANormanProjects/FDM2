@@ -15,7 +15,7 @@ namespace Bookshop.console
             set { _title = value; }    //  UPDATING THE NAME OF THE TITLE
         }
 
-        private string _author;      //propfull  -  auto set default
+        private string _author;         //propfull  -  auto set code out - change the values after
         public string author
         {
             get { return _author; }
@@ -29,7 +29,7 @@ namespace Bookshop.console
             set { _isbn = value; }
         }
 
-        private double _price;  // double - decimal point
+        private double _price;      // double - decimal point
         public double price
         {
             get { return _price; }
