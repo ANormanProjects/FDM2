@@ -40,7 +40,13 @@ namespace Bookshop.console
         public int numberOfPages
         {
             get { return _numberOfPages; }
-            set { _numberOfPages = value; }
+            set
+            {
+                if (value > 0)
+                {
+                    _numberOfPages = value;
+                }
+            }
         }
 
         public book(string Title, string Author)  // by default the class has an empty constructor -  can be editted - case sensitive
