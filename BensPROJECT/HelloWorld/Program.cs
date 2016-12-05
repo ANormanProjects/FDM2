@@ -21,7 +21,7 @@ namespace HelloWorld    // IDENTIFIER
 
             //Added new code here
 
-            HELLO
+            HELLO My namespace is ben
 
         }
     }
