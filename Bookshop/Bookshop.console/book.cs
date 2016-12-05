@@ -23,7 +23,6 @@ namespace Bookshop.console
         }
 
         private string _isbn;
-
         public string isbn
         {
             get { return _isbn; }
@@ -31,16 +30,13 @@ namespace Bookshop.console
         }
 
         private double _price;  // double - decimal point
-
         public double price
         {
             get { return _price; }
             set { _price = value; }
         }
 
-
         private string _numberOfPages;
-
         public string numberOfPages
         {
             get { return _numberOfPages; }
