@@ -14,15 +14,37 @@ namespace Bookshop.console
             get { return _title; }    //  RETREIVING THE NAME OF THE TITLE
             set { _title = value; }    //  UPDATING THE NAME OF THE TITLE
         }
-        
-        
-        
-        
-        
-        private string author;
-        private string isbn;
-        private double price;   // double - decimal point
-        private int numberOfPages;
-        
+
+        private string _author;      //propfull  -  auto set default
+        public string author
+        {
+            get { return _author; }
+            set { _title = value; }
+        }
+
+        private string _isbn;
+
+        public string isbn
+        {
+            get { return _isbn; }
+            set { _isbn = value; }
+        }
+
+        private double _price;  // double - decimal point
+
+        public double price
+        {
+            get { return _price; }
+            set { _price = value; }
+        }
+
+
+        private string _numberOfPages;
+
+        public string numberOfPages
+        {
+            get { return _numberOfPages; }
+            set { _numberOfPages = value; }
+        }
     }
 }
