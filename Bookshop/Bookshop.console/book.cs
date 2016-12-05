@@ -8,5 +8,6 @@ namespace Bookshop.console
 {
     class book  // added to project through add > new item
     {
+        private string title;   //Invisible to everyone but you (security door)
     }
 }
