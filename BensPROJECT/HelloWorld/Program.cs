@@ -21,6 +21,8 @@ namespace HelloWorld    // IDENTIFIER
 
             //Added new code here
 
+            HELLO
+
         }
     }
 }
