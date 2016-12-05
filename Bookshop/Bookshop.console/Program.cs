@@ -41,6 +41,8 @@ namespace Bookshop.console
             //System.Console.WriteLine(mybook.price);
             //System.Console.WriteLine(mybook.numberOfPages);
 
+            System.Console.WriteLine("The total price of the books is: " + totalPrice);
+
             System.Console.ReadLine();
         }
     }
