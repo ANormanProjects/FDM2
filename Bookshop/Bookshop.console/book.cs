@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 namespace Bookshop.console
 {
     class book  // added to project through add > new item
-    {
-        private string title;   //Invisible to everyone but you (security door)
+    {           // ACCESS MODIFIERS - PRIVATE, PUBLIC
+        public string title;   //private - Invisible to everyone but you (security door) | public - everyone can see
+        private string author;
+        private string isbn;
+        private double price;   // double - decimal point
+        private int numberOfPages;
+        
     }
 }
