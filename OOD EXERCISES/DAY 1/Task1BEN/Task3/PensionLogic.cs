@@ -8,13 +8,15 @@ namespace Task3
 {
     class PensionLogic
     {
-        public Boolean IsPensionable(Person person, String year) // boolean is used for true/false
+        public Boolean IsPensionable(Person person, string year) // boolean is used for true/false
         {
-            int y = Convert.ToInt32(year); // connects y with year2 (y-year2)
-            string dob = person.dateOfBirth; //
-            string year1 = dob.Substring(dob.Length - 4); // uses the last 4 characters of the DOB to calculate
-            int year2 = Convert.ToInt32(year1); // creating year2 from year1 value converted
-            if (y-year2 >= 65)
+            int retirement = Convert.ToInt32(year); // connects y with year2 (y-year2)
+
+            int dob = Convert.ToInt32(person.dateOfBirth.Substring(person.dateOfBirth.Length - 4)); // getting the year
+
+            int age = retirement - dob;
+                       
+            if (age >= 65)
             {
                 return true;
             }

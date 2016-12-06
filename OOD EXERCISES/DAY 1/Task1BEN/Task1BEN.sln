@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task6", "ConsoleApplication
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task7", "Task7\Task7.csproj", "{35795CF3-97D7-4765-B39D-14B87D3572FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TASK3ANSWER", "TASK3ANSWER\TASK3ANSWER.csproj", "{007C16E0-A637-4624-A069-CC355E1B46C2}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -55,6 +57,10 @@ Global
 		{35795CF3-97D7-4765-B39D-14B87D3572FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35795CF3-97D7-4765-B39D-14B87D3572FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35795CF3-97D7-4765-B39D-14B87D3572FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007C16E0-A637-4624-A069-CC355E1B46C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007C16E0-A637-4624-A069-CC355E1B46C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007C16E0-A637-4624-A069-CC355E1B46C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007C16E0-A637-4624-A069-CC355E1B46C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
