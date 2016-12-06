@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
-    class View
+    class View // RESPONSIBLE FOR PRINTING
     {
-        public void PrintEligible(Person person)
+        public void PrintEligible(Person person) // constructor parameters person = Person (class)
         {
-            Console.WriteLine(person.firstname + " " + person.lastname + " may qualify for a pension this year.");
+            Console.WriteLine(string.Format("{0} {1} may qualify for a pension this year.", person.firstname, person.lastname)); //
         }
         public void PrintIneligible(Person person)
         {
-            Console.WriteLine(person.firstname + " " + person.lastname + " is not old enough yet.");
+            Console.WriteLine(string.Format("{0} {1} is not old enough yet.", person.firstname, person.lastname));
         }
     }
 }

@@ -10,6 +10,13 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
+            WidgetController wc = new WidgetController();
+
+            wc.WidgetCalculations();
+
+            Console.WriteLine("Press any key to exit the application");
+            
+            Console.ReadLine();
         }
     }
 }

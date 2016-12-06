@@ -8,6 +8,8 @@ namespace Task3
 {
     class Person
     {
+        //CAN USE PROP INSTEAD
+
         private string _firstname;   // PROPFULL WORK
 
         public string firstname
