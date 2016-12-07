@@ -6,24 +6,34 @@ using System.Threading.Tasks;
 
 namespace Task7
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            string miles;
+            int uinput;
 
-            Console.WriteLine("Input no. of Miles for Yds and Feet conversion: ");
-            miles = Console.ReadLine();
+            Conversion con = new Conversion();
 
-            double mls = Convert.ToDouble(miles);
-
-            for (double i = 0; i <= mls; i++)
+            Console.WriteLine("Miles \t Yards \t Feet ");
+            Console.WriteLine("=======================");
+            for (int i = 1; i <= 100; i++)
             {
-                double yds = 1760 * mls;
-                double feet = 5280 * mls;
-                Console.WriteLine("You travelled " + mls + "miles and this is converted to: " + yds + " yards and " + feet + " feet.");
+                Console.WriteLine(con.ConvCal(i)); // LINKS WITH LINE 31 Conversion
             }
-            Console.ReadLine();
+            while (true)
+            {
+                Console.Write("Enter Mile or type 0 to Exit: ");
+                uinput = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Miles \t \t Yards \t Feet ");
+                Console.WriteLine("------------------------------");
+                Console.WriteLine("Mile - " + con.ConvCal(uinput));
+                Console.WriteLine("Press Enter to continue and do another conversion.");
+                Console.ReadKey();                                                          //tryparse
+            if (uinput == 0)
+            {
+                    Environment.Exit(0); // EXIT APPLICATION
+            }
+            }
         }
     }
 }
