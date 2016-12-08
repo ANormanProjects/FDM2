@@ -47,12 +47,13 @@ namespace BasketTest
             // CONDUCTORS IN SETUP
             nutshell.price = 15.00; // when using .price, must refer to a specific book and set price or will return false and add above addbook.
             myBasket.addBook(nutshell);
+            double expected = 10;
             
             //ACT
             double cost = myCheckout.CalculatePrice(myBasket);
 
             //ASSERT
-            Assert.AreEqual(15.00, cost);
+            Assert.AreEqual(expected, cost);
 
         }
 
@@ -71,6 +72,25 @@ namespace BasketTest
             Assert.AreEqual(25.00, cost);
 
         }
+
+        [TestMethod] // TASK 3
+        public void test_CalculatePrice_ReturnsTwoWhenPassedABasketWithTwoBooksv2()
+        {
+            //ARRANGE
+            //price is used multiple times and is now refactored at the top
+            double expected = 77.19;
+            myBasket.addBook(nutshell);
+            myBasket.addBook(nutshell);
+            myBasket.addBook(nutshell);
+            nutshell.price = 25.99;
+
+            //ACT
+            double cost = myCheckout.CalculatePrice(myBasket);
+
+            //ASSERT
+            Assert.AreEqual(expected, cost);
+        }
+
 
         [TestMethod] // TASK 4
         public void test_CalculatePrice_WithOnePercentDiscountIfBasketHasThreeBooks()
@@ -136,7 +156,7 @@ namespace BasketTest
             double cost = myCheckout.CalculatePrice(myBasket);
 
             //ASSERT
-            Assert.AreEqual(226.8927, cost);
+            Assert.AreEqual(226.11, cost);
         }
 
     }
