@@ -12,14 +12,21 @@ namespace BookstoreTDD
 
         public Basket() //CONSTRUCTOR
         {
-            books = new List<Book>();
+            books = new List<Book>();  //CONTAINS ALL THE BOOKS THAT HAVE BEEN ADDED
         }
 
-        public List<Book> GetBooksInBasket()
+        public List<Book> GetBooksInBasket() //GETTING VALUE OF THE LIST
         {
             //return null;
             //return books;
-            return new List<Book>();
+            return books; //RETURNS THE VALUE OF THE LIST books (List<Book> = books)
         }
+
+        public void addBook(Book bookToAdd) //Book becomes bookToAdd
+        {
+            books.Add(bookToAdd); // bookToAdd is Book // books.Add - .Add adds an item to the list.
+
+        }
+
     }
 }
