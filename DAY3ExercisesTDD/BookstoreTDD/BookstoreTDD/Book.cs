@@ -11,7 +11,8 @@ namespace BookstoreTDD
         public string title { get; set; }
 
         public string isbn { get; set; }
- 
+
+        public double price { get; set; }
     }
 
 
