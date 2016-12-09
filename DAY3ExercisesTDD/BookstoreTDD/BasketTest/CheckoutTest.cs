@@ -45,7 +45,7 @@ namespace BasketTest
         {
             //ARRANGE
             // CONDUCTORS IN SETUP
-            nutshell.price = 15.00; // when using .price, must refer to a specific book and set price or will return false and add above addbook.
+            nutshell.price = 10.00; // when using .price, must refer to a specific book and set price or will return false and add above addbook.
             myBasket.addBook(nutshell);
             double expected = 10;
             
@@ -109,7 +109,7 @@ namespace BasketTest
             double cost = myCheckout.CalculatePrice(myBasket);
 
             //ASSERT
-            Assert.AreEqual(77.1903, cost);
+            Assert.AreEqual(77.19, cost);
 
         }
 
@@ -131,7 +131,7 @@ namespace BasketTest
             double cost = myCheckout.CalculatePrice(myBasket);
 
             //ASSERT
-            Assert.AreEqual(178.2914, cost);
+            Assert.AreEqual(178.29, cost);
 
         }
 
