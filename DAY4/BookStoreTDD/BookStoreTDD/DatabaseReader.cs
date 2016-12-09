@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BookStoreTDD
 {
-    public class Class1
+    
+    public interface DatabaseReader
     {
+       List<Book> ReadDatabase(); // TASK 2 // MOCKING A LIST OF BOOK OBJECTS
     }
 }

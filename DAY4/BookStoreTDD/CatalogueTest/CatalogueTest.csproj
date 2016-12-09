@@ -64,6 +64,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookStoreTDD\BookStoreTDD.csproj">
+      <Project>{63857d9a-c0a0-4a99-8631-fe282c57ede8}</Project>
+      <Name>BookStoreTDD</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
