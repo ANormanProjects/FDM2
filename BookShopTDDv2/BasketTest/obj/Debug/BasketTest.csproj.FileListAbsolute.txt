@@ -1,0 +1,7 @@
+c:\users\user\documents\visual studio 2015\Projects\BookShopTDDv2\BasketTest\bin\Debug\BasketTest.dll
+c:\users\user\documents\visual studio 2015\Projects\BookShopTDDv2\BasketTest\bin\Debug\BasketTest.pdb
+c:\users\user\documents\visual studio 2015\Projects\BookShopTDDv2\BasketTest\bin\Debug\BookShopTDDv2.dll
+c:\users\user\documents\visual studio 2015\Projects\BookShopTDDv2\BasketTest\bin\Debug\BookShopTDDv2.pdb
+c:\users\user\documents\visual studio 2015\Projects\BookShopTDDv2\BasketTest\obj\Debug\BasketTest.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\BookShopTDDv2\BasketTest\obj\Debug\BasketTest.dll
+c:\users\user\documents\visual studio 2015\Projects\BookShopTDDv2\BasketTest\obj\Debug\BasketTest.pdb
