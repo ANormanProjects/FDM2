@@ -1,0 +1,10 @@
+C:\Users\daniel.kloss\Desktop\AssessmentTests\Application\bin\Debug\Application.dll
+C:\Users\daniel.kloss\Desktop\AssessmentTests\Application\bin\Debug\Application.pdb
+C:\Users\daniel.kloss\Desktop\AssessmentTests\Application\obj\Debug\Application.csprojResolveAssemblyReference.cache
+C:\Users\daniel.kloss\Desktop\AssessmentTests\Application\obj\Debug\Application.dll
+C:\Users\daniel.kloss\Desktop\AssessmentTests\Application\obj\Debug\Application.pdb
+C:\Users\benjamin.bowes\Desktop\AssessmentTests\AssessmentTests\Application\obj\Debug\Application.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\AssessmentTests\AssessmentTests\Application\obj\Debug\Application.dll
+C:\Users\benjamin.bowes\Desktop\AssessmentTests\AssessmentTests\Application\bin\Debug\Application.dll
+C:\Users\benjamin.bowes\Desktop\AssessmentTests\AssessmentTests\Application\bin\Debug\Application.pdb
+C:\Users\benjamin.bowes\Desktop\AssessmentTests\AssessmentTests\Application\obj\Debug\Application.pdb

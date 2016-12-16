@@ -1,0 +1,11 @@
+C:\Users\daniel.kloss\Desktop\AssessmentTests\AssessmentTests\obj\Debug\AssessmentTests.csprojResolveAssemblyReference.cache
+\\filbtn002\trainees\daniel.kloss\Trainer\Dot Net\Object Oriented Design C#\Assessments\Week2 Assessment\AssessmentTests\AssessmentTests\obj\Debug\AssessmentTests.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\AssessmentTests\AssessmentTests\AssessmentTests\obj\Debug\AssessmentTests.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\AssessmentTests\AssessmentTests\AssessmentTests\bin\Debug\AssessmentTests.dll
+C:\Users\benjamin.bowes\Desktop\AssessmentTests\AssessmentTests\AssessmentTests\bin\Debug\AssessmentTests.pdb
+C:\Users\benjamin.bowes\Desktop\AssessmentTests\AssessmentTests\AssessmentTests\bin\Debug\Application.dll
+C:\Users\benjamin.bowes\Desktop\AssessmentTests\AssessmentTests\AssessmentTests\bin\Debug\Moq.dll
+C:\Users\benjamin.bowes\Desktop\AssessmentTests\AssessmentTests\AssessmentTests\bin\Debug\Application.pdb
+C:\Users\benjamin.bowes\Desktop\AssessmentTests\AssessmentTests\AssessmentTests\bin\Debug\Moq.xml
+C:\Users\benjamin.bowes\Desktop\AssessmentTests\AssessmentTests\AssessmentTests\obj\Debug\AssessmentTests.dll
+C:\Users\benjamin.bowes\Desktop\AssessmentTests\AssessmentTests\AssessmentTests\obj\Debug\AssessmentTests.pdb
