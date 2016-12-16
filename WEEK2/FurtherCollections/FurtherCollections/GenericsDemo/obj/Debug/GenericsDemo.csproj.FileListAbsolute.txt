@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\FurtherCollections\GenericsDemo\bin\Debug\GenericsDemo.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\FurtherCollections\GenericsDemo\bin\Debug\GenericsDemo.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\FurtherCollections\GenericsDemo\bin\Debug\GenericsDemo.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\FurtherCollections\GenericsDemo\obj\Debug\GenericsDemo.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\FurtherCollections\GenericsDemo\obj\Debug\GenericsDemo.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\FurtherCollections\GenericsDemo\obj\Debug\GenericsDemo.pdb

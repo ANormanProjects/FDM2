@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\RemoveDupes\bin\Debug\RemoveDupes.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\RemoveDupes\bin\Debug\RemoveDupes.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\RemoveDupes\bin\Debug\RemoveDupes.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\RemoveDupes\obj\Debug\RemoveDupes.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\RemoveDupes\obj\Debug\RemoveDupes.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\RemoveDupes\obj\Debug\RemoveDupes.pdb

@@ -1,0 +1,5 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\DictionaryTask3\obj\Debug\DictionaryTask3.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\DictionaryTask3\bin\Debug\DictionaryTask3.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\DictionaryTask3\bin\Debug\DictionaryTask3.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\DictionaryTask3\obj\Debug\DictionaryTask3.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\DictionaryTask3\obj\Debug\DictionaryTask3.pdb
