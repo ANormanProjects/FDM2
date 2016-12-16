@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\StackHeapV3\StackHeapV3\bin\Debug\StackHeapV3.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\StackHeapV3\StackHeapV3\bin\Debug\StackHeapV3.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\StackHeapV3\StackHeapV3\bin\Debug\StackHeapV3.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\StackHeapV3\StackHeapV3\obj\Debug\StackHeapV3.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\StackHeapV3\StackHeapV3\obj\Debug\StackHeapV3.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\StackHeapV3\StackHeapV3\obj\Debug\StackHeapV3.pdb

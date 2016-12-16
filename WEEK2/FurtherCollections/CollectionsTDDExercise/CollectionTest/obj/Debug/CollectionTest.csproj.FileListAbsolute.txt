@@ -1,0 +1,7 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionTest\obj\Debug\CollectionTest.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionTest\bin\Debug\CollectionTest.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionTest\bin\Debug\CollectionTest.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionTest\bin\Debug\ConsoleApplication1.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionTest\bin\Debug\ConsoleApplication1.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionTest\obj\Debug\CollectionTest.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionTest\obj\Debug\CollectionTest.pdb

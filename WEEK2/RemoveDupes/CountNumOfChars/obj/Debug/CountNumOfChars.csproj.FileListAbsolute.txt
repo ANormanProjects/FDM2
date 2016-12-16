@@ -1,0 +1,5 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\CountNumOfChars\bin\Debug\CountNumOfChars.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\CountNumOfChars\bin\Debug\CountNumOfChars.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\CountNumOfChars\bin\Debug\CountNumOfChars.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\CountNumOfChars\obj\Debug\CountNumOfChars.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\CountNumOfChars\obj\Debug\CountNumOfChars.pdb

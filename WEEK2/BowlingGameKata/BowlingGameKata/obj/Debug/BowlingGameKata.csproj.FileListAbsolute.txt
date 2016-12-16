@@ -1,0 +1,5 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingGameKata\bin\Debug\BowlingGameKata.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingGameKata\bin\Debug\BowlingGameKata.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingGameKata\obj\Debug\BowlingGameKata.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingGameKata\obj\Debug\BowlingGameKata.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingGameKata\obj\Debug\BowlingGameKata.pdb

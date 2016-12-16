@@ -1,0 +1,4 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionsTDDExercise\bin\Debug\CollectionsTDDExercise.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionsTDDExercise\bin\Debug\CollectionsTDDExercise.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionsTDDExercise\obj\Debug\CollectionsTDDExercise.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionsTDDExercise\obj\Debug\CollectionsTDDExercise.pdb
