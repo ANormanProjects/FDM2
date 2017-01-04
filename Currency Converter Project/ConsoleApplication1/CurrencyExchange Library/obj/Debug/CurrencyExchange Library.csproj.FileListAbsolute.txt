@@ -1,0 +1,5 @@
+\\filbtn002\trainees\andrew.norman\visual studio 2013\Projects\ConsoleApplication1\CurrencyExchange Library\bin\Debug\CurrencyExchange Library.dll
+\\filbtn002\trainees\andrew.norman\visual studio 2013\Projects\ConsoleApplication1\CurrencyExchange Library\bin\Debug\CurrencyExchange Library.pdb
+\\filbtn002\trainees\andrew.norman\visual studio 2013\Projects\ConsoleApplication1\CurrencyExchange Library\obj\Debug\CurrencyExchange Library.csprojResolveAssemblyReference.cache
+\\filbtn002\trainees\andrew.norman\visual studio 2013\Projects\ConsoleApplication1\CurrencyExchange Library\obj\Debug\CurrencyExchange Library.dll
+\\filbtn002\trainees\andrew.norman\visual studio 2013\Projects\ConsoleApplication1\CurrencyExchange Library\obj\Debug\CurrencyExchange Library.pdb

@@ -1,0 +1,8 @@
+C:\Users\benjamin.bowes\Desktop\Currency Converter Project\CurrencyConverter\CurrencyConverter\bin\Debug\CurrencyConverter.exe.config
+C:\Users\benjamin.bowes\Desktop\Currency Converter Project\CurrencyConverter\CurrencyConverter\bin\Debug\CurrencyConverter.exe
+C:\Users\benjamin.bowes\Desktop\Currency Converter Project\CurrencyConverter\CurrencyConverter\bin\Debug\CurrencyConverter.pdb
+C:\Users\benjamin.bowes\Desktop\Currency Converter Project\CurrencyConverter\CurrencyConverter\bin\Debug\CurrencyConverterLibrary.dll
+C:\Users\benjamin.bowes\Desktop\Currency Converter Project\CurrencyConverter\CurrencyConverter\bin\Debug\CurrencyConverterLibrary.pdb
+C:\Users\benjamin.bowes\Desktop\Currency Converter Project\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverterApplication.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\Currency Converter Project\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.exe
+C:\Users\benjamin.bowes\Desktop\Currency Converter Project\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.pdb
