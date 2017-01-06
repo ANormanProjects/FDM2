@@ -1,0 +1,4 @@
+11:24:45,125 [10] INFO Program.cs - Attempted to divide by zero. 
+11:25:07,785 [8] INFO Program.cs - Attempted to divide by zero. 
+11:25:38,060 [8] INFO Program.cs - Attempted to divide by zero. 
+06 Jan 2017 11:28:01,017 [8] INFO Program.cs - Attempted to divide by zero. 

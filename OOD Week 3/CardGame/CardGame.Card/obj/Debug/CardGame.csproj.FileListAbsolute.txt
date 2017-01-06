@@ -1,0 +1,5 @@
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\CardGame\CardGame.Card\bin\Debug\CardGame.Card.dll
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\CardGame\CardGame.Card\bin\Debug\CardGame.Card.pdb
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\CardGame\CardGame.Card\obj\Debug\CardGame.Card.dll
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\CardGame\CardGame.Card\obj\Debug\CardGame.Card.pdb
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\CardGame\CardGame.Card\obj\Debug\CardGame.csprojResolveAssemblyReference.cache
