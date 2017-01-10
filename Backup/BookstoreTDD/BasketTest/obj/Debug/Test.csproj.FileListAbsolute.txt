@@ -1,0 +1,7 @@
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\BookstoreTDD\BasketTest\bin\Debug\BasketTest.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\BookstoreTDD\BasketTest\bin\Debug\BasketTest.pdb
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\BookstoreTDD\BasketTest\obj\Debug\Test.csprojResolveAssemblyReference.cache
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\BookstoreTDD\BasketTest\obj\Debug\BasketTest.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\BookstoreTDD\BasketTest\obj\Debug\BasketTest.pdb
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\BookstoreTDD\BasketTest\bin\Debug\BookstoreTDD.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\BookstoreTDD\BasketTest\bin\Debug\BookstoreTDD.pdb

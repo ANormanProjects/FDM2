@@ -1,0 +1,6 @@
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\ParamsExample\ParamsDemo\bin\Debug\ParamsDemo.exe.config
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\ParamsExample\ParamsDemo\bin\Debug\ParamsDemo.exe
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\ParamsExample\ParamsDemo\bin\Debug\ParamsDemo.pdb
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\ParamsExample\ParamsDemo\obj\Debug\ParamsDemo.csprojResolveAssemblyReference.cache
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\ParamsExample\ParamsDemo\obj\Debug\ParamsDemo.exe
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\ParamsExample\ParamsDemo\obj\Debug\ParamsDemo.pdb

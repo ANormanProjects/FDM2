@@ -1,0 +1,7 @@
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\TddBookshop\TddBookshopTests\bin\Debug\TddBookshopTests.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\TddBookshop\TddBookshopTests\bin\Debug\TddBookshopTests.pdb
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\TddBookshop\TddBookshopTests\bin\Debug\TddBookshop.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\TddBookshop\TddBookshopTests\bin\Debug\TddBookshop.pdb
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\TddBookshop\TddBookshopTests\obj\Debug\TddBookshopTests.csprojResolveAssemblyReference.cache
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\TddBookshop\TddBookshopTests\obj\Debug\TddBookshopTests.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\TddBookshop\TddBookshopTests\obj\Debug\TddBookshopTests.pdb
