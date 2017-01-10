@@ -131,15 +131,15 @@ namespace ADODemo
 
             IDataParameter paramFName = new SqlParameter("@firstName", SqlDbType.VarChar, 255);
             paramFName.Value = newAccount.firstName;
-            command.Parameters.Add(paramFName);
+            updateCommand.Parameters.Add(paramFName);
 
             IDataParameter paramLName = new SqlParameter("@lastName", SqlDbType.VarChar, 255);
             paramLName.Value = newAccount.lastName;
-            command.Parameters.Add(paramLName);
+            updateCommand.Parameters.Add(paramLName);
 
             IDataParameter paramID = new SqlParameter("@id", SqlDbType.Int, 25);
             paramID.Value = accountToUpdateID;
-            command.Parameters.Add(paramID);
+            updateCommand.Parameters.Add(paramID);
 
             dataAdapter.UpdateCommand = updateCommand;
 

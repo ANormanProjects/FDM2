@@ -27,6 +27,8 @@ namespace AdoDemo.UI
             IAccountRepository _accountRepoDisconnected = 
                 new AccountRepositoryDisconnected(connectionString);
 
+            //_accountRepoDisconnected.UpdateAccount(8, new Accounts() { firstName = "Bishan", lastName = "Meghani" });
+
             List<Accounts> allAccounts = _accountRepoDisconnected.GetAllAccounts();
 
 
