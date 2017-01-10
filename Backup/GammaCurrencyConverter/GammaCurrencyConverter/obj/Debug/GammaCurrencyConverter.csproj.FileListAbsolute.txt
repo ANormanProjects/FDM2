@@ -1,0 +1,1 @@
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\GammaCurrencyConverter\GammaCurrencyConverter\bin\Debug\GammaCurrencyConverter.exe.config

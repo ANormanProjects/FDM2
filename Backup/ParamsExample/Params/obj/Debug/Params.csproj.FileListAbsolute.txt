@@ -1,0 +1,5 @@
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\ParamsExample\Params\bin\Debug\Params.exe.config
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\ParamsExample\Params\bin\Debug\Params.exe
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\ParamsExample\Params\bin\Debug\Params.pdb
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\ParamsExample\Params\obj\Debug\Params.exe
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\ParamsExample\Params\obj\Debug\Params.pdb

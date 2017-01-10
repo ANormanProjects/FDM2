@@ -1,0 +1,7 @@
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\LAMBDAandDELEGATESexercise\Part1Tests\obj\Debug\Part1Tests.csprojResolveAssemblyReference.cache
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\LAMBDAandDELEGATESexercise\Part1Tests\bin\Debug\Part1Tests.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\LAMBDAandDELEGATESexercise\Part1Tests\bin\Debug\Part1Tests.pdb
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\LAMBDAandDELEGATESexercise\Part1Tests\bin\Debug\LAMBDAandDELEGATESpart1.exe
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\LAMBDAandDELEGATESexercise\Part1Tests\bin\Debug\LAMBDAandDELEGATESpart1.pdb
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\LAMBDAandDELEGATESexercise\Part1Tests\obj\Debug\Part1Tests.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\LAMBDAandDELEGATESexercise\Part1Tests\obj\Debug\Part1Tests.pdb

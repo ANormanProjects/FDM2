@@ -1,0 +1,5 @@
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\BookstoreTDD\BookstoreTDD\bin\Debug\BookstoreTDD.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\BookstoreTDD\BookstoreTDD\bin\Debug\BookstoreTDD.pdb
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\BookstoreTDD\BookstoreTDD\obj\Debug\BookstoreTDD.csprojResolveAssemblyReference.cache
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\BookstoreTDD\BookstoreTDD\obj\Debug\BookstoreTDD.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\BookstoreTDD\BookstoreTDD\obj\Debug\BookstoreTDD.pdb

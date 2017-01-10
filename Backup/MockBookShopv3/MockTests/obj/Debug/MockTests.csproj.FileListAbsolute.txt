@@ -1,0 +1,11 @@
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\MockBookShopv3\MockTests\bin\Debug\MockTests.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\MockBookShopv3\MockTests\bin\Debug\MockTests.pdb
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\MockBookShopv3\MockTests\bin\Debug\Castle.Core.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\MockBookShopv3\MockTests\bin\Debug\MockBookShopv3.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\MockBookShopv3\MockTests\bin\Debug\Moq.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\MockBookShopv3\MockTests\bin\Debug\MockBookShopv3.pdb
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\MockBookShopv3\MockTests\bin\Debug\Castle.Core.xml
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\MockBookShopv3\MockTests\bin\Debug\Moq.xml
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\MockBookShopv3\MockTests\obj\Debug\MockTests.csprojResolveAssemblyReference.cache
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\MockBookShopv3\MockTests\obj\Debug\MockTests.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\MockBookShopv3\MockTests\obj\Debug\MockTests.pdb
