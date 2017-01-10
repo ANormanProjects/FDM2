@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.LiskovSubsitution\bin\Debug\SOLID.LiskovSubsitution.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.LiskovSubsitution\bin\Debug\SOLID.LiskovSubsitution.exe
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.LiskovSubsitution\bin\Debug\SOLID.LiskovSubsitution.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.LiskovSubsitution\obj\Debug\SOLID.LiskovSubsitution.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.LiskovSubsitution\obj\Debug\SOLID.LiskovSubsitution.exe
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.LiskovSubsitution\obj\Debug\SOLID.LiskovSubsitution.pdb

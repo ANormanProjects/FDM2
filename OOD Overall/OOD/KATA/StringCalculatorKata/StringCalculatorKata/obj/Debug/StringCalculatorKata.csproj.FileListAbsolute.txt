@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\KATA\StringCalculatorKata\StringCalculatorKata\bin\Debug\StringCalculatorKata.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\KATA\StringCalculatorKata\StringCalculatorKata\bin\Debug\StringCalculatorKata.exe
+C:\Users\benjamin.bowes\Desktop\OOD\KATA\StringCalculatorKata\StringCalculatorKata\bin\Debug\StringCalculatorKata.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\KATA\StringCalculatorKata\StringCalculatorKata\obj\Debug\StringCalculatorKata.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\KATA\StringCalculatorKata\StringCalculatorKata\obj\Debug\StringCalculatorKata.exe
+C:\Users\benjamin.bowes\Desktop\OOD\KATA\StringCalculatorKata\StringCalculatorKata\obj\Debug\StringCalculatorKata.pdb

@@ -1,0 +1,11 @@
+C:\Users\benjamin.bowes\Desktop\OOD\MOQ\MOQ EXERCISE\BookStoreMock\BookStoreMock\bin\Debug\BookStoreMock.dll
+C:\Users\benjamin.bowes\Desktop\OOD\MOQ\MOQ EXERCISE\BookStoreMock\BookStoreMock\bin\Debug\BookStoreMock.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\MOQ\MOQ EXERCISE\BookStoreMock\BookStoreMock\bin\Debug\BookStore.dll
+C:\Users\benjamin.bowes\Desktop\OOD\MOQ\MOQ EXERCISE\BookStoreMock\BookStoreMock\bin\Debug\Castle.Core.dll
+C:\Users\benjamin.bowes\Desktop\OOD\MOQ\MOQ EXERCISE\BookStoreMock\BookStoreMock\bin\Debug\Moq.dll
+C:\Users\benjamin.bowes\Desktop\OOD\MOQ\MOQ EXERCISE\BookStoreMock\BookStoreMock\bin\Debug\BookStore.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\MOQ\MOQ EXERCISE\BookStoreMock\BookStoreMock\bin\Debug\Castle.Core.xml
+C:\Users\benjamin.bowes\Desktop\OOD\MOQ\MOQ EXERCISE\BookStoreMock\BookStoreMock\bin\Debug\Moq.xml
+C:\Users\benjamin.bowes\Desktop\OOD\MOQ\MOQ EXERCISE\BookStoreMock\BookStoreMock\obj\Debug\BookStoreMock.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\MOQ\MOQ EXERCISE\BookStoreMock\BookStoreMock\obj\Debug\BookStoreMock.dll
+C:\Users\benjamin.bowes\Desktop\OOD\MOQ\MOQ EXERCISE\BookStoreMock\BookStoreMock\obj\Debug\BookStoreMock.pdb

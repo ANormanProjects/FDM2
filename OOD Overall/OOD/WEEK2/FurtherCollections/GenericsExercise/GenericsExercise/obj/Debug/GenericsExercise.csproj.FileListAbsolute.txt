@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\GenericsExercise\GenericsExercise\bin\Debug\GenericsExercise.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\GenericsExercise\GenericsExercise\obj\Debug\GenericsExercise.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\GenericsExercise\GenericsExercise\bin\Debug\GenericsExercise.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\GenericsExercise\GenericsExercise\bin\Debug\GenericsExercise.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\GenericsExercise\GenericsExercise\obj\Debug\GenericsExercise.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\GenericsExercise\GenericsExercise\obj\Debug\GenericsExercise.pdb

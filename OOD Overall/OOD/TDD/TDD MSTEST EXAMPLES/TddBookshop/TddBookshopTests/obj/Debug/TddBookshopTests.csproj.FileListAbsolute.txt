@@ -1,0 +1,7 @@
+C:\Users\benjamin.bowes\Desktop\OOD\TDD\TDD MSTEST EXAMPLES\TddBookshop\TddBookshopTests\bin\Debug\TddBookshopTests.dll
+C:\Users\benjamin.bowes\Desktop\OOD\TDD\TDD MSTEST EXAMPLES\TddBookshop\TddBookshopTests\bin\Debug\TddBookshopTests.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\TDD\TDD MSTEST EXAMPLES\TddBookshop\TddBookshopTests\bin\Debug\TddBookshop.dll
+C:\Users\benjamin.bowes\Desktop\OOD\TDD\TDD MSTEST EXAMPLES\TddBookshop\TddBookshopTests\bin\Debug\TddBookshop.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\TDD\TDD MSTEST EXAMPLES\TddBookshop\TddBookshopTests\obj\Debug\TddBookshopTests.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\TDD\TDD MSTEST EXAMPLES\TddBookshop\TddBookshopTests\obj\Debug\TddBookshopTests.dll
+C:\Users\benjamin.bowes\Desktop\OOD\TDD\TDD MSTEST EXAMPLES\TddBookshop\TddBookshopTests\obj\Debug\TddBookshopTests.pdb

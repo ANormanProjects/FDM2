@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.InterfaceSegregation\obj\Debug\SOLID.InterfaceSegregation.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.InterfaceSegregation\bin\Debug\SOLID.InterfaceSegregation.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.InterfaceSegregation\bin\Debug\SOLID.InterfaceSegregation.exe
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.InterfaceSegregation\bin\Debug\SOLID.InterfaceSegregation.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.InterfaceSegregation\obj\Debug\SOLID.InterfaceSegregation.exe
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.InterfaceSegregation\obj\Debug\SOLID.InterfaceSegregation.pdb

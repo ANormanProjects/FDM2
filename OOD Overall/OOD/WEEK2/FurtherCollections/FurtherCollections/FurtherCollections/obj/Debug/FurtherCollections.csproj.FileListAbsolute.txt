@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\FurtherCollections\FurtherCollections\bin\Debug\FurtherCollections.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\FurtherCollections\FurtherCollections\bin\Debug\FurtherCollections.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\FurtherCollections\FurtherCollections\bin\Debug\FurtherCollections.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\FurtherCollections\FurtherCollections\obj\Debug\FurtherCollections.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\FurtherCollections\FurtherCollections\obj\Debug\FurtherCollections.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\FurtherCollections\FurtherCollections\obj\Debug\FurtherCollections.pdb

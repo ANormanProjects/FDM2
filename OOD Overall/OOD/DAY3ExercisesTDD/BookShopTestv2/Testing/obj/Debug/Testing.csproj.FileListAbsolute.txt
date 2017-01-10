@@ -1,0 +1,7 @@
+C:\Users\benjamin.bowes\Desktop\OOD\DAY3ExercisesTDD\BookShopTestv2\Testing\bin\Debug\Testing.dll
+C:\Users\benjamin.bowes\Desktop\OOD\DAY3ExercisesTDD\BookShopTestv2\Testing\bin\Debug\Testing.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\DAY3ExercisesTDD\BookShopTestv2\Testing\bin\Debug\BookShopTestv2.dll
+C:\Users\benjamin.bowes\Desktop\OOD\DAY3ExercisesTDD\BookShopTestv2\Testing\bin\Debug\BookShopTestv2.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\DAY3ExercisesTDD\BookShopTestv2\Testing\obj\Debug\Testing.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\DAY3ExercisesTDD\BookShopTestv2\Testing\obj\Debug\Testing.dll
+C:\Users\benjamin.bowes\Desktop\OOD\DAY3ExercisesTDD\BookShopTestv2\Testing\obj\Debug\Testing.pdb

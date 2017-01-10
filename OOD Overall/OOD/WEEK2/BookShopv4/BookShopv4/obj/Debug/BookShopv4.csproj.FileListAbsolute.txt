@@ -1,0 +1,5 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BookShopv4\BookShopv4\bin\Debug\BookShopv4.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BookShopv4\BookShopv4\bin\Debug\BookShopv4.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BookShopv4\BookShopv4\obj\Debug\BookShopv4.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BookShopv4\BookShopv4\obj\Debug\BookShopv4.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BookShopv4\BookShopv4\obj\Debug\BookShopv4.pdb

@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\Day1Exercises\Task3v2\bin\Debug\Task3v2.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\Day1Exercises\Task3v2\bin\Debug\Task3v2.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\Day1Exercises\Task3v2\bin\Debug\Task3v2.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\Day1Exercises\Task3v2\obj\Debug\Task3v2.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\Day1Exercises\Task3v2\obj\Debug\Task3v2.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\Day1Exercises\Task3v2\obj\Debug\Task3v2.pdb

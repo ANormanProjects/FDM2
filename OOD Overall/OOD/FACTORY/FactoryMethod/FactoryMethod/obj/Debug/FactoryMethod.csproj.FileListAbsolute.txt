@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\FACTORY\FactoryMethod\FactoryMethod\obj\Debug\FactoryMethod.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\FACTORY\FactoryMethod\FactoryMethod\bin\Debug\FactoryMethod.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\FACTORY\FactoryMethod\FactoryMethod\bin\Debug\FactoryMethod.exe
+C:\Users\benjamin.bowes\Desktop\OOD\FACTORY\FactoryMethod\FactoryMethod\bin\Debug\FactoryMethod.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\FACTORY\FactoryMethod\FactoryMethod\obj\Debug\FactoryMethod.exe
+C:\Users\benjamin.bowes\Desktop\OOD\FACTORY\FactoryMethod\FactoryMethod\obj\Debug\FactoryMethod.pdb

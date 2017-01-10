@@ -1,0 +1,14 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingTest\bin\Debug\BowlingTest.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingTest\bin\Debug\BowlingTest.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingTest\bin\Debug\BowlingGameKata.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingTest\bin\Debug\BowlingGameKata.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingTest\obj\Debug\BowlingTest.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingTest\obj\Debug\BowlingTest.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingTest\obj\Debug\BowlingTest.pdb
+\\filbtn002\trainees\Benjamin.Bowes\OOD WEEK2\OOD\WEEK2\BowlingGameKata\BowlingTest\bin\Debug\BowlingTest.dll
+\\filbtn002\trainees\Benjamin.Bowes\OOD WEEK2\OOD\WEEK2\BowlingGameKata\BowlingTest\bin\Debug\BowlingTest.pdb
+\\filbtn002\trainees\Benjamin.Bowes\OOD WEEK2\OOD\WEEK2\BowlingGameKata\BowlingTest\bin\Debug\BowlingGameKata.dll
+\\filbtn002\trainees\Benjamin.Bowes\OOD WEEK2\OOD\WEEK2\BowlingGameKata\BowlingTest\bin\Debug\BowlingGameKata.pdb
+\\filbtn002\trainees\Benjamin.Bowes\OOD WEEK2\OOD\WEEK2\BowlingGameKata\BowlingTest\obj\Debug\BowlingTest.csprojResolveAssemblyReference.cache
+\\filbtn002\trainees\Benjamin.Bowes\OOD WEEK2\OOD\WEEK2\BowlingGameKata\BowlingTest\obj\Debug\BowlingTest.dll
+\\filbtn002\trainees\Benjamin.Bowes\OOD WEEK2\OOD\WEEK2\BowlingGameKata\BowlingTest\obj\Debug\BowlingTest.pdb
