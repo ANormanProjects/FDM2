@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\RomanNumerals\RomanNumeralsKata\RomanNumeralsKata\bin\Debug\RomanNumeralsKata.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\RomanNumerals\RomanNumeralsKata\RomanNumeralsKata\obj\Debug\RomanNumeralsKata.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\RomanNumerals\RomanNumeralsKata\RomanNumeralsKata\bin\Debug\RomanNumeralsKata.exe
+C:\Users\benjamin.bowes\Desktop\OOD\RomanNumerals\RomanNumeralsKata\RomanNumeralsKata\bin\Debug\RomanNumeralsKata.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\RomanNumerals\RomanNumeralsKata\RomanNumeralsKata\obj\Debug\RomanNumeralsKata.exe
+C:\Users\benjamin.bowes\Desktop\OOD\RomanNumerals\RomanNumeralsKata\RomanNumeralsKata\obj\Debug\RomanNumeralsKata.pdb

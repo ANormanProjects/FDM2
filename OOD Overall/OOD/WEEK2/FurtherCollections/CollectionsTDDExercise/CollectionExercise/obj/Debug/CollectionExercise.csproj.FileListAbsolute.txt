@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionExercise\bin\Debug\CollectionExercise.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionExercise\bin\Debug\CollectionExercise.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionExercise\bin\Debug\CollectionExercise.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionExercise\obj\Debug\CollectionExercise.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionExercise\obj\Debug\CollectionExercise.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\CollectionExercise\obj\Debug\CollectionExercise.pdb

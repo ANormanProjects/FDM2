@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FileIOExercise\FileIOExercise\bin\Debug\FileIOExercise.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FileIOExercise\FileIOExercise\obj\Debug\FileIOExercise.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FileIOExercise\FileIOExercise\bin\Debug\FileIOExercise.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FileIOExercise\FileIOExercise\bin\Debug\FileIOExercise.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FileIOExercise\FileIOExercise\obj\Debug\FileIOExercise.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FileIOExercise\FileIOExercise\obj\Debug\FileIOExercise.pdb

@@ -1,0 +1,9 @@
+C:\Users\daniel.kloss\Desktop\OOD\CollectionsExercise\CollectionsExercise\bin\Debug\CollectionsExercise.exe.config
+C:\Users\daniel.kloss\Desktop\OOD\CollectionsExercise\CollectionsExercise\bin\Debug\CollectionsExercise.exe
+C:\Users\daniel.kloss\Desktop\OOD\CollectionsExercise\CollectionsExercise\bin\Debug\CollectionsExercise.pdb
+C:\Users\daniel.kloss\Desktop\OOD\CollectionsExercise\CollectionsExercise\obj\Debug\CollectionsExercise.exe
+C:\Users\daniel.kloss\Desktop\OOD\CollectionsExercise\CollectionsExercise\obj\Debug\CollectionsExercise.pdb
+C:\Users\daniel.kloss\Desktop\OOD\CollectionsExercise\CollectionsExercise\obj\Debug\CollectionsExercise.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\Dan\CollectionsExercise\CollectionsExercise\bin\Debug\CollectionsExercise.exe.config
+C:\Users\benjamin.bowes\Desktop\Dan\CollectionsExercise\CollectionsExercise\obj\Debug\CollectionsExercise.exe
+C:\Users\benjamin.bowes\Desktop\Dan\CollectionsExercise\CollectionsExercise\obj\Debug\CollectionsExercise.pdb

@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\Queue\bin\Debug\Queue.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\Queue\bin\Debug\Queue.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\Queue\bin\Debug\Queue.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\Queue\obj\Debug\Queue.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\Queue\obj\Debug\Queue.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\Queue\obj\Debug\Queue.pdb

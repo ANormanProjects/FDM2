@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurtherCollections", "FurtherCollections\FurtherCollections.csproj", "{D950346C-9F95-4673-A516-8AB03551BE2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericsDemo", "GenericsDemo\GenericsDemo.csproj", "{40D8A63C-C149-4B45-B31A-B7E8052B1800}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D950346C-9F95-4673-A516-8AB03551BE2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D950346C-9F95-4673-A516-8AB03551BE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D950346C-9F95-4673-A516-8AB03551BE2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D950346C-9F95-4673-A516-8AB03551BE2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40D8A63C-C149-4B45-B31A-B7E8052B1800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40D8A63C-C149-4B45-B31A-B7E8052B1800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40D8A63C-C149-4B45-B31A-B7E8052B1800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40D8A63C-C149-4B45-B31A-B7E8052B1800}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

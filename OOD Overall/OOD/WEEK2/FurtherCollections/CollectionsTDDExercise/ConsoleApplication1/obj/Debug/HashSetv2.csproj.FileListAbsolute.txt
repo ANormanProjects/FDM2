@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\CollectionsTDDExercise\ConsoleApplication1\obj\Debug\HashSetv2.csprojResolveAssemblyReference.cache

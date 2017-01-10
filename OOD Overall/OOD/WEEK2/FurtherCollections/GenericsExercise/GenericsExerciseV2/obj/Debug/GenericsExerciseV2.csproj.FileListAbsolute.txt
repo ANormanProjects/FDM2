@@ -1,0 +1,5 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\GenericsExercise\GenericsExerciseV2\bin\Debug\GenericsExerciseV2.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\GenericsExercise\GenericsExerciseV2\bin\Debug\GenericsExerciseV2.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\GenericsExercise\GenericsExerciseV2\bin\Debug\GenericsExerciseV2.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\GenericsExercise\GenericsExerciseV2\obj\Debug\GenericsExerciseV2.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FurtherCollections\GenericsExercise\GenericsExerciseV2\obj\Debug\GenericsExerciseV2.pdb

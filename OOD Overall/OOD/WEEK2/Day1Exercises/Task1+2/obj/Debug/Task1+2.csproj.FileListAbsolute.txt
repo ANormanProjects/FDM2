@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\Day1Exercises\Task1+2\bin\Debug\Task1+2.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\Day1Exercises\Task1+2\bin\Debug\Task1+2.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\Day1Exercises\Task1+2\bin\Debug\Task1+2.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\Day1Exercises\Task1+2\obj\Debug\Task1+2.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\Day1Exercises\Task1+2\obj\Debug\Task1+2.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\Day1Exercises\Task1+2\obj\Debug\Task1+2.pdb

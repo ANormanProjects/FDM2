@@ -1,0 +1,5 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\LinkedList\bin\Debug\LinkedList.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\LinkedList\bin\Debug\LinkedList.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\LinkedList\bin\Debug\LinkedList.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\LinkedList\obj\Debug\LinkedList.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\RemoveDupes\LinkedList\obj\Debug\LinkedList.pdb

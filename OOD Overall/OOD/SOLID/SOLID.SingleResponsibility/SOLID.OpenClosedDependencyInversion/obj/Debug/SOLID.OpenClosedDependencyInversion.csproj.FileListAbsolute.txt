@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.OpenClosedDependencyInversion\obj\Debug\SOLID.OpenClosedDependencyInversion.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.OpenClosedDependencyInversion\bin\Debug\SOLID.OpenClosedDependencyInversion.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.OpenClosedDependencyInversion\bin\Debug\SOLID.OpenClosedDependencyInversion.exe
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.OpenClosedDependencyInversion\bin\Debug\SOLID.OpenClosedDependencyInversion.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.OpenClosedDependencyInversion\obj\Debug\SOLID.OpenClosedDependencyInversion.exe
+C:\Users\benjamin.bowes\Desktop\OOD\SOLID\SOLID.SingleResponsibility\SOLID.OpenClosedDependencyInversion\obj\Debug\SOLID.OpenClosedDependencyInversion.pdb

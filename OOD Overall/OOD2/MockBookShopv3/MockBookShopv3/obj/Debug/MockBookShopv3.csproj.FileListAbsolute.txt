@@ -1,0 +1,9 @@
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockBookShopv3\bin\Debug\MockBookShopv3.dll
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockBookShopv3\bin\Debug\MockBookShopv3.pdb
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockBookShopv3\obj\Debug\MockBookShopv3.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockBookShopv3\obj\Debug\MockBookShopv3.dll
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockBookShopv3\obj\Debug\MockBookShopv3.pdb
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockBookShopv3\bin\Debug\Castle.Core.dll
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockBookShopv3\bin\Debug\Moq.dll
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockBookShopv3\bin\Debug\Castle.Core.xml
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockBookShopv3\bin\Debug\Moq.xml

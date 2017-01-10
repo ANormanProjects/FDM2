@@ -1,0 +1,10 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingGameKata\bin\Debug\BowlingGameKata.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingGameKata\bin\Debug\BowlingGameKata.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingGameKata\obj\Debug\BowlingGameKata.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingGameKata\obj\Debug\BowlingGameKata.dll
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\BowlingGameKata\BowlingGameKata\obj\Debug\BowlingGameKata.pdb
+\\filbtn002\trainees\Benjamin.Bowes\OOD WEEK2\OOD\WEEK2\BowlingGameKata\BowlingGameKata\bin\Debug\BowlingGameKata.dll
+\\filbtn002\trainees\Benjamin.Bowes\OOD WEEK2\OOD\WEEK2\BowlingGameKata\BowlingGameKata\bin\Debug\BowlingGameKata.pdb
+\\filbtn002\trainees\Benjamin.Bowes\OOD WEEK2\OOD\WEEK2\BowlingGameKata\BowlingGameKata\obj\Debug\BowlingGameKata.csprojResolveAssemblyReference.cache
+\\filbtn002\trainees\Benjamin.Bowes\OOD WEEK2\OOD\WEEK2\BowlingGameKata\BowlingGameKata\obj\Debug\BowlingGameKata.dll
+\\filbtn002\trainees\Benjamin.Bowes\OOD WEEK2\OOD\WEEK2\BowlingGameKata\BowlingGameKata\obj\Debug\BowlingGameKata.pdb

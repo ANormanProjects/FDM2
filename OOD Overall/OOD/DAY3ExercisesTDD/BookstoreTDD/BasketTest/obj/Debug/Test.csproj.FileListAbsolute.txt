@@ -1,0 +1,7 @@
+C:\Users\benjamin.bowes\Desktop\OOD\DAY3ExercisesTDD\BookstoreTDD\BasketTest\bin\Debug\BasketTest.dll
+C:\Users\benjamin.bowes\Desktop\OOD\DAY3ExercisesTDD\BookstoreTDD\BasketTest\bin\Debug\BasketTest.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\DAY3ExercisesTDD\BookstoreTDD\BasketTest\bin\Debug\BookstoreTDD.dll
+C:\Users\benjamin.bowes\Desktop\OOD\DAY3ExercisesTDD\BookstoreTDD\BasketTest\bin\Debug\BookstoreTDD.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\DAY3ExercisesTDD\BookstoreTDD\BasketTest\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\DAY3ExercisesTDD\BookstoreTDD\BasketTest\obj\Debug\BasketTest.dll
+C:\Users\benjamin.bowes\Desktop\OOD\DAY3ExercisesTDD\BookstoreTDD\BasketTest\obj\Debug\BasketTest.pdb

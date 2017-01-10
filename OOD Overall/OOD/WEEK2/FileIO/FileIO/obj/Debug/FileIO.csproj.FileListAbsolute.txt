@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FileIO\FileIO\bin\Debug\FileIO.exe.config
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FileIO\FileIO\bin\Debug\FileIO.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FileIO\FileIO\bin\Debug\FileIO.pdb
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FileIO\FileIO\obj\Debug\FileIO.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FileIO\FileIO\obj\Debug\FileIO.exe
+C:\Users\benjamin.bowes\Desktop\OOD\WEEK2\FileIO\FileIO\obj\Debug\FileIO.pdb

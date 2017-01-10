@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockBookShopv3", "MockBookShopv3\MockBookShopv3.csproj", "{8181976D-2BA6-4D41-816C-0F21227BD16E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockTests", "MockTests\MockTests.csproj", "{7A358335-2BD8-4D19-BF13-46C2AFF91B22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8181976D-2BA6-4D41-816C-0F21227BD16E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8181976D-2BA6-4D41-816C-0F21227BD16E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8181976D-2BA6-4D41-816C-0F21227BD16E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8181976D-2BA6-4D41-816C-0F21227BD16E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A358335-2BD8-4D19-BF13-46C2AFF91B22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A358335-2BD8-4D19-BF13-46C2AFF91B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A358335-2BD8-4D19-BF13-46C2AFF91B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A358335-2BD8-4D19-BF13-46C2AFF91B22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockTests\bin\Debug\MockTests.dll
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockTests\bin\Debug\MockTests.pdb
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockTests\bin\Debug\MockBookShopv3.dll
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockTests\bin\Debug\MockBookShopv3.pdb
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockTests\obj\Debug\MockTests.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockTests\obj\Debug\MockTests.dll
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockTests\obj\Debug\MockTests.pdb
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockTests\bin\Debug\Castle.Core.dll
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockTests\bin\Debug\Moq.dll
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockTests\bin\Debug\Castle.Core.xml
+c:\users\user\documents\visual studio 2015\Projects\MockBookShopv3\MockTests\bin\Debug\Moq.xml

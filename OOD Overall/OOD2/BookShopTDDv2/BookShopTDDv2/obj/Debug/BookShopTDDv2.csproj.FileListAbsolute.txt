@@ -1,0 +1,4 @@
+c:\users\user\documents\visual studio 2015\Projects\BookShopTDDv2\BookShopTDDv2\bin\Debug\BookShopTDDv2.dll
+c:\users\user\documents\visual studio 2015\Projects\BookShopTDDv2\BookShopTDDv2\bin\Debug\BookShopTDDv2.pdb
+c:\users\user\documents\visual studio 2015\Projects\BookShopTDDv2\BookShopTDDv2\obj\Debug\BookShopTDDv2.dll
+c:\users\user\documents\visual studio 2015\Projects\BookShopTDDv2\BookShopTDDv2\obj\Debug\BookShopTDDv2.pdb
