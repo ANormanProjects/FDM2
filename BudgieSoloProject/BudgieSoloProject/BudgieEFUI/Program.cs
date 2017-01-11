@@ -13,7 +13,7 @@ namespace BudgieEFUI
         {
             //THIS IS FOR CODEFIRST
 
-            //BudgieDBCFModel context = new BudgieDBCFModel();
+            BudgieDBCFModel context = new BudgieDBCFModel();
 
 
             //Add
@@ -45,14 +45,14 @@ namespace BudgieEFUI
 
 
             //LINQ SQL
-            //var query = from b in context.brokers
-            //            where b.companyId == 1
-            //            select b;
+            var query = from b in context.budgieUsers
+                        where b.lastName == "Bowes"
+                        select b;
 
-            //foreach (var broker in query)
-            //{
-            //    Console.WriteLine(broker.name + " " + broker.companyId);
-            //}
+            foreach (var budgie in query)
+            {
+                Console.WriteLine(budgie.firstName + " " + budgie.lastName + " " + budgie.dob);
+            }
 
 
             Console.ReadLine();
