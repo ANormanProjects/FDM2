@@ -15,6 +15,24 @@ namespace BudgieEFUI
 
         static void Main(string[] args)
         {
+            UserInput();
+
+            //LINQ SQL
+            //var query = from b in context.budgieUsers
+            //            where b.lastName == "Low"
+            //            select b;
+
+            //foreach (var budgie in query)
+            //{
+            //    Console.WriteLine(budgie.firstName + " " + budgie.lastName + " " + budgie.dob);
+            //}
+
+
+            Console.ReadLine();
+        }
+
+        static void UserInput()
+        {
             char input = '0';
             Console.Clear();
 
@@ -49,19 +67,6 @@ namespace BudgieEFUI
                         continue;
                 }
             }
-
-            //LINQ SQL
-            //var query = from b in context.budgieUsers
-            //            where b.lastName == "Low"
-            //            select b;
-
-            //foreach (var budgie in query)
-            //{
-            //    Console.WriteLine(budgie.firstName + " " + budgie.lastName + " " + budgie.dob);
-            //}
-
-
-            Console.ReadLine();
         }
 
         static void StartUpMenu()
@@ -119,32 +124,87 @@ namespace BudgieEFUI
             context.budgieUsers.Add(newBudgieUser);
 
             context.SaveChanges();
+            Console.ReadLine();
+            RestartApplication();
         }
 
         static void UpdateUser()
         {
             //Update
-            //Broker brokerToUpdate = context.brokers.Find(1);
-            //brokerToUpdate.name = "Ben";
+            string firstNameUpdate, lastNameUpdate;
+            int dobUpdate, id;
+
+            BudgieDBCFModel context = new BudgieDBCFModel();
+            NewBudgieUser newUser = new NewBudgieUser();
+
+            Console.WriteLine("List of all Budgie Users currently registered in the system: ");
+            Console.WriteLine("BudgieUser ID | First Name | Last Name | Email Address | Date of Birth");
+            foreach (BudgieUser budgieUser in context.budgieUsers)
+            {
+                Console.WriteLine(budgieUser.id + " " + budgieUser.firstName + " " + budgieUser.lastName + " " + budgieUser.emailAddress + " " + budgieUser.dob);
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("Please enter the id of the Budgie User you wish to update: ");
+            id = Convert.ToInt32(Console.ReadLine());
+
+            BudgieUser budgieUserToUpdate = context.budgieUsers.Find(id);
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.WriteLine("Updating first name (e.g. Ben): ");
+            firstNameUpdate = (Console.ReadLine());
+            budgieUserToUpdate.firstName = firstNameUpdate;
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.WriteLine("Updating last name (e.g. Bowes): ");
+            lastNameUpdate = (Console.ReadLine());
+            budgieUserToUpdate.lastName = lastNameUpdate;
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.WriteLine("Updating date of birth (e.g. DDMMYY (040191)): ");
+            dobUpdate = Convert.ToInt32(Console.ReadLine());
+            budgieUserToUpdate.dob = dobUpdate;
+
+            context.SaveChanges();
+            Console.ReadLine();
+            RestartApplication();
         }
 
         static void RemoveUser()
         {
+            string emailAddress;
 
+            BudgieDBCFModel context = new BudgieDBCFModel();
+
+            Console.WriteLine("Please enter the email address of the account you wish to remove (e.g. benkentarobowes@gmail.com): ");
+            emailAddress = (Console.ReadLine());
+            
             //Remove
-            //foreach (Broker broker in context.brokers)
-            //{
-            //    if (broker.id == 3)
-            //    {
-            //        context.brokers.Remove(broker);
-            //    }
-            //}
+            foreach (BudgieUser budgieUser in context.budgieUsers)
+            {
+                if (budgieUser.emailAddress == emailAddress)
+                {
+                    context.budgieUsers.Remove(budgieUser);
+                    Console.WriteLine("The Account for " + budgieUser.firstName + " " + budgieUser.lastName+ " " + budgieUser.emailAddress + " has been successfully removed.");
+                }
+            }
+            
+            context.SaveChanges();
+            Console.ReadLine();
+            RestartApplication();
         }
 
         static void ListAllUsers()
         {
             BudgieDBCFModel context = new BudgieDBCFModel();
-
+            Console.WriteLine("List of all Budgie Users currently registered in the system: ");
             Console.WriteLine("BudgieUser ID | First Name | Last Name | Email Address | Date of Birth");
             foreach (BudgieUser budgieUser in context.budgieUsers)
             {
@@ -152,6 +212,23 @@ namespace BudgieEFUI
             }
 
             Console.ReadLine();
+            RestartApplication();
+        }
+
+        static void RestartApplication()
+        {
+            Console.WriteLine("Would you like to continue? (Please enter y (yes) or n (no))");
+            ConsoleKeyInfo input = Console.ReadKey();
+            Console.WriteLine();
+
+            if (input.KeyChar == 'y')
+            {
+                UserInput();
+            }
+            else
+            {
+                Environment.Exit(0);
+            }
         }
 
         
