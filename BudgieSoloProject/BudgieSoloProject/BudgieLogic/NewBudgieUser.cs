@@ -10,14 +10,14 @@ namespace BudgieLogic
     public class NewBudgieUser
     {
         BudgieUser budgieUser = new BudgieUser();
-        BudgieUserRepository budgieUserDB = new BudgieUserRepository();
+        BudgieUserRepository budgieUserDB;
         List<BudgieUser> database = new List<BudgieUser>();
 
         public int MyProperty { get; set; }
 
-        public NewBudgieUser()
+        public NewBudgieUser(BudgieUserRepository BudgieUserRepository)
         {
-
+            budgieUserDB = BudgieUserRepository;
         }
 
         public bool CheckForDuplicateEmail(string emailAddress)
@@ -25,7 +25,7 @@ namespace BudgieLogic
             database = budgieUserDB.GetAllBudgieUsers();
             foreach (var info in database)
             {
-                if (emailAddress == info.emailAddress)
+                if (info.emailAddress == emailAddress)
                 {
                     return true;
                 }

@@ -50,19 +50,23 @@ namespace BudgieEFUI
                     case 'Q':
                         continue;
 
-                    case 'M':
+                    case 'L':
+                        Console.WriteLine();
                         ListAllUsers();
                         continue;
 
                     case 'A':
+                        Console.WriteLine();
                         AddUser();
                         continue;
 
                     case 'U':
+                        Console.WriteLine();
                         UpdateUser();
                         continue;
 
                     case 'R':
+                        Console.WriteLine();
                         RemoveUser();
                         continue;
                 }
@@ -89,41 +93,42 @@ namespace BudgieEFUI
             int dob;
 
             BudgieDBCFModel context = new BudgieDBCFModel();
-            NewBudgieUser newUser = new NewBudgieUser();
+            NewBudgieUser newUser = new NewBudgieUser(new BudgieUserRepository(new BudgieDBCFModel()));
 
             Console.WriteLine("Please enter your email address (e.g. benkentarobowes@gmail.com): ");
             emailAddress = (Console.ReadLine());
             bool isInDatabase = newUser.CheckForDuplicateEmail(emailAddress);
 
-            while (isInDatabase == true)
+            if (isInDatabase == true)
             {
-                Console.WriteLine("This email is already in use, please log into your original account or create a new account using a different email address: ");
-                emailAddress = (Console.ReadLine());
+                Console.WriteLine("This email is already in use, please quit and log into your original account or restart the application and try again.");
             }
+            else
+            {
+                Console.WriteLine("Please enter your first name (e.g. Ben): ");
+                firstName = (Console.ReadLine());
 
-            Console.WriteLine("Please enter your first name (e.g. Ben): ");
-            firstName = (Console.ReadLine());
+                Console.WriteLine();
+                Console.WriteLine();
 
-            Console.WriteLine();
-            Console.WriteLine();
+                Console.WriteLine("Please enter your last name (e.g. Bowes): ");
+                lastName = (Console.ReadLine());
 
-            Console.WriteLine("Please enter your last name (e.g. Bowes): ");
-            lastName = (Console.ReadLine());
+                Console.WriteLine();
+                Console.WriteLine();
 
-            Console.WriteLine();
-            Console.WriteLine();
+                Console.WriteLine("Please enter your date of birth (e.g. DDMMYY (040191)): ");
+                dob = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Please enter your date of birth (e.g. DDMMYY (040191)): ");
-            dob = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine();
+                Console.WriteLine();
 
-            Console.WriteLine();
-            Console.WriteLine();
+                //Add
+                BudgieUser newBudgieUser = new BudgieUser() { firstName = firstName, lastName = lastName, emailAddress = emailAddress, dob = dob };
+                context.budgieUsers.Add(newBudgieUser);
 
-            //Add
-            BudgieUser newBudgieUser = new BudgieUser() { firstName = firstName, lastName = lastName, emailAddress = emailAddress, dob = dob };
-            context.budgieUsers.Add(newBudgieUser);
-
-            context.SaveChanges();
+                context.SaveChanges();
+            }
             Console.ReadLine();
             RestartApplication();
         }
@@ -135,7 +140,7 @@ namespace BudgieEFUI
             int dobUpdate, id;
 
             BudgieDBCFModel context = new BudgieDBCFModel();
-            NewBudgieUser newUser = new NewBudgieUser();
+            NewBudgieUser newUser = new NewBudgieUser(new BudgieUserRepository(new BudgieDBCFModel()));
 
             Console.WriteLine("List of all Budgie Users currently registered in the system: ");
             Console.WriteLine("BudgieUser ID | First Name | Last Name | Email Address | Date of Birth");
