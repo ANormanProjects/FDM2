@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BudgieEFUI
 {
-    class Program
+    class LocalUI
     {
         static void Main(string[] args)
         {
@@ -17,8 +17,8 @@ namespace BudgieEFUI
 
 
             //Add
-            //Broker newBroker = new Broker() { name = "Bishan", companyId = 1 };
-            //context.brokers.Add(newBroker);
+            BudgieUser newBudgieUser = new BudgieUser() { firstName = "Elizabeth", lastName = "Low", emailAddress = "elizabethlow@gmail.com", dob = 110894 };
+            context.budgieUsers.Add(newBudgieUser);
 
 
             //Update
@@ -36,7 +36,7 @@ namespace BudgieEFUI
             //}
 
 
-            //context.SaveChanges();
+            context.SaveChanges();
 
             //foreach (Broker broker in context.brokers)
             //{
@@ -46,7 +46,7 @@ namespace BudgieEFUI
 
             //LINQ SQL
             var query = from b in context.budgieUsers
-                        where b.lastName == "Bowes"
+                        where b.lastName == "Low"
                         select b;
 
             foreach (var budgie in query)
