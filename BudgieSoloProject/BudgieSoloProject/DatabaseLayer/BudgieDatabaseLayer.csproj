@@ -58,6 +58,7 @@
     <Compile Include="AccountRepository.cs" />
     <Compile Include="BudgieDBCFModel.cs" />
     <Compile Include="BudgieUser.cs" />
+    <Compile Include="BudgieUserDBReader.cs" />
     <Compile Include="BudgieUserRepository.cs" />
     <Compile Include="Migrations\201701111313411_initial.cs" />
     <Compile Include="Migrations\201701111313411_initial.Designer.cs">

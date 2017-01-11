@@ -10,6 +10,13 @@ namespace BudgieDatabaseLayer
     {
         BudgieDBCFModel _context;
 
+        List<BudgieUser> database = new List<BudgieUser>();
+
+        public BudgieUserRepository ()
+	    {
+
+	    }
+
         public BudgieUserRepository(BudgieDBCFModel context)
         {
             _context = context;
@@ -19,5 +26,8 @@ namespace BudgieDatabaseLayer
         {
             return _context.budgieUsers.ToList();
         }
+
+
+        
     }
 }

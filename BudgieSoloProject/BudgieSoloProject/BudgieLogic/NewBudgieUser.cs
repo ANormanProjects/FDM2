@@ -10,6 +10,8 @@ namespace BudgieLogic
     public class NewBudgieUser
     {
         BudgieUser budgieUser = new BudgieUser();
+        BudgieUserRepository budgieUserDB = new BudgieUserRepository();
+        List<BudgieUser> database = new List<BudgieUser>();
 
         public int MyProperty { get; set; }
 
@@ -18,6 +20,17 @@ namespace BudgieLogic
 
         }
 
-
+        public bool CheckForDuplicateEmail(string emailAddress)
+        {
+            database = budgieUserDB.GetAllBudgieUsers();
+            foreach (var info in database)
+            {
+                if (emailAddress == info.emailAddress)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
