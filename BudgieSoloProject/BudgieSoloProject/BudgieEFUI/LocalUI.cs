@@ -92,11 +92,13 @@ namespace BudgieEFUI
 
         static void AddUser()
         {
-            string firstName, lastName, emailAddress, dob;
+            string firstName, lastName, emailAddress, dob, password, confirmPassword;
             int newAccountId = 0;
 
             BudgieDBCFModel context = new BudgieDBCFModel();
             NewBudgieUser newUser = new NewBudgieUser(new BudgieUserRepository(new BudgieDBCFModel()));
+            BudgieUserRepository bur = new BudgieUserRepository(context);
+            AccountRepository ar = new AccountRepository(context);
 
             Console.WriteLine(); Console.WriteLine("--- Creating a new Budgie User ---"); Console.WriteLine();
 
@@ -131,37 +133,54 @@ namespace BudgieEFUI
                 Console.WriteLine();
                 Console.WriteLine();
 
-                //Add
-                BudgieUser newBudgieUser = new BudgieUser() { firstName = firstName, lastName = lastName, emailAddress = emailAddress, dob = dob };
-               
-                context.budgieUsers.Add(newBudgieUser);
-                
+                Console.WriteLine("Please enter your new password: ");
+                password = (Console.ReadLine());
 
-                context.SaveChanges();
-
-                Console.WriteLine("New BudgieUser has been successfully registered: Name = " + newBudgieUser.firstName + " " + newBudgieUser.lastName);
-                Console.WriteLine();
-                Console.WriteLine("Automatically creating a new bank account...");
                 Console.WriteLine();
 
-                foreach (BudgieUser budgieUser in context.budgieUsers)
+                Console.WriteLine("Please confirm your new password: ");
+                confirmPassword = (Console.ReadLine());
+
+                Console.WriteLine();
+
+                if ( password != confirmPassword )
                 {
-                    if ( emailAddress == budgieUser.emailAddress )
-                    {
-                        newAccountId = budgieUser.id;
-                    }
+                    Console.WriteLine("Your passwords do not match, please restart the application and try again.");
+                    Console.WriteLine();
+                    RestartApplication();
                 }
+                else
+                {
+                    //Add
+                    BudgieUser newBudgieUser = new BudgieUser() { firstName = firstName, lastName = lastName, emailAddress = emailAddress, dob = dob, password = password };
 
-                Account newAccount = new Account() { accountNumber = lastName + dob, balance = 0, budget = 0, accountOwnerId = newAccountId };
+                    bur.addNewBudgieUser(newBudgieUser);
+                    //context.budgieUsers.Add(newBudgieUser);
 
-                context.accounts.Add(newAccount);
+                    //context.SaveChanges();
 
-                Console.WriteLine("Your new account has been successfully created: Account Number = " + newAccount.accountNumber);
-                Console.WriteLine();
-                Console.WriteLine("You may log in and start smart budgeting your finances today! Thank you for joining Budgie.");
+                    Console.WriteLine("New BudgieUser has been successfully registered: Name = " + newBudgieUser.firstName + " " + newBudgieUser.lastName);
+                    Console.WriteLine();
+                    Console.WriteLine("Automatically creating a new bank account...");
+                    Console.WriteLine();
 
-                context.SaveChanges();
+                    foreach (BudgieUser budgieUser in context.budgieUsers)
+                    {
+                        if (emailAddress == budgieUser.emailAddress)
+                        {
+                            newAccountId = budgieUser.id;
+                        }
+                    }
 
+                    Account newAccount = new Account() { accountNumber = lastName + dob, balance = 0, budget = 0, accountOwnerId = newAccountId };
+
+                    ar.addNewAccount(newAccount);
+                    //context.accounts.Add(newAccount);
+
+                    Console.WriteLine("Your new account has been successfully created: Account Number = " + newAccount.accountNumber);
+                    Console.WriteLine();
+                    Console.WriteLine("You may log in and start smart budgeting your finances today! Thank you for joining Budgie.");
+                }
             }
             RestartApplication();
         }
@@ -229,6 +248,8 @@ namespace BudgieEFUI
             int id;
 
             BudgieDBCFModel context = new BudgieDBCFModel();
+            BudgieUserRepository bur = new BudgieUserRepository(context);
+            AccountRepository ar = new AccountRepository(context);
 
             Console.WriteLine(); Console.WriteLine("--- Removing an existing Budgie User ---"); Console.WriteLine();
 
@@ -244,18 +265,22 @@ namespace BudgieEFUI
             Console.WriteLine("Please enter the id of the Budgie User you wish to Remove: ");
             id = Convert.ToInt32(Console.ReadLine());
 
+            
+
             BudgieUser budgieUserToRemove = context.budgieUsers.Find(id);
             Account accountToRemove = context.accounts.Where(a => a.accountOwnerId == id).First();
 
             Console.WriteLine();
 
             Console.WriteLine("The Budgie User " + budgieUserToRemove.firstName + " " + budgieUserToRemove.lastName + " " + budgieUserToRemove.emailAddress + " has been successfully removed.");
-            context.budgieUsers.Remove(budgieUserToRemove);
+            bur.removeBudgieUser(id);
+            //context.budgieUsers.Remove(budgieUserToRemove);
 
             Console.WriteLine();
 
             Console.WriteLine("The Bank Account " + accountToRemove.accountNumber + " has also been successfully removed.");
-            context.accounts.Remove(accountToRemove);
+            ar.removeAccount(id);
+            //context.accounts.Remove(accountToRemove);
 
             Console.WriteLine();
             
@@ -289,6 +314,8 @@ namespace BudgieEFUI
         static void ListAllUsers()
         {
             BudgieDBCFModel context = new BudgieDBCFModel();
+
+            Console.WriteLine();
             Console.WriteLine("List of all Budgie Users currently registered in the system: ");
             Console.WriteLine("BudgieUser ID | First Name | Last Name | Email Address | Date of Birth");
             foreach (BudgieUser budgieUser in context.budgieUsers)
@@ -296,7 +323,6 @@ namespace BudgieEFUI
                 Console.WriteLine(budgieUser.id + " " + budgieUser.firstName + " " + budgieUser.lastName + " " + budgieUser.emailAddress + " " + budgieUser.dob);
             }
 
-            Console.ReadLine();
             RestartApplication();
         }
 
