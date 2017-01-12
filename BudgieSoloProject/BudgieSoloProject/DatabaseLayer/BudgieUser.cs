@@ -22,5 +22,7 @@ namespace BudgieDatabaseLayer
         public string emailAddress { get; set; }
 
         public string dob { get; set; }
+
+        public string password { get; set; }
     }
 }
