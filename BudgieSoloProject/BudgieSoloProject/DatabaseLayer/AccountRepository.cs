@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace BudgieDatabaseLayer
 {
     public class AccountRepository
     {
+        private static readonly ILog logger = LogManager.GetLogger("AccountRepository.cs");
+
         BudgieDBCFModel _context;
 
         public AccountRepository(BudgieDBCFModel context)

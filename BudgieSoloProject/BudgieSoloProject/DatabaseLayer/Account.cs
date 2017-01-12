@@ -9,6 +9,8 @@ namespace BudgieDatabaseLayer
 {
     public class Account
     {
+        private static readonly ILog logger = LogManager.GetLogger("Account.cs");
+
         public int id { get; set; }
 
         public string accountNumber { get; set; }

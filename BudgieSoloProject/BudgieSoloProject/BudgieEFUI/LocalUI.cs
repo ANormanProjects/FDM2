@@ -89,8 +89,8 @@ namespace BudgieEFUI
 
         static void AddUser()
         {
-            string firstName, lastName, emailAddress;
-            int dob, newAccountId = 0;
+            string firstName, lastName, emailAddress, dob;
+            int newAccountId = 0;
 
             BudgieDBCFModel context = new BudgieDBCFModel();
             NewBudgieUser newUser = new NewBudgieUser(new BudgieUserRepository(new BudgieDBCFModel()));
@@ -118,7 +118,7 @@ namespace BudgieEFUI
                 Console.WriteLine();
 
                 Console.WriteLine("Please enter your date of birth (e.g. DDMMYY (040191)): ");
-                dob = Convert.ToInt32(Console.ReadLine());
+                dob = (Console.ReadLine());
 
                 Console.WriteLine();
                 Console.WriteLine();
@@ -161,8 +161,8 @@ namespace BudgieEFUI
         static void UpdateUser()
         {
             //Update
-            string firstNameUpdate, lastNameUpdate;
-            int dobUpdate, id;
+            string firstNameUpdate, lastNameUpdate, dobUpdate;
+            int id;
 
             BudgieDBCFModel context = new BudgieDBCFModel();
             NewBudgieUser newUser = new NewBudgieUser(new BudgieUserRepository(new BudgieDBCFModel()));
@@ -180,6 +180,7 @@ namespace BudgieEFUI
             id = Convert.ToInt32(Console.ReadLine());
 
             BudgieUser budgieUserToUpdate = context.budgieUsers.Find(id);
+            Account accountToUpdate = context.accounts.Find(id);
 
             Console.WriteLine();
             Console.WriteLine();
@@ -199,8 +200,10 @@ namespace BudgieEFUI
             Console.WriteLine();
 
             Console.WriteLine("Updating date of birth (e.g. DDMMYY (040191)): ");
-            dobUpdate = Convert.ToInt32(Console.ReadLine());
+            dobUpdate = (Console.ReadLine());
             budgieUserToUpdate.dob = dobUpdate;
+
+            accountToUpdate.accountNumber = (lastNameUpdate + dobUpdate);
 
             context.SaveChanges();
             Console.ReadLine();

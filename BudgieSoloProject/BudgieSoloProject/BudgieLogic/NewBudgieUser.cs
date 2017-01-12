@@ -1,14 +1,19 @@
-﻿using BudgieDatabaseLayer;
+﻿using log4net;
+using BudgieDatabaseLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+
 namespace BudgieLogic
 {
     public class NewBudgieUser
     {
+        private static readonly ILog logger = LogManager.GetLogger("NewBudgieUser.cs");
+
         BudgieUser budgieUser = new BudgieUser();
         BudgieUserRepository budgieUserDB;
         List<BudgieUser> database = new List<BudgieUser>();
