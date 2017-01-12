@@ -184,12 +184,7 @@ namespace BudgieEFUI
 
             Console.WriteLine(); Console.WriteLine("--- Updating an existing Budgie User ---"); Console.WriteLine();
 
-            Console.WriteLine("List of all Budgie Users currently registered in the system: ");
-            Console.WriteLine("BudgieUser ID | First Name | Last Name | Email Address | Date of Birth");
-            foreach (BudgieUser budgieUser in context.budgieUsers)
-            {
-                Console.WriteLine(budgieUser.id + " " + budgieUser.firstName + " " + budgieUser.lastName + " " + budgieUser.emailAddress + " " + budgieUser.dob);
-            }
+            UpdatedList();
 
             Console.WriteLine();
 
@@ -240,12 +235,7 @@ namespace BudgieEFUI
 
             Console.WriteLine(); Console.WriteLine("--- Removing an existing Budgie User ---"); Console.WriteLine();
 
-            Console.WriteLine("List of all Budgie Users currently registered in the system: ");
-            Console.WriteLine("BudgieUser ID | First Name | Last Name | Email Address | Date of Birth");
-            foreach (BudgieUser budgieUser in context.budgieUsers)
-            {
-                Console.WriteLine(budgieUser.id + " " + budgieUser.firstName + " " + budgieUser.lastName + " " + budgieUser.emailAddress + " " + budgieUser.dob);
-            }
+            UpdatedList();
 
             Console.WriteLine();
 
@@ -276,13 +266,28 @@ namespace BudgieEFUI
             RestartApplication();
         }
 
+        static void UpdatedList()
+        {
+            BudgieDBCFModel context = new BudgieDBCFModel();
+
+            Console.WriteLine();
+            Console.WriteLine("List of all Budgie Users currently registered in the system: ");
+            Console.WriteLine("ID | First Name | Last Name | Email Address | Date of Birth");
+            Console.WriteLine();
+            foreach (BudgieUser budgieUser in context.budgieUsers)
+            {
+                Console.WriteLine(budgieUser.id + " " + budgieUser.firstName + " " + budgieUser.lastName + " " + budgieUser.emailAddress + " " + budgieUser.dob);
+            }
+        }
+
         static void ListAllUsers()
         {
             BudgieDBCFModel context = new BudgieDBCFModel();
 
             Console.WriteLine();
             Console.WriteLine("List of all Budgie Users currently registered in the system: ");
-            Console.WriteLine("BudgieUser ID | First Name | Last Name | Email Address | Date of Birth");
+            Console.WriteLine("ID | First Name | Last Name | Email Address | Date of Birth");
+            Console.WriteLine();
             foreach (BudgieUser budgieUser in context.budgieUsers)
             {
                 Console.WriteLine(budgieUser.id + " " + budgieUser.firstName + " " + budgieUser.lastName + " " + budgieUser.emailAddress + " " + budgieUser.dob);
