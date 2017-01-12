@@ -32,7 +32,7 @@ namespace BudgieDatabaseLayer
 
         public void updateNewAccount(int id, string lastNameUpdate, string dobUpdate)
         {
-            context.accounts.Find(context.accounts.Where(a => a.accountOwnerId == id).First()).accountNumber = lastNameUpdate + dobUpdate;
+            context.accounts.Where(a => a.accountOwnerId == id).First().accountNumber = (lastNameUpdate + dobUpdate);
 
             context.SaveChanges();
         }
