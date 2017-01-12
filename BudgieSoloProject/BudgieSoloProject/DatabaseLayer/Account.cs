@@ -17,6 +17,8 @@ namespace BudgieDatabaseLayer
 
         public decimal budget { get; set; }
 
+        public int accountOwnerId { get; set; }
+
         public BudgieUser accountOwner { get; set; }
     }
 }
