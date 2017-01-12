@@ -156,7 +156,6 @@ namespace BudgieEFUI
                 context.SaveChanges();
 
             }
-            Console.ReadLine();
             RestartApplication();
         }
 
@@ -182,7 +181,7 @@ namespace BudgieEFUI
             id = Convert.ToInt32(Console.ReadLine());
 
             BudgieUser budgieUserToUpdate = context.budgieUsers.Find(id);
-            Account accountToUpdate = context.accounts.Find(id);
+            Account accountToUpdate = context.accounts.Where(a => a.accountOwnerId == id).First(); //Help
 
             Console.WriteLine();
             Console.WriteLine();
@@ -207,32 +206,46 @@ namespace BudgieEFUI
 
             accountToUpdate.accountNumber = (lastNameUpdate + dobUpdate);
 
-            context.SaveChanges();
+            Console.WriteLine("Press any key to save changes and continue: ");
             Console.ReadLine();
+            context.SaveChanges();
             RestartApplication();
         }
 
         static void RemoveUser()
         {
             string emailAddress;
+            int accountId = 0;
 
             BudgieDBCFModel context = new BudgieDBCFModel();
 
             Console.WriteLine("Please enter the email address of the account you wish to remove (e.g. benkentarobowes@gmail.com): ");
             emailAddress = (Console.ReadLine());
             
+            
             //Remove
             foreach (BudgieUser budgieUser in context.budgieUsers)
             {
                 if (budgieUser.emailAddress == emailAddress)
                 {
+                    accountId = budgieUser.id;
                     context.budgieUsers.Remove(budgieUser);
-                    Console.WriteLine("The Account for " + budgieUser.firstName + " " + budgieUser.lastName+ " " + budgieUser.emailAddress + " has been successfully removed.");
+                    Console.WriteLine("The Budgie User " + budgieUser.firstName + " " + budgieUser.lastName+ " " + budgieUser.emailAddress + " has been successfully removed.");
                 }
             }
+
+            foreach (Account account in context.accounts)
+            {
+                if (account.accountOwnerId == accountId)
+                {
+                    context.accounts.Remove(account);
+                    Console.WriteLine("The Account " + account.accountNumber + " has also been successfully removed.");
+                }
+            }
+            Console.WriteLine("Press any key to save changes and continue: ");
+            Console.ReadLine();
             
             context.SaveChanges();
-            Console.ReadLine();
             RestartApplication();
         }
 
