@@ -19,17 +19,6 @@ namespace BudgieEFUI
         {
             UserInput();
 
-            //LINQ SQL
-            //var query = from b in context.budgieUsers
-            //            where b.lastName == "Low"
-            //            select b;
-
-            //foreach (var budgie in query)
-            //{
-            //    Console.WriteLine(budgie.firstName + " " + budgie.lastName + " " + budgie.dob);
-            //}
-
-
             Console.ReadLine();
         }
 
@@ -119,18 +108,15 @@ namespace BudgieEFUI
                 firstName = (Console.ReadLine());
 
                 Console.WriteLine();
-                Console.WriteLine();
 
                 Console.WriteLine("Please enter your last name (e.g. Bowes): ");
                 lastName = (Console.ReadLine());
 
                 Console.WriteLine();
-                Console.WriteLine();
 
                 Console.WriteLine("Please enter your date of birth (e.g. DDMMYY (040191)): ");
                 dob = (Console.ReadLine());
 
-                Console.WriteLine();
                 Console.WriteLine();
 
                 Console.WriteLine("Please enter your new password: ");
@@ -193,6 +179,8 @@ namespace BudgieEFUI
 
             BudgieDBCFModel context = new BudgieDBCFModel();
             NewBudgieUser newUser = new NewBudgieUser(new BudgieUserRepository(new BudgieDBCFModel()));
+            BudgieUserRepository bur = new BudgieUserRepository(context);
+            AccountRepository ar = new AccountRepository(context);
 
             Console.WriteLine(); Console.WriteLine("--- Updating an existing Budgie User ---"); Console.WriteLine();
 
@@ -208,31 +196,30 @@ namespace BudgieEFUI
             Console.WriteLine("Please enter the id of the Budgie User you wish to update: ");
             id = Convert.ToInt32(Console.ReadLine());
 
-            BudgieUser budgieUserToUpdate = context.budgieUsers.Find(id);
-            Account accountToUpdate = context.accounts.Where(a => a.accountOwnerId == id).First(); //Help
+            //BudgieUser budgieUserToUpdate = context.budgieUsers.Find(id);
+            //Account accountToUpdate = context.accounts.Where(a => a.accountOwnerId == id).First();
 
-            Console.WriteLine();
             Console.WriteLine();
 
             Console.WriteLine("Updating first name (e.g. Ben): ");
             firstNameUpdate = (Console.ReadLine());
-            budgieUserToUpdate.firstName = firstNameUpdate;
+            //budgieUserToUpdate.firstName = firstNameUpdate;
 
-            Console.WriteLine();
             Console.WriteLine();
 
             Console.WriteLine("Updating last name (e.g. Bowes): ");
             lastNameUpdate = (Console.ReadLine());
-            budgieUserToUpdate.lastName = lastNameUpdate;
+            //budgieUserToUpdate.lastName = lastNameUpdate;
 
-            Console.WriteLine();
             Console.WriteLine();
 
             Console.WriteLine("Updating date of birth (e.g. DDMMYY (040191)): ");
             dobUpdate = (Console.ReadLine());
-            budgieUserToUpdate.dob = dobUpdate;
+            //budgieUserToUpdate.dob = dobUpdate;
 
-            accountToUpdate.accountNumber = (lastNameUpdate + dobUpdate);
+            bur.updateBudgieUser(id, firstNameUpdate, lastNameUpdate, dobUpdate);
+            ar.updateNewAccount(id, lastNameUpdate, dobUpdate);
+            //accountToUpdate.accountNumber = (lastNameUpdate + dobUpdate);
 
             Console.WriteLine("The following updates have been made: " + firstNameUpdate + " " + lastNameUpdate + " " + dobUpdate + " Account Number: " + (lastNameUpdate + dobUpdate));
             Console.WriteLine();
@@ -263,9 +250,7 @@ namespace BudgieEFUI
             Console.WriteLine();
 
             Console.WriteLine("Please enter the id of the Budgie User you wish to Remove: ");
-            id = Convert.ToInt32(Console.ReadLine());
-
-            
+            id = Convert.ToInt32(Console.ReadLine());           
 
             BudgieUser budgieUserToRemove = context.budgieUsers.Find(id);
             Account accountToRemove = context.accounts.Where(a => a.accountOwnerId == id).First();
@@ -279,35 +264,15 @@ namespace BudgieEFUI
             Console.WriteLine();
 
             Console.WriteLine("The Bank Account " + accountToRemove.accountNumber + " has also been successfully removed.");
-            ar.removeAccount(id);
+
+            //ar.removeAccount(id);     NOT REQUIRED, context.budgieUsers.Remove(budgieUserToRemove); will remove Account as well due to the link between FK and PK (accountOwnerId)
             //context.accounts.Remove(accountToRemove);
 
             Console.WriteLine();
-            
-            //Remove
-            //foreach (BudgieUser budgieUser in context.budgieUsers)
-            //{
-            //    if (budgieUser.id == id)
-            //    {
-            //        accountId = budgieUser.id;
-            //        context.budgieUsers.Remove(budgieUser);
-            //        Console.WriteLine("The Budgie User " + budgieUser.firstName + " " + budgieUser.lastName+ " " + budgieUser.emailAddress + " has been successfully removed.");
-            //    }
-            //}
 
-            //foreach (Account account in context.accounts)
-            //{
-            //    if (account.accountOwnerId == accountId)
-            //    {
-            //        context.accounts.Remove(account);
-            //        Console.WriteLine("The Account " + account.accountNumber + " has also been successfully removed.");
-            //    }
-            //}
-
-            Console.WriteLine("Press any key to save changes and continue: ");
+            Console.WriteLine("Press any key to continue: ");
             Console.ReadLine();
             
-            context.SaveChanges();
             RestartApplication();
         }
 
@@ -343,6 +308,37 @@ namespace BudgieEFUI
             }
         }
 
-        
+        static void LegacyCode()
+        {
+            //LINQ SQL
+            //var query = from b in context.budgieUsers
+            //            where b.lastName == "Low"
+            //            select b;
+
+            //foreach (var budgie in query)
+            //{
+            //    Console.WriteLine(budgie.firstName + " " + budgie.lastName + " " + budgie.dob);
+            //}
+
+            //Remove
+            //foreach (BudgieUser budgieUser in context.budgieUsers)
+            //{
+            //    if (budgieUser.id == id)
+            //    {
+            //        accountId = budgieUser.id;
+            //        context.budgieUsers.Remove(budgieUser);
+            //        Console.WriteLine("The Budgie User " + budgieUser.firstName + " " + budgieUser.lastName+ " " + budgieUser.emailAddress + " has been successfully removed.");
+            //    }
+            //}
+
+            //foreach (Account account in context.accounts)
+            //{
+            //    if (account.accountOwnerId == accountId)
+            //    {
+            //        context.accounts.Remove(account);
+            //        Console.WriteLine("The Account " + account.accountNumber + " has also been successfully removed.");
+            //    }
+            //}
+        }    
     }
 }
