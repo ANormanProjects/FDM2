@@ -26,7 +26,7 @@ namespace BudgieDatabaseLayer
         public void addNewAccount(Account newAccount)
         {
             context.accounts.Add(newAccount);
-            //flr.addNewAccount(new Account { accountNumber, balance, budget, accountOwnerId })
+
             context.SaveChanges();
         }
 
@@ -37,13 +37,14 @@ namespace BudgieDatabaseLayer
             context.SaveChanges();
         }
 
-        public void removeAccount(int id)
-        {
+        public void removeAccount(int id) //Only use to remove accounts only, Accounts will be deleted automatically if User accounts linked to them are removed.
+        {         
             context.accounts.Remove(context.accounts.Where(a => a.accountOwnerId == id).First());
+
+            context.SaveChanges();
 
             //Account accountToRemove = context.accounts.Where(a => a.accountOwnerId == id).First();
             //context.accounts.Remove(accountToRemove);
-            context.SaveChanges();
         }
     }
 }
