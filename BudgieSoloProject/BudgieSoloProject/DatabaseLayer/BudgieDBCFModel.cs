@@ -17,7 +17,7 @@ namespace BudgieDatabaseLayer
         {
         }
 
-        public DbSet<BudgieUser> budgieUsers { get; set; }
-        public DbSet<Account> accounts { get; set; }
+        public virtual DbSet<BudgieUser> budgieUsers { get; set; }
+        public virtual DbSet<Account> accounts { get; set; }
     }
 }
