@@ -90,7 +90,7 @@ namespace BudgieEFUI
         static void AddUser()
         {
             string firstName, lastName, emailAddress;
-            int dob;
+            int dob, newAccountId;
 
             BudgieDBCFModel context = new BudgieDBCFModel();
             NewBudgieUser newUser = new NewBudgieUser(new BudgieUserRepository(new BudgieDBCFModel()));
@@ -125,9 +125,23 @@ namespace BudgieEFUI
 
                 //Add
                 BudgieUser newBudgieUser = new BudgieUser() { firstName = firstName, lastName = lastName, emailAddress = emailAddress, dob = dob };
+               
                 context.budgieUsers.Add(newBudgieUser);
 
                 context.SaveChanges();
+
+                foreach (BudgieUser budgieUser in context.budgieUsers)
+                {
+                    if ( emailAddress == budgieUser.emailAddress )
+                    {
+                        newAccountId = budgieUser.id;
+                    }
+                }
+
+                Account newAccount = new Account() { accountNumber = lastName + dob, balance = 0, budget = 0, accountOwner = newAccountId };
+
+                context.accounts.Add(newAccount);
+
             }
             Console.ReadLine();
             RestartApplication();
