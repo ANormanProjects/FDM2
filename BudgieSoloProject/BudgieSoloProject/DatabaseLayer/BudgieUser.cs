@@ -11,6 +11,8 @@ namespace BudgieDatabaseLayer
 {
     public class BudgieUser
     {
+        private static readonly ILog logger = LogManager.GetLogger("BudgieUser.cs");
+
         public int id { get; set; }
 
         public string firstName { get; set; }
@@ -19,6 +21,6 @@ namespace BudgieDatabaseLayer
 
         public string emailAddress { get; set; }
 
-        public int dob { get; set; }
+        public string dob { get; set; }
     }
 }
