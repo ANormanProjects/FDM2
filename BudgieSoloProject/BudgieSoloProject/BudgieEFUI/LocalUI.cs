@@ -38,10 +38,10 @@ namespace BudgieEFUI
             char input = '0';
             Console.Clear();
 
-            while (input != 'Q')
+            while ( input != 'q' )
             {
                 StartUpMenu();
-                input = System.Console.ReadKey().KeyChar;
+                input = Console.ReadKey().KeyChar;
 
                 switch (input)
                 {
@@ -49,25 +49,26 @@ namespace BudgieEFUI
                         System.Console.WriteLine("Invalid Input");
                         continue;
 
-                    case 'Q':
+                    case 'q':
+                        Environment.Exit(0);
                         continue;
 
-                    case 'L':
+                    case 'l':
                         Console.WriteLine();
                         ListAllUsers();
                         continue;
 
-                    case 'A':
+                    case 'a':
                         Console.WriteLine();
                         AddUser();
                         continue;
 
-                    case 'U':
+                    case 'u':
                         Console.WriteLine();
                         UpdateUser();
                         continue;
 
-                    case 'R':
+                    case 'r':
                         Console.WriteLine();
                         RemoveUser();
                         continue;
@@ -97,6 +98,8 @@ namespace BudgieEFUI
             BudgieDBCFModel context = new BudgieDBCFModel();
             NewBudgieUser newUser = new NewBudgieUser(new BudgieUserRepository(new BudgieDBCFModel()));
 
+            Console.WriteLine(); Console.WriteLine("--- Creating a new Budgie User ---"); Console.WriteLine();
+
             Console.WriteLine("Please enter your email address (e.g. benkentarobowes@gmail.com): ");
             emailAddress = (Console.ReadLine());
             bool isInDatabase = newUser.CheckForDuplicateEmail(emailAddress);
@@ -107,6 +110,9 @@ namespace BudgieEFUI
             }
             else
             {
+                
+                Console.WriteLine();
+
                 Console.WriteLine("Please enter your first name (e.g. Ben): ");
                 firstName = (Console.ReadLine());
 
@@ -129,6 +135,7 @@ namespace BudgieEFUI
                 BudgieUser newBudgieUser = new BudgieUser() { firstName = firstName, lastName = lastName, emailAddress = emailAddress, dob = dob };
                
                 context.budgieUsers.Add(newBudgieUser);
+                
 
                 context.SaveChanges();
 
@@ -168,6 +175,8 @@ namespace BudgieEFUI
             BudgieDBCFModel context = new BudgieDBCFModel();
             NewBudgieUser newUser = new NewBudgieUser(new BudgieUserRepository(new BudgieDBCFModel()));
 
+            Console.WriteLine(); Console.WriteLine("--- Updating an existing Budgie User ---"); Console.WriteLine();
+
             Console.WriteLine("List of all Budgie Users currently registered in the system: ");
             Console.WriteLine("BudgieUser ID | First Name | Last Name | Email Address | Date of Birth");
             foreach (BudgieUser budgieUser in context.budgieUsers)
@@ -206,6 +215,9 @@ namespace BudgieEFUI
 
             accountToUpdate.accountNumber = (lastNameUpdate + dobUpdate);
 
+            Console.WriteLine("The following updates have been made: " + firstNameUpdate + " " + lastNameUpdate + " " + dobUpdate + " Account Number: " + (lastNameUpdate + dobUpdate));
+            Console.WriteLine();
+
             Console.WriteLine("Press any key to save changes and continue: ");
             Console.ReadLine();
             context.SaveChanges();
@@ -214,34 +226,59 @@ namespace BudgieEFUI
 
         static void RemoveUser()
         {
-            string emailAddress;
-            int accountId = 0;
+            int id;
 
             BudgieDBCFModel context = new BudgieDBCFModel();
 
-            Console.WriteLine("Please enter the email address of the account you wish to remove (e.g. benkentarobowes@gmail.com): ");
-            emailAddress = (Console.ReadLine());
-            
-            
-            //Remove
+            Console.WriteLine(); Console.WriteLine("--- Removing an existing Budgie User ---"); Console.WriteLine();
+
+            Console.WriteLine("List of all Budgie Users currently registered in the system: ");
+            Console.WriteLine("BudgieUser ID | First Name | Last Name | Email Address | Date of Birth");
             foreach (BudgieUser budgieUser in context.budgieUsers)
             {
-                if (budgieUser.emailAddress == emailAddress)
-                {
-                    accountId = budgieUser.id;
-                    context.budgieUsers.Remove(budgieUser);
-                    Console.WriteLine("The Budgie User " + budgieUser.firstName + " " + budgieUser.lastName+ " " + budgieUser.emailAddress + " has been successfully removed.");
-                }
+                Console.WriteLine(budgieUser.id + " " + budgieUser.firstName + " " + budgieUser.lastName + " " + budgieUser.emailAddress + " " + budgieUser.dob);
             }
 
-            foreach (Account account in context.accounts)
-            {
-                if (account.accountOwnerId == accountId)
-                {
-                    context.accounts.Remove(account);
-                    Console.WriteLine("The Account " + account.accountNumber + " has also been successfully removed.");
-                }
-            }
+            Console.WriteLine();
+
+            Console.WriteLine("Please enter the id of the Budgie User you wish to Remove: ");
+            id = Convert.ToInt32(Console.ReadLine());
+
+            BudgieUser budgieUserToRemove = context.budgieUsers.Find(id);
+            Account accountToRemove = context.accounts.Where(a => a.accountOwnerId == id).First();
+
+            Console.WriteLine();
+
+            Console.WriteLine("The Budgie User " + budgieUserToRemove.firstName + " " + budgieUserToRemove.lastName + " " + budgieUserToRemove.emailAddress + " has been successfully removed.");
+            context.budgieUsers.Remove(budgieUserToRemove);
+
+            Console.WriteLine();
+
+            Console.WriteLine("The Bank Account " + accountToRemove.accountNumber + " has also been successfully removed.");
+            context.accounts.Remove(accountToRemove);
+
+            Console.WriteLine();
+            
+            //Remove
+            //foreach (BudgieUser budgieUser in context.budgieUsers)
+            //{
+            //    if (budgieUser.id == id)
+            //    {
+            //        accountId = budgieUser.id;
+            //        context.budgieUsers.Remove(budgieUser);
+            //        Console.WriteLine("The Budgie User " + budgieUser.firstName + " " + budgieUser.lastName+ " " + budgieUser.emailAddress + " has been successfully removed.");
+            //    }
+            //}
+
+            //foreach (Account account in context.accounts)
+            //{
+            //    if (account.accountOwnerId == accountId)
+            //    {
+            //        context.accounts.Remove(account);
+            //        Console.WriteLine("The Account " + account.accountNumber + " has also been successfully removed.");
+            //    }
+            //}
+
             Console.WriteLine("Press any key to save changes and continue: ");
             Console.ReadLine();
             
@@ -265,6 +302,7 @@ namespace BudgieEFUI
 
         static void RestartApplication()
         {
+            Console.WriteLine();
             Console.WriteLine("Would you like to continue? (Please enter y (yes) or n (no))");
             ConsoleKeyInfo input = Console.ReadKey();
             Console.WriteLine();
