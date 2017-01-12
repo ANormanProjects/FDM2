@@ -64,6 +64,10 @@
     <Compile Include="Migrations\201701111313411_initial.Designer.cs">
       <DependentUpon>201701111313411_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701121003502_accountOwnerId.cs" />
+    <Compile Include="Migrations\201701121003502_accountOwnerId.Designer.cs">
+      <DependentUpon>201701121003502_accountOwnerId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701111313411_initial.resx">
       <DependentUpon>201701111313411_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701121003502_accountOwnerId.resx">
+      <DependentUpon>201701121003502_accountOwnerId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

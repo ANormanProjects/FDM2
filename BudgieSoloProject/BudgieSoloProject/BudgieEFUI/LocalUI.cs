@@ -90,7 +90,7 @@ namespace BudgieEFUI
         static void AddUser()
         {
             string firstName, lastName, emailAddress;
-            int dob, newAccountId;
+            int dob, newAccountId = 0;
 
             BudgieDBCFModel context = new BudgieDBCFModel();
             NewBudgieUser newUser = new NewBudgieUser(new BudgieUserRepository(new BudgieDBCFModel()));
@@ -130,6 +130,11 @@ namespace BudgieEFUI
 
                 context.SaveChanges();
 
+                Console.WriteLine("New BudgieUser has been successfully registered: Name = " + newBudgieUser.firstName + " " + newBudgieUser.lastName);
+                Console.WriteLine();
+                Console.WriteLine("Automatically creating a new bank account...");
+                Console.WriteLine();
+
                 foreach (BudgieUser budgieUser in context.budgieUsers)
                 {
                     if ( emailAddress == budgieUser.emailAddress )
@@ -138,9 +143,15 @@ namespace BudgieEFUI
                     }
                 }
 
-                Account newAccount = new Account() { accountNumber = lastName + dob, balance = 0, budget = 0, accountOwner = newAccountId };
+                Account newAccount = new Account() { accountNumber = lastName + dob, balance = 0, budget = 0, accountOwnerId = newAccountId };
 
                 context.accounts.Add(newAccount);
+
+                Console.WriteLine("Your new account has been successfully created: Account Number = " + newAccount.accountNumber);
+                Console.WriteLine();
+                Console.WriteLine("You may log in and start smart budgeting your finances today! Thank you for joining Budgie.");
+
+                context.SaveChanges();
 
             }
             Console.ReadLine();
