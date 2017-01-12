@@ -1,4 +1,5 @@
-﻿using BudgieDatabaseLayer;
+﻿using log4net;
+using BudgieDatabaseLayer;
 using BudgieLogic;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace BudgieEFUI
 {
     class LocalUI
     {
+        private static readonly ILog logger = LogManager.GetLogger("LocalUI.cs");
 
         static void Main(string[] args)
         {
