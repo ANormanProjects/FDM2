@@ -6,7 +6,7 @@ using System.Linq;
 using System.Collections.Generic;
 using BudgieDatabaseLayer;
 
-namespace BudgieUsersRepositoryTests
+namespace BudgieEntityFramework.Tests
 {
     [TestClass]
     public class BURTests
