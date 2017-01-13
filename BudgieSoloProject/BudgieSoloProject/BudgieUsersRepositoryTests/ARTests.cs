@@ -54,5 +54,31 @@ namespace BudgieUsersRepositoryTests
             //ASSERT
             CollectionAssert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Test_AddNewAccount_RunsAddAnAccountToDatabase_WhenCalledWithAnAccount()
+        {
+            //ARRANGE
+            Mock<Account> bb = new Mock<Account>();
+
+            var testData = new List<Account>().AsQueryable();
+
+            Mock<DbSet<Account>> dbSetMock = new Mock<DbSet<Account>>();
+            dbSetMock.As<IQueryable<Account>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Account>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Account>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Account>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator);
+
+            var contextMock = new Mock<BudgieDBCFModel>();
+            contextMock.Setup(c => c.accounts).Returns(dbSetMock.Object);
+
+            AccountRepository classUnderTest = new AccountRepository(contextMock.Object);
+
+            //ACT
+            classUnderTest.addNewAccount(bb.Object);
+
+            //ASSERT
+            dbSetMock.Verify(c => c.Add(It.IsAny<Account>()), Times.Once);
+        }
     }
 }

@@ -11,6 +11,13 @@ namespace BudgieEntityFramework.Tests
     [TestClass]
     public class BURTests
     {
+        Mock<DbSet<BudgieUser>> dbSetMock;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            dbSetMock = new Mock<DbSet<BudgieUser>>();
+        }
         [TestMethod]
         public void Test_GetAllBrokers_ReturnsAllBrokers()
         {
@@ -35,8 +42,6 @@ namespace BudgieEntityFramework.Tests
                 sn.Object
 
             }.AsQueryable();
-
-            Mock<DbSet<BudgieUser>> dbSetMock = new Mock<DbSet<BudgieUser>>();
             dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.Provider).Returns(testData.Provider);
             dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.Expression).Returns(testData.Expression);
             dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.ElementType).Returns(testData.ElementType);
@@ -53,5 +58,90 @@ namespace BudgieEntityFramework.Tests
             //ASSERT
             CollectionAssert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Test_AddNewBudgieUser_CallsAddABudgieUserToDatabase_AndSavesChangesOnContext()
+        {
+            //ARRANGE
+            Mock<BudgieUser> bb = new Mock<BudgieUser>();
+
+            var testData = new List<BudgieUser>().AsQueryable();
+            dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator);
+
+            var contextMock = new Mock<BudgieDBCFModel>();
+            contextMock.Setup(c => c.budgieUsers).Returns(dbSetMock.Object);
+
+            BudgieUserRepository classUnderTest = new BudgieUserRepository(contextMock.Object);
+
+            //ACT
+            classUnderTest.addNewBudgieUser(bb.Object);
+
+            //ASSERT
+            dbSetMock.Verify(c => c.Add(It.IsAny<BudgieUser>()), Times.Once);
+            contextMock.Verify(c => c.SaveChanges(), Times.Once);
+        }
+
+        [TestMethod]
+        public void Test_UpdateBudgieUser_RunsUpdateBudgieUserToDatabase_AndSaveChangesOnContext()
+        {
+            //ARRANGE 
+            Mock<BudgieUser> bb = new Mock<BudgieUser>();
+
+            bb.Setup(c => c.id).Returns(1);
+
+            var testData = new List<BudgieUser> { bb.Object }.AsQueryable();
+            dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator);
+
+            var contextMock = new Mock<BudgieDBCFModel>();
+            contextMock.Setup(c => c.budgieUsers).Returns(dbSetMock.Object);
+
+            BudgieUserRepository burTest = new BudgieUserRepository(contextMock.Object);
+            dbSetMock.Setup(c => c.Find(1)).Returns(bb.Object);
+
+            //ACT
+            bb.SetupSet(c => c.firstName = "Ben").Verifiable();
+
+            //ASSERT
+            dbSetMock.Verify(c => c.Find(1), Times.Once);
+            bb.VerifySet(c => c.firstName = "Ben");
+            contextMock.Verify(c => c.SaveChanges(), Times.Once);
+        }
+
+        [TestMethod]
+        public void Test_RemoveBudgieUser_CallsRemoveABudgieUserToDatabase_AndSaveChangesOnContext()
+        {
+            //ARRANGE
+            //ARRANGE 
+            Mock<BudgieUser> bb = new Mock<BudgieUser>();
+
+            bb.Setup(c => c.id).Returns(1);
+
+            var testData = new List<BudgieUser> { bb.Object }.AsQueryable();
+            dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<BudgieUser>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator);
+
+            var contextMock = new Mock<BudgieDBCFModel>();
+            contextMock.Setup(c => c.budgieUsers).Returns(dbSetMock.Object);
+
+            BudgieUserRepository burTest = new BudgieUserRepository(contextMock.Object);
+            dbSetMock.Setup(c => c.Find(1)).Returns(bb.Object);
+
+            //ACT
+            burTest.removeBudgieUser(1);
+
+            //ASSERT
+            dbSetMock.Verify(c => c.Find(1), Times.Once);
+            dbSetMock.Verify(c => c.Remove(bb.Object), Times.Once);
+            contextMock.Verify(c => c.SaveChanges(), Times.Once);
+        }
+
     }
 }
