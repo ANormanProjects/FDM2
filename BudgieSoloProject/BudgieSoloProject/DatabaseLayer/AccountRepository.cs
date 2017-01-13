@@ -32,19 +32,50 @@ namespace BudgieDatabaseLayer
 
         public void updateNewAccount(int idUpdate, string lastNameUpdate, string dobUpdate)
         {
-            context.accounts.Where(a => a.accountOwnerId == idUpdate).First().accountNumber = (lastNameUpdate + dobUpdate);
+
+            List<Account> accounts = GetAllAccounts();
+            int actualUpdateId = 0;
+
+            foreach (Account account in accounts)
+            {
+                if (account.accountOwnerId == idUpdate)
+                {
+                    actualUpdateId = account.id;
+                    break;
+                }
+            }
+
+            context.accounts.Find(actualUpdateId).accountNumber = (lastNameUpdate + dobUpdate);
+            
+            //context.accounts.Where(a => a.accountOwnerId == idUpdate).First().accountNumber = (lastNameUpdate + dobUpdate);
 
             context.SaveChanges();
         }
 
         public void removeAccount(int idToRemove) //Only use to remove accounts only, Accounts will be deleted automatically if User accounts linked to them are removed.
         {         
-            context.accounts.Remove(context.accounts.Where(a => a.accountOwnerId == idToRemove).First());
+            //context.accounts.Remove(context.accounts.Where(a => a.accountOwnerId == idToRemove).First());
 
-            context.SaveChanges();
+            //context.SaveChanges();
 
             //Account accountToRemove = context.accounts.Where(a => a.accountOwnerId == id).First();
             //context.accounts.Remove(accountToRemove);
+
+            List<Account> accounts = GetAllAccounts();
+            int actualRemoveId = 0;
+
+            foreach (Account account in accounts)
+            {
+                if(account.accountOwnerId == idToRemove)
+                {
+                    actualRemoveId = account.id;
+                    break;
+                }                 
+            }
+
+            context.accounts.Remove(context.accounts.Find(actualRemoveId));
+
+            context.SaveChanges();
         }
     }
 }

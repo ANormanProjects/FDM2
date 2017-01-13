@@ -11,15 +11,15 @@ namespace BudgieDatabaseLayer
     {
         private static readonly ILog logger = LogManager.GetLogger("Account.cs");
 
-        public int id { get; set; }
+        public virtual int id { get; set; }
 
-        public string accountNumber { get; set; }
+        public virtual string accountNumber { get; set; }
 
         public decimal balance { get; set; }
 
         public decimal budget { get; set; }
 
-        public int accountOwnerId { get; set; }
+        public virtual int accountOwnerId { get; set; }
 
         public BudgieUser accountOwner { get; set; }
     }

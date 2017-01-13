@@ -17,11 +17,11 @@ namespace BudgieDatabaseLayer
 
         public virtual string firstName { get; set; }
 
-        public string lastName { get; set; }
+        public virtual string lastName { get; set; }
 
         public string emailAddress { get; set; }
 
-        public string dob { get; set; }
+        public virtual string dob { get; set; }
 
         public string password { get; set; }
     }
