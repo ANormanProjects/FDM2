@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BudgieDatabaseLayer
 {
-    public class BudgieUserRepository
+    public class BudgieUserRepository : IBudgieUserRepository
     {
         private static readonly ILog logger = LogManager.GetLogger("BudgieUserRepository.cs");
 
@@ -25,7 +25,7 @@ namespace BudgieDatabaseLayer
             context = _context;
         }
 
-        public virtual List<BudgieUser> GetAllBudgieUsers()
+        public List<BudgieUser> GetAllBudgieUsers()
         {
             return context.budgieUsers.ToList();
         }
@@ -37,12 +37,12 @@ namespace BudgieDatabaseLayer
             context.SaveChanges();
         }
 
-        public void updateBudgieUser(int id, string firstNameUpdate, string lastNameUpdate, string dobUpdate)
+        public void updateBudgieUser(int idUpdate, string firstNameUpdate, string lastNameUpdate, string dobUpdate)
         {
 
-            context.budgieUsers.Find(id).firstName = firstNameUpdate;
-            context.budgieUsers.Find(id).lastName = lastNameUpdate;
-            context.budgieUsers.Find(id).dob = dobUpdate;
+            context.budgieUsers.Find(idUpdate).firstName = firstNameUpdate;
+            context.budgieUsers.Find(idUpdate).lastName = lastNameUpdate;
+            context.budgieUsers.Find(idUpdate).dob = dobUpdate;
 
             context.SaveChanges();
 
@@ -52,9 +52,9 @@ namespace BudgieDatabaseLayer
             //budgieUserToUpdate.dob = dobUpdate;
         }
 
-        public void removeBudgieUser(int id)
+        public void removeBudgieUser(int idToRemove)
         {
-            context.budgieUsers.Remove(context.budgieUsers.Find(id));
+            context.budgieUsers.Remove(context.budgieUsers.Find(idToRemove));
 
             context.SaveChanges();
         }

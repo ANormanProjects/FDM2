@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BudgieDatabaseLayer
 {
-    public class AccountRepository
+    public class AccountRepository : IAccountRepository
     {
         private static readonly ILog logger = LogManager.GetLogger("AccountRepository.cs");
 
@@ -30,16 +30,16 @@ namespace BudgieDatabaseLayer
             context.SaveChanges();
         }
 
-        public void updateNewAccount(int id, string lastNameUpdate, string dobUpdate)
+        public void updateNewAccount(int idUpdate, string lastNameUpdate, string dobUpdate)
         {
-            context.accounts.Where(a => a.accountOwnerId == id).First().accountNumber = (lastNameUpdate + dobUpdate);
+            context.accounts.Where(a => a.accountOwnerId == idUpdate).First().accountNumber = (lastNameUpdate + dobUpdate);
 
             context.SaveChanges();
         }
 
-        public void removeAccount(int id) //Only use to remove accounts only, Accounts will be deleted automatically if User accounts linked to them are removed.
+        public void removeAccount(int idToRemove) //Only use to remove accounts only, Accounts will be deleted automatically if User accounts linked to them are removed.
         {         
-            context.accounts.Remove(context.accounts.Where(a => a.accountOwnerId == id).First());
+            context.accounts.Remove(context.accounts.Where(a => a.accountOwnerId == idToRemove).First());
 
             context.SaveChanges();
 
