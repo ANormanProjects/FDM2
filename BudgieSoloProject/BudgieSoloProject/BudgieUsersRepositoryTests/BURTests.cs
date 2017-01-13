@@ -106,10 +106,17 @@ namespace BudgieEntityFramework.Tests
 
             //ACT
             bb.SetupSet(c => c.firstName = "Ben").Verifiable();
+            bb.SetupSet(c => c.lastName = "Bowes").Verifiable();
+            bb.SetupSet(c => c.dob = "040191").Verifiable();
+
+
+            burTest.updateBudgieUser(1, "Ben", "Bowes", "040191");
 
             //ASSERT
-            dbSetMock.Verify(c => c.Find(1), Times.Once);
+            dbSetMock.Verify(c => c.Find(1));
             bb.VerifySet(c => c.firstName = "Ben");
+            bb.VerifySet(c => c.lastName = "Bowes");
+            bb.VerifySet(c => c.dob = "040191");
             contextMock.Verify(c => c.SaveChanges(), Times.Once);
         }
 
