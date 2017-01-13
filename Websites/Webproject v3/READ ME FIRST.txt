@@ -1,0 +1,44 @@
+USING THE IIS WEBSERVER
+-----------------------
+
+Setting up
+----------
+
+1. Navigate to 'C:\Users\user.name\My Documents'.
+2. In this location, copy and paste the 'Web Application Design' folder from inside the ZIP file
+	
+Starting the Server
+-------------------
+
+1. Navigate to 'C:\Users\user.name\WAD'
+2. Find the file named 'launchWebSite' and double click on it.
+	This will run a script that will start the webserver for you and load your website.
+	
+Note
+	You will get a windows command prompt when you run the file. If the command prompt 
+	disappears then you have not got the setup correct and the server is unable to find your
+	website.
+
+	If the command prompt does not disappear then you are ready to go. To shut down the server 
+	type in 'q' into the command prompt.
+	
+	
+Where to put your website pages
+-------------------------------
+
+1. Once you have the sever up and running you can start hosting your website.
+	
+2. The web server is configured to look for changes to your website automatically,
+	therefore you do not need to keep restarting it.
+	
+3. The server is also configured to look in ''C:\Users\user.name\WAD\WebSite',
+	to find your files. Place any new web pages, css, js and xml files in here if you want the server to
+	host them.
+	
+Note
+	You can group the types of files by using folders.
+	
+Viewing your website
+--------------------
+
+1. To view your web site you will need to type 'localhost:7777/page_name.html' into the address bar.

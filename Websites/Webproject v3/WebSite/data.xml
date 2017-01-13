@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<accounts xmlns="usernamesNamespace" 
+		  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xsi:SchemaLocation="data.xsd"> <!-- links to the XSD file -->
+	<account>
+		<id>benbowes91</id>
+		<pass>hello123</pass>
+	</account>
+	
+	<account>
+		<id>spencernewton92</id>
+		<pass>spenceristhebest</pass>
+	</account>
+
+	<account>
+		<id>andrewnorman94</id>
+		<pass>password123</pass>
+	</account>
+</accounts>
