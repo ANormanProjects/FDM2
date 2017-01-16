@@ -6821,7 +6821,7 @@ body, html {
 
 .parallax1 {
     /* The image used */
-    background-image: url('creditcard.jpg');
+    background-image: url('~/Content/creditcard.jpg');
 
     /* Full height */
     height: 50%; 
@@ -6835,7 +6835,7 @@ body, html {
 
 .parallax2 {
     /* The image used */
-    background-image: url('phonefinance.jpg');
+    background-image: url('~/Content/phonefinance.jpg');
 
     /* Full height */
     height: 50%; 
@@ -6849,7 +6849,7 @@ body, html {
 
 .parallax3 {
     /* The image used */
-    background-image: url('codecomputer.jpg');
+    background-image: url('~/Content/codecomputer.jpg');
 
     /* Full height */
     height: 50%; 
@@ -6863,7 +6863,7 @@ body, html {
 
 .parallax4 {
     /* The image used */
-    background-image: url('shopping.jpg');
+    background-image: url('~/Content/shopping.jpg');
 
     /* Full height */
     height: 50%; 
@@ -6877,7 +6877,7 @@ body, html {
 
 .parallax5 {
     /* The image used */
-    background-image: url('blossom.jpg');
+    background-image: url('~/Content/blossom.jpg');
 
     /* Full height */
     height: 50%; 
@@ -6891,7 +6891,7 @@ body, html {
 
 .parallax6 {
     /* The image used */
-    background-image: url('relax.jpg');
+    background-image: url('~/Content/relax.jpg');
 
     /* Full height */
     height: 50%; 
@@ -6905,7 +6905,7 @@ body, html {
 
 .parallax7 {
     /* The image used */
-    background-image: url('call.jpg');
+    background-image: url('~/Content/call.jpg');
 
     /* Full height */
     height: 50%; 
@@ -6919,7 +6919,7 @@ body, html {
 
 .parallax8 {
     /* The image used */
-    background-image: url('iphone.jpg');
+    background-image: url('~/Content/iphone.jpg');
 
     /* Full height */
     height: 50%; 
@@ -6933,7 +6933,7 @@ body, html {
 
 .parallax9 {
     /* The image used */
-    background-image: url('cardcashpocket.jpg');
+    background-image: url('~/Content/cardcashpocket.jpg');
 
     /* Full height */
     height: 50%; 
@@ -6947,7 +6947,7 @@ body, html {
 
 .parallax10 {
     /* The image used */
-    background-image: url('safe.jpg');
+    background-image: url('~/Content/safe.jpg');
 
     /* Full height */
     height: 50%; 
@@ -6961,7 +6961,7 @@ body, html {
 
 .parallax11 {
     /* The image used */
-    background-image: url('shardm8.jpg');
+    background-image: url('~/Content/shardm8.jpg');
 
     /* Full height */
     height: 50%; 
@@ -7215,7 +7215,7 @@ body
 /* div1 */
 #div1
 {
-	background-image: url("earthnight.jpg");
+	background-image: url("~/Content/earthnight.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-color: black;
