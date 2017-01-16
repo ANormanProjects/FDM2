@@ -59,7 +59,6 @@ namespace BudgieDatabaseLayer
                 if(account.accountOwnerId == idToRemove)
                 {
                     actualRemoveId = account.id;
-                    break;
                 }                 
             }
 
@@ -78,7 +77,6 @@ namespace BudgieDatabaseLayer
                 if (account.accountOwnerId == idToPrintBalance)
                 {
                     targetIdToPrintBalance = account.id;
-                    break;
                 }
             }
 
@@ -97,7 +95,6 @@ namespace BudgieDatabaseLayer
                 if (account.accountOwnerId == idToPrintBudget)
                 {
                     targetIdToPrintBudget = account.id;
-                    break;
                 }
             }
 
@@ -115,7 +112,6 @@ namespace BudgieDatabaseLayer
                 if (account.accountOwnerId == idToWithdraw)
                 {
                     targetIdToWithdraw = account.id;
-                    break;
                 }
             }
             
@@ -144,7 +140,6 @@ namespace BudgieDatabaseLayer
                 if (account.accountOwnerId == idToDeposit)
                 {
                     targetIdToDeposit = account.id;
-                    break;
                 }
             }
 
@@ -164,7 +159,6 @@ namespace BudgieDatabaseLayer
                 if (account.accountOwnerId == idToTransferFrom)
                 {
                     targetIdToTransferFrom = account.id;
-                    break;
                 }
             }
 
@@ -173,7 +167,6 @@ namespace BudgieDatabaseLayer
                 if (account.accountOwnerId == idToTransferTo)
                 {
                     targetIdToTransferTo = account.id;
-                    break;
                 }
             }
 
