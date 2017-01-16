@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgieServiceLayer", "Budgi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgieEntityFramework.Tests", "BudgieUsersRepositoryTests\BudgieEntityFramework.Tests.csproj", "{18642253-F727-4FD8-B288-0CC56E6CF0E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.NET.Budgie", "ASP.NET.Budgie\ASP.NET.Budgie.csproj", "{654BB805-0D50-46C3-83D7-567174B25229}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -47,6 +49,10 @@ Global
 		{18642253-F727-4FD8-B288-0CC56E6CF0E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18642253-F727-4FD8-B288-0CC56E6CF0E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18642253-F727-4FD8-B288-0CC56E6CF0E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{654BB805-0D50-46C3-83D7-567174B25229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{654BB805-0D50-46C3-83D7-567174B25229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{654BB805-0D50-46C3-83D7-567174B25229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{654BB805-0D50-46C3-83D7-567174B25229}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

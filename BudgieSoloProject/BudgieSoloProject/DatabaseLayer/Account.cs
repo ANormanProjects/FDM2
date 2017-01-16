@@ -15,9 +15,9 @@ namespace BudgieDatabaseLayer
 
         public virtual string accountNumber { get; set; }
 
-        public decimal balance { get; set; }
+        public virtual decimal balance { get; set; }
 
-        public decimal budget { get; set; }
+        public virtual decimal budget { get; set; }
 
         public virtual int accountOwnerId { get; set; }
 
