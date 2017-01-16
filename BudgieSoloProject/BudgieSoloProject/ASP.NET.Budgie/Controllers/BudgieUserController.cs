@@ -10,8 +10,8 @@ namespace ASP.NET.Budgie.Controllers
     public class BudgieUserController : Controller
     {
         BudgieDBCFModel buc = new BudgieDBCFModel();
-
         BudgieUserRepository budb;
+
         // GET: BudgieUser
         public ActionResult Index()
         {
