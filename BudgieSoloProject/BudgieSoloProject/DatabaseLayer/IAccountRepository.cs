@@ -15,5 +15,17 @@ namespace BudgieDatabaseLayer
         void updateNewAccount(int idUpdate, string lastNameUpdate, string dobUpdate);
 
         void removeAccount(int idToRemove);
+
+        decimal printBalance(int idToPrintBalance);
+
+        decimal printBudget(int idToPrintBudget);
+
+        bool withdrawMoney(int idToWithdraw, decimal withdrawBalance);
+
+        void depositMoney(int idToDeposit, decimal depositBalance);
+
+        bool transferMoney(int idToTransferFrom, int idToTransferTo, decimal amountToTransfer);
+
+        void setBudget(int idToSetBudget, decimal amountToBudget);
     }
 }
