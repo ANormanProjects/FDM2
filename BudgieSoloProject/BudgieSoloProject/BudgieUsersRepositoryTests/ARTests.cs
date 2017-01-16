@@ -97,6 +97,7 @@ namespace BudgieUsersRepositoryTests
 
             bb.Setup(c => c.id).Returns(1);
             bb.Setup(c => c.accountOwnerId).Returns(1);
+            bb.SetupSet(c => c.accountNumber = "HarryPotter").Verifiable();
 
             var testData = new List<Account> { bb.Object }.AsQueryable();
             Mock<DbSet<Account>> dbSetMock = new Mock<DbSet<Account>>();
@@ -112,7 +113,7 @@ namespace BudgieUsersRepositoryTests
             dbSetMock.Setup(c => c.Find(1)).Returns(bb.Object);
 
             //ACT
-            bb.SetupSet(c => c.accountNumber = "HarryPotter").Verifiable();
+
             arTest.updateNewAccount(1, "Bowes", "040191");
 
             //ASSERT
@@ -320,6 +321,38 @@ namespace BudgieUsersRepositoryTests
             //ASSERT
             dbSetMock.Verify(c => c.Find(1));
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_SetBudget_CallsDatabaseToSetBudget_AndDIsplaysNewBudget()
+        {
+            //ARRANGE
+            Mock<Account> bb = new Mock<Account>();
+
+            bb.Setup(c => c.id).Returns(1);
+            bb.Setup(c => c.accountOwnerId).Returns(1);
+            bb.Setup(c => c.budget).Returns(0);
+
+            var testData = new List<Account> { bb.Object }.AsQueryable();
+            dbSetMock.As<IQueryable<Account>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Account>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Account>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Account>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator);
+
+            var contextMock = new Mock<BudgieDBCFModel>();
+            contextMock.Setup(c => c.accounts).Returns(dbSetMock.Object);
+
+            AccountRepository arTest = new AccountRepository(contextMock.Object);
+            dbSetMock.Setup(c => c.Find(1)).Returns(bb.Object);
+
+            //ACT
+            arTest.setBudget(1, 101);
+            
+
+            //ASSERT
+            dbSetMock.Verify(c => c.Find(1));
+            bb.VerifySet(c => c.budget = 101, Times.Once);
+            contextMock.Verify(c => c.SaveChanges(), Times.Once);
         }
 
     }

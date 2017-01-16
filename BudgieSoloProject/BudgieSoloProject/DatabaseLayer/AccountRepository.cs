@@ -213,6 +213,8 @@ namespace BudgieDatabaseLayer
             _amountToBudget = amountToBudget;
 
             context.accounts.Find(targetIdToSetBudget).budget += _amountToBudget;
+
+            context.SaveChanges();
         }
     }
 
