@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BudgieDatabaseLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,14 @@ namespace ASP.NET.Budgie.Controllers
 {
     public class BudgieAccountController : Controller
     {
+        BudgieDBCFModel buc = new BudgieDBCFModel();
+        AccountRepository ardb;
+        
         // GET: BudgieAccount
         public ActionResult Index()
         {
-            return View();
+            ardb = new AccountRepository(buc);
+            return View(ardb.GetAllAccounts());
         }
     }
 }
