@@ -183,7 +183,6 @@ namespace BudgieDatabaseLayer
                 if (account.accountOwnerId == idToSetBudget)
                 {
                     targetIdToSetBudget = account.id;
-                    break;
                 }
             }
             _amountToBudget = amountToBudget;
