@@ -142,12 +142,9 @@ namespace BudgieDatabaseLayer
                     targetIdToDeposit = account.id;
                 }
             }
-
             context.accounts.Find(targetIdToDeposit).balance += depositBalance;
-
             context.SaveChanges();
         }
-
         public bool transferMoney(int idToTransferFrom, int idToTransferTo, decimal amountToTransfer)
         {
             int targetIdToTransferFrom = 0;
