@@ -2,30 +2,132 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Lobster" rel="stylesheet">
+    <title>@ViewBag.Title - Budgie</title>
+    @Styles.Render("~/Content/css", "~/Content/Style.css")
+    @Scripts.Render("~/bundles/BudgieScript.js")
+</head>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<body>
+    @*<!--TOP NAV BAR-->
+        <div id="divNB">
+            <ul class="topnav" id="myTopnav">
+                <li><img src="budgie.png" id="budgie" /></li>
+                <li><h1 id="Budgieheader">Budgie</h1></li> <!-- header 1 -->
+                <li><a class="active" href="Index.html">Home</a></li>
+                <li><a href="#div3">About</a></li>
+                <li class="dropdown">
+                    <a href="NA.html" class="dropbtn">Account</a>
+                    <div class="dropdown-content">
+                        <a href="NA.html">Budgets</a>
+                        <a href="NA.html">Statistics</a>
+                        <a href="NA.html">Banks</a>
+                    </div>
+                <li><a href="Contact.html">Contact</a></li>
+                <li class="icon">
+                    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+                </li>
+                <li class="dropdown">
+                    <div class="dropdown">
+                        <a class="dropbtn">Login</a>
+                        <div class="dropdown-content">
+                            <a id="signupf">
+                                <form id="login1" class="loginBar">
+                                    <input id="id" class="input" type="text" placeholder="Username" />
+                                    <input id="pass" class="input" type="password" placeholder="Password" />
+                                    <input id="b1" class="loginBarbtn" type="button" value="Login" onclick="pasuser()" />
+                                </form>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- Defines an HTML form for user input -->
+        </div>*@
+
+    <!--BODY OF THE PAGE-->
+    <div id="div1">
+        <h2>At last, a solution to budgeting as smart and effortless as your phone</h2>
+        <div id="div1txt">
+            <p>Built for any smartphone, this is budgeting like never before. Simple to use, with instant updates to your fully customisable allowances, giving smart-reactive notifications as you spend your hard-earned funds.</p>
+            <p>Budgie will always have your back, no matter where you are on the planet.</p>
+            <img id="appstore" src="~/Content/appstore.svg" />
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="parallax1"></div>
+    <div id="div3">
+        <div id="div3txt">
+            <h3 id="abouttitle"> Revolutionary smart budgeting at your fingertips, just for you, anywhere you go.</h3>
+            <p class="myClass">Budgie monitors your budgets for you, allowing you to relax without having to think twice about your purchases. </p>
+            <p class="myClass">If you are approaching towards your personalised budget limit, Budgie will notify you through your phone app, or via many different types of notifications (phone, email, text), fully customised by you.</p> <!-- paragraph -->
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="parallax11"></div>
+    <div id="div3">
+        <div id="div3txt">
+            <h3 id="abouttitle">Budgie has taken flight because we all have smartphones in our palms today, but no smart budgeting to go with it</h3>
+            <p class="myClass">We live in a world today thats expanding and innovating new tech faster than ever before and we need the right gear to stay in the race.</p>
+            <p class="myClass">Our smartphones are with us all the time, when we are shopping, ordering food or even taking a taxi, but it still takes our banks days to update us on how we are spending.</p> <!-- paragraph -->
+            <h3 id="abouttitle">We can change that. Budgie will always give you what you need, instantly.</h3>
+        </div>
     </div>
-</div>
+    <div class="parallax11"></div>
+
+    <div id="div4">
+        <div id="div4txt">
+            <div class="offerSection">
+                <h1 class="offerTitle">What does Budgie offer?</h1>
+                <div class="offerGroups">
+                    <div class="offerGroup offerGroupRightNow">
+                        <div class="offerGroupTitle">READY TO GO</div>
+                        <ul class="offerGroupList">
+                            <li><img src="~/Content/tick.png">100% free! No hidden fees or service charges</li>
+                            <li><img src="~/Content/tick.png">Contactless prepaid phone application</li>
+                            <li><img src="~/Content/tick.png">Real-time budget notifications</li>
+                            <li><img src="~/Content/tick.png">Usable anywhere in the world, with absolutely zero fees</li>
+                            <li><img src="~/Content/tick.png">Instant transfers between Budgies</li>
+                            <li><img src="~/Content/tick.png">Customisable, simple, smart budgeting</li>
+                            <li><img src="~/Content/tick.png">24/7 first-class support</li>
+                            <li><img src="~/Content/tick.png">Fully customisable UI to match your personal style!</li>
+                        </ul>
+                    </div>
+                    <div class="offerGroup offerGroupUpNext">
+                        <div class="offerGroupTitle">COMING SOON!</div>
+                        <ul class="offerGroupList">
+                            <li><img src="~/Content/tick.png">Supporting all banks, anywhere in the world</li>
+                            <li><img src="~/Content/tick.png">1024-bit encryption protection</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax2"></div>
+
+    <div id="div4">
+        <div id="div4txt">
+            <p>Banks that are currently supported by Budgie:</p>
+            <h3>HSBC, Lloyds, Barclays, RBS Group, Natwest, Tesco and many more!</h3>
+            <img id="banklogos" src="~/Content/Hsbc-logo.svg.png" />
+            <img id="banklogos" src="~/Content/LloydsBankLogo.svg.png" />
+            <img id="banklogos" src="~/Content/Barclays_logo.svg.png" />
+            <p> If you use a bank which isn't included, please let us know and we'll be support it.</p>
+            <p>Budgie also supports other payment services such as:</p>
+            <h3>Paypal, PayPoint, Stripe, Sage Group.</h3>
+            <img id="banklogos" src="~/Content/PayPal.svg.png" />
+            <img id="banklogos" src="~/Content/Sage.svg.png" />
+        </div>
+    </div>
+
+    <div id="myData"></div>
+</body>
+</html>
+
+<script src="BudgieScript.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
