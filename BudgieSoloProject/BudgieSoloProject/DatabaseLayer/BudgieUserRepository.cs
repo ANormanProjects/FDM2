@@ -15,11 +15,6 @@ namespace BudgieDatabaseLayer
 
         List<BudgieUser> database = new List<BudgieUser>();
 
-        public BudgieUserRepository ()
-	    {
-          
-	    }
-
         public BudgieUserRepository(BudgieDBCFModel _context)
         {
             context = _context;

@@ -9,11 +9,14 @@ namespace ASP.NET.Budgie.Controllers
 {
     public class BudgieUserController : Controller
     {
-        BudgieUserRepository budb = new BudgieUserRepository();
+        BudgieDBCFModel buc = new BudgieDBCFModel();
+
+        BudgieUserRepository budb;
         // GET: BudgieUser
         public ActionResult Index()
         {
-            return View();
+            budb = new BudgieUserRepository(buc);
+            return View(budb.GetAllBudgieUsers());
         }
     }
 }
