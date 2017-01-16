@@ -28,7 +28,6 @@ namespace BudgieDatabaseLayer
         public void addNewAccount(Account newAccount)
         {
             context.accounts.Add(newAccount);
-
             context.SaveChanges();
         }
 
@@ -43,15 +42,12 @@ namespace BudgieDatabaseLayer
                     actualUpdateId = account.id;
                 }
             }
-
             context.accounts.Find(actualUpdateId).accountNumber = (lastNameUpdate + dobUpdate);     //context.accounts.Where(a => a.accountOwnerId == idUpdate).First().accountNumber = (lastNameUpdate + dobUpdate);
-
             context.SaveChanges();
         }
 
         public void removeAccount(int idToRemove) //Only use to remove accounts only, Accounts will be deleted automatically if User accounts linked to them are removed.
         {         
-
             int actualRemoveId = 0;
 
             foreach (Account account in accounts)
@@ -61,9 +57,7 @@ namespace BudgieDatabaseLayer
                     actualRemoveId = account.id;
                 }                 
             }
-
             context.accounts.Remove(context.accounts.Find(actualRemoveId));
-
             context.SaveChanges();
         }
 
@@ -79,9 +73,7 @@ namespace BudgieDatabaseLayer
                     targetIdToPrintBalance = account.id;
                 }
             }
-
             printCurrentBalance += context.accounts.Find(targetIdToPrintBalance).balance;
-
             return printCurrentBalance;
         }
 
@@ -97,9 +89,7 @@ namespace BudgieDatabaseLayer
                     targetIdToPrintBudget = account.id;
                 }
             }
-
             printCurrentBudget += context.accounts.Find(targetIdToPrintBudget).budget;
-
             return printCurrentBudget;
         }
 
@@ -113,8 +103,8 @@ namespace BudgieDatabaseLayer
                 {
                     targetIdToWithdraw = account.id;
                 }
-            }
-            
+            }  
+          
             decimal balanceAfterWithdrawal = context.accounts.Find(targetIdToWithdraw).balance - withdrawBalance;
             decimal currentBalance = context.accounts.Find(targetIdToWithdraw).balance;
 
@@ -122,7 +112,6 @@ namespace BudgieDatabaseLayer
             {
                 context.accounts.Find(targetIdToWithdraw).balance -= withdrawBalance;
                 context.SaveChanges();
-
                 return true;
             }
             else
@@ -145,6 +134,7 @@ namespace BudgieDatabaseLayer
             context.accounts.Find(targetIdToDeposit).balance += depositBalance;
             context.SaveChanges();
         }
+
         public bool transferMoney(int idToTransferFrom, int idToTransferTo, decimal amountToTransfer)
         {
             int targetIdToTransferFrom = 0;
@@ -175,10 +165,8 @@ namespace BudgieDatabaseLayer
                 context.accounts.Find(targetIdToTransferFrom).balance -= _amountToTransfer;
                 context.accounts.Find(targetIdToTransferTo).balance += _amountToTransfer;
                 context.SaveChanges();
-
                 return true;
             }
-
             else
             {
                 return false;
@@ -198,11 +186,8 @@ namespace BudgieDatabaseLayer
                     break;
                 }
             }
-
             _amountToBudget = amountToBudget;
-
             context.accounts.Find(targetIdToSetBudget).budget += _amountToBudget;
-
             context.SaveChanges();
         }
     }
