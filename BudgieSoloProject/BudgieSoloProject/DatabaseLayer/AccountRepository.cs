@@ -41,7 +41,6 @@ namespace BudgieDatabaseLayer
                 if (account.accountOwnerId == idUpdate)
                 {
                     actualUpdateId = account.id;
-                    break;
                 }
             }
 
