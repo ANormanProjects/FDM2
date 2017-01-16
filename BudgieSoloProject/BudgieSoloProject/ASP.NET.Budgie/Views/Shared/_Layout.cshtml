@@ -3,43 +3,105 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>@ViewBag.Title - Budgie</title>
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Lobster" rel="stylesheet">
+    @Styles.Render("~/Content/css", "~/Content/Style.css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("BudgieUser", "Index", "BudgieUser")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("BudgieUser", "Index", "BudgieUser")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
+        </div>*@
+
+    <div id="divNB">
+        <ul class="topnav" id="myTopnav">
+            <li><img src="~/Content/budgie.png" id="budgie" /></li>
+            <li><h1 id="Budgieheader">Budgie</h1></li> <!-- header 1 -->
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li><a href="Index#div3">About</a></li>
+            <li class="dropdown">
+                @Html.ActionLink("Account", "Index", "BudgieAccount")
+                <div class="dropdown-content">
+                    <a href="NA.html">Budgets</a>
+                    <a href="NA.html">Statistics</a>
+                    <a href="NA.html">Banks</a>
+                </div>
+            <li><a href="Contact.html">Contact</a></li>
+            <li class="icon">
+                <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+            </li>
+            <li class="dropdown">
+                <div class="dropdown">
+                    <a class="dropbtn">Login</a>
+                    <div class="dropdown-content">
+                        <a id="signupf">
+                            <form id="login1" class="loginBar">
+                                <input id="id" class="input" type="text" placeholder="Username" />
+                                <input id="pass" class="input" type="password" placeholder="Password" />
+                                <input id="b1" class="loginBarbtn" type="button" value="Login" onclick="pasuser()" />
+                            </form>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!-- Defines an HTML form for user input -->
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+
+        <footer class="footer-wrapper">
+            <div class="footer-container">
+                <nav class="nav">
+                    <a href="Index.html">About</a>
+                    <a href="FAQ.html">FAQ</a>
+                    <a href="Careers.html">Careers</a>
+                    <a href="Contact.html">Contact</a>
+                </nav>
+                <nav class="share-nav">
+                    <a href="https://twitter.com" target="_blank">
+                        <img src="~/Content/twitter.svg" alt="Twitter">
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="~/Content/facebook.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <img src="~/Content/linkedin.svg" alt="LinkedIn">
+                    </a>
+                    <a href="mailto:contact@budgie.com" target="_blank">
+                        <img src="~/Content/mail.svg" alt="Drop us an email">
+                    </a>
+                </nav>
+                <p>
+                    Budgie Ltd is a company registered in Tokyo. Budgie Ltd is authorised by the Prudential Regulation Authority (PRA) and regulated by the Financial Conduct Authority and the PRA.  Our Financial Services Register number is tehehe666.
+                </p>
+            </div>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/BudgieScript.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>

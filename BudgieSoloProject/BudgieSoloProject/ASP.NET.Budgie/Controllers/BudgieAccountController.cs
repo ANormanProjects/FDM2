@@ -18,5 +18,20 @@ namespace ASP.NET.Budgie.Controllers
             ardb = new AccountRepository(buc);
             return View(ardb.GetAllAccounts());
         }
+
+        public ActionResult Budgets()
+        {
+            return View();
+        }
+
+        public ActionResult Statistics()
+        {
+            return View();
+        }
+
+        public ActionResult Banks()
+        {
+            return View();
+        }
     }
 }
