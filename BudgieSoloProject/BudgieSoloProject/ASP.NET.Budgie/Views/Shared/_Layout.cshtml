@@ -38,13 +38,11 @@
             <li><img src="~/Content/budgie.png" id="budgie" /></li>
             <li><h1 id="Budgieheader">Budgie</h1></li> <!-- header 1 -->
             <li>@Html.ActionLink("Home", "Index", "Home")</li>
-            <li><a href="Index#div3">About</a></li>
             <li class="dropdown">
                 @Html.ActionLink("Account", "Index", "BudgieAccount")
                 <div class="dropdown-content">
-                    <a href="NA.html">Budgets</a>
-                    <a href="NA.html">Statistics</a>
-                    <a href="NA.html">Banks</a>
+                    @Html.ActionLink("BudgieUser", "Index", "BudgieUser")
+                    @Html.ActionLink("BudgieAccount", "ControlRoom", "BudgieAccount")
                 </div>
             <li><a href="Contact.html">Contact</a></li>
             <li class="icon">
