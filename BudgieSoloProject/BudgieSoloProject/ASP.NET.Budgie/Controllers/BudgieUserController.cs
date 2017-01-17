@@ -16,8 +16,12 @@ namespace ASP.NET.Budgie.Controllers
         // GET: BudgieUser
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult ListOfAllBudgieUsers()
+        {
             budb = new BudgieUserRepository(buc);
-            ardb = new AccountRepository(buc);
             return View(budb.GetAllBudgieUsers());
         }
 
