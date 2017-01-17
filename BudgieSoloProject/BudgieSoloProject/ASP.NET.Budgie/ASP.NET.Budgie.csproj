@@ -166,9 +166,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\BudgieUser.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -236,7 +234,16 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\BudgieUser\Index.cshtml" />
-    <Content Include="Views\BudgieAccount\ControlRoom.cshtml" />
+    <Content Include="Views\BudgieAccount\Overview.cshtml" />
+    <Content Include="Views\BudgieUser\RegisterUser.cshtml" />
+    <Content Include="Views\Shared\_success.cshtml" />
+    <Content Include="Views\BudgieUser\Login.cshtml" />
+    <Content Include="Views\BudgieUser\ListOfAllBudgieUsers.cshtml" />
+    <Content Include="Views\Shared\_failure.cshtml" />
+    <Content Include="Views\BudgieUser\UpdateUserDetails.cshtml" />
+    <Content Include="Views\Shared\_successUpdate.cshtml" />
+    <Content Include="Views\Shared\_failureUpdate.cshtml" />
+    <Content Include="Views\BudgieUser\RemoveUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
