@@ -18,5 +18,21 @@ namespace ASP.NET.Budgie.Controllers
             budb = new BudgieUserRepository(buc);
             return View(budb.GetAllBudgieUsers());
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        public ActionResult Create(BudgieUser budgieuser)
+        {
+            buc.budgieUsers.Add(budgieuser);
+            buc.SaveChanges();
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_success");
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

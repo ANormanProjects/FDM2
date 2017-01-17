@@ -13,11 +13,12 @@ namespace BudgieDatabaseLayer
 
         BudgieDBCFModel context;
 
-        List<BudgieUser> database = new List<BudgieUser>();
+        List<BudgieUser> budgieusers;
 
         public BudgieUserRepository(BudgieDBCFModel _context)
         {
             context = _context;
+            budgieusers = GetAllBudgieUsers();
         }
 
         public List<BudgieUser> GetAllBudgieUsers()
@@ -53,6 +54,46 @@ namespace BudgieDatabaseLayer
 
             context.SaveChanges();
         }
-        
+
+        public void changeEmailAddress(string emailAddressToUpdate)
+        {
+            int idUpdate = 0;
+
+            foreach (BudgieUser budgieuser in budgieusers)
+            {
+                if (budgieuser.emailAddress == emailAddressToUpdate)
+                {
+                    idUpdate = budgieuser.id;
+                }
+            }
+            context.budgieUsers.Find(idUpdate).emailAddress = emailAddressToUpdate;
+
+            context.SaveChanges();
+        }
+
+        public bool changePassword(string emailAddressToChange, string originalPassword, string passwordToUpdate, string passwordToConfirm)
+        {
+            int idUpdate = 0;
+
+            foreach (BudgieUser budgieuser in budgieusers)
+            {
+                if (budgieuser.emailAddress == emailAddressToChange)
+                {
+                    idUpdate = budgieuser.id;
+
+                    if (budgieuser.password == originalPassword)
+                    {
+                        if (passwordToUpdate == passwordToConfirm)
+                        {
+                            context.budgieUsers.Find(idUpdate).password = passwordToUpdate;
+                            context.SaveChanges();
+                            return true;
+                        }
+                    }
+                }          
+            }
+
+            return false;
+        }        
     }
 }
