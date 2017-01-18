@@ -4244,12 +4244,15 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-nav {
   margin: 7.5px -15px;
+  font-family: 'Cabin', sans-serif;
+  color: white;
 }
 
 .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
+  color: white;
 }
 
 @media (max-width: 767px) {
@@ -4431,7 +4434,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default .navbar-toggle {
-  border-color: #dddddd;
+  border-color: transparent;
 }
 
 .navbar-default .navbar-toggle:hover,
@@ -4508,7 +4511,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
   background-color: #032D41;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   border-radius: 0px 0px 20px 20px;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Cabin', sans-serif;
+  color: white;
 }
 
 .navbar-inverse .navbar-brand {
@@ -4526,20 +4530,20 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #999999;
+    color: white;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #ffffff;
-  background-color: transparent;
+  color: #1A74A0;
+  background-color: white;
 }
 
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-  color: #ffffff;
-  background-color: #080808;
+      color: #1A74A0;
+      background-color: #fff;
 }
 
 .navbar-inverse .navbar-nav > .disabled > a,
@@ -4550,7 +4554,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-toggle {
-  border-color: #333333;
+  border-color: transparent;
+  color: #fff !important;
 }
 
 .navbar-inverse .navbar-toggle:hover,
@@ -4589,6 +4594,19 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-inverse .navbar-nav > .open > a:focus .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
+}
+
+.dropdown:hover .dropdown-menu {
+    color: #032D41;
+    text-decoration: none;
+    display: block;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	background-color: #FFFFFF;
+    text-align: center;
+    font-family: 'Cabin', sans-serif;
+	font-size: 16px;
+    
+
 }
 
 @media (max-width: 767px) {
@@ -4941,6 +4959,18 @@ a.list-group-item.active > .badge,
   line-height: 2.1428571435;
   color: inherit;
   background-color: #eeeeee;
+}
+
+.jumbotron2 {
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-image: url("../Content/earthnight.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .jumbotron h1 {
@@ -5412,7 +5442,7 @@ a.list-group-item:focus {
 
 .panel-footer {
   padding: 10px 15px;
-  background-color: #f5f5f5;
+  background-color: #032D41;
   border-top: 1px solid #dddddd;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -6825,3 +6855,9 @@ td.visible-print {
         display: none !important;
     }
 }
+
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 40px;
+      color: white;
+  }

@@ -399,12 +399,15 @@ body
 /* div1 */
 #div1
 {
-	background-image: url("~/Content/earthnight.jpg");
+	background-image: url("../Content/earthnight.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-color: black;
 	padding: 15%;
 	margin: auto;
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 2.1428571435;
 }
 
 #div1txt
@@ -601,27 +604,30 @@ h2
   .footer-wrapper 
   {
     background-color: #032D41;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
   }
 
   .footer-container 
   {
-    padding: 20px 14px 64px;
     color: white;
     text-align: center;
-    display: block;
+
   }
   @media(min-width: 550px) 
   {
     .footer-container 
 	{
-      padding-bottom: 80px;
+      padding-bottom: 30px;
     }
   }
   @media(min-width: 664px) 
   {
     .footer-container 
 	{
-      padding-top: 64px;
+      padding-top: 30px;
     }
   }
 
