@@ -246,6 +246,8 @@
     <Content Include="Views\BudgieUser\RemoveUser.cshtml" />
     <Content Include="Views\Shared\_failureRemove.cshtml" />
     <Content Include="Views\Shared\_successRemove.cshtml" />
+    <Content Include="Views\Home\FAQ.cshtml" />
+    <Content Include="Views\Home\Careers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
