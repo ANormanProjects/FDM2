@@ -5,7 +5,7 @@ body, html {
 
 .parallax1 {
     /* The image used */
-    background-image: url('~/Content/creditcard.jpg');
+    background-image: url("../Content/creditcard.jpg");
 
     /* Full height */
     height: 50%; 
@@ -19,7 +19,7 @@ body, html {
 
 .parallax2 {
     /* The image used */
-    background-image: url('~/Content/phonefinance.jpg');
+    background-image: url("../Content/phonefinance.jpg");
 
     /* Full height */
     height: 50%; 
@@ -342,7 +342,8 @@ ul.topnav .active {
 
 h2, h4, h5, h6
 { 
-	font-family: 'Lobster', cursive;
+	font-family: 'Lato', sans-serif;
+    font-size: 25px;
 	color: #FFFFFF;  
 }
 
@@ -381,16 +382,15 @@ h2, h4, h5, h6
 
 head
 {
-	font-family: 'Cabin', sans-serif;
+	font-family: 'Lato', sans-serif;
 }
 
 body
 {
-	font-family: 'Cabin', sans-serif;
+	font-family: 'Lato', sans-serif;
 	background-color: #1A74A0;
 	color: #FFFFFF;
 	font-size: 20px;
-	margin: auto;
 	
 }
 
@@ -404,7 +404,6 @@ body
 	background-size: 100%;
 	background-color: black;
 	padding: 15%;
-	margin: auto;
     font-size: 21px;
     font-weight: 200;
     line-height: 2.1428571435;
@@ -511,10 +510,10 @@ h2
 
 .offerGroupList 
 { 
-	padding: 0; 
+	padding: 60px; 
 	margin: 0 auto; 
 	list-style: none; 
-	margin-bottom: 48px; 
+	margin-bottom: 0px; 
 }
 
 @media (min-width: 800px) 
@@ -639,7 +638,7 @@ h2
     max-width: 604px;
     margin-left: auto;
     margin-right: auto;
-    font-weight: 600;
+    font-weight: 200;
     flex-direction: column;
   }
   @media(min-width: 664px) 

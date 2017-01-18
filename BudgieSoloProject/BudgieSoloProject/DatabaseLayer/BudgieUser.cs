@@ -30,5 +30,7 @@ namespace BudgieDatabaseLayer
 
         [DisplayName("Password")]
         public string password { get; set; }
+
+        public string roles { get; set; }
     }
 }
