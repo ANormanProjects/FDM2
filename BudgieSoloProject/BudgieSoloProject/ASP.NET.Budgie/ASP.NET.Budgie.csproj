@@ -240,10 +240,12 @@
     <Content Include="Views\BudgieUser\Login.cshtml" />
     <Content Include="Views\BudgieUser\ListOfAllBudgieUsers.cshtml" />
     <Content Include="Views\Shared\_failure.cshtml" />
-    <Content Include="Views\BudgieUser\UpdateUserDetails.cshtml" />
+    <Content Include="Views\BudgieUser\UpdateUser.cshtml" />
     <Content Include="Views\Shared\_successUpdate.cshtml" />
     <Content Include="Views\Shared\_failureUpdate.cshtml" />
     <Content Include="Views\BudgieUser\RemoveUser.cshtml" />
+    <Content Include="Views\Shared\_failureRemove.cshtml" />
+    <Content Include="Views\Shared\_successRemove.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

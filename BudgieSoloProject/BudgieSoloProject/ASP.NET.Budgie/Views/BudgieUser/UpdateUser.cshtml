@@ -1,16 +1,17 @@
 ﻿@model BudgieDatabaseLayer.BudgieUser
 @{
-    ViewBag.Title = "UpdateUserDetails";
+    ViewBag.Title = "Update";
 }
 
 <h2>Update</h2>
 
-@using (Ajax.BeginForm("UpdateUserDetails", "BudgieUsers", new AjaxOptions()
+@using (Ajax.BeginForm("UpdateUser", "BudgieUsers", new AjaxOptions()
 {
     HttpMethod = "POST",
     UpdateTargetId = "updateForm",
     InsertionMode = InsertionMode.InsertAfter
 }, new { @id = "updateForm" }))
+
 {
     <div class="form-horizontal">
         <h4>Update User Details</h4>
