@@ -61,6 +61,7 @@ namespace BudgieDatabaseLayer
 
         public void removeBudgieUser(int idToRemove)
         {
+            
             context.budgieUsers.Remove(context.budgieUsers.Find(idToRemove));
 
             context.SaveChanges();

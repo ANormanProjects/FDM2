@@ -46,7 +46,10 @@ namespace ASP.NET.Budgie.Controllers
 
             if (emailCheck == true)
             {
-                return PartialView("_failure");
+                if (Request.IsAjaxRequest())
+                {
+                    return PartialView("_failure");
+                }
             }
             else
             {
@@ -75,13 +78,13 @@ namespace ASP.NET.Budgie.Controllers
         }
 
         [HttpGet]
-        public ActionResult UpdateUserDetails()
+        public ActionResult UpdateUser()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult UpdateUserDetails(BudgieUser budgieuser)
+        public ActionResult UpdateUser(BudgieUser budgieuser)
         {
             string firstNameUpdate, lastNameUpdate, dobUpdate, emailAddress;
             int idUpdate = 0;
@@ -92,7 +95,10 @@ namespace ASP.NET.Budgie.Controllers
 
             if (emailCheck == false)
             {
-                return PartialView("_failureUpdate");
+                if (Request.IsAjaxRequest())
+                {
+                    return PartialView("_failureUpdate");
+                }
             }
             else
             {
@@ -120,18 +126,50 @@ namespace ASP.NET.Budgie.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult RemoveUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult RemoveUser(BudgieUser budgieuser)
+        {
+            string emailAddress;
+            int id = 0;
+            emailAddress = budgieuser.emailAddress;
+
+            bool emailCheck = budb.CheckForDuplicateEmail(emailAddress);
+
+            if (emailCheck == false)
+            {
+                if (Request.IsAjaxRequest())
+                {
+                    return PartialView("_failureRemove");
+                }
+            }
+            else
+            {
+                List<BudgieUser> bulist = budb.GetAllBudgieUsers();
+
+                foreach (BudgieUser bu in bulist)
+                {
+                    if (bu.emailAddress == emailAddress)
+                    {
+                        id = bu.id;
+                    }
+                }
+
+                budb.removeBudgieUser(id);
+
+                if (Request.IsAjaxRequest())
+                {
+                    return PartialView("_successUpdate");
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
     }
-
-    //[HttpGet]
-    //public ActionResult RemoveUser()
-    //{
-    //    return View();
-    //}
-
-    //[HttpPost]
-    //public ActionResult RemoveUser(BudgieUser budgieuser)
-    //{
-
-    //}
-
 }
