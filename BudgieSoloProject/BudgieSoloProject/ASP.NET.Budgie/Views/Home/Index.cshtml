@@ -2,97 +2,88 @@
     ViewBag.Title = "Home Page";
 }
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Cabin|Lobster" rel="stylesheet">
     <title>@ViewBag.Title - Budgie</title>
-    @Styles.Render("~/Content/css", "~/Content/Style.css")
-    @Scripts.Render("~/bundles/BudgieScript.js")
-</head>
 
-<body>
-
-    <!--BODY OF THE PAGE-->
-    <div id="div1">
-        <h2>At last, a solution to budgeting as smart and effortless as your phone</h2>
-        <div id="div1txt">
-            <p>Built for any smartphone, this is budgeting like never before. Simple to use, with instant updates to your fully customisable allowances, giving smart-reactive notifications as you spend your hard-earned funds.</p>
-            <p>Budgie will always have your back, no matter where you are on the planet.</p>
-            <img id="appstore" src="~/Content/appstore.svg" />
-        </div>
+<div class="jumbotron2 text-center">
+    <h2>At last, a solution to budgeting as smart and effortless as your phone</h2>
+    <div id="div1txt">
+        <p>Built for any smartphone, this is budgeting like never before. Simple to use, with instant updates to your fully customisable allowances, giving smart-reactive notifications as you spend your hard-earned funds.</p>
+        <p>Budgie will always have your back, no matter where you are on the planet.</p>
+        <img id="appstore" src="~/Content/appstore.svg" />
     </div>
+</div>
 
-    <div class="parallax1"></div>
-    <div id="div3">
-        <div id="div3txt">
-            <h3 id="abouttitle"> Revolutionary smart budgeting at your fingertips, just for you, anywhere you go.</h3>
-            <p class="myClass">Budgie monitors your budgets for you, allowing you to relax without having to think twice about your purchases. </p>
-            <p class="myClass">If you are approaching towards your personalised budget limit, Budgie will notify you through your phone app, or via many different types of notifications (phone, email, text), fully customised by you.</p> <!-- paragraph -->
-        </div>
-    </div>
-    <div class="parallax11"></div>
-    <div id="div3">
-        <div id="div3txt">
-            <h3 id="abouttitle">Budgie has taken flight because we all have smartphones in our palms today, but no smart budgeting to go with it</h3>
-            <p class="myClass">We live in a world today thats expanding and innovating new tech faster than ever before and we need the right gear to stay in the race.</p>
-            <p class="myClass">Our smartphones are with us all the time, when we are shopping, ordering food or even taking a taxi, but it still takes our banks days to update us on how we are spending.</p> <!-- paragraph -->
-            <h3 id="abouttitle">We can change that. Budgie will always give you what you need, instantly.</h3>
-        </div>
-    </div>
-    <div class="parallax11"></div>
-
-    <div id="div4">
-        <div id="div4txt">
-            <div class="offerSection">
-                <h1 class="offerTitle">What does Budgie offer?</h1>
-                <div class="offerGroups">
-                    <div class="offerGroup offerGroupRightNow">
-                        <div class="offerGroupTitle">READY TO GO</div>
-                        <ul class="offerGroupList">
-                            <li><img src="~/Content/tick.png">100% free! No hidden fees or service charges</li>
-                            <li><img src="~/Content/tick.png">Contactless prepaid phone application</li>
-                            <li><img src="~/Content/tick.png">Real-time budget notifications</li>
-                            <li><img src="~/Content/tick.png">Usable anywhere in the world, with absolutely zero fees</li>
-                            <li><img src="~/Content/tick.png">Instant transfers between Budgies</li>
-                            <li><img src="~/Content/tick.png">Customisable, simple, smart budgeting</li>
-                            <li><img src="~/Content/tick.png">24/7 first-class support</li>
-                            <li><img src="~/Content/tick.png">Fully customisable UI to match your personal style!</li>
-                        </ul>
-                    </div>
-                    <div class="offerGroup offerGroupUpNext">
-                        <div class="offerGroupTitle">COMING SOON!</div>
-                        <ul class="offerGroupList">
-                            <li><img src="~/Content/tick.png">Supporting all banks, anywhere in the world</li>
-                            <li><img src="~/Content/tick.png">1024-bit encryption protection</li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- Container (About Section) -->
+    <div id="about" class="container-fluid3">
+        <div class="row">
+            <div class="col-sm-8">
+                <h4>Budgie has taken flight because we all have smartphones in our palms today, but no smart budgeting to go with it</h4><br>
+                <p>We live in a world today thats expanding and innovating new tech faster than ever before and we need the right gear to stay in the race.
+                    Our smartphones are with us all the time, when we are shopping, ordering food or even taking a taxi, but it still takes our banks days to update us on how we are spending.
+                </p>
+                <p>We can change that. Budgie will always give you what you need, instantly.</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-star logo"></span>
             </div>
         </div>
     </div>
 
-    <div class="parallax2"></div>
-
-    <div id="div4">
-        <div id="div4txt">
-            <p>Banks that are currently supported by Budgie:</p>
-            <h3>HSBC, Lloyds, Barclays, RBS Group, Natwest, Tesco and many more!</h3>
-            <img id="banklogos" src="~/Content/Hsbc-logo.svg.png" />
-            <img id="banklogos" src="~/Content/LloydsBankLogo.svg.png" />
-            <img id="banklogos" src="~/Content/Barclays_logo.svg.png" />
-            <p> If you use a bank which isn't included, please let us know and we'll be support it.</p>
-            <p>Budgie also supports other payment services such as:</p>
-            <h3>Paypal, PayPoint, Stripe, Sage Group.</h3>
-            <img id="banklogos" src="~/Content/PayPal.svg.png" />
-            <img id="banklogos" src="~/Content/Sage.svg.png" />
+    <div class="container-fluid3">
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-globe logo slideanim"></span>
+        </div>
+        <div class="col-sm-8">
+            <h2>Our Values</h2><br>
+            <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+            <p>
+                <strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
         </div>
     </div>
+</div>
 
-    <div id="myData"></div>
-</body>
-</html>
-
-<script src="BudgieScript.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Container (Services Section) -->
+    <div id="services" class="container-fluid text-center">
+        <h2>What Budgie has to offer!</h2>
+        <br>
+        <div class="row slideanim">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-phone logo-small"></span>
+                <h4>MOBILE</h4>
+                <p>Contactless prepaid phone application</p>
+                <p>& Real-time budget notifications</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-globe logo-small"></span>
+                <h4>GLOBAL</h4>
+                <p>Usable anywhere in the world, with absolutely zero fees</p>
+                <p>& Instant transfers between Budgies</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-cog logo-small"></span>
+                <h4>FLEXIBLE</h4>
+                <p>Customisable, simple, smart budgeting</p>
+            </div>
+        </div>
+        <br><br>
+        <div class="row slideanim">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-leaf logo-small"></span>
+                <h4>GREEN</h4>
+                <p>No paper documents or waste, budgie is 100% digital</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-phone-alt logo-small"></span>
+                <h4>SUPPORT</h4>
+                <p>24/7 first-class support</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-wrench logo-small"></span>
+                <h4>FREE</h4>
+                <p>100% free! No hidden fees or service charges</p>
+            </div>
+        </div>
+    </div>

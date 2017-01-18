@@ -1,17 +1,27 @@
 ﻿using BudgieDatabaseLayer;
+using BudgieLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace ASP.NET.Budgie.Controllers
 {
     public class BudgieUserController : Controller
     {
-        BudgieDBCFModel buc = new BudgieDBCFModel();
-        BudgieUserRepository budb;
-        AccountRepository ardb;
+        BudgieDBCFModel budgieDBCFModel = new BudgieDBCFModel();
+        BudgieUserRepository userRepo;
+        AccountRepository accountRepo;
+        BudgieUserLogic buLogic;
+
+        public BudgieUserController()
+        {
+            userRepo = new BudgieUserRepository(budgieDBCFModel);
+            accountRepo = new AccountRepository(budgieDBCFModel);
+            buLogic = new BudgieUserLogic(userRepo, accountRepo);
+        }
 
         // GET: BudgieUser
         public ActionResult Index()
@@ -19,10 +29,10 @@ namespace ASP.NET.Budgie.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult ListOfAllBudgieUsers()
         {
-            budb = new BudgieUserRepository(buc);
-            return View(budb.GetAllBudgieUsers());
+            return View(userRepo.GetAllBudgieUsers());
         }
 
         [HttpGet]
@@ -34,17 +44,7 @@ namespace ASP.NET.Budgie.Controllers
         [HttpPost]
         public ActionResult RegisterUser(BudgieUser budgieuser)
         {
-            string firstName, lastName, emailAddress, dob;
-            int newAccountId = 0;
-
-            firstName = budgieuser.firstName;
-            lastName = budgieuser.lastName;
-            emailAddress = budgieuser.emailAddress;
-            dob = budgieuser.dob;
-
-            bool emailCheck = budb.CheckForDuplicateEmail(emailAddress);
-
-            if (emailCheck == true)
+            if (buLogic.CheckForDuplicateEmail(budgieuser.emailAddress) == true)
             {
                 if (Request.IsAjaxRequest())
                 {
@@ -53,21 +53,7 @@ namespace ASP.NET.Budgie.Controllers
             }
             else
             {
-                budb.addNewBudgieUser(budgieuser);
-
-                List<BudgieUser> bulist = budb.GetAllBudgieUsers();
-
-                foreach (BudgieUser budgieUser in bulist)
-                {
-                    if (budgieUser.emailAddress == emailAddress)
-                    {
-                        newAccountId = budgieUser.id;
-                    }
-                }
-
-                Account newAccount = new Account() { accountNumber = lastName + dob, balance = 0, budget = 0, accountOwnerId = newAccountId };
-
-                ardb.addNewAccount(newAccount);
+                buLogic.RegisterUser(budgieuser);
 
                 if (Request.IsAjaxRequest())
                 {
@@ -77,48 +63,27 @@ namespace ASP.NET.Budgie.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult UpdateUser()
         {
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public ActionResult UpdateUser(BudgieUser budgieuser)
         {
-            string firstNameUpdate, lastNameUpdate, dobUpdate, emailAddress;
-            int idUpdate = 0;
 
-            emailAddress = budgieuser.emailAddress;
-
-            bool emailCheck = budb.CheckForDuplicateEmail(emailAddress);
-
-            if (emailCheck == false)
+            if (buLogic.CheckForDuplicateEmail(budgieuser.emailAddress) == true)
             {
                 if (Request.IsAjaxRequest())
                 {
-                    return PartialView("_failureUpdate");
+                    return PartialView("_failure");
                 }
             }
             else
             {
-                List<BudgieUser> bulist = budb.GetAllBudgieUsers();
-
-                foreach (BudgieUser bu in bulist)
-                {
-                    if (bu.emailAddress == emailAddress)
-                    {
-                        idUpdate = bu.id;
-                    }
-                }
-
-                firstNameUpdate = budgieuser.firstName;
-                lastNameUpdate = budgieuser.lastName;
-                dobUpdate = budgieuser.dob;
-
-                budb.updateBudgieUser(idUpdate, firstNameUpdate, lastNameUpdate, dobUpdate);
-                ardb.updateNewAccount(idUpdate, lastNameUpdate, dobUpdate);
-
                 if (Request.IsAjaxRequest())
                 {
                     return PartialView("_successUpdate");
@@ -127,22 +92,18 @@ namespace ASP.NET.Budgie.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult RemoveUser()
         {
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public ActionResult RemoveUser(BudgieUser budgieuser)
         {
-            string emailAddress;
-            int id = 0;
-            emailAddress = budgieuser.emailAddress;
-
-            bool emailCheck = budb.CheckForDuplicateEmail(emailAddress);
-
-            if (emailCheck == false)
+            if (buLogic.CheckForDuplicateEmail(budgieuser.emailAddress) == false)
             {
                 if (Request.IsAjaxRequest())
                 {
@@ -151,17 +112,6 @@ namespace ASP.NET.Budgie.Controllers
             }
             else
             {
-                List<BudgieUser> bulist = budb.GetAllBudgieUsers();
-
-                foreach (BudgieUser bu in bulist)
-                {
-                    if (bu.emailAddress == emailAddress)
-                    {
-                        id = bu.id;
-                    }
-                }
-
-                budb.removeBudgieUser(id);
 
                 if (Request.IsAjaxRequest())
                 {
@@ -169,6 +119,58 @@ namespace ASP.NET.Budgie.Controllers
                 }
             }
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(BudgieUser budgieuser, string returnUrl)
+        {
+            // Lets first check if the Model is valid or not
+            if (ModelState.IsValid)
+            {
+                using (budgieDBCFModel)
+                {
+                    string username = budgieuser.emailAddress;
+                    string password = budgieuser.password;
+
+
+                    bool userValid = budgieDBCFModel.budgieUsers.Any(user => user.emailAddress == username && user.password == password);
+
+                    // User found in the database
+                    if (userValid)
+                    {
+
+                        FormsAuthentication.SetAuthCookie(username, false);
+                        if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
+                            && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+                        {
+                            return Redirect(returnUrl);
+                        }
+                        else
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "The email or password provided is incorrect.");
+                    }
+                }
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View();
+        }
+
+        public ActionResult LogOff()
+        {
+            FormsAuthentication.SignOut();
+
+            return RedirectToAction("Index", "Home");
         }
 
     }

@@ -26,18 +26,6 @@ namespace BudgieDatabaseLayer
             return context.budgieUsers.ToList();
         }
 
-        public bool CheckForDuplicateEmail(string emailAddress)
-        {
-            foreach (var info in budgieusers)
-            {
-                if (info.emailAddress == emailAddress)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
         public void addNewBudgieUser(BudgieUser newBudgieUser)
         {
             context.budgieUsers.Add(newBudgieUser);

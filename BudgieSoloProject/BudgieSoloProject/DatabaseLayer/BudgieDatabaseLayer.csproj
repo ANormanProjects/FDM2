@@ -77,6 +77,10 @@
     <Compile Include="Migrations\201701121322208_password.Designer.cs">
       <DependentUpon>201701121322208_password.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701181454065_roles.cs" />
+    <Compile Include="Migrations\201701181454065_roles.Designer.cs">
+      <DependentUpon>201701181454065_roles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -96,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701121322208_password.resx">
       <DependentUpon>201701121322208_password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701181454065_roles.resx">
+      <DependentUpon>201701181454065_roles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

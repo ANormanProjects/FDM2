@@ -85,7 +85,7 @@ namespace BudgieEFUI
             int newAccountId = 0;
 
             BudgieDBCFModel context = new BudgieDBCFModel();
-            NewBudgieUser newUser = new NewBudgieUser(new BudgieUserRepository(new BudgieDBCFModel()));
+            BudgieUserLogic newUser = new BudgieUserLogic(new BudgieUserRepository(new BudgieDBCFModel()));
             BudgieUserRepository bur = new BudgieUserRepository(context);
             AccountRepository ar = new AccountRepository(context);
 
@@ -178,7 +178,7 @@ namespace BudgieEFUI
             int id;
 
             BudgieDBCFModel context = new BudgieDBCFModel();
-            NewBudgieUser newUser = new NewBudgieUser(new BudgieUserRepository(new BudgieDBCFModel()));
+            BudgieUserLogic newUser = new BudgieUserLogic(new BudgieUserRepository(new BudgieDBCFModel()));
             BudgieUserRepository bur = new BudgieUserRepository(context);
             AccountRepository ar = new AccountRepository(context);
 
