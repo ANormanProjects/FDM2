@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="6c72ec53-e9b1-43ce-a78c-d58f310bddaf" name="benjamin.bowes@TRNLON11661 2017-01-12 16:34:21" runUser="FDMGROUP\benjamin.bowes" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="2a7c581c-76ab-4ec9-b736-cf732308f0da">
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Deployment runDeploymentRoot="benjamin.bowes_TRNLON11661 2017-01-12 16_34_21" />
+    <Properties />
+  </TestSettings>
+  <Times creation="2017-01-12T16:34:21.6082776+00:00" queuing="2017-01-12T16:34:24.9276095+00:00" start="2017-01-12T16:34:25.2356403+00:00" finish="2017-01-12T16:34:27.0668234+00:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Test_GetAllBrokers_ReturnsAllBrokers" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="bea89ba8-5a4f-1b80-c4d1-c49c0200b0f8">
+      <Execution id="401bcf9c-6b55-4ade-891f-dab8cf1e93cc" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.BURTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_GetAllBrokers_ReturnsAllBrokers" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="bea89ba8-5a4f-1b80-c4d1-c49c0200b0f8" executionId="401bcf9c-6b55-4ade-891f-dab8cf1e93cc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="401bcf9c-6b55-4ade-891f-dab8cf1e93cc" testId="bea89ba8-5a4f-1b80-c4d1-c49c0200b0f8" testName="Test_GetAllBrokers_ReturnsAllBrokers" computerName="TRNLON11661" duration="00:00:01.1600685" startTime="2017-01-12T16:34:25.3416509+00:00" endTime="2017-01-12T16:34:26.9828150+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="401bcf9c-6b55-4ade-891f-dab8cf1e93cc">
+    </UnitTestResult>
+  </Results>
+</TestRun>
