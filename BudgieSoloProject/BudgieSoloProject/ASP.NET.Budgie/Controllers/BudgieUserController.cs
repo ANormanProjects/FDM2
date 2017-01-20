@@ -75,15 +75,16 @@ namespace ASP.NET.Budgie.Controllers
         public ActionResult UpdateUser(BudgieUser budgieuser)
         {
 
-            if (buLogic.CheckForDuplicateEmail(budgieuser.emailAddress) == true)
+            if (buLogic.CheckForDuplicateEmail(budgieuser.emailAddress) == false)
             {
                 if (Request.IsAjaxRequest())
                 {
-                    return PartialView("_failure");
+                    return PartialView("_failureUpdate");
                 }
             }
             else
             {
+                buLogic.UpdateUser(budgieuser);
                 if (Request.IsAjaxRequest())
                 {
                     return PartialView("_successUpdate");
@@ -112,10 +113,10 @@ namespace ASP.NET.Budgie.Controllers
             }
             else
             {
-
+                buLogic.RemoveUser(budgieuser);
                 if (Request.IsAjaxRequest())
                 {
-                    return PartialView("_successUpdate");
+                    return PartialView("_successRemove");
                 }
             }
             return RedirectToAction("Index");

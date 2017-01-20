@@ -20,11 +20,11 @@ namespace BudgieDatabaseLayer
 
         decimal printBudget(int idToPrintBudget);
 
-        bool withdrawMoney(int idToWithdraw, decimal withdrawBalance);
+        void withdrawMoney(int idToWithdraw, decimal withdrawBalance);
 
         void depositMoney(int idToDeposit, decimal depositBalance);
 
-        bool transferMoney(int idToTransferFrom, int idToTransferTo, decimal amountToTransfer);
+        void transferMoney(int idToTransferFrom, int idToTransferTo, decimal amountToTransfer);
 
         void setBudget(int idToSetBudget, decimal amountToBudget);
     }

@@ -176,9 +176,10 @@ namespace BudgieUsersRepositoryTests
             AccountRepository arTest = new AccountRepository(contextMock.Object);
             dbSetMock.Setup(c => c.Find(1)).Returns(bb.Object);
 
-            bool expected = true;
+            decimal expected = 1;
             //ACT
-            bool actual = arTest.withdrawMoney(1, 99);
+            arTest.withdrawMoney(1, 99);
+            decimal actual = arTest.printBalance(1);
 
             //ASSERT
 
