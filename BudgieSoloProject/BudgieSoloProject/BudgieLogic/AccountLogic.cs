@@ -22,11 +22,6 @@ namespace BudgieLogic
             accountList = accountRepo.GetAllAccounts();
         }
 
-        public AccountLogic()
-        {
-
-        }
-
         public void updateNewAccount(int idUpdate, string lastNameUpdate, string dobUpdate)
         {
             int actualUpdateId = 0;
