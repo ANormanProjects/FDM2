@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ae46305e-df33-45b4-9b26-d9aa9cde8e14" name="benjamin.bowes@TRNLON11661 2017-01-20 15:54:39" runUser="FDMGROUP\benjamin.bowes" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="b4ffa42e-3003-4bd7-bed7-5e87e0e30f43">
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Deployment runDeploymentRoot="benjamin.bowes_TRNLON11661 2017-01-20 15_54_39" />
+    <Properties />
+  </TestSettings>
+  <Times creation="2017-01-20T15:54:39.6315460+00:00" queuing="2017-01-20T15:54:44.0629460+00:00" start="2017-01-20T15:54:44.3281460+00:00" finish="2017-01-20T15:54:46.8135460+00:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="24" executed="24" passed="24" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Test_AddNewAccount_RunsAddAnAccountToDatabase_WhenCalledWithAnAccount" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="d07b7bc2-c7b8-3ea0-1754-4d7d8b87e6a7">
+      <Execution id="19c069f3-66aa-4353-a85e-0dc977a30eb5" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.ARTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_AddNewAccount_RunsAddAnAccountToDatabase_WhenCalledWithAnAccount" />
+    </UnitTest>
+    <UnitTest name="Test_SetBudget" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="2da3ddef-9052-cc5d-ce2c-67d1d3a2a5e5">
+      <Execution id="bab81a52-ef2d-4bf1-8d9a-260307e137c0" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.AccLogicTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_SetBudget" />
+    </UnitTest>
+    <UnitTest name="Test_TransferMoney_CallsTransferMoneyToDatabase_ReturnsFalseIfHasNotGotEnoughFundsToTransfer" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="d09e0b3c-18ec-40a6-7bab-c0ae50eb9699">
+      <Execution id="1cf7fe8d-8eff-4f30-af6d-a6fb03a86088" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.AccLogicTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_TransferMoney_CallsTransferMoneyToDatabase_ReturnsFalseIfHasNotGotEnoughFundsToTransfer" />
+    </UnitTest>
+    <UnitTest name="Test_Update" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="4225913d-e84c-d844-10d7-df9076ab3cd2">
+      <Execution id="bafce501-5f31-4921-ba91-b6bd9c94fc8e" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.AccLogicTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_Update" />
+    </UnitTest>
+    <UnitTest name="Test_WithdrawMoney_CallsWithdrawMoneyToDatabase_AndSaveChangesOnContextAfterWithdrawing" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="d6415b97-0ccb-c0e4-d644-5fc33c6a2493">
+      <Execution id="46911bed-0e08-43e8-b445-01df0fbbbe56" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.ARTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_WithdrawMoney_CallsWithdrawMoneyToDatabase_AndSaveChangesOnContextAfterWithdrawing" />
+    </UnitTest>
+    <UnitTest name="Test_DepositMoney_CallsDepositMoneyToDatabase_AndSaveChangesOnContext" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="c513a0fe-a3b6-fb40-0bf6-41209f4bba4e">
+      <Execution id="0e2e7cd8-18af-4284-b129-11323a9e7f9b" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.ARTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_DepositMoney_CallsDepositMoneyToDatabase_AndSaveChangesOnContext" />
+    </UnitTest>
+    <UnitTest name="Test_Deposit" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="cc58c54f-45f5-cba4-b033-8ca73a932b5e">
+      <Execution id="8a1e423c-8048-40b3-b814-deffdc7e6102" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.AccLogicTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_Deposit" />
+    </UnitTest>
+    <UnitTest name="Test_GetAllAccounts_ReturnsAllAccounts" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="33b959be-b635-974d-2284-c967c5873bb0">
+      <Execution id="8a440cd0-688b-4e00-86fb-f285efaed737" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.ARTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_GetAllAccounts_ReturnsAllAccounts" />
+    </UnitTest>
+    <UnitTest name="Test_PrintBudget" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="75005618-f903-88f8-c8ff-27103ca99f9b">
+      <Execution id="b49b6595-d243-48a0-827c-ecfc200e61aa" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.AccLogicTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_PrintBudget" />
+    </UnitTest>
+    <UnitTest name="Test_PrintBalance" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="bf8e00c3-b885-de1b-b353-3f00bbebac25">
+      <Execution id="d378d17b-4314-4b94-bbfd-c345b6408841" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.AccLogicTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_PrintBalance" />
+    </UnitTest>
+    <UnitTest name="Test_PrintBudget_CallsDatabaseToPrintBudget_AndDisplaysCurrentBudget" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="e11abd51-aabd-3c07-dcff-b99402dcce0a">
+      <Execution id="e575116e-5f21-4cf4-b496-f5413ee024b0" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.ARTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_PrintBudget_CallsDatabaseToPrintBudget_AndDisplaysCurrentBudget" />
+    </UnitTest>
+    <UnitTest name="Test_UpdateAccount_RunsUpdateAccountToDatabase_AndSaveChangesOnContext" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="b0181d74-d937-b6ed-0b07-bcf58575bfb0">
+      <Execution id="57ac9510-ee8e-46b9-94b5-ced12d8cfb02" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.ARTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_UpdateAccount_RunsUpdateAccountToDatabase_AndSaveChangesOnContext" />
+    </UnitTest>
+    <UnitTest name="Test_GetAllBrokers_ReturnsAllBrokers" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="00fae202-86bd-486f-cb8e-e1f325a24795">
+      <Execution id="05e41c0b-c4cb-4a20-8b76-d1c23b2423a8" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieEntityFramework.Tests.BURTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_GetAllBrokers_ReturnsAllBrokers" />
+    </UnitTest>
+    <UnitTest name="Test_RemoveBudgieUser_CallsRemoveABudgieUserToDatabase_AndSaveChangesOnContext" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="408da696-16df-076f-276d-f98589c90a07">
+      <Execution id="4f3c5d7e-2e70-4885-a461-5d8ccfd39878" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieEntityFramework.Tests.BURTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_RemoveBudgieUser_CallsRemoveABudgieUserToDatabase_AndSaveChangesOnContext" />
+    </UnitTest>
+    <UnitTest name="Test_SetBudget_CallsDatabaseToSetBudget_AndDIsplaysNewBudget" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="da490406-4fa7-b2ab-fc03-5dd0c4bb02cd">
+      <Execution id="88cf9413-0249-4d82-8351-2217e96e434a" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.ARTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_SetBudget_CallsDatabaseToSetBudget_AndDIsplaysNewBudget" />
+    </UnitTest>
+    <UnitTest name="Test_WithdrawMoney_CallsWithdrawMoneyToDatabase_ReturnsTrueIfCanWithdraw" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="d0c06244-d97f-e9a4-1b4d-726c761f43a9">
+      <Execution id="89af592e-dab0-43c9-bbaa-d043ad25e3e8" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.AccLogicTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_WithdrawMoney_CallsWithdrawMoneyToDatabase_ReturnsTrueIfCanWithdraw" />
+    </UnitTest>
+    <UnitTest name="Test_RemoveAccount_CallsRemoveAnAccountToDatabase_AndSaveChangesOnContext" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="3a94d78e-3a85-164c-0c08-8408058c6694">
+      <Execution id="43a355c3-b740-4ad3-9599-f1bbecd21b23" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.ARTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_RemoveAccount_CallsRemoveAnAccountToDatabase_AndSaveChangesOnContext" />
+    </UnitTest>
+    <UnitTest name="Test_PrintBalance_CallsDatabaseToPrintBalance_AndDisplaysCurrentBalance" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="5889c23d-a4e0-7429-e9b4-1e35547e98fb">
+      <Execution id="abf5aee7-e536-4f60-bc42-2fb1edbbc18f" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.ARTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_PrintBalance_CallsDatabaseToPrintBalance_AndDisplaysCurrentBalance" />
+    </UnitTest>
+    <UnitTest name="Test_UpdateBudgieUser_RunsUpdateBudgieUserToDatabase_AndSaveChangesOnContext" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="20476bf6-db95-395d-bf04-475563baa4d3">
+      <Execution id="25364ecd-8c1b-4fee-b03f-1e6599a740a3" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieEntityFramework.Tests.BURTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_UpdateBudgieUser_RunsUpdateBudgieUserToDatabase_AndSaveChangesOnContext" />
+    </UnitTest>
+    <UnitTest name="Test_TransferMoney_CallsTransferMoneyToDatabase_ReturnsTrueIfHasEnoughFundsToTransfer" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="e9620ecd-7735-106a-bc21-756500f9b2f9">
+      <Execution id="e8a183e3-9604-400f-b748-75d701d4aeaa" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.AccLogicTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_TransferMoney_CallsTransferMoneyToDatabase_ReturnsTrueIfHasEnoughFundsToTransfer" />
+    </UnitTest>
+    <UnitTest name="Test_WithdrawMoney_CallsWithdrawMoneyToDatabase_ReturnsFalseIfCanNotWithdraw" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="a2d1aec2-543c-0545-e749-dbe1544c9061">
+      <Execution id="d4cc8361-6670-4305-90d0-2565c452e72f" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.AccLogicTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_WithdrawMoney_CallsWithdrawMoneyToDatabase_ReturnsFalseIfCanNotWithdraw" />
+    </UnitTest>
+    <UnitTest name="Test_AddNewBudgieUser_CallsAddABudgieUserToDatabase_AndSavesChangesOnContext" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="efecfd89-047a-cbbd-93f8-827ae39399c6">
+      <Execution id="b4faa647-97c2-42bb-8296-cc3922b7f9c5" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieEntityFramework.Tests.BURTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_AddNewBudgieUser_CallsAddABudgieUserToDatabase_AndSavesChangesOnContext" />
+    </UnitTest>
+    <UnitTest name="Test_TransferMoney_CallsTransferMoneyToDatabase_AndSaveChangesOnContextAfterTransferIsComplete" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="9f299dfd-44b6-7599-5fb8-4e04d5a71bca">
+      <Execution id="d6f9a057-8680-4f25-9c67-d4fda458cdf3" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.ARTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_TransferMoney_CallsTransferMoneyToDatabase_AndSaveChangesOnContextAfterTransferIsComplete" />
+    </UnitTest>
+    <UnitTest name="Test_Remove" storage="budgieusersrepositorytests\bin\debug\budgieusersrepositorytests.dll" id="dc5c6ef4-56b0-a339-a7b0-b6f1200e6686">
+      <Execution id="e8b48753-5bc5-4469-9bfe-83ab6e14a3b5" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/SoloProject/Budgie/BudgieUsersRepositoryTests/bin/debug/BudgieUsersRepositoryTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BudgieUsersRepositoryTests.AccLogicTests, BudgieUsersRepositoryTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_Remove" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="efecfd89-047a-cbbd-93f8-827ae39399c6" executionId="b4faa647-97c2-42bb-8296-cc3922b7f9c5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="00fae202-86bd-486f-cb8e-e1f325a24795" executionId="05e41c0b-c4cb-4a20-8b76-d1c23b2423a8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="408da696-16df-076f-276d-f98589c90a07" executionId="4f3c5d7e-2e70-4885-a461-5d8ccfd39878" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="20476bf6-db95-395d-bf04-475563baa4d3" executionId="25364ecd-8c1b-4fee-b03f-1e6599a740a3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cc58c54f-45f5-cba4-b033-8ca73a932b5e" executionId="8a1e423c-8048-40b3-b814-deffdc7e6102" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bf8e00c3-b885-de1b-b353-3f00bbebac25" executionId="d378d17b-4314-4b94-bbfd-c345b6408841" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="75005618-f903-88f8-c8ff-27103ca99f9b" executionId="b49b6595-d243-48a0-827c-ecfc200e61aa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dc5c6ef4-56b0-a339-a7b0-b6f1200e6686" executionId="e8b48753-5bc5-4469-9bfe-83ab6e14a3b5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2da3ddef-9052-cc5d-ce2c-67d1d3a2a5e5" executionId="bab81a52-ef2d-4bf1-8d9a-260307e137c0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d09e0b3c-18ec-40a6-7bab-c0ae50eb9699" executionId="1cf7fe8d-8eff-4f30-af6d-a6fb03a86088" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e9620ecd-7735-106a-bc21-756500f9b2f9" executionId="e8a183e3-9604-400f-b748-75d701d4aeaa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4225913d-e84c-d844-10d7-df9076ab3cd2" executionId="bafce501-5f31-4921-ba91-b6bd9c94fc8e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a2d1aec2-543c-0545-e749-dbe1544c9061" executionId="d4cc8361-6670-4305-90d0-2565c452e72f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d0c06244-d97f-e9a4-1b4d-726c761f43a9" executionId="89af592e-dab0-43c9-bbaa-d043ad25e3e8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d07b7bc2-c7b8-3ea0-1754-4d7d8b87e6a7" executionId="19c069f3-66aa-4353-a85e-0dc977a30eb5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c513a0fe-a3b6-fb40-0bf6-41209f4bba4e" executionId="0e2e7cd8-18af-4284-b129-11323a9e7f9b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="33b959be-b635-974d-2284-c967c5873bb0" executionId="8a440cd0-688b-4e00-86fb-f285efaed737" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5889c23d-a4e0-7429-e9b4-1e35547e98fb" executionId="abf5aee7-e536-4f60-bc42-2fb1edbbc18f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e11abd51-aabd-3c07-dcff-b99402dcce0a" executionId="e575116e-5f21-4cf4-b496-f5413ee024b0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3a94d78e-3a85-164c-0c08-8408058c6694" executionId="43a355c3-b740-4ad3-9599-f1bbecd21b23" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="da490406-4fa7-b2ab-fc03-5dd0c4bb02cd" executionId="88cf9413-0249-4d82-8351-2217e96e434a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9f299dfd-44b6-7599-5fb8-4e04d5a71bca" executionId="d6f9a057-8680-4f25-9c67-d4fda458cdf3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b0181d74-d937-b6ed-0b07-bcf58575bfb0" executionId="57ac9510-ee8e-46b9-94b5-ced12d8cfb02" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d6415b97-0ccb-c0e4-d644-5fc33c6a2493" executionId="46911bed-0e08-43e8-b445-01df0fbbbe56" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="b4faa647-97c2-42bb-8296-cc3922b7f9c5" testId="efecfd89-047a-cbbd-93f8-827ae39399c6" testName="Test_AddNewBudgieUser_CallsAddABudgieUserToDatabase_AndSavesChangesOnContext" computerName="TRNLON11661" duration="00:00:01.3848167" startTime="2017-01-20T15:54:44.4373460+00:00" endTime="2017-01-20T15:54:46.2831460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b4faa647-97c2-42bb-8296-cc3922b7f9c5">
+    </UnitTestResult>
+    <UnitTestResult executionId="05e41c0b-c4cb-4a20-8b76-d1c23b2423a8" testId="00fae202-86bd-486f-cb8e-e1f325a24795" testName="Test_GetAllBrokers_ReturnsAllBrokers" computerName="TRNLON11661" duration="00:00:00.0074301" startTime="2017-01-20T15:54:46.2987460+00:00" endTime="2017-01-20T15:54:46.2987460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="05e41c0b-c4cb-4a20-8b76-d1c23b2423a8">
+    </UnitTestResult>
+    <UnitTestResult executionId="4f3c5d7e-2e70-4885-a461-5d8ccfd39878" testId="408da696-16df-076f-276d-f98589c90a07" testName="Test_RemoveBudgieUser_CallsRemoveABudgieUserToDatabase_AndSaveChangesOnContext" computerName="TRNLON11661" duration="00:00:00.0279511" startTime="2017-01-20T15:54:46.2987460+00:00" endTime="2017-01-20T15:54:46.3455460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4f3c5d7e-2e70-4885-a461-5d8ccfd39878">
+    </UnitTestResult>
+    <UnitTestResult executionId="25364ecd-8c1b-4fee-b03f-1e6599a740a3" testId="20476bf6-db95-395d-bf04-475563baa4d3" testName="Test_UpdateBudgieUser_RunsUpdateBudgieUserToDatabase_AndSaveChangesOnContext" computerName="TRNLON11661" duration="00:00:00.0213246" startTime="2017-01-20T15:54:46.3455460+00:00" endTime="2017-01-20T15:54:46.3767460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="25364ecd-8c1b-4fee-b03f-1e6599a740a3">
+    </UnitTestResult>
+    <UnitTestResult executionId="8a1e423c-8048-40b3-b814-deffdc7e6102" testId="cc58c54f-45f5-cba4-b033-8ca73a932b5e" testName="Test_Deposit" computerName="TRNLON11661" duration="00:00:00.0435686" startTime="2017-01-20T15:54:46.3767460+00:00" endTime="2017-01-20T15:54:46.4235460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a1e423c-8048-40b3-b814-deffdc7e6102">
+    </UnitTestResult>
+    <UnitTestResult executionId="d378d17b-4314-4b94-bbfd-c345b6408841" testId="bf8e00c3-b885-de1b-b353-3f00bbebac25" testName="Test_PrintBalance" computerName="TRNLON11661" duration="00:00:00.0129652" startTime="2017-01-20T15:54:46.4235460+00:00" endTime="2017-01-20T15:54:46.4391460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d378d17b-4314-4b94-bbfd-c345b6408841">
+    </UnitTestResult>
+    <UnitTestResult executionId="b49b6595-d243-48a0-827c-ecfc200e61aa" testId="75005618-f903-88f8-c8ff-27103ca99f9b" testName="Test_PrintBudget" computerName="TRNLON11661" duration="00:00:00.0048699" startTime="2017-01-20T15:54:46.4547460+00:00" endTime="2017-01-20T15:54:46.4547460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b49b6595-d243-48a0-827c-ecfc200e61aa">
+    </UnitTestResult>
+    <UnitTestResult executionId="e8b48753-5bc5-4469-9bfe-83ab6e14a3b5" testId="dc5c6ef4-56b0-a339-a7b0-b6f1200e6686" testName="Test_Remove" computerName="TRNLON11661" duration="00:00:00.0045334" startTime="2017-01-20T15:54:46.4547460+00:00" endTime="2017-01-20T15:54:46.4703460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e8b48753-5bc5-4469-9bfe-83ab6e14a3b5">
+    </UnitTestResult>
+    <UnitTestResult executionId="bab81a52-ef2d-4bf1-8d9a-260307e137c0" testId="2da3ddef-9052-cc5d-ce2c-67d1d3a2a5e5" testName="Test_SetBudget" computerName="TRNLON11661" duration="00:00:00.0052680" startTime="2017-01-20T15:54:46.4703460+00:00" endTime="2017-01-20T15:54:46.4859460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bab81a52-ef2d-4bf1-8d9a-260307e137c0">
+    </UnitTestResult>
+    <UnitTestResult executionId="1cf7fe8d-8eff-4f30-af6d-a6fb03a86088" testId="d09e0b3c-18ec-40a6-7bab-c0ae50eb9699" testName="Test_TransferMoney_CallsTransferMoneyToDatabase_ReturnsFalseIfHasNotGotEnoughFundsToTransfer" computerName="TRNLON11661" duration="00:00:00.0089487" startTime="2017-01-20T15:54:46.4859460+00:00" endTime="2017-01-20T15:54:46.5015460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1cf7fe8d-8eff-4f30-af6d-a6fb03a86088">
+    </UnitTestResult>
+    <UnitTestResult executionId="e8a183e3-9604-400f-b748-75d701d4aeaa" testId="e9620ecd-7735-106a-bc21-756500f9b2f9" testName="Test_TransferMoney_CallsTransferMoneyToDatabase_ReturnsTrueIfHasEnoughFundsToTransfer" computerName="TRNLON11661" duration="00:00:00.0085727" startTime="2017-01-20T15:54:46.5015460+00:00" endTime="2017-01-20T15:54:46.5171460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e8a183e3-9604-400f-b748-75d701d4aeaa">
+    </UnitTestResult>
+    <UnitTestResult executionId="bafce501-5f31-4921-ba91-b6bd9c94fc8e" testId="4225913d-e84c-d844-10d7-df9076ab3cd2" testName="Test_Update" computerName="TRNLON11661" duration="00:00:00.0096058" startTime="2017-01-20T15:54:46.5171460+00:00" endTime="2017-01-20T15:54:46.5327460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bafce501-5f31-4921-ba91-b6bd9c94fc8e">
+    </UnitTestResult>
+    <UnitTestResult executionId="d4cc8361-6670-4305-90d0-2565c452e72f" testId="a2d1aec2-543c-0545-e749-dbe1544c9061" testName="Test_WithdrawMoney_CallsWithdrawMoneyToDatabase_ReturnsFalseIfCanNotWithdraw" computerName="TRNLON11661" duration="00:00:00.0067443" startTime="2017-01-20T15:54:46.5327460+00:00" endTime="2017-01-20T15:54:46.5327460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d4cc8361-6670-4305-90d0-2565c452e72f">
+    </UnitTestResult>
+    <UnitTestResult executionId="89af592e-dab0-43c9-bbaa-d043ad25e3e8" testId="d0c06244-d97f-e9a4-1b4d-726c761f43a9" testName="Test_WithdrawMoney_CallsWithdrawMoneyToDatabase_ReturnsTrueIfCanWithdraw" computerName="TRNLON11661" duration="00:00:00.0063590" startTime="2017-01-20T15:54:46.5483460+00:00" endTime="2017-01-20T15:54:46.5483460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="89af592e-dab0-43c9-bbaa-d043ad25e3e8">
+    </UnitTestResult>
+    <UnitTestResult executionId="19c069f3-66aa-4353-a85e-0dc977a30eb5" testId="d07b7bc2-c7b8-3ea0-1754-4d7d8b87e6a7" testName="Test_AddNewAccount_RunsAddAnAccountToDatabase_WhenCalledWithAnAccount" computerName="TRNLON11661" duration="00:00:00.0410004" startTime="2017-01-20T15:54:46.5483460+00:00" endTime="2017-01-20T15:54:46.5951460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="19c069f3-66aa-4353-a85e-0dc977a30eb5">
+    </UnitTestResult>
+    <UnitTestResult executionId="0e2e7cd8-18af-4284-b129-11323a9e7f9b" testId="c513a0fe-a3b6-fb40-0bf6-41209f4bba4e" testName="Test_DepositMoney_CallsDepositMoneyToDatabase_AndSaveChangesOnContext" computerName="TRNLON11661" duration="00:00:00.0079432" startTime="2017-01-20T15:54:46.6107460+00:00" endTime="2017-01-20T15:54:46.6107460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0e2e7cd8-18af-4284-b129-11323a9e7f9b">
+    </UnitTestResult>
+    <UnitTestResult executionId="8a440cd0-688b-4e00-86fb-f285efaed737" testId="33b959be-b635-974d-2284-c967c5873bb0" testName="Test_GetAllAccounts_ReturnsAllAccounts" computerName="TRNLON11661" duration="00:00:00.0034577" startTime="2017-01-20T15:54:46.6107460+00:00" endTime="2017-01-20T15:54:46.6263460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a440cd0-688b-4e00-86fb-f285efaed737">
+    </UnitTestResult>
+    <UnitTestResult executionId="abf5aee7-e536-4f60-bc42-2fb1edbbc18f" testId="5889c23d-a4e0-7429-e9b4-1e35547e98fb" testName="Test_PrintBalance_CallsDatabaseToPrintBalance_AndDisplaysCurrentBalance" computerName="TRNLON11661" duration="00:00:00.0079025" startTime="2017-01-20T15:54:46.6263460+00:00" endTime="2017-01-20T15:54:46.6419460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="abf5aee7-e536-4f60-bc42-2fb1edbbc18f">
+    </UnitTestResult>
+    <UnitTestResult executionId="e575116e-5f21-4cf4-b496-f5413ee024b0" testId="e11abd51-aabd-3c07-dcff-b99402dcce0a" testName="Test_PrintBudget_CallsDatabaseToPrintBudget_AndDisplaysCurrentBudget" computerName="TRNLON11661" duration="00:00:00.0096475" startTime="2017-01-20T15:54:46.6419460+00:00" endTime="2017-01-20T15:54:46.6575460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e575116e-5f21-4cf4-b496-f5413ee024b0">
+    </UnitTestResult>
+    <UnitTestResult executionId="43a355c3-b740-4ad3-9599-f1bbecd21b23" testId="3a94d78e-3a85-164c-0c08-8408058c6694" testName="Test_RemoveAccount_CallsRemoveAnAccountToDatabase_AndSaveChangesOnContext" computerName="TRNLON11661" duration="00:00:00.0079964" startTime="2017-01-20T15:54:46.6575460+00:00" endTime="2017-01-20T15:54:46.6731460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="43a355c3-b740-4ad3-9599-f1bbecd21b23">
+    </UnitTestResult>
+    <UnitTestResult executionId="88cf9413-0249-4d82-8351-2217e96e434a" testId="da490406-4fa7-b2ab-fc03-5dd0c4bb02cd" testName="Test_SetBudget_CallsDatabaseToSetBudget_AndDIsplaysNewBudget" computerName="TRNLON11661" duration="00:00:00.0069135" startTime="2017-01-20T15:54:46.6731460+00:00" endTime="2017-01-20T15:54:46.6731460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="88cf9413-0249-4d82-8351-2217e96e434a">
+    </UnitTestResult>
+    <UnitTestResult executionId="d6f9a057-8680-4f25-9c67-d4fda458cdf3" testId="9f299dfd-44b6-7599-5fb8-4e04d5a71bca" testName="Test_TransferMoney_CallsTransferMoneyToDatabase_AndSaveChangesOnContextAfterTransferIsComplete" computerName="TRNLON11661" duration="00:00:00.0122188" startTime="2017-01-20T15:54:46.6887460+00:00" endTime="2017-01-20T15:54:46.7043460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d6f9a057-8680-4f25-9c67-d4fda458cdf3">
+    </UnitTestResult>
+    <UnitTestResult executionId="57ac9510-ee8e-46b9-94b5-ced12d8cfb02" testId="b0181d74-d937-b6ed-0b07-bcf58575bfb0" testName="Test_UpdateAccount_RunsUpdateAccountToDatabase_AndSaveChangesOnContext" computerName="TRNLON11661" duration="00:00:00.0070192" startTime="2017-01-20T15:54:46.7043460+00:00" endTime="2017-01-20T15:54:46.7043460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="57ac9510-ee8e-46b9-94b5-ced12d8cfb02">
+    </UnitTestResult>
+    <UnitTestResult executionId="46911bed-0e08-43e8-b445-01df0fbbbe56" testId="d6415b97-0ccb-c0e4-d644-5fc33c6a2493" testName="Test_WithdrawMoney_CallsWithdrawMoneyToDatabase_AndSaveChangesOnContextAfterWithdrawing" computerName="TRNLON11661" duration="00:00:00.0099190" startTime="2017-01-20T15:54:46.7199460+00:00" endTime="2017-01-20T15:54:46.7355460+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="46911bed-0e08-43e8-b445-01df0fbbbe56">
+    </UnitTestResult>
+  </Results>
+</TestRun>
