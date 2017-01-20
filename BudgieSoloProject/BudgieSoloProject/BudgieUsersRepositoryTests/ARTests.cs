@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Collections.Generic;
 using BudgieDatabaseLayer;
+using BudgieLogic;
 
 namespace BudgieUsersRepositoryTests
 {
@@ -155,7 +156,7 @@ namespace BudgieUsersRepositoryTests
         }
 
         [TestMethod]
-        public void Test_WithdrawMoney_CallsWithdrawMoneyToDatabase_ReturnsTrueIfCanWithdraw_AndSaveChangesOnContext()
+        public void Test_WithdrawMoney_CallsWithdrawMoneyToDatabase_AndSaveChangesOnContextAfterWithdrawing()
         {
             //ARRANGE
             Mock<Account> bb = new Mock<Account>();
@@ -176,49 +177,14 @@ namespace BudgieUsersRepositoryTests
             AccountRepository arTest = new AccountRepository(contextMock.Object);
             dbSetMock.Setup(c => c.Find(1)).Returns(bb.Object);
 
-            decimal expected = 1;
             //ACT
             arTest.withdrawMoney(1, 99);
-            decimal actual = arTest.printBalance(1);
 
             //ASSERT
 
             dbSetMock.Verify(c => c.Find(1));
             bb.VerifySet(c => c.balance = 1, Times.Once);
-            Assert.AreEqual(expected, actual);
             contextMock.Verify(c => c.SaveChanges(), Times.Once);
-        }
-
-        [TestMethod]
-        public void Test_WithdrawMoney_CallsWithdrawMoneyToDatabase_ReturnsFalseIfCannotWithdraw()
-        {
-            //ARRANGE
-            Mock<Account> bb = new Mock<Account>();
-
-            bb.Setup(c => c.id).Returns(1);
-            bb.Setup(c => c.accountOwnerId).Returns(1);
-            bb.Setup(c => c.balance).Returns(100);
-
-            var testData = new List<Account> { bb.Object }.AsQueryable();
-            dbSetMock.As<IQueryable<Account>>().Setup(d => d.Provider).Returns(testData.Provider);
-            dbSetMock.As<IQueryable<Account>>().Setup(d => d.Expression).Returns(testData.Expression);
-            dbSetMock.As<IQueryable<Account>>().Setup(d => d.ElementType).Returns(testData.ElementType);
-            dbSetMock.As<IQueryable<Account>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator);
-
-            var contextMock = new Mock<BudgieDBCFModel>();
-            contextMock.Setup(c => c.accounts).Returns(dbSetMock.Object);
-
-            AccountRepository arTest = new AccountRepository(contextMock.Object);
-            dbSetMock.Setup(c => c.Find(1)).Returns(bb.Object);
-
-            bool expected = false;
-            //ACT
-            bool actual = arTest.withdrawMoney(1, 101);
-
-            //ASSERT
-
-            dbSetMock.Verify(c => c.Find(1));
-            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -253,7 +219,7 @@ namespace BudgieUsersRepositoryTests
         }
 
         [TestMethod]
-        public void Test_TransferMoney_CallsTransferMoneyToDatabase_ReturnsTrueIfHasEnoughFundsToTransfer_AndSaveChangesOnContext()
+        public void Test_TransferMoney_CallsTransferMoneyToDatabase_AndSaveChangesOnContextAfterTransferIsComplete()
         {
             //ARRANGE
             Mock<Account> bb = new Mock<Account>();
@@ -279,57 +245,17 @@ namespace BudgieUsersRepositoryTests
             AccountRepository arTest = new AccountRepository(contextMock.Object);
             dbSetMock.Setup(c => c.Find(1)).Returns(bb.Object);
             dbSetMock.Setup(c => c.Find(2)).Returns(gg.Object);
-            bool expected = true;
+
             
             //ACT
-
-            bool actual = arTest.transferMoney(1, 2, 100);
+            arTest.transferMoney(1, 2, 100);
+           
 
             //ASSERT
             dbSetMock.Verify(c => c.Find(1));
-            dbSetMock.Verify(c => c.Find(2));
             bb.VerifySet(c => c.balance = 1, Times.Once);
             gg.VerifySet(c => c.balance = 150, Times.Once);
-            Assert.AreEqual(expected, actual);
-            contextMock.Verify(c => c.SaveChanges(), Times.Once);
-        }
-
-        [TestMethod]
-        public void Test_TransferMoney_CallsTransferMoneyToDatabase_ReturnsFalseIfAccountHasInsufficentFunds()
-        {
-            //ARRANGE
-            Mock<Account> bb = new Mock<Account>();
-            Mock<Account> gg = new Mock<Account>();
-
-            bb.Setup(c => c.id).Returns(1);
-            bb.Setup(c => c.accountOwnerId).Returns(1);
-            bb.Setup(c => c.balance).Returns(101);
-
-            gg.Setup(g => g.id).Returns(2);
-            gg.Setup(g => g.accountOwnerId).Returns(2);
-            gg.Setup(g => g.balance).Returns(50);
-
-            var testData = new List<Account> { bb.Object, gg.Object }.AsQueryable();
-            dbSetMock.As<IQueryable<Account>>().Setup(d => d.Provider).Returns(testData.Provider);
-            dbSetMock.As<IQueryable<Account>>().Setup(d => d.Expression).Returns(testData.Expression);
-            dbSetMock.As<IQueryable<Account>>().Setup(d => d.ElementType).Returns(testData.ElementType);
-            dbSetMock.As<IQueryable<Account>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator);
-
-            var contextMock = new Mock<BudgieDBCFModel>();
-            contextMock.Setup(c => c.accounts).Returns(dbSetMock.Object);
-
-            AccountRepository arTest = new AccountRepository(contextMock.Object);
-            dbSetMock.Setup(c => c.Find(1)).Returns(bb.Object);
-            dbSetMock.Setup(c => c.Find(2)).Returns(gg.Object);
-            bool expected = false;
-
-            //ACT
-
-            bool actual = arTest.transferMoney(1, 2, 102);
-
-            //ASSERT
-            dbSetMock.Verify(c => c.Find(1));
-            Assert.AreEqual(expected, actual);
+            contextMock.Verify(c => c.SaveChanges(), Times.Once);         
         }
 
         [TestMethod]
