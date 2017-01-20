@@ -13,17 +13,18 @@ namespace BudgieLogic
         private static readonly ILog logger = LogManager.GetLogger("AccountLogic.cs");
 
         Account account = new Account();
-        BudgieUserRepository budgieUserRepo;
         AccountRepository accountRepo;
-        List<BudgieUser> budgieUserList;
         List<Account> accountList;
 
-        public AccountLogic(BudgieUserRepository BudgieUserRepository, AccountRepository AccountRepository)
+        public AccountLogic(AccountRepository AccountRepository)
         {
-            budgieUserRepo = BudgieUserRepository;
             accountRepo = AccountRepository;
-            budgieUserList = budgieUserRepo.GetAllBudgieUsers();
             accountList = accountRepo.GetAllAccounts();
+        }
+
+        public AccountLogic()
+        {
+
         }
 
         public void updateNewAccount(int idUpdate, string lastNameUpdate, string dobUpdate)
@@ -66,7 +67,7 @@ namespace BudgieLogic
                     targetIdToPrintBalance = account.id;
                 }
             }
-            printCurrentBalance = accountRepo.printBalance(targetIdToPrintBalance);
+            printCurrentBalance += accountRepo.printBalance(targetIdToPrintBalance);
             return printCurrentBalance;
         }
 

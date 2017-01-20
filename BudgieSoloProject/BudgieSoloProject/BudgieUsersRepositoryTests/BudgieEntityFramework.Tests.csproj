@@ -74,6 +74,7 @@
     <Compile Include="BURTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ARTests.cs" />
+    <Compile Include="AccLogicTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BudgieEFUI\BudgieServiceLayer.csproj">
