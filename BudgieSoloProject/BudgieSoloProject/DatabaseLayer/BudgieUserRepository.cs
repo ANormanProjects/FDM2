@@ -13,27 +13,24 @@ namespace BudgieDatabaseLayer
 
         BudgieDBCFModel context;
 
-        List<BudgieUser> budgieusers;
-
         public BudgieUserRepository(BudgieDBCFModel _context)
         {
             context = _context;
-            budgieusers = GetAllBudgieUsers();
         }
 
-        public List<BudgieUser> GetAllBudgieUsers()
+        public virtual List<BudgieUser> GetAllBudgieUsers()
         {
             return context.budgieUsers.ToList();
         }
 
-        public void addNewBudgieUser(BudgieUser newBudgieUser)
+        public virtual void addNewBudgieUser(BudgieUser newBudgieUser)
         {
             context.budgieUsers.Add(newBudgieUser);
 
             context.SaveChanges();
         }
 
-        public void updateBudgieUser(int idUpdate, string firstNameUpdate, string lastNameUpdate, string dobUpdate)
+        public virtual void updateBudgieUser(int idUpdate, string firstNameUpdate, string lastNameUpdate, string dobUpdate)
         {
             context.budgieUsers.Find(idUpdate).firstName = firstNameUpdate;
             context.budgieUsers.Find(idUpdate).lastName = lastNameUpdate;
@@ -47,7 +44,7 @@ namespace BudgieDatabaseLayer
             //budgieUserToUpdate.dob = dobUpdate;
         }
 
-        public void removeBudgieUser(int idToRemove)
+        public virtual void removeBudgieUser(int idToRemove)
         {
             
             context.budgieUsers.Remove(context.budgieUsers.Find(idToRemove));
@@ -55,45 +52,45 @@ namespace BudgieDatabaseLayer
             context.SaveChanges();
         }
 
-        public void changeEmailAddress(string emailAddressToUpdate)
-        {
-            int idUpdate = 0;
+        //public virtual void changeEmailAddress(string emailAddressToUpdate)
+        //{
+        //    int idUpdate = 0;
 
-            foreach (BudgieUser budgieuser in budgieusers)
-            {
-                if (budgieuser.emailAddress == emailAddressToUpdate)
-                {
-                    idUpdate = budgieuser.id;
-                }
-            }
-            context.budgieUsers.Find(idUpdate).emailAddress = emailAddressToUpdate;
+        //    foreach (BudgieUser budgieuser in budgieusers)
+        //    {
+        //        if (budgieuser.emailAddress == emailAddressToUpdate)
+        //        {
+        //            idUpdate = budgieuser.id;
+        //        }
+        //    }
+        //    context.budgieUsers.Find(idUpdate).emailAddress = emailAddressToUpdate;
 
-            context.SaveChanges();
-        }
+        //    context.SaveChanges();
+        //}
 
-        public bool changePassword(string emailAddressToChange, string originalPassword, string passwordToUpdate, string passwordToConfirm)
-        {
-            int idUpdate = 0;
+        //public virtual bool changePassword(string emailAddressToChange, string originalPassword, string passwordToUpdate, string passwordToConfirm)
+        //{
+        //    int idUpdate = 0;
 
-            foreach (BudgieUser budgieuser in budgieusers)
-            {
-                if (budgieuser.emailAddress == emailAddressToChange)
-                {
-                    idUpdate = budgieuser.id;
+        //    foreach (BudgieUser budgieuser in budgieusers)
+        //    {
+        //        if (budgieuser.emailAddress == emailAddressToChange)
+        //        {
+        //            idUpdate = budgieuser.id;
 
-                    if (budgieuser.password == originalPassword)
-                    {
-                        if (passwordToUpdate == passwordToConfirm)
-                        {
-                            context.budgieUsers.Find(idUpdate).password = passwordToUpdate;
-                            context.SaveChanges();
-                            return true;
-                        }
-                    }
-                }          
-            }
+        //            if (budgieuser.password == originalPassword)
+        //            {
+        //                if (passwordToUpdate == passwordToConfirm)
+        //                {
+        //                    context.budgieUsers.Find(idUpdate).password = passwordToUpdate;
+        //                    context.SaveChanges();
+        //                    return true;
+        //                }
+        //            }
+        //        }          
+        //    }
 
-            return false;
-        }        
+        //    return false;
+        //}        
     }
 }

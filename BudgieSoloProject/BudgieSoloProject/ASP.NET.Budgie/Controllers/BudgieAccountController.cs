@@ -19,17 +19,12 @@ namespace ASP.NET.Budgie.Controllers
             return View(ardb.GetAllAccounts());
         }
 
+        public ActionResult Overview()
+        {
+            return View();
+        }
+
         public ActionResult Budgets()
-        {
-            return View();
-        }
-
-        public ActionResult Statistics()
-        {
-            return View();
-        }
-
-        public ActionResult Banks()
         {
             return View();
         }

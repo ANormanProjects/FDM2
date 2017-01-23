@@ -268,10 +268,6 @@
       <Project>{1a525b20-9bba-4542-a876-09163066a4e3}</Project>
       <Name>BudgieLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BudgieUsersRepositoryTests\BudgieEntityFramework.Tests.csproj">
-      <Project>{18642253-f727-4fd8-b288-0cc56e6cf0e2}</Project>
-      <Name>BudgieEntityFramework.Tests</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DatabaseLayer\BudgieDatabaseLayer.csproj">
       <Project>{46deab45-3eb1-4a62-8b5a-c3efdc455a81}</Project>
       <Name>BudgieDatabaseLayer</Name>
