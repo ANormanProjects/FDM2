@@ -26,7 +26,7 @@ namespace ASP.NET.Budgie.Controllers
         // GET: BudgieUser
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
 
         [Authorize(Roles = "Admin")]

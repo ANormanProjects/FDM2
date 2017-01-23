@@ -14,19 +14,17 @@ namespace BudgieLogic
 
         Account account = new Account();
         AccountRepository accountRepo;
-        List<Account> accountList;
 
         public AccountLogic(AccountRepository AccountRepository)
         {
-            accountRepo = AccountRepository;
-            accountList = accountRepo.GetAllAccounts();
+            accountRepo = AccountRepository;         
         }
 
-        public void updateNewAccount(int idUpdate, string lastNameUpdate, string dobUpdate)
+        public virtual void updateNewAccount(int idUpdate, string lastNameUpdate, string dobUpdate)
         {
             int actualUpdateId = 0;
 
-            foreach (Account account in accountList)
+            foreach (Account account in accountRepo.GetAllAccounts())
             {
                 if (account.accountOwnerId == idUpdate)
                 {
@@ -40,7 +38,7 @@ namespace BudgieLogic
         {
             int actualRemoveId = 0;
 
-            foreach (Account account in accountList)
+            foreach (Account account in accountRepo.GetAllAccounts())
             {
                 if (account.accountOwnerId == idToRemove)
                 {
@@ -55,7 +53,7 @@ namespace BudgieLogic
             int targetIdToPrintBalance = 0;
             decimal printCurrentBalance = 0;
 
-            foreach (Account account in accountList)
+            foreach (Account account in accountRepo.GetAllAccounts())
             {
                 if (account.accountOwnerId == idToPrintBalance)
                 {
@@ -71,7 +69,7 @@ namespace BudgieLogic
             int targetIdToPrintBudget = 0;
             decimal printCurrentBudget = 0;
 
-            foreach (Account account in accountList)
+            foreach (Account account in accountRepo.GetAllAccounts())
             {
                 if (account.accountOwnerId == idToPrintBudget)
                 {
@@ -86,7 +84,7 @@ namespace BudgieLogic
         {
             int targetIdToWithdraw = 0;
 
-            foreach (Account account in accountList)
+            foreach (Account account in accountRepo.GetAllAccounts())
             {
                 if (account.accountOwnerId == idToWithdraw)
                 {
@@ -112,7 +110,7 @@ namespace BudgieLogic
         {
             int targetIdToDeposit = 0;
 
-            foreach (Account account in accountList)
+            foreach (Account account in accountRepo.GetAllAccounts())
             {
                 if (account.accountOwnerId == idToDeposit)
                 {
@@ -128,7 +126,7 @@ namespace BudgieLogic
             int targetIdToTransferTo = 0;
             decimal _amountToTransfer = 0;
 
-            foreach (Account account in accountList)
+            foreach (Account account in accountRepo.GetAllAccounts())
             {
                 if (account.accountOwnerId == idToTransferFrom)
                 {
@@ -136,7 +134,7 @@ namespace BudgieLogic
                 }
             }
 
-            foreach (Account account in accountList)
+            foreach (Account account in accountRepo.GetAllAccounts())
             {
                 if (account.accountOwnerId == idToTransferTo)
                 {
@@ -164,7 +162,7 @@ namespace BudgieLogic
             int targetIdToSetBudget = 0;
             decimal _amountToBudget = 0;
 
-            foreach (Account account in accountList)
+            foreach (Account account in accountRepo.GetAllAccounts())
             {
                 if (account.accountOwnerId == idToSetBudget)
                 {

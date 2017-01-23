@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountLogic.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="BudgieUserLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

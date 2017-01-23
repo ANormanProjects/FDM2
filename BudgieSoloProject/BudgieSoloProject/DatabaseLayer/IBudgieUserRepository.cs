@@ -15,5 +15,9 @@ namespace BudgieDatabaseLayer
         void updateBudgieUser(int idUpdate, string firstNameUpdate, string lastNameUpdate, string dobUpdate);
 
         void removeBudgieUser(int idToRemove);
+
+        //void changeEmailAddress(string emailAddressToUpdate);
+
+        //bool changePassword(string emailAddressToChange, string originalPassword, string passwordToUpdate, string passwordToConfirm);
     }
 }

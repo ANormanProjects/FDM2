@@ -23,14 +23,14 @@ namespace BudgieDatabaseLayer
         public virtual string lastName { get; set; }
 
         [DisplayName("Email Address")]
-        public string emailAddress { get; set; }
+        public virtual string emailAddress { get; set; }
 
         [DisplayName("Date of Birth")]
         public virtual string dob { get; set; }
 
         [DisplayName("Password")]
-        public string password { get; set; }
+        public virtual string password { get; set; }
 
-        public string roles { get; set; }
+        public virtual string roles { get; set; }
     }
 }

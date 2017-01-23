@@ -25,7 +25,7 @@ namespace BudgieDatabaseLayer
             return context.accounts.ToList();
         }
 
-        public void addNewAccount(Account newAccount)
+        public virtual void addNewAccount(Account newAccount)
         {
             context.accounts.Add(newAccount);
             context.SaveChanges();

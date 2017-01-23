@@ -30,7 +30,7 @@ namespace BudgieUsersRepositoryTests
         }
 
         [TestMethod]
-        public void Test_Update()
+        public void Test_UpdateAccount_UpdatesAccountDetailsToDatabase_OverwritesPreviousDetails()
         {
             //ARRANGE
             bb.Setup(c => c.id).Returns(1);
@@ -52,7 +52,7 @@ namespace BudgieUsersRepositoryTests
         }
 
         [TestMethod]
-        public void Test_Remove()
+        public void Test_RemoveAccount_RemovesAccountFromDatabase()
         {
             //ARRANGE
             bb.Setup(c => c.id).Returns(1);
@@ -73,7 +73,7 @@ namespace BudgieUsersRepositoryTests
         }
 
         [TestMethod]
-        public void Test_PrintBalance()
+        public void Test_PrintBalance_PrintAccountBalanceFromDatabase()
         {
             //ARRANGE
             bb.Setup(c => c.id).Returns(1);

@@ -12,45 +12,39 @@ namespace BudgieLogic
 {
     public class BudgieUserLogic
     {
-        private static readonly ILog logger = LogManager.GetLogger("NewBudgieUser.cs");
+        private static readonly ILog logger = LogManager.GetLogger("BudgieUserLogic.cs");
 
         BudgieUser budgieUser = new BudgieUser();
-        BudgieUserRepository budgieUserDB;
-        AccountRepository accountDB;
+        BudgieUserRepository budgieUserRepo;
+        AccountRepository accountRepo;
         AccountLogic accountLogic;
-        List<BudgieUser> bulist;
-        private BudgieUserRepository userRepo;
-        private AccountRepository accountRepo;
-        private BudgieUserRepository budgieUserRepository;
+
         //private BudgieUserRepository budgieUserRepository;
 
         public BudgieUserLogic(BudgieUserRepository BudgieUserRepository, AccountRepository AccountRepository, AccountLogic AccountLogic)
         {
-            budgieUserDB = BudgieUserRepository;
-            accountDB = AccountRepository;
+            budgieUserRepo = BudgieUserRepository;
+            accountRepo = AccountRepository;
             accountLogic = AccountLogic;
-            bulist = budgieUserDB.GetAllBudgieUsers();
         }
 
         public BudgieUserLogic(BudgieUserRepository userRepo, AccountRepository accountRepo)
         {
             // TODO: Complete member initialization
-            this.userRepo = userRepo;
+            this.budgieUserRepo = userRepo;
             this.accountRepo = accountRepo;
         }
 
         public BudgieUserLogic(BudgieUserRepository budgieUserRepository)
         {
             // TODO: Complete member initialization
-            this.budgieUserRepository = budgieUserRepository;
+            this.budgieUserRepo = budgieUserRepository;
         }
 
 
         public bool CheckForDuplicateEmail(string emailAddress)
         {
-            List<BudgieUser> budgieusers = budgieUserDB.GetAllBudgieUsers();
-
-            foreach (var info in budgieusers)
+            foreach (var info in budgieUserRepo.GetAllBudgieUsers())
             {
                 if (info.emailAddress == emailAddress)
                 {
@@ -64,18 +58,18 @@ namespace BudgieLogic
         {
             budgieuser.roles = "User";
 
-            budgieUserDB.addNewBudgieUser(budgieuser);
+            budgieUserRepo.addNewBudgieUser(budgieuser);
 
             Account newAccount = new Account() { accountNumber = budgieuser.lastName + budgieuser.dob, balance = 0, budget = 0, accountOwnerId = budgieuser.id };
 
-            accountDB.addNewAccount(newAccount);
+            accountRepo.addNewAccount(newAccount);
         }
 
         public void UpdateUser(BudgieUser budgieuser)
         {
             int idUpdate = 0;
 
-            foreach (BudgieUser bu in bulist)
+            foreach (BudgieUser bu in budgieUserRepo.GetAllBudgieUsers())
             {
                 if (bu.emailAddress == budgieuser.emailAddress)
                 {
@@ -83,7 +77,7 @@ namespace BudgieLogic
                 }
             }
 
-            budgieUserDB.updateBudgieUser(idUpdate, budgieuser.firstName, budgieuser.lastName, budgieuser.dob);
+            budgieUserRepo.updateBudgieUser(idUpdate, budgieuser.firstName, budgieuser.lastName, budgieuser.dob);
             accountLogic.updateNewAccount(idUpdate, budgieuser.lastName, budgieuser.dob);
         }
 
@@ -91,14 +85,14 @@ namespace BudgieLogic
         {
             int id = 0;
 
-            foreach (BudgieUser bu in bulist)
+            foreach (BudgieUser bu in budgieUserRepo.GetAllBudgieUsers())
             {
                 if (bu.emailAddress == budgieuser.emailAddress)
                 {
                     id = bu.id;
                 }
             }
-            budgieUserDB.removeBudgieUser(id);
+            budgieUserRepo.removeBudgieUser(id);
         }
     }
 }
