@@ -1,7 +1,24 @@
-﻿
+﻿@model IEnumerable<BudgieDatabaseLayer.BudgieUser>
+
 @{
     ViewBag.Title = "AccountOverview";
 }
 
-<h2>Overview</h2>
+<h2>Account Overview</h2>
 
+<table class="table">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Address</th>
+        <th>Date of Birth</th>
+    </tr>
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => firstName)</td>
+            <td>@Html.DisplayFor(modelItem => budgieUsers.lastName)</td>
+            <td>@Html.DisplayFor(modelItem => budgieUsers.emailAddress)</td>
+            <td>@Html.DisplayFor(modelItem => budgieUsers.dob)</td>
+        </tr>
+    }
+</table>

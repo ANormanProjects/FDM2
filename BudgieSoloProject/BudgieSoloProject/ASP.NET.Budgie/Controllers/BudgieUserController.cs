@@ -32,17 +32,17 @@ namespace ASP.NET.Budgie.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult ListOfAllBudgieUsers()
         {
-            return View(userRepo.GetAllBudgieUsers());
+            return View("ListOfAllBudgieUsers", userRepo.GetAllBudgieUsers());
         }
 
         [HttpGet]
-        public ActionResult RegisterUser()
+        public virtual ActionResult RegisterUser()
         {
-            return View();
+            return View("RegisterUser");
         }
 
         [HttpPost]
-        public ActionResult RegisterUser(BudgieUser budgieuser)
+        public virtual ActionResult RegisterUser(BudgieUser budgieuser)
         {
             if (buLogic.CheckForDuplicateEmail(budgieuser.emailAddress) == true)
             {
@@ -67,7 +67,7 @@ namespace ASP.NET.Budgie.Controllers
         [HttpGet]
         public ActionResult UpdateUser()
         {
-            return View();
+            return View("UpdateUser");
         }
 
         [Authorize(Roles = "Admin")]
@@ -97,7 +97,7 @@ namespace ASP.NET.Budgie.Controllers
         [HttpGet]
         public ActionResult RemoveUser()
         {
-            return View();
+            return View("RemoveUser");
         }
 
         [Authorize(Roles = "Admin")]
@@ -124,7 +124,7 @@ namespace ASP.NET.Budgie.Controllers
 
         public ActionResult Login()
         {
-            return View();
+            return View("Login");
         }
 
         [HttpPost]
