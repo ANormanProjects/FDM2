@@ -10,23 +10,40 @@ namespace ASP.NET.Budgie.Controllers
     public class BudgieAccountController : Controller
     {
         BudgieDBCFModel buc = new BudgieDBCFModel();
-        AccountRepository ardb;
+        BudgieUserRepository buRepo;
+        AccountRepository accRepo;
         
         // GET: BudgieAccount
         public ActionResult Index()
         {
-            ardb = new AccountRepository(buc);
-            return View(ardb.GetAllAccounts());
+            accRepo = new AccountRepository(buc);
+            return View(accRepo.GetAllAccounts());
         }
 
         public ActionResult Overview()
         {
-            return View();
+            string emailAddress = User.Identity.Name;
+            int _accountOwnerId = 0;
+            int targetid = 0;
+
+            foreach (BudgieUser budgie in buRepo.GetAllBudgieUsers())
+            {
+                if (emailAddress == budgie.emailAddress)
+                {
+                    _accountOwnerId = budgie.id;
+                }
+            }
+
+            foreach (Account account in accRepo.GetAllAccounts())
+            {
+                if (_accountOwnerId == account.accountOwnerId)
+                {
+                    targetid = account.id;
+                }
+            }
+
+            return View(accRepo.printBalance(targetid));
         }
 
-        public ActionResult Budgets()
-        {
-            return View();
-        }
     }
 }

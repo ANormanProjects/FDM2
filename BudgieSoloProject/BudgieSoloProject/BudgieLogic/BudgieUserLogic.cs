@@ -42,7 +42,7 @@ namespace BudgieLogic
         }
 
 
-        public bool CheckForDuplicateEmail(string emailAddress)
+        public virtual bool CheckForDuplicateEmail(string emailAddress)
         {
             foreach (var info in budgieUserRepo.GetAllBudgieUsers())
             {
@@ -54,7 +54,7 @@ namespace BudgieLogic
             return false;
         }
 
-        public void RegisterUser(BudgieUser budgieuser)
+        public virtual void RegisterUser(BudgieUser budgieuser)
         {
             budgieuser.roles = "User";
 
