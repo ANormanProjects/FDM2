@@ -1,0 +1,34 @@
+﻿@model BudgieDatabaseLayer.Account
+
+
+@{
+    ViewBag.Title = "Budget";
+}
+
+<h2>Budget</h2>
+
+@using (Ajax.BeginForm("Budget", "BudgieAccount", new AjaxOptions()
+{
+    HttpMethod = "POST",
+    UpdateTargetId = "budgetForm",
+    InsertionMode = InsertionMode.InsertAfter
+}, new { @id = "budgetForm" }))
+{
+    <div class="form-horizontal">
+        <h4 class="col-md-offset-2 col-md-10">Register as a Budgie.</h4>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.budget, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class=" col-md-10">
+                @Html.EditorFor(model => model.budget, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Set Budget" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+}

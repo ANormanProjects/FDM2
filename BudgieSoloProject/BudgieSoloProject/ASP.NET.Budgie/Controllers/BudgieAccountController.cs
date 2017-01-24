@@ -1,4 +1,5 @@
 ﻿using BudgieDatabaseLayer;
+using BudgieLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,30 @@ namespace ASP.NET.Budgie.Controllers
 {
     public class BudgieAccountController : Controller
     {
-        BudgieDBCFModel buc = new BudgieDBCFModel();
-        BudgieUserRepository buRepo;
-        AccountRepository accRepo;
-        
+        BudgieDBCFModel budgieDBCFModel = new BudgieDBCFModel();
+        AccountLogic accLogic;
+        BudgieUserRepository userRepo;
+        AccountRepository accountRepo;
+
+        //REAL
+        public BudgieAccountController()
+        {
+            userRepo = new BudgieUserRepository(budgieDBCFModel);
+            accountRepo = new AccountRepository(budgieDBCFModel);
+            accLogic = new AccountLogic(accountRepo);
+        }
+
+        //TDD+MOQ
+        public BudgieAccountController(AccountLogic AccLogic)
+        {
+            accLogic = AccLogic;
+        }
+
         // GET: BudgieAccount
         public ActionResult Index()
         {
-            accRepo = new AccountRepository(buc);
-            return View(accRepo.GetAllAccounts());
+            accountRepo = new AccountRepository(budgieDBCFModel);
+            return View("Index", accountRepo.GetAllAccounts());
         }
 
         public ActionResult Overview()
@@ -26,10 +42,10 @@ namespace ASP.NET.Budgie.Controllers
             int _accountOwnerId = 0;
             Account targetid = null;
 
-            buRepo = new BudgieUserRepository(buc);
-            accRepo = new AccountRepository(buc);
+            userRepo = new BudgieUserRepository(budgieDBCFModel);
+            accountRepo = new AccountRepository(budgieDBCFModel);
 
-            foreach (BudgieUser budgie in buRepo.GetAllBudgieUsers())
+            foreach (BudgieUser budgie in userRepo.GetAllBudgieUsers())
             {
                 if (emailAddress == budgie.emailAddress)
                 {
@@ -37,7 +53,7 @@ namespace ASP.NET.Budgie.Controllers
                 }
             }
 
-            foreach (Account account in accRepo.GetAllAccounts())
+            foreach (Account account in accountRepo.GetAllAccounts())
             {
                 if (_accountOwnerId == account.accountOwnerId)
                 {
@@ -45,8 +61,215 @@ namespace ASP.NET.Budgie.Controllers
                 }
             }
 
-            return View(targetid);
+            return View("Overview", targetid);
         }
+
+        [HttpGet]
+        public ActionResult Deposit()
+        {
+            return View("Deposit");
+        }
+
+        [HttpPost]
+        public ActionResult Deposit(Account account)
+        {
+            string emailAddress = User.Identity.Name;
+            int _accountOwnerId = 0;
+            int targetid = 0;
+            decimal depositAmount = 0;
+
+            userRepo = new BudgieUserRepository(budgieDBCFModel);
+            accountRepo = new AccountRepository(budgieDBCFModel);
+
+            foreach (BudgieUser budgie in userRepo.GetAllBudgieUsers())
+            {
+                if (emailAddress == budgie.emailAddress)
+                {
+                    _accountOwnerId = budgie.id;
+                }
+            }
+
+            foreach (Account accounts in accountRepo.GetAllAccounts())
+            {
+                if (_accountOwnerId == accounts.accountOwnerId)
+                {
+                    targetid = accounts.id;
+                }
+            }
+
+            depositAmount = account.balance;
+            accLogic.depositMoney(targetid, depositAmount);
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_successDeposit");
+            }
+
+            return RedirectToAction("Overview");
+        }
+
+
+        [HttpGet]
+        public ActionResult Withdraw()
+        {
+            return View("Withdraw");
+        }
+
+
+        [HttpPost]
+        public ActionResult Withdraw(Account account)
+        {
+            string emailAddress = User.Identity.Name;
+            int _accountOwnerId = 0;
+            int targetid = 0;
+            decimal withdrawAmount = 0;
+
+            userRepo = new BudgieUserRepository(budgieDBCFModel);
+            accountRepo = new AccountRepository(budgieDBCFModel);
+
+            foreach (BudgieUser budgie in userRepo.GetAllBudgieUsers())
+            {
+                if (emailAddress == budgie.emailAddress)
+                {
+                    _accountOwnerId = budgie.id;
+                }
+            }
+
+            foreach (Account accounts in accountRepo.GetAllAccounts())
+            {
+                if (_accountOwnerId == accounts.accountOwnerId)
+                {
+                    targetid = accounts.id;
+                }
+            }
+
+            withdrawAmount = account.balance;
+            if (accLogic.withdrawMoney(targetid, withdrawAmount) == true)
+            {
+                if (Request.IsAjaxRequest())
+                {
+                    return PartialView("_failureWithdraw");
+                }
+            }
+            else
+            {
+                if (Request.IsAjaxRequest())
+                {
+                    return PartialView("_successWithdraw");
+                }
+            }
+
+            return RedirectToAction("Overview");
+        }
+
+
+        [HttpGet]
+        public ActionResult Budget()
+        {
+            return View("Budget");
+        }
+
+
+        [HttpPost]
+        public ActionResult Budget(Account account)     //REPAIR BUDGET CHANGING
+        {
+            string emailAddress = User.Identity.Name;
+            int _accountOwnerId = 0;
+            int targetid = 0;
+            decimal setBudget = 0;
+
+            userRepo = new BudgieUserRepository(budgieDBCFModel);
+            accountRepo = new AccountRepository(budgieDBCFModel);
+
+            foreach (BudgieUser budgie in userRepo.GetAllBudgieUsers())
+            {
+                if (emailAddress == budgie.emailAddress)
+                {
+                    _accountOwnerId = budgie.id;
+                }
+            }
+
+            foreach (Account accounts in accountRepo.GetAllAccounts())
+            {
+                if (_accountOwnerId == accounts.accountOwnerId)
+                {
+                    targetid = accounts.id;
+                }
+            }
+
+            setBudget = account.budget;
+            accLogic.setBudget(targetid, setBudget);
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_successBudget");
+            }
+
+            return RedirectToAction("Overview");
+        }
+
+        [HttpGet]
+        public ActionResult Transfer()
+        {
+            return View("Transfer");
+        }
+
+        [HttpPost]
+        public ActionResult Transfer(Account account)
+        {
+            string emailAddress = User.Identity.Name;
+            string targetAccountNumber = account.accountNumber;
+            int _accountOwnerId = 0;
+            int targetidFrom = 0;
+            int idToTransferTo = 0;
+            decimal amountToTransfer = 0;
+
+            userRepo = new BudgieUserRepository(budgieDBCFModel);
+            accountRepo = new AccountRepository(budgieDBCFModel);
+
+            foreach (BudgieUser budgie in userRepo.GetAllBudgieUsers())
+            {
+                if (emailAddress == budgie.emailAddress)
+                {
+                    _accountOwnerId = budgie.id;
+                }
+            }
+
+            foreach (Account accounts in accountRepo.GetAllAccounts())
+            {
+                if (_accountOwnerId == accounts.accountOwnerId)
+                {
+                    targetidFrom = accounts.id;
+                }
+            }
+
+            foreach (Account accounts in accountRepo.GetAllAccounts())
+            {
+                if (targetAccountNumber == accounts.accountNumber)
+                {
+                    idToTransferTo = accounts.id;
+                }
+            }
+
+            amountToTransfer = account.balance;
+
+            if (accLogic.transferMoney(targetidFrom, idToTransferTo, amountToTransfer) == true)
+            {
+                if (Request.IsAjaxRequest())
+                {
+                    return PartialView("_failureTransfer");
+                }
+            }
+            else
+            {
+                if (Request.IsAjaxRequest())
+                {
+                    return PartialView("_successTransfer");
+                }
+            }
+            return RedirectToAction("Overview");
+        }
+
 
     }
 }

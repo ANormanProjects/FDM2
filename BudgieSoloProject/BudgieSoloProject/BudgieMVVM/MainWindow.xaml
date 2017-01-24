@@ -5,11 +5,9 @@
         Title="Admin Control Panel" Height="350" Width="525">
 
     <Window.DataContext>
-        <vm:BudgieViewModel/>
+        <vm:NavigationViewModel/>
     </Window.DataContext>
 
-    <StackPanel>
-        <TextBlock Text="{Binding message}"/>
-        <Button Content="Click Me!" Command="{Binding changeMessageCommand}"/>
-    </StackPanel>
+    <Frame Source="{Binding location}"/>
+ 
 </Window>

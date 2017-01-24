@@ -16,11 +16,18 @@ namespace ASP.NET.Budgie.Controllers
         AccountRepository accountRepo;
         BudgieUserLogic buLogic;
 
+        //REAL LIFE
         public BudgieUserController()
         {
             userRepo = new BudgieUserRepository(budgieDBCFModel);
             accountRepo = new AccountRepository(budgieDBCFModel);
             buLogic = new BudgieUserLogic(userRepo, accountRepo);
+        }
+
+        //FOR TESTS
+        public BudgieUserController(BudgieUserLogic BuLogic)
+        {
+            buLogic = BuLogic;
         }
 
         // GET: BudgieUser
