@@ -148,14 +148,14 @@ namespace ASP.NET.Budgie.Controllers
             {
                 if (Request.IsAjaxRequest())
                 {
-                    return PartialView("_failureWithdraw");
+                    return PartialView("_successWithdraw");
                 }
             }
             else
             {
                 if (Request.IsAjaxRequest())
                 {
-                    return PartialView("_successWithdraw");
+                    return PartialView("_failureWithdraw");
                 }
             }
 
@@ -257,14 +257,14 @@ namespace ASP.NET.Budgie.Controllers
             {
                 if (Request.IsAjaxRequest())
                 {
-                    return PartialView("_failureTransfer");
+                    return PartialView("_successTransfer");
                 }
             }
             else
             {
                 if (Request.IsAjaxRequest())
                 {
-                    return PartialView("_successTransfer");
+                    return PartialView("_failureTransfer");
                 }
             }
             return RedirectToAction("Overview");
