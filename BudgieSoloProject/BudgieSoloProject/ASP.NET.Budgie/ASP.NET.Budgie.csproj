@@ -260,6 +260,8 @@
     <Content Include="Views\Shared\_successDeposit.cshtml" />
     <Content Include="Views\Shared\_successWithdraw.cshtml" />
     <Content Include="Views\Shared\_failureWithdraw.cshtml" />
+    <Content Include="Views\Shared\_successTransfer.cshtml" />
+    <Content Include="Views\Shared\_failureTransfer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
