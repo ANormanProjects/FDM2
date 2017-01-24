@@ -1,1 +1,27 @@
+@model IEnumerable<BudgieDatabaseLayer.Account>
+        
+        @{ViewBag.Title = "ListOfAllAccounts";
+    }
+
+
+
+    <h2>List of all Accounts</h2>
+
+    <table class="table">
+    <tr>
+        <th>Account Number</th>
+        <th>Balance</th>
+        <th>Budget</th>
+        <th>Account Owner</th>
+    </tr>
+    @foreach (var accounts in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => accounts.accountNumber)</td>
+            <td>@Html.DisplayFor(modelItem => accounts.balance)</td>
+            <td>@Html.DisplayFor(modelItem => accounts.budget)</td>
+            <td>@Html.DisplayFor(modelItem => accounts.accountOwnerId)</td>
+        </tr>
+    }
+</table>
 

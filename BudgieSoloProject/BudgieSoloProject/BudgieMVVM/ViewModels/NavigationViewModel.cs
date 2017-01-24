@@ -23,7 +23,7 @@ namespace BudgieMVVM.ViewModels
 
         public NavigationViewModel()
         {
-            location = "PageOne.xaml";
+            location = "Pages/Welcome.xaml";
         }
 
     }
