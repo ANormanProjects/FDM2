@@ -89,7 +89,7 @@ body, html {
 
 .parallax7 {
     /* The image used */
-    background-image: url('~/Content/call.jpg');
+    background-image: url('../Content/call.jpg');
 
     /* Full height */
     height: 50%; 

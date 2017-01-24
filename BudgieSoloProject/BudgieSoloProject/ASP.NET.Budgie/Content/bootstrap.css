@@ -2637,6 +2637,7 @@ input[type="button"].btn-block {
 
 .glyphicon-star:before {
     content: "\e006";
+    font-size: 300px;
 }
 
 .glyphicon-star-empty:before {
@@ -3112,7 +3113,7 @@ input[type="button"].btn-block {
 }
 
 .glyphicon-globe:before {
-    content: "\e135";
+    content: "\e135";  
 }
 
 .glyphicon-tasks:before {

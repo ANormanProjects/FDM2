@@ -247,7 +247,7 @@ namespace ASP.NET.Budgie.Controllers
             {
                 if (targetAccountNumber == accounts.accountNumber)
                 {
-                    idToTransferTo = accounts.id;
+                    idToTransferTo = accounts.accountOwnerId;
                 }
             }
 
