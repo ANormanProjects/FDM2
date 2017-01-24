@@ -23,6 +23,7 @@ namespace BudgieDatabaseLayer
         public virtual decimal balance { get; set; }
 
         [DisplayName("Budget")]
+        [DisplayFormat(DataFormatString = "{0:N}")]
         public virtual decimal budget { get; set; }
 
         public virtual int accountOwnerId { get; set; }
