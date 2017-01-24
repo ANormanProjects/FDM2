@@ -24,7 +24,10 @@ namespace ASP.NET.Budgie.Controllers
         {
             string emailAddress = User.Identity.Name;
             int _accountOwnerId = 0;
-            int targetid = 0;
+            Account targetid = null;
+
+            buRepo = new BudgieUserRepository(buc);
+            accRepo = new AccountRepository(buc);
 
             foreach (BudgieUser budgie in buRepo.GetAllBudgieUsers())
             {
@@ -38,11 +41,11 @@ namespace ASP.NET.Budgie.Controllers
             {
                 if (_accountOwnerId == account.accountOwnerId)
                 {
-                    targetid = account.id;
+                    targetid = account;
                 }
             }
 
-            return View(accRepo.printBalance(targetid));
+            return View(targetid);
         }
 
     }
