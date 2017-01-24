@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace BudgieDatabaseLayer
         public virtual string accountNumber { get; set; }
 
         [DisplayName("Balance")]
+        [DisplayFormat(DataFormatString = "{0:N}")]
         public virtual decimal balance { get; set; }
 
         [DisplayName("Budget")]
