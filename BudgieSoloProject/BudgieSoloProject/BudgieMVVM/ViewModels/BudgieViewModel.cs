@@ -33,6 +33,30 @@ namespace BudgieMVVM.ViewModels
             set { _changeMessageCommand = value; }
         }
 
+        private ICommand _navigateCommand;
+        public ICommand navigateCommand
+        {
+            get
+            {
+                if (_navigateCommand == null)
+                {
+                    _navigateCommand = new Command(Navigate);
+                }
+                return _navigateCommand;
+            }
+            set { _navigateCommand = value; }
+        }
+
+        private void Navigate()
+        {
+            //Access Navigation View Model
+            NavigationViewModel navVM =
+                App.Current.MainWindow.DataContext as NavigationViewModel;
+
+            //Change the location to pagetwo.xaml
+            navVM.location = "Views/PageTwo.xaml";
+        }
+
         private bool CanChangeText()
         {
             //Put logic in here to test whether the button can be clicked.
