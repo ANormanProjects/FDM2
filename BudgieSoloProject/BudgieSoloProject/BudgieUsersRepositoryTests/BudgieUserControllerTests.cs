@@ -99,6 +99,33 @@ namespace BudgieUsersRepositoryTests
         }
 
         [TestMethod]
+        public void Test_BudgieUserControllerRegisterUserMethod_ReturnsRegisterUserPartialViewFailure_AndIsAnAjaxRequest()
+        {
+            //ARRANGE
+            var mockRequest = new Mock<HttpRequestBase>();
+            mockRequest.Setup(x => x["X-Requested-With"]).Returns("XMLHttpRequest");
+
+            var mockHttpContext = new Mock<HttpContextBase>();
+            mockHttpContext.SetupGet(x => x.Request).Returns(mockRequest.Object);
+
+            var controllerCtx = new ControllerContext();
+            controllerCtx.HttpContext = mockHttpContext.Object;
+
+            buControllerTests.ControllerContext = controllerCtx;
+
+            Mock<BudgieUser> bb = new Mock<BudgieUser>();
+
+            buLogicMock.Setup(c => c.CheckForDuplicateEmail(bb.Object.emailAddress)).Returns(true);
+
+            //ACT
+            var partialAction = buControllerTests.RegisterUser(bb.Object) as PartialViewResult;
+
+            //ASSERT
+            buLogicMock.Verify(c => c.CheckForDuplicateEmail(bb.Object.emailAddress));
+            Assert.AreEqual("_failure", partialAction.ViewName);
+        }
+
+        [TestMethod]
         public void Test_BudgieUserControllerUpdateUserMethod_ReturnsUpdateUserPartialViewupdateFailure_AndIsAnAjaxRequest()
         {
             //ARRANGE
