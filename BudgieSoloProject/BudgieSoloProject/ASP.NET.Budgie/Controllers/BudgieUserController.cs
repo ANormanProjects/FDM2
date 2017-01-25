@@ -14,6 +14,7 @@ namespace ASP.NET.Budgie.Controllers
         BudgieDBCFModel budgieDBCFModel = new BudgieDBCFModel();
         BudgieUserRepository userRepo;
         AccountRepository accountRepo;
+        AccountLogic accLogic;
         BudgieUserLogic buLogic;
 
         //REAL LIFE
@@ -39,7 +40,7 @@ namespace ASP.NET.Budgie.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult ListOfAllBudgieUsers()
         {
-            return View("ListOfAllBudgieUsers", userRepo.GetAllBudgieUsers());
+            return View("ListOfAllBudgieUsers", buLogic.GetAllBudgieUsers());
         }
 
         [HttpGet]
@@ -129,6 +130,7 @@ namespace ASP.NET.Budgie.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
         public ActionResult Login()
         {
             return View("Login");
