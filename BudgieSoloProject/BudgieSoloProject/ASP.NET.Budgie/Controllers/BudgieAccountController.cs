@@ -12,6 +12,7 @@ namespace ASP.NET.Budgie.Controllers
     {
         BudgieDBCFModel budgieDBCFModel = new BudgieDBCFModel();
         AccountLogic accLogic;
+        BudgieUserLogic buLogic;
         BudgieUserRepository userRepo;
         AccountRepository accountRepo;
 
@@ -21,31 +22,31 @@ namespace ASP.NET.Budgie.Controllers
             userRepo = new BudgieUserRepository(budgieDBCFModel);
             accountRepo = new AccountRepository(budgieDBCFModel);
             accLogic = new AccountLogic(accountRepo);
+            buLogic = new BudgieUserLogic(userRepo);
         }
 
         //TDD+MOQ
-        public BudgieAccountController(AccountLogic AccLogic)
+        public BudgieAccountController(AccountLogic AccLogic, BudgieUserLogic BuLogic)
         {
+
             accLogic = AccLogic;
+            buLogic = BuLogic;
         }
 
         // GET: BudgieAccount
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
-            accountRepo = new AccountRepository(budgieDBCFModel);
-            return View("Index", accountRepo.GetAllAccounts());
+            return View("Index", accLogic.GetAllAccounts());
         }
 
         public ActionResult Overview()
         {
-            string emailAddress = User.Identity.Name;
+            string emailAddress = HttpContext.User.Identity.Name;
             int _accountOwnerId = 0;
             Account targetid = null;
 
-            userRepo = new BudgieUserRepository(budgieDBCFModel);
-            accountRepo = new AccountRepository(budgieDBCFModel);
-
-            foreach (BudgieUser budgie in userRepo.GetAllBudgieUsers())
+            foreach (BudgieUser budgie in buLogic.GetAllBudgieUsers())
             {
                 if (emailAddress == budgie.emailAddress)
                 {
@@ -53,14 +54,13 @@ namespace ASP.NET.Budgie.Controllers
                 }
             }
 
-            foreach (Account account in accountRepo.GetAllAccounts())
+            foreach (Account account in accLogic.GetAllAccounts())
             {
                 if (_accountOwnerId == account.accountOwnerId)
                 {
                     targetid = account;
                 }
             }
-
             return View("Overview", targetid);
         }
 
@@ -78,10 +78,7 @@ namespace ASP.NET.Budgie.Controllers
             int targetid = 0;
             decimal depositAmount = 0;
 
-            userRepo = new BudgieUserRepository(budgieDBCFModel);
-            accountRepo = new AccountRepository(budgieDBCFModel);
-
-            foreach (BudgieUser budgie in userRepo.GetAllBudgieUsers())
+            foreach (BudgieUser budgie in buLogic.GetAllBudgieUsers())
             {
                 if (emailAddress == budgie.emailAddress)
                 {
@@ -89,7 +86,7 @@ namespace ASP.NET.Budgie.Controllers
                 }
             }
 
-            foreach (Account accounts in accountRepo.GetAllAccounts())
+            foreach (Account accounts in accLogic.GetAllAccounts())
             {
                 if (_accountOwnerId == accounts.accountOwnerId)
                 {
@@ -119,15 +116,13 @@ namespace ASP.NET.Budgie.Controllers
         [HttpPost]
         public ActionResult Withdraw(Account account)
         {
-            string emailAddress = User.Identity.Name;
+
+            string emailAddress = HttpContext.User.Identity.Name;
             int _accountOwnerId = 0;
             int targetid = 0;
             decimal withdrawAmount = 0;
 
-            userRepo = new BudgieUserRepository(budgieDBCFModel);
-            accountRepo = new AccountRepository(budgieDBCFModel);
-
-            foreach (BudgieUser budgie in userRepo.GetAllBudgieUsers())
+            foreach (BudgieUser budgie in buLogic.GetAllBudgieUsers())
             {
                 if (emailAddress == budgie.emailAddress)
                 {
@@ -135,7 +130,7 @@ namespace ASP.NET.Budgie.Controllers
                 }
             }
 
-            foreach (Account accounts in accountRepo.GetAllAccounts())
+            foreach (Account accounts in accLogic.GetAllAccounts())
             {
                 if (_accountOwnerId == accounts.accountOwnerId)
                 {
@@ -178,10 +173,7 @@ namespace ASP.NET.Budgie.Controllers
             int targetid = 0;
             decimal setBudget = 0;
 
-            userRepo = new BudgieUserRepository(budgieDBCFModel);
-            accountRepo = new AccountRepository(budgieDBCFModel);
-
-            foreach (BudgieUser budgie in userRepo.GetAllBudgieUsers())
+            foreach (BudgieUser budgie in buLogic.GetAllBudgieUsers())
             {
                 if (emailAddress == budgie.emailAddress)
                 {
@@ -189,7 +181,7 @@ namespace ASP.NET.Budgie.Controllers
                 }
             }
 
-            foreach (Account accounts in accountRepo.GetAllAccounts())
+            foreach (Account accounts in accLogic.GetAllAccounts())
             {
                 if (_accountOwnerId == accounts.accountOwnerId)
                 {
@@ -224,10 +216,7 @@ namespace ASP.NET.Budgie.Controllers
             int idToTransferTo = 0;
             decimal amountToTransfer = 0;
 
-            userRepo = new BudgieUserRepository(budgieDBCFModel);
-            accountRepo = new AccountRepository(budgieDBCFModel);
-
-            foreach (BudgieUser budgie in userRepo.GetAllBudgieUsers())
+            foreach (BudgieUser budgie in buLogic.GetAllBudgieUsers())
             {
                 if (emailAddress == budgie.emailAddress)
                 {
@@ -235,7 +224,7 @@ namespace ASP.NET.Budgie.Controllers
                 }
             }
 
-            foreach (Account accounts in accountRepo.GetAllAccounts())
+            foreach (Account accounts in accLogic.GetAllAccounts())
             {
                 if (_accountOwnerId == accounts.accountOwnerId)
                 {
@@ -243,7 +232,7 @@ namespace ASP.NET.Budgie.Controllers
                 }
             }
 
-            foreach (Account accounts in accountRepo.GetAllAccounts())
+            foreach (Account accounts in accLogic.GetAllAccounts())
             {
                 if (targetAccountNumber == accounts.accountNumber)
                 {

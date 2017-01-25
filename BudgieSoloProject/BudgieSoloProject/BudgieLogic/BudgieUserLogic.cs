@@ -54,6 +54,11 @@ namespace BudgieLogic
             return false;
         }
 
+        public virtual List<BudgieUser> GetAllBudgieUsers()
+        {
+           return budgieUserRepo.GetAllBudgieUsers();
+        }
+
         public virtual void RegisterUser(BudgieUser budgieuser)
         {
             budgieuser.roles = "User";
@@ -78,10 +83,10 @@ namespace BudgieLogic
             }
 
             budgieUserRepo.updateBudgieUser(idUpdate, budgieuser.firstName, budgieuser.lastName, budgieuser.dob);
-            accountLogic.updateNewAccount(idUpdate, budgieuser.lastName, budgieuser.dob);
+            accountRepo.updateNewAccount(idUpdate, budgieuser.lastName, budgieuser.dob);
         }
 
-        public void RemoveUser(BudgieUser budgieuser)
+        public virtual void RemoveUser(BudgieUser budgieuser)
         {
             int id = 0;
 

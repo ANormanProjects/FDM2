@@ -20,6 +20,11 @@ namespace BudgieLogic
             accountRepo = AccountRepository;         
         }
 
+        public virtual List<Account> GetAllAccounts()
+        {
+            return accountRepo.GetAllAccounts();
+        }
+
         public virtual void updateNewAccount(int idUpdate, string lastNameUpdate, string dobUpdate)
         {
             int actualUpdateId = 0;
@@ -80,7 +85,7 @@ namespace BudgieLogic
             return printCurrentBudget;
         }
 
-        public bool withdrawMoney(int idToWithdraw, decimal withdrawBalance)
+        public virtual bool withdrawMoney(int idToWithdraw, decimal withdrawBalance)
         {
             int targetIdToWithdraw = 0;
 
@@ -106,7 +111,7 @@ namespace BudgieLogic
             }
         }
 
-        public void depositMoney(int idToDeposit, decimal depositAmount)
+        public virtual void depositMoney(int idToDeposit, decimal depositAmount)
         {
             int targetIdToDeposit = 0;
 
@@ -120,7 +125,7 @@ namespace BudgieLogic
             accountRepo.depositMoney(targetIdToDeposit, depositAmount);
         }
 
-        public bool transferMoney(int idToTransferFrom, int idToTransferTo, decimal amountToTransfer)
+        public virtual bool transferMoney(int idToTransferFrom, int idToTransferTo, decimal amountToTransfer)
         {
             int targetIdToTransferFrom = 0;
             int targetIdToTransferTo = 0;
@@ -157,7 +162,7 @@ namespace BudgieLogic
             }
         }
 
-        public void setBudget(int idToSetBudget, decimal amountToBudget)
+        public virtual void setBudget(int idToSetBudget, decimal amountToBudget)
         {
             int targetIdToSetBudget = 0;
             decimal _amountToBudget = 0;

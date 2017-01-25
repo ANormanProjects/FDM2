@@ -22,6 +22,7 @@ namespace BudgieUsersRepositoryTests
         Mock<BudgieUserLogic> buLogicMock;
         Mock<BudgieUserRepository> buRepoMock;
         Mock<AccountRepository> accRepoMock;
+        Mock<AccountLogic> accountLogicMock;
 
         [TestInitialize]
         public void Setup()
@@ -30,6 +31,7 @@ namespace BudgieUsersRepositoryTests
             accRepoMock = new Mock<AccountRepository>(contextMock.Object);
             buRepoMock = new Mock<BudgieUserRepository>(contextMock.Object);
             buLogicMock = new Mock<BudgieUserLogic>(buRepoMock.Object, accRepoMock.Object);
+            accountLogicMock = new Mock<AccountLogic>(accRepoMock.Object);
             buControllerTests = new BudgieUserController(buLogicMock.Object);
         }
 
@@ -49,11 +51,13 @@ namespace BudgieUsersRepositoryTests
         public void Test_BudgieUserControllerListOfAllBudgieUsers_ReturnsListOfAllBudgieUsersView()
         {
             //ARRANGE
+            buLogicMock.Setup(c => c.GetAllBudgieUsers()).Returns(new List<BudgieUser>());
 
             //ACT
             var action = buControllerTests.ListOfAllBudgieUsers() as ViewResult;
 
             //ASSERT
+            buLogicMock.Verify(c => c.GetAllBudgieUsers());
             Assert.AreEqual("ListOfAllBudgieUsers", action.ViewName);
         }
         
@@ -99,7 +103,7 @@ namespace BudgieUsersRepositoryTests
         }
 
         [TestMethod]
-        public void Test_BudgieUserControllerRegisterUserMethod_ReturnsRegisterUserPartialViewFailure_AndIsAnAjaxRequest()
+        public void Test_BudgieUserControllerRegisterUserMethod_ReturnsRegisterUserPartialViewSuccess_AndIsAnAjaxRequest()
         {
             //ARRANGE
             var mockRequest = new Mock<HttpRequestBase>();
@@ -115,14 +119,14 @@ namespace BudgieUsersRepositoryTests
 
             Mock<BudgieUser> bb = new Mock<BudgieUser>();
 
-            buLogicMock.Setup(c => c.CheckForDuplicateEmail(bb.Object.emailAddress)).Returns(true);
+            buLogicMock.Setup(c => c.CheckForDuplicateEmail(bb.Object.emailAddress)).Returns(false);
 
             //ACT
             var partialAction = buControllerTests.RegisterUser(bb.Object) as PartialViewResult;
 
             //ASSERT
             buLogicMock.Verify(c => c.CheckForDuplicateEmail(bb.Object.emailAddress));
-            Assert.AreEqual("_failure", partialAction.ViewName);
+            Assert.AreEqual("_success", partialAction.ViewName);
         }
 
         [TestMethod]
@@ -153,6 +157,46 @@ namespace BudgieUsersRepositoryTests
         }
 
         [TestMethod]
+        public void Test_BudgieUserControllerUpdateUserMethod_ReturnsUpdateUserPartialViewupdateSuccess_AndIsAnAjaxRequest()
+        {
+            //ARRANGE
+            var mockRequest = new Mock<HttpRequestBase>();
+            mockRequest.Setup(x => x["X-Requested-With"]).Returns("XMLHttpRequest");
+
+            var mockHttpContext = new Mock<HttpContextBase>();
+            mockHttpContext.SetupGet(x => x.Request).Returns(mockRequest.Object);
+
+            var controllerCtx = new ControllerContext();
+            controllerCtx.HttpContext = mockHttpContext.Object;
+
+            buControllerTests.ControllerContext = controllerCtx;
+
+            Mock<BudgieUser> bb = new Mock<BudgieUser>();
+
+            bb.Setup(c => c.id).Returns(1);
+            bb.Setup(c => c.firstName).Returns("Ben");
+            bb.Setup(c => c.lastName).Returns("Bowes");
+            bb.Setup(c => c.dob).Returns("010101");
+            bb.Setup(c => c.emailAddress).Returns("benbowes@gmail.com");
+
+
+            buLogicMock.Setup(c => c.CheckForDuplicateEmail(bb.Object.emailAddress)).Returns(true);
+            buRepoMock.Setup(c => c.GetAllBudgieUsers()).Returns(new List<BudgieUser> { bb.Object });
+            buRepoMock.Setup(c => c.updateBudgieUser(1, "Ben", "Bowes", "010101")).Verifiable();
+            accRepoMock.Setup(c => c.updateNewAccount(1, "Bowes", "010101")).Verifiable();
+
+            //ACT
+            var partialAction = buControllerTests.UpdateUser(bb.Object) as PartialViewResult;
+
+            //ASSERT
+            buLogicMock.Verify(c => c.CheckForDuplicateEmail(bb.Object.emailAddress));
+            buRepoMock.Verify(c => c.GetAllBudgieUsers());
+            buRepoMock.Verify(c => c.updateBudgieUser(1, "Ben", "Bowes", "010101"));
+            accRepoMock.Verify(c => c.updateNewAccount(1, "Bowes", "010101"));
+            Assert.AreEqual("_successUpdate", partialAction.ViewName);
+        }
+
+        [TestMethod]
         public void Test_BudgieUserControllerRemoveUserMethod_ReturnsRemoveUserPartialViewremoveFailure_AndIsAnAjaxRequest()
         {
             //ARRANGE
@@ -179,31 +223,39 @@ namespace BudgieUsersRepositoryTests
             Assert.AreEqual("_failureRemove", partialAction.ViewName);
         }
 
-        //[TestMethod]
-        //public void Test_BudgieUserControllerRegisterUserMethod_ReturnsSuccessPartialViewWhenItIsAnAjaxRequest()
-        //{
-        //    //ARRANGE
-        //    var mockRequest = new Mock<HttpRequestBase>();
-        //    mockRequest.Setup(x => x["X-Requested-With"]).Returns("XMLHttpRequest");
+        [TestMethod]
+        public void Test_BudgieUserControllerRemoveUserMethod_ReturnsSuccessPartialViewWhenItIsAnAjaxRequest()
+        {
+            //ARRANGE
+            var mockRequest = new Mock<HttpRequestBase>();
+            mockRequest.Setup(x => x["X-Requested-With"]).Returns("XMLHttpRequest");
 
-        //    var mockHttpContext = new Mock<HttpContextBase>();
-        //    mockHttpContext.SetupGet(x => x.Request).Returns(mockRequest.Object);
+            var mockHttpContext = new Mock<HttpContextBase>();
+            mockHttpContext.SetupGet(x => x.Request).Returns(mockRequest.Object);
 
-        //    var controllerCtx = new ControllerContext();
-        //    controllerCtx.HttpContext = mockHttpContext.Object;
+            var controllerCtx = new ControllerContext();
+            controllerCtx.HttpContext = mockHttpContext.Object;
 
-        //    Mock<BudgieUser> bb = new Mock<BudgieUser>();
+            buControllerTests.ControllerContext = controllerCtx;
 
-        //    buLogicMock.Setup(c => c.CheckForDuplicateEmail(bb.Object.emailAddress)).Verifiable();
+            Mock<BudgieUser> bb = new Mock<BudgieUser>();
 
-        //    //ACT
-        //    var partialAction = buControllerTests.RegisterUser(bb.Object) as PartialViewResult;
+            bb.Setup(c => c.id).Returns(1);
+            bb.Setup(c => c.emailAddress).Returns("benbowes@gmail.com");
 
-        //    //ASSERT
-        //    buLogicMock.Verify(c => c.CheckForDuplicateEmail(bb.Object.emailAddress));
-        //    Assert.AreEqual("_success", partialAction.ViewName);
+            buLogicMock.Setup(c => c.CheckForDuplicateEmail(bb.Object.emailAddress)).Returns(true);
+            buLogicMock.Setup(c => c.RemoveUser(bb.Object)).Verifiable();
 
-        //}
+
+            //ACT
+            var partialAction = buControllerTests.RemoveUser(bb.Object) as PartialViewResult;
+
+            //ASSERT
+            buLogicMock.Verify(c => c.CheckForDuplicateEmail(bb.Object.emailAddress));
+            buLogicMock.Verify(c => c.RemoveUser(bb.Object));
+            Assert.AreEqual("_successRemove", partialAction.ViewName);
+
+        }
 
         [TestMethod]
         public void Test_BudgieUserControllerUpdateUser_ReturnsUpdateUserView()
@@ -245,7 +297,8 @@ namespace BudgieUsersRepositoryTests
         //public void Test_BudgieUserControllerLogOff_ReturnsRedirectToRouteResult()
         //{
         //    //ARRANGE
-        //    Mock<FormsAuthentication> formsAuthMock = new Mock<FormsAuthentication>();
+        //    Mock<FormsAuthentication> formsAuthMock = new Mock<FormsAuthentication>();           
+
         //    //ACT
         //    var action = buControllerTests.LogOff() as RedirectToRouteResult;
 
