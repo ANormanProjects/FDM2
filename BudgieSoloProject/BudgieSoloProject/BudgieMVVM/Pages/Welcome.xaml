@@ -12,11 +12,15 @@
     <Page.DataContext>
         <vm:BudgieViewModel/>
     </Page.DataContext>
+  
     
-    <StackPanel>
-        <TextBlock Text="Welcome Budgie Admin" Style="{StaticResource textStyle}"/>
+    <StackPanel Background="LightSkyBlue">
+
+        <StackPanel Background="SteelBlue">
+            <TextBlock Text="Welcome Budgie Admin" Style="{StaticResource textStyle}" Foreground="GhostWhite"/>
+        </StackPanel>
         <TextBlock Text="This is the BudgieUser Control Panel" Style="{StaticResource textStyle2}"/>
-        <Button Content="List of all Budgie Users" Command="{Binding navigateListOfAllUsersCommand}" Style="{StaticResource MyStyle}"/>
+        <Button Content="List of all Budgie Users" Command="{Binding navigateListOfAllUsersCommand}" Style="{StaticResource MyStyle}" BorderThickness="0"/>
         <Button Content="Add new Budgie User" Command="{Binding navigateAddUserCommand}" Style="{StaticResource MyStyle}"/>
         <Button Content="Remove Budgie User" Command="{Binding navigateRemoveUserCommand}" Style="{StaticResource MyStyle}"/>
     </StackPanel>

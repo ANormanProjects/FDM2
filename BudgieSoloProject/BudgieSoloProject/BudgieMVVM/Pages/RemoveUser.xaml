@@ -33,5 +33,6 @@
             <TextBox Name="firstName" Grid.Column="1" Margin="0,0,0,10" Text="{Binding emailAddress}"/>
         </Grid>
         <Button Content="Remove User" Command="{Binding removeBudgieUserCommand}" Style="{StaticResource MyStyle}"/>
+        <Button Content="Return to Control Panel"  Command="{Binding navigateWelcomeCommand}" Style="{StaticResource MyStyle}"/>
     </StackPanel>
 </Page>
