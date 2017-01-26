@@ -12,9 +12,9 @@ namespace ASP.NET.Budgie.Controllers
     public class BudgieUserController : Controller
     {
         BudgieDBCFModel budgieDBCFModel = new BudgieDBCFModel();
-        BudgieUserRepository userRepo;
-        AccountRepository accountRepo;
-        BudgieUserLogic buLogic;
+        public BudgieUserRepository userRepo { get; set; }
+        public AccountRepository accountRepo { get; set; }
+        public BudgieUserLogic buLogic { get; set; }
 
         //REAL LIFE
         public BudgieUserController()
