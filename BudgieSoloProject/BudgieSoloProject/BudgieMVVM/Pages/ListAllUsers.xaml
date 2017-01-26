@@ -13,11 +13,19 @@
         <vm:BudgieViewModel/>
     </Page.DataContext>
 
-    
-    <StackPanel>
-        <TextBlock Text="List of All Registered Budgie Users" Style="{StaticResource textStyle2}"/>
-        <Button Content="Return to Control Panel"  Command="{Binding navigateWelcomeCommand}" Style="{StaticResource MyStyle}"/>
-        <ListBox>
+
+    <StackPanel Style="{StaticResource PanelStyle}">
+        <StackPanel Style="{StaticResource PanelStyle2}">
+            <TextBlock Text="List of All Registered Budgie Users" Style="{StaticResource textStyle}"/>
+        </StackPanel>
+        <TextBlock></TextBlock>
+        <Grid>
+            <Grid.DataContext>
+                <vm:NavigationViewModel/>
+            </Grid.DataContext>
+            <Button Content="Return to Control Panel"  Command="{Binding navigateWelcomeCommand}" Style="{StaticResource MyStyle}"/>
+        </Grid>
+        <ListBox Background="LightSkyBlue">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
@@ -32,7 +40,7 @@
             </Grid>
         </ListBox>
 
-        <ListBox ItemsSource="{Binding budgieUser}" Height="500">
+        <ListBox ItemsSource="{Binding budgieUser}" Height="500" Background="LightSkyBlue">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

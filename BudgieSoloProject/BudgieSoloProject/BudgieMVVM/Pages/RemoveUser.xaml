@@ -13,8 +13,10 @@
         <vm:BudgieViewModel/>
     </Page.DataContext>
 
-    <StackPanel>
-        <TextBlock Text="Remove Budgie User"/>
+    <StackPanel Style="{StaticResource PanelStyle}">
+        <StackPanel Style="{StaticResource PanelStyle2}">
+            <TextBlock Text="Remove Budgie User" Style="{StaticResource textStyle}"/>
+        </StackPanel>
 
         <Grid Margin="10">
             <Grid.ColumnDefinitions>
@@ -33,6 +35,11 @@
             <TextBox Name="firstName" Grid.Column="1" Margin="0,0,0,10" Text="{Binding emailAddress}"/>
         </Grid>
         <Button Content="Remove User" Command="{Binding removeBudgieUserCommand}" Style="{StaticResource MyStyle}"/>
-        <Button Content="Return to Control Panel"  Command="{Binding navigateWelcomeCommand}" Style="{StaticResource MyStyle}"/>
+        <Grid>
+            <Grid.DataContext>
+                <vm:NavigationViewModel/>
+            </Grid.DataContext>
+            <Button Content="Return to Control Panel"  Command="{Binding navigateWelcomeCommand}" Style="{StaticResource MyStyle}"/>
+        </Grid>
     </StackPanel>
 </Page>

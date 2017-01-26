@@ -108,6 +108,8 @@
     <Compile Include="BudgieAccountControllerTests.cs" />
     <Compile Include="BudgieUserLogicTests.cs" />
     <Compile Include="HomeControllerTests.cs" />
+    <Compile Include="MVVMTests.cs" />
+    <Compile Include="NavigationModelTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ASP.NET.Budgie\ASP.NET.Budgie.csproj">
@@ -121,6 +123,10 @@
     <ProjectReference Include="..\BudgieLogic\BudgieLogic.csproj">
       <Project>{1a525b20-9bba-4542-a876-09163066a4e3}</Project>
       <Name>BudgieLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BudgieMVVM\BudgieMVVM.csproj">
+      <Project>{6c61ae9f-58d2-49c2-9adc-7fe63cfeba27}</Project>
+      <Name>BudgieMVVM</Name>
     </ProjectReference>
     <ProjectReference Include="..\DatabaseLayer\BudgieDatabaseLayer.csproj">
       <Project>{46deab45-3eb1-4a62-8b5a-c3efdc455a81}</Project>

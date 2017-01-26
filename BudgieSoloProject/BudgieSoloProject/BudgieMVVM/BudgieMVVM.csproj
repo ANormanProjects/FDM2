@@ -66,11 +66,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BudgieDBCFDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BudgieDBCFDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Pages\AddUser.xaml.cs">
       <DependentUpon>AddUser.xaml</DependentUpon>
     </Compile>
@@ -134,17 +129,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="BudgieDBCFDataSet.xsc">
-      <DependentUpon>BudgieDBCFDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BudgieDBCFDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BudgieDBCFDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BudgieDBCFDataSet.xss">
-      <DependentUpon>BudgieDBCFDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -159,10 +143,6 @@
     <ProjectReference Include="..\BudgieLogic\BudgieLogic.csproj">
       <Project>{1a525b20-9bba-4542-a876-09163066a4e3}</Project>
       <Name>BudgieLogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BudgieUsersRepositoryTests\BudgieEntityFramework.Tests.csproj">
-      <Project>{18642253-f727-4fd8-b288-0cc56e6cf0e2}</Project>
-      <Name>BudgieEntityFramework.Tests</Name>
     </ProjectReference>
     <ProjectReference Include="..\DatabaseLayer\BudgieDatabaseLayer.csproj">
       <Project>{46deab45-3eb1-4a62-8b5a-c3efdc455a81}</Project>

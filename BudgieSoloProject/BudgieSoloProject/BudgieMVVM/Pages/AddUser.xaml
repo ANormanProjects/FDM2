@@ -13,8 +13,12 @@
         <vm:BudgieViewModel/>
     </Page.DataContext>
 
-    <StackPanel>
-        <TextBlock Text="Add a new Budgie User"/>
+    
+    
+    <StackPanel Style="{StaticResource PanelStyle}">
+        <StackPanel Style="{StaticResource PanelStyle2}">
+            <TextBlock Text="Add a new Budgie User" Style="{StaticResource textStyle}"/>
+        </StackPanel>
 
         <Grid Margin="10">
             <Grid.ColumnDefinitions>
@@ -41,6 +45,11 @@
             <TextBox Name="password" Grid.Row="4" Grid.Column="1" Margin="0,0,0,10" Text="{Binding password}"/>
         </Grid>
         <Button Content="Register User" Command="{Binding addBudgieUserCommand}" Style="{StaticResource MyStyle}"/>
-        <Button Content="Return to Control Panel"  Command="{Binding navigateWelcomeCommand}" Style="{StaticResource MyStyle}"/>
+        <Grid>
+            <Grid.DataContext>
+                <vm:NavigationViewModel/>
+            </Grid.DataContext>   
+            <Button Content="Return to Control Panel"  Command="{Binding navigateWelcomeCommand}" Style="{StaticResource MyStyle}"/>
+        </Grid>
     </StackPanel>
 </Page>
