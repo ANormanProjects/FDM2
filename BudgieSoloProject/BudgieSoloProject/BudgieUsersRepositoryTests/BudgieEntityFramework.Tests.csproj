@@ -107,6 +107,7 @@
     <Compile Include="BudgieUserControllerTests.cs" />
     <Compile Include="BudgieAccountControllerTests.cs" />
     <Compile Include="BudgieUserLogicTests.cs" />
+    <Compile Include="HomeControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ASP.NET.Budgie\ASP.NET.Budgie.csproj">

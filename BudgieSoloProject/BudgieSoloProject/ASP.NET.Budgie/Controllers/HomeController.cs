@@ -10,28 +10,36 @@ namespace ASP.NET.Budgie.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
 
-        public ActionResult About()
+        public ActionResult About()     //TEST TOMORROW!!!
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return View("About");
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            return View("Contact");
+        }
 
-            return View();
+        public ActionResult FAQ()
+        {
+            return View("FAQ");
+        }
+
+        public ActionResult Careers()
+        {
+            return View("Careers");
         }
 
         [Authorize(Roles = "Admin")]
         public ActionResult AdminIndex()
         {
             ViewBag.Message = "This can be viewed only by users in Admin role only";
-            return View();
+            return View("AdminIndex");
         }
+
+
     }
 }

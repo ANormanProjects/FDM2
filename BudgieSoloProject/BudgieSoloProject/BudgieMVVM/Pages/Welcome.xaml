@@ -14,9 +14,10 @@
     </Page.DataContext>
     
     <StackPanel>
-        <TextBlock Text="Welcome Budgie Admin"/>
-        <Button Content="List of all Budgie Users" Command="{Binding navigateListOfAllUsersCommand}"/>
-        <Button Content="Add new Budgie User" Command="{Binding navigateAddUserCommand}"/>
-        <Button Content="Remove Budgie User" Command="{Binding navigateRemoveUserCommand}"/>
+        <TextBlock Text="Welcome Budgie Admin" Style="{StaticResource textStyle}"/>
+        <TextBlock Text="This is the BudgieUser Control Panel" Style="{StaticResource textStyle2}"/>
+        <Button Content="List of all Budgie Users" Command="{Binding navigateListOfAllUsersCommand}" Style="{StaticResource MyStyle}"/>
+        <Button Content="Add new Budgie User" Command="{Binding navigateAddUserCommand}" Style="{StaticResource MyStyle}"/>
+        <Button Content="Remove Budgie User" Command="{Binding navigateRemoveUserCommand}" Style="{StaticResource MyStyle}"/>
     </StackPanel>
 </Page>

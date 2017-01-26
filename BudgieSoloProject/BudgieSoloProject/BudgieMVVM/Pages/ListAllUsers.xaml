@@ -13,7 +13,9 @@
         <vm:BudgieViewModel/>
     </Page.DataContext>
 
+    
     <StackPanel>
+        <TextBlock Text="List of All Registered Budgie Users" Style="{StaticResource textStyle2}"/>
         <ListBox>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -29,7 +31,7 @@
             </Grid>
         </ListBox>
 
-        <ListBox ItemsSource="{Binding budgieUser}">
+        <ListBox ItemsSource="{Binding budgieUser}" Height="500">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

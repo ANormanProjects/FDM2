@@ -30,16 +30,17 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Label>First Name:</Label>
-            <TextBox Name="firstName" Grid.Column="1" Margin="0,0,0,10" Text="{Binding myValue}"/>
+            <TextBox Name="firstName" Grid.Column="1" Margin="0,0,0,10" Text="{Binding firstName}"/>
             <Label Grid.Row="1">Last Name:</Label>
-            <TextBox Name="lastName" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10" />
+            <TextBox Name="lastName" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10" Text="{Binding lastName}"/>
             <Label Grid.Row="2">Email:</Label>
-            <TextBox Name="emailAddress" Grid.Row="2" Grid.Column="1" Margin="0,0,0,10" />
+            <TextBox Name="emailAddress" Grid.Row="2" Grid.Column="1" Margin="0,0,0,10" Text="{Binding emailAddress}"/>
             <Label Grid.Row="3">Date of Birth:</Label>
-            <TextBox Name="dob" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10" />
+            <TextBox Name="dob" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10" Text="{Binding dob}"/>
             <Label Grid.Row="4">Password:</Label>
-            <TextBox Name="password" Grid.Row="4" Grid.Column="1" Margin="0,0,0,10" />
+            <TextBox Name="password" Grid.Row="4" Grid.Column="1" Margin="0,0,0,10" Text="{Binding password}"/>
         </Grid>
-        <Button Content="Register User" Command="{Binding addBudgieUserCommand}"/>
+        <Button Content="Register User" Command="{Binding addBudgieUserCommand}" Style="{StaticResource MyStyle}"/>
+        <Button Content="Return to Control Panel"  Command="{Binding navigateWelcomeCommand}" Style="{StaticResource MyStyle}"/>
     </StackPanel>
 </Page>
