@@ -14,7 +14,6 @@ namespace ASP.NET.Budgie.Controllers
         BudgieDBCFModel budgieDBCFModel = new BudgieDBCFModel();
         BudgieUserRepository userRepo;
         AccountRepository accountRepo;
-        AccountLogic accLogic;
         BudgieUserLogic buLogic;
 
         //REAL LIFE

@@ -14,6 +14,7 @@ namespace BudgieMVVM.ViewModels
     {
         BudgieDBCFModel budgieDBCFModel = new BudgieDBCFModel();
         BudgieUserRepository budgieUserRepo;
+        AccountRepository accountRepo;
         BudgieUserLogic budgieUserLogic;
 
         private ObservableCollection<BudgieUser> _budgieUser;
@@ -39,17 +40,90 @@ namespace BudgieMVVM.ViewModels
             }
         }
 
-        private string _myValue;
-        public string myValue
+        private string _firstName;
+        public string firstName
         {
             get
             {
-                return _myValue;
+                return _firstName;
             }
             set
             {
-                _myValue = value;
+                _firstName = value;
+                OnPropertyChanged("firstName");
             }
+        }
+
+        private string _lastName;
+        public string lastName
+        {
+            get
+            {
+                return _lastName;
+            }
+            set
+            {
+                _lastName = value;
+                OnPropertyChanged("lastName");
+            }
+        }
+
+        private string _emailAddress;
+        public string emailAddress
+        {
+            get
+            {
+                return _emailAddress;
+            }
+            set
+            {
+                _emailAddress = value;
+                OnPropertyChanged("emailAddress");
+            }
+        }
+
+        private string _dob;
+        public string dob
+        {
+            get
+            {
+                return _dob;
+            }
+            set
+            {
+                _dob = value;
+                OnPropertyChanged("dob");
+            }
+        }
+
+        private string _password;
+        public string password
+        {
+            get
+            {
+                return _password;
+            }
+            set
+            {
+                _password = value;
+                OnPropertyChanged("password");
+            }
+        }
+
+        //Make one more for each property
+
+        private ICommand _navigateWelcomeCommand;
+        public ICommand navigateWelcomeCommand
+        {
+            get
+            {
+                if (_navigateWelcomeCommand == null)
+                {
+                    _navigateWelcomeCommand = new Command(NavigateToWelcome);
+                }
+                return _navigateWelcomeCommand;
+            }
+            set { _navigateWelcomeCommand = value; }
         }
 
 
@@ -141,8 +215,9 @@ namespace BudgieMVVM.ViewModels
         public BudgieViewModel()
         {
             budgieUserRepo = new BudgieUserRepository(budgieDBCFModel);
+            accountRepo = new AccountRepository(budgieDBCFModel);
             budgieUser = new ObservableCollection<BudgieUser>(budgieUserRepo.GetAllBudgieUsers());
-            budgieUserLogic = new BudgieUserLogic(budgieUserRepo);
+            budgieUserLogic = new BudgieUserLogic(budgieUserRepo, accountRepo);
         }
 
         private void ListAllBudgieUser()
@@ -152,12 +227,33 @@ namespace BudgieMVVM.ViewModels
 
         private void AddBudgieUser()
         {
-            //budgieUserLogic.RegisterUser();
+            BudgieUser newUser = new BudgieUser();
+            newUser.firstName = firstName;
+            newUser.lastName = lastName;
+            newUser.emailAddress = emailAddress;
+            newUser.dob = dob;
+            newUser.password = password;
+
+            budgieUserLogic.RegisterUser(newUser);
+            
         }
 
         private void RemoveBudgieUser()
         {
-            //budgieUserLogic.RemoveUser();
+            BudgieUser removeUser = new BudgieUser();
+            removeUser.emailAddress = emailAddress;
+
+            budgieUserLogic.RemoveUser(removeUser);
+        }
+
+        private void NavigateToWelcome()
+        {
+            //Access Navigation View Model
+            NavigationViewModel navVM =
+                App.Current.MainWindow.DataContext as NavigationViewModel;
+
+            //Change the location to pagetwo.xaml
+            navVM.location = "Pages/Welcome.xaml";
         }
 
         private void NavigateToListOfAllUsers()
@@ -166,7 +262,7 @@ namespace BudgieMVVM.ViewModels
             NavigationViewModel navVM =
                 App.Current.MainWindow.DataContext as NavigationViewModel;
 
-            //Change the location to pagetwo.xaml
+            //Change The Location
             navVM.location = "Pages/ListAllUsers.xaml";
         }
 

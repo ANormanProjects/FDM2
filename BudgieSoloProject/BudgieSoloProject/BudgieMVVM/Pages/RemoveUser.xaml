@@ -3,12 +3,18 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:vm="clr-namespace:BudgieMVVM.ViewModels"
+      xmlns:local="clr-namespace:BudgieMVVM"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="RemoveUser">
 
+    <Page.DataContext>
+        <vm:BudgieViewModel/>
+    </Page.DataContext>
+
     <StackPanel>
-        <TextBlock Text="Add a new Budgie User"/>
+        <TextBlock Text="Remove Budgie User"/>
 
         <Grid Margin="10">
             <Grid.ColumnDefinitions>
@@ -23,17 +29,9 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Label>First Name:</Label>
-            <TextBox Name="firstName" Grid.Column="1" Margin="0,0,0,10" Text="{Binding myValue}"/>
-            <Label Grid.Row="1">Last Name:</Label>
-            <TextBox Name="lastName" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10" />
-            <Label Grid.Row="2">Email:</Label>
-            <TextBox Name="emailAddress" Grid.Row="2" Grid.Column="1" Margin="0,0,0,10" />
-            <Label Grid.Row="3">Date of Birth:</Label>
-            <TextBox Name="dob" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10" />
-            <Label Grid.Row="4">Password:</Label>
-            <TextBox Name="password" Grid.Row="4" Grid.Column="1" Margin="0,0,0,10" />
+            <Label>Email Address:</Label>
+            <TextBox Name="firstName" Grid.Column="1" Margin="0,0,0,10" Text="{Binding emailAddress}"/>
         </Grid>
-        <Button Content="Register User" Command="{Binding addBudgieUserCommand}"/>
+        <Button Content="Remove User" Command="{Binding removeBudgieUserCommand}" Style="{StaticResource MyStyle}"/>
     </StackPanel>
 </Page>
