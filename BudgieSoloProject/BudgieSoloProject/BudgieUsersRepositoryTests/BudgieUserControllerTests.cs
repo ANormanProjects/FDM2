@@ -36,6 +36,20 @@ namespace BudgieUsersRepositoryTests
         }
 
         [TestMethod]
+        public void Test_BudgieUserControllerConstructor()
+        {
+            //ARRANGE
+            BudgieUserController buController = new BudgieUserController();
+            //ACT
+
+            //ASSERT
+            Assert.IsNotNull(buController.userRepo);
+            Assert.IsNotNull(buController.accountRepo);
+            Assert.IsNotNull(buController.buLogic);
+
+        }
+
+        [TestMethod]
         public void Test_BudgieUserControllerIndex_ReturnsIndexView()
         {
             //ARRANGE
