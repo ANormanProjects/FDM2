@@ -7,6 +7,9 @@ REM Run the tests through OpenCover
  -target:"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\MSTest.exe"^
  -targetargs:"/testcontainer:\"BudgieUsersRepositoryTests\bin\debug\BudgieUsersRepositoryTests.dll\""^
  -mergebyhash^
+ -filter: +[*]* -[*]*.Pages.*
+ -filter: +[*]* -[*]*.Properties.*
+ -filter: +[*]* -[*]*.MainWindow.*
  -output:.\reports\output.xml
 
 REM Generate the report

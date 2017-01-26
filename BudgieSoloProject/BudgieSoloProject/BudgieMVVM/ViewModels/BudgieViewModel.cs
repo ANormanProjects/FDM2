@@ -13,9 +13,9 @@ namespace BudgieMVVM.ViewModels
     public class BudgieViewModel : BaseViewModel
     {
         BudgieDBCFModel budgieDBCFModel = new BudgieDBCFModel();
-        BudgieUserRepository budgieUserRepo;
-        AccountRepository accountRepo;
-        BudgieUserLogic budgieUserLogic;
+        public BudgieUserRepository budgieUserRepo { get; set; }
+        public AccountRepository accountRepo { get; set; }
+        public BudgieUserLogic budgieUserLogic { get; set; }
 
         private ObservableCollection<BudgieUser> _budgieUser;
 
@@ -112,63 +112,7 @@ namespace BudgieMVVM.ViewModels
 
         //Make one more for each property
 
-        private ICommand _navigateWelcomeCommand;
-        public ICommand navigateWelcomeCommand
-        {
-            get
-            {
-                if (_navigateWelcomeCommand == null)
-                {
-                    _navigateWelcomeCommand = new Command(NavigateToWelcome);
-                }
-                return _navigateWelcomeCommand;
-            }
-            set { _navigateWelcomeCommand = value; }
-        }
 
-
-
-        private ICommand _navigateListOfAllUsersCommand;
-        public ICommand navigateListOfAllUsersCommand
-        {
-            get
-            {
-                if (_navigateListOfAllUsersCommand == null)
-                {
-                    _navigateListOfAllUsersCommand = new Command(NavigateToListOfAllUsers);
-                }
-                return _navigateListOfAllUsersCommand;
-            }
-            set { _navigateListOfAllUsersCommand = value; }
-        }
-
-        private ICommand _navigateAddUserCommand;
-        public ICommand navigateAddUserCommand
-        {
-            get
-            {
-                if (_navigateAddUserCommand == null)
-                {
-                    _navigateAddUserCommand = new Command(NavigateToAddUser);
-                }
-                return _navigateAddUserCommand;
-            }
-            set { _navigateAddUserCommand = value; }
-        }
-
-        private ICommand _navigateRemoveUserCommand;
-        public ICommand navigateRemoveUserCommand
-        {
-            get
-            {
-                if (_navigateRemoveUserCommand == null)
-                {
-                    _navigateRemoveUserCommand = new Command(NavigateToRemoveUser);
-                }
-                return _navigateRemoveUserCommand;
-            }
-            set { _navigateRemoveUserCommand = value; }
-        }
 
         private ICommand _ListAllBudgieUserCommand;
         public ICommand ListAllBudgieUserCommand
@@ -212,20 +156,27 @@ namespace BudgieMVVM.ViewModels
             set { _removeBudgieUserCommand = value; }
         }
 
+        //Real
         public BudgieViewModel()
         {
             budgieUserRepo = new BudgieUserRepository(budgieDBCFModel);
-            accountRepo = new AccountRepository(budgieDBCFModel);
-            budgieUser = new ObservableCollection<BudgieUser>(budgieUserRepo.GetAllBudgieUsers());
+            accountRepo = new AccountRepository(budgieDBCFModel);          
             budgieUserLogic = new BudgieUserLogic(budgieUserRepo, accountRepo);
+            budgieUser = new ObservableCollection<BudgieUser>(budgieUserLogic.GetAllBudgieUsers());
         }
 
-        private void ListAllBudgieUser()
+        //Test
+        public BudgieViewModel(BudgieUserLogic budgieUserLogic)
         {
-            budgieUserRepo.GetAllBudgieUsers();
+            this.budgieUserLogic = budgieUserLogic;
         }
 
-        private void AddBudgieUser()
+        public void ListAllBudgieUser()
+        {
+            budgieUserLogic.GetAllBudgieUsers();
+        }
+
+        public void AddBudgieUser()
         {
             BudgieUser newUser = new BudgieUser();
             newUser.firstName = firstName;
@@ -234,11 +185,10 @@ namespace BudgieMVVM.ViewModels
             newUser.dob = dob;
             newUser.password = password;
 
-            budgieUserLogic.RegisterUser(newUser);
-            
+            budgieUserLogic.RegisterUser(newUser);            
         }
 
-        private void RemoveBudgieUser()
+        public void RemoveBudgieUser()
         {
             BudgieUser removeUser = new BudgieUser();
             removeUser.emailAddress = emailAddress;
@@ -246,44 +196,6 @@ namespace BudgieMVVM.ViewModels
             budgieUserLogic.RemoveUser(removeUser);
         }
 
-        private void NavigateToWelcome()
-        {
-            //Access Navigation View Model
-            NavigationViewModel navVM =
-                App.Current.MainWindow.DataContext as NavigationViewModel;
-
-            //Change the location to pagetwo.xaml
-            navVM.location = "Pages/Welcome.xaml";
-        }
-
-        private void NavigateToListOfAllUsers()
-        {
-            //Access Navigation View Model
-            NavigationViewModel navVM =
-                App.Current.MainWindow.DataContext as NavigationViewModel;
-
-            //Change The Location
-            navVM.location = "Pages/ListAllUsers.xaml";
-        }
-
-        private void NavigateToAddUser()
-        {
-            //Access Navigation View Model
-            NavigationViewModel navVM =
-                App.Current.MainWindow.DataContext as NavigationViewModel;
-
-            //Change The Location
-            navVM.location = "Pages/AddUser.xaml";
-        }
-
-        private void NavigateToRemoveUser()
-        {
-            //Access Navigation View Model
-            NavigationViewModel navVM =
-                App.Current.MainWindow.DataContext as NavigationViewModel;
-
-            //Change The Location
-            navVM.location = "Pages/RemoveUser.xaml";
-        }
+       
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BudgieMVVM.ViewModels
 {
-    public abstract class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
