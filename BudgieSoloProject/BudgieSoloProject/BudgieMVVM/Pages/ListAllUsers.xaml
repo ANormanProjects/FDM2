@@ -16,6 +16,7 @@
     
     <StackPanel>
         <TextBlock Text="List of All Registered Budgie Users" Style="{StaticResource textStyle2}"/>
+        <Button Content="Return to Control Panel"  Command="{Binding navigateWelcomeCommand}" Style="{StaticResource MyStyle}"/>
         <ListBox>
             <Grid>
                 <Grid.ColumnDefinitions>
