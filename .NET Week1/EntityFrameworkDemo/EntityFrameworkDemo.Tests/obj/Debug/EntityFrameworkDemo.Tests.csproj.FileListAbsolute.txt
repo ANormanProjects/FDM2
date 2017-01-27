@@ -1,0 +1,16 @@
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\bin\Debug\EntityFrameworkDemo.Tests.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\bin\Debug\EntityFrameworkDemo.Tests.pdb
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\obj\Debug\EntityFrameworkDemo.Tests.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\obj\Debug\EntityFrameworkDemo.Tests.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\obj\Debug\EntityFrameworkDemo.Tests.pdb
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\bin\Debug\EntityFrameworkDemo.Tests.dll.config
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\bin\Debug\Castle.Core.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\bin\Debug\EntityFramework.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\bin\Debug\EntityFrameworkDemo.CodeFirst.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\bin\Debug\Moq.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\bin\Debug\EntityFrameworkDemo.CodeFirst.pdb
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\bin\Debug\Castle.Core.xml
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\bin\Debug\EntityFramework.xml
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.Tests\bin\Debug\Moq.xml

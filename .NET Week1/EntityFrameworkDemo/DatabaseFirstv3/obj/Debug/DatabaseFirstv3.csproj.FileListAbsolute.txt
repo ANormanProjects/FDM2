@@ -1,0 +1,10 @@
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\DatabaseFirstv3\bin\Debug\DatabaseFirstv3.dll.config
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\DatabaseFirstv3\bin\Debug\DatabaseFirstv3.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\DatabaseFirstv3\bin\Debug\DatabaseFirstv3.pdb
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\DatabaseFirstv3\bin\Debug\EntityFramework.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\DatabaseFirstv3\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\DatabaseFirstv3\bin\Debug\EntityFramework.xml
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\DatabaseFirstv3\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\DatabaseFirstv3\obj\Debug\DatabaseFirstv3.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\DatabaseFirstv3\obj\Debug\DatabaseFirstv3.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\DatabaseFirstv3\obj\Debug\DatabaseFirstv3.pdb
