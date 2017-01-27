@@ -1,0 +1,15 @@
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\bin\Debug\ExpertMVVM.exe.config
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\bin\Debug\ExpertMVVM.exe
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\bin\Debug\ExpertMVVM.pdb
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\obj\Debug\ExpertMVVM.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\obj\Debug\MainWindow.g.cs
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\obj\Debug\App.g.cs
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\obj\Debug\ExpertMVVM_MarkupCompile.cache
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\obj\Debug\ExpertMVVM_MarkupCompile.lref
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\obj\Debug\MainWindow.baml
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\obj\Debug\ExpertMVVM.g.resources
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\obj\Debug\ExpertMVVM.Properties.Resources.resources
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\obj\Debug\ExpertMVVM.csproj.GenerateResource.Cache
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\obj\Debug\ExpertMVVM.exe
+C:\Users\benjamin.bowes\Desktop\.NET Week1\ExpertMVVM\ExpertMVVM\obj\Debug\ExpertMVVM.pdb
