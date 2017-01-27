@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LAMBDAandDELEGATESexerciseV2", "LAMBDAandDELEGATESexerciseV2\LAMBDAandDELEGATESexerciseV2.csproj", "{47461B2F-E85F-4E7A-AAC5-0CC1708BA52F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDTests", "CDTests\CDTests.csproj", "{35B33D5F-CE90-4097-B46E-CE9DB7C6CD61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Book UI", "Book UI\Book UI.csproj", "{101C49CB-827D-4ACA-B759-0F4480800D33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47461B2F-E85F-4E7A-AAC5-0CC1708BA52F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47461B2F-E85F-4E7A-AAC5-0CC1708BA52F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47461B2F-E85F-4E7A-AAC5-0CC1708BA52F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47461B2F-E85F-4E7A-AAC5-0CC1708BA52F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35B33D5F-CE90-4097-B46E-CE9DB7C6CD61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35B33D5F-CE90-4097-B46E-CE9DB7C6CD61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35B33D5F-CE90-4097-B46E-CE9DB7C6CD61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35B33D5F-CE90-4097-B46E-CE9DB7C6CD61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{101C49CB-827D-4ACA-B759-0F4480800D33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{101C49CB-827D-4ACA-B759-0F4480800D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{101C49CB-827D-4ACA-B759-0F4480800D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{101C49CB-827D-4ACA-B759-0F4480800D33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

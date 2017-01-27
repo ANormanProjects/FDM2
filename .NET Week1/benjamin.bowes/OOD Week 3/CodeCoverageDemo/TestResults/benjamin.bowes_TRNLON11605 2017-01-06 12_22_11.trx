@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="13aae473-2325-40a9-b7b1-0c304a62fc02" name="benjamin.bowes@TRNLON11605 2017-01-06 12:22:11" runUser="FDMGROUP\benjamin.bowes" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="76daf0b4-8d94-4e1d-ae90-31ce90a54fd7">
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Deployment runDeploymentRoot="benjamin.bowes_TRNLON11605 2017-01-06 12_22_11" />
+    <Properties />
+  </TestSettings>
+  <Times creation="2017-01-06T12:22:11.4545559+00:00" queuing="2017-01-06T12:22:13.6697701+00:00" start="2017-01-06T12:22:13.9817721+00:00" finish="2017-01-06T12:22:14.6057761+00:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="tests\bin\debug\tests.dll" id="fbddd44d-b01b-d2c3-6642-2d6c15348a1e">
+      <Execution id="9fe6e25a-cc13-4d4e-9589-143c9a5c0416" />
+      <TestMethod codeBase="C:/Users/benjamin.bowes/Desktop/OOD Week 3/CodeCoverageDemo/Tests/bin/debug/Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Tests.Tests, Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="fbddd44d-b01b-d2c3-6642-2d6c15348a1e" executionId="9fe6e25a-cc13-4d4e-9589-143c9a5c0416" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9fe6e25a-cc13-4d4e-9589-143c9a5c0416" testId="fbddd44d-b01b-d2c3-6642-2d6c15348a1e" testName="TestMethod1" computerName="TRNLON11605" duration="00:00:00.0546699" startTime="2017-01-06T12:22:14.0909728+00:00" endTime="2017-01-06T12:22:14.5121755+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9fe6e25a-cc13-4d4e-9589-143c9a5c0416">
+    </UnitTestResult>
+  </Results>
+</TestRun>

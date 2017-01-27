@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "BudgieUser", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink(User.Identity.GetUserName(), "Index", "BudgieUser", routeValues: null, htmlAttributes: new { title = "BudgieUser" })
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a class="dropdown.hover" data-toggle="dropdown">
+                Admin
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("List of Users", "ListOfAllBudgieUsers", "BudgieUser")</li>
+                <li>@Html.ActionLink("Update User", "UpdateUser", "BudgieUser")</li>
+                <li>@Html.ActionLink("Remove User", "RemoveUser", "BudgieUser")</li>
+            </ul>
+        </li>
+    </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Sign Up", "RegisterUser", "BudgieUser", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Login", "Login", "BudgieUser", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
