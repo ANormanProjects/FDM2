@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ASP.NET.Advancedv2.Models.Book>
+
+@{
+    ViewBag.Title = "Books";
+}
+
+<h2>Books</h2>
+
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.title)</th>
+        <th>@Html.DisplayNameFor(model => model.author)</th>
+        <th>@Html.DisplayNameFor(model => model.price)</th>
+    </tr>
+    @foreach (var book in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => book.title)</td>
+            <td>@Html.DisplayFor(modelItem => book.author)</td>
+            <td>@Html.DisplayFor(modelItem => book.price)</td>
+        </tr>
+    }
+</table>
+
