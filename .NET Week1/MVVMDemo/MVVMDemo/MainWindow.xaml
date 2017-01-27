@@ -1,0 +1,15 @@
+﻿<Window x:Class="MVVMDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:MVVMDemo.ViewModels"
+        Title="MainWindow" Height="350" Width="525">
+    
+    <Window.DataContext>
+        <vm:MyViewModel/>   <!-- Class to look inside of. -->
+    </Window.DataContext>
+    
+    <StackPanel>
+        <TextBlock Text="{Binding name}"/>  <!-- Look for a property called 'name' inside class (vm:MyViewModel). -->
+        <TextBox Text="{Binding namen, Mode=TwoWay}"/> <!-- TextBox is editable, (TWOWAY) -->
+    </StackPanel>
+</Window>
