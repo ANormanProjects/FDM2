@@ -307,6 +307,12 @@ namespace BudgieUsersRepositoryTests
             Assert.AreEqual("Login", action.ViewName);
         }
 
+        [TestMethod]
+        public void Test_BudgieUserLogin_LoginsUserAndUsesFormAuthenticationToSaveCookies()
+        {
+
+        }
+
         //[TestMethod]
         //public void Test_BudgieUserControllerLogOff_ReturnsRedirectToRouteResult()
         //{
