@@ -1,0 +1,7 @@
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\LAMBDAandDELEGATESexerciseV2\CDTests\obj\Debug\CDTests.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\LAMBDAandDELEGATESexerciseV2\CDTests\bin\Debug\CDTests.dll
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\LAMBDAandDELEGATESexerciseV2\CDTests\bin\Debug\CDTests.pdb
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\LAMBDAandDELEGATESexerciseV2\CDTests\bin\Debug\LAMBDAandDELEGATESexerciseV2.dll
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\LAMBDAandDELEGATESexerciseV2\CDTests\bin\Debug\LAMBDAandDELEGATESexerciseV2.pdb
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\LAMBDAandDELEGATESexerciseV2\CDTests\obj\Debug\CDTests.dll
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\LAMBDAandDELEGATESexerciseV2\CDTests\obj\Debug\CDTests.pdb
