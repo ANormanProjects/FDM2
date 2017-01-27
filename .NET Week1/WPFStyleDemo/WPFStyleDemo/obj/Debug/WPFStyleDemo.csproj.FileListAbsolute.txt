@@ -1,0 +1,14 @@
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFStyleDemo\WPFStyleDemo\bin\Debug\WPFStyleDemo.exe.config
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFStyleDemo\WPFStyleDemo\bin\Debug\WPFStyleDemo.exe
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFStyleDemo\WPFStyleDemo\bin\Debug\WPFStyleDemo.pdb
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFStyleDemo\WPFStyleDemo\obj\Debug\WPFStyleDemo.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFStyleDemo\WPFStyleDemo\obj\Debug\MainWindow.baml
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFStyleDemo\WPFStyleDemo\obj\Debug\App.baml
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFStyleDemo\WPFStyleDemo\obj\Debug\MainWindow.g.cs
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFStyleDemo\WPFStyleDemo\obj\Debug\App.g.cs
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFStyleDemo\WPFStyleDemo\obj\Debug\WPFStyleDemo_MarkupCompile.cache
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFStyleDemo\WPFStyleDemo\obj\Debug\WPFStyleDemo.g.resources
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFStyleDemo\WPFStyleDemo\obj\Debug\WPFStyleDemo.Properties.Resources.resources
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFStyleDemo\WPFStyleDemo\obj\Debug\WPFStyleDemo.csproj.GenerateResource.Cache
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFStyleDemo\WPFStyleDemo\obj\Debug\WPFStyleDemo.exe
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFStyleDemo\WPFStyleDemo\obj\Debug\WPFStyleDemo.pdb
