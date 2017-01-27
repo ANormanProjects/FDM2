@@ -1,0 +1,13 @@
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.CodeFirst\bin\Debug\EntityFrameworkDemo.CodeFirst.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.CodeFirst\bin\Debug\EntityFrameworkDemo.CodeFirst.pdb
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.CodeFirst\obj\Debug\EntityFrameworkDemo.CodeFirst.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.CodeFirst\obj\Debug\EntityFrameworkDemo.CodeFirst.pdb
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.CodeFirst\bin\Debug\EntityFrameworkDemo.CodeFirst.dll.config
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.CodeFirst\bin\Debug\EntityFramework.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.CodeFirst\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.CodeFirst\bin\Debug\EntityFramework.xml
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.CodeFirst\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.CodeFirst\obj\Debug\EntityFrameworkDemo.CodeFirst.Migrations.initial.resources
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.CodeFirst\obj\Debug\EntityFrameworkDemo.CodeFirst.csproj.GenerateResource.Cache
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.CodeFirst\obj\Debug\EntityFrameworkDemo.CodeFirst.Migrations.locations.resources
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo.CodeFirst\obj\Debug\EntityFrameworkDemo.CodeFirst.csprojResolveAssemblyReference.cache

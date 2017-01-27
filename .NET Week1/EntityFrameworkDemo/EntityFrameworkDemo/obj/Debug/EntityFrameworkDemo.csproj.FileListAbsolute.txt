@@ -1,0 +1,12 @@
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo\obj\Debug\EntityFrameworkDemo.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo\bin\Debug\EntityFrameworkDemo.exe.config
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo\bin\Debug\EntityFrameworkDemo.exe
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo\bin\Debug\EntityFrameworkDemo.pdb
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo\bin\Debug\EntityFramework.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo\bin\Debug\EntityFramework.xml
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo\obj\Debug\EntityFrameworkDemo.exe
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo\obj\Debug\EntityFrameworkDemo.pdb
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo\bin\Debug\EntityFrameworkDemo.CodeFirst.dll
+C:\Users\benjamin.bowes\Desktop\.NET Week1\EntityFrameworkDemo\EntityFrameworkDemo\bin\Debug\EntityFrameworkDemo.CodeFirst.pdb
