@@ -1,0 +1,13 @@
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFIntroDemo\WPFIntroDemo\bin\Debug\WPFIntroDemo.exe.config
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFIntroDemo\WPFIntroDemo\bin\Debug\WPFIntroDemo.exe
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFIntroDemo\WPFIntroDemo\bin\Debug\WPFIntroDemo.pdb
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFIntroDemo\WPFIntroDemo\obj\Debug\WPFIntroDemo.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFIntroDemo\WPFIntroDemo\obj\Debug\MainWindow.baml
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFIntroDemo\WPFIntroDemo\obj\Debug\MainWindow.g.cs
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFIntroDemo\WPFIntroDemo\obj\Debug\App.g.cs
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFIntroDemo\WPFIntroDemo\obj\Debug\WPFIntroDemo_MarkupCompile.cache
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFIntroDemo\WPFIntroDemo\obj\Debug\WPFIntroDemo.g.resources
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFIntroDemo\WPFIntroDemo\obj\Debug\WPFIntroDemo.Properties.Resources.resources
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFIntroDemo\WPFIntroDemo\obj\Debug\WPFIntroDemo.csproj.GenerateResource.Cache
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFIntroDemo\WPFIntroDemo\obj\Debug\WPFIntroDemo.exe
+C:\Users\benjamin.bowes\Desktop\.NET Week1\WPFIntroDemo\WPFIntroDemo\obj\Debug\WPFIntroDemo.pdb
