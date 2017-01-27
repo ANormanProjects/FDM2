@@ -1,0 +1,5 @@
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\LAMBDAandDELEGATESexerciseV2\LAMBDAandDELEGATESexerciseV2\obj\Debug\LAMBDAandDELEGATESexerciseV2.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\LAMBDAandDELEGATESexerciseV2\LAMBDAandDELEGATESexerciseV2\bin\Debug\LAMBDAandDELEGATESexerciseV2.dll
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\LAMBDAandDELEGATESexerciseV2\LAMBDAandDELEGATESexerciseV2\bin\Debug\LAMBDAandDELEGATESexerciseV2.pdb
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\LAMBDAandDELEGATESexerciseV2\LAMBDAandDELEGATESexerciseV2\obj\Debug\LAMBDAandDELEGATESexerciseV2.dll
+C:\Users\benjamin.bowes\Desktop\OOD Week 3\LAMBDAandDELEGATESexerciseV2\LAMBDAandDELEGATESexerciseV2\obj\Debug\LAMBDAandDELEGATESexerciseV2.pdb

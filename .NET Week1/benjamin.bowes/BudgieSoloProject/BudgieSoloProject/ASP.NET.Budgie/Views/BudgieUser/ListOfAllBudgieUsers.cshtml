@@ -1,0 +1,26 @@
+﻿@model IEnumerable<BudgieDatabaseLayer.BudgieUser>
+@{
+    ViewBag.Title = "ListOfAllBudgieUsers";
+}
+
+
+
+<h2>List of all BudgieUsers</h2>
+
+<table class="table">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Address</th>
+        <th>Date of Birth</th>
+    </tr>
+    @foreach (var budgieUsers in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => budgieUsers.firstName)</td>
+            <td>@Html.DisplayFor(modelItem => budgieUsers.lastName)</td>
+            <td>@Html.DisplayFor(modelItem => budgieUsers.emailAddress)</td>
+            <td>@Html.DisplayFor(modelItem => budgieUsers.dob)</td>
+        </tr>
+    }
+</table>
