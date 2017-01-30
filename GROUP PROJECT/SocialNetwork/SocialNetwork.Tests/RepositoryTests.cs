@@ -98,6 +98,8 @@ namespace SocialNetwork.Tests
             Func<User, bool> expression = u => true;
             string expectedUsername = "Test C";
 
+            mockUsers.Setup(m => m.Where(It.IsAny<Func<User, bool>>())).Returns(testUsers);
+
             // Act
             userRepo.Update(mockUser3.Object, expression);
             List<User> result = userRepo.GetAll().ToList();
