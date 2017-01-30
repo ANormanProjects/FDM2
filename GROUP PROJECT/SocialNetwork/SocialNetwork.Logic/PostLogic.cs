@@ -58,9 +58,13 @@ namespace SocialNetwork.Logic
             {
                 timelinePosts = postRepository.GetAll();
             }
-            
-            
+                        
             //for each friend, get all posts, add to list,
+            foreach (User user in collection)
+            {
+                
+            }
+
             //return the list
             return new List<Post>();
         }
