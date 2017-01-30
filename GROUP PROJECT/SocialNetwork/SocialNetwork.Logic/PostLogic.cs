@@ -1,5 +1,6 @@
 ﻿using SocialNetwork.DataAccess;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +10,13 @@ namespace SocialNetwork.Logic
 {    
     public class PostLogic : IPostLogic
     {
-        Repository<Post> PostRepository; 
+        Repository<Post> postRepository;
+        Repository<User> userRepository;
     
         public PostLogic()	
         {
-            PostRepository = new Repository<Post>();
+            postRepository = new Repository<Post>();
+            userRepository = new Repository<User>();
         }
 
         public void WriteGroupPost(int id, string title, string language, string code, string content)
@@ -26,7 +29,7 @@ namespace SocialNetwork.Logic
             postToWrite.code = code;
             postToWrite.content = content;
 
-            PostRepository.Insert(postToWrite);
+            postRepository.Insert(postToWrite);
            
         }
         
@@ -40,13 +43,26 @@ namespace SocialNetwork.Logic
             postToWrite.code = code;
             postToWrite.content = content;
 
-            PostRepository.Insert(postToWrite);
+            postRepository.Insert(postToWrite);
 
         }
 
         public List<Post> ViewTimeline(User user)
         {
+            IEnumerable<Post> timelinePosts;
+
+            //Find user in database use first
+            User userFound = userRepository.First(u => u.username == user.username);
+            //if not null, getallposts
+            if (userFound != null)
+            {
+                timelinePosts = postRepository.GetAll();
+            }
             
+            
+            //for each friend, get all posts, add to list,
+            //return the list
+            return new List<Post>();
         }
 
         public void Reply(Post _post, string UserInput)
