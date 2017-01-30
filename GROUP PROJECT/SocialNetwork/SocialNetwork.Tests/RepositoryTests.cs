@@ -26,8 +26,19 @@ namespace SocialNetwork.Tests
             mockUser1 = new Mock<User>();
             mockUser2 = new Mock<User>();
             mockUser3 = new Mock<User>();
-            mockUsers = new Mock<DbSet<User>>();
 
+            mockUser1.SetupAllProperties();
+            mockUser2.SetupAllProperties();
+            mockUser3.SetupAllProperties();
+
+            mockUser1.Object.userId = 1;
+            mockUser1.Object.username = "Test A";
+            mockUser2.Object.userId = 2;
+            mockUser2.Object.username = "Test B";
+            mockUser3.Object.userId = 3;
+            mockUser3.Object.username = "Test C";
+
+            mockUsers = new Mock<DbSet<User>>();
             testUsers = new List<User>()
             {
                 mockUser1.Object,
@@ -81,17 +92,18 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        public void Test_Update_CallsWhereMethodOfDbSet_WhenCalled()
+        public void Test_Update_UpdatesAllUsers_WhenCalledForAllUsers()
         {
             // Arrange
             Func<User, bool> expression = u => true;
-            mockUsers.Setup(m => m.Where(expression)).Returns(testUsers);
+            string expectedUsername = "Test C";
 
             // Act
             userRepo.Update(mockUser3.Object, expression);
-
+            List<User> result = userRepo.GetAll().ToList();
+            
             // Assert
-            mockUsers.Verify(m => m.Where<User>(expression));
+            Assert.AreEqual(expectedUsername, result[0].username);
         }
 
     }
