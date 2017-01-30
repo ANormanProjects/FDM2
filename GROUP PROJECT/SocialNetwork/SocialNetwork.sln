@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.DataAccess", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Tests", "SocialNetwork.Tests\SocialNetwork.Tests.csproj", "{FCFEFCB6-FCD2-448A-969A-CDAFD65F01BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Logic", "SocialNetwork.Logic\SocialNetwork.Logic.csproj", "{FD9724BE-01C3-4E41-BA3F-2A103DAEDDF3}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test Console", "Test Console\Test Console.csproj", "{0871F565-A330-4224-AA63-1F1FCF846EFB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.WebUI", "SocialNetwork.WebUI\SocialNetwork.WebUI.csproj", "{F8623601-1BCB-42A2-8DA9-88BB2454F004}"
@@ -29,6 +31,10 @@ Global
 		{FCFEFCB6-FCD2-448A-969A-CDAFD65F01BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCFEFCB6-FCD2-448A-969A-CDAFD65F01BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCFEFCB6-FCD2-448A-969A-CDAFD65F01BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD9724BE-01C3-4E41-BA3F-2A103DAEDDF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD9724BE-01C3-4E41-BA3F-2A103DAEDDF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD9724BE-01C3-4E41-BA3F-2A103DAEDDF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD9724BE-01C3-4E41-BA3F-2A103DAEDDF3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0871F565-A330-4224-AA63-1F1FCF846EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0871F565-A330-4224-AA63-1F1FCF846EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0871F565-A330-4224-AA63-1F1FCF846EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
