@@ -1,12 +1,16 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+
 namespace SocialNetwork.DataAccess
-{
+{   
+
     /// <summary>
     /// Generic Interface for Implementing a Data Repository
     /// </summary>
@@ -27,6 +31,14 @@ namespace SocialNetwork.DataAccess
     /// <typeparam name="T"></typeparam>
     public class Repository<T> : IRepository<T> where T : class
     {
+        /// <summary>
+        /// How much Code could a Code Logger Log if a Code Log Could Log Code
+        /// </summary>
+        private static readonly ILog logger = LogManager.GetLogger("Repository.cs");
+
+        /// <summary>
+        /// The Database Context
+        /// </summary>
         protected DbContext context { get; set; }
 
         public Repository()
@@ -48,6 +60,7 @@ namespace SocialNetwork.DataAccess
         {
             // Adds the specified entity to the relevant DbSet in the DbContext
             context.Set<T>().Add(entity);
+            logger.Info("Entity added to database: " + entity.ToString());
         }
 
         /// <summary>
@@ -58,6 +71,7 @@ namespace SocialNetwork.DataAccess
         {
             // Removes the specified entity from the relevant DbSet in the DbContext
             context.Set<T>().Remove(entity);
+            logger.Info("Entity removed from database: " + entity.ToString());
         }
 
         /// <summary>
@@ -77,6 +91,7 @@ namespace SocialNetwork.DataAccess
                 {
                     // Set the values of each entity-to-be-update to the entity
                     context.Entry(t).CurrentValues.SetValues(entity);
+                    logger.Info("Entity in database updated: " + entity.ToString());
                 }
             }
         }
@@ -120,6 +135,7 @@ namespace SocialNetwork.DataAccess
         {
             // Saves changes to the database
             context.SaveChanges();
+            logger.Info("Changes saved to database");
         }
     }
 }
