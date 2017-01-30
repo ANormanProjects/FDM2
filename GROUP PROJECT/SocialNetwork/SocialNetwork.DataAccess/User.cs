@@ -40,7 +40,6 @@ namespace SocialNetwork.DataAccess
         }        
 
         private string _gender;
-
         public string gender
         {
             get { return _gender; }
@@ -48,7 +47,6 @@ namespace SocialNetwork.DataAccess
         }       
         
         private IEnumerable<Post> _posts;
-
         public IEnumerable<Post> posts
         {
             get { return _posts; }
@@ -56,7 +54,6 @@ namespace SocialNetwork.DataAccess
         }        
 
         private IEnumerable<User> _friends;
-
         public IEnumerable<User> friends
         {
             get { return _friends; }
@@ -64,7 +61,6 @@ namespace SocialNetwork.DataAccess
         }
 
         private IEnumerable<string> _skills;
-
         public IEnumerable<string> skills
         {
             get { return _skills; }

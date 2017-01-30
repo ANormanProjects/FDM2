@@ -5,6 +5,7 @@ using SocialNetwork.DataAccess;
 using Moq;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace SocialNetwork.Tests
 {
@@ -91,6 +92,10 @@ namespace SocialNetwork.Tests
             mockUsers.Verify(m => m.Remove(mockUser2.Object), Times.Once);
         }
 
+
+
+        /*     -------------- TO DO ---------------         */
+
         [TestMethod]
         public void Test_Update_UpdatesAllUsers_WhenCalledForAllUsers()
         {
@@ -98,7 +103,7 @@ namespace SocialNetwork.Tests
             Func<User, bool> expression = u => true;
             string expectedUsername = "Test C";
 
-            mockUsers.Setup(m => m.Where(It.IsAny<Func<User, bool>>())).Returns(testUsers);
+            /* AAAAAGGGHHHH CANT MOCK THE WHERE METHOD AAAGGGHHHHH */
 
             // Act
             userRepo.Update(mockUser3.Object, expression);
@@ -108,5 +113,34 @@ namespace SocialNetwork.Tests
             Assert.AreEqual(expectedUsername, result[0].username);
         }
 
+        [TestMethod]
+        public void Test_Update_UpdatesSelectedUsers_WhenCalledForSpecificUsers()
+        {
+
+        }
+
+        [TestMethod]
+        public void Test_Update_UpdatesNoUsers_WhenCalledForNoSpecificUsers()
+        {
+
+        }
+
+        [TestMethod]
+        public void Test_Search_ReturnsListOfAllUsers_WhenCalledForAllUsers()
+        {
+
+        }
+        
+        [TestMethod]
+        public void Test_Search_ReturnsListOfRelevantUsers_WhenCalledForSpecificUsers()
+        {
+
+        }
+
+        [TestMethod]
+        public void Test_Search_ReturnsEmptyList_WhenCalledForNoSpecificUsers()
+        {
+
+        }
     }
 }
