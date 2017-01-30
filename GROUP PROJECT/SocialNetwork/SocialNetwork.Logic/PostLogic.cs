@@ -16,10 +16,11 @@ namespace SocialNetwork.Logic
             PostRepository = new Repository<Post>();
         }
 
-        public void WritePost(int id, string title, string language, string code, string content)
+        public void WriteGroupPost(int id, string title, string language, string code, string content)
         {
-            Post postToWrite = new Post();
-            postToWrite.user.userId = id;
+                       
+            GroupPost postToWrite = new GroupPost();
+            postToWrite.group.groupID = id;
             postToWrite.title = title;
             postToWrite.language = language;
             postToWrite.code = code;
@@ -28,10 +29,24 @@ namespace SocialNetwork.Logic
             PostRepository.Insert(postToWrite);
            
         }
+        
+        public void WriteUserPost(int id, string title, string language, string code, string content)
+        {
+
+            UserPost postToWrite = new UserPost();
+            postToWrite.user.userId = id;
+            postToWrite.title = title;
+            postToWrite.language = language;
+            postToWrite.code = code;
+            postToWrite.content = content;
+
+            PostRepository.Insert(postToWrite);
+
+        }
 
         public List<Post> ViewTimeline(User user)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Reply(Post _post, string UserInput)
