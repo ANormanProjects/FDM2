@@ -12,12 +12,12 @@ namespace SocialNetwork.DataAccess
     /// </summary>
     public interface IRepository<T>
     {
-        void LinkEntities();
+        void Save();
         void Insert(T entity);
         void Remove(T entity);
         void Update(T entity, Func<T, bool> predicate);
-        IEnumerable<T> Search(Func<T, bool> predicate);
         T First(Func<T, bool> predicate);
+        IEnumerable<T> Search(Func<T, bool> predicate);        
         IEnumerable<T> GetAll();
     }
 

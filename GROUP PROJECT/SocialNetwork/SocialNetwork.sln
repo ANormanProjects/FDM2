@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.DataAccess", "SocialNetwork.DataAccess\SocialNetwork.DataAccess.csproj", "{51AC595C-260D-4B3C-95BA-E1CB5AEDC87B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Console", "SocialNetwork.Console\SocialNetwork.Console.csproj", "{A03521DB-A76C-495B-BD93-929D6D3D8681}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -19,6 +21,10 @@ Global
 		{51AC595C-260D-4B3C-95BA-E1CB5AEDC87B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51AC595C-260D-4B3C-95BA-E1CB5AEDC87B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51AC595C-260D-4B3C-95BA-E1CB5AEDC87B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A03521DB-A76C-495B-BD93-929D6D3D8681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03521DB-A76C-495B-BD93-929D6D3D8681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03521DB-A76C-495B-BD93-929D6D3D8681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03521DB-A76C-495B-BD93-929D6D3D8681}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
