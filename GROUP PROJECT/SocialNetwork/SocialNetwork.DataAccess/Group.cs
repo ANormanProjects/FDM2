@@ -8,5 +8,10 @@ namespace SocialNetwork.DataAccess
 {
     public class Group
     {
+        public int groupID { get; set; }
+        public List<User> usersInGroup { get; set; }
+        public string groupName;
+        public List<Post> groupWall;
+        public User owner;
     }
 }
