@@ -15,9 +15,9 @@ namespace SocialNetwork.DataAccess
         void Save();
         void Insert(T entity);
         void Remove(T entity);
-        void Update(T entity, Func<T, bool> predicate);
-        T First(Func<T, bool> predicate);
-        IEnumerable<T> Search(Func<T, bool> predicate);        
+        void Update(T entity, Func<T, bool> lambdaExpression);
+        T First(Func<T, bool> lambdaExpression);
+        IEnumerable<T> Search(Func<T, bool> lambdaExpression);        
         IEnumerable<T> GetAll();
     }
 
@@ -64,11 +64,11 @@ namespace SocialNetwork.DataAccess
         /// Updates a data entity in the persistent data context with the data in another data entity 
         /// </summary>
         /// <param name="entity"></param>
-        /// <param name="predicate"></param>
-        public virtual void Update(T entity, Func<T, bool> predicate)
+        /// <param name="lambdaExpression"></param>
+        public virtual void Update(T entity, Func<T, bool> lambdaExpression)
         {
             // Search for the entities that need updating from the relevant DbSet in the DbContext
-            IEnumerable<T> entitiesToUpdate = context.Set<T>().Where<T>(predicate);
+            IEnumerable<T> entitiesToUpdate = context.Set<T>().Where<T>(lambdaExpression);
 
             // If there are entities that need to be updated...
             if (entitiesToUpdate.Count() != 0)
@@ -82,23 +82,25 @@ namespace SocialNetwork.DataAccess
         }
 
         /// <summary>
-        /// Returns an IEnumerable of data entities from the persistent data context based on the predicate funtion
+        /// Returns an IEnumerable of data entities from the persistent data context based on the lambdaExpression funtion
         /// </summary>
-        /// <param name="predicate"></param>
+        /// <param name="lambdaExpression"></param>
         /// <returns></returns>
-        public virtual IEnumerable<T> Search(Func<T, bool> predicate)
+        public virtual IEnumerable<T> Search(Func<T, bool> lambdaExpression)
         {
-            return context.Set<T>().Where<T>(predicate);
+            // Returns a collection of entities that match the lambda expression
+            return context.Set<T>().Where<T>(lambdaExpression);
         }
 
         /// <summary>
-        /// Returns the first data entity it can find in the database using the predicate function
+        /// Returns the first data entity it can find in the database using the lambdaExpression function
         /// </summary>
-        /// <param name="predicate"></param>
+        /// <param name="lambdaExpression"></param>
         /// <returns></returns>
-        public virtual T First(Func<T, bool> predicate)
+        public virtual T First(Func<T, bool> lambdaExpression)
         {
-            return context.Set<T>().FirstOrDefault<T>(predicate);
+            // Returns the first entity it can find that matches the lambda expression
+            return context.Set<T>().FirstOrDefault<T>(lambdaExpression);
         }
 
         /// <summary>
@@ -107,6 +109,7 @@ namespace SocialNetwork.DataAccess
         /// <returns></returns>
         public virtual IEnumerable<T> GetAll()
         {
+            // Returns all of the set of entities
             return context.Set<T>();
         }
 
@@ -115,6 +118,7 @@ namespace SocialNetwork.DataAccess
         /// </summary>
         public virtual void Save()
         {
+            // Saves changes to the database
             context.SaveChanges();
         }
     }
