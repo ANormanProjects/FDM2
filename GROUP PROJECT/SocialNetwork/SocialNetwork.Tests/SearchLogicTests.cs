@@ -1,5 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SocialNetwork.DataAccess;
+using Moq;
+using SocialNetwork.Logic;
 
 namespace SocialNetwork.Tests
 {
@@ -7,8 +10,24 @@ namespace SocialNetwork.Tests
     public class SearchLogicTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Test_SearchForUserById_RunsFirstMethodInRepository_WithIdEnteredInMethod()
         {
+            //Arrange
+            Mock<Repository<IUser>> userRepo = new Mock<Repository<IUser>>();
+            Mock<Repository<Post>> postRepo = new Mock<Repository<Post>>();
+
+            ISearchLogic searchLogic = new SearchLogic(postRepo.Object, userRepo.Object);
+            Mock<User> user1 = new Mock<User>();
+
+            userRepo.Setup(x => x.First(c => c.userId == 1)).Returns(user1.Object);
+
+            //Act
+            IUser user = searchLogic.SearchForUserById(1);
+
+
+            //Assert
+            Assert.AreEqual(user1.Object, user);
+
         }
     }
 }
