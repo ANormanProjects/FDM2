@@ -3,7 +3,7 @@ namespace SocialNetwork.DataAccess.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class addedgroup : DbMigration
+    public partial class reset : DbMigration
     {
         public override void Up()
         {
@@ -34,12 +34,15 @@ namespace SocialNetwork.DataAccess.Migrations
                         content = c.String(),
                         code = c.String(),
                         Discriminator = c.String(nullable: false, maxLength: 128),
+                        Group_groupID = c.Int(),
                         group_groupID = c.Int(),
                         user_userId = c.Int(),
                     })
                 .PrimaryKey(t => t.postId)
+                .ForeignKey("dbo.Groups", t => t.Group_groupID)
                 .ForeignKey("dbo.Groups", t => t.group_groupID)
                 .ForeignKey("dbo.Users", t => t.user_userId)
+                .Index(t => t.Group_groupID)
                 .Index(t => t.group_groupID)
                 .Index(t => t.user_userId);
             
@@ -48,8 +51,12 @@ namespace SocialNetwork.DataAccess.Migrations
                 c => new
                     {
                         groupID = c.Int(nullable: false, identity: true),
+                        groupName = c.String(),
+                        owner_userId = c.Int(),
                     })
-                .PrimaryKey(t => t.groupID);
+                .PrimaryKey(t => t.groupID)
+                .ForeignKey("dbo.Users", t => t.owner_userId)
+                .Index(t => t.owner_userId);
             
             CreateTable(
                 "dbo.Users",
@@ -75,9 +82,13 @@ namespace SocialNetwork.DataAccess.Migrations
             DropForeignKey("dbo.Posts", "user_userId", "dbo.Users");
             DropForeignKey("dbo.Posts", "group_groupID", "dbo.Groups");
             DropForeignKey("dbo.Users", "Group_groupID", "dbo.Groups");
+            DropForeignKey("dbo.Groups", "owner_userId", "dbo.Users");
+            DropForeignKey("dbo.Posts", "Group_groupID", "dbo.Groups");
             DropIndex("dbo.Users", new[] { "Group_groupID" });
+            DropIndex("dbo.Groups", new[] { "owner_userId" });
             DropIndex("dbo.Posts", new[] { "user_userId" });
             DropIndex("dbo.Posts", new[] { "group_groupID" });
+            DropIndex("dbo.Posts", new[] { "Group_groupID" });
             DropIndex("dbo.Comments", new[] { "user_userId" });
             DropIndex("dbo.Comments", new[] { "post_postId" });
             DropTable("dbo.Users");

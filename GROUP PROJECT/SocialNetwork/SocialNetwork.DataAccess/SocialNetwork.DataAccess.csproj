@@ -68,20 +68,12 @@
     <Compile Include="IComment.cs" />
     <Compile Include="IGroup.cs" />
     <Compile Include="IUser.cs" />
-    <Compile Include="Post.cs" />
-    <Compile Include="Migrations\201701301051374_initial.cs" />
-    <Compile Include="Migrations\201701301051374_initial.Designer.cs">
-      <DependentUpon>201701301051374_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701301055249_initial2.cs" />
-    <Compile Include="Migrations\201701301055249_initial2.Designer.cs">
-      <DependentUpon>201701301055249_initial2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701301058058_intial3.cs" />
-    <Compile Include="Migrations\201701301058058_intial3.Designer.cs">
-      <DependentUpon>201701301058058_intial3.cs</DependentUpon>
+    <Compile Include="Migrations\201701301702318_reset.cs" />
+    <Compile Include="Migrations\201701301702318_reset.Designer.cs">
+      <DependentUpon>201701301702318_reset.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Post.cs" />
     <Compile Include="GroupPost.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="SocialNetworkDataModel.cs" />
@@ -95,14 +87,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701301051374_initial.resx">
-      <DependentUpon>201701301051374_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701301055249_initial2.resx">
-      <DependentUpon>201701301055249_initial2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701301058058_intial3.resx">
-      <DependentUpon>201701301058058_intial3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701301702318_reset.resx">
+      <DependentUpon>201701301702318_reset.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

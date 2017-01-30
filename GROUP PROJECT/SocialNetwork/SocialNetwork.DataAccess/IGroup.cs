@@ -8,5 +8,14 @@ namespace SocialNetwork.DataAccess
 {
     public interface IGroup
     {
+        int groupID { get; set; }
+
+        List<User> usersInGroup { get; set; }
+
+        List<Post> groupWall { get; set; }
+
+        string groupName { get; set; }
+
+        User owner { get; set; }
     }
 }
