@@ -46,6 +46,7 @@ namespace SocialNetwork.DataAccess
         /// <param name="entity"></param>
         public virtual void Insert(T entity)
         {
+            // Adds the specified entity to the relevant DbSet in the DbContext
             context.Set<T>().Add(entity);
         }
 
@@ -55,6 +56,7 @@ namespace SocialNetwork.DataAccess
         /// <param name="entity"></param>
         public virtual void Remove(T entity)
         {
+            // Removes the specified entity from the relevant DbSet in the DbContext
             context.Set<T>().Remove(entity);
         }
 
@@ -65,12 +67,15 @@ namespace SocialNetwork.DataAccess
         /// <param name="predicate"></param>
         public virtual void Update(T entity, Func<T, bool> predicate)
         {
+            // Search for the entities that need updating from the relevant DbSet in the DbContext
             IEnumerable<T> entitiesToUpdate = context.Set<T>().Where<T>(predicate);
 
+            // If there are entities that need to be updated...
             if (entitiesToUpdate.Count() != 0)
             {
                 foreach (T t in entitiesToUpdate)
                 {
+                    // Set the values of each entity-to-be-update to the entity
                     context.Entry(t).CurrentValues.SetValues(entity);
                 }
             }
