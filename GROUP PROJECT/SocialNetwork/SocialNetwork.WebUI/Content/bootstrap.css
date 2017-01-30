@@ -165,10 +165,12 @@ textarea {
   margin: 0;
   font-family: inherit;
   font-size: 100%;
+  position: center;
 }
 
 button,
 input {
+  position: center;
   line-height: normal;
 }
 
@@ -183,6 +185,7 @@ input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
+  position: center;
 }
 
 button[disabled],
@@ -315,11 +318,11 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
-  background-color: #e6f7ff;
+  color: #1a1a1a;
+  background-color: #b3c4ff;
 }
 
 input,
@@ -329,6 +332,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  position: center;
 }
 
 button,
@@ -336,6 +340,7 @@ input,
 select[multiple],
 textarea {
   background-image: none;
+  position: center;
 }
 
 a {
@@ -2002,6 +2007,7 @@ textarea.input-lg {
 }
 
 .btn {
+  position: center;
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -2056,6 +2062,7 @@ fieldset[disabled] .btn {
   color: #333333;
   background-color: #ffffff;
   border-color: #cccccc;
+  position: center;
 }
 
 .btn-default:hover,
@@ -2370,6 +2377,7 @@ input[type="submit"].btn-block,
 input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%;
+  position: center;
 }
 
 .fade {
@@ -4206,11 +4214,13 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-brand:hover,
 .navbar-brand:focus {
   text-decoration: none;
+  color: #ffffff;
 }
 
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand {
     margin-left: -15px;
+    color: #ffffff;
   }
 }
 
