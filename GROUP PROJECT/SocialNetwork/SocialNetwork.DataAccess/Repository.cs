@@ -31,7 +31,7 @@ namespace SocialNetwork.DataAccess
 
         public Repository()
         {
-            this.context = new SocialNetworkDataModel();
+            
         }
 
         public Repository(DbContext context)
