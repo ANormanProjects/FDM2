@@ -19,7 +19,7 @@ namespace SocialNetwork.Tests
             ISearchLogic searchLogic = new SearchLogic(postRepo.Object, userRepo.Object);
             Mock<User> user1 = new Mock<User>();
 
-            userRepo.Setup(x => x.First(c => c.userId == 1)).Returns(user1.Object);
+            userRepo.Setup(x => x.First(It.IsAny<Func<IUser, bool>>())).Returns(user1.Object);
 
             //Act
             IUser user = searchLogic.SearchForUserById(1);
