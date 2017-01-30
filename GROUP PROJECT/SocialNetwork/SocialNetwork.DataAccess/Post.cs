@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SocialNetwork.DataAccess
 {
-    public class Post
+    public abstract class Post
     {
         public int postId { get; set; }
 
@@ -19,6 +19,5 @@ namespace SocialNetwork.DataAccess
         public string title { get; set; }
 
         public IEnumerable<Comment> comments { get; set; }
-
     }
 }
