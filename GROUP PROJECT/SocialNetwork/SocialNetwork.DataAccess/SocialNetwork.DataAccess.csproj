@@ -53,6 +53,9 @@
   <ItemGroup>
     <Compile Include="Comment.cs" />
     <Compile Include="Group.cs" />
+    <Compile Include="IComment.cs" />
+    <Compile Include="IGroup.cs" />
+    <Compile Include="IUser.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Migrations\201701301051374_initial.cs" />
     <Compile Include="Migrations\201701301051374_initial.Designer.cs">
@@ -73,6 +76,7 @@
     <Compile Include="Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserPost.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
