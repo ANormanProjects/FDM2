@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.DataAccess", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Console", "SocialNetwork.Console\SocialNetwork.Console.csproj", "{A03521DB-A76C-495B-BD93-929D6D3D8681}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Tests", "SocialNetwork.Tests\SocialNetwork.Tests.csproj", "{FCFEFCB6-FCD2-448A-969A-CDAFD65F01BD}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -25,6 +27,10 @@ Global
 		{A03521DB-A76C-495B-BD93-929D6D3D8681}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A03521DB-A76C-495B-BD93-929D6D3D8681}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A03521DB-A76C-495B-BD93-929D6D3D8681}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCFEFCB6-FCD2-448A-969A-CDAFD65F01BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCFEFCB6-FCD2-448A-969A-CDAFD65F01BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCFEFCB6-FCD2-448A-969A-CDAFD65F01BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCFEFCB6-FCD2-448A-969A-CDAFD65F01BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
