@@ -16,9 +16,8 @@ namespace SocialNetwork.DataAccess
             set { _userId = value; }
         }        
 
-        private int _username;
-
-        public int username
+        private string _username;
+        public string username
         {
             get { return _username; }
             set { _username = value; }
