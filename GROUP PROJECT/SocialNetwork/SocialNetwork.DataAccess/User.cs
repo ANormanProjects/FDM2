@@ -8,20 +8,69 @@ namespace SocialNetwork.DataAccess
 {
     public class User : IUser
     {
-        public int userId { get; set; }
+        private int _userId;
 
-        public string username { get; set; }
+        public int userId
+        {
+            get { return _userId; }
+            set { _userId = value; }
+        }        
 
-        public string password { get; set; }
+        private int _username;
 
-        public string fullName { get; set; }
+        public int username
+        {
+            get { return _username; }
+            set { _username = value; }
+        }        
 
-        public string gender { get; set; }
+        private string _password;
 
-        public IEnumerable<Post> posts { get; set; }
+        public string password
+        {
+            get { return _password; }
+            set { _password = value; }
+        }        
 
-        public IEnumerable<User> friends { get; set; }
+        private string _fullName;
 
-        public IEnumerable<string> skills { get; set; }
+        public string fullName
+        {
+            get { return _fullName; }
+            set { _fullName = value; }
+        }        
+
+        private string _gender;
+
+        public string gender
+        {
+            get { return _gender; }
+            set { _gender = value; }
+        }       
+        
+        private IEnumerable<Post> _posts;
+
+        public IEnumerable<Post> posts
+        {
+            get { return _posts; }
+            set { _posts = value; }
+        }        
+
+        private IEnumerable<User> _friends;
+
+        public IEnumerable<User> friends
+        {
+            get { return _friends; }
+            set { _friends = value; }
+        }
+
+        private IEnumerable<string> _skills;
+
+        public IEnumerable<string> skills
+        {
+            get { return _skills; }
+            set { _skills = value; }
+        }
+        
     }
 }
