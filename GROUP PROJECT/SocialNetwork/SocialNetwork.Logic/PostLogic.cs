@@ -7,13 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SocialNetwork.Logic
-{    
+{
     public class PostLogic : IPostLogic
     {
         Repository<Post> postRepository;
         Repository<User> userRepository;
-    
-        public PostLogic()	
+
+        public PostLogic()
         {
             postRepository = new Repository<Post>();
             userRepository = new Repository<User>();
@@ -21,23 +21,21 @@ namespace SocialNetwork.Logic
 
         public void WriteGroupPost(int id, string title, string language, string code, string content)
         {
-                       
+
             GroupPost postToWrite = new GroupPost();
-            postToWrite.group.groupID = id;
             postToWrite.title = title;
             postToWrite.language = language;
             postToWrite.code = code;
             postToWrite.content = content;
 
             postRepository.Insert(postToWrite);
-           
+
         }
-        
+
         public void WriteUserPost(int id, string title, string language, string code, string content)
         {
 
             UserPost postToWrite = new UserPost();
-            postToWrite.user.userId = id;
             postToWrite.title = title;
             postToWrite.language = language;
             postToWrite.code = code;
@@ -60,9 +58,9 @@ namespace SocialNetwork.Logic
 
                 foreach (Post pToAdd in userPToAdd)
                 {
-                    timelinePosts.Add(pToAdd); 
-            }
-                        
+                    timelinePosts.Add(pToAdd);
+                }
+
                 //for each friend, get all posts, add to list,
                 foreach (User friend in userFound.friends)
                 {
@@ -74,10 +72,10 @@ namespace SocialNetwork.Logic
                     }
 
                 }
-                
-            }          
-                 
-           
+
+            }
+
+
 
             //return the list
             return timelinePosts;
