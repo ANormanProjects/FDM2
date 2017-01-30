@@ -12,19 +12,24 @@ namespace SocialNetwork.Logic
         Repository<Post> postRepo;
         Repository<IUser> userRepo;
 
-        public SearchLogic()
+        public SearchLogic(Repository<Post> PostRepo, Repository<IUser> UserRepo)
         {
-
+            postRepo = PostRepo;
+            userRepo = UserRepo;
         }
 
-        public List<User> SearchForUserByName(string name)
+        public List<IUser> SearchForUserByName(string name)
         {
-            throw new NotImplementedException();
+            IEnumerable<IUser> userList = userRepo.Search(x => x.fullName == name);
+
+            return userList.ToList();
         }
 
-        public User SearchForUserById(int id)
+        public IUser SearchForUserById(int id)
         {
-            throw new NotImplementedException();
+            IUser searchedUser = userRepo.First(x => x.userId == id);
+
+            return searchedUser;
         }
 
         public List<string> SearchForCode(string codeLanguage)
