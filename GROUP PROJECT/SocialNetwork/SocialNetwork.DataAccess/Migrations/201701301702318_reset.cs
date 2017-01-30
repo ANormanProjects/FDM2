@@ -34,15 +34,12 @@ namespace SocialNetwork.DataAccess.Migrations
                         content = c.String(),
                         code = c.String(),
                         Discriminator = c.String(nullable: false, maxLength: 128),
-                        Group_groupID = c.Int(),
                         group_groupID = c.Int(),
                         user_userId = c.Int(),
                     })
                 .PrimaryKey(t => t.postId)
-                .ForeignKey("dbo.Groups", t => t.Group_groupID)
                 .ForeignKey("dbo.Groups", t => t.group_groupID)
                 .ForeignKey("dbo.Users", t => t.user_userId)
-                .Index(t => t.Group_groupID)
                 .Index(t => t.group_groupID)
                 .Index(t => t.user_userId);
             
