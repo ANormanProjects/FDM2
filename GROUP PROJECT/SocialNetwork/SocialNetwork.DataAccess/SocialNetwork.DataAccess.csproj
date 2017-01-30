@@ -65,6 +65,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
+    <Compile Include="Repository.cs" />
     <Compile Include="SocialNetworkDataModel.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
