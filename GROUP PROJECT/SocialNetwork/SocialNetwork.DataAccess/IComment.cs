@@ -8,5 +8,13 @@ namespace SocialNetwork.DataAccess
 {
     public interface IComment
     {
+        int commentId { get; set; }
+
+        string content { get; set; }
+
+        User user { get; set; }
+
+        Post post { get; set; }
+
     }
 }

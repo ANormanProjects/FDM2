@@ -10,8 +10,6 @@ namespace SocialNetwork.DataAccess
     {
         public int postId { get; set; }
 
-        public User user { get; set; }
-
         public DateTime time { get; set; }
 
         public int likes { get; set; }
@@ -19,5 +17,11 @@ namespace SocialNetwork.DataAccess
         public string title { get; set; }
 
         public IEnumerable<Comment> comments { get; set; }
+
+        public string language { get; set; }
+
+        public string content { get; set; }
+
+        public string code { get; set; }
     }
 }

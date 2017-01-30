@@ -7,12 +7,38 @@ namespace SocialNetwork.DataAccess
 {
     public class Comment : IComment
     {
-        public int commentId { get; set; }
+        private int _commentId;
 
-        public string content { get; set; }
+        public int commentId
+        {
+            get { return _commentId; }
+            set { _commentId = value; }
+        }        
 
-        public User user { get; set; }
+        private string _content;
 
-        public Post post { get; set; }
+        public string content
+        {
+            get { return _content; }
+            set { _content = value; }
+        }        
+
+        private User _user;
+
+        public User user
+        {
+            get { return _user; }
+            set { _user = value; }
+        }
+
+
+        private Post _post;
+
+        public Post post
+        {
+            get { return _post; }
+            set { _post = value; }
+        }
+        
     }
 }
