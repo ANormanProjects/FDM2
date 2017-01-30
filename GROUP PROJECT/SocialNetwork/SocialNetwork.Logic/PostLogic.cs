@@ -49,24 +49,38 @@ namespace SocialNetwork.Logic
 
         public List<Post> ViewTimeline(User user)
         {
-            IEnumerable<Post> timelinePosts;
+            List<Post> timelinePosts = null;
 
             //Find user in database use first
             User userFound = userRepository.First(u => u.username == user.username);
             //if not null, getallposts
             if (userFound != null)
             {
-                timelinePosts = postRepository.GetAll();
-            }
-                        
-            //for each friend, get all posts, add to list,
-            foreach (User user in collection)
-            {
+                List<Post> userPToAdd = postRepository.GetAll().ToList();
+
+                foreach (Post pToAdd in userPToAdd)
+                {
+                    timelinePosts.Add(pToAdd); 
+                }
+
+                //for each friend, get all posts, add to list,
+                foreach (User friend in userFound.friends)
+                {
+                    List<Post> pToAdd = postRepository.GetAll().ToList();
+
+                    foreach (Post friendPToAdd in pToAdd)
+                    {
+                        timelinePosts.Add(friendPToAdd);
+                    }
+
+                }
                 
-            }
+            }          
+                 
+           
 
             //return the list
-            return new List<Post>();
+            return timelinePosts;
         }
 
         public void Reply(Post _post, string UserInput)
