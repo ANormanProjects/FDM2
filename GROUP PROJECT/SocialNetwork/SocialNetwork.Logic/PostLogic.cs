@@ -61,8 +61,8 @@ namespace SocialNetwork.Logic
                 foreach (Post pToAdd in userPToAdd)
                 {
                     timelinePosts.Add(pToAdd); 
-                }
-
+            }
+                        
                 //for each friend, get all posts, add to list,
                 foreach (User friend in userFound.friends)
                 {

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SocialNetwork.DataAccess
 {
+    
     public interface IUser
     {
         int userId { get; set; }
