@@ -94,7 +94,7 @@ namespace SocialNetwork.Tests
 
 
 
-        /*     -------------- TO DO ---------------         */
+        /*        -------------- TO DO ---------------         */
 
         [TestMethod]
         public void Test_Update_UpdatesAllUsers_WhenCalledForAllUsers()
