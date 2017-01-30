@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace SocialNetwork.DataAccess
 {
-    public class Comment : IComment
+    public class UserPost : Post
     {
-        public int commentId { get; set; }
-
-        public string content { get; set; }
-
         public User user { get; set; }
-
-        public Post post { get; set; }
     }
 }
