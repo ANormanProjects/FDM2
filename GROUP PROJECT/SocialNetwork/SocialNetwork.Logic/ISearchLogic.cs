@@ -9,8 +9,8 @@ namespace SocialNetwork.Logic
 {
     public interface ISearchLogic
     {
-        List<User> SearchForUserByName(string name);
-        User SearchForUserById(int id);
+        List<IUser> SearchForUserByName(string name);
+        IUser SearchForUserById(int id);
         List<string> SearchForCode(string codeLanguage);
     }
 }
