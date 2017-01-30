@@ -40,8 +40,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IPostLogic.cs" />
+    <Compile Include="ISearchLogic.cs" />
     <Compile Include="PostLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SocialNetwork.DataAccess\SocialNetwork.DataAccess.csproj">

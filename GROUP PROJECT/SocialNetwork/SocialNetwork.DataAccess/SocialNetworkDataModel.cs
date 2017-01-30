@@ -19,9 +19,9 @@ namespace SocialNetwork.DataAccess
 
         }
 
-        public virtual IDbSet<User> users { get; set; }
+        public virtual IDbSet<IUser> users { get; set; }
         public virtual IDbSet<Post> posts { get; set; }
-        public virtual IDbSet<Comment> comments { get; set; }
-        public virtual IDbSet<Group> groups { get; set; }
+        public virtual IDbSet<IComment> comments { get; set; }
+        public virtual IDbSet<IGroup> groups { get; set; }
     }
 }
