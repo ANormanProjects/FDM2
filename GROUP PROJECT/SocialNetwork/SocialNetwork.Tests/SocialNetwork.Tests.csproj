@@ -71,6 +71,7 @@
     <Compile Include="RepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PostLogicTests.cs" />
+    <Compile Include="SearchLogicTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -80,6 +81,10 @@
     <ProjectReference Include="..\SocialNetwork.DataAccess\SocialNetwork.DataAccess.csproj">
       <Project>{51ac595c-260d-4b3c-95ba-e1cb5aedc87b}</Project>
       <Name>SocialNetwork.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SocialNetwork.Logic\SocialNetwork.Logic.csproj">
+      <Project>{fd9724be-01c3-4e41-ba3f-2a103daeddf3}</Project>
+      <Name>SocialNetwork.Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
