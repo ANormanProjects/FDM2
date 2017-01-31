@@ -96,6 +96,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CommentLogicTests.cs" />
     <Compile Include="RepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PostLogicTests.cs" />

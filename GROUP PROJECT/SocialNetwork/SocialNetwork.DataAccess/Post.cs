@@ -16,7 +16,7 @@ namespace SocialNetwork.DataAccess
 
         public string title { get; set; }
 
-        public List<IComment> comments { get; set; }
+        public virtual List<Comment> comments { get; set; }
 
         public string language { get; set; }
 
