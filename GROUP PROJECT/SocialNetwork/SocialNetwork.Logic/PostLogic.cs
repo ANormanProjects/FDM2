@@ -10,13 +10,13 @@ namespace SocialNetwork.Logic
 {
     public class PostLogic : IPostLogic
     {
-        Repository<Post> postRepository;
-        Repository<User> userRepository;
+        Repository<Post> _postRepository;
+        Repository<User> _userRepository;
 
-        public PostLogic()
+        public PostLogic(Repository<Post> postRepository, Repository<User> userRepository)
         {
-            postRepository = new Repository<Post>();
-            userRepository = new Repository<User>();
+            _postRepository = postRepository;
+            _userRepository = userRepository;
         }
 
         public void WriteGroupPost(int id, string title, string language, string code, string content)
@@ -28,7 +28,7 @@ namespace SocialNetwork.Logic
             postToWrite.code = code;
             postToWrite.content = content;
 
-            postRepository.Insert(postToWrite);
+            _postRepository.Insert(postToWrite);
 
         }
 
@@ -41,7 +41,7 @@ namespace SocialNetwork.Logic
             postToWrite.code = code;
             postToWrite.content = content;
 
-            postRepository.Insert(postToWrite);
+            _postRepository.Insert(postToWrite);
 
         }
 
@@ -50,11 +50,11 @@ namespace SocialNetwork.Logic
             List<Post> timelinePosts = null;
 
             //Find user in database use first
-            User userFound = userRepository.First(u => u.username == user.username);
+            User userFound = _userRepository.First(u => u.username == user.username);
             //if not null, getallposts
             if (userFound != null)
             {
-                List<Post> userPToAdd = postRepository.GetAll().ToList();
+                List<Post> userPToAdd = _postRepository.GetAll().ToList();
 
                 foreach (Post pToAdd in userPToAdd)
                 {
@@ -64,18 +64,14 @@ namespace SocialNetwork.Logic
                 //for each friend, get all posts, add to list,
                 foreach (User friend in userFound.friends)
                 {
-                    List<Post> pToAdd = postRepository.GetAll().ToList();
+                    List<Post> pToAdd = _postRepository.GetAll().ToList();
 
                     foreach (Post friendPToAdd in pToAdd)
                     {
                         timelinePosts.Add(friendPToAdd);
                     }
-
                 }
-
             }
-
-
 
             //return the list
             return timelinePosts;

@@ -10,19 +10,20 @@ namespace SocialNetwork.Tests
     public class PostLogicTests
     {
         [TestMethod]
-        public void Test_WriteGroupPostAddsPostToDatabase()
+        public void Test_WriteGroupPost_RunsAddRepositoryMethod()
         {
             //Arrange
-            Mock<GroupPost> mockGroupPost = new Mock<GroupPost>();
+            Mock<Repository<Post>> postRepo = new Mock<Repository<Post>>();
+            Mock<Repository<User>> userRepo = new Mock<Repository<User>>();
+            PostLogic postLogic = new PostLogic(postRepo.Object, userRepo.Object);
 
-            Mock<Repository<Post>> mockPostRepository = new Mock<Repository<Post>>();
-            PostLogic classUnderTest = new PostLogic();
+            postRepo.Setup(x => x.Insert(It.IsAny<Post>())).Verifiable();
 
             //Act
-            classUnderTest.WriteGroupPost(mockGroupPost.Object.postId, mockGroupPost.Object.title, mockGroupPost.Object.language, mockGroupPost.Object.code, mockGroupPost.Object.content);
+            postLogic.WriteGroupPost(1, "a", "b", "c", "d");
 
             //Assert
-            mockPostRepository.Verify(p => p.Insert(mockGroupPost.Object), Times.Once);
+            postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
         }
     }
 }
