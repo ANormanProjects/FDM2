@@ -65,9 +65,23 @@ namespace SocialNetwork.Logic
             throw new NotImplementedException();
         }
 
-        public void AddFriend(int id)
+        public void AddFriend(int userId, int friendId)
         {
-            throw new NotImplementedException();
+            var query = from b in _dataModel.users
+                        where b.userId == userId
+                        select b;
+
+            var queryForFriend = from b in _dataModel.users
+                        where b.userId == friendId
+                        select b;
+
+            foreach (User user in query)
+            {
+                foreach (User friend in queryForFriend)
+                {
+                    user.friends.ToList().Add(friend);
+                }
+            }
         }
 
         public void UpdateInfo(int id, string username, string password)
