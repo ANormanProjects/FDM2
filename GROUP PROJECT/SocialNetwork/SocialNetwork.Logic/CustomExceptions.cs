@@ -21,4 +21,12 @@ namespace SocialNetwork.Logic
 
         }
     }
+
+    public class InputExceedsSpecifiedLimitException : Exception 
+    {
+        public InputExceedsSpecifiedLimitException() : base("Input has exceded the specified limit") 
+        {
+        
+        }
+    }
 }

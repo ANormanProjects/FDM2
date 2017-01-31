@@ -122,12 +122,12 @@ namespace SocialNetwork.Logic
             }
             if (UserInput == null) 
             {
-                //error message
+                //error message, throw empty input exception
                 Console.WriteLine("you tried to add an empty reply");
             }
             if (UserInput.Count<char>() > maxContentLength) 
             {
-                //error message
+                //error message, throw exceedspecifiedlimit exception
                 Console.WriteLine("The max characters allowed is 255");
             }
 
