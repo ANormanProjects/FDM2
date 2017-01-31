@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SocialNetwork.DataAccess;
+using SocialNetwork.Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,23 @@ namespace SocialNetwork.WebUI.Controllers
 {
     public class CodeWallController : Controller
     {
-        // GET: CodeWall
+        PostLogic _postLogic;
+
+        public CodeWallController() { }
+
+        public CodeWallController(PostLogic postLogic)
+        {
+            postLogic = _postLogic;
+        }
+
+        //GET: CodeWall
+        [HttpGet]
         public ActionResult Wall()
         {
             return View("Wall");
         }
+
+        
+
     }
 }
