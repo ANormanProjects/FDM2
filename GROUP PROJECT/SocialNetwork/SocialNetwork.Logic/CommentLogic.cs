@@ -12,11 +12,17 @@ namespace SocialNetwork.Logic
         Repository<Post> postRepo = new Repository<Post>();
         Repository<Comment> commentRepo = new Repository<Comment>();
 
+        public CommentLogic(Repository<Post> PostRepo, Repository<Comment> CommentRepo)
+        {
+            postRepo = PostRepo;
+            commentRepo = CommentRepo;
+        }
+
         public void addComment(string commentText, User user, Post post)
         {
             Comment comment = new Comment(commentText, user, post);
 
-            post.comments.Concat(new[] { comment });
+            post.comments.Add(comment);
             postRepo.Save();
 
             commentRepo.Insert(comment);
@@ -25,7 +31,8 @@ namespace SocialNetwork.Logic
 
         public void DeleteComment(Comment comment)
         {
-            throw new NotImplementedException();
+            User user = comment.user;
+
         }
 
         public void EditComment(Comment comment, string newText)
