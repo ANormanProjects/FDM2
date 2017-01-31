@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SocialNetwork.Logic
 {
-    public interface IComment
+    public interface ICommentLogic
     {
         void addComment(string commentText);
-        void DeleteComment(Comment comment);
-        void EditComment(Comment comment, string newText);
-        void LikeComment(Comment comment);
+        void DeleteComment(CommentLogic comment);
+        void EditComment(CommentLogic comment, string newText);
+        void LikeComment(CommentLogic comment);
 
     }
 }
