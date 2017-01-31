@@ -29,8 +29,15 @@ namespace SocialNetwork.Logic
 
         public void Login(string username, string password)
         {
-            throw new NotImplementedException();
-            //if()
+
+            //if(username.Count<char>() > 255) 
+            //{
+            //    throw new InputExceedsSpecifiedLimitException();
+            //}
+            //if (password.Count<char>() > 255) 
+            //{
+            //    throw new InputExceedsSpecifiedLimitException();
+            //}
         }
 
         public bool LoginDetailVerification(string username, string password)
