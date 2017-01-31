@@ -16,7 +16,7 @@ namespace SocialNetwork.WebUI.Controllers
 
         public CodeWallController(PostLogic postLogic)
         {
-            postLogic = _postLogic;
+            _postLogic = postLogic;
         }
 
         //GET: CodeWall
@@ -26,7 +26,17 @@ namespace SocialNetwork.WebUI.Controllers
             return View("Wall");
         }
 
-        
+        //GET: CodeWall
+        [HttpPost]
+        public ActionResult Wall(User user)
+        {
+            if(_postLogic == null)
+            {
+                _postLogic = new PostLogic(new Repository<Post>(), new Repository<User>());
+            }
+
+            return PartialView("_Post");
+        }
 
     }
 }
