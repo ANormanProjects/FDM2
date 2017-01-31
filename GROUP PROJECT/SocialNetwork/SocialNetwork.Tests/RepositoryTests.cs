@@ -90,11 +90,7 @@ namespace SocialNetwork.Tests
 
             // Assert
             mockUsers.Verify(m => m.Remove(mockUser2.Object), Times.Once);
-        }
-
-
-
-        /*        -------------- TO DO ---------------         */      
+        } 
 
         [TestMethod]
         public void Test_Search_ReturnsListOfAllUsers_WhenCalledForAllUsers()
