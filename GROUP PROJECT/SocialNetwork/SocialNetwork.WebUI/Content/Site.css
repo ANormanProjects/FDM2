@@ -22,3 +22,23 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.pink 
+{
+    border: 1px solid pink;
+}
+
+.green
+{
+    border: 1px solid green;
+}
+
+.red
+{
+    border: 1px solid red;
+}
+
+.blue
+{
+    border: 1px solid blue;
+}
