@@ -14,6 +14,7 @@ namespace SocialNetwork.Tests
         Mock<Repository<Post>> postRepo;
         ISearchLogic searchLogic;
         Mock<User> user1;
+        Mock<Post> post1;
 
         [TestInitialize]
         public void SetUp()
@@ -22,6 +23,7 @@ namespace SocialNetwork.Tests
             postRepo = new Mock<Repository<Post>>();
             searchLogic = new SearchLogic(postRepo.Object, userRepo.Object);
             user1 = new Mock<User>();
+            post1 = new Mock<Post>();
         }
 
         [TestMethod]
@@ -57,6 +59,23 @@ namespace SocialNetwork.Tests
 
             CollectionAssert.AreEqual(users, actual);
 
+        }
+
+        [TestMethod]
+
+        public void Test_SearchForCode_RunsSearchMethodInRepository()
+        {
+            //Arrange
+            List<Post> posts = new List<Post> { post1.Object };
+
+            postRepo.Setup(x => x.Search(It.IsAny<Func<Post, bool>>())).Returns(posts);
+
+            //Act
+            List<Post> actual = searchLogic.SearchForCode("C#");
+
+            //Assert
+
+            CollectionAssert.AreEqual(posts, actual);
         }
     }
 }

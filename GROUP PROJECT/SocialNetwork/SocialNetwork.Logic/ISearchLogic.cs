@@ -11,6 +11,6 @@ namespace SocialNetwork.Logic
     {
         List<IUser> SearchForUserByName(string name);
         IUser SearchForUserById(int id);
-        List<string> SearchForCode(string codeLanguage);
+        List<Post> SearchForCode(string codeLanguage);
     }
 }
