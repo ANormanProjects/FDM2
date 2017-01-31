@@ -36,6 +36,10 @@ summary {
   display: block;
 }
 
+.text-box-size {
+    width: 100%;
+}
+
 audio,
 canvas,
 video {
