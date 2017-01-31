@@ -57,7 +57,14 @@ namespace SocialNetwork.Logic
         {
             IEnumerable<Post> searchedPosts = postRepo.Search(x => x.language.ToUpper() == codeLanguage.ToUpper());
 
-            return searchedPosts.ToList();
+            if (searchedPosts.Count() > 0)
+            {
+                return searchedPosts.ToList();
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
         }
     }
 }
