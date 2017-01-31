@@ -86,10 +86,7 @@ namespace SocialNetwork.Logic
         {
             List<Post> timelinePosts = new List<Post>();
 
-            //Find user in database use first
-            User userFound = _userRepository.First(u => u.username == user.username);
-            //if not null, getallposts
-            if (userFound != null)
+            if (user != null)
             {
                 List<Post> userPToAdd = _postRepository.GetAll().ToList();
 
@@ -99,7 +96,7 @@ namespace SocialNetwork.Logic
                 }
 
                 //for each friend, get all posts, add to list,
-                foreach (User friend in userFound.friends)
+                foreach (User friend in user.friends)
                 {
                     List<Post> pToAdd = _postRepository.GetAll().ToList();
 
@@ -116,15 +113,10 @@ namespace SocialNetwork.Logic
 
         public void Reply(Post _post, string UserInput)
         {
-
-            IEnumerable<Comment> comments = _post.comments;
-
             Comment commentToAdd = new Comment();
             commentToAdd.content = UserInput;
 
-            comments.ToList().Add(commentToAdd);
-                 
-            _post.comments = comments;          
+            _post.comments.ToList().Add(commentToAdd);
         }
 
         public void LikePost()
