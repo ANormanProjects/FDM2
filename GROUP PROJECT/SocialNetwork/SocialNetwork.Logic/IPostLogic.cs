@@ -14,6 +14,6 @@ namespace SocialNetwork.Logic
         List<Post> ViewTimeline(User user);
         void Reply(Post _post, string UserInput);
         void LikePost(Post _post);
-        void SharePost();
+        void SharePost(Post _post);
     }
 }

@@ -106,6 +106,11 @@ namespace SocialNetwork.Logic
                     }
                 }
             }
+            if (user == null) 
+            {
+                //exception to throw - might need to add new exception 
+                throw new EntityNotFoundException();
+            }
 
             //return the list
             return timelinePosts;
@@ -141,9 +146,10 @@ namespace SocialNetwork.Logic
             _post.likes += 1;
         }
 
-        public void SharePost()
+        public void SharePost(Post _post)
         {
             throw new NotImplementedException();
         }
     }
+
 }
