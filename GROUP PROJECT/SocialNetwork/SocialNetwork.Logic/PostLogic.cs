@@ -80,7 +80,7 @@ namespace SocialNetwork.Logic
         public void Reply(Post _post, string UserInput)
         {
 
-            int i = 345;
+            
             
         }
 
