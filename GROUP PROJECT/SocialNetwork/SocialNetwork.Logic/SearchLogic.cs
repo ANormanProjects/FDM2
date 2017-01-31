@@ -32,9 +32,11 @@ namespace SocialNetwork.Logic
             return searchedUser;
         }
 
-        public List<string> SearchForCode(string codeLanguage)
+        public List<Post> SearchForCode(string codeLanguage)
         {
-            throw new NotImplementedException();
+            IEnumerable<Post> searchedPosts = postRepo.Search(x => x.language.ToUpper() == codeLanguage.ToUpper());
+
+            return searchedPosts.ToList();
         }
     }
 }
