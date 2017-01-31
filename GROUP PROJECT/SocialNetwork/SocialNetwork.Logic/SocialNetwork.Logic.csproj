@@ -48,6 +48,7 @@
     <Compile Include="IComment.cs" />
     <Compile Include="IPostLogic.cs" />
     <Compile Include="ISearchLogic.cs" />
+    <Compile Include="IUserAccountLogic.cs" />
     <Compile Include="PostLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchLogic.cs" />
