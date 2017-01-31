@@ -23,5 +23,6 @@ namespace SocialNetwork.DataAccess
         public string content { get; set; }
 
         public string code { get; set; }
+
     }
 }

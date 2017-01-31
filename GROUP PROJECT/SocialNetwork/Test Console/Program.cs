@@ -1,5 +1,6 @@
 ﻿using SocialNetwork.DataAccess;
 using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,11 +12,12 @@ namespace Test_Console
     {
         static void Main(string[] args)
         {
-            Comment comment;
+            Repository<User> userRepo = new Repository<User>(new SocialNetworkDataModel());
 
-            comment = new Comment() { commentId = 1 };
-
-            Console.WriteLine(comment.commentId);
+            userRepo.Insert(new User()
+            {
+                fullName = "Princess Peach"
+            });
         }
     }
 }

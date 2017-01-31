@@ -10,5 +10,10 @@ namespace SocialNetwork.DataAccess
     {
         public Group group { get; set; }
 
+        public override string ToString()
+        {
+            return time.ToShortDateString() + "-" + postId + "-" + title + "-" +
+                content + "-" + code + "-" + language + "[Group: " + group.ToString() + "]";
+        }
     }
 }

@@ -66,6 +66,11 @@ namespace SocialNetwork.DataAccess
             get { return _skills; }
             set { _skills = value; }
         }
-        
+
+        public override string ToString()
+        {
+            return userId + "-" + username + "-" + password + "-" + gender + "-[" + fullName + "]";
+        }
+
     }
 }
