@@ -20,34 +20,28 @@ namespace SocialNetwork.Logic
 
     public class UserAccountLogic : IUserAccountLogic
     {
-        SocialNetworkDataModel _dataModel;
         Repository<User> _userRepository;
 
-        public UserAccountLogic(SocialNetworkDataModel dataModel, Repository<User> userRepository)
+        public UserAccountLogic(Repository<User> userRepository)
         {
-            _dataModel = dataModel;
             _userRepository = userRepository;
         }
 
         public void Login(string username, string password)
         {
             throw new NotImplementedException();
+            //if()
         }
 
         public bool LoginDetailVerification(string username, string password)
         {
-            var query = from b in _dataModel.users
-                        where b.username == username && b.password == password
-                        select b;
+            User currentUser = _userRepository.First(u => u.username == username);
 
-            foreach (var user in query)
+            if (currentUser.username == username && currentUser.password == password)
             {
-                if (username == user.username && password == user.password)
-                {
-                    return true;
-                }
-            }
-            return false;
+                return true;
+            } return false;
+          
         }
 
         public void Logout(int id)
