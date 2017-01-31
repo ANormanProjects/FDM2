@@ -7,6 +7,11 @@ namespace SocialNetwork.DataAccess
 {
     public class Comment : IComment
     {
+        public Comment()
+        {
+
+        }
+
         public Comment(string Content, User User, Post Post)
         {
             content = Content;

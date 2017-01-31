@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SocialNetwork.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,10 @@ namespace SocialNetwork.Logic
 {
     public interface ICommentLogic
     {
-        void addComment(string commentText);
-        void DeleteComment(CommentLogic comment);
-        void EditComment(CommentLogic comment, string newText);
-        void LikeComment(CommentLogic comment);
+        void addComment(string commentText, User user, Post post);
+        void DeleteComment(Comment comment);
+        void EditComment(Comment comment, string newText);
+        void LikeComment(Comment comment);
 
     }
 }
