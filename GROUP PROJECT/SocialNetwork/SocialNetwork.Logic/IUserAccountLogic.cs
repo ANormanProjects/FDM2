@@ -13,7 +13,7 @@ namespace SocialNetwork.Logic
         bool LoginDetailVerification(string username, string password);
         void Logout(int id);
         void Register(User userToAdd);
-        void ViewAccountInfo(int id);
+        void ViewAccountInfo(int userId);
         void AddFriend(int userId, int friendToAdd);
         void UpdateInfo(int id, string username, string password);
     }
