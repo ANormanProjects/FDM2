@@ -36,7 +36,6 @@ namespace SocialNetwork.Tests
             mockUser1.Object.username = "Test A";
             mockUser2.Object.userId = 2;
             mockUser2.Object.username = "Test B";
-            mockUser3.Object.userId = 3;
             mockUser3.Object.username = "Test C";
 
             mockUsers = new Mock<DbSet<User>>();
@@ -53,6 +52,7 @@ namespace SocialNetwork.Tests
 
             mockContext = new Mock<SocialNetworkDataModel>();
             mockContext.Setup(c => c.Set<User>()).Returns(mockUsers.Object);
+
             userRepo = new Repository<User>(mockContext.Object);
         }
 
@@ -94,53 +94,46 @@ namespace SocialNetwork.Tests
 
 
 
-        /*        -------------- TO DO ---------------         */
-
-        [TestMethod]
-        public void Test_Update_UpdatesAllUsers_WhenCalledForAllUsers()
-        {
-            // Arrange
-            Func<User, bool> expression = u => true;
-            string expectedUsername = "Test C";
-
-            /* AAAAAGGGHHHH CANT MOCK THE WHERE METHOD AAAGGGHHHHH */
-
-            // Act
-            userRepo.Update(mockUser3.Object, expression);
-            List<User> result = userRepo.GetAll().ToList();
-            
-            // Assert
-            Assert.AreEqual(expectedUsername, result[0].username);
-        }
-
-        [TestMethod]
-        public void Test_Update_UpdatesSelectedUsers_WhenCalledForSpecificUsers()
-        {
-
-        }
-
-        [TestMethod]
-        public void Test_Update_UpdatesNoUsers_WhenCalledForNoSpecificUsers()
-        {
-
-        }
+        /*        -------------- TO DO ---------------         */      
 
         [TestMethod]
         public void Test_Search_ReturnsListOfAllUsers_WhenCalledForAllUsers()
         {
+            // Arrange 
+            Func<User, bool> expression = u => true;
 
+            // Act
+            List<User> result = userRepo.Search(expression).ToList();
+
+            // Assert
+            CollectionAssert.AreEquivalent(result, testUsers);
         }
         
         [TestMethod]
         public void Test_Search_ReturnsListOfRelevantUsers_WhenCalledForSpecificUsers()
         {
+            // Arrange 
+            Func<User, bool> expression = u => u.username == "Test A";
+            List<User> expected = new List<User>() { mockUser1.Object };
 
+            // Act
+            List<User> result = userRepo.Search(expression).ToList();
+
+            // Assert
+            CollectionAssert.AreEquivalent(expected, result);
         }
 
         [TestMethod]
         public void Test_Search_ReturnsEmptyList_WhenCalledForNoSpecificUsers()
         {
+            // Arrange 
+            Func<User, bool> expression = u => u.username == null;
 
+            // Act
+            List<User> result = userRepo.Search(expression).ToList();
+
+            // Assert
+            Assert.AreEqual(0, result.Count);
         }
     }
 }
