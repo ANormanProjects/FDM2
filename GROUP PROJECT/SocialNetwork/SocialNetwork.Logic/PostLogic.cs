@@ -135,7 +135,7 @@ namespace SocialNetwork.Logic
             
         }
 
-        public void LikePost()
+        public void LikePost(Post _post)
         {
             throw new NotImplementedException();
         }
