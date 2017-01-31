@@ -117,8 +117,16 @@ namespace SocialNetwork.Logic
         public void Reply(Post _post, string UserInput)
         {
 
+            IEnumerable<Comment> comments = _post.comments;
+
+            Comment commentToAdd = new Comment();
+            commentToAdd.content = UserInput;
+
+            comments.ToList().Add(commentToAdd);
+                 
+            _post.comments = comments;          
             
-            
+
         }
 
         public void LikePost()
