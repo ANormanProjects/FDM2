@@ -13,7 +13,7 @@ namespace SocialNetwork.Logic
         private Repository<Post> _postRepository;
         private Repository<User> _userRepository;
 
-        // String Restrictions
+        // String Restrictions (number of characters)
         public int maxContentLength { get; set; }
         public int minContentLength { get; set; }
         public int maxTitleLength { get; set; }
@@ -26,8 +26,23 @@ namespace SocialNetwork.Logic
         {
             _postRepository = postRepository;
             _userRepository = userRepository;
+
+            maxContentLength = 255;
+            minContentLength = 0;
+            maxTitleLength = 100;
+            minTitleLength = 0;
+            maxCodeLength = 255;
+            minCodeLength = 0;
         }
 
+        /// <summary>
+        /// Adds a Group Post object to the Repository after checking the arguments are valid
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="title"></param>
+        /// <param name="language"></param>
+        /// <param name="code"></param>
+        /// <param name="content"></param>
         public void WriteGroupPost(int id, string title, string language, string code, string content)
         {
 
@@ -41,6 +56,14 @@ namespace SocialNetwork.Logic
 
         }
 
+        /// <summary>
+        /// Adds a User Post object to the Repository after checking the arguments are valid
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="title"></param>
+        /// <param name="language"></param>
+        /// <param name="code"></param>
+        /// <param name="content"></param>
         public void WriteUserPost(int id, string title, string language, string code, string content)
         {
 
@@ -54,6 +77,11 @@ namespace SocialNetwork.Logic
 
         }
 
+        /// <summary>
+        /// Returns a list of posts made by the User and the Users friends
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public List<Post> ViewTimeline(User user)
         {
             List<Post> timelinePosts = new List<Post>();
