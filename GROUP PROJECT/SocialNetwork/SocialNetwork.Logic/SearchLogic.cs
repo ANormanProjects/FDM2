@@ -20,7 +20,7 @@ namespace SocialNetwork.Logic
 
         public List<IUser> SearchForUserByName(string name)
         {
-            IEnumerable<IUser> userList = userRepo.Search(x => x.fullName == name);
+            IEnumerable<IUser> userList = userRepo.Search(x => x.fullName.ToUpper() == name.ToUpper());
 
             return userList.ToList();
         }
