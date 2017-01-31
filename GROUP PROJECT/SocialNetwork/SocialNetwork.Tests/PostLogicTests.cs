@@ -50,20 +50,5 @@ namespace SocialNetwork.Tests
             //Assert
             postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
         }
-
-        [TestMethod]
-        public void Test_ViewTimeline_RunsFirstMethod()
-        {
-            //Arrange
-            Mock<User> user = new Mock<User>();
-            Mock<List<Post>> timelinePosts = new Mock<List<Post>>();
-
-            postRepo.Setup(x => x.GetAll()).Verifiable();
-            //Act
-            
-
-            //Assert
-            postRepo.Verify(p => p.GetAll());
-        }
     }
 }
