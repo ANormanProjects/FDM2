@@ -9,9 +9,18 @@ namespace SocialNetwork.Logic
 {
     public class CommentLogic : ICommentLogic
     {
+        Repository<Post> postRepo = new Repository<Post>();
+        Repository<Comment> commentRepo = new Repository<Comment>();
+
         public void addComment(string commentText, User user, Post post)
         {
-            IComment comment = new Comment(commentText, user, post);
+            Comment comment = new Comment(commentText, user, post);
+
+            post.comments.Concat(new[] { comment });
+            postRepo.Save();
+
+            commentRepo.Insert(comment);
+            commentRepo.Save();
         }
 
         public void DeleteComment(Comment comment)
