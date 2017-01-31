@@ -31,8 +31,11 @@ namespace SocialNetwork.Logic
 
         public void DeleteComment(Comment comment)
         {
-            User user = comment.user;
+            Post post = comment.post;
+            post.comments.Remove(comment);
+            postRepo.Save();
 
+            commentRepo.Remove(comment);
         }
 
         public void EditComment(Comment comment, string newText)
