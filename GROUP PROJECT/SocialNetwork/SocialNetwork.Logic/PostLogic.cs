@@ -116,7 +116,23 @@ namespace SocialNetwork.Logic
             Comment commentToAdd = new Comment();
             commentToAdd.content = UserInput;
 
-            _post.comments.ToList().Add(commentToAdd);
+            if (UserInput != null) 
+            {
+                _post.comments.ToList().Add(commentToAdd);
+            }
+            if (UserInput == null) 
+            {
+                //error message
+                Console.WriteLine("you tried to add an empty reply");
+            }
+            if (UserInput.Count<char>() > maxContentLength) 
+            {
+                //error message
+                Console.WriteLine("The max characters allowed is 255");
+            }
+
+
+            
         }
 
         public void LikePost()
