@@ -26,6 +26,21 @@ namespace SocialNetwork.Tests
             postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
         }
 
-        []
+        [TestMethod]
+        public void Test_WriteUserPost_RunsAddRepositoryMethod()
+        {
+            //Arrange
+            Mock<Repository<Post>> postRepo = new Mock<Repository<Post>>();
+            Mock<Repository<User>> userRepo = new Mock<Repository<User>>();
+            PostLogic postLogic = new PostLogic(postRepo.Object, userRepo.Object);
+
+            postRepo.Setup(x => x.Insert(It.IsAny<Post>())).Verifiable();
+
+            //Act
+            postLogic.WriteUserPost(1, "a", "b", "c", "d");
+
+            //Assert
+            postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
+        }
     }
 }
