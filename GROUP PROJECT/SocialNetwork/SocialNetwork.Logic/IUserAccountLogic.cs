@@ -14,7 +14,7 @@ namespace SocialNetwork.Logic
         void Logout(int id);
         void Register(User userToAdd);
         void ViewAccountInfo(int id);
-        void AddFriend(int id);
+        void AddFriend(int userId, int friendToAdd);
         void UpdateInfo(int id, string username, string password);
     }
 
@@ -67,13 +67,14 @@ namespace SocialNetwork.Logic
 
         public void AddFriend(int userId, int friendId)
         {
+            //probably wrong
             var query = from b in _dataModel.users
                         where b.userId == userId
                         select b;
 
             var queryForFriend = from b in _dataModel.users
-                        where b.userId == friendId
-                        select b;
+                                 where b.userId == friendId
+                                 select b;
 
             foreach (User user in query)
             {
