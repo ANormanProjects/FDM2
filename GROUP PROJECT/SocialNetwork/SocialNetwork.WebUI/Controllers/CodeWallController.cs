@@ -11,7 +11,7 @@ namespace SocialNetwork.WebUI.Controllers
         // GET: CodeWall
         public ActionResult Wall()
         {
-            return View();
+            return View("Wall");
         }
     }
 }

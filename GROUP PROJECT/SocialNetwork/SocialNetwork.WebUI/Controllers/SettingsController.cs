@@ -11,7 +11,7 @@ namespace SocialNetwork.WebUI.Controllers
         // GET: Settings
         public ActionResult SettingsPage()
         {
-            return View();
+            return View("SettingsPage");
         }
     }
 }

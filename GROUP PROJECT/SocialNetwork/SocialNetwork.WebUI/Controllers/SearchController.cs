@@ -11,7 +11,7 @@ namespace SocialNetwork.WebUI.Controllers
         // GET: Search
         public ActionResult Results()
         {
-            return View();
+            return View("Results");
         }
     }
 }
