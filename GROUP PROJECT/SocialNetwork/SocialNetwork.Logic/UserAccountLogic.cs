@@ -59,9 +59,12 @@ namespace SocialNetwork.Logic
             _userRepository.Insert(userToAdd);
         }
 
-        public void ViewAccountInfo(int id)
+        public void ViewAccountInfo(int userId)
         {
-            throw new NotImplementedException();
+           //find user
+            User userToDisplay = _userRepository.First(u => u.userId == userId);
+            //what to display
+            
         }
 
         public void AddFriend(int userId, int friendId)
