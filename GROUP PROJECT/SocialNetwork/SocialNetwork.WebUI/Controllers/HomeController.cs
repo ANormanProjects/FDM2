@@ -10,7 +10,7 @@ namespace SocialNetwork.WebUI.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
     }
 }

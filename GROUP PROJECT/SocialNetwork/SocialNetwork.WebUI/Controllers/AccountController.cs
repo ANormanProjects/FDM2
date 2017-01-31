@@ -11,19 +11,19 @@ namespace SocialNetwork.WebUI.Controllers
         // GET: Profile
         public ActionResult ProfilePage()
         {
-            return View();
+            return View("ProfilePage");
         }
 
         // GET: Register
         public ActionResult Register()
         {
-            return View();
+            return View("Register");
         }
 
         // GET: Login
         public ActionResult Login()
         {
-            return View();
+            return View("Login");
         }
     }
 }
