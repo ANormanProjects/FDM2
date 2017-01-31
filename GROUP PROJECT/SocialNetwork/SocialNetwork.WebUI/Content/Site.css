@@ -29,20 +29,39 @@ textarea {
     padding: 0.5em;
     display: table;
     width: 100%;
+
+    background-color: #e6f3ff;
 }
 
 .post-sidebar
 {
     display: table-cell;
-    height: 50px;
     width: 20%;
     margin-right: 1em;
 }
 .post-content
 {
     display: table-cell;
-    height: 50px;
     margin-left: 1em;
+}
+
+.post-code
+{
+    
+}
+
+.post-code pre
+{
+    margin: 1em;
+
+    border: 1px solid limegreen;
+    color: limegreen;
+    background-color: black;
+}
+
+.post-hr
+{
+    border: 1px #007ae6 solid;
 }
 
 

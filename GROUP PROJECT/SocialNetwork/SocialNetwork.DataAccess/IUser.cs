@@ -20,10 +20,10 @@ namespace SocialNetwork.DataAccess
         [DisplayName("Gender")]
         string gender { get; set; }
 
-        IEnumerable<Post> posts { get; set; }
+        List<Post> posts { get; set; }
 
-        IEnumerable<User> friends { get; set; }
+        List<User> friends { get; set; }
 
-        IEnumerable<string> skills { get; set; }
+        List<string> skills { get; set; }
     }
 }

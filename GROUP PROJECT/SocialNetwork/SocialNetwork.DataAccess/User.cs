@@ -46,22 +46,22 @@ namespace SocialNetwork.DataAccess
             set { _gender = value; }
         }       
         
-        private IEnumerable<Post> _posts;
-        public IEnumerable<Post> posts
+        private List<Post> _posts;
+        public List<Post> posts
         {
             get { return _posts; }
             set { _posts = value; }
         }        
 
-        private IEnumerable<User> _friends;
-        public IEnumerable<User> friends
+        private List<User> _friends;
+        public List<User> friends
         {
             get { return _friends; }
             set { _friends = value; }
         }
 
-        private IEnumerable<string> _skills;
-        public IEnumerable<string> skills
+        private List<string> _skills;
+        public List<string> skills
         {
             get { return _skills; }
             set { _skills = value; }
