@@ -13,7 +13,7 @@ namespace SocialNetwork.Logic
         void WriteGroupPost(int id, string title, string language, string code, string content);
         List<Post> ViewTimeline(User user);
         void Reply(Post _post, string UserInput);
-        void LikePost();
+        void LikePost(Post _post);
         void SharePost();
     }
 }
