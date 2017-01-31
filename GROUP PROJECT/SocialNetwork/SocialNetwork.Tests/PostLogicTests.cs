@@ -58,6 +58,7 @@ namespace SocialNetwork.Tests
             Mock<User> user = new Mock<User>();
             Mock<List<Post>> timelinePosts = new Mock<List<Post>>();
 
+            postRepo.Setup(x => x.GetAll()).Verifiable();
             //Act
             
 
