@@ -10,8 +10,17 @@ namespace SocialNetwork.Logic
 {
     public class PostLogic : IPostLogic
     {
-        Repository<Post> _postRepository;
-        Repository<User> _userRepository;
+        private Repository<Post> _postRepository;
+        private Repository<User> _userRepository;
+
+        // String Restrictions
+        public int maxContentLength { get; set; }
+        public int minContentLength { get; set; }
+        public int maxTitleLength { get; set; }
+        public int minTitleLength { get; set; }
+        public int maxCodeLength { get; set; }
+        public int minCodeLength { get; set; }
+
 
         public PostLogic(Repository<Post> postRepository, Repository<User> userRepository)
         {
