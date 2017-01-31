@@ -14,17 +14,17 @@ namespace SocialNetwork.Logic
             IComment comment = new Comment(commentText, user, post);
         }
 
-        public void DeleteComment(CommentLogic comment)
+        public void DeleteComment(Comment comment)
         {
             throw new NotImplementedException();
         }
 
-        public void EditComment(CommentLogic comment, string newText)
+        public void EditComment(Comment comment, string newText)
         {
             throw new NotImplementedException();
         }
 
-        public void LikeComment(CommentLogic comment)
+        public void LikeComment(Comment comment)
         {
             throw new NotImplementedException();
         }
