@@ -47,7 +47,7 @@ namespace SocialNetwork.Logic
 
         public List<Post> ViewTimeline(User user)
         {
-            List<Post> timelinePosts = null;
+            List<Post> timelinePosts = new List<Post>();
 
             //Find user in database use first
             User userFound = _userRepository.First(u => u.username == user.username);
