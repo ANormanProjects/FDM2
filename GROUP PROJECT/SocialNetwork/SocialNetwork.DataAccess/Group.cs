@@ -43,5 +43,9 @@ namespace SocialNetwork.DataAccess
             set { _groupWall = value; }
         }
 
+        public override string ToString()
+        {
+            return groupID + "-" + groupName + "[Owner: " + owner.ToString() + "]";
+        }
     }
 }
