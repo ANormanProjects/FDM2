@@ -24,9 +24,18 @@ namespace SocialNetwork.Logic
 
     public class InputExceedsSpecifiedLimitException : Exception 
     {
-        public InputExceedsSpecifiedLimitException() : base("Input has exceded the specified limit") 
+        public InputExceedsSpecifiedLimitException() : base("Input has exceeded the specified limit") 
         {
         
         }
+    }
+
+    public class EmptyInputException : Exception 
+    {
+        public EmptyInputException() : base("Input cannot be empty") 
+        {
+        
+        }
+        
     }
 }

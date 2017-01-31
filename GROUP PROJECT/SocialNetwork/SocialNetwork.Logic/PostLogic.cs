@@ -128,7 +128,7 @@ namespace SocialNetwork.Logic
             if (UserInput.Count<char>() > maxContentLength) 
             {
                 //error message, throw exceedspecifiedlimit exception
-                Console.WriteLine("The max characters allowed is 255");
+                throw new InputExceedsSpecifiedLimitException();                
             }
 
 
