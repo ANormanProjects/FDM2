@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comment.cs" />
     <Compile Include="CustomExceptions.cs" />
+    <Compile Include="IComment.cs" />
     <Compile Include="IPostLogic.cs" />
     <Compile Include="ISearchLogic.cs" />
     <Compile Include="PostLogic.cs" />

@@ -16,7 +16,7 @@ namespace SocialNetwork.DataAccess
 
         public string title { get; set; }
 
-        public IEnumerable<Comment> comments { get; set; }
+        public IEnumerable<IComment> comments { get; set; }
 
         public string language { get; set; }
 
