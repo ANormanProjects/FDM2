@@ -68,21 +68,13 @@ namespace SocialNetwork.Logic
         public void AddFriend(int userId, int friendId)
         {
             //probably wrong
-            var query = from b in _dataModel.users
-                        where b.userId == userId
-                        select b;
 
-            var queryForFriend = from b in _dataModel.users
-                                 where b.userId == friendId
-                                 select b;
+            User currentUser = _userRepository.First(u => u.userId == userId);
 
-            foreach (User user in query)
-            {
-                foreach (User friend in queryForFriend)
-                {
-                    user.friends.ToList().Add(friend);
-                }
-            }
+            User userToAdd = _userRepository.First(u => u.userId == userId);
+
+            currentUser.friends.ToList().Add(userToAdd);
+            
         }
 
         public void UpdateInfo(int id, string username, string password)
