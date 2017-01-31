@@ -17,7 +17,9 @@ namespace Test_Console
             userRepo.Insert(new User()
             {
                 fullName = "Princess Peach"
-            });
+            });           
+
+            Console.ReadKey();
         }
     }
 }

@@ -15,7 +15,7 @@ namespace SocialNetwork.Tests
         ISearchLogic searchLogic;
         Mock<User> user1;
         Mock<Post> post1;
-        List<User> users;
+        List<IUser> users;
         List<Post> posts;
 
         [TestInitialize]
@@ -26,8 +26,8 @@ namespace SocialNetwork.Tests
             searchLogic = new SearchLogic(postRepo.Object, userRepo.Object);
             user1 = new Mock<User>();
             post1 = new Mock<Post>();
-            users = new List<User>{user1.Object};
-            posts = new List<Post> { post1.Object };
+            users = new List<IUser>(){user1.Object};
+            posts = new List<Post>(){ post1.Object };
         }
 
         [TestMethod]
@@ -51,7 +51,6 @@ namespace SocialNetwork.Tests
         public void Test_SearchForUserByName_RunsSearchMethodInRepository_WithNameEnteredInMethod()
         {
             //Arrange           
-
             userRepo.Setup(x => x.Search(It.IsAny<Func<IUser, bool>>())).Returns(users);
 
             //Act
@@ -86,7 +85,7 @@ namespace SocialNetwork.Tests
         public void Test_EntityNotFoundException_IsThrown_WhenSearchNameNotInDatabase_AndSearchForUserByNameMethodRun()
         {
             //Arrange
-            userRepo.Setup(x => x.Search(It.IsAny<Func<IUser, bool>>())).Returns(new List<User>());
+            userRepo.Setup(x => x.Search(It.IsAny<Func<IUser, bool>>())).Returns(new List<IUser>());
             //Act
             searchLogic.SearchForUserByName("Benjamin Bowes");
             //Assert

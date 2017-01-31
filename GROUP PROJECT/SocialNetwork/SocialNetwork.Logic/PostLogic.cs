@@ -53,7 +53,6 @@ namespace SocialNetwork.Logic
             postToWrite.content = content;
 
             _postRepository.Insert(postToWrite);
-
         }
 
         /// <summary>

@@ -20,7 +20,7 @@ namespace SocialNetwork.Logic
 
         public List<IUser> SearchForUserByName(string name)
         {            
-            IEnumerable<IUser> userList = userRepo.Search(x => x.fullName.ToUpper() == name.ToUpper());
+            List<IUser> userList = userRepo.Search(x => x.fullName.ToUpper() == name.ToUpper());
 
             if(userList.Count() > 0)
             {
@@ -55,7 +55,7 @@ namespace SocialNetwork.Logic
 
         public List<Post> SearchForCode(string codeLanguage)
         {
-            IEnumerable<Post> searchedPosts = postRepo.Search(x => x.language.ToUpper() == codeLanguage.ToUpper());
+            List<Post> searchedPosts = postRepo.Search(x => x.language.ToUpper() == codeLanguage.ToUpper());
 
             if (searchedPosts.Count() > 0)
             {

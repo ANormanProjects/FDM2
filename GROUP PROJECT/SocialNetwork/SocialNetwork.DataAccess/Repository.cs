@@ -21,8 +21,8 @@ namespace SocialNetwork.DataAccess
         void Remove(T entity);
         //void Update(T entity, Func<T, bool> lambdaExpression);
         T First(Func<T, bool> lambdaExpression);
-        IEnumerable<T> Search(Func<T, bool> lambdaExpression);        
-        IEnumerable<T> GetAll();
+        List<T> Search(Func<T, bool> lambdaExpression);        
+        List<T> GetAll();
     }
 
     /// <summary>
@@ -75,14 +75,14 @@ namespace SocialNetwork.DataAccess
         }        
 
         /// <summary>
-        /// Returns an IEnumerable of data entities from the persistent data context based on the lambdaExpression funtion
+        /// Returns an List of data entities from the persistent data context based on the lambdaExpression funtion
         /// </summary>
         /// <param name="lambdaExpression"></param>
         /// <returns></returns>
-        public virtual IEnumerable<T> Search(Func<T, bool> lambdaExpression)
+        public virtual List<T> Search(Func<T, bool> lambdaExpression)
         {
             // Returns a collection of entities that match the lambda expression
-            return context.Set<T>().Where<T>(lambdaExpression);
+            return context.Set<T>().Where<T>(lambdaExpression).ToList();
         }
 
         /// <summary>
@@ -97,13 +97,13 @@ namespace SocialNetwork.DataAccess
         }
 
         /// <summary>
-        /// Returns an IEnumerable of all the data entities from ther persistent data context
+        /// Returns an List of all the data entities from ther persistent data context
         /// </summary>
         /// <returns></returns>
-        public virtual IEnumerable<T> GetAll()
+        public virtual List<T> GetAll()
         {
             // Returns all of the set of entities
-            return context.Set<T>();
+            return context.Set<T>().ToList();
         }
 
         /// <summary>
