@@ -68,9 +68,9 @@
     <Compile Include="IComment.cs" />
     <Compile Include="IGroup.cs" />
     <Compile Include="IUser.cs" />
-    <Compile Include="Migrations\201701301702318_reset.cs" />
-    <Compile Include="Migrations\201701301702318_reset.Designer.cs">
-      <DependentUpon>201701301702318_reset.cs</DependentUpon>
+    <Compile Include="Migrations\201701311406282_initial.cs" />
+    <Compile Include="Migrations\201701311406282_initial.Designer.cs">
+      <DependentUpon>201701311406282_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
@@ -87,8 +87,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701301702318_reset.resx">
-      <DependentUpon>201701301702318_reset.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701311406282_initial.resx">
+      <DependentUpon>201701311406282_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
