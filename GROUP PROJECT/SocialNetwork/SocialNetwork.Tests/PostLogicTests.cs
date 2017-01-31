@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using SocialNetwork.DataAccess;
 using SocialNetwork.Logic;
+using System.Collections.Generic;
 
 namespace SocialNetwork.Tests
 {
@@ -36,17 +37,32 @@ namespace SocialNetwork.Tests
             postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
         }
 
+        
         [TestMethod]
         public void Test_WriteUserPost_RunsAddRepositoryMethod()
         {
             //Arrange
-           
+
 
             //Act
             postLogic.WriteUserPost(1, "a", "b", "c", "d");
 
             //Assert
             postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
+        }
+
+        [TestMethod]
+        public void Test_ViewTimeline_RunsFirstMethod()
+        {
+            //Arrange
+            Mock<User> user = new Mock<User>();
+            Mock<List<Post>> timelinePosts = new Mock<List<Post>>();
+
+            //Act
+            
+
+            //Assert
+            postRepo.Verify(p => p.GetAll());
         }
     }
 }
