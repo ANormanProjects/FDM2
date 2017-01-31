@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomExceptions.cs" />
     <Compile Include="IPostLogic.cs" />
     <Compile Include="ISearchLogic.cs" />
     <Compile Include="PostLogic.cs" />

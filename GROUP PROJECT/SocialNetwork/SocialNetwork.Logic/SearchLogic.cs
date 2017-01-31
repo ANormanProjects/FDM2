@@ -19,17 +19,39 @@ namespace SocialNetwork.Logic
         }
 
         public List<IUser> SearchForUserByName(string name)
-        {
+        {            
             IEnumerable<IUser> userList = userRepo.Search(x => x.fullName.ToUpper() == name.ToUpper());
 
-            return userList.ToList();
+            if(userList.Count() > 0)
+            {
+                return userList.ToList();
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
         }
 
         public IUser SearchForUserById(int id)
         {
             IUser searchedUser = userRepo.First(x => x.userId == id);
 
-            return searchedUser;
+            if (id > 0)
+            {
+                if (searchedUser != null)
+                {
+                    return searchedUser;
+                }
+                else
+                {
+                    throw new EntityNotFoundException();
+                }
+            }
+            else
+            {
+                throw new IntegerMustBeGreaterThanZeroException();
+            }
+
         }
 
         public List<Post> SearchForCode(string codeLanguage)
