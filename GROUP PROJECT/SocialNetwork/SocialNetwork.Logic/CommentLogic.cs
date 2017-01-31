@@ -36,6 +36,7 @@ namespace SocialNetwork.Logic
             postRepo.Save();
 
             commentRepo.Remove(comment);
+            commentRepo.Save();
         }
 
         public void EditComment(Comment comment, string newText)

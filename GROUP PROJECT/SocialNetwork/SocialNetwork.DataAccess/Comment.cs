@@ -46,7 +46,7 @@ namespace SocialNetwork.DataAccess
 
         private Post _post;
 
-        public Post post
+        public virtual Post post
         {
             get { return _post; }
             set { _post = value; }

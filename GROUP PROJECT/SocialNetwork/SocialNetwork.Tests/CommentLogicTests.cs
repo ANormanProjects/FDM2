@@ -10,17 +10,28 @@ namespace SocialNetwork.Tests
     [TestClass]
     public class CommentLogicTests
     {
+        Mock<Repository<Post>> postRepo;
+        Mock<Repository<Comment>> commentRepo;
+        CommentLogic commentLogic;
+        Mock<Post> post;
+        Mock<User> user;
+        List<Comment> commentList;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            postRepo = new Mock<Repository<Post>>();
+            commentRepo = new Mock<Repository<Comment>>();
+            commentLogic = new CommentLogic(postRepo.Object, commentRepo.Object);
+            post = new Mock<Post>();
+            user = new Mock<User>();
+            commentList = new List<Comment>();
+        }
+
         [TestMethod]
-        public void Test_AddCommentMethod_AddsNewCommentToPostComments()
+        public void Test_AddCommentMethod_AddsNewCommentToPostCommentsAndCommentRepo()
         {
             //Arrange
-            Mock<Repository<Post>> postRepo = new Mock<Repository<Post>>();
-            Mock<Repository<Comment>> commentRepo = new Mock<Repository<Comment>>();
-            CommentLogic commentLogic = new CommentLogic(postRepo.Object, commentRepo.Object);
-            List<Comment> commentList = new List<Comment>();
-            Mock<Post> post = new Mock<Post>();
-            Mock<User> user = new Mock<User>();
-
             post.Setup(x => x.comments).Returns(commentList);
 
             commentRepo.Setup(x => x.Insert(It.IsAny<Comment>())).Verifiable();
@@ -35,6 +46,30 @@ namespace SocialNetwork.Tests
             commentRepo.Verify(x => x.Insert(It.IsAny<Comment>()));
             postRepo.Verify(x => x.Save());
             commentRepo.Verify(x => x.Save());
+           
+        }
+
+        [TestMethod]
+        public void Test_RemoveComment_RemovesCommentFromPostCommentsAndCommentRepo()
+        {
+            //Arrange
+            Mock<Comment> comment = new Mock<Comment>();
+            comment.Setup(x => x.post).Returns(post.Object); 
+            commentRepo.Setup(x => x.Remove(comment.Object)).Verifiable();
+            commentRepo.Setup(x => x.Save()).Verifiable();
+            postRepo.Setup(x => x.Save()).Verifiable();
+            post.Setup(x => x.comments).Returns(commentList);
+
+            //Act
+            commentLogic.DeleteComment(comment.Object);
+
+            //Assert
+            comment.Verify(x => x.post);
+            postRepo.Verify(x => x.Save());
+            commentRepo.Verify(x => x.Save());
+            commentRepo.Verify(x => x.Remove(comment.Object));
+            comment.Verify(x => x.post); 
+
         }
     }
 }
