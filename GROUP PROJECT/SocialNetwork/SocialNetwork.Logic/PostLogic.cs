@@ -125,8 +125,6 @@ namespace SocialNetwork.Logic
             comments.ToList().Add(commentToAdd);
                  
             _post.comments = comments;          
-            
-
         }
 
         public void LikePost()
