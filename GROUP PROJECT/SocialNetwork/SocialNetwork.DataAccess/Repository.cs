@@ -19,7 +19,7 @@ namespace SocialNetwork.DataAccess
         void Save();
         void Insert(T entity);
         void Remove(T entity);
-        void Update(T entity, Func<T, bool> lambdaExpression);
+        //void Update(T entity, Func<T, bool> lambdaExpression);
         T First(Func<T, bool> lambdaExpression);
         IEnumerable<T> Search(Func<T, bool> lambdaExpression);        
         IEnumerable<T> GetAll();
@@ -72,29 +72,7 @@ namespace SocialNetwork.DataAccess
             // Removes the specified entity from the relevant DbSet in the DbContext
             context.Set<T>().Remove(entity);
             logger.Info("Entity removed from database: " + entity.ToString());
-        }
-
-        /// <summary>
-        /// Updates a data entity in the persistent data context with the data in another data entity 
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="lambdaExpression"></param>
-        public virtual void Update(T entity, Func<T, bool> lambdaExpression)
-        {
-            // Search for the entities that need updating from the relevant DbSet in the DbContext
-            IEnumerable<T> entitiesToUpdate = context.Set<T>().Where<T>(lambdaExpression);
-
-            // If there are entities that need to be updated...
-            if (entitiesToUpdate.Count() != 0)
-            {
-                foreach (T t in entitiesToUpdate)
-                {
-                    // Set the values of each entity-to-be-update to the entity
-                    context.Entry(t).CurrentValues.SetValues(entity);
-                    logger.Info("Entity in database updated: " + entity.ToString());
-                }
-            }
-        }
+        }        
 
         /// <summary>
         /// Returns an IEnumerable of data entities from the persistent data context based on the lambdaExpression funtion
@@ -137,5 +115,28 @@ namespace SocialNetwork.DataAccess
             context.SaveChanges();
             logger.Info("Changes saved to database");
         }
+
+        /* Deprecated Update Method
+         * 
+        <summary>
+        /// Updates all entities in the persistent data context that match the lambda expression with the data in another data entity 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="lambdaExpression"></param>
+        public virtual void Update(T entity, Func<T, bool> lambdaExpression)
+        {
+            // Search for the entities that need updating from the relevant DbSet in the DbContext
+            List<T> entitiesToUpdate = context.Set<T>().Where<T>(lambdaExpression).ToList();
+
+            // If there are entities that need to be updated...
+            foreach (T t in entitiesToUpdate)
+            {
+                // Set the values of each entity-to-be-update to the entity
+                context.Entry(t).CurrentValues.SetValues(entity);
+                logger.Info("Entity in database updated: " + entity.ToString());
+            }
+        } 
+         * 
+         */
     }
 }
