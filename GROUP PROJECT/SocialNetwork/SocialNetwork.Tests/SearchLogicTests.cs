@@ -91,5 +91,16 @@ namespace SocialNetwork.Tests
             searchLogic.SearchForUserByName("Benjamin Bowes");
             //Assert
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_EntityNotFoundException_IsThrown_WhenSearchIdNotInDatabase_AndSearchForUserByIdMethodRun()
+        {
+            //Arrange
+            userRepo.Setup(x => x.First(It.IsAny<Func<IUser, bool>>()));
+            //Act
+            searchLogic.SearchForUserById(1);
+            //Assert
+        }
     }
 }

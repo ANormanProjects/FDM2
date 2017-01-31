@@ -33,11 +33,10 @@ namespace SocialNetwork.Logic
         }
 
         public IUser SearchForUserById(int id)
-        {
-            IUser searchedUser = userRepo.First(x => x.userId == id);
-
+        {           
             if (id > 0)
             {
+                IUser searchedUser = userRepo.First(x => x.userId == id);
                 if (searchedUser != null)
                 {
                     return searchedUser;
