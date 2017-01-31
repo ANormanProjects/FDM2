@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserAccountLogic.cs" />
     <Compile Include="CommentLogic.cs" />
     <Compile Include="CustomExceptions.cs" />
     <Compile Include="ICommentLogic.cs" />
