@@ -25,5 +25,7 @@ namespace SocialNetwork.Tests
             //Assert
             postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
         }
+
+        []
     }
 }

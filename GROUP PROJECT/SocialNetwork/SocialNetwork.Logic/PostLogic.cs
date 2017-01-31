@@ -79,7 +79,9 @@ namespace SocialNetwork.Logic
 
         public void Reply(Post _post, string UserInput)
         {
-            throw new NotImplementedException();
+
+            int i = 345;
+            
         }
 
         public void LikePost()
