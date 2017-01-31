@@ -123,7 +123,7 @@ namespace SocialNetwork.Logic
             if (UserInput == null) 
             {
                 //error message, throw empty input exception
-                Console.WriteLine("you tried to add an empty reply");
+                throw new EmptyInputException();
             }
             if (UserInput.Count<char>() > maxContentLength) 
             {
