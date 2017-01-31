@@ -102,5 +102,27 @@ namespace SocialNetwork.Tests
             searchLogic.SearchForUserById(1);
             //Assert
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(IntegerMustBeGreaterThanZeroException))]
+        public void Test_IntegerMustBeGreaterThanZeroException_IsThrown_WhenSearchIdIsNotGreaterThanZero_AndSearchForUserByIdMethodRun()
+        {
+            //Arrange
+            userRepo.Setup(x => x.First(It.IsAny<Func<IUser, bool>>()));
+            //Act
+            searchLogic.SearchForUserById(0);
+            //Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_EntityNotFoundException_IsThrown_WhenCodeLanguageNotInDatabase_AndSearchForCodeMethodRun()
+        {
+            //Arrange
+            postRepo.Setup(x => x.Search(It.IsAny<Func<Post, bool>>())).Returns(new List<Post>());
+            //Act
+            searchLogic.SearchForCode("Java");
+            //Assert
+        }
     }
 }
