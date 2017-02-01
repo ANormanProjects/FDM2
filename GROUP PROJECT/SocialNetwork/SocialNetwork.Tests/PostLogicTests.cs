@@ -77,14 +77,14 @@ namespace SocialNetwork.Tests
             //Arrange
             PostLogic postLogic2 = new PostLogic(commentLogic.Object);
             string userInput = "bla";
-            commentLogic.Setup(c => c.addComment(userInput, user.Object, post.Object)).Verifiable();
+            commentLogic.Setup(c => c.AddComment(userInput, user.Object, post.Object)).Verifiable();
 
             //Act
             postLogic2.Reply(post.Object, userInput, user.Object);
            
 
             //Assert
-            commentLogic.Verify(c => c.addComment(userInput, user.Object, post.Object), Times.Once);
+            commentLogic.Verify(c => c.AddComment(userInput, user.Object, post.Object), Times.Once);
         }
 
         //[TestMethod]

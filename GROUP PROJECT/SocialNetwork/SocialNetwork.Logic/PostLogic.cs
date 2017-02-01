@@ -127,7 +127,7 @@ namespace SocialNetwork.Logic
         public void Reply(Post _post, string UserInput, User _user)
         {
 
-            commentLogic.addComment(UserInput, _user, _post);
+            commentLogic.AddComment(UserInput, _user, _post);
         }
 
         public void LikePost(Post _post)
@@ -139,7 +139,7 @@ namespace SocialNetwork.Logic
 
         public void SharePost(Post _post)
         {
-            throw new NotImplementedException();
+            
         }
 
 
