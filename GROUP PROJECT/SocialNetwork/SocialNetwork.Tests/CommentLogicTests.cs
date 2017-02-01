@@ -203,5 +203,17 @@ namespace SocialNetwork.Tests
             commentLogic.EditComment(comment.Object, "12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890");
             //Assert
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_EntityNotFoundException_IsThrown_WhenEnteredCommentIsNotInDatabase_WhenLikeCommentMethodRun()
+        {
+            //Arrange
+            commentRepo.Setup(x => x.GetAll()).Returns(new List<Comment>());
+            Mock<Comment> comment = new Mock<Comment>();
+            //Act
+            commentLogic.LikeComment(comment.Object);
+            //Assert
+        }
     }
 }
