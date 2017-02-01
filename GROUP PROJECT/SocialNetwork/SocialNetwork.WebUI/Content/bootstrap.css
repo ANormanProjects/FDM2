@@ -4341,14 +4341,14 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar {
-    background-color: #125aa8;
+    background-color: #255366;
 }
 
 .container > .navbar-header,
 .container > .navbar-collapse {
     margin-right: -15px;
     margin-left: -15px;
-    background-color: #125aa8;
+    background-color: #255366;
 }
 
 @media (min-width: 768px) {
@@ -4721,7 +4721,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     }
 
 .navbar-inverse {
-    background-color: #125aa8;
+    background-color: #255366;
     border-color: #080808;
 }
 
