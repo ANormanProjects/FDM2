@@ -87,7 +87,7 @@ namespace SocialNetwork.Logic
 
             if (user != null)
             {
-                List<Post> userPToAdd = _postRepository.GetAll().ToList();
+                List<Post> userPToAdd = user.posts;
 
                 foreach (Post pToAdd in userPToAdd)
                 {
@@ -97,7 +97,7 @@ namespace SocialNetwork.Logic
                 //for each friend, get all posts, add to list,
                 foreach (User friend in user.friends)
                 {
-                    List<Post> pToAdd = _postRepository.GetAll().ToList();
+                    List<Post> pToAdd = friend.posts;
 
                     foreach (Post friendPToAdd in pToAdd)
                     {
