@@ -36,6 +36,7 @@ namespace SocialNetwork.WebUI.Controllers
             return View("Login");
         }
 
+        [HttpPost]
         public ActionResult Login(User _user, string returnUrl)
         {
             // Lets first check if the Model is valid or not
