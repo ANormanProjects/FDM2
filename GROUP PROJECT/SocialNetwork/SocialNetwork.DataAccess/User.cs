@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,30 +14,38 @@ namespace SocialNetwork.DataAccess
         {
             get { return _userId; }
             set { _userId = value; }
-        }        
+        }
 
+        
         private string _username;
+        [DisplayName("User Name")]
         public virtual string username
         {
             get { return _username; }
             set { _username = value; }
-        }        
+        }
 
+        
         private string _password;
+        [DisplayName("Password")]
         public virtual string password
         {
             get { return _password; }
             set { _password = value; }
-        }        
+        }
 
+        
         private string _fullName;
+        [DisplayName("Full Name")]
         public string fullName
         {
             get { return _fullName; }
             set { _fullName = value; }
-        }        
+        }
 
+        
         private string _gender;
+        [DisplayName("Gender")]
         public string gender
         {
             get { return _gender; }
