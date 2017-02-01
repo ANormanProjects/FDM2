@@ -126,24 +126,6 @@ namespace SocialNetwork.Logic
 
         public void Reply(Post _post, string UserInput, User _user)
         {
-            //Comment commentToAdd = new Comment();
-            //commentToAdd.content = UserInput;
-
-            //if (UserInput != null) 
-            //{
-            //    _post.comments.Add(commentToAdd);
-            //}
-            //if (UserInput == null) 
-            //{
-            //    //error message, throw empty input exception
-            //    throw new EmptyInputException();
-            //}
-            //if (UserInput.Count<char>() > maxContentLength) 
-            //{
-            //    //error message, throw exceedspecifiedlimit exception
-            //    throw new InputExceedsSpecifiedLimitException();                
-            //} 
-            
 
             commentLogic.addComment(UserInput, _user, _post);
         }
@@ -159,6 +141,8 @@ namespace SocialNetwork.Logic
         {
             throw new NotImplementedException();
         }
+
+
     }
 
 }

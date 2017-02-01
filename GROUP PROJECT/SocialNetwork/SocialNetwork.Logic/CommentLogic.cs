@@ -20,7 +20,7 @@ namespace SocialNetwork.Logic
             userRepo = UserRepo;
         }
 
-        public void addComment(string commentText, User user, Post post)
+        public virtual void addComment(string commentText, User user, Post post)
         {
             if (userRepo.GetAll().Contains(user))
             {
