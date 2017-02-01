@@ -1,4 +1,5 @@
 ﻿using SocialNetwork.DataAccess;
+using SocialNetwork.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,13 @@ namespace SocialNetwork.WebUI.Controllers
            
         }
 
+        UserAccountLogic _userAccountLogic;
+
+        public AccountController(UserAccountLogic userAccountLogic)
+        {
+            _userAccountLogic = userAccountLogic;
+        }
+
         // GET: Profile
         public ActionResult ProfilePage()
         {
@@ -31,11 +39,16 @@ namespace SocialNetwork.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register()
+        public ActionResult Register(User user)
         {
+            if(_userAccountLogic == null)
+            {
+                _userAccountLogic = new UserAccountLogic(new Repository<User>());
+            }
 
+            _userAccountLogic.Register(user);
 
-            return View("Register");
+            return PartialView("_AccountCreated");
         }
 
         // GET: Login
