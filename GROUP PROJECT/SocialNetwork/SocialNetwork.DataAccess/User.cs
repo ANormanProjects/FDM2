@@ -44,7 +44,16 @@ namespace SocialNetwork.DataAccess
         {
             get { return _gender; }
             set { _gender = value; }
-        }       
+        }
+
+        private string _role;
+
+        public string role
+        {
+            get { return _role; }
+            set { _role = value; }
+        }
+        
         
         private List<Post> _posts;
         public virtual List<Post> posts

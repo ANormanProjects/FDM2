@@ -19,6 +19,7 @@ namespace SocialNetwork.DataAccess
         string fullName { get; set; }
         [DisplayName("Gender")]
         string gender { get; set; }
+        string role { get; set; }
 
         List<Post> posts { get; set; }
 
