@@ -151,7 +151,8 @@ namespace SocialNetwork.Logic
         public void LikePost(Post _post)
         {
             //post likes go up by 1
-            _post.likes += 1;
+            _post.likes = _post.likes + 1;
+            _postRepository.Save();
         }
 
         public void SharePost(Post _post)
