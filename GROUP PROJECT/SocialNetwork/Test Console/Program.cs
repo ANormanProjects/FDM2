@@ -53,7 +53,7 @@ namespace Test_Console
             Comment test = new Comment("lol", user, post);
             commentRepo.Insert(test);
 
-            CommentLogic commentLogic = new CommentLogic(postRepo, commentRepo);
+            CommentLogic commentLogic = new CommentLogic(postRepo, commentRepo, userRepo);
 
             commentLogic.EditComment(commentRepo.GetAll()[1], "Lololol I'm glad you find that shh amusing");
 
