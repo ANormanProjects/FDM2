@@ -107,5 +107,16 @@ namespace SocialNetwork.Tests
             comment.VerifySet(x => x.likes = 2);
 
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_EntityNotFoundException_IsThrown_WhenEnteredUsernameIsNotInDatabase()
+        {
+            //Arrange
+            userRepo.Setup(x => x.Search(It.IsAny<Func<User, bool>>())).Returns(new List<User>());
+            //Act
+
+            //Assert
+        }
     }
 }
