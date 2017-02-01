@@ -8,64 +8,56 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
+    <UserControl.DataContext>
+        <vm:ListAllUsersViewModel/>
+    </UserControl.DataContext>
 
-    <Grid>
-    <Grid.RowDefinitions>
-        <RowDefinition Height="*"></RowDefinition>
-        <RowDefinition Height="Auto"></RowDefinition>
-    </Grid.RowDefinitions>
-    <ListBox ItemsSource="{Binding user}">
-        <ListBox.ItemTemplate>
-            <DataTemplate>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Width="100" Text="{Binding username}">
-                    </TextBlock>
-                    <TextBlock Width="150" Text="{Binding fullName}">
-                    </TextBlock>
-                    <TextBlock Text="{Binding gender}"></TextBlock>
-                </StackPanel>
-            </DataTemplate>
-        </ListBox.ItemTemplate>
-    </ListBox>
-    </Grid>
 
-    <!--<StackPanel>
-
-        <ListBox>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
-                </Grid.ColumnDefinitions>
-
-                <TextBlock Grid.Column="0" Text="Username" Margin="10"/>
-                <TextBlock Grid.Column="1" Text="Full Name" Margin="10"/>
-                <TextBlock Grid.Column="2" Text="Gender" Margin="10"/>
-
-            </Grid>
-        </ListBox>
-
-        <ListBox ItemsSource="{Binding user}" Height="500">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">      
+        <ListBox Name="ListOfAllUsers" HorizontalContentAlignment="Stretch" ItemsSource="{Binding user}">
+            <ListBox.Template>
+                <ControlTemplate>
+                    <DockPanel LastChildFill="True">
+                        <Grid DockPanel.Dock="Top" Height="30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0">User Id</Label>
+                            <Label Grid.Column="1">Username</Label>
+                            <Label Grid.Column="2">Full Name</Label>
+                            <Label Grid.Column="3">Gender</Label>
+                            <Label Grid.Column="4">Role</Label>
+                            <Label Grid.Column="5">Password</Label>
+                        </Grid>
+                        <ItemsPresenter></ItemsPresenter>
+                    </DockPanel>
+                </ControlTemplate>
+            </ListBox.Template>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
+                    <Grid Margin="0,2">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding username}" Margin="10"/>
-                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding fullName}" Margin="10"/>
-                        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding gender}" Margin="10"/>
+                        <TextBlock Text="{Binding userId}" Grid.Column="0"></TextBlock>
+                        <TextBlock Text="{Binding username}" Grid.Column="1"></TextBlock>
+                        <TextBlock Text="{Binding fullName}" Grid.Column="2"></TextBlock>
+                        <TextBlock Text="{Binding gender}" Grid.Column="3"></TextBlock>
+                        <TextBlock Text="{Binding role}" Grid.Column="4"></TextBlock>
+                        <TextBlock Text="{Binding password}" Grid.Column="5"></TextBlock>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-
-    </StackPanel>-->
-
+    </ScrollViewer>
 </UserControl>

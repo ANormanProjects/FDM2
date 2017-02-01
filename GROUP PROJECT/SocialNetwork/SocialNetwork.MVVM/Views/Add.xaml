@@ -3,9 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:SocialNetwork.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
-    </Grid>
+
+    <UserControl.DataContext>
+        <vm:ListAllUsersViewModel/>
+    </UserControl.DataContext>
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Margin="60,0,0,0" Grid.Row="1">Username:</Label>
+            <TextBox Name="username" Grid.Row="1" Grid.Column="1" Margin="0,0,0,10" Text="{Binding username}"/>
+            <Label Margin="60,0,0,0" Grid.Row="2">Full Name:</Label>
+            <TextBox Name="fullName" Grid.Row="2" Grid.Column="1" Margin="0,0,0,10" Text="{Binding fullName}"/>
+            <Label Margin="60,0,0,0" Grid.Row="3">Gender:</Label>
+            <TextBox Name="gender" Grid.Row="3" Grid.Column="1" Margin="0,0,0,10" Text="{Binding gender}"/>
+            <Label Margin="60,0,0,0" Grid.Row="4">Role:</Label>
+            <TextBox Name="role" Grid.Row="4" Grid.Column="1" Margin="0,0,0,10" Text="{Binding role}"/>
+            <Label Margin="60,0,0,0" Grid.Row="5">Password:</Label>
+            <TextBox Name="password" Grid.Row="5" Grid.Column="1" Margin="0,0,0,10" Text="{Binding password}"/>
+        </Grid>
+    </ScrollViewer>
 </UserControl>

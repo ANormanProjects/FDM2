@@ -41,7 +41,7 @@ namespace SocialNetwork.DataAccess
         /// </summary>
         protected DbContext context { get; set; }
 
-        public Repository()
+        public Repository() 
         {
             context = new SocialNetworkDataModel();
         }
