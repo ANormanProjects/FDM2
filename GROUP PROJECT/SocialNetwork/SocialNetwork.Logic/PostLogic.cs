@@ -12,6 +12,8 @@ namespace SocialNetwork.Logic
     {
         private Repository<Post> _postRepository;
         private Repository<User> _userRepository;
+        private Repository<Comment> _commentRepository;
+        CommentLogic commentLogic;
 
         // String Restrictions (number of characters)
         public int maxContentLength { get; set; }
@@ -22,10 +24,12 @@ namespace SocialNetwork.Logic
         public int minCodeLength { get; set; }
 
 
-        public PostLogic(Repository<Post> postRepository, Repository<User> userRepository)
+        public PostLogic(Repository<Post> postRepository, Repository<User> userRepository, Repository<Comment> commentRepository)
         {
             _postRepository = postRepository;
             _userRepository = userRepository;
+            _commentRepository = commentRepository;
+            commentLogic = new CommentLogic(_postRepository, _commentRepository, _userRepository);
 
             maxContentLength = 255;
             minContentLength = 0;
@@ -33,6 +37,11 @@ namespace SocialNetwork.Logic
             minTitleLength = 0;
             maxCodeLength = 255;
             minCodeLength = 0;
+        }
+
+        public PostLogic(CommentLogic CommentLogic)
+        {
+            commentLogic = CommentLogic;
         }
 
         /// <summary>
@@ -115,25 +124,28 @@ namespace SocialNetwork.Logic
             return timelinePosts;
         }
 
-        public void Reply(Post _post, string UserInput)
+        public void Reply(Post _post, string UserInput, User _user)
         {
-            Comment commentToAdd = new Comment();
-            commentToAdd.content = UserInput;
+            //Comment commentToAdd = new Comment();
+            //commentToAdd.content = UserInput;
 
-            if (UserInput != null) 
-            {
-                _post.comments.Add(commentToAdd);
-            }
-            if (UserInput == null) 
-            {
-                //error message, throw empty input exception
-                throw new EmptyInputException();
-            }
-            if (UserInput.Count<char>() > maxContentLength) 
-            {
-                //error message, throw exceedspecifiedlimit exception
-                throw new InputExceedsSpecifiedLimitException();                
-            }            
+            //if (UserInput != null) 
+            //{
+            //    _post.comments.Add(commentToAdd);
+            //}
+            //if (UserInput == null) 
+            //{
+            //    //error message, throw empty input exception
+            //    throw new EmptyInputException();
+            //}
+            //if (UserInput.Count<char>() > maxContentLength) 
+            //{
+            //    //error message, throw exceedspecifiedlimit exception
+            //    throw new InputExceedsSpecifiedLimitException();                
+            //} 
+            
+
+            commentLogic.addComment(UserInput, _user, _post);
         }
 
         public void LikePost(Post _post)
