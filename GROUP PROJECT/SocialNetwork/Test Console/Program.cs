@@ -71,8 +71,6 @@ namespace Test_Console
 
             //Console.ReadLine();
 
-
-
             bool val = uAccLogic.Login("mreid", "password");
 
             Console.WriteLine(val);
