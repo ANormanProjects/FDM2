@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9578CD
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.MVVM", "SocialNetwork.MVVM\SocialNetwork.MVVM.csproj", "{7EFA273B-78CF-424C-A166-EF0B75DD54B6}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -48,6 +50,10 @@ Global
 		{F8623601-1BCB-42A2-8DA9-88BB2454F004}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8623601-1BCB-42A2-8DA9-88BB2454F004}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8623601-1BCB-42A2-8DA9-88BB2454F004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EFA273B-78CF-424C-A166-EF0B75DD54B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EFA273B-78CF-424C-A166-EF0B75DD54B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EFA273B-78CF-424C-A166-EF0B75DD54B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EFA273B-78CF-424C-A166-EF0B75DD54B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
