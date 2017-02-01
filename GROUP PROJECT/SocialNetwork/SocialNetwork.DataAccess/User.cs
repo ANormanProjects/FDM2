@@ -47,14 +47,14 @@ namespace SocialNetwork.DataAccess
         }       
         
         private List<Post> _posts;
-        public List<Post> posts
+        public virtual List<Post> posts
         {
             get { return _posts; }
             set { _posts = value; }
         }        
 
         private List<User> _friends;
-        public List<User> friends
+        public virtual List<User> friends
         {
             get { return _friends; }
             set { _friends = value; }
