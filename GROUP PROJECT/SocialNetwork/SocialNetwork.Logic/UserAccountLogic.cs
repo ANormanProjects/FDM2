@@ -118,5 +118,6 @@ namespace SocialNetwork.Logic
         {
             postLogic.WriteUserPost(id, title, language, code, content, user);
         }
+
     }
 }

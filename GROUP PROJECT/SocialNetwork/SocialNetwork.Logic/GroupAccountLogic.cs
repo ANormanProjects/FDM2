@@ -23,20 +23,36 @@ namespace SocialNetwork.Logic
 
             postLogic = new PostLogic(postRepo, commentRepo);
         }
-    
-        public void addUserToGroup(DataAccess.User user)
+
+        public GroupAccountLogic(PostLogic PostLogic)
         {
- 	        throw new NotImplementedException();
+            postLogic = PostLogic;
         }
 
-        public void RemoveUserFromGroup(DataAccess.User User)
-        {
-    	    throw new NotImplementedException();
-        }
-
-        public List<DataAccess.User> GetAllUsersInGroup()
+        public void AddUserToGroup(Group group, User user)
         {
             throw new NotImplementedException();
         }
+
+        public void RemoveUserFromGroup(Group group, User User)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<User> GetAllUsersInGroup(Group group)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void WritePost(int id, string title, string language, string code, string content, Group group)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<GroupPost> GetAllPostsInGroup(Group group)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
