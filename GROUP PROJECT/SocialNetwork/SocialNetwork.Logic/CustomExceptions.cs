@@ -38,4 +38,13 @@ namespace SocialNetwork.Logic
         }
         
     }
+
+    public class StringNotCorrectLengthException : Exception
+    {
+        public StringNotCorrectLengthException(): base("Input empty or too long")
+        {
+
+        }
+    }
+
 }

@@ -12,17 +12,20 @@ namespace SocialNetwork.Tests
     {
         Mock<Repository<Post>> postRepo;
         Mock<Repository<Comment>> commentRepo;
+        Mock<Repository<User>> userRepo;
         CommentLogic commentLogic;
         Mock<Post> post;
         Mock<User> user;
         List<Comment> commentList;
+       
 
         [TestInitialize]
         public void Setup()
         {
             postRepo = new Mock<Repository<Post>>();
             commentRepo = new Mock<Repository<Comment>>();
-            commentLogic = new CommentLogic(postRepo.Object, commentRepo.Object);
+            userRepo = new Mock<Repository<User>>();
+            commentLogic = new CommentLogic(postRepo.Object, commentRepo.Object, userRepo.Object);
             post = new Mock<Post>();
             user = new Mock<User>();
             commentList = new List<Comment>();
@@ -85,6 +88,23 @@ namespace SocialNetwork.Tests
             //Assert
             commentRepo.Verify(x => x.Save());
             comment.VerifySet(x => x.content = "Hello");
+
+        }
+
+        [TestMethod]
+        public void Test_LikeComment_Adds1ToCommentLikesAndSavesChanges()
+        {
+            //Arrange
+            Mock<Comment> comment = new Mock<Comment>();
+            commentRepo.Setup(x => x.Save()).Verifiable();
+            comment.Setup(x => x.likes).Returns(1);
+            comment.SetupSet(x => x.likes = 2);
+            //Act
+            commentLogic.LikeComment(comment.Object);
+
+            //Assert
+            commentRepo.Verify(x => x.Save());
+            comment.VerifySet(x => x.likes = 2);
 
         }
     }

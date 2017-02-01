@@ -54,7 +54,7 @@ namespace SocialNetwork.DataAccess
 
         private int _likes;
 
-        public int likes
+        public virtual int likes
         {
             get { return _likes; }
             set { _likes = value; }

@@ -11,22 +11,45 @@ namespace SocialNetwork.Logic
     {
         Repository<Post> postRepo = new Repository<Post>();
         Repository<Comment> commentRepo = new Repository<Comment>();
+        Repository<User> userRepo = new Repository<User>();
 
-        public CommentLogic(Repository<Post> PostRepo, Repository<Comment> CommentRepo)
+        public CommentLogic(Repository<Post> PostRepo, Repository<Comment> CommentRepo, Repository<User> UserRepo)
         {
             postRepo = PostRepo;
             commentRepo = CommentRepo;
+            userRepo = UserRepo;
         }
 
         public void addComment(string commentText, User user, Post post)
         {
-            Comment comment = new Comment(commentText, user, post);
+            if (userRepo.GetAll().Contains(user))
+            {
+                if (postRepo.GetAll().Contains(post))
+                {
+                    if(commentText.Length > 0 && commentText.Length < 255)
+                    {
+                        Comment comment = new Comment(commentText, user, post);
 
-            post.comments.Add(comment);
-            postRepo.Save();
+                        post.comments.Add(comment);
+                        postRepo.Save();
 
-            commentRepo.Insert(comment);
-            commentRepo.Save();
+                        commentRepo.Insert(comment);
+                        commentRepo.Save();
+                    }
+                    else
+                    {
+                        throw new StringNotCorrectLengthException();
+                    }
+                }
+                else
+                {
+                    throw new EntityNotFoundException();
+                }
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
         }
 
         public void DeleteComment(Comment comment)
@@ -47,7 +70,8 @@ namespace SocialNetwork.Logic
 
         public void LikeComment(Comment comment)
         {
-            
+            comment.likes = comment.likes + 1;
+            commentRepo.Save();
         }
     }
 }
