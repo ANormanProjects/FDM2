@@ -140,55 +140,55 @@ namespace SocialNetwork.Tests
             
         }
 
-        [TestMethod]
-        public void Test_Reply_AddsCommentsToAPostIfTheUserInputIsNotNull()
-        {
-            //Arrange
+        //[TestMethod]
+        //public void Test_Reply_AddsCommentsToAPostIfTheUserInputIsNotNull()
+        //{
+        //    //Arrange
 
-            userInput.content = "bla";
-            listOfComments.Add(userInput);
+        //    userInput.content = "bla";
+        //    listOfComments.Add(userInput);
             
-            //Act
-            post.SetupGet(u => u.comments).Returns(new List<Comment>());
-            postLogic.Reply(post.Object, userInput.content);
+        //    //Act
+        //    post.SetupGet(u => u.comments).Returns(new List<Comment>());
+        //    postLogic.Reply(post.Object, userInput.content);
 
-            //Assert
-            Assert.AreEqual(userInput.content, post.Object.comments[0].content);
-        }
+        //    //Assert
+        //    Assert.AreEqual(userInput.content, post.Object.comments[0].content);
+        //}
 
-        [TestMethod]
-        [ExpectedException(typeof(EmptyInputException))]
-        public void Test_Reply_ReturnsAnExceptionMessageIfUserInputIsNull()
-        {
-            //Arrange
+        //[TestMethod]
+        //[ExpectedException(typeof(EmptyInputException))]
+        //public void Test_Reply_ReturnsAnExceptionMessageIfUserInputIsNull()
+        //{
+        //    //Arrange
 
-            userInput.content = null;
+        //    userInput.content = null;
 
-            //Act
-            post.SetupGet(u => u.comments).Returns(new List<Comment>());
-            postLogic.Reply(post.Object, userInput.content);
+        //    //Act
+        //    post.SetupGet(u => u.comments).Returns(new List<Comment>());
+        //    postLogic.Reply(post.Object, userInput.content);
 
-            //Assert
+        //    //Assert
             
-        }
+        //}
 
-        [TestMethod]
-        [ExpectedException(typeof(InputExceedsSpecifiedLimitException))]
-        public void Test_Reply_ReturnsAnExceptionMessageIfUserInputCharacterCountIsMoreThanMaxLength()
-        {
-            //Arrange
+        //[TestMethod]
+        //[ExpectedException(typeof(InputExceedsSpecifiedLimitException))]
+        //public void Test_Reply_ReturnsAnExceptionMessageIfUserInputCharacterCountIsMoreThanMaxLength()
+        //{
+        //    //Arrange
 
-            userInput.content = "abcdef";
-            postLogic.maxContentLength = 2;
+        //    userInput.content = "abcdef";
+        //    postLogic.maxContentLength = 2;
             
-            //Act
+        //    //Act
             
-            post.SetupGet(u => u.comments).Returns(new List<Comment>());
-            postLogic.Reply(post.Object, userInput.content);
+        //    post.SetupGet(u => u.comments).Returns(new List<Comment>());
+        //    postLogic.Reply(post.Object, userInput.content);
 
-            //Assert
+        //    //Assert
             
-        }
+        //}
 
         
     }
