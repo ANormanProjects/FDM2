@@ -1,0 +1,14 @@
+﻿@model SocialNetwork.DataAccess.Comment
+
+<div class="comment-container">
+    <div class="container">
+        <div class="container comment-sidebar col-md-3">
+            <p>IMG</p>
+        </div>
+
+        <div class="container comment-content col-md-9">
+            <h4>@Model.user.fullName</h4>
+            <p>@Model.content</p>
+        </div>
+    </div>  
+</div>
