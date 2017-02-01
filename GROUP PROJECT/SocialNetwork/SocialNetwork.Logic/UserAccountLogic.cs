@@ -96,10 +96,9 @@ namespace SocialNetwork.Logic
             User currentUser = _userRepository.First(u => u.userId == userId);
 
             User userToAdd = _userRepository.First(u => u.userId == userId);
+            currentUser.friends.Add(userToAdd);           
 
-            currentUser.friends.ToList().Add(userToAdd);
-
-            userToAdd.friends.ToList().Add(currentUser);
+            userToAdd.friends.Add(currentUser);
 
             _userRepository.Save();
 
