@@ -20,13 +20,15 @@ namespace SocialNetwork.Tests
         Comment userInput;
         List<Post> expectedPosts;
         List<Comment> listOfComments;
+        Mock<Repository<Comment>> commentRepo;
 
         [TestInitialize]
         public void Setup()
         {
             postRepo = new Mock<Repository<Post>>();
             userRepo = new Mock<Repository<User>>();
-            postLogic = new PostLogic(postRepo.Object, userRepo.Object);
+            commentRepo = new Mock<Repository<Comment>>();
+            postLogic = new PostLogic(postRepo.Object, userRepo.Object, commentRepo.Object);
             user = new Mock<User>();
             friend = new Mock<User>();
             anotherUser = new User();
