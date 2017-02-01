@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MahApps.Metro, Version=1.4.2.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.4.2\lib\net45\MahApps.Metro.dll</HintPath>
       <Private>True</Private>
@@ -155,12 +159,24 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SocialNetwork.DataAccess\SocialNetwork.DataAccess.csproj">
+      <Project>{51ac595c-260d-4b3c-95ba-e1cb5aedc87b}</Project>
+      <Name>SocialNetwork.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SocialNetwork.Logic\SocialNetwork.Logic.csproj">
+      <Project>{fd9724be-01c3-4e41-ba3f-2a103daeddf3}</Project>
+      <Name>SocialNetwork.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\WindowsIcons-license.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Entypo-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

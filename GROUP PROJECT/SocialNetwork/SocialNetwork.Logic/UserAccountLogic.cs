@@ -85,5 +85,10 @@ namespace SocialNetwork.Logic
         {
             throw new NotImplementedException();
         }
+
+        public virtual List<User> GetAllUserAccounts()
+        {
+            return _userRepository.GetAll();
+        }
     }
 }
