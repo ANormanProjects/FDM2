@@ -12,8 +12,8 @@ namespace SocialNetwork.MVVM.ViewModel
 {
     public class ListAllUsersViewModel : BaseViewModel
     {
-        Repository<User> _userRepository;
-        UserAccountLogic userAccLogic;
+        public Repository<User> _userRepository { get; set; }
+        public UserAccountLogic userAccLogic { get; set; }
 
         private ObservableCollection<User> _user;
 
@@ -94,6 +94,7 @@ namespace SocialNetwork.MVVM.ViewModel
         }
 
         private ICommand _ListAllUsersCommand;
+        private UserAccountLogic userAccountLogic;
         public ICommand ListAllUsersCommand
         {
             get
@@ -107,11 +108,18 @@ namespace SocialNetwork.MVVM.ViewModel
             set { _ListAllUsersCommand = value; }
         }
 
+        //Live
         public ListAllUsersViewModel()
         {
             _userRepository = new Repository<User>();
             userAccLogic = new UserAccountLogic(_userRepository);
             user = new ObservableCollection<User>(userAccLogic.GetAllUserAccounts());
+        }
+
+        //Test
+        public ListAllUsersViewModel(UserAccountLogic userAccountLogic)
+        {
+            this.userAccountLogic = userAccountLogic;
         }
 
         public void ListAllUsers()
