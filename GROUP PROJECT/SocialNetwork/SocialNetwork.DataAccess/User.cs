@@ -59,7 +59,7 @@ namespace SocialNetwork.DataAccess
 
 
         private ICollection<Post> _posts;
-        public ICollection<Post> posts
+        public virtual ICollection<Post> posts
         {
             get { return _posts; }
             set { _posts = value; }

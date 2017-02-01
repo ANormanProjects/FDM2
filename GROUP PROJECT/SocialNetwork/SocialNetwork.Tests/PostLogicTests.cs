@@ -149,7 +149,7 @@ namespace SocialNetwork.Tests
 
         //    userInput.content = "bla";
         //    listOfComments.Add(userInput);
-            
+
         //    //Act
         //    post.SetupGet(u => u.comments).Returns(new List<Comment>());
         //    postLogic.Reply(post.Object, userInput.content);
@@ -171,7 +171,7 @@ namespace SocialNetwork.Tests
         //    postLogic.Reply(post.Object, userInput.content);
 
         //    //Assert
-            
+
         //}
 
         //[TestMethod]
@@ -182,16 +182,28 @@ namespace SocialNetwork.Tests
 
         //    userInput.content = "abcdef";
         //    postLogic.maxContentLength = 2;
-            
+
         //    //Act
-            
+
         //    post.SetupGet(u => u.comments).Returns(new List<Comment>());
         //    postLogic.Reply(post.Object, userInput.content);
 
         //    //Assert
-            
+
         //}
 
-        
+        [TestMethod]
+        public void Test_LikePost_MakesLikeNumberGoUpByOneWhenCalled()
+        {
+            //Arrange
+            
+
+            //Act
+            postLogic.LikePost(post.Object);
+
+            //Assert
+            Assert.AreEqual(post.Object.likes, 1);
+
+        }
     }
 }
