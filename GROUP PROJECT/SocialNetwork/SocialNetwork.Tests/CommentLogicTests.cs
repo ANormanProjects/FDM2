@@ -63,6 +63,7 @@ namespace SocialNetwork.Tests
             commentRepo.Setup(x => x.Save()).Verifiable();
             postRepo.Setup(x => x.Save()).Verifiable();
             post.Setup(x => x.comments).Returns(commentList);
+            commentRepo.Setup(x => x.GetAll()).Returns(new List<Comment> { comment.Object });
 
             //Act
             commentLogic.DeleteComment(comment.Object);
@@ -83,6 +84,7 @@ namespace SocialNetwork.Tests
             Mock<Comment> comment = new Mock<Comment>();
             commentRepo.Setup(x => x.Save()).Verifiable();
             comment.SetupSet(x => x.content = "Hello");
+            commentRepo.Setup(x => x.GetAll()).Returns(new List<Comment> { comment.Object });
             //Act
             commentLogic.EditComment(comment.Object, "Hello");
             
@@ -100,6 +102,7 @@ namespace SocialNetwork.Tests
             commentRepo.Setup(x => x.Save()).Verifiable();
             comment.Setup(x => x.likes).Returns(1);
             comment.SetupSet(x => x.likes = 2);
+            commentRepo.Setup(x => x.GetAll()).Returns(new List<Comment> { comment.Object });
             //Act
             commentLogic.LikeComment(comment.Object);
 
