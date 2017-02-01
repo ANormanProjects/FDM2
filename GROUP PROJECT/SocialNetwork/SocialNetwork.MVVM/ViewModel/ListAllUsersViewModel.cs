@@ -118,5 +118,7 @@ namespace SocialNetwork.MVVM.ViewModel
         {
             userAccLogic.GetAllUserAccounts();
         }
+       
+
     }
 }
