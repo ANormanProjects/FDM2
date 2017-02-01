@@ -91,8 +91,16 @@ namespace SocialNetwork.Logic
 
         public void LikeComment(Comment comment)
         {
-            comment.likes = comment.likes + 1;
-            commentRepo.Save();
+            if (commentRepo.GetAll().Contains(comment))
+            {
+                comment.likes = comment.likes + 1;
+                commentRepo.Save();
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
+        
         }
     }
 }
