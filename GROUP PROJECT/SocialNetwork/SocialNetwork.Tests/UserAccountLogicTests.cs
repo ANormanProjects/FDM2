@@ -9,9 +9,9 @@ namespace SocialNetwork.Tests
     [TestClass]
     public class UserAccountLogicTests
     {
-
-        
         Mock<Repository<User>> userRepo;
+        Mock<Repository<Post>> postRepo;
+        Mock<Repository<Comment>> commentRepo;
         UserAccountLogic userAccountLogic;
 
         [TestInitialize]
@@ -19,7 +19,7 @@ namespace SocialNetwork.Tests
         {          
             userRepo = new Mock<Repository<User>>();
             
-            userAccountLogic = new UserAccountLogic(userRepo.Object);                       
+            userAccountLogic = new UserAccountLogic(userRepo.Object, postRepo.Object, commentRepo.Object);                       
         }
 
         [TestMethod]

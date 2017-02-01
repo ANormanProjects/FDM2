@@ -10,10 +10,29 @@ namespace SocialNetwork.Logic
     public class UserAccountLogic : IUserAccountLogic
     {
         Repository<User> _userRepository;
+        Repository<Post> _postRepository;
+        Repository<Comment> _commentRepository;
+
+        IPostLogic postLogic; 
+
+        public UserAccountLogic(Repository<User> userRepository, Repository<Post> postRepo, Repository<Comment> commentRepo)
+        {
+            _userRepository = userRepository;
+            _postRepository = postRepo;
+            _commentRepository = commentRepo;
+
+            postLogic = new PostLogic(postRepo, userRepository, commentRepo);
+        }
 
         public UserAccountLogic(Repository<User> userRepository)
         {
             _userRepository = userRepository;
+
+        }
+
+        public UserAccountLogic(PostLogic PostLogic)
+        {
+            postLogic = PostLogic;
         }
 
         public bool Login(string username, string password)
@@ -94,6 +113,11 @@ namespace SocialNetwork.Logic
         public virtual List<User> GetAllUserAccounts()
         {
             return _userRepository.GetAll();
+        }
+
+        public void WritePost(int id, string title, string language, string code, string content, User user)
+        {
+            postLogic.WriteUserPost(id, title, language, code, content, user);
         }
     }
 }

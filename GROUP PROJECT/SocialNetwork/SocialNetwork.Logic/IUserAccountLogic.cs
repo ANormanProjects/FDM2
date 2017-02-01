@@ -16,6 +16,7 @@ namespace SocialNetwork.Logic
         void ViewAccountInfo(int userId);
         void AddFriend(int userId, int friendToAdd);
         void UpdateInfo(int id, string username, string password);
+        void WritePost(int id, string title, string language, string code, string content, User user);
     }
 
     

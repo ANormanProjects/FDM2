@@ -16,13 +16,6 @@ namespace SocialNetwork.Logic
         CommentLogic commentLogic;
 
         // String Restrictions (number of characters)
-        public int maxContentLength { get; set; }
-        public int minContentLength { get; set; }
-        public int maxTitleLength { get; set; }
-        public int minTitleLength { get; set; }
-        public int maxCodeLength { get; set; }
-        public int minCodeLength { get; set; }
-
 
         public PostLogic(Repository<Post> postRepository, Repository<User> userRepository, Repository<Comment> commentRepository)
         {
@@ -30,13 +23,13 @@ namespace SocialNetwork.Logic
             _userRepository = userRepository;
             _commentRepository = commentRepository;
             commentLogic = new CommentLogic(_postRepository, _commentRepository, _userRepository);
+        }
 
-            maxContentLength = 255;
-            minContentLength = 0;
-            maxTitleLength = 100;
-            minTitleLength = 0;
-            maxCodeLength = 255;
-            minCodeLength = 0;
+        public PostLogic(Repository<Post> postRepository, Repository<Comment> commentRepository)
+        {
+            _postRepository = postRepository;
+            _commentRepository = commentRepository;
+            commentLogic = new CommentLogic(_postRepository, _commentRepository, _userRepository);
         }
 
         public PostLogic(CommentLogic CommentLogic)
@@ -52,7 +45,7 @@ namespace SocialNetwork.Logic
         /// <param name="language"></param>
         /// <param name="code"></param>
         /// <param name="content"></param>
-        public void WriteGroupPost(int id, string title, string language, string code, string content)
+        public void WriteGroupPost(int id, string title, string language, string code, string content, Group group)
         {
 
             GroupPost postToWrite = new GroupPost();
@@ -60,6 +53,7 @@ namespace SocialNetwork.Logic
             postToWrite.language = language;
             postToWrite.code = code;
             postToWrite.content = content;
+            postToWrite.group = group;
 
             _postRepository.Insert(postToWrite);
         }
@@ -72,7 +66,7 @@ namespace SocialNetwork.Logic
         /// <param name="language"></param>
         /// <param name="code"></param>
         /// <param name="content"></param>
-        public void WriteUserPost(int id, string title, string language, string code, string content)
+        public void WriteUserPost(int id, string title, string language, string code, string content, User user)
         {
 
             UserPost postToWrite = new UserPost();
@@ -80,6 +74,7 @@ namespace SocialNetwork.Logic
             postToWrite.language = language;
             postToWrite.code = code;
             postToWrite.content = content;
+            postToWrite.user = user;
 
             _postRepository.Insert(postToWrite);
 
