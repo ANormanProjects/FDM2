@@ -71,5 +71,21 @@ namespace SocialNetwork.Tests
             comment.Verify(x => x.post); 
 
         }
+
+        [TestMethod]
+        public void Test_EditComment_SetsCommentContentToEnteredTextAndSavesChanges()
+        {
+            //Arrange
+            Mock<Comment> comment = new Mock<Comment>();
+            commentRepo.Setup(x => x.Save()).Verifiable();
+            comment.SetupSet(x => x.content = "Hello");
+            //Act
+            commentLogic.EditComment(comment.Object, "Hello");
+            
+            //Assert
+            commentRepo.Verify(x => x.Save());
+            comment.VerifySet(x => x.content = "Hello");
+
+        }
     }
 }
