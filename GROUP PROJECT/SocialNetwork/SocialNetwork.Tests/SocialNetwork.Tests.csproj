@@ -117,6 +117,10 @@
       <Project>{fd9724be-01c3-4e41-ba3f-2a103daeddf3}</Project>
       <Name>SocialNetwork.Logic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SocialNetwork.WebUI\SocialNetwork.WebUI.csproj">
+      <Project>{f8623601-1bcb-42a2-8da9-88bb2454f004}</Project>
+      <Name>SocialNetwork.WebUI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
