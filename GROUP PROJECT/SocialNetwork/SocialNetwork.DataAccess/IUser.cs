@@ -21,10 +21,12 @@ namespace SocialNetwork.DataAccess
         string gender { get; set; }
         string role { get; set; }
 
-        List<Post> posts { get; set; }
+        ICollection<Group> groups { get; set; }
 
-        List<User> friends { get; set; }
+        ICollection<Post> posts { get; set; }
 
-        List<string> skills { get; set; }
+        ICollection<User> friends { get; set; }
+
+        ICollection<string> skills { get; set; }
     }
 }

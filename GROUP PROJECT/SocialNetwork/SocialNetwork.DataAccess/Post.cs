@@ -16,13 +16,18 @@ namespace SocialNetwork.DataAccess
 
         public string title { get; set; }
 
-        public virtual List<Comment> comments { get; set; }
+        public virtual ICollection<Comment> comments { get; set; }
 
         public string language { get; set; }
 
         public string content { get; set; }
 
         public string code { get; set; }
+
+        public Post()
+        {
+            comments = new List<Comment>();
+        }
 
     }
 }
