@@ -57,6 +57,10 @@ namespace SocialNetwork.WebUI.Controllers
             {
                 return PartialView("_FieldNotFilled");
             }
+            //else if ()
+            //{
+                
+            //}
             else
             {
                 return PartialView("_AccountCreated");
