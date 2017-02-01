@@ -41,7 +41,7 @@ namespace SocialNetwork.WebUI
 
                         //Let us set the Principal with our user specific details
                         HttpContext.Current.User = new System.Security.Principal.GenericPrincipal(
-                          new System.Security.Principal.GenericIdentity(username, "Forms"), roles.Split(';'));
+                          new System.Security.Principal.GenericIdentity(username, "Forms"), new string[] { roles });
                     }
                     catch (Exception)
                     {
