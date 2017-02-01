@@ -239,6 +239,7 @@
     <Content Include="Views\Account\ProfilePage.cshtml" />
     <Content Include="Views\Settings\SettingsPage.cshtml" />
     <Content Include="Views\Shared\_Post.cshtml" />
+    <Content Include="Views\Shared\_AccountCreated.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
