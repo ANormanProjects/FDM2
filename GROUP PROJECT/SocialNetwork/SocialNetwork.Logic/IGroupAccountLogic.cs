@@ -13,5 +13,6 @@ namespace SocialNetwork.Logic
         void RemoveUserFromGroup(User User);
         List<User> GetAllUsersInGroup();
 
+
     }
 }

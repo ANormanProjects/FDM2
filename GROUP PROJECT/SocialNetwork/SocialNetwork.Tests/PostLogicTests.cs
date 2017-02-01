@@ -51,7 +51,7 @@ namespace SocialNetwork.Tests
             
 
             //Act
-            postLogic.WriteGroupPost(1, "a", "b", "c", "d");
+            postLogic.WriteGroupPost(1, "a", "b", "c", "d", new Mock<Group>().Object);
 
             //Assert
             postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
@@ -65,7 +65,7 @@ namespace SocialNetwork.Tests
 
 
             //Act
-            postLogic.WriteUserPost(1, "a", "b", "c", "d");
+            postLogic.WriteUserPost(1, "a", "b", "c", "d", user.Object);
 
             //Assert
             postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
