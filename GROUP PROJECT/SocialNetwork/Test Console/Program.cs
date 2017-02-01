@@ -18,6 +18,7 @@ namespace Test_Console
             Repository<Group> groupRepo = new Repository<Group>(context);
             Repository<Comment> commentRepo = new Repository<Comment>(context);
             Repository<Post> postRepo = new Repository<Post>(context);
+            UserAccountLogic uAccLogic = new UserAccountLogic(userRepo);                    
 
             //userRepo.Insert(new User()
             //{
