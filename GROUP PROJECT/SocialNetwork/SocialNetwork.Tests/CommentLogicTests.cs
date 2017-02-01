@@ -43,7 +43,7 @@ namespace SocialNetwork.Tests
             userRepo.Setup(x => x.GetAll()).Returns(new List<User>{user.Object});
             postRepo.Setup(x => x.GetAll()).Returns(new List<Post> { post.Object });
             //Act
-            commentLogic.addComment("1", user.Object, post.Object);
+            commentLogic.AddComment("1", user.Object, post.Object);
 
             //Assert
             post.Verify(x => x.comments);           
@@ -116,7 +116,7 @@ namespace SocialNetwork.Tests
             //Arrange
             userRepo.Setup(x => x.GetAll()).Returns(new List<User>{});
             //Act
-            commentLogic.addComment("Hi", user.Object, post.Object);
+            commentLogic.AddComment("Hi", user.Object, post.Object);
             //Assert
         }
 
@@ -128,7 +128,7 @@ namespace SocialNetwork.Tests
             postRepo.Setup(x => x.GetAll()).Returns(new List<Post>{ });
             userRepo.Setup(x => x.GetAll()).Returns(new List<User> { user.Object });
             //Act
-            commentLogic.addComment("Hi", user.Object, post.Object);
+            commentLogic.AddComment("Hi", user.Object, post.Object);
             //Assert
         }
 
@@ -140,7 +140,7 @@ namespace SocialNetwork.Tests
             postRepo.Setup(x => x.GetAll()).Returns(new List<Post> { post.Object });
             userRepo.Setup(x => x.GetAll()).Returns(new List<User> { user.Object });
             //Act
-            commentLogic.addComment("", user.Object, post.Object);
+            commentLogic.AddComment("", user.Object, post.Object);
             //Assert
         }
 
@@ -152,7 +152,7 @@ namespace SocialNetwork.Tests
             postRepo.Setup(x => x.GetAll()).Returns(new List<Post> { post.Object });
             userRepo.Setup(x => x.GetAll()).Returns(new List<User> { user.Object });
             //Act
-            commentLogic.addComment("12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890", user.Object, post.Object);
+            commentLogic.AddComment("12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890", user.Object, post.Object);
             //Assert
         }
 

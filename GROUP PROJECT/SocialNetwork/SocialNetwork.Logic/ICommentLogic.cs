@@ -9,7 +9,7 @@ namespace SocialNetwork.Logic
 {
     public interface ICommentLogic
     {
-        void addComment(string commentText, User user, Post post);
+        void AddComment(string commentText, User user, Post post);
         void DeleteComment(Comment comment);
         void EditComment(Comment comment, string newText);
         void LikeComment(Comment comment);
