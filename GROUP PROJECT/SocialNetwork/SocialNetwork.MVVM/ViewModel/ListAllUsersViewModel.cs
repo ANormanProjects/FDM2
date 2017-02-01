@@ -27,6 +27,72 @@ namespace SocialNetwork.MVVM.ViewModel
             }
         }
 
+        private int _userId;
+        public virtual int userId
+        {
+            get { return _userId; }
+            set 
+            { 
+                _userId = value;
+                OnPropertyChanged("userId");
+            }
+        }
+
+        private string _username;
+        public string username
+        {
+            get { return _username; }
+            set 
+            {
+                _username = value;
+                OnPropertyChanged("username");
+            }
+        }
+
+        private string _password;
+        public string password
+        {
+            get { return _password; }
+            set 
+            { 
+                _password = value;
+                OnPropertyChanged("password");
+            }
+        }
+
+        private string _fullName;
+        public string fullName
+        {
+            get { return _fullName; }
+            set 
+            { 
+                _fullName = value;
+                OnPropertyChanged("fullname");
+            }
+        }
+
+        private string _gender;
+        public string gender
+        {
+            get { return _gender; }
+            set 
+            { 
+                _gender = value;
+                OnPropertyChanged("gender");
+            }
+        }
+
+        private string _role;
+        public string role
+        {
+            get { return _role; }
+            set 
+            { 
+                _role = value;
+                OnPropertyChanged("role");
+            }
+        }
+
         private ICommand _ListAllUsersCommand;
         public ICommand ListAllUsersCommand
         {

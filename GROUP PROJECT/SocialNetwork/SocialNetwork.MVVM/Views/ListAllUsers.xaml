@@ -8,7 +8,28 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
-    <StackPanel>
+
+    <Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*"></RowDefinition>
+        <RowDefinition Height="Auto"></RowDefinition>
+    </Grid.RowDefinitions>
+    <ListBox ItemsSource="{Binding user}">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="100" Text="{Binding username}">
+                    </TextBlock>
+                    <TextBlock Width="150" Text="{Binding fullName}">
+                    </TextBlock>
+                    <TextBlock Text="{Binding gender}"></TextBlock>
+                </StackPanel>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
+    </Grid>
+
+    <!--<StackPanel>
 
         <ListBox>
             <Grid>
@@ -45,6 +66,6 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-    </StackPanel>
+    </StackPanel>-->
 
 </UserControl>
