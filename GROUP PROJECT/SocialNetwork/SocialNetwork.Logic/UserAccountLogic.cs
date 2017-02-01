@@ -40,7 +40,9 @@ namespace SocialNetwork.Logic
 
         public bool LoginDetailVerification(string username, string password)
         {
-            User currentUser = _userRepository.First(u => u.username == username);
+            User currentUser = new User();
+                 
+            currentUser = _userRepository.First(u => u.username == username);
 
             if (currentUser.username == username && currentUser.password == password)
             {
