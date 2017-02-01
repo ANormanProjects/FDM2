@@ -19,8 +19,8 @@ namespace SocialNetwork.WebUI.Controllers
 
         public AccountController()
         {
-            userAccountLogic = new UserAccountLogic(userRepository);
             userRepository = new Repository<User>();
+            userAccountLogic = new UserAccountLogic(userRepository);            
         }
 
         UserAccountLogic _userAccountLogic;
@@ -73,6 +73,11 @@ namespace SocialNetwork.WebUI.Controllers
         [HttpPost]
         public ActionResult Login(User _user, string returnUrl)
         {
+            if (_userAccountLogic == null)
+            {
+                _userAccountLogic = new UserAccountLogic(new Repository<User>());
+            }
+
             // Lets first check if the Model is valid or not
             if (ModelState.IsValid)
             {
@@ -82,8 +87,8 @@ namespace SocialNetwork.WebUI.Controllers
                     string password = _user.password;
 
 
-                    bool userValid = socNetDataModel.users.Any(user => user.username == username && user.password == password);
-                    //bool userValid = userAccountLogic.Login(username, password);
+                    //bool userValid = socNetDataModel.users.Any(user => user.username == username && user.password == password);
+                    bool userValid = userAccountLogic.Login(username, password);
                     // User found in the database
                     if (userValid)
                     {
