@@ -12,6 +12,7 @@ namespace SocialNetwork.Tests
         Mock<Repository<User>> userRepo;
         Mock<Repository<Post>> postRepo;
         Mock<Repository<Comment>> commentRepo;
+        UserAccountLogic userAccountLogic1;
         UserAccountLogic userAccountLogic;
 
         [TestInitialize]
@@ -19,7 +20,8 @@ namespace SocialNetwork.Tests
         {          
             userRepo = new Mock<Repository<User>>();
             
-            userAccountLogic = new UserAccountLogic(userRepo.Object, postRepo.Object, commentRepo.Object);                       
+            userAccountLogic1 = new UserAccountLogic(userRepo.Object, postRepo.Object, commentRepo.Object);
+            userAccountLogic = new UserAccountLogic(userRepo.Object);     
         }
 
         [TestMethod]
@@ -156,20 +158,31 @@ namespace SocialNetwork.Tests
 
         }
 
-        [TestMethod]
-        public void Test_RegisterUser_AddsUserToDbWhenCalledAndGivenUser() 
-        {
-            //arr
-            Mock<User> user = new Mock<User>();
-            user.Setup(id => id.userId).Returns(109);
-
-            Mock<User> friend = new Mock<User>();
-            user.Setup(id => id.userId).Returns(100);
-
-            //act
-            userAccountLogic.AddFriend(user.Object.userId, friend.Object.userId);
+        //[TestMethod]
+        //public void Test_RegisterUser_AddsUserToDbWhenCalledAndGivenUser() 
+        //{
             
-            //assert
-        }
+        //}
+
+        //[TestMethod]
+        //public void Test_AddFriendMethod_AddsAFriend() 
+        //{
+        //    //arr
+        //    Mock<User> user = new Mock<User>();
+        //    user.Setup(id => id.userId).Returns(109);
+
+        //    Mock<User> friend = new Mock<User>();
+        //    user.Setup(id => id.userId).Returns(100);
+
+        //    userRepo.Setup(c => c.First(It.IsAny<Func<User, bool>>())).Returns(user.Object);
+
+
+        //    //act
+        //    userAccountLogic.AddFriend(user.Object.userId, friend.Object.userId);
+            
+        //    //assert
+        //    userRepo.Verify(c => c.Save(), Times.Once);
+        
+        //}
     }
 }
