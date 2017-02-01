@@ -17,6 +17,13 @@ namespace SocialNetwork.WebUI.Controllers
            
         }
 
+
+
+        //public AccountController()
+        //{
+
+        //}
+
         // GET: Profile
         public ActionResult ProfilePage()
         {
@@ -24,8 +31,17 @@ namespace SocialNetwork.WebUI.Controllers
         }
 
         // GET: Register
+        [HttpGet]
         public ActionResult Register()
         {
+            return View("Register");
+        }
+
+        [HttpPost]
+        public ActionResult Register()
+        {
+
+
             return View("Register");
         }
 
