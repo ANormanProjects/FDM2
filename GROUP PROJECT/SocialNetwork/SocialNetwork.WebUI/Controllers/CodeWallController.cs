@@ -23,19 +23,9 @@ namespace SocialNetwork.WebUI.Controllers
         [HttpGet]
         public ActionResult Wall()
         {
+           
+
             return View("Wall");
-        }
-
-        //GET: CodeWall
-        [HttpPost]
-        public ActionResult Wall(User user)
-        {
-            if(_postLogic == null)
-            {
-                _postLogic = new PostLogic(new Repository<Post>(), new Repository<User>());
-            }
-
-            return PartialView("_Post");
         }
 
     }
