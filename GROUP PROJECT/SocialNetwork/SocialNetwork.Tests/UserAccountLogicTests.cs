@@ -92,6 +92,69 @@ namespace SocialNetwork.Tests
 
         }
 
+        [TestMethod]
+        public void Test_LoginMethod_ReturnsFalseIfWrongDetailsAreEntered() 
+        {
+            //arrange
+            string username = "Bule";
+            string password = "Michael";
+
+            Mock<User> user1 = new Mock<User>();
+
+            userRepo.Setup(x => x.First(It.IsAny<Func<User, bool>>())).Returns(user1.Object);
+
+            user1.Setup(x => x.username).Returns("Buble");
+
+            user1.Setup(x => x.password).Returns("Michael");
+
+            //userRepo.Setup(x => x.First(It.IsAny<Func<IUser, bool>>())).Verifiable();
+            //act
+            bool r = userAccountLogic.Login(username, password);
+
+            //assert
+            Assert.AreEqual(false, r);
+        
+        }
+
+        [TestMethod]
+        public void Test_LoginDetailsVerificationMethod_ReturnsTrueWhenDetailsAreCorrect() 
+        {
+            //arrange
+            string username = "Bule";
+            string password = "Michael";
+            Mock<User> user = new Mock<User>();
+
+            userRepo.Setup(c => c.First(It.IsAny<Func<User, bool>>())).Returns(user.Object);
+            user.Setup(u => u.username).Returns("Bule");
+            user.Setup(p => p.password).Returns("Michael");
+
+            //act
+            bool r = userAccountLogic.LoginDetailVerification(username, password);
+
+            //assert
+            Assert.AreEqual(true, r);
+        
+        }
+
+        [TestMethod]
+        public void Test_LoginDetailsVerificationMethod_ReturnsFalseWhenDetailsAreIncorrect()
+        {
+            //arrange
+            string username = "Bully";
+            string password = "Michael";
+            Mock<User> user = new Mock<User>();
+
+            userRepo.Setup(c => c.First(It.IsAny<Func<User, bool>>())).Returns(user.Object);
+            user.Setup(u => u.username).Returns("Bule");
+            user.Setup(p => p.password).Returns("Michael");
+
+            //act
+            bool r = userAccountLogic.LoginDetailVerification(username, password);
+
+            //assert
+            Assert.AreEqual(false, r);
+
+        }
         
     }
 }
