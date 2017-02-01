@@ -122,7 +122,7 @@ namespace SocialNetwork.Logic
 
             if (UserInput != null) 
             {
-                _post.comments.ToList().Add(commentToAdd);
+                _post.comments.Add(commentToAdd);
             }
             if (UserInput == null) 
             {
@@ -133,10 +133,7 @@ namespace SocialNetwork.Logic
             {
                 //error message, throw exceedspecifiedlimit exception
                 throw new InputExceedsSpecifiedLimitException();                
-            }
-
-
-            
+            }            
         }
 
         public void LikePost(Post _post)

@@ -9,7 +9,7 @@ namespace SocialNetwork.DataAccess
     public class User : IUser
     {
         private int _userId;
-        public int userId
+        public virtual int userId
         {
             get { return _userId; }
             set { _userId = value; }
