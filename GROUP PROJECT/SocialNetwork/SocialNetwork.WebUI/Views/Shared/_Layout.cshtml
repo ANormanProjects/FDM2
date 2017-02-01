@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
     <link rel="stylesheet" href="Content/bootstrap.css" />
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -26,58 +26,56 @@
                         <span class="navbar-brand">@Html.ActionLink("Code Wall", "Wall", "CodeWall", routeValues: null, htmlAttributes: new { id = "codeWall", @style = "color:#ffffff;" })</span>
                         <span class="navbar-brand">@Html.ActionLink("Your Profile", "ProfilePage", "Account", routeValues: null, htmlAttributes: new { id = "profile", @style = "color:#ffffff;" })</span>
                         <span class="navbar-brand">@Html.ActionLink("Settings", "SettingsPage", "Settings", routeValues: null, htmlAttributes: new { id = "settings", @style = "color:#ffffff;" })</span>
-                        
+
                     </div>
                     <div class="form-group">
                         <span class="navbar-brand">@Html.TextBox("Search")</span>
-                        <input type="submit" value="Search" class="btn btn-default"/>
+                        <input type="submit" value="Search" class="btn btn-default" />
                     </div>
                 </form>
-                
-                
+
+
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    
-                </ul>
+                <ul class="nav navbar-nav"></ul>
                 @Html.Partial("_LoginPartial", new { @class = "form-control" })
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        </div>
+    </div>
 
-        <footer class="footer-wrapper">
-            <div class="footer-container">
-                <a href="#myPage" title="To Top">
-                    <span class="glyphicon glyphicon-chevron-up"></span>
+    <footer class="footer-wrapper">
+        <div class="footer-container">
+            <a href="#myPage" title="To Top">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+            <nav class="nav">
+                @Html.ActionLink("Home", "Index", "Home")
+                @Html.ActionLink("Code Wall", "Wall", "CodeWall")
+                @Html.ActionLink("Your Profile", "ProfilePage", "Account")
+                @Html.ActionLink("Settings", "SettingsPage", "Settings")
+            </nav>
+            <nav class="share-nav">
+                <a href="https://twitter.com" target="_blank">
+                    <img src="~/Content/twitter.svg" alt="Twitter">
                 </a>
-                <nav class="nav">
-                    @Html.ActionLink("Home", "Index", "Home")
-                    @Html.ActionLink("FAQ", "FAQ", "Home")
-                    @Html.ActionLink("Careers", "Careers", "Home")
-                    @Html.ActionLink("Contact", "Contact", "Home")
-                </nav>
-                <nav class="share-nav">
-                    <a href="https://twitter.com" target="_blank">
-                        <img src="~/Content/twitter.svg" alt="Twitter">
-                    </a>
-                    <a href="https://www.facebook.com" target="_blank">
-                        <img src="~/Content/facebook.svg" alt="Facebook">
-                    </a>
-                    <a href="https://www.linkedin.com" target="_blank">
-                        <img src="~/Content/linkedin.svg" alt="LinkedIn">
-                    </a>
-                    <a href="mailto:contact@budgie.com" target="_blank">
-                        <img src="~/Content/mail.svg" alt="Drop us an email">
-                    </a>
-                </nav>
-                <p>
-                    &copy; @DateTime.Now.Year - dotNetwork is a company registered in London.
-                </p>
-            </div>
-        </footer>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="~/Content/facebook.svg" alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com" target="_blank">
+                    <img src="~/Content/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="mailto:contact@budgie.com" target="_blank">
+                    <img src="~/Content/mail.svg" alt="Drop us an email">
+                </a>
+            </nav>
+            <p>
+                &copy; @DateTime.Now.Year - dotNetwork is a company registered in London.
+            </p>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
@@ -86,40 +84,40 @@
     @RenderSection("scripts", required: false)
 
     <script>
-    $(document).ready(function(){
-        // Add smooth scrolling to all links in navbar + footer link
-        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
 
-                // Store hash
-                var hash = this.hash;
+                    // Store hash
+                    var hash = this.hash;
 
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 900, function(){
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
 
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                });
-            } // End if
-        });
-
-        $(window).scroll(function() {
-            $(".slideanim").each(function(){
-                var pos = $(this).offset().top;
-
-                var winTop = $(window).scrollTop();
-                if (pos < winTop + 600) {
-                    $(this).addClass("slide");
-                }
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
             });
-        });
-    })
+
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
     </script>
 
 </body>
