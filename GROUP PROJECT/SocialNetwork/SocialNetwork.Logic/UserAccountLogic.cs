@@ -25,12 +25,12 @@ namespace SocialNetwork.Logic
                 throw new EmptyInputException();
             }
 
-            if ((username.Count<char>() > 255) || (password.Count<char>() > 255))
+            if ((username.Count<char>() > 25) || (password.Count<char>() > 25))
             {
                 throw new InputExceedsSpecifiedLimitException();
             }
 
-            if ((password.Count<char>() < 255) && (username.Count<char>() < 255))
+            if ((password.Count<char>() < 25) && (username.Count<char>() < 25))
             {
                 result = LoginDetailVerification(username, password);
             }
@@ -76,6 +76,8 @@ namespace SocialNetwork.Logic
             User userToAdd = _userRepository.First(u => u.userId == userId);
 
             currentUser.friends.ToList().Add(userToAdd);
+
+            userToAdd.friends.ToList().Add(currentUser);
 
         }
 
