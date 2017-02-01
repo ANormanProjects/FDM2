@@ -16,14 +16,14 @@ namespace SocialNetwork.DataAccess
         }        
 
         private string _username;
-        public string username
+        public virtual string username
         {
             get { return _username; }
             set { _username = value; }
         }        
 
         private string _password;
-        public string password
+        public virtual string password
         {
             get { return _password; }
             set { _password = value; }

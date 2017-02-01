@@ -65,17 +65,27 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        public void Test_LoginMethod_CallsLoginDetailVerificationMethodGivenCorrectForm()
+        public void Test_LoginMethod_ReturnsTrueIfCorrectLoginDetailsAreEntered()
         {
             //arrange
-            string username = "username";
-            string password = "password";
+            string username = "Buble";
+            string password = "Michael";
+
+            Mock<User> user1 = new Mock<User>();
+
+            userRepo.Setup(x => x.First(It.IsAny<Func<User, bool>>())).Returns(user1.Object);
+
+            user1.Setup(x => x.username).Returns("Buble");
+            user1.Setup(x => x.password).Returns("Michael");
 
             //userRepo.Setup(x => x.First(It.IsAny<Func<IUser, bool>>())).Verifiable();
             //act
             bool r = userAccountLogic.Login(username, password);
 
             //assert
+            Assert.AreEqual(true, r);
+
+
             //userRepo.Verify(q => q.First(u => u.username == username), Times.Once);
             //Assert.AreEqual(false, r);
 
