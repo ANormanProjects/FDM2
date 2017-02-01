@@ -41,7 +41,8 @@ namespace SocialNetwork.Logic
 
         public void EditComment(Comment comment, string newText)
         {
-            throw new NotImplementedException();
+            comment.content = newText;
+            commentRepo.Save();
         }
 
         public void LikeComment(Comment comment)

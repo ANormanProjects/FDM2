@@ -29,7 +29,7 @@ namespace SocialNetwork.DataAccess
 
         private string _content;
 
-        public string content
+        public virtual string content
         {
             get { return _content; }
             set { _content = value; }
