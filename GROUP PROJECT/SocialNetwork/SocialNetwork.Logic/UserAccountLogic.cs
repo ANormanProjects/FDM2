@@ -79,6 +79,8 @@ namespace SocialNetwork.Logic
 
             userToAdd.friends.ToList().Add(currentUser);
 
+            _userRepository.Save();
+
         }
 
         public void UpdateInfo(int id, string username, string password)
