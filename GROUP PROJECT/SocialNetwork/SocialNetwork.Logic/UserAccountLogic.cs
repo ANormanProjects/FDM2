@@ -59,6 +59,7 @@ namespace SocialNetwork.Logic
         public void Register(User userToAdd)
         {   //defensive code
             _userRepository.Insert(userToAdd);
+            _userRepository.Save();
         }
 
         public void ViewAccountInfo(int userId)
