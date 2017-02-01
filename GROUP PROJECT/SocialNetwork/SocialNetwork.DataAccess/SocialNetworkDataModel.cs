@@ -15,6 +15,7 @@ namespace SocialNetwork.DataAccess
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            Database.SetInitializer<SocialNetworkDataModel>(null);
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Group>()
