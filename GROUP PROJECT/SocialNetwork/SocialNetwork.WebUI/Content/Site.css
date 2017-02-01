@@ -23,26 +23,60 @@ textarea {
     max-width: 280px;
 }
 
+.comment-container
+{
+    border-radius: 2px;
+    background-color: #e6f8fe;
+    margin: 0.5em;
+
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    display: table;
+    width: 100%;
+}
+
+.comment-content
+{
+    display: table-cell;
+    margin-left: 1em;
+}
+
+.comment-sidebar
+{
+    display: table-cell;
+    margin-right: 1em;
+}
+
+.post-profile-image
+{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    display: block;
+}
 
 .post-container
 {
-    padding: 0.5em;
+    margin: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     display: table;
     width: 100%;
 
-    background-color: #035976;
+    background-color: white;
 }
 
 .post-sidebar
 {
     display: table-cell;
-    width: 20%;
     margin-right: 1em;
+    padding: 1em;
 }
 .post-content
 {
     display: table-cell;
     margin-left: 1em;
+    padding: 1em;
 }
 
 .post-code
@@ -52,7 +86,7 @@ textarea {
 
 .post-code pre
 {
-    margin: 1em;
+    margin: 0.5em;
 
     border: 1px solid limegreen;
     color: limegreen;
@@ -61,7 +95,7 @@ textarea {
 
 .post-hr
 {
-    border: 1px #007ae6 solid;
+    border: 1px #035976 solid;
 }
 
 
