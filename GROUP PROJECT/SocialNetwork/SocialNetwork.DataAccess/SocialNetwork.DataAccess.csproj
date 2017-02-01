@@ -68,6 +68,14 @@
     <Compile Include="IComment.cs" />
     <Compile Include="IGroup.cs" />
     <Compile Include="IUser.cs" />
+    <Compile Include="Migrations\201702010955260_reset-mtm.cs" />
+    <Compile Include="Migrations\201702010955260_reset-mtm.Designer.cs">
+      <DependentUpon>201702010955260_reset-mtm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702011026096_userFriendsTable.cs" />
+    <Compile Include="Migrations\201702011026096_userFriendsTable.Designer.cs">
+      <DependentUpon>201702011026096_userFriendsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="GroupPost.cs" />
@@ -81,6 +89,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702010955260_reset-mtm.resx">
+      <DependentUpon>201702010955260_reset-mtm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702011026096_userFriendsTable.resx">
+      <DependentUpon>201702011026096_userFriendsTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

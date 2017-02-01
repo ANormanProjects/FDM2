@@ -9,7 +9,6 @@ namespace SocialNetwork.DataAccess
     public class User : IUser
     {
         private int _userId;
-
         public int userId
         {
             get { return _userId; }
@@ -24,7 +23,6 @@ namespace SocialNetwork.DataAccess
         }        
 
         private string _password;
-
         public string password
         {
             get { return _password; }
@@ -32,7 +30,6 @@ namespace SocialNetwork.DataAccess
         }        
 
         private string _fullName;
-
         public string fullName
         {
             get { return _fullName; }
@@ -44,36 +41,51 @@ namespace SocialNetwork.DataAccess
         {
             get { return _gender; }
             set { _gender = value; }
-        }
-
+        }       
+        
         private string _role;
-
         public string role
         {
             get { return _role; }
             set { _role = value; }
         }
         
-        
-        private List<Post> _posts;
-        public virtual List<Post> posts
+        private ICollection<Group> _groups;
+        public virtual ICollection<Group> groups
+        {
+            get { return _groups; }
+            set { _groups = value; }
+        }
+
+
+        private ICollection<Post> _posts;
+        public ICollection<Post> posts
         {
             get { return _posts; }
             set { _posts = value; }
         }        
 
-        private List<User> _friends;
-        public virtual List<User> friends
+        private ICollection<User> _friends;
+        public virtual ICollection<User> friends
         {
             get { return _friends; }
             set { _friends = value; }
         }
 
-        private List<string> _skills;
-        public List<string> skills
+        private ICollection<string> _skills;
+        public ICollection<string> skills
         {
             get { return _skills; }
             set { _skills = value; }
+        }
+
+
+        public User()
+        {
+            groups = new List<Group>();
+            friends = new List<User>();
+            posts = new List<Post>();
+            skills = new List<string>();
         }
 
         public override string ToString()

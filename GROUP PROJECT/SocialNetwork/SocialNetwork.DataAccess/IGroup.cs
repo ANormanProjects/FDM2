@@ -10,9 +10,9 @@ namespace SocialNetwork.DataAccess
     {
         int groupID { get; set; }
 
-        List<User> usersInGroup { get; set; }
+        ICollection<User> usersInGroup { get; set; }
 
-        List<Post> groupWall { get; set; }
+        ICollection<Post> groupWall { get; set; }
 
         string groupName { get; set; }
 

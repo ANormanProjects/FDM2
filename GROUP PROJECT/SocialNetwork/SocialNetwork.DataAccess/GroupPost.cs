@@ -10,6 +10,8 @@ namespace SocialNetwork.DataAccess
     {
         public Group group { get; set; }
 
+        public GroupPost() : base() { }
+
         public override string ToString()
         {
             return time.ToShortDateString() + "-" + postId + "-" + title + "-" +

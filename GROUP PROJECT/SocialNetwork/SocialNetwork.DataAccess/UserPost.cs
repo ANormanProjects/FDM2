@@ -10,6 +10,8 @@ namespace SocialNetwork.DataAccess
     {
         public User user { get; set; }
 
+        public UserPost() : base() { }
+
         public override string ToString()
         {
             return time.ToShortDateString() + "-" + postId + "-" + title + "-" + 

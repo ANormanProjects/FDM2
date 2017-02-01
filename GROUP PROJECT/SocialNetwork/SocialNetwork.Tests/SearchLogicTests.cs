@@ -26,7 +26,7 @@ namespace SocialNetwork.Tests
             searchLogic = new SearchLogic(postRepo.Object, userRepo.Object);
             user1 = new Mock<User>();
             post1 = new Mock<Post>();
-            users = new List<IUser>(){user1.Object};
+            users = new List<IUser>(){ user1.Object };
             posts = new List<Post>(){ post1.Object };
         }
 
