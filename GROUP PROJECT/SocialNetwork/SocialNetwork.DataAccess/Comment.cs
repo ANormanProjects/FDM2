@@ -51,6 +51,15 @@ namespace SocialNetwork.DataAccess
             get { return _post; }
             set { _post = value; }
         }
+
+        private int _likes;
+
+        public int likes
+        {
+            get { return _likes; }
+            set { _likes = value; }
+        }
+        
         
     }
 }
