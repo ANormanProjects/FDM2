@@ -16,5 +16,7 @@ namespace SocialNetwork.DataAccess
 
         Post post { get; set; }
 
+        int likes { get; set; }
+
     }
 }

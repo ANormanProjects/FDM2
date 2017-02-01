@@ -47,7 +47,7 @@ namespace SocialNetwork.Logic
 
         public void LikeComment(Comment comment)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
