@@ -48,7 +48,12 @@ namespace SocialNetwork.WebUI.Controllers
 
             _userAccountLogic.Register(user);
 
-            return PartialView("_AccountCreated");
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_AccountCreated");
+            }
+            return RedirectToAction("Index", "Home");
+            
         }
 
         // GET: Login
