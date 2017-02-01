@@ -40,7 +40,8 @@ namespace SocialNetwork.Tests
             commentRepo.Setup(x => x.Insert(It.IsAny<Comment>())).Verifiable();
             postRepo.Setup(x => x.Save()).Verifiable();
             commentRepo.Setup(x => x.Save()).Verifiable();
-
+            userRepo.Setup(x => x.GetAll()).Returns(new List<User>{user.Object});
+            postRepo.Setup(x => x.GetAll()).Returns(new List<Post> { post.Object });
             //Act
             commentLogic.addComment("1", user.Object, post.Object);
 
@@ -113,9 +114,45 @@ namespace SocialNetwork.Tests
         public void Test_EntityNotFoundException_IsThrown_WhenEnteredUsernameIsNotInDatabase()
         {
             //Arrange
-            userRepo.Setup(x => x.Search(It.IsAny<Func<User, bool>>())).Returns(new List<User>());
+            userRepo.Setup(x => x.GetAll()).Returns(new List<User>{});
             //Act
+            commentLogic.addComment("Hi", user.Object, post.Object);
+            //Assert
+        }
 
+        [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_EntityNotFoundException_IsThrown_WhenEnteredPostIsNotInDatabase()
+        {
+            //Arrange
+            postRepo.Setup(x => x.GetAll()).Returns(new List<Post>{ });
+            userRepo.Setup(x => x.GetAll()).Returns(new List<User> { user.Object });
+            //Act
+            commentLogic.addComment("Hi", user.Object, post.Object);
+            //Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(StringNotCorrectLengthException))]
+        public void Test_StringNotCorrectLengthException_IsThrown_WhenEnteredCommentDataIsEmpty()
+        {
+            //Arrange
+            postRepo.Setup(x => x.GetAll()).Returns(new List<Post> { post.Object });
+            userRepo.Setup(x => x.GetAll()).Returns(new List<User> { user.Object });
+            //Act
+            commentLogic.addComment("", user.Object, post.Object);
+            //Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(StringNotCorrectLengthException))]
+        public void Test_StringNotCorrectLengthException_IsThrown_WhenEnteredCommentDataIsOver255Characters()
+        {
+            //Arrange
+            postRepo.Setup(x => x.GetAll()).Returns(new List<Post> { post.Object });
+            userRepo.Setup(x => x.GetAll()).Returns(new List<User> { user.Object });
+            //Act
+            commentLogic.addComment("", user.Object, post.Object);
             //Assert
         }
     }
