@@ -2,6 +2,7 @@
 using SocialNetwork.Logic;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -41,19 +42,21 @@ namespace SocialNetwork.WebUI.Controllers
         [HttpPost]
         public ActionResult Register(User user)
         {
-            if(_userAccountLogic == null)
+            if (_userAccountLogic == null)
             {
                 _userAccountLogic = new UserAccountLogic(new Repository<User>());
             }
 
             _userAccountLogic.Register(user);
 
-            if (Request.IsAjaxRequest())
+            if (user.fullName == null|| user.password == null|| user.username == null || user.gender == null)
+            {
+                return PartialView("_FieldNotFilled");
+            }
+            else
             {
                 return PartialView("_AccountCreated");
-            }
-            return RedirectToAction("Index", "Home");
-            
+            }           
         }
 
         // GET: Login
