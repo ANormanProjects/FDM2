@@ -46,17 +46,81 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>"How much code could a code logger log if a code logger could log code?" - Spencer Newton, CIO</p>
-            <p>&copy; @DateTime.Now.Year - DotNetwork</p>
+        </div>
+
+        <footer class="footer-wrapper">
+            <div class="footer-container">
+                <a href="#myPage" title="To Top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                </a>
+                <nav class="nav">
+                    @Html.ActionLink("Home", "Index", "Home")
+                    @Html.ActionLink("FAQ", "FAQ", "Home")
+                    @Html.ActionLink("Careers", "Careers", "Home")
+                    @Html.ActionLink("Contact", "Contact", "Home")
+                </nav>
+                <nav class="share-nav">
+                    <a href="https://twitter.com" target="_blank">
+                        <img src="~/Content/twitter.svg" alt="Twitter">
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="~/Content/facebook.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <img src="~/Content/linkedin.svg" alt="LinkedIn">
+                    </a>
+                    <a href="mailto:contact@budgie.com" target="_blank">
+                        <img src="~/Content/mail.svg" alt="Drop us an email">
+                    </a>
+                </nav>
+                <p>
+                    &copy; @DateTime.Now.Year - dotNetwork is a company registered in London.
+                </p>
+            </div>
         </footer>
-    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Styles.Render("~/Content/bootstrap.css")
     @Styles.Render("~/Content/custom.css")
     @RenderSection("scripts", required: false)
+
+    <script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+    </script>
+
 </body>
 </html>
