@@ -23,8 +23,6 @@ namespace SocialNetwork.WebUI.Controllers
         [HttpGet]
         public ActionResult Wall()
         {
-           
-
             return View("Wall");
         }
 
