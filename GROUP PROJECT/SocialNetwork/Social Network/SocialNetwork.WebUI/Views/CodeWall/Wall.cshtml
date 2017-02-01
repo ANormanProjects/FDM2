@@ -1,0 +1,17 @@
+﻿@model SocialNetwork.DataAccess.Post
+@{
+    ViewBag.Title = "Code Wall";
+}
+
+<h1>The Code Wall</h1>
+<h2>Create new post</h2>
+<div class="form-group">
+    <span>@Html.TextAreaFor(m => m.content, new { @class = "form-control", @style = "min-width: 100%;", @placeholder = "Enter your code/text here..." })</span>
+</div>
+
+<h2>Recent Posts</h2>
+
+
+
+
+
