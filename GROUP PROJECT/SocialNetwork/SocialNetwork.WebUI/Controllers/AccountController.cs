@@ -14,9 +14,13 @@ namespace SocialNetwork.WebUI.Controllers
     {
         SocialNetworkDataModel socNetDataModel = new SocialNetworkDataModel();
 
+        UserAccountLogic userAccountLogic;
+        Repository<User> userRepository;
+
         public AccountController()
         {
-           
+            userAccountLogic = new UserAccountLogic(userRepository);
+            userRepository = new Repository<User>();
         }
 
         UserAccountLogic _userAccountLogic;
@@ -79,7 +83,7 @@ namespace SocialNetwork.WebUI.Controllers
 
 
                     bool userValid = socNetDataModel.users.Any(user => user.username == username && user.password == password);
-
+                    //bool userValid = userAccountLogic.Login(username, password);
                     // User found in the database
                     if (userValid)
                     {
@@ -92,7 +96,7 @@ namespace SocialNetwork.WebUI.Controllers
                         }
                         else
                         {
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("ProfilePage");
                         }
                     }
                     else

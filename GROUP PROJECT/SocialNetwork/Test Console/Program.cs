@@ -46,32 +46,39 @@ namespace Test_Console
 
             //commentLogic.addComment("hello", userRepo.GetAll().ToList()[0], postRepo.GetAll().ToList()[0]);
 
-            List<Post> posts = postRepo.GetAll();
+            //List<Post> posts = postRepo.GetAll();
 
-            //commentRepo.Insert(new Comment("haha lmao Bishan is a player! rofl lol", userRepo.GetAll()[0], posts[0]));
-            User user = userRepo.First(u => true);
-            Post post = posts[0];
-            Comment test = new Comment("lol", user, post);
-            commentRepo.Insert(test);
+            ////commentRepo.Insert(new Comment("haha lmao Bishan is a player! rofl lol", userRepo.GetAll()[0], posts[0]));
+            //User user = userRepo.First(u => true);
+            //Post post = posts[0];
+            //Comment test = new Comment("lol", user, post);
+            //commentRepo.Insert(test);
 
-            CommentLogic commentLogic = new CommentLogic(postRepo, commentRepo, userRepo);
+            //CommentLogic commentLogic = new CommentLogic(postRepo, commentRepo, userRepo);
 
-            commentLogic.EditComment(commentRepo.GetAll()[1], "Lololol I'm glad you find that shh amusing");
+            //commentLogic.EditComment(commentRepo.GetAll()[1], "Lololol I'm glad you find that shh amusing");
 
-            foreach (Comment comment in posts[0].comments)
-            {
-                System.Console.WriteLine(comment.content);
-            }
+            //foreach (Comment comment in posts[0].comments)
+            //{
+            //    System.Console.WriteLine(comment.content);
+            //}
 
-            foreach (Comment comment in commentRepo.GetAll())
-            {
-                System.Console.WriteLine(comment.content);
-            }
+            //foreach (Comment comment in commentRepo.GetAll())
+            //{
+            //    System.Console.WriteLine(comment.content);
+            //}
 
+
+            //Console.ReadLine();
+
+
+
+            bool val = uAccLogic.Login("mreid", "password");
+
+            Console.WriteLine(val);
 
             Console.ReadLine();
 
-            
         }
     }
 }
