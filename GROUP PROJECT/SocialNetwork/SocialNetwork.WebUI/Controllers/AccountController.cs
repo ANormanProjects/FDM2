@@ -17,13 +17,6 @@ namespace SocialNetwork.WebUI.Controllers
            
         }
 
-
-
-        //public AccountController()
-        //{
-
-        //}
-
         // GET: Profile
         public ActionResult ProfilePage()
         {
