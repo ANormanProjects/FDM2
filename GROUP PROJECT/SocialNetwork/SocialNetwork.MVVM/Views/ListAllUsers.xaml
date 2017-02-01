@@ -4,13 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:SocialNetwork.MVVM.ViewModel"
+             xmlns:local="clr-namespace:SocialNetwork.MVVM"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    
-    <UserControl.DataContext>
-        <vm:ListAllUsersViewModel/>
-    </UserControl.DataContext>
-    
+
+    <StackPanel>
+
+        <ListBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="Username" Margin="10"/>
+                <TextBlock Grid.Column="1" Text="Full Name" Margin="10"/>
+                <TextBlock Grid.Column="2" Text="Gender" Margin="10"/>
+
+            </Grid>
+        </ListBox>
 
         <ListBox ItemsSource="{Binding user}" Height="500">
             <ListBox.ItemTemplate>
@@ -19,17 +32,19 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="100"/>
                             <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="100"/>
-                    </Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="50"/>
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding username}" Margin="10"/>
                         <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding fullName}" Margin="10"/>
-                    <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding gender}" Margin="10"/>
-                </Grid>
+                        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding gender}" Margin="10"/>
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
+    </StackPanel>
 
 </UserControl>
