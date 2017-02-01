@@ -18,6 +18,7 @@ namespace SocialNetwork.Tests
         public void Setup()
         {          
             userRepo = new Mock<Repository<User>>();
+            //userRepo.Setup(x => x.First(It.IsAny<Func<IUser, bool>>()));
             userAccountLogic = new UserAccountLogic(userRepo.Object);                       
         }
 
@@ -75,6 +76,8 @@ namespace SocialNetwork.Tests
 
             //assert
             userRepo.Verify(q => q.First(u => u.username == username), Times.Once);
+
+
         }
 
         
