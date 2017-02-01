@@ -19,7 +19,9 @@ namespace SocialNetwork.Tests
         public void Setup()
         {          
             userRepo = new Mock<Repository<User>>();
-            
+            commentRepo = new Mock<Repository<Comment>>();
+            postRepo = new Mock<Repository<Post>>();
+
             userAccountLogic1 = new UserAccountLogic(userRepo.Object, postRepo.Object, commentRepo.Object);
             userAccountLogic = new UserAccountLogic(userRepo.Object);     
         }
