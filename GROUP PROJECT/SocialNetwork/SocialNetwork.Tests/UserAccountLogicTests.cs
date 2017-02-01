@@ -22,8 +22,61 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        public void TestMethod1()
+        [ExpectedException(typeof(EmptyInputException))]
+        public void Test_LoginMethod_ThrowsExceptionIfInputUsernameIsNull()
         {
+            //arrange
+            string username = null;
+            string password = "password123";
+
+            //act
+            bool r = userAccountLogic.Login(username, password);
+
+            //assert
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(EmptyInputException))]
+        public void Test_LoginMethod_ThrowsExceptionIfInputPasswordIsNull()
+        {
+            //arrange
+            string username = "username";
+            string password = null;
+
+            //act
+            bool r = userAccountLogic.Login(username, password);
+
+            //assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InputExceedsSpecifiedLimitException))]
+        public void Test_LoginMethod_ThrowsInputExceedsExceptionIfInputPasswordExceedsLimit()
+        {
+            //arrange
+            string username = "usernameeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
+            string password = "pass";
+
+            //act
+            bool r = userAccountLogic.Login(username, password);
+
+            //assert
+        }
+
+        [TestMethod]
+        public void Test_LoginMethod_CallsLoginDetailVerificationMethodGivenCorrectForm()
+        {
+            //arrange
+            string username = "username";
+            string password = "password";
+
+            //act
+            bool r = userAccountLogic.Login(username, password);
+
+            //assert
+            userRepo.Verify(q => q.First(u => u.username == username), Times.Once);
+        }
+
+        
     }
 }
