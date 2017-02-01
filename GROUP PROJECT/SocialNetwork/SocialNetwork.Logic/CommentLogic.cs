@@ -54,18 +54,39 @@ namespace SocialNetwork.Logic
 
         public void DeleteComment(Comment comment)
         {
-            Post post = comment.post;
-            post.comments.Remove(comment);
-            postRepo.Save();
+            if (commentRepo.GetAll().Contains(comment))
+            {
+                Post post = comment.post;
+                post.comments.Remove(comment);
+                postRepo.Save();
 
-            commentRepo.Remove(comment);
-            commentRepo.Save();
+                commentRepo.Remove(comment);
+                commentRepo.Save();
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
         }
 
         public void EditComment(Comment comment, string newText)
         {
-            comment.content = newText;
-            commentRepo.Save();
+            if (commentRepo.GetAll().Contains(comment))
+            {
+                if (newText.Length > 0 && newText.Length < 255)
+                {
+                    comment.content = newText;
+                    commentRepo.Save();
+                }
+                else
+                {
+                    throw new StringNotCorrectLengthException();
+                }
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
         }
 
         public void LikeComment(Comment comment)

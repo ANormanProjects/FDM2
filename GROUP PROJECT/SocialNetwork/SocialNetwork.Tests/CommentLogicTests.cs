@@ -134,7 +134,7 @@ namespace SocialNetwork.Tests
 
         [TestMethod]
         [ExpectedException(typeof(StringNotCorrectLengthException))]
-        public void Test_StringNotCorrectLengthException_IsThrown_WhenEnteredCommentDataIsEmpty()
+        public void Test_StringNotCorrectLengthException_IsThrown_WhenEnteredCommentDataIsEmpty_WhenAddCommentMethodRun()
         {
             //Arrange
             postRepo.Setup(x => x.GetAll()).Returns(new List<Post> { post.Object });
@@ -146,13 +146,61 @@ namespace SocialNetwork.Tests
 
         [TestMethod]
         [ExpectedException(typeof(StringNotCorrectLengthException))]
-        public void Test_StringNotCorrectLengthException_IsThrown_WhenEnteredCommentDataIsOver255Characters()
+        public void Test_StringNotCorrectLengthException_IsThrown_WhenEnteredCommentDataIsOver255Characters_WhenAddCommentMethodRun()
         {
             //Arrange
             postRepo.Setup(x => x.GetAll()).Returns(new List<Post> { post.Object });
             userRepo.Setup(x => x.GetAll()).Returns(new List<User> { user.Object });
             //Act
-            commentLogic.addComment("", user.Object, post.Object);
+            commentLogic.addComment("12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890", user.Object, post.Object);
+            //Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_EntityNotFoundException_IsThrown_WhenEnteredCommentIsNotInDatabase_WhenDeleteCommentMethodRun()
+        {
+            //Arrange
+            commentRepo.Setup(x => x.GetAll()).Returns(new List<Comment>());
+            Mock<Comment> comment = new Mock<Comment>();
+            //Act
+            commentLogic.DeleteComment(comment.Object);
+            //Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_EntityNotFoundException_IsThrown_WhenEnteredCommentIsNotInDatabase_WhenEditCommentMethodRun()
+        {
+            //Arrange
+            commentRepo.Setup(x => x.GetAll()).Returns(new List<Comment>());
+            Mock<Comment> comment = new Mock<Comment>();
+            //Act
+            commentLogic.EditComment(comment.Object, "2");
+            //Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(StringNotCorrectLengthException))]
+        public void Test_StringNotCorrectLengthException_IsThrown_WhenEnteredCommentDataIsEmpty_WhenEditCommentMethodRun()
+        {
+            //Arrange
+            Mock<Comment> comment = new Mock<Comment>();
+            commentRepo.Setup(x => x.GetAll()).Returns(new List<Comment> { comment.Object });
+            //Act
+            commentLogic.EditComment(comment.Object, "");
+            //Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(StringNotCorrectLengthException))]
+        public void Test_StringNotCorrectLengthException_IsThrown_WhenEnteredCommentDataIsOver255Characters_WhenEditCommentMethodRun()
+        {
+            //Arrange
+            Mock<Comment> comment = new Mock<Comment>();
+            commentRepo.Setup(x => x.GetAll()).Returns(new List<Comment> { comment.Object });
+            //Act
+            commentLogic.EditComment(comment.Object, "12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890");
             //Assert
         }
     }
