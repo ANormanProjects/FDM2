@@ -12,7 +12,8 @@ namespace SocialNetwork.Tests
     {
         Mock<Repository<Post>> postRepo; 
         Mock<Repository<User>> userRepo; 
-        PostLogic postLogic; 
+        PostLogic postLogic;
+        Mock<CommentLogic> commentLogic; 
         Mock<User> user;
         Mock<User> friend;
         User anotherUser;
@@ -29,6 +30,7 @@ namespace SocialNetwork.Tests
             userRepo = new Mock<Repository<User>>();
             commentRepo = new Mock<Repository<Comment>>();
             postLogic = new PostLogic(postRepo.Object, userRepo.Object, commentRepo.Object);
+            commentLogic = new Mock<CommentLogic>(postRepo.Object, commentRepo.Object, userRepo.Object);
             user = new Mock<User>();
             friend = new Mock<User>();
             anotherUser = new User();
@@ -67,6 +69,22 @@ namespace SocialNetwork.Tests
 
             //Assert
             postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
+        }
+
+        [TestMethod]
+        public void Test_Reply_CallsAddComment()
+        {
+            //Arrange
+            PostLogic postLogic2 = new PostLogic(commentLogic.Object);
+            string userInput = "bla";
+            commentLogic.Setup(c => c.addComment(userInput, user.Object, post.Object)).Verifiable();
+
+            //Act
+            postLogic2.Reply(post.Object, userInput, user.Object);
+           
+
+            //Assert
+            commentLogic.Verify(c => c.addComment(userInput, user.Object, post.Object), Times.Once);
         }
 
         //[TestMethod]
