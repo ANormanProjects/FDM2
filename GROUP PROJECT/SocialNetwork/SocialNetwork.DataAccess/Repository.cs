@@ -43,7 +43,7 @@ namespace SocialNetwork.DataAccess
 
         public Repository()
         {
-            
+            context = new SocialNetworkDataModel();
         }
 
         public Repository(DbContext context)
