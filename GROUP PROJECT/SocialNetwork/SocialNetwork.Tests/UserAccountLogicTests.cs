@@ -155,6 +155,21 @@ namespace SocialNetwork.Tests
             Assert.AreEqual(false, r);
 
         }
-        
+
+        [TestMethod]
+        public void Test_RegisterUser_AddsUserToDbWhenCalledAndGivenUser() 
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+            user.Setup(id => id.userId).Returns(109);
+
+            Mock<User> friend = new Mock<User>();
+            user.Setup(id => id.userId).Returns(100);
+
+            //act
+            userAccountLogic.AddFriend(user.Object.userId, friend.Object.userId);
+            
+            //assert
+        }
     }
 }
