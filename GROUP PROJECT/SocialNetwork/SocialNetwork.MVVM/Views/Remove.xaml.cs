@@ -24,5 +24,10 @@ namespace SocialNetwork.MVVM.Views
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            username.Text = String.Empty;
+        }
     }
 }

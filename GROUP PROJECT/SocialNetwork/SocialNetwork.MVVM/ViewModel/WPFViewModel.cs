@@ -31,8 +31,8 @@ namespace SocialNetwork.MVVM.ViewModel
         public virtual int userId
         {
             get { return _userId; }
-            set 
-            { 
+            set
+            {
                 _userId = value;
                 OnPropertyChanged("userId");
             }
@@ -42,7 +42,7 @@ namespace SocialNetwork.MVVM.ViewModel
         public string username
         {
             get { return _username; }
-            set 
+            set
             {
                 _username = value;
                 OnPropertyChanged("username");
@@ -53,8 +53,8 @@ namespace SocialNetwork.MVVM.ViewModel
         public string password
         {
             get { return _password; }
-            set 
-            { 
+            set
+            {
                 _password = value;
                 OnPropertyChanged("password");
             }
@@ -64,8 +64,8 @@ namespace SocialNetwork.MVVM.ViewModel
         public string fullName
         {
             get { return _fullName; }
-            set 
-            { 
+            set
+            {
                 _fullName = value;
                 OnPropertyChanged("fullname");
             }
@@ -75,8 +75,8 @@ namespace SocialNetwork.MVVM.ViewModel
         public string gender
         {
             get { return _gender; }
-            set 
-            { 
+            set
+            {
                 _gender = value;
                 OnPropertyChanged("gender");
             }
@@ -86,8 +86,8 @@ namespace SocialNetwork.MVVM.ViewModel
         public string role
         {
             get { return _role; }
-            set 
-            { 
+            set
+            {
                 _role = value;
                 OnPropertyChanged("role");
             }
@@ -166,7 +166,7 @@ namespace SocialNetwork.MVVM.ViewModel
 
         public void ListAllUsers()
         {
-            userAccLogic.GetAllUserAccounts();
+            user = new ObservableCollection<User>(userAccLogic.GetAllUserAccounts());
         }
 
         public void Add()
@@ -180,27 +180,40 @@ namespace SocialNetwork.MVVM.ViewModel
             newUser.password = password;
 
             userAccLogic.Register(newUser);
+            ListAllUsers();
         }
 
         public void Edit()
         {
-            User editUser = new User();
+            foreach (User user in userAccLogic.GetAllUserAccounts())
+            {
+                if (username == user.username)
+                {
+                    string newName = fullName;
+                    string newGender = gender;
+                    string newRole = role;
+                    string newPassword = password;
 
-            editUser.username = username;
-
-            string newName = fullName;
-            string newGender = gender;
-            string newRole = role;
-            string newPassword = password;
-
-            userAccLogic.EditUser(editUser, newName, newGender, newRole, newPassword);
+                    userAccLogic.EditUser(user, newName, newGender, newRole, newPassword);
+                    return;
+                }
+            }
+            throw new EntityNotFoundException();
         }
 
         public void Remove()
         {
-
+            foreach (User user in userAccLogic.GetAllUserAccounts())
+            {
+                if (username == user.username)
+                {
+                    userAccLogic.RemoveUser(user);
+                    return;
+                }                
+            }
+            throw new EntityNotFoundException();
         }
-       
+
 
     }
 }

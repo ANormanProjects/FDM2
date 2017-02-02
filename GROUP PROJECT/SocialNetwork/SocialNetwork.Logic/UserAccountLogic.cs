@@ -110,7 +110,6 @@ namespace SocialNetwork.Logic
                 userToEdit.role = newRole;
                 userToEdit.password = newPassword;
                 _userRepository.Save();
-
             }
         }
 
@@ -118,6 +117,7 @@ namespace SocialNetwork.Logic
         {
             if(_userRepository.GetAll().Contains(userToRemove))
             {
+
                 _userRepository.Remove(userToRemove);
                 _userRepository.Save();
             }

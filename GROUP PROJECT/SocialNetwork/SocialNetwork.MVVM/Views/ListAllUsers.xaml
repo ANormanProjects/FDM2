@@ -14,7 +14,24 @@
 
 
     <ScrollViewer HorizontalScrollBarVisibility="Auto">      
-        <ListBox Name="ListOfAllUsers" HorizontalContentAlignment="Stretch" ItemsSource="{Binding user}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock FontSize="20" Margin="9,10,51,21" Grid.RowSpan="2">List of All Users</TextBlock>
+            <Button Grid.Row="0" Height="40" Width="40" Style="{DynamicResource MetroCircleButtonStyle}" Command="{Binding ListAllUsersCommand}">
+                <Rectangle Width="15"
+                           Height="15"
+                           Fill="{Binding Path=Foreground, 
+                    RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill"
+                                     Visual="{DynamicResource appbar_refresh}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
+            <ListBox Name="ListOfAllUsers" HorizontalContentAlignment="Stretch" ItemsSource="{Binding user}" SelectedItem="{Binding SelectedUser}" Grid.Row="1">
             <ListBox.Template>
                 <ControlTemplate>
                     <DockPanel LastChildFill="True">
@@ -59,5 +76,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
+        </Grid>
     </ScrollViewer>
 </UserControl>
