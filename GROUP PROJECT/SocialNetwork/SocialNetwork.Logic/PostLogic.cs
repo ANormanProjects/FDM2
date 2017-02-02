@@ -12,15 +12,17 @@ namespace SocialNetwork.Logic
     {
         private Repository<Post> _postRepository;
         private Repository<User> _userRepository;
+        private Repository<Group> _groupRepository;
         private Repository<Comment> _commentRepository;
         CommentLogic commentLogic;
 
         // String Restrictions (number of characters)
 
-        public PostLogic(Repository<Post> postRepository, Repository<User> userRepository, Repository<Comment> commentRepository)
+        public PostLogic(Repository<Post> postRepository, Repository<User> userRepository, Repository<Group> groupRepository ,Repository<Comment> commentRepository)
         {
             _postRepository = postRepository;
             _userRepository = userRepository;
+            _groupRepository = groupRepository;
             _commentRepository = commentRepository;
             commentLogic = new CommentLogic(_postRepository, _commentRepository, _userRepository);
         }
@@ -47,15 +49,22 @@ namespace SocialNetwork.Logic
         /// <param name="content"></param>
         public void WriteGroupPost(int id, string title, string language, string code, string content, Group group)
         {
+            if (_groupRepository.GetAll().Contains(group))
+            {
+                GroupPost postToWrite = new GroupPost();
+                postToWrite.title = title;
+                postToWrite.language = language;
+                postToWrite.code = code;
+                postToWrite.content = content;
+                postToWrite.group = group;
 
-            GroupPost postToWrite = new GroupPost();
-            postToWrite.title = title;
-            postToWrite.language = language;
-            postToWrite.code = code;
-            postToWrite.content = content;
-            postToWrite.group = group;
-
-            _postRepository.Insert(postToWrite);
+                _postRepository.Insert(postToWrite);
+            }
+            else
+            {
+                //exception to throw - might need to add new exception 
+                throw new EntityNotFoundException();
+            }
 
             _postRepository.Save();
         }
@@ -70,15 +79,22 @@ namespace SocialNetwork.Logic
         /// <param name="content"></param>
         public void WriteUserPost(int id, string title, string language, string code, string content, User user)
         {
+            if (_userRepository.GetAll().Contains(user))
+            {
+                UserPost postToWrite = new UserPost();
+                postToWrite.title = title;
+                postToWrite.language = language;
+                postToWrite.code = code;
+                postToWrite.content = content;
+                postToWrite.user = user;
 
-            UserPost postToWrite = new UserPost();
-            postToWrite.title = title;
-            postToWrite.language = language;
-            postToWrite.code = code;
-            postToWrite.content = content;
-            postToWrite.user = user;
-
-            _postRepository.Insert(postToWrite);
+                _postRepository.Insert(postToWrite);
+            }
+            else
+            {
+                //exception to throw - might need to add new exception 
+                throw new EntityNotFoundException();
+            }
 
             _postRepository.Save();
         }
@@ -92,7 +108,7 @@ namespace SocialNetwork.Logic
         {
             List<Post> timelinePosts = new List<Post>();
 
-            if (user != null)
+            if (_userRepository.GetAll().Contains(user))
             {
                 ICollection<Post> userPToAdd = user.posts;
 
@@ -112,7 +128,7 @@ namespace SocialNetwork.Logic
                     }
                 }
             }
-            if (user == null) 
+            else
             {
                 //exception to throw - might need to add new exception 
                 throw new EntityNotFoundException();
@@ -124,8 +140,22 @@ namespace SocialNetwork.Logic
 
         public void Reply(Post _post, string UserInput, User _user)
         {
-
-            commentLogic.AddComment(UserInput, _user, _post);
+            if (_postRepository.GetAll().Contains(_post))
+            {
+                if (_userRepository.GetAll().Contains(_user))
+                {
+                    commentLogic.AddComment(UserInput, _user, _post);
+                }
+                else
+                {
+                    throw new EntityNotFoundException();
+                }
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
+                
         }
 
         public void LikePost(Post _post)
@@ -135,12 +165,10 @@ namespace SocialNetwork.Logic
             _postRepository.Save();
         }
 
-        public void SharePost(Post _post)
-        {
-            
-        }
-
-
+        //public void SharePost(Post _post, User user)
+        //{
+        //    WriteUserPost(_post.postId, _post.title, _post.language, _post.code, _post.content, user);
+        //}
     }
 
 }
