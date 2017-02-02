@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Cabin|Neuton:700|Nunito|Work+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Neuton:700|Nunito|VT323|Work+Sans" rel="stylesheet">
     <title>@ViewBag.Title - dotNetwork</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <link href="https://fonts.googleapis.com/css?family=Cabin|Neuton:700|Nunito|Work+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Neuton:700|Nunito|VT323|Work+Sans" rel="stylesheet">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -27,6 +27,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
+                    <li style="font-family: 'VT323', monospace; font-size: 33px; padding-right: 40px;">dotNetwork</li>
                     <li>@Html.ActionLink("Home", "Index", "Home", routeValues: null, htmlAttributes: new { id = "home", @style = "color:#ffffff;" })</li>
                     <li>@Html.ActionLink("Code Wall", "Wall", "CodeWall", routeValues: null, htmlAttributes: new { id = "codeWall", @style = "color:#ffffff;" })</li>
                     <li>@Html.ActionLink("Your Profile", "ProfilePage", "Account", routeValues: null, htmlAttributes: new { id = "profile", @style = "color:#ffffff;" })</li>
