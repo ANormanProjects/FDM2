@@ -52,7 +52,7 @@ namespace SocialNetwork.Logic
         /// <param name="language"></param>
         /// <param name="code"></param>
         /// <param name="content"></param>
-        public void WriteGroupPost(int id, string title, string language, string code, string content, Group group)
+        public virtual void WriteGroupPost(int id, string title, string language, string code, string content, Group group)
         {
             if (_groupRepository.GetAll().Contains(group))
             {

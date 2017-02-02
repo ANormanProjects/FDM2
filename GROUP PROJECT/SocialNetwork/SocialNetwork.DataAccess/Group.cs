@@ -36,8 +36,8 @@ namespace SocialNetwork.DataAccess
             set { _usersInGroup = value; }
         }
 
-        private ICollection<Post> _groupWall;
-        public ICollection<Post> groupWall
+        private ICollection<GroupPost> _groupWall;
+        public virtual ICollection<GroupPost> groupWall
         {
             get { return _groupWall; }
             set { _groupWall = value; }
@@ -47,7 +47,7 @@ namespace SocialNetwork.DataAccess
         public Group()
         {
             usersInGroup = new List<User>();
-            groupWall = new List<Post>();
+            groupWall = new List<GroupPost>();
         }
 
         public override string ToString()

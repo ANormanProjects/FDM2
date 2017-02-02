@@ -26,9 +26,10 @@ namespace SocialNetwork.Logic
             postLogic = new PostLogic(postRepo, commentRepo);
         }
 
-        public GroupAccountLogic(PostLogic PostLogic)
+        public GroupAccountLogic(PostLogic PostLogic, Repository<Group> groupRepository)
         {
             postLogic = PostLogic;
+            groupRepo = groupRepository;
         }
 
         public void AddUserToGroup(Group group, User user)

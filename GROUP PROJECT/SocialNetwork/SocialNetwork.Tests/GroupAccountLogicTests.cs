@@ -114,7 +114,7 @@ namespace SocialNetwork.Tests
 
         [TestMethod]
         [ExpectedException(typeof(EntityNotFoundException))]
-        public void Test_EntityNotFoundExceptionThrown_WhenUserNotInDatabase()
+        public void Test_RemoveUserFromGroup_EntityNotFoundExceptionThrown_WhenUserNotInDatabase()
         {
             //Arrange
             groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>() { group.Object });
@@ -126,7 +126,7 @@ namespace SocialNetwork.Tests
 
         [TestMethod]
         [ExpectedException(typeof(EntityNotFoundException))]
-        public void Test_EntityNotFoundExceptionThrown_WhenGroupNotInDatabase()
+        public void Test_RemoveUserFromGroup_EntityNotFoundExceptionThrown_WhenGroupNotInDatabase()
         {
             //Arrange
             groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>());
@@ -135,5 +135,94 @@ namespace SocialNetwork.Tests
             //Act
             groupLogic.RemoveUserFromGroup(group.Object, user.Object);
         }
+
+        [TestMethod]
+        public void Test_GetAllUsersInGroup_ReturnsListOfUsersInGroup_WhenGroupIsInDatabase()
+        {
+            //Arrange
+            groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>() { group.Object });
+            group.Setup(c => c.usersInGroup).Returns(new List<User>() { user.Object });
+
+            List<User> expected = new List<User>() { user.Object };
+
+            //Act
+            List<User> actual = groupLogic.GetAllUsersInGroup(group.Object);
+
+            //Assert
+            CollectionAssert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_GetAllUsersInGroup_EntityNotFoundExceptionThrown_WhenGroupNotInDatabase()
+        {
+            //Arrange
+            groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>());
+            
+            //Act
+            groupLogic.GetAllUsersInGroup(group.Object);
+        }
+
+        [TestMethod]
+        public void Test_WritePost_RunsWritePostMethodInPostLogic_WithCorrectParameters()
+        {
+            //Arrange
+            groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>() { group.Object });
+
+            Mock<PostLogic> postLogic = new Mock<PostLogic>(postRepo.Object, commentRepo.Object);
+            GroupAccountLogic groupLogic1 = new GroupAccountLogic(postLogic.Object, groupRepo.Object);
+
+            postLogic.Setup(c => c.WriteGroupPost(1, "2", "3", "4", "5", group.Object)).Verifiable();
+
+            //Act
+            groupLogic1.WritePost(1, "2", "3", "4", "5", group.Object);
+
+            //Assert
+
+            postLogic.Verify(c => c.WriteGroupPost(1, "2", "3", "4", "5", group.Object));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_WritePost_EntityNotFoundExceptionThrown_WhenGroupNotInDatabase()
+        {
+            //Arrange
+            groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>());
+
+            //Act
+            groupLogic.WritePost(1, "2", "3", "4", "5", group.Object);
+        }
+
+        [TestMethod]
+        public void Test_GetAllPostsInGroup_RunsRepositoryGetAllMethod_WhenCalled()
+        {
+            //Arrange
+            Mock<GroupPost> groupPost = new Mock<GroupPost>();
+
+            groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>() { group.Object });
+            group.Setup(c => c.groupWall).Returns(new List<GroupPost>() { groupPost.Object });
+
+            var expected = new List<GroupPost>() { groupPost.Object };
+            
+            //Act
+            var actual = groupLogic.GetAllPostsInGroup(group.Object);
+            
+            //Assert
+            CollectionAssert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_GetAllPostsInGroup_EntityNotFoundExceptionThrown_WhenGroupNotInDatabase()
+        {
+            //Arrange
+            groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>());
+
+            //Act
+            groupLogic.GetAllPostsInGroup(group.Object);
+        }
+
     }
 }
