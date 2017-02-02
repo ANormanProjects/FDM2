@@ -66,6 +66,7 @@ html {
 body {
     margin: 0;
     margin-bottom: 300px;
+
 }
 
 a:focus {
@@ -506,7 +507,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Cabin', sans-serif;
     font-weight: 500;
     line-height: 1.1;
 }
@@ -4221,6 +4222,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     min-height: 50px;
     margin-bottom: 20px;
     border: 1px solid transparent;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
     .navbar:before,
@@ -4448,6 +4450,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-nav {
     margin: 7.5px -15px;
+    font-size: 20px;
+
 }
 
     .navbar-nav > li > a {
@@ -4722,7 +4726,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse {
     background-color: #255366;
-    border-color: #080808;
+    font-family: 'Nunito', sans-serif;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    color: white;
 }
 
     .navbar-inverse .navbar-brand {
@@ -5154,11 +5160,26 @@ a.list-group-item.active > .badge,
 .jumbotron {
     padding: 30px;
     margin-bottom: 30px;
+    font-family: 'Nunito', sans-serif;
     font-size: 21px;
     font-weight: 200;
     line-height: 2.1428571435;
     color: inherit;
     background-color: #eeeeee;
+}
+
+.jumbotron2 {
+    padding: 30px;
+    margin-bottom: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 2.1428571435;
+    color: white;
+    background-color: #eeeeee;
+    background-image: url("../Content/codecomputer.jpg");
+    background-size: 100%;
+    border-radius: 20px 20px 20px 20px;
 }
 
     .jumbotron h1 {
