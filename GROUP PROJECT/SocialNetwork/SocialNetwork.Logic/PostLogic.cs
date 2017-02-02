@@ -34,10 +34,15 @@ namespace SocialNetwork.Logic
             commentLogic = new CommentLogic(_postRepository, _commentRepository, _userRepository);
         }
 
-        public PostLogic(CommentLogic CommentLogic)
+        
+
+        public PostLogic(CommentLogic CommentLogic, Repository<Post> postRepository, Repository<User> userRepository)
         {
+            _postRepository = postRepository;
             commentLogic = CommentLogic;
+            _userRepository = userRepository;
         }
+
 
         /// <summary>
         /// Adds a Group Post object to the Repository after checking the arguments are valid

@@ -17,6 +17,7 @@ namespace SocialNetwork.Tests
         Mock<CommentLogic> commentLogic; 
         Mock<User> user;
         Mock<User> friend;
+        Mock<Group> group;
         User anotherUser;
         Mock<UserPost> post;
         Comment userInput;
@@ -35,51 +36,38 @@ namespace SocialNetwork.Tests
             commentLogic = new Mock<CommentLogic>(postRepo.Object, commentRepo.Object, userRepo.Object);
             user = new Mock<User>();
             friend = new Mock<User>();
+            group = new Mock<Group>();
             anotherUser = new User();
             post = new Mock<UserPost>();
             userInput = new Comment();
             expectedPosts = new List<Post>();
             listOfComments = new List<Comment>();
-
-            postRepo.Setup(x => x.Insert(It.IsAny<Post>())).Verifiable();
-            user.Setup(f => f.friends).Returns(new List<User>());
-            postRepo.Setup(x => x.GetAll()).Returns(new List<Post>());
         }
 
         [TestMethod]
         public void Test_WriteGroupPost_RunsAddRepositoryMethodIfUserIsNotNull()
         {
             //Arrange
-            
+            postRepo.Setup(x => x.Insert(It.IsAny<Post>())).Verifiable();
+            postRepo.Setup(x => x.GetAll()).Returns(new List<Post>() { post.Object });
+            groupRepo.Setup(x => x.GetAll()).Returns(new List<Group>() { group.Object });
 
             //Act
-            postLogic.WriteGroupPost(1, "a", "b", "c", "d", new Mock<Group>().Object);
-
-            //Assert
-            postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(EntityNotFoundException))]
-        public void Test_WriteGroupPost_RunsAddRepositoryMethodIfGroupIsNull()
-        {
-            //Arrange
-            Group group = new Group();
-            group = null;
-
-            //Act
-            postLogic.WriteGroupPost(1, "a", "b", "c", "d", group);
+            postLogic.WriteGroupPost(1, "a", "b", "c", "d", group.Object);
 
             //Assert
             postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
         }
 
         
+        
         [TestMethod]
         public void Test_WriteUserPost_RunsAddUsesInsertMethod()
         {
             //Arrange
-
+            postRepo.Setup(x => x.Insert(It.IsAny<Post>())).Verifiable();
+            postRepo.Setup(x => x.GetAll()).Returns(new List<Post>() { post.Object });
+            userRepo.Setup(x => x.GetAll()).Returns(new List<User>() { user.Object });
 
             //Act
             postLogic.WriteUserPost(1, "a", "b", "c", "d", user.Object);
@@ -110,6 +98,8 @@ namespace SocialNetwork.Tests
             List<Post> userPosts = new List<Post>();
             userPosts.Add(post.Object);
             user.SetupGet(u => u.posts).Returns(userPosts);
+            user.Setup(f => f.friends).Returns(new List<User>());
+            userRepo.Setup(x => x.GetAll()).Returns(new List<User>() { user.Object });
 
             //Act
             List<Post> actual = postLogic.ViewTimeline(user.Object);
@@ -134,11 +124,12 @@ namespace SocialNetwork.Tests
 
             userFriends.Add(friend.Object);
             userFriendsPosts.Add(post.Object);
-
+            userRepo.Setup(x => x.GetAll()).Returns(new List<User>() { user.Object });
             user.SetupGet(u => u.posts).Returns(userPosts);
             user.SetupGet(u => u.friends).Returns(userFriends);
             friend.SetupGet(f => f.posts).Returns(userFriendsPosts);
-            
+                      
+
             //Act
 
             List<Post> actual = postLogic.ViewTimeline(user.Object);
@@ -148,30 +139,18 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(EntityNotFoundException))]
-        public void Test_ViewTimeline_ReturnsAnExceptionMessageIfUserIsNull()
-        {
-            //Arrange
-            anotherUser = null;
-
-            //Act
-            List<Post> actual = postLogic.ViewTimeline(anotherUser);
-
-            //Assert
-            
-        }
-
-        [TestMethod]
         public void Test_Reply_CallsAddComment()
         {
             //Arrange
-            PostLogic postLogic2 = new PostLogic(commentLogic.Object);
             string userInput = "bla";
             commentLogic.Setup(c => c.AddComment(userInput, user.Object, post.Object)).Verifiable();
+            userRepo.Setup(x => x.GetAll()).Returns(new List<User>() { user.Object });
+            postRepo.Setup(x => x.GetAll()).Returns(new List<Post>() { post.Object });
 
+            PostLogic postLogic2 = new PostLogic(commentLogic.Object, postRepo.Object, userRepo.Object);
+            
             //Act
             postLogic2.Reply(post.Object, userInput, user.Object);
-
 
             //Assert
             commentLogic.Verify(c => c.AddComment(userInput, user.Object, post.Object), Times.Once);
