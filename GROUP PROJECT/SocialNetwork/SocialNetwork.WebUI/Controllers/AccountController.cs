@@ -53,17 +53,22 @@ namespace SocialNetwork.WebUI.Controllers
 
             _userAccountLogic.Register(user);
 
+            var check = _userAccountLogic.CheckForDuplicates(user);
+
             if (user.fullName == null|| user.password == null|| user.username == null || user.gender == null)
             {
                 return PartialView("_FieldNotFilled");
             }
-            //else if ()
-            //{
-                
-            //}
             else
             {
-                return PartialView("_AccountCreated");
+                if(check == true)
+                {
+                    return PartialView("");
+                }
+                else
+                {
+                    return PartialView("_AccountCreated");
+                }
             }           
         }
 
