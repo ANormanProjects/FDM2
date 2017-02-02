@@ -76,18 +76,25 @@ namespace SocialNetwork.Logic
 
         public bool CheckForDuplicates(User user)
         {
-            User newUser = new User();
 
-            newUser = _userRepository.First(u => u.username == user.username);
-
-            if (newUser.username == user.username)
+            if (_userRepository == null)
             {
-                return false;
-        }
-            else
-	        {
-                return true;
-	        }
+                _userRepository = new Repository<User>();
+            }
+
+            var query = from b in _userRepository.GetAll()
+                        where b.username == user.username
+                        select b;
+
+            foreach (var item in query)
+            {
+                if (user.username == item.username)
+                {
+                    return true;
+                }
+            }
+            return false;
+
         }
 
         public void Logout(int id)
