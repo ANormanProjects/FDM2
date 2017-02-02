@@ -156,6 +156,44 @@ namespace SocialNetwork.Tests
             commentLogic.Verify(c => c.AddComment(userInput, user.Object, post.Object), Times.Once);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_Reply_ThrowsExceptionIfUserNotFound()
+        {
+            //Arrange
+            string userInput = "bla";
+            commentLogic.Setup(c => c.AddComment(userInput, user.Object, post.Object)).Verifiable();
+            userRepo.Setup(x => x.GetAll()).Returns(new List<User>() {  });
+            postRepo.Setup(x => x.GetAll()).Returns(new List<Post>() { post.Object });
+
+            PostLogic postLogic2 = new PostLogic(commentLogic.Object, postRepo.Object, userRepo.Object);
+            
+            //Act
+            postLogic2.Reply(post.Object, userInput, user.Object);
+
+            //Assert
+
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_Reply_ThrowsExceptionIfPostNotFound()
+        {
+            //Arrange
+            string userInput = "bla";
+            commentLogic.Setup(c => c.AddComment(userInput, user.Object, post.Object)).Verifiable();
+            userRepo.Setup(x => x.GetAll()).Returns(new List<User>() { user.Object });
+            postRepo.Setup(x => x.GetAll()).Returns(new List<Post>() {  });
+
+            PostLogic postLogic2 = new PostLogic(commentLogic.Object, postRepo.Object, userRepo.Object);
+
+            //Act
+            postLogic2.Reply(post.Object, userInput, user.Object);
+
+            //Assert
+
+        }
+
         //[TestMethod]
         //public void Test_Reply_AddsCommentsToAPostIfTheUserInputIsNotNull()
         //{
@@ -217,6 +255,20 @@ namespace SocialNetwork.Tests
 
             //Assert
             Assert.AreEqual(post.Object.likes, 1);
+
+        }
+
+        [ExpectedException(typeof(EntityNotFoundException))]    
+        [TestMethod]
+        public void Test_LikePost_ThrowsExceptionIfPostNotFound()
+        {
+            //Arrange
+            postRepo.Setup(p => p.GetAll()).Returns(new List<Post>() {  });
+
+            //Act
+            postLogic.LikePost(post.Object);
+
+            //Assert
 
         }
     }
