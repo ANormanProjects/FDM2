@@ -16,6 +16,7 @@ namespace SocialNetwork.Tests
         Mock<Repository<Group>> groupRepo;
         UserAccountLogic userAccountLogic1;
         UserAccountLogic userAccountLogic;
+        Mock<PostLogic> postLogic;
 
         [TestInitialize]
         public void Setup()
@@ -24,6 +25,7 @@ namespace SocialNetwork.Tests
             commentRepo = new Mock<Repository<Comment>>();
             postRepo = new Mock<Repository<Post>>();
             groupRepo = new Mock<Repository<Group>>();
+            postLogic = new Mock<PostLogic>();
 
             userAccountLogic1 = new UserAccountLogic(userRepo.Object, postRepo.Object, commentRepo.Object, groupRepo.Object);
             userAccountLogic = new UserAccountLogic(userRepo.Object);     
@@ -211,7 +213,7 @@ namespace SocialNetwork.Tests
 
         [ExpectedException(typeof(EntityNotFoundException))]
         [TestMethod]
-        public void Test_WritePostMethod_ThrowsAnException_GivenAPost() 
+        public void Test_WritePostMethod_ThrowsAnException_GivenAUserThatsNotINDB() 
         {
             //arr
             Mock<User> user = new Mock<User>();
@@ -219,6 +221,8 @@ namespace SocialNetwork.Tests
             user.Setup(friends => friends.friends).Returns(new List<User>());
 
             userRepo.Setup(c => c.GetAll()).Returns(new List<User>());
+            postLogic.Setup(d => d.WriteUserPost(1, "Post", "c#", "codeycode", "contyconty", user.Object)).Verifiable();
+
             //act
             userAccountLogic.WritePost(1, "Post", "c#", "codeycode", "contyconty", user.Object);
             
@@ -228,7 +232,7 @@ namespace SocialNetwork.Tests
             
         }
 
-
+        
 
 
     }
