@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -113,6 +114,50 @@ namespace SocialNetwork.DataAccess
         {
             // Saves changes to the database
             context.SaveChanges();
+            logger.Info("Changes saved to database");
+        }
+
+        /* ---------------------- ASYNCHRONOUS METHODS ---------------------- */
+
+        /// <summary>
+        /// Asynchronously returns an List of data entities from the persistent data context based on the lambdaExpression funtion
+        /// </summary>
+        /// <param name="lambdaExpression"></param>
+        /// <returns></returns>
+        public virtual async Task<List<T>> SearchAsync(Expression<Func<T, bool>> lambdaExpression)
+        {
+            // Returns a collection of entities that match the lambda expression
+            return await context.Set<T>().Where<T>(lambdaExpression).ToListAsync();
+        }
+
+        /// <summary>
+        /// Asynchronously returns the first data entity it can find in the database using the lambdaExpression function
+        /// </summary>
+        /// <param name="lambdaExpression"></param>
+        /// <returns></returns>
+        public virtual async Task<T> FirstAsync(Expression<Func<T, bool>> lambdaExpression)
+        {
+            // Returns the first entity it can find that matches the lambda expression
+            return await context.Set<T>().FirstOrDefaultAsync<T>(lambdaExpression);
+        }
+
+        /// <summary>
+        /// Asynchronously returns an List of all the data entities from ther persistent data context
+        /// </summary>
+        /// <returns></returns>
+        public virtual async Task<List<T>> GetAllAsync()
+        {
+            // Returns all of the set of entities
+            return await context.Set<T>().ToListAsync();
+        }
+
+        /// <summary>
+        /// Asynchronously saves changes made to the data context
+        /// </summary>
+        public virtual async Task SaveAsync()
+        {
+            // Saves changes to the database
+            await context.SaveChangesAsync();
             logger.Info("Changes saved to database");
         }
 
