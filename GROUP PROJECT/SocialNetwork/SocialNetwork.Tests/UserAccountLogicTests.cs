@@ -196,8 +196,38 @@ namespace SocialNetwork.Tests
         [TestMethod]
         public void Test_GetAllUserAccounts_ReturnsAListOfUsers() 
         {
-        
+            //arr
+            List<User> expected = new List<User>();
+
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>());
+            
+            //act
+            List<User> actual = userAccountLogic.GetAllUserAccounts();
+
+            //assert
+            CollectionAssert.AreEquivalent(expected, actual);
         
         }
+
+        [ExpectedException(typeof(EntityNotFoundException))]
+        [TestMethod]
+        public void Test_WritePostMethod_CallsWriteUserPost_GivenAPost() 
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+            user.Setup(id => id.userId).Returns(1);
+            user.Setup(friends => friends.friends).Returns(new List<User>());
+
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>());
+            //act
+            userAccountLogic.WritePost(1, "Post", "c#", "codeycode", "contyconty", user.Object);
+            
+            
+            //ass
+            userRepo.Verify(x => x.GetAll(), Times.Once);
+            
+        }
+
+
     }
 }
