@@ -131,17 +131,19 @@ namespace SocialNetwork.Logic
             
         }
 
-        public void AddFriend(int userId, int friendId)
-        {
-            //probably wrong
-
-            User currentUser = _userRepository.First(u => u.userId == userId);
-
-            User userToAdd = _userRepository.First(u => u.userId == userId);
-            currentUser.friends.Add(userToAdd);           
-
-            userToAdd.friends.Add(currentUser);
-
+        public void AddFriend(User currentUser, User userToAdd)
+        {            
+            
+            if (currentUser.friends.Contains(userToAdd))
+            {
+                //exception to be added
+                Console.WriteLine("User already a friend");
+            }
+            else 
+            {
+                userToAdd.friends.Add(currentUser);
+                currentUser.friends.Add(userToAdd);                
+            }
             _userRepository.Save();
 
         }

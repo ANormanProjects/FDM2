@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using SocialNetwork.DataAccess;
 using SocialNetwork.Logic;
+using System.Collections.Generic;
 
 namespace SocialNetwork.Tests
 {
@@ -168,25 +169,28 @@ namespace SocialNetwork.Tests
             
         //}
 
-        //[TestMethod]
-        //public void Test_AddFriendMethod_AddsAFriend() 
-        //{
-        //    //arr
-        //    Mock<User> user = new Mock<User>();
-        //    user.Setup(id => id.userId).Returns(109);
+        [TestMethod]
+        public void Test_AddFriendMethod_AddsAFriendToBothUsers()
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+            user.Setup(id => id.userId).Returns(1);
+            user.Setup(friends => friends.friends).Returns(new List<User>());
 
-        //    Mock<User> friend = new Mock<User>();
-        //    user.Setup(id => id.userId).Returns(100);
+            Mock<User> friend = new Mock<User>();
+            friend.Setup(id => id.userId).Returns(2);
+            friend.Setup(friends => friends.friends).Returns(new List<User>());
 
-        //    userRepo.Setup(c => c.First(It.IsAny<Func<User, bool>>())).Returns(user.Object);
-
-
-        //    //act
-        //    userAccountLogic.AddFriend(user.Object.userId, friend.Object.userId);
+            userRepo.Setup(c => c.First(It.IsAny<Func<User, bool>>())).Returns(user.Object);
             
-        //    //assert
-        //    userRepo.Verify(c => c.Save(), Times.Once);
-        
-        //}
+            //act
+            userAccountLogic.AddFriend(user.Object, friend.Object);
+
+            //assert
+            Assert.AreEqual(1, user.Object.friends.Count);
+            Assert.AreEqual(1, friend.Object.friends.Count);
+            userRepo.Verify(c => c.Save(), Times.Once);
+
+        }
     }
 }
