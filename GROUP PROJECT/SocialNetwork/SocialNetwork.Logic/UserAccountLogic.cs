@@ -24,7 +24,7 @@ namespace SocialNetwork.Logic
             _commentRepository = commentRepo;
             _groupRepository = groupRepository;
 
-            postLogic = new PostLogic(_postRepository, _userRepository, _commentRepository);
+            postLogic = new PostLogic(_postRepository, _userRepository, _groupRepository, _commentRepository);
             groupAccLogic = new GroupAccountLogic(_groupRepository, _postRepository, _commentRepository, _userRepository);
         }
 

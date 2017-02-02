@@ -11,7 +11,8 @@ namespace SocialNetwork.Tests
     public class PostLogicTests
     {
         Mock<Repository<Post>> postRepo; 
-        Mock<Repository<User>> userRepo; 
+        Mock<Repository<User>> userRepo;
+        Mock<Repository<Group>> groupRepo;
         PostLogic postLogic;
         Mock<CommentLogic> commentLogic; 
         Mock<User> user;
@@ -29,7 +30,8 @@ namespace SocialNetwork.Tests
             postRepo = new Mock<Repository<Post>>();
             userRepo = new Mock<Repository<User>>();
             commentRepo = new Mock<Repository<Comment>>();
-            postLogic = new PostLogic(postRepo.Object, userRepo.Object, commentRepo.Object);
+            groupRepo = new Mock<Repository<Group>>();
+            postLogic = new PostLogic(postRepo.Object, userRepo.Object, groupRepo.Object, commentRepo.Object);
             commentLogic = new Mock<CommentLogic>(postRepo.Object, commentRepo.Object, userRepo.Object);
             user = new Mock<User>();
             friend = new Mock<User>();
