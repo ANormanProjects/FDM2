@@ -100,7 +100,19 @@ namespace SocialNetwork.Logic
 
         public List<GroupPost> GetAllPostsInGroup(Group group)
         {
-            throw new NotImplementedException();
+            List<GroupPost> groupPosts = new List<GroupPost>();
+            if (groupRepo.GetAll().Contains(group))
+            {
+                foreach (GroupPost groupPost in group.groupWall)
+                {
+                    groupPosts.Add(groupPost);
+                }
+                return groupPosts;
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
         }        
 
         public List<Group> GetAllGroups()
