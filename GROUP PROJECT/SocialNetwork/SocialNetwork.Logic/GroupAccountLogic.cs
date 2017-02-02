@@ -117,7 +117,10 @@ namespace SocialNetwork.Logic
 
         public List<Group> GetAllGroups()
         {
-            throw new NotImplementedException();
+            List<Group> groups = new List<Group>();
+            groups = groupRepo.GetAll();
+
+            return groups;
         }
     }
 }

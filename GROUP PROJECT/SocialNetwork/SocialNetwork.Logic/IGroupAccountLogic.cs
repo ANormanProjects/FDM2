@@ -16,6 +16,5 @@ namespace SocialNetwork.Logic
         List<GroupPost> GetAllPostsInGroup(Group group);
         List<Group> GetAllGroups();
 
-
     }
 }
