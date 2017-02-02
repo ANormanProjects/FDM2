@@ -116,27 +116,5 @@ namespace SocialNetwork.DataAccess
             logger.Info("Changes saved to database");
         }
 
-        /* Deprecated Update Method
-         * 
-        <summary>
-        /// Updates all entities in the persistent data context that match the lambda expression with the data in another data entity 
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="lambdaExpression"></param>
-        public virtual void Update(T entity, Func<T, bool> lambdaExpression)
-        {
-            // Search for the entities that need updating from the relevant DbSet in the DbContext
-            List<T> entitiesToUpdate = context.Set<T>().Where<T>(lambdaExpression).ToList();
-
-            // If there are entities that need to be updated...
-            foreach (T t in entitiesToUpdate)
-            {
-                // Set the values of each entity-to-be-update to the entity
-                context.Entry(t).CurrentValues.SetValues(entity);
-                logger.Info("Entity in database updated: " + entity.ToString());
-            }
-        } 
-         * 
-         */
     }
 }

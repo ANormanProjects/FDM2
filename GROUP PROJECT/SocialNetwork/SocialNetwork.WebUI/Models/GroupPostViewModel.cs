@@ -6,8 +6,8 @@ using System.Web;
 
 namespace SocialNetwork.WebUI.Models
 {
-    public class PostViewModel
+    public class GroupPostViewModel
     {
-        public Post post { get; set; }
+        public GroupPost post { get; set; }
     }
 }

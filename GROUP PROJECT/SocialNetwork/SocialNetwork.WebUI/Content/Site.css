@@ -28,9 +28,6 @@ textarea {
     border-radius: 2px;
     background-color: #e6f8fe;
     margin: 0.5em;
-
-    padding-left: 0.5em;
-    padding-right: 0.5em;
     display: table;
     width: 100%;
 }
@@ -38,20 +35,27 @@ textarea {
 .comment-content
 {
     display: table-cell;
-    margin-left: 1em;
 }
 
 .comment-sidebar
 {
     display: table-cell;
-    margin-right: 1em;
+    max-width: 100px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.comment-profile-image
+{
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .post-profile-image
 {
-    width: 150px;
-    height: 150px;
-    margin: auto;
+    max-width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -64,10 +68,12 @@ textarea {
     width: 100%;
 
     background-color: white;
+    border-bottom: 1px ridge #035976;
 }
 
 .post-sidebar
 {
+    max-width: 150px;
     display: table-cell;
     margin-right: 1em;
     padding: 1em;
@@ -76,7 +82,6 @@ textarea {
 {
     display: table-cell;
     margin-left: 1em;
-    padding: 1em;
 }
 
 .post-code
@@ -87,10 +92,11 @@ textarea {
 .post-code pre
 {
     margin: 0.5em;
+    margin-bottom: 1em;
 
-    border: 1px solid limegreen;
-    color: limegreen;
-    background-color: black;
+    border: 1px solid #035976;
+    color: #035976;
+    background-color: whitesmoke;
 }
 
 .post-hr

@@ -1,0 +1,33 @@
+﻿@model SocialNetwork.WebUI.Models.UserPostViewModel
+
+<div class="container">
+    <div class="post-container">
+        <div class="container post-sidebar col-sm-2">
+            <img class="post-profile-image" src="~/Content/profile-picture-blank.gif"/>
+            <h4 class="text-center">
+                @Model.post.user.fullName
+            </h4>
+
+        </div>
+
+        <div class="container post-content col-sm-10">
+            <h2>@Model.post.title - @Model.post.language</h2>
+            <h4>@Model.post.time.ToShortDateString()</h4>
+            <p>@Model.post.content</p>
+            <div class="container post-code">
+                <pre>@Model.post.code</pre>
+            </div>
+            <p>Likes: @Model.post.likes</p>
+
+            <div class="container post-comments col-sm-8">
+                @foreach (SocialNetwork.DataAccess.Comment comment in Model.post.comments)
+                {
+                    @Html.Partial("_Comment", comment)
+                }
+            </div>
+        </div>   
+
+            
+    </div>  
+    
+</div>
