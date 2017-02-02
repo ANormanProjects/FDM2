@@ -224,5 +224,23 @@ namespace SocialNetwork.Tests
             groupLogic.GetAllPostsInGroup(group.Object);
         }
 
+        [TestMethod]
+        public void Test_GetAllGroups_RunsGetAllMethodInGroupRepository()
+        {
+            //Arrange
+
+            groupRepo.Setup(x => x.GetAll()).Returns(new List<Group>() { group.Object });
+            var expected = new List<Group>() { group.Object };
+
+            //Act
+
+            var actual = groupLogic.GetAllGroups();
+
+            //Assert
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+
     }
 }
