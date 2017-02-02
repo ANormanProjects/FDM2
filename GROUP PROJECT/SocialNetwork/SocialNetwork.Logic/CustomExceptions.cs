@@ -47,4 +47,12 @@ namespace SocialNetwork.Logic
         }
     }
 
+    public class EntityAlreadyExistsException : Exception
+    {
+        public EntityAlreadyExistsException() : base("Entity already exists in database")
+        {
+
+        }
+    }
+
 }
