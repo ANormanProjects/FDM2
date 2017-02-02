@@ -56,6 +56,8 @@ namespace SocialNetwork.Logic
             postToWrite.group = group;
 
             _postRepository.Insert(postToWrite);
+
+            _postRepository.Save();
         }
 
         /// <summary>
@@ -78,6 +80,7 @@ namespace SocialNetwork.Logic
 
             _postRepository.Insert(postToWrite);
 
+            _postRepository.Save();
         }
 
         /// <summary>
