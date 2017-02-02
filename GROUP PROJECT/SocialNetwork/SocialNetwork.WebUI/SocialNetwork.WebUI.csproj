@@ -241,6 +241,7 @@
     <Content Include="Views\Shared\_Post.cshtml" />
     <Content Include="Views\Shared\_AccountCreated.cshtml" />
     <Content Include="Views\Shared\_FieldNotFilled.cshtml" />
+    <Content Include="Views\Shared\_UserAlreadyExists.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

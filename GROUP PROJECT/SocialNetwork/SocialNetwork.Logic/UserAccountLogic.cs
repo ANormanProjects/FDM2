@@ -76,10 +76,14 @@ namespace SocialNetwork.Logic
 
             newUser = _userRepository.First(u => u.username == user.username);
 
-            if(newUser.username == user.username)
+            if (newUser.username == user.username)
             {
                 return false;
-            } return true;
+            }
+            else
+	        {
+                return true;
+	        }
         }
 
         public void Logout(int id)
