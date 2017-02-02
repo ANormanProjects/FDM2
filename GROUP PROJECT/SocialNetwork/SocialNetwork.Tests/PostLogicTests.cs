@@ -45,7 +45,7 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        public void Test_WriteGroupPost_RunsAddRepositoryMethodIfUserIsNotNull()
+        public void Test_WriteGroupPost_RunsAddRepositoryMethod_WhenUserNotFound()
         {
             //Arrange
             postRepo.Setup(x => x.Insert(It.IsAny<Post>())).Verifiable();
@@ -62,7 +62,7 @@ namespace SocialNetwork.Tests
         
         
         [TestMethod]
-        public void Test_WriteUserPost_RunsAddUsesInsertMethod()
+        public void Test_WriteUserPost_RunsAddUserInsertMethod()
         {
             //Arrange
             postRepo.Setup(x => x.Insert(It.IsAny<Post>())).Verifiable();
@@ -158,7 +158,7 @@ namespace SocialNetwork.Tests
 
         [TestMethod]
         [ExpectedException(typeof(EntityNotFoundException))]
-        public void Test_Reply_ThrowsExceptionIfUserNotFound()
+        public void Test_Reply_ThrowsException_WhenUserNotFound()
         {
             //Arrange
             string userInput = "bla";
@@ -177,7 +177,7 @@ namespace SocialNetwork.Tests
 
         [TestMethod]
         [ExpectedException(typeof(EntityNotFoundException))]
-        public void Test_Reply_ThrowsExceptionIfPostNotFound()
+        public void Test_Reply_ThrowsException_WhenPostNotFound()
         {
             //Arrange
             string userInput = "bla";
@@ -245,7 +245,7 @@ namespace SocialNetwork.Tests
         //}
 
         [TestMethod]
-        public void Test_LikePost_MakesLikeNumberGoUpByOneWhenCalled()
+        public void Test_LikePost_MakesLikeNumberGoUpByOne_WhenCalled()
         {
             //Arrange
             postRepo.Setup(c => c.GetAll()).Returns(new List<Post> {post.Object});
@@ -260,7 +260,7 @@ namespace SocialNetwork.Tests
 
         [ExpectedException(typeof(EntityNotFoundException))]    
         [TestMethod]
-        public void Test_LikePost_ThrowsExceptionIfPostNotFound()
+        public void Test_LikePost_ThrowsException_WhenPostNotFound()
         {
             //Arrange
             postRepo.Setup(p => p.GetAll()).Returns(new List<Post>() {  });
