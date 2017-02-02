@@ -211,7 +211,7 @@ namespace SocialNetwork.Tests
 
         [ExpectedException(typeof(EntityNotFoundException))]
         [TestMethod]
-        public void Test_WritePostMethod_CallsWriteUserPost_GivenAPost() 
+        public void Test_WritePostMethod_ThrowsAnException_GivenAPost() 
         {
             //arr
             Mock<User> user = new Mock<User>();
@@ -227,6 +227,8 @@ namespace SocialNetwork.Tests
             userRepo.Verify(x => x.GetAll(), Times.Once);
             
         }
+
+
 
 
     }
