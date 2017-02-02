@@ -39,6 +39,12 @@ namespace SocialNetwork.Logic
             postLogic = PostLogic;
         }
 
+        public UserAccountLogic(PostLogic PostLogic, Repository<User> userRepository)
+        {
+            postLogic = PostLogic;
+            _userRepository = userRepository;
+        } 
+
         public bool Login(string username, string password)
         {
             bool result = false;
@@ -169,8 +175,8 @@ namespace SocialNetwork.Logic
         {
             if (_userRepository.GetAll().Contains(user))
             {
-            postLogic.WriteUserPost(id, title, language, code, content, user);
-        }
+                postLogic.WriteUserPost(id, title, language, code, content, user);
+            }
             else
             {
                 throw new EntityNotFoundException();
