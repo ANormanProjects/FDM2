@@ -128,7 +128,14 @@ namespace SocialNetwork.Logic
 
         public void WritePost(int id, string title, string language, string code, string content, User user)
         {
-            postLogic.WriteUserPost(id, title, language, code, content, user);
+            if (_userRepository.GetAll().Contains(user))
+            {
+                postLogic.WriteUserPost(id, title, language, code, content, user);
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
         }
 
     }
