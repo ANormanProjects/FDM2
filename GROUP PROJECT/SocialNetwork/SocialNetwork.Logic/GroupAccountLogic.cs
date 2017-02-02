@@ -88,7 +88,14 @@ namespace SocialNetwork.Logic
 
         public void WritePost(int id, string title, string language, string code, string content, Group group)
         {
-            throw new NotImplementedException();
+            if (groupRepo.GetAll().Contains(group))
+            {
+                postLogic.WriteGroupPost(id, title, language, code, content, group);
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
         }
 
         public List<GroupPost> GetAllPostsInGroup(Group group)
