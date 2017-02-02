@@ -82,7 +82,7 @@ namespace SocialNetwork.Logic
         /// <param name="language"></param>
         /// <param name="code"></param>
         /// <param name="content"></param>
-        public void WriteUserPost(int id, string title, string language, string code, string content, User user)
+        public virtual void WriteUserPost(int id, string title, string language, string code, string content, User user)
         {
             if (_userRepository.GetAll().Contains(user))
             {
