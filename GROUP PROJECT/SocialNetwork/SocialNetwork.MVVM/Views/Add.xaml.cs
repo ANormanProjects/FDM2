@@ -24,5 +24,16 @@ namespace SocialNetwork.MVVM.Views
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            username.Text = String.Empty;
+            fullName.Text = String.Empty;
+            gender.Text = String.Empty;
+            role.Text = String.Empty;
+            password.Text = String.Empty;
+        }
     }
+
+
 }

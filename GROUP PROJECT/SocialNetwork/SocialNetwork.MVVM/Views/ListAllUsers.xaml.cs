@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SocialNetwork.MVVM.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace SocialNetwork.MVVM.Views
     /// </summary>
     public partial class ListAllUsers : UserControl
     {
+        WPFViewModel wpfVM = new WPFViewModel();
+
         public ListAllUsers()
         {
             InitializeComponent();
