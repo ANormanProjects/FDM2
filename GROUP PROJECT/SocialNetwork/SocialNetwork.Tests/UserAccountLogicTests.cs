@@ -25,7 +25,7 @@ namespace SocialNetwork.Tests
             commentRepo = new Mock<Repository<Comment>>();
             postRepo = new Mock<Repository<Post>>();
             groupRepo = new Mock<Repository<Group>>();
-            postLogic = new Mock<PostLogic>();
+            postLogic = new Mock<PostLogic>(postRepo.Object, commentRepo.Object);
 
             userAccountLogic1 = new UserAccountLogic(userRepo.Object, postRepo.Object, commentRepo.Object, groupRepo.Object);
             userAccountLogic = new UserAccountLogic(userRepo.Object);     
@@ -212,7 +212,7 @@ namespace SocialNetwork.Tests
         }
 
         [ExpectedException(typeof(EntityNotFoundException))]
-        [TestMethod]
+        [TestMethod] //double check
         public void Test_WritePostMethod_ThrowsAnException_GivenAUserThatsNotINDB() 
         {
             //arr
@@ -229,10 +229,34 @@ namespace SocialNetwork.Tests
             
             //ass
             userRepo.Verify(x => x.GetAll(), Times.Once);
+            postLogic.Verify(a => a.WriteUserPost(1, "Post", "c#", "codeycode", "contyconty", user.Object), Times.Once);
             
         }
 
-        
+        [TestMethod] //double check
+        public void Test_WritePostMethod_CallsWritePostLogic_GivenAUser()
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+            user.Setup(id => id.userId).Returns(1);
+            user.Setup(friends => friends.friends).Returns(new List<User>());            
+
+            List<User> users = new List<User>();
+            users.Add(user.Object);
+            Mock<PostLogic> iPostLogic = new Mock<PostLogic>(postRepo.Object, userRepo.Object, groupRepo.Object, commentRepo.Object);
+            userRepo.Setup(c => c.GetAll()).Returns(users);
+            iPostLogic.Setup(d => d.WriteUserPost(1, "Post", "c#", "codeycode", "contyconty", user.Object)).Verifiable();
+            UserAccountLogic useracclogic1 = new UserAccountLogic(iPostLogic.Object, userRepo.Object); 
+
+            //act
+            useracclogic1.WritePost(1, "Post", "c#", "codeycode", "contyconty", user.Object);
+
+
+            //ass
+            userRepo.Verify(x => x.GetAll(), Times.Once);
+            //postLogic.Verify(a => a.WriteUserPost(1, "Post", "c#", "codeycode", "contyconty", user.Object), Times.Once);
+
+        }
 
 
     }
