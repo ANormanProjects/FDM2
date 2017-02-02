@@ -165,11 +165,36 @@ namespace SocialNetwork.Tests
 
         }
 
-        //[TestMethod]
-        //public void Test_RegisterUser_AddsUserToDbWhenCalledAndGivenUser() 
-        //{
+        [TestMethod]
+        public void Test_RegisterUser_AddsUserToDbWhenCalledAndGivenUser()
+        {
+            //Arrange
+            User user = new User();
+
             
-        //}
+            userRepo.Setup(u => u.Insert(user));
+
+            //Act
+            userAccountLogic.Register(user);
+            
+            //Assert
+            userRepo.Verify(u => u.Insert(user), Times.Once);  
+        }
+
+        [TestMethod]
+        public void Test_CheckForDuplicates_ReturnsTrue_IfAUsernameAlreadyExists()
+        {
+            //Arrange
+            User user = new User();
+            var expected = true;
+
+
+            //Act
+            bool actual = userAccountLogic.CheckForDuplicates(user);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
         [TestMethod]
         public void Test_AddFriendMethod_AddsAFriendToBothUsers()
