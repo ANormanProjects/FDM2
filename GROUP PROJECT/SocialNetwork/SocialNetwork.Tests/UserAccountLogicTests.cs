@@ -12,6 +12,7 @@ namespace SocialNetwork.Tests
         Mock<Repository<User>> userRepo;
         Mock<Repository<Post>> postRepo;
         Mock<Repository<Comment>> commentRepo;
+        Mock<Repository<Group>> groupRepo;
         UserAccountLogic userAccountLogic1;
         UserAccountLogic userAccountLogic;
 
@@ -21,8 +22,9 @@ namespace SocialNetwork.Tests
             userRepo = new Mock<Repository<User>>();
             commentRepo = new Mock<Repository<Comment>>();
             postRepo = new Mock<Repository<Post>>();
+            groupRepo = new Mock<Repository<Group>>();
 
-            userAccountLogic1 = new UserAccountLogic(userRepo.Object, postRepo.Object, commentRepo.Object);
+            userAccountLogic1 = new UserAccountLogic(userRepo.Object, postRepo.Object, commentRepo.Object, groupRepo.Object);
             userAccountLogic = new UserAccountLogic(userRepo.Object);     
         }
 
