@@ -31,6 +31,7 @@ namespace SocialNetwork.WebUI.Controllers
         }
 
         // GET: Profile
+        [Authorize]
         public ActionResult ProfilePage()
         {
             return View("ProfilePage");
