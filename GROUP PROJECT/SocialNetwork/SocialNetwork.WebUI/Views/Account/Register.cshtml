@@ -9,33 +9,35 @@
 {
     HttpMethod = "POST",
     UpdateTargetId = "addForm",
+    
     InsertionMode = InsertionMode.InsertAfter
 }, new { @id = "addForm" }))
 {
     <h4>To create a new account simply fill in the details below and click Submit.</h4>
     <hr />
-    <div class="form-group">
-        @Html.LabelFor(m => m.username, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.EditorFor(m => m.username, new { htmlAttributes = new { @class = "form-control" } })
+    <div id="container">
+        <div class="form-group">
+            @Html.LabelFor(m => m.username, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.username, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.fullName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.EditorFor(m => m.fullName, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group">
+            @Html.LabelFor(m => m.fullName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.fullName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.EditorFor(m => m.password, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group">
+            @Html.LabelFor(m => m.password, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.password, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.gender, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.DropDownListFor(m => m.gender, new SelectList(new List<Object>
+        <div class="form-group">
+            @Html.LabelFor(m => m.gender, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.gender, new SelectList(new List<Object>
        {
            new { value = 0, text = "-Select an option-"},
            new { value = "Male", text = "Male"},
@@ -44,15 +46,23 @@
        "value",
        "text",
  1), new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <input type="submit" class="btn btn-default" value="Create Profile" />
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        <div>
-            <input type="submit" class="btn btn-default" value="Create Profile" />
-        </div>
-    </div>
-    <div id="addForm"></div>
 }
+
+@using (Ajax.BeginForm("Register", "Account", new AjaxOptions()
+{
+    HttpMethod = "POST",
+    UpdateTargetId = "addForm",
+    InsertionMode = InsertionMode.Replace
+}))
+{ }
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
