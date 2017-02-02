@@ -101,6 +101,19 @@ namespace SocialNetwork.Logic
             _userRepository.Save();
         }
 
+        public void EditUser(User userToEdit, string newName, string newGender, string newRole, string newPassword)
+        {
+            if(_userRepository.GetAll().Contains(userToEdit))
+            {
+                userToEdit.fullName = newName;
+                userToEdit.gender = newGender;
+                userToEdit.role = newRole;
+                userToEdit.password = newPassword;
+                _userRepository.Save();
+
+            }
+        }
+
         public void ViewAccountInfo(int userId)
         {
            //find user

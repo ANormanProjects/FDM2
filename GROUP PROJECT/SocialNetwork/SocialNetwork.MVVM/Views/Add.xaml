@@ -8,7 +8,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
 
     <UserControl.DataContext>
-        <vm:ListAllUsersViewModel/>
+        <vm:WPFViewModel/>
     </UserControl.DataContext>
 
     <ScrollViewer HorizontalScrollBarVisibility="Auto">
@@ -41,6 +41,19 @@
             <TextBox Name="role" Grid.Row="4" Grid.Column="1" Margin="0,0,0,10" Text="{Binding role}"/>
             <Label Margin="60,0,0,0" Grid.Row="5">Password:</Label>
             <TextBox Name="password" Grid.Row="5" Grid.Column="1" Margin="0,0,0,10" Text="{Binding password}"/>
+
+            <Button Grid.Row="6" Grid.Column="1" Height="40" Width="40" Style="{DynamicResource MetroCircleButtonStyle}" 
+                        Margin="0,0,260,11" Command="{Binding Add}">
+                <Rectangle Width="15"
+                           Height="15"
+                           Fill="{Binding Path=Foreground, 
+                    RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill"
+                                     Visual="{DynamicResource appbar_add}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
         </Grid>
     </ScrollViewer>
 </UserControl>

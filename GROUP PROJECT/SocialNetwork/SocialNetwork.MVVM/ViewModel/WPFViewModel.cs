@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace SocialNetwork.MVVM.ViewModel
 {
-    public class ListAllUsersViewModel : BaseViewModel
+    public class WPFViewModel : BaseViewModel
     {
         public Repository<User> _userRepository { get; set; }
         public UserAccountLogic userAccLogic { get; set; }
@@ -108,8 +108,50 @@ namespace SocialNetwork.MVVM.ViewModel
             set { _ListAllUsersCommand = value; }
         }
 
+        private ICommand _addUserCommand;
+        public ICommand addUserCommand
+        {
+            get
+            {
+                if (_addUserCommand == null)
+                {
+                    _addUserCommand = new Command(Add);
+                }
+                return _addUserCommand;
+            }
+            set { _addUserCommand = value; }
+        }
+
+        private ICommand _editUserCommand;
+        public ICommand editUserCommand
+        {
+            get
+            {
+                if (_editUserCommand == null)
+                {
+                    _editUserCommand = new Command(Edit);
+                }
+                return _editUserCommand;
+            }
+            set { _editUserCommand = value; }
+        }
+
+        private ICommand _removeUserCommand;
+        public ICommand removeUserCommand
+        {
+            get
+            {
+                if (_removeUserCommand == null)
+                {
+                    _removeUserCommand = new Command(Remove);
+                }
+                return _removeUserCommand;
+            }
+            set { _removeUserCommand = value; }
+        }
+
         //Live
-        public ListAllUsersViewModel()
+        public WPFViewModel()
         {
             _userRepository = new Repository<User>();
             userAccLogic = new UserAccountLogic(_userRepository);
@@ -117,7 +159,7 @@ namespace SocialNetwork.MVVM.ViewModel
         }
 
         //Test
-        public ListAllUsersViewModel(UserAccountLogic userAccountLogic)
+        public WPFViewModel(UserAccountLogic userAccountLogic)
         {
             this.userAccountLogic = userAccountLogic;
         }
@@ -125,6 +167,38 @@ namespace SocialNetwork.MVVM.ViewModel
         public void ListAllUsers()
         {
             userAccLogic.GetAllUserAccounts();
+        }
+
+        public void Add()
+        {
+            User newUser = new User();
+
+            newUser.username = username;
+            newUser.fullName = fullName;
+            newUser.gender = gender;
+            newUser.role = role;
+            newUser.password = password;
+
+            userAccLogic.Register(newUser);
+        }
+
+        public void Edit()
+        {
+            User editUser = new User();
+
+            editUser.username = username;
+
+            string newName = fullName;
+            string newGender = gender;
+            string newRole = role;
+            string newPassword = password;
+
+            userAccLogic.EditUser(editUser, newName, newGender, newRole, newPassword);
+        }
+
+        public void Remove()
+        {
+
         }
        
 
