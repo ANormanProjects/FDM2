@@ -37,7 +37,14 @@ namespace SocialNetwork.Logic
             {
                 if (userRepo.GetAll().Contains(user))
                 {
-                    group.usersInGroup.Add(user);
+                    if (group.usersInGroup.Contains(user))
+                    {
+                        throw new EntityAlreadyExistsException();
+                    }
+                    else
+                    {
+                        group.usersInGroup.Add(user);
+                    }
                 }
                 else
                 {
