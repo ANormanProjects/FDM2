@@ -114,6 +114,15 @@ namespace SocialNetwork.Logic
             }
         }
 
+        public void RemoveUser(User userToRemove)
+        {
+            if(_userRepository.GetAll().Contains(userToRemove))
+            {
+                _userRepository.Remove(userToRemove);
+                _userRepository.Save();
+            }
+        }
+
         public void ViewAccountInfo(int userId)
         {
            //find user
