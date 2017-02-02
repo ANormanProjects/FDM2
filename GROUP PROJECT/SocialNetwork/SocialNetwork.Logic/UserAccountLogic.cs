@@ -12,16 +12,20 @@ namespace SocialNetwork.Logic
         Repository<User> _userRepository;
         Repository<Post> _postRepository;
         Repository<Comment> _commentRepository;
+        Repository<Group> _groupRepository;
+        IPostLogic postLogic;
+        GroupAccountLogic groupAccLogic;
 
-        IPostLogic postLogic; 
 
-        public UserAccountLogic(Repository<User> userRepository, Repository<Post> postRepo, Repository<Comment> commentRepo)
+        public UserAccountLogic(Repository<User> userRepository, Repository<Post> postRepo, Repository<Comment> commentRepo, Repository<Group> groupRepository)
         {
             _userRepository = userRepository;
             _postRepository = postRepo;
             _commentRepository = commentRepo;
+            _groupRepository = groupRepository;
 
             postLogic = new PostLogic(_postRepository, _userRepository, _commentRepository);
+            groupAccLogic = new GroupAccountLogic(_groupRepository, _postRepository, _commentRepository, _userRepository);
         }
 
         public UserAccountLogic(Repository<User> userRepository)
@@ -140,6 +144,19 @@ namespace SocialNetwork.Logic
             {
                 throw new EntityNotFoundException();
             }
+        }
+
+        public List<GroupPost> ViewAllPostByFollowedGroups(User user)
+        {
+            List<GroupPost> groupPosts = new List<GroupPost>();
+
+            foreach (Group _group in user.groups)
+            {
+                groupPosts = groupAccLogic.GetAllPostsInGroup(_group);
+            }
+
+            return groupPosts;
+            
         }
 
     }
