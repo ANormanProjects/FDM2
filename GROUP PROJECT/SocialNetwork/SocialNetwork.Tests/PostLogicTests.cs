@@ -45,13 +45,28 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        public void Test_WriteGroupPost_RunsAddRepositoryMethod()
+        public void Test_WriteGroupPost_RunsAddRepositoryMethodIfUserIsNotNull()
         {
             //Arrange
             
 
             //Act
             postLogic.WriteGroupPost(1, "a", "b", "c", "d", new Mock<Group>().Object);
+
+            //Assert
+            postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_WriteGroupPost_RunsAddRepositoryMethodIfGroupIsNull()
+        {
+            //Arrange
+            Group group = new Group();
+            group = null;
+
+            //Act
+            postLogic.WriteGroupPost(1, "a", "b", "c", "d", group);
 
             //Assert
             postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
@@ -69,22 +84,6 @@ namespace SocialNetwork.Tests
 
             //Assert
             postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
-        }
-
-        [TestMethod]
-        public void Test_Reply_CallsAddComment()
-        {
-            //Arrange
-            PostLogic postLogic2 = new PostLogic(commentLogic.Object);
-            string userInput = "bla";
-            commentLogic.Setup(c => c.AddComment(userInput, user.Object, post.Object)).Verifiable();
-
-            //Act
-            postLogic2.Reply(post.Object, userInput, user.Object);
-           
-
-            //Assert
-            commentLogic.Verify(c => c.AddComment(userInput, user.Object, post.Object), Times.Once);
         }
 
         //[TestMethod]
@@ -158,6 +157,22 @@ namespace SocialNetwork.Tests
 
             //Assert
             
+        }
+
+        [TestMethod]
+        public void Test_Reply_CallsAddComment()
+        {
+            //Arrange
+            PostLogic postLogic2 = new PostLogic(commentLogic.Object);
+            string userInput = "bla";
+            commentLogic.Setup(c => c.AddComment(userInput, user.Object, post.Object)).Verifiable();
+
+            //Act
+            postLogic2.Reply(post.Object, userInput, user.Object);
+
+
+            //Assert
+            commentLogic.Verify(c => c.AddComment(userInput, user.Object, post.Object), Times.Once);
         }
 
         //[TestMethod]

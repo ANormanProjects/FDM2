@@ -13,7 +13,7 @@ namespace SocialNetwork.Logic
         Repository<Post> _postRepository;
         Repository<Comment> _commentRepository;
         Repository<Group> _groupRepository;
-        IPostLogic postLogic;
+        IPostLogic postLogic; 
         GroupAccountLogic groupAccLogic;
 
 
@@ -83,7 +83,7 @@ namespace SocialNetwork.Logic
             if (newUser.username == user.username)
             {
                 return false;
-            }
+        }
             else
 	        {
                 return true;
@@ -138,8 +138,8 @@ namespace SocialNetwork.Logic
         {
             if (_userRepository.GetAll().Contains(user))
             {
-                postLogic.WriteUserPost(id, title, language, code, content, user);
-            }
+            postLogic.WriteUserPost(id, title, language, code, content, user);
+        }
             else
             {
                 throw new EntityNotFoundException();
