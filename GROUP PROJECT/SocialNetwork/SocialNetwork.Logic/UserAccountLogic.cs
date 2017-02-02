@@ -70,6 +70,18 @@ namespace SocialNetwork.Logic
 
         }
 
+        public bool CheckForDuplicates(User user)
+        {
+            User newUser = new User();
+
+            newUser = _userRepository.First(u => u.username == user.username);
+
+            if(newUser.username == user.username)
+            {
+                return false;
+            } return true;
+        }
+
         public void Logout(int id)
         {
             throw new NotImplementedException();
