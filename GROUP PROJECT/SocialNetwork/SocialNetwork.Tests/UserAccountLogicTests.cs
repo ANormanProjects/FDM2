@@ -192,5 +192,12 @@ namespace SocialNetwork.Tests
             userRepo.Verify(c => c.Save(), Times.Once);
 
         }
+
+        [TestMethod]
+        public void Test_GetAllUserAccounts_ReturnsAListOfUsers() 
+        {
+        
+        
+        }
     }
 }

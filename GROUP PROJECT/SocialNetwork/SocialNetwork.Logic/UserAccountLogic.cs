@@ -137,7 +137,7 @@ namespace SocialNetwork.Logic
             if (currentUser.friends.Contains(userToAdd))
             {
                 //exception to be added
-                Console.WriteLine("User already a friend");
+                throw new EntityAlreadyExistsException();
             }
             else 
             {
