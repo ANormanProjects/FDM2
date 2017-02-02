@@ -1,57 +1,11 @@
-﻿@{
+﻿@model ICollection<SocialNetwork.WebUI.Models.UserPostViewModel>
+
+@{
     ViewBag.Title = "Home";
 }
 <h2>@ViewBag.Title</h2>
 
-
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
-<p>Use this area to provide additional information.</p>
+@foreach (SocialNetwork.WebUI.Models.UserPostViewModel viewModel in Model)
+{
+    @Html.Partial("_UserPost", viewModel)
+}
