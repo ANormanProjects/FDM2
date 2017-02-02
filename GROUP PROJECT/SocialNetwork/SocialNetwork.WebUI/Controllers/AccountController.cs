@@ -52,8 +52,8 @@ namespace SocialNetwork.WebUI.Controllers
                 _userAccountLogic = new UserAccountLogic(new Repository<User>());
             }
 
-            try
-            {
+            
+            
                 if (user.fullName == null || user.password == null || user.username == null || user.gender == null)
                 {
                     return PartialView("_FieldNotFilled");
@@ -62,21 +62,19 @@ namespace SocialNetwork.WebUI.Controllers
                 {
                     bool check = _userAccountLogic.CheckForDuplicates(user);
 
-                    if (check == false)
+                    if (check == true)
                     {
                         return PartialView("_UserAlreadyExists");
                     }
                     else
                     {
+                        user.role = "User";
                         _userAccountLogic.Register(user);
+                        
                         return PartialView("_AccountCreated");
                     }
                 } 
-            }
-            catch (NullReferenceException)
-            {
-                throw;
-            }           
+                    
         }
 
         // GET: Login
