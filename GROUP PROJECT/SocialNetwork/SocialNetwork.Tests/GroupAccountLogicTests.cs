@@ -77,6 +77,22 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(EntityAlreadyExistsException))]
+        public void Test_UserAlreadyInGroupExceptionThrownWhenUserAlreadyInGroup_WhenAddUserRun()
+        {
+            //Arrange
+            groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>() { group.Object });
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() { user.Object });
+
+            List<User> users = new List<User>() { user.Object };
+
+            group.Setup(c => c.usersInGroup).Returns(users);
+
+            //Act
+            groupLogic.AddUserToGroup(group.Object, user.Object);
+        }
+
+        [TestMethod]
         public void Test_RemovesUserFromGroup_RemovesUserFromGroupUsersInGroupProperty()
         {
             //Arrange
@@ -98,7 +114,7 @@ namespace SocialNetwork.Tests
 
         [TestMethod]
         [ExpectedException(typeof(EntityNotFoundException))]
-        public void Test_EntityNotFoundExceptionThrownWhenUserNotInDatabase()
+        public void Test_EntityNotFoundExceptionThrown_WhenUserNotInDatabase()
         {
             //Arrange
             groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>() { group.Object });
@@ -110,7 +126,7 @@ namespace SocialNetwork.Tests
 
         [TestMethod]
         [ExpectedException(typeof(EntityNotFoundException))]
-        public void Test_EntityNotFoundExceptionThrownWhenGroupNotInDatabase()
+        public void Test_EntityNotFoundExceptionThrown_WhenGroupNotInDatabase()
         {
             //Arrange
             groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>());
