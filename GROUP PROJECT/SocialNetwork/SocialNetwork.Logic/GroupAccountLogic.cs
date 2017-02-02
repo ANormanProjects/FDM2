@@ -94,7 +94,11 @@ namespace SocialNetwork.Logic
         public List<GroupPost> GetAllPostsInGroup(Group group)
         {
             throw new NotImplementedException();
-        }
+        }        
 
+        public List<Group> GetAllGroups()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

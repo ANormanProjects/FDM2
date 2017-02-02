@@ -14,7 +14,7 @@ namespace SocialNetwork.Logic
         List<User> GetAllUsersInGroup(Group group);
         void WritePost(int id, string title, string language, string code, string content, Group group);
         List<GroupPost> GetAllPostsInGroup(Group group);
-
+        List<Group> GetAllGroups();
 
 
     }
