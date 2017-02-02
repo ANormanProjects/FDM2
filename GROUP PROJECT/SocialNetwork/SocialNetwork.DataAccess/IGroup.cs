@@ -12,7 +12,7 @@ namespace SocialNetwork.DataAccess
 
         ICollection<User> usersInGroup { get; set; }
 
-        ICollection<Post> groupWall { get; set; }
+        ICollection<GroupPost> groupWall { get; set; }
 
         string groupName { get; set; }
 
