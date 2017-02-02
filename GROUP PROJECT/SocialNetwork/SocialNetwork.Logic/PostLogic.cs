@@ -165,9 +165,17 @@ namespace SocialNetwork.Logic
 
         public void LikePost(Post _post)
         {
-            //post likes go up by 1
-            _post.likes = _post.likes + 1;
-            _postRepository.Save();
+            if (_postRepository.GetAll().Contains(_post))
+            {
+                //post likes go up by 1
+                _post.likes = _post.likes + 1;
+                _postRepository.Save();
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
+                
         }
 
         //public void SharePost(Post _post, User user)

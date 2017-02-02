@@ -210,7 +210,7 @@ namespace SocialNetwork.Tests
         public void Test_LikePost_MakesLikeNumberGoUpByOneWhenCalled()
         {
             //Arrange
-            
+            postRepo.Setup(c => c.GetAll()).Returns(new List<Post> {post.Object});
 
             //Act
             postLogic.LikePost(post.Object);
