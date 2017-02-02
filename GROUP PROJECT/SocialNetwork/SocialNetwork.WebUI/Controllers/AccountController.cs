@@ -51,24 +51,30 @@ namespace SocialNetwork.WebUI.Controllers
                 _userAccountLogic = new UserAccountLogic(new Repository<User>());
             }
 
-            _userAccountLogic.Register(user);
-
-            var check = _userAccountLogic.CheckForDuplicates(user);
-
-            if (user.fullName == null|| user.password == null|| user.username == null || user.gender == null)
+            try
             {
-                return PartialView("_FieldNotFilled");
-            }
-            else
-            {
-                if(check == true)
+                if (user.fullName == null || user.password == null || user.username == null || user.gender == null)
                 {
-                    return PartialView("");
+                    return PartialView("_FieldNotFilled");
                 }
                 else
                 {
-                    return PartialView("_AccountCreated");
-                }
+                    bool check = _userAccountLogic.CheckForDuplicates(user);
+
+                    if (check == false)
+                    {
+                        return PartialView("_UserAlreadyExists");
+                    }
+                    else
+                    {
+                        _userAccountLogic.Register(user);
+                        return PartialView("_AccountCreated");
+                    }
+                } 
+            }
+            catch (NullReferenceException)
+            {
+                throw;
             }           
         }
 
