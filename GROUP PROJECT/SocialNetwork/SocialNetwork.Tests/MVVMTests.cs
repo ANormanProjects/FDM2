@@ -110,7 +110,7 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        public void Test_Remove_UserMethod_RunsRemoveMethodWhenCalledToRemoveExisitingUserInTheDatabaseFromWPFApp()
+        public void Test_Remove_UserMethod_RunsRemoveMethodWhenCalledToRemoveExistingUserInTheDatabaseFromWPFApp()
         {
             //ARRANGE
             userAccountLogic.Setup(c => c.ViewAccountInfo("Test")).Returns(testUser.Object);
