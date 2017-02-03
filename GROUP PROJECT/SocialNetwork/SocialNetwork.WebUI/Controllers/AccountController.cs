@@ -52,8 +52,6 @@ namespace SocialNetwork.WebUI.Controllers
                 _userAccountLogic = new UserAccountLogic(new Repository<User>());
             }
 
-            
-            
                 if (user.fullName == null || user.password == null || user.username == null || user.gender == null)
                 {
                     return PartialView("_FieldNotFilled");
