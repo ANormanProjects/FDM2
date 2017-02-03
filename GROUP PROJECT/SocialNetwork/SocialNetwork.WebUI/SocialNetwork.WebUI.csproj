@@ -250,6 +250,8 @@
     <Content Include="Views\Shared\_FieldNotFilled.cshtml" />
     <Content Include="Views\Shared\_UserAlreadyExists.cshtml" />
     <Content Include="Views\Shared\_GroupPost.cshtml" />
+    <Content Include="Views\Shared\_Success.cshtml" />
+    <Content Include="Views\Shared\_MakePostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

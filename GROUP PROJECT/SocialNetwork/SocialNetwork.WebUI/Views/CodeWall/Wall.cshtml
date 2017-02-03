@@ -4,12 +4,17 @@
     ViewBag.Title = "Code Wall";
 }
 
-@*<h1>The Code Wall</h1>
-<h2>Create new post</h2>
-<div class="form-group">
-    <span>@Html.TextAreaFor(m => m.content, new { @class = "form-control", @style = "min-width: 100%;", @placeholder = "Enter your code/text here..." })</span>
-</div>*@
+<h1 class="text-center">The Code Wall</h1>
+<h3 class="text-center">Create new post</h3>
+<div class="col-md-offset-2 col-md-8 pink">
+    @Html.Partial("_MakePostForm", new SocialNetwork.WebUI.Models.UserPostViewModel());
+</div>
 
+
+<br />
+
+
+<hr />
 <h2 class="text-center">Recent Posts</h2>
 @foreach(SocialNetwork.WebUI.Models.UserPostViewModel viewModel in Model)
 {
@@ -17,14 +22,6 @@
 }
 
 
-@*@using(Ajax.BeginForm("Wall", "CodeWall", new AjaxOptions(){
-    HttpMethod = "GET",
-    UpdateTargetId = "listForm",
-    InsertionMode = InsertionMode.InsertAfter
-    }, new { @id = "listForm" }))
-{
-    
-}*@
 
 
 

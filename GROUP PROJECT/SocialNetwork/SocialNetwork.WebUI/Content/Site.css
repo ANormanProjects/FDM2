@@ -23,6 +23,11 @@ textarea {
     max-width: 280px;
 }
 
+.make-post-form
+{
+    padding: 1em;
+}
+
 .comment-container
 {
     border-radius: 2px;
