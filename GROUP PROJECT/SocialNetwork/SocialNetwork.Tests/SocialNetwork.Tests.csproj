@@ -98,6 +98,7 @@
   <ItemGroup>
     <Compile Include="CommentLogicTests.cs" />
     <Compile Include="GroupAccountLogicTests.cs" />
+    <Compile Include="MVVMTests.cs" />
     <Compile Include="RepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PostLogicTests.cs" />
