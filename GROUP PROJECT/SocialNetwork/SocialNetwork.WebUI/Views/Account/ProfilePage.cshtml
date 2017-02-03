@@ -1,12 +1,18 @@
-﻿@model SocialNetwork.DataAccess.IUser
+﻿@model ICollection<SocialNetwork.WebUI.Models.UserPostViewModel>
 @{
     ViewBag.Title = "ProfilePage";
 }
 
-<h2>Your Profile</h2>
+<div class="jumbotron">
+    <img src="~/Images/skhan-cover.jpg" alt="coverimg" class="under" style="width:100%;height:300px"/>
+    <img src="~/Images/placeholder-profileimage.jpg" alt="profileimg" class="over" style="width:200px;height:200px"/>
+</div>
 
-<h3 class="col-md-12">Cover Image Will Go Here</h3>
-
-<h4 class="col-md-12">Profile Image will Go Here</h4>
+<div class="UserPosts">
+    @foreach (SocialNetwork.WebUI.Models.UserPostViewModel viewModel in Model)
+    {
+        @Html.Partial("_UserPost", viewModel)
+    }
+</div>
 
 @*<img src="" class="img-rounded, col-md-4">*@

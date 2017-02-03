@@ -91,10 +91,6 @@ namespace SocialNetwork.DataAccess
 
         public User()
         {
-            groups = new List<Group>();
-            friends = new List<User>();
-            posts = new List<Post>();
-            skills = new List<string>();
         }
 
         public override string ToString()
