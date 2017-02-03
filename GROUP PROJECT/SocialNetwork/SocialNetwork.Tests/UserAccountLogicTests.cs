@@ -393,6 +393,25 @@ namespace SocialNetwork.Tests
             CollectionAssert.AreEqual(expected, actual);
         }
 
+        [ExpectedException(typeof(EntityNotFoundException))]
+        [TestMethod] 
+        public void Test_ViewAllPostByFollowedGroupsMethod_ThrowsException() 
+        {
+            //Arrange
+            Mock<User> user = new Mock<User>();
+            Mock<Group> group = new Mock<Group>();
+            Mock<GroupAccountLogic> groupLogic = new Mock<GroupAccountLogic>(postLogic.Object, groupRepo.Object);
+            UserAccountLogic userLogic = new UserAccountLogic(groupLogic.Object, userRepo.Object);
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() {  });
+            groupLogic.Setup(x => x.GetAllPostsInGroup(group.Object)).Returns(new List<GroupPost>());
+            user.Setup(x => x.groups).Returns(new List<Group>() { group.Object });
+            var expected = new List<GroupPost>();
 
+            //Act
+            var actual = userLogic.ViewAllPostByFollowedGroups(user.Object);
+
+            //Assert
+          
+        }
     }
 }
