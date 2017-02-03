@@ -99,6 +99,17 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_EditWPFMethod_ThrowsEntityNotFoundException_WhenUsernameIsNotInDatabase()
+        {
+            //ARRANGE
+            userAccountLogic.Setup(c => c.ViewAccountInfo("Test")).Throws(new EntityNotFoundException());
+            WPFVMTests.username = "Test";
+            //ACT
+            WPFVMTests.Edit();
+        }
+
+        [TestMethod]
         public void Test_Remove_UserMethod_RunsRemoveMethodWhenCalledToRemoveExisitingUserInTheDatabaseFromWPFApp()
         {
             //ARRANGE
@@ -114,7 +125,6 @@ namespace SocialNetwork.Tests
             //ASSERT
             userAccountLogic.Verify(c => c.ViewAccountInfo("Test"));
             userAccountLogic.Verify(c => c.RemoveUser(testUser.Object));
-
         }
 
         [TestMethod]
