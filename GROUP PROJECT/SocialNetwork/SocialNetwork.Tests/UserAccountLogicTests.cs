@@ -311,5 +311,26 @@ namespace SocialNetwork.Tests
             user.VerifySet(pword => pword.password = "newPassword");
         }
 
+        [TestMethod]
+        public void Test_RemoveUserMethod_GivenAUser() 
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+            
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() { user.Object });
+            userRepo.Setup(v => v.Save()).Verifiable();
+
+            userRepo.Setup(r => r.Remove(user.Object)).Verifiable();
+
+            //act
+            userAccountLogic.RemoveUser(user.Object);
+
+            //ass
+            userRepo.Verify(n => n.GetAll(), Times.Once);
+            userRepo.Verify(s => s.Save(), Times.Once);
+            userRepo.Verify(r => r.Remove(user.Object), Times.Once);
+        
+        }
+
     }
 }
