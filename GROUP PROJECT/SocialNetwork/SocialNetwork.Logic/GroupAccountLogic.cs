@@ -77,7 +77,7 @@ namespace SocialNetwork.Logic
             }
         }
 
-        public List<User> GetAllUsersInGroup(Group group)
+        public virtual List<User> GetAllUsersInGroup(Group group)
         {
             List<User> users = new List<User>();
             if (groupRepo.GetAll().Contains(group))
@@ -106,7 +106,7 @@ namespace SocialNetwork.Logic
             }
         }
 
-        public List<GroupPost> GetAllPostsInGroup(Group group)
+        public virtual List<GroupPost> GetAllPostsInGroup(Group group)
         {
             List<GroupPost> groupPosts = new List<GroupPost>();
             if (groupRepo.GetAll().Contains(group))

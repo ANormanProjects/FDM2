@@ -201,6 +201,25 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
+        public void Test_CheckForDuplicates_ReturnsFalse_IfAUsernameDoesNotExists()
+        {
+            //Arrange
+            User existingUser = new User { username = "dve" };
+            userRepo.Setup(u => u.Insert(existingUser)).Verifiable();
+            userRepo.Setup(p => p.GetAll()).Returns(new List<User>() { existingUser });
+            var expected = false;
+            User user = new User { username = "dave" };
+
+
+            //Act
+            bool actual = userAccountLogic.CheckForDuplicates(user);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestMethod]
         public void Test_AddFriendMethod_AddsAFriendToBothUsers()
         {
             //arr
@@ -352,5 +371,28 @@ namespace SocialNetwork.Tests
             userRepo.Verify(c => c.First(It.IsAny<Func<User, bool>>()), Times.Once);
         
         }
+
+
+        [TestMethod]
+        public void Test_ViewAllPostByFollowedGroups_ReturnsListOfGroupPost_GivenAUser() 
+        {
+            //Arrange
+            Mock<User> user = new Mock<User>();
+            Mock<Group> group = new Mock<Group>();
+            Mock<GroupAccountLogic> groupLogic = new Mock<GroupAccountLogic>(postLogic.Object, groupRepo.Object);
+            UserAccountLogic userLogic = new UserAccountLogic(groupLogic.Object, userRepo.Object);
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() { user.Object });
+            groupLogic.Setup(x => x.GetAllPostsInGroup(group.Object)).Returns(new List<GroupPost>());
+            user.Setup(x => x.groups).Returns(new List<Group>() { group.Object });
+            var expected = new List<GroupPost>();
+
+            //Act
+            var actual = userLogic.ViewAllPostByFollowedGroups(user.Object);
+
+            //Assert
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+
     }
 }
