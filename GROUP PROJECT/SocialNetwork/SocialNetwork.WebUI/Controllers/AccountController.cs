@@ -101,7 +101,7 @@ namespace SocialNetwork.WebUI.Controllers
 
 
                     //bool userValid = socNetDataModel.users.Any(user => user.username == username && user.password == password);
-                    bool userValid = userAccountLogic.Login(username, password);
+                    bool userValid = _userAccountLogic.Login(username, password);
                     // User found in the database
                     if (userValid)
                     {

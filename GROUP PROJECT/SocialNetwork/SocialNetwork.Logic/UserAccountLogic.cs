@@ -45,7 +45,7 @@ namespace SocialNetwork.Logic
             _userRepository = userRepository;
         }
 
-        public bool Login(string username, string password)
+        public virtual bool Login(string username, string password)
         {
             bool result = false;
 
