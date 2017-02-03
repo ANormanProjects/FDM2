@@ -110,7 +110,7 @@ namespace SocialNetwork.Logic
             throw new NotImplementedException();
         }
 
-        public void Register(User userToAdd)
+        public virtual void Register(User userToAdd)
         { 
             _userRepository.Insert(userToAdd);
             _userRepository.Save();
