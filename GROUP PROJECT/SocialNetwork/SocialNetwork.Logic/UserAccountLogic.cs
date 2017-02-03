@@ -106,7 +106,7 @@ namespace SocialNetwork.Logic
             _userRepository.Save();
         }
 
-        public void EditUser(User userToEdit, string newName, string newGender, string newRole, string newPassword)
+        public virtual void EditUser(User userToEdit, string newName, string newGender, string newRole, string newPassword)
         {
             if(_userRepository.GetAll().Contains(userToEdit))
             {
@@ -122,7 +122,7 @@ namespace SocialNetwork.Logic
             }
         }
 
-        public void RemoveUser(User userToRemove)
+        public virtual void RemoveUser(User userToRemove)
         {
             if(_userRepository.GetAll().Contains(userToRemove))
             {
@@ -136,7 +136,7 @@ namespace SocialNetwork.Logic
             }
         }
 
-        public User ViewAccountInfo(string username)
+        public virtual User ViewAccountInfo(string username)
         {
             User userToDisplay = _userRepository.First(u => u.username == username);
             if (userToDisplay != null)
