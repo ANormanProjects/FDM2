@@ -111,7 +111,7 @@ namespace SocialNetwork.Logic
         }
 
         public void Register(User userToAdd)
-        {   //defensive code
+        { 
             _userRepository.Insert(userToAdd);
             _userRepository.Save();
         }
@@ -140,11 +140,8 @@ namespace SocialNetwork.Logic
 
         public User ViewAccountInfo(string username)
         {
-           //find user
             User userToDisplay = _userRepository.First(u => u.username == username);
-            //what to display
-            return userToDisplay;
-            
+            return userToDisplay;            
         }
 
         public void AddFriend(User currentUser, User userToAdd)
