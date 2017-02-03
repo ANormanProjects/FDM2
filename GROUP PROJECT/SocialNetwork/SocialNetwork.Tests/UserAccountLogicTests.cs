@@ -4,6 +4,7 @@ using Moq;
 using SocialNetwork.DataAccess;
 using SocialNetwork.Logic;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SocialNetwork.Tests
 {
@@ -185,9 +186,12 @@ namespace SocialNetwork.Tests
         public void Test_CheckForDuplicates_ReturnsTrue_IfAUsernameAlreadyExists()
         {
             //Arrange
-            User user = new User();
+            User existingUser = new User { username = "dave"};
+            userRepo.Setup(u => u.Insert(existingUser)).Verifiable();
+            userRepo.Setup(p => p.GetAll()).Returns(new List<User>() { existingUser });
             var expected = true;
-
+            User user = new User { username = "dave"};
+            
 
             //Act
             bool actual = userAccountLogic.CheckForDuplicates(user);
