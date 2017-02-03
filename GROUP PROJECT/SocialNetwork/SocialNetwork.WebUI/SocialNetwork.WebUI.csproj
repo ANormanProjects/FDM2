@@ -170,6 +170,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GroupPostViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -181,6 +182,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\codecomputer.jpg" />
+    <Content Include="Content\ConfusingCode.jpg" />
     <Content Include="Content\custom.css" />
     <Content Include="Content\facebook.svg" />
     <Content Include="Content\linkedin.svg" />
