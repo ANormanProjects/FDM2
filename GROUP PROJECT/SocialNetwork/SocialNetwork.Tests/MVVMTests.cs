@@ -19,6 +19,7 @@ namespace SocialNetwork.Tests
         ObservableCollection<User> userList;
         WPFViewModel WPFVMTests;
         Mock<ICommand> command;
+        Mock<User> testUser;
 
         [TestInitialize]
         public void Setup()
@@ -28,6 +29,7 @@ namespace SocialNetwork.Tests
             WPFVMTests = new WPFViewModel(userAccountLogic.Object);
             userList = new ObservableCollection<User>();
             command = new Mock<ICommand>();
+            testUser = new Mock<User>();
 
         }
 
@@ -79,17 +81,40 @@ namespace SocialNetwork.Tests
         public void Test_Edit_UserMethod_RunsEditMethodWhenCalledToEditExistingUserInTheDatabaseFromWPFApp()
         {
             //ARRANGE
-            Mock<User> editUser = new Mock<User>();
-            userAccountLogic.Setup(c => c.GetAllUserAccounts()).Returns(new List<User>(){editUser.Object});
-            userAccountLogic.Setup(c => c.EditUser(editUser.Object, "a", "a", "a", "a"));
-
+            userAccountLogic.Setup(c => c.ViewAccountInfo("Test")).Returns(testUser.Object);
+            userAccountLogic.Setup(c => c.EditUser(testUser.Object, "Test", "Test", "Test", "Test"));
             WPFVMTests.userAccLogic = userAccountLogic.Object;
+            WPFVMTests.username = "Test";
+            WPFVMTests.fullName = "Test";
+            WPFVMTests.gender = "Test";
+            WPFVMTests.role = "Test";
+            WPFVMTests.password = "Test";
 
             //ACT
             WPFVMTests.Edit();
 
             //ASSERT
-            userAccountLogic.Verify(c => c.GetAllUserAccounts());
+            userAccountLogic.Verify(c => c.ViewAccountInfo("Test"));
+            userAccountLogic.Verify(c => c.EditUser(testUser.Object, "Test", "Test", "Test", "Test"));
+        }
+
+        [TestMethod]
+        public void Test_Remove_UserMethod_RunsRemoveMethodWhenCalledToRemoveExisitingUserInTheDatabaseFromWPFApp()
+        {
+            //ARRANGE
+            userAccountLogic.Setup(c => c.ViewAccountInfo("Test")).Returns(testUser.Object);
+            userAccountLogic.Setup(c => c.RemoveUser(testUser.Object));
+            WPFVMTests.userAccLogic = userAccountLogic.Object;
+            WPFVMTests.username = "Test";
+
+
+            //ACT
+            WPFVMTests.Remove();
+
+            //ASSERT
+            userAccountLogic.Verify(c => c.ViewAccountInfo("Test"));
+            userAccountLogic.Verify(c => c.RemoveUser(testUser.Object));
+
         }
 
         [TestMethod]
