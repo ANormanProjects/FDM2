@@ -404,9 +404,8 @@ namespace SocialNetwork.Tests
             Mock<GroupAccountLogic> groupLogic = new Mock<GroupAccountLogic>(postLogic.Object, groupRepo.Object);
             UserAccountLogic userLogic = new UserAccountLogic(groupLogic.Object, userRepo.Object);
             userRepo.Setup(c => c.GetAll()).Returns(new List<User>() {  });
-            groupLogic.Setup(x => x.GetAllPostsInGroup(group.Object)).Returns(new List<GroupPost>());
-            user.Setup(x => x.groups).Returns(new List<Group>() { group.Object });
-            var expected = new List<GroupPost>();
+            
+           
 
             //Act
             var actual = userLogic.ViewAllPostByFollowedGroups(user.Object);
@@ -414,5 +413,37 @@ namespace SocialNetwork.Tests
             //Assert
           
         }
+
+        [ExpectedException(typeof(EntityNotFoundException))]
+        [TestMethod]
+        public void Test_EditUserMethod_ThrowsException_IfUserDoesntExist()
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+           
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() {  });
+          
+            //act
+            userAccountLogic.EditUser(user.Object, "newName", "newGender", "newRole", "newPassword");
+                               
+   
+        }
+
+        [ExpectedException(typeof(EntityNotFoundException))]
+        [TestMethod]
+        public void Test_RemoveUserMethod_ThrowsException_IfUserDoesntExist()
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() { });
+
+            //act
+            userAccountLogic.RemoveUser(user.Object);
+
+
+        }
+
+
     }
 }

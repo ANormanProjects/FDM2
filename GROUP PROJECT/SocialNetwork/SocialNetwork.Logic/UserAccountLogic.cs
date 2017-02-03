@@ -116,6 +116,10 @@ namespace SocialNetwork.Logic
                 userToEdit.password = newPassword;
                 _userRepository.Save();
             }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
         }
 
         public void RemoveUser(User userToRemove)
@@ -125,6 +129,10 @@ namespace SocialNetwork.Logic
 
                 _userRepository.Remove(userToRemove);
                 _userRepository.Save();
+            }
+            else
+            {
+                throw new EntityNotFoundException();
             }
         }
 
