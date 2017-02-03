@@ -68,14 +68,6 @@
     <Compile Include="IComment.cs" />
     <Compile Include="IGroup.cs" />
     <Compile Include="IUser.cs" />
-    <Compile Include="Migrations\201702011107154_reset.cs" />
-    <Compile Include="Migrations\201702011107154_reset.Designer.cs">
-      <DependentUpon>201702011107154_reset.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702021522392_comment-likes.cs" />
-    <Compile Include="Migrations\201702021522392_comment-likes.Designer.cs">
-      <DependentUpon>201702021522392_comment-likes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="GroupPost.cs" />
@@ -91,14 +83,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702011107154_reset.resx">
-      <DependentUpon>201702011107154_reset.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702021522392_comment-likes.resx">
-      <DependentUpon>201702021522392_comment-likes.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
