@@ -82,11 +82,6 @@ namespace SocialNetwork.Logic
         public bool CheckForDuplicates(User user)
         {
 
-            if (_userRepository == null)
-            {
-                _userRepository = new Repository<User>();
-            }
-
             var userList = _userRepository.GetAll();
 
             var query = from b in userList

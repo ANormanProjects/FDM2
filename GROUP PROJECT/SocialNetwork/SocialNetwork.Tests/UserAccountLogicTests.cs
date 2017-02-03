@@ -343,8 +343,6 @@ namespace SocialNetwork.Tests
             Mock<User> user = new Mock<User>();
             user.Setup(f => f.username).Returns("fb");
 
-            //user.Setup(u => u.username).Verifiable();
-
             userRepo.Setup(x => x.First(It.IsAny<Func<User, bool>>())).Returns(user.Object);
             //act
 
