@@ -283,7 +283,33 @@ namespace SocialNetwork.Tests
 
         }
 
+        [TestMethod]
+        public void Test_EditUserMethod_EditAUser_GivenAUserAndDetails() 
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+            user.SetupSet(fname => fname.fullName = "newName").Verifiable();
+            user.SetupSet(gender => gender.gender = "newGender").Verifiable();
+            user.SetupSet(role => role.role = "newRole").Verifiable();
+            user.SetupSet(pword => pword.password = "newPassword").Verifiable();
 
+
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() { user.Object });
+            userRepo.Setup(v => v.Save()).Verifiable();
+
+            //act
+            userAccountLogic.EditUser(user.Object,"newName","newGender", "newRole", "newPassword");
+
+            //ass
+
+            userRepo.Verify(n => n.GetAll(), Times.Once);
+            userRepo.Verify(s => s.Save(), Times.Once);
+
+            user.VerifySet(fname => fname.fullName = "newName");
+            user.VerifySet(gender => gender.gender = "newGender");
+            user.VerifySet(role => role.role = "newRole");
+            user.VerifySet(pword => pword.password = "newPassword");
+        }
 
     }
 }

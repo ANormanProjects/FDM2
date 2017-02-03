@@ -37,7 +37,7 @@ namespace SocialNetwork.DataAccess
         
         private string _fullName;
         [DisplayName("Full Name")]
-        public string fullName
+        public virtual string fullName
         {
             get { return _fullName; }
             set { _fullName = value; }
@@ -46,14 +46,14 @@ namespace SocialNetwork.DataAccess
         
         private string _gender;
         [DisplayName("Gender")]
-        public string gender
+        public virtual string gender
         {
             get { return _gender; }
             set { _gender = value; }
         }       
         
         private string _role;
-        public string role
+        public virtual string role
         {
             get { return _role; }
             set { _role = value; }
@@ -82,7 +82,7 @@ namespace SocialNetwork.DataAccess
         }
 
         private ICollection<string> _skills;
-        public ICollection<string> skills
+        public virtual ICollection<string> skills
         {
             get { return _skills; }
             set { _skills = value; }
