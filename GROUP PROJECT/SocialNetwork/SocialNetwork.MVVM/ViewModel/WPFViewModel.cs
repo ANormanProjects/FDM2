@@ -166,7 +166,8 @@ namespace SocialNetwork.MVVM.ViewModel
 
         public void ListAllUsers()
         {
-            user = new ObservableCollection<User>(userAccLogic.GetAllUserAccounts());
+            List<User> repoUsers = userAccLogic.GetAllUserAccounts();
+            user = new ObservableCollection<User>(repoUsers);
         }
 
         public void Add()
@@ -180,7 +181,6 @@ namespace SocialNetwork.MVVM.ViewModel
             newUser.password = password;
 
             userAccLogic.Register(newUser);
-            ListAllUsers();
         }
 
         public void Edit()
