@@ -104,12 +104,7 @@ namespace SocialNetwork.Logic
             return false;
 
         }
-
-        public void Logout(int id)
-        {
-            throw new NotImplementedException();
-        }
-
+               
         public virtual void Register(User userToAdd)
         { 
             _userRepository.Insert(userToAdd);
@@ -160,11 +155,7 @@ namespace SocialNetwork.Logic
             _userRepository.Save();
 
         }
-
-        public void UpdateInfo(int id, string username, string password)
-        {
-            throw new NotImplementedException();
-        }
+               
 
         public virtual List<User> GetAllUserAccounts()
         {
