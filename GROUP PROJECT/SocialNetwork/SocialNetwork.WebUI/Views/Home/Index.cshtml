@@ -1,5 +1,4 @@
-﻿@model ICollection<SocialNetwork.WebUI.Models.UserPostViewModel>
-
+﻿
 @{
     ViewBag.Title = "Home";
 }
@@ -10,7 +9,3 @@
         <p>Join in today and share your code-pertise with us today!</p>
 </div>
 
-@foreach (SocialNetwork.WebUI.Models.UserPostViewModel viewModel in Model)
-{
-    @Html.Partial("_UserPost", viewModel)
-}

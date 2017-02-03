@@ -1,4 +1,4 @@
-﻿@model SocialNetwork.DataAccess.Comment
+﻿@model SocialNetwork.WebUI.Models.CommentViewModel
 
 <div class="comment-container">
     <div class="container comment-sidebar col-sm-2">
@@ -7,6 +7,6 @@
 
     <div class="container comment-content col-sm-10">
         <h4>@Model.user.fullName</h4>
-        <p>@Model.content</p>
+        <p>@Model.comment.content</p>
     </div>
 </div>
