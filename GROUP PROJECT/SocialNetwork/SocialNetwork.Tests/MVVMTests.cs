@@ -15,14 +15,14 @@ namespace SocialNetwork.Tests
         Mock<Repository<User>> userRepo;
         Mock<UserAccountLogic> userAccountLogic;
         List<User> userList;
-        ListAllUsersViewModel listAllUsersVMTests;
+        WPFViewModel WPFVMTests;
 
         [TestInitialize]
         public void Setup()
         {
             userRepo = new Mock<Repository<User>>();
             userAccountLogic = new Mock<UserAccountLogic>(userRepo.Object);
-            listAllUsersVMTests = new ListAllUsersViewModel(userAccountLogic.Object);
+            WPFVMTests = new WPFViewModel(userAccountLogic.Object);
             userList = new List<User>();
 
         }
@@ -31,12 +31,12 @@ namespace SocialNetwork.Tests
         public void Test_ListAllUsersViewModelConstructor()
         {
             //ARRANGE
-            ListAllUsersViewModel listAllUsersVM = new ListAllUsersViewModel();
+            WPFViewModel WPFVM = new WPFViewModel();
             //ACT
 
             //ASSERT
-            Assert.IsNotNull(listAllUsersVM._userRepository);
-            Assert.IsNotNull(listAllUsersVM.userAccLogic);
+            Assert.IsNotNull(WPFVM._userRepository);
+            Assert.IsNotNull(WPFVM.userAccLogic);
         }
 
         [TestMethod]
@@ -46,7 +46,7 @@ namespace SocialNetwork.Tests
             userAccountLogic.Setup(c => c.GetAllUserAccounts()).Returns(userList);
 
             //ACT
-            listAllUsersVMTests.ListAllUsers();
+            WPFVMTests.ListAllUsers();
 
             //ASSERT
             userAccountLogic.Verify(c => c.GetAllUserAccounts(), Times.Once);
