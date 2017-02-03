@@ -138,10 +138,10 @@ namespace SocialNetwork.Logic
             }
         }
 
-        public User ViewAccountInfo(int userId)
+        public User ViewAccountInfo(string username)
         {
            //find user
-            User userToDisplay = _userRepository.First(u => u.userId == userId);
+            User userToDisplay = _userRepository.First(u => u.username == username);
             //what to display
             return userToDisplay;
             

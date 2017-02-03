@@ -336,5 +336,23 @@ namespace SocialNetwork.Tests
         
         }
 
+        [TestMethod]
+        public void Test_ViewAccountInfo_GivenAUsername() 
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+            user.Setup(f => f.username).Returns("fb");
+
+            //user.Setup(u => u.username).Verifiable();
+
+            userRepo.Setup(x => x.First(It.IsAny<Func<User, bool>>())).Returns(user.Object);
+            //act
+
+            User uwser = userAccountLogic.ViewAccountInfo("fb");
+            //ass
+            Assert.AreEqual(user.Object, uwser);
+            userRepo.Verify(c => c.First(It.IsAny<Func<User, bool>>()), Times.Once);
+        
+        }
     }
 }
