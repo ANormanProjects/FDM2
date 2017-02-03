@@ -119,6 +119,10 @@
       <Project>{fd9724be-01c3-4e41-ba3f-2a103daeddf3}</Project>
       <Name>SocialNetwork.Logic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SocialNetwork.MVVM\SocialNetwork.MVVM.csproj">
+      <Project>{7efa273b-78cf-424c-a166-ef0b75dd54b6}</Project>
+      <Name>SocialNetwork.MVVM</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SocialNetwork.WebUI\SocialNetwork.WebUI.csproj">
       <Project>{f8623601-1bcb-42a2-8da9-88bb2454f004}</Project>
       <Name>SocialNetwork.WebUI</Name>
