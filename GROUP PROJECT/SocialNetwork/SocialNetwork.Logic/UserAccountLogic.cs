@@ -31,7 +31,6 @@ namespace SocialNetwork.Logic
         public UserAccountLogic(Repository<User> userRepository)
         {
             _userRepository = userRepository;
-
         }
 
         public UserAccountLogic(PostLogic PostLogic)
