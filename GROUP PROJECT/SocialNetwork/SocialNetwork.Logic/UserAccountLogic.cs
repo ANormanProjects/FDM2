@@ -42,7 +42,13 @@ namespace SocialNetwork.Logic
         {
             postLogic = PostLogic;
             _userRepository = userRepository;
-        } 
+        }
+
+        public UserAccountLogic(GroupAccountLogic groupLogic, Repository<User> userRepository)
+        {
+            groupAccLogic = groupLogic;
+            _userRepository = userRepository;
+        }
 
         public bool Login(string username, string password)
         {
@@ -182,15 +188,21 @@ namespace SocialNetwork.Logic
 
         public List<GroupPost> ViewAllPostByFollowedGroups(User user)
         {
-            List<GroupPost> groupPosts = new List<GroupPost>();
-
-            foreach (Group _group in user.groups)
+            if (_userRepository.GetAll().Contains(user))
             {
-                groupPosts = groupAccLogic.GetAllPostsInGroup(_group);
-            }
+                List<GroupPost> groupPosts = new List<GroupPost>();
 
-            return groupPosts;
-            
+                foreach (Group _group in user.groups)
+                {
+                    groupPosts = groupAccLogic.GetAllPostsInGroup(_group);
+                }
+
+                return groupPosts;
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
         }
 
     }
