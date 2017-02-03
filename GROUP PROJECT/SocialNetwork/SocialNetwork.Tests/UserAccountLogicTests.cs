@@ -170,16 +170,17 @@ namespace SocialNetwork.Tests
         public void Test_RegisterUser_AddsUserToDbWhenCalledAndGivenUser()
         {
             //Arrange
-            User user = new User();
+            Mock<User> user = new Mock<User>();
 
             
-            userRepo.Setup(u => u.Insert(user));
+            userRepo.Setup(u => u.Insert(user.Object));
 
             //Act
-            userAccountLogic.Register(user);
+            userAccountLogic.Register(user.Object);
             
             //Assert
-            userRepo.Verify(u => u.Insert(user), Times.Once);  
+            userRepo.Verify(u => u.Insert(user.Object), Times.Once);
+            userRepo.Verify(i => i.Save(), Times.Once);
         }
 
         [TestMethod]
