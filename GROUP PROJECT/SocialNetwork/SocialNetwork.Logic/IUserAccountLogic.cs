@@ -10,12 +10,10 @@ namespace SocialNetwork.Logic
     public interface IUserAccountLogic
     {
         bool Login(string username, string password);
-        bool LoginDetailVerification(string username, string password);
-        void Logout(int id);
+        bool LoginDetailVerification(string username, string password);        
         void Register(User userToAdd);
         User ViewAccountInfo(string username);
-        void AddFriend(User currentUser, User userToAdd);
-        void UpdateInfo(int id, string username, string password);
+        void AddFriend(User currentUser, User userToAdd);        
         void WritePost(int id, string title, string language, string code, string content, User user);
     }
 
