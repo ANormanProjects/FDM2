@@ -116,6 +116,24 @@ namespace SocialNetwork.Tests
             Assert.AreEqual(expected, actual.ViewName);
         }
 
+        [TestMethod]
+        public void Test_RegisterInAccounts_UserAccountLogicIsNull_CreatesNewInstanceOfUserAccountLogic()
+        {
+            //Arrange
+            Mock<User> mockUser = new Mock<User>();
+            Mock<Repository<User>> mockUserRepository = new Mock<Repository<User>>();
+            mockUser.Object.fullName = null;
+            UserAccountLogic userAccountLogic = new UserAccountLogic(mockUserRepository.Object);
+            var expected = "_FieldNotFilled";
+
+            //Act
+            AccountController classunderTest = new AccountController(userAccountLogic);
+            var actual = classunderTest.Register(mockUser.Object) as ViewResult;
+
+            //Assert
+            Assert.AreEqual(expected,actual.ViewName);
+        }
+
         //---------- Testing the CodeWallController ----------//
 
         [TestMethod]
