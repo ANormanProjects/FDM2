@@ -62,21 +62,34 @@ namespace SocialNetwork.Tests
 
         
         [TestMethod]
-        public void Test_Add_UserMethod_RunsAddWhenCalledToAddNewUserToTheDatabase()
+        public void Test_Add_UserMethod_RunsRegisterMethodWhenCalledToAddNewUserToTheDatabaseFromWPFApp()
         {
             //ARRANGE
-            Mock<User> newUser = new Mock<User>();
-
-            userAccountLogic.Setup(c => c.Register(newUser.Object)).Verifiable();
-
+            userAccountLogic.Setup(c => c.Register(It.IsAny<User>()));
             WPFVMTests.userAccLogic = userAccountLogic.Object;
 
             //ACT
             WPFVMTests.Add();
 
             //ASSERT
-            userAccountLogic.Verify(c => c.Register(newUser.Object));
+            userAccountLogic.Verify(c => c.Register(It.IsAny<User>()), Times.Once);
+        }
 
+        [TestMethod]
+        public void Test_Edit_UserMethod_RunsEditMethodWhenCalledToEditExistingUserInTheDatabaseFromWPFApp()
+        {
+            //ARRANGE
+            Mock<User> editUser = new Mock<User>();
+            userAccountLogic.Setup(c => c.GetAllUserAccounts()).Returns(new List<User>(){editUser.Object});
+            userAccountLogic.Setup(c => c.EditUser(editUser.Object, "a", "a", "a", "a"));
+
+            WPFVMTests.userAccLogic = userAccountLogic.Object;
+
+            //ACT
+            WPFVMTests.Edit();
+
+            //ASSERT
+            userAccountLogic.Verify(c => c.GetAllUserAccounts());
         }
 
         [TestMethod]

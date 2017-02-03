@@ -139,7 +139,14 @@ namespace SocialNetwork.Logic
         public User ViewAccountInfo(string username)
         {
             User userToDisplay = _userRepository.First(u => u.username == username);
-            return userToDisplay;            
+            if (userToDisplay != null)
+            {
+                return userToDisplay;
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
         }
 
         public void AddFriend(User currentUser, User userToAdd)
