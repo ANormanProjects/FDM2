@@ -9,7 +9,7 @@ namespace SocialNetwork.Logic
 {
     public class UserAccountLogic : IUserAccountLogic
     {
-        Repository<User> _userRepository;
+        Repository<User> _userRepository = new Repository<User>();
         Repository<Post> _postRepository;
         Repository<Comment> _commentRepository;
         Repository<Group> _groupRepository;

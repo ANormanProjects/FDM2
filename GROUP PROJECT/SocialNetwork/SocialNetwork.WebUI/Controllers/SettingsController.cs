@@ -9,6 +9,7 @@ namespace SocialNetwork.WebUI.Controllers
     public class SettingsController : Controller
     {
         // GET: Settings
+        [Authorize]
         public ActionResult SettingsPage()
         {
             return View("SettingsPage");

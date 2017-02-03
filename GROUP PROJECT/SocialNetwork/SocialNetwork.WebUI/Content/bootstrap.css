@@ -65,7 +65,7 @@ html {
 
 body {
     margin: 0;
-    margin-bottom: 300px;
+    margin-bottom: 300px; /*DO NOT EDIT*/
 
 }
 
@@ -800,6 +800,15 @@ pre {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+
+/*<!--CUSTOM CONTAINER FOR FOOTER - DO NOT EDIT OR FACE WRATH OF BEN-->*/
+.container-layout {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 250px; 
 }
 
     .container:before,
@@ -5158,14 +5167,14 @@ a.list-group-item.active > .badge,
 }
 
 .jumbotron {
-    padding: 30px;
-    margin-bottom: 30px;
+    /*padding: 30px;
+    margin-bottom: 30px;*/
     font-family: 'Nunito', sans-serif;
     font-size: 21px;
     font-weight: 200;
     line-height: 2.1428571435;
     color: inherit;
-    background-color: #eeeeee;
+    /*background-color: #eeeeee;*/
 }
 
 .jumbotron2 {
@@ -5183,6 +5192,19 @@ a.list-group-item.active > .badge,
     /*border-radius: 20px 20px 20px 20px;*/
 }
 
+/*.jumbotron3 {
+    padding: 80px;
+    margin-bottom: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 2.1428571435;
+    color: white;
+    background-color: #eeeeee;
+    background-image: url("../Content/skhan-cover.jpg");
+    background-size: 100%;
+}*/
+
     .jumbotron h1 {
         line-height: 1;
         color: inherit;
@@ -5193,18 +5215,18 @@ a.list-group-item.active > .badge,
     }
 
 .container .jumbotron {
-    border-radius: 6px;
+    border-radius: 5px;
 }
 
 @media screen and (min-width: 768px) {
     .jumbotron {
-        padding-top: 48px;
-        padding-bottom: 48px;
+        padding-top: 40px;
+        padding-bottom: 10px;
     }
 
     .container .jumbotron {
-        padding-right: 60px;
-        padding-left: 60px;
+        /*padding-right: 60px;
+        padding-left: 60px;*/
     }
 
     .jumbotron h1 {
@@ -7137,4 +7159,32 @@ td.visible-print {
     td.hidden-print {
         display: none !important;
     }
+}
+
+.under
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+.over
+{
+    position: absolute;
+    left: 40px;
+    top: 200px;
+    z-index: -1;
+}
+
+.underImages
+{
+    position: absolute;
+    top: 500px;
+}
+
+.UserPosts
+{
+    position: relative;
+    top:300px;
 }
