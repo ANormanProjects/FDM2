@@ -185,35 +185,34 @@ namespace SocialNetwork.MVVM.ViewModel
 
         public void Edit()
         {
-            foreach (User user in userAccLogic.GetAllUserAccounts())
+            try
             {
-                if (username == user.username)
-                {
-                    string newName = fullName;
-                    string newGender = gender;
-                    string newRole = role;
-                    string newPassword = password;
+                User user1 = userAccountLogic.ViewAccountInfo(username);
 
-                    userAccLogic.EditUser(user, newName, newGender, newRole, newPassword);
-                    return;
-                }
+                string newName = fullName;
+                string newGender = gender;
+                string newRole = role;
+                string newPassword = password;
+
+                userAccLogic.EditUser(user1, newName, newGender, newRole, newPassword);
             }
-            throw new EntityNotFoundException();
+            catch (EntityNotFoundException)
+            {
+                return;
+            }
         }
 
         public void Remove()
         {
-            foreach (User user in userAccLogic.GetAllUserAccounts())
+            try
             {
-                if (username == user.username)
-                {
-                    userAccLogic.RemoveUser(user);
-                    return;
-                }                
+                User user1 = userAccountLogic.ViewAccountInfo(username);
+                userAccLogic.RemoveUser(user1);
             }
-            throw new EntityNotFoundException();
+            catch (EntityNotFoundException)
+            {
+                return;
+            }
         }
-
-
     }
 }
