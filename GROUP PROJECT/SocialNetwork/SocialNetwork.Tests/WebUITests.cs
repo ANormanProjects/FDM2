@@ -77,11 +77,31 @@ namespace SocialNetwork.Tests
 
             AccountController classUnderTest = new AccountController(mockUserAccountLogic.Object);
             
-            mockUserAccountLogic.Setup(s => s.Login(user.username, user.password)).Returns(true);
+            mockUserAccountLogic.Setup(s => s.Login(user.username, user.password)).Returns(false);
             
             classUnderTest.Login(user, returnUrl);
             
             mockUserAccountLogic.Verify(r => r.Login(user.username, user.password), Times.Once);
+        }
+
+        [TestMethod]
+        public void Test_LoginInAccounts_ReturnsModelError_WhenWrongInfoIsGiven()
+        {
+            var userRep = new Repository<User>();
+            var mockUserAccountLogic = new Mock<UserAccountLogic>(userRep);
+
+            User user = new User();
+            user.username = "tomjones";
+            user.password = "unusual";
+            string returnUrl = "Account/Login";
+            var expected = "Error";
+
+            AccountController classUnderTest = new AccountController(mockUserAccountLogic.Object);
+            mockUserAccountLogic.Setup(s => s.Login(user.username, user.password)).Returns(false);
+            var actual = classUnderTest.Login(user, returnUrl) as PartialViewResult;
+
+            Assert.AreEqual(expected, actual);
+            
         }
 
         [TestMethod]
