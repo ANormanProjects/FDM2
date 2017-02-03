@@ -22,7 +22,7 @@
             <div class="container post-comments col-sm-8">
                 @foreach (SocialNetwork.DataAccess.Comment comment in Model.post.comments)
                 {
-                    @Html.Partial("_Comment", comment)
+                    @Html.Partial("_Comment", new SocialNetwork.WebUI.Models.CommentViewModel() { comment = comment, user = comment.user })
                 }
             </div>
         </div>   

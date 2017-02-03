@@ -37,7 +37,7 @@ namespace SocialNetwork.DataAccess
 
         private User _user;
 
-        public User user
+        public virtual User user
         {
             get { return _user; }
             set { _user = value; }

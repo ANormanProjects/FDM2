@@ -18,65 +18,31 @@ namespace Test_Console
             Repository<Group> groupRepo = new Repository<Group>(context);
             Repository<Comment> commentRepo = new Repository<Comment>(context);
             Repository<Post> postRepo = new Repository<Post>(context);
-            UserAccountLogic uAccLogic = new UserAccountLogic(userRepo);                    
 
-            //userRepo.Insert(new User()
-            //{
-            //    fullName = "Princess Peach"
-            //});           
+            User suleman = userRepo.First(u => u.username == "skhan");
+            User spencer = userRepo.First(u => u.username == "snewton");
 
-            //Console.ReadKey();
+            foreach(User u in userRepo.GetAll())
+            {
+                Console.WriteLine("\n" + u.fullName + " has friends: ");
 
-            //userRepo.Save();
+                foreach (User f in u.friends)
+                {
+                    Console.WriteLine(f.fullName);
+                }
+            }
 
-            //foreach (User user in userRepo.GetAll())
-            //{
-            //    System.Console.WriteLine(user.fullName);
-            //}
+            foreach(Post p in spencer.posts)
+            {
+                Console.WriteLine(p.title);
 
-            //List<Group> groups = new List<Group>();
+                foreach( Comment c in p.comments )
+                {
+                    Console.WriteLine(c.content);
+                }
+            }
 
-            //foreach (Group group in groupRepo.GetAll())
-            //{
-            //    groups.Add(group);
-            //    System.Console.WriteLine(groupRepo);
-            //}
-
-            //CommentLogic commentLogic = new CommentLogic(postRepo, commentRepo);
-
-            //commentLogic.addComment("hello", userRepo.GetAll().ToList()[0], postRepo.GetAll().ToList()[0]);
-
-            //List<Post> posts = postRepo.GetAll();
-
-            ////commentRepo.Insert(new Comment("haha lmao Bishan is a player! rofl lol", userRepo.GetAll()[0], posts[0]));
-            //User user = userRepo.First(u => true);
-            //Post post = posts[0];
-            //Comment test = new Comment("lol", user, post);
-            //commentRepo.Insert(test);
-
-            //CommentLogic commentLogic = new CommentLogic(postRepo, commentRepo, userRepo);
-
-            //commentLogic.EditComment(commentRepo.GetAll()[1], "Lololol I'm glad you find that shh amusing");
-
-            //foreach (Comment comment in posts[0].comments)
-            //{
-            //    System.Console.WriteLine(comment.content);
-            //}
-
-            //foreach (Comment comment in commentRepo.GetAll())
-            //{
-            //    System.Console.WriteLine(comment.content);
-            //}
-
-
-            //Console.ReadLine();
-
-            bool val = uAccLogic.Login("mreid", "password");
-
-            Console.WriteLine(val);
-
-            Console.ReadLine();
-
+            Console.ReadLine();            
         }
     }
 }
