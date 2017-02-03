@@ -7,6 +7,9 @@ using System.Linq;
 using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
+using SocialNetwork.Logic;
+using Moq;
+using SocialNetwork.DataAccess;
 
 namespace SocialNetwork.Tests
 {
@@ -51,6 +54,23 @@ namespace SocialNetwork.Tests
             var actual = classUnderTest.Login() as ViewResult;
 
             Assert.AreEqual(expected, actual.ViewName);
+        }
+
+        [TestMethod]
+        public void Test_LoginInAccounts_CallsLoginMethod()
+        {
+            var mockUserAccountLogic = new Mock<UserAccountLogic>();
+            User user = new User();
+            user.username = "tomjones";
+            user.password = "delilah";
+            string returnUrl = "ProfilePage";
+
+            AccountController classUnderTest = new AccountController(mockUserAccountLogic.Object);
+
+            mockUserAccountLogic.Setup(s => s.Login(user.username, user.password)).Returns(true);
+
+            classUnderTest.Login(user, returnUrl);
+            mockUserAccountLogic.Verify(r => r.Login(user.username, user.password), Times.Once);
         }
 
         [TestMethod]
