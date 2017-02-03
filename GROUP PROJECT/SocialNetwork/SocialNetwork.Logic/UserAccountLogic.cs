@@ -88,7 +88,9 @@ namespace SocialNetwork.Logic
                 _userRepository = new Repository<User>();
             }
 
-            var query = from b in _userRepository.GetAll()
+            var userList = _userRepository.GetAll();
+
+            var query = from b in userList
                         where b.username == user.username
                         select b;
 
