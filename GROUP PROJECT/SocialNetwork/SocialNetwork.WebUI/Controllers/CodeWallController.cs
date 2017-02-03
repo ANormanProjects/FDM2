@@ -25,13 +25,31 @@ namespace SocialNetwork.WebUI.Controllers
         [Authorize]
         public ActionResult Wall()
         {
-            string username = User.Identity.Name;
-            Repository<User> userRepo = new Repository<User>();
-            User user = userRepo.First(u => u.username == (User.Identity.Name == "" ? "snewton" : User.Identity.Name));
-            List<UserPostViewModel> viewModels = CreateViewModelsForUser(user);
+            List<UserPostViewModel> viewModels;
+            User user;
+            UserAccountLogic logic = new UserAccountLogic(new Repository<User>());
 
-            return View("Wall", viewModels);
+            try
+            {
+                user = logic.ViewAccountInfo(User.Identity.Name);
+                viewModels = CreateViewModelsForUserFriendsGroups(user);
+                return View("Wall", viewModels);
+            }
+            catch (EntityNotFoundException)
+            {
+                return View("Wall");
+            }       
+
+            
         }
+
+        [HttpPost]
+        [Authorize]
+        public ActionResult MakePost(UserPostViewModel viewModel)
+        {
+            return PartialView("_Success");
+        }
+
 
         public List<UserPostViewModel> CreateViewModelsForUser(User user)
         {
@@ -46,82 +64,24 @@ namespace SocialNetwork.WebUI.Controllers
         }
 
 
-
-
-        public List<UserPostViewModel> CreateTestViewModels()
+        public List<UserPostViewModel> CreateViewModelsForUserFriendsGroups(User user)
         {
-            UserPostViewModel viewModel1 = new UserPostViewModel()
+            List<UserPostViewModel> posts = new List<UserPostViewModel>();
+
+            foreach (UserPost p in user.posts)
             {
-                post = new UserPost()
+                posts.Add(new UserPostViewModel() { post = p });
+            }
+
+            foreach (User f in user.friends)
+            {
+                foreach (UserPost p in f.posts)
                 {
-                    user = new User() { fullName = "Spencer Newton" },
-                    title = "My Repository Interface",
-                    content = "Hey guys here is my code I hope you like it xoxo Spencer",
-                    code = @"   /// <summary>
-    /// Generic Interface for Implementing a Data Repository
-    /// </summary>
-    public interface IRepository<T>
-    {
-        void Save();
-        void Insert(T entity);
-        void Remove(T entity);
-        //void Update(T entity, Func<T, bool> lambdaExpression);
-        T First(Func<T, bool> lambdaExpression);
-        List<T> Search(Func<T, bool> lambdaExpression);        
-        List<T> GetAll();
-    }",
-                    time = DateTime.Now,
-                    language = "C#",
-                    likes = 214,
-                    comments = new List<Comment>()
-                    {
-                        new Comment()
-                        {
-                            content = "This code is great! Can I use it in my own program?",
-                            user = new User() { fullName = "Bishan Meghani" }                            
-                        }, 
-                        new Comment()
-                        {
-                            content = "This was copied from my program!!!",
-                            user = new User() { fullName = "Andrew Norman" }                            
-                        }
-                    }
+                    posts.Add(new UserPostViewModel() { post = p });
                 }
-            };
+            }
 
-            UserPostViewModel viewModel2 = new UserPostViewModel()
-            {
-                post = new UserPost()
-                {
-                    user = new User() { fullName = "Marvin Martian" },
-                    title = "My Hello Mars App",
-                    content = "Hey guys here is my code I hope you like it xoxo Marvin",
-                    code = "Console.WriteLine(\"Hello Mars!\"); // Earth Sux LUL",
-                    time = DateTime.Now,
-                    language = "C#",
-                    likes = 76,
-                    comments = new List<Comment>()
-                    {
-                        new Comment()
-                        {
-                            content = "This Offends Me.",
-                            user = new User() { fullName = "Suleman Khan" }                            
-                        }, 
-                        new Comment()
-                        {
-                            content = "Earth Rules.",
-                            user = new User() { fullName = "Mario Reid" }                            
-                        }
-                    }
-                }
-            };
-
-            List<UserPostViewModel> viewModels = new List<UserPostViewModel>()
-            {
-                viewModel1, viewModel2
-            };
-
-            return viewModels;
-        }
+            return posts;
+        }        
     }
 }
