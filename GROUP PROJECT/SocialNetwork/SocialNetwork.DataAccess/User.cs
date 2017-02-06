@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SocialNetwork.DataAccess
 {
+    [DataContract]
     public class User : IUser
     {
         private int _userId;

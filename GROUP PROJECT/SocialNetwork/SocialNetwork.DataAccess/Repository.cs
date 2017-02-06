@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
 namespace SocialNetwork.DataAccess
-{   
-
+{
     /// <summary>
     /// Generic Interface for Implementing a Data Repository
     /// </summary>
