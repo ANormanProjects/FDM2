@@ -33,6 +33,82 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
+        public void Test_ViewGroupInfo_ReturnsGroupInfoWhenFoundInDatabase()
+        {
+            //Arrange
+            Mock<Group> testGroup = new Mock<Group>();
+            group.Setup(c => c.groupName).Returns("Test");
+
+            groupRepo.Setup(c => c.First(It.IsAny<Func<Group, bool>>())).Returns(testGroup.Object);
+
+            //Act
+            Group groupTest = groupLogic.ViewGroupInfo("Test");
+
+
+            //Assert
+            Assert.AreEqual(testGroup.Object, groupTest);
+            groupRepo.Verify(c => c.First(It.IsAny<Func<Group, bool>>()), Times.Once);
+
+        }
+
+        [TestMethod]
+        public void Test_CreateGroup_CreateGroupAndAddNewGroupToDatabase()
+        {
+            //Arrange
+            groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>());
+            groupRepo.Setup(c => c.Insert(group.Object)).Verifiable();
+
+            //Act
+            groupLogic.CreateGroup(group.Object);
+            
+
+            //Assert
+            groupRepo.Verify(c => c.GetAll(), Times.Once);
+            groupRepo.Verify(c => c.Insert(group.Object), Times.Once);
+
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(EntityAlreadyExistsException))]
+        public void Test_EntityAlreadyExistsExceptionThrownWhenGroupAlreadyExistsInDatabase_WhenCreatingNewGroup()
+        {
+            //Arrange
+            groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>() { group.Object });
+
+            //Act
+            groupLogic.CreateGroup(group.Object);
+        }
+
+        [TestMethod]
+        public void Test_RemoveGroup_RemoveGroupAndDeleteGroupFromDatabase()
+        {
+            //Arrange
+            groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>() { group.Object });
+            groupRepo.Setup(c => c.Remove(group.Object)).Verifiable();
+
+
+            //Act
+            groupLogic.RemoveGroup(group.Object);
+
+            //Assert
+            groupRepo.Verify(c => c.GetAll(), Times.Once);
+            groupRepo.Verify(c => c.Remove(group.Object), Times.Once);
+
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_EntityNotFoundExceptionThrownWhenGroupNotInDatabase_WhenRemoveGroupRun()
+        {
+            //Arrange
+            groupRepo.Setup(c => c.GetAll()).Returns(new List<Group>());
+
+            //Act
+            groupLogic.RemoveGroup(group.Object);
+
+        }
+
+        [TestMethod]
         public void Test_AddUserToGroup_AddsUserToGroupUsersInGroupProperty()
         {
             //Arrange

@@ -20,7 +20,7 @@ namespace SocialNetwork.DataAccess
 
         private string _groupName;
         [DisplayName("Group Name")]
-        public string groupName
+        public virtual string groupName
         {
             get { return _groupName; }
             set { _groupName = value; }
