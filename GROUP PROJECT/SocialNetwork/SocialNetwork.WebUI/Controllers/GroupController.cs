@@ -48,5 +48,16 @@ namespace SocialNetwork.WebUI.Controllers
             return View("GroupProfile");
         }
 
+        public List<GroupViewModels> CreateViewModels(Group group)
+        {
+            List<GroupViewModels> groups = new List<GroupViewModels>();
+
+            //foreach (Group g in group.group)
+            //{
+            //    groups.Add(new GroupViewModels() { group = g });
+            //}
+
+            return groups;
+        }
     }
 }
