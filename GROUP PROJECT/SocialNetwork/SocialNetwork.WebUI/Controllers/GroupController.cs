@@ -25,6 +25,11 @@ namespace SocialNetwork.WebUI.Controllers
         [Authorize]
         public ActionResult GroupList()
         {
+            if (_groupAccountLogic == null)
+            {
+                _groupAccountLogic = new GroupAccountLogic(new PostLogic(new Repository<Post>(), new Repository<Comment>()), new Repository<Group>());
+            }
+
 
             return View("GroupList");
         }
