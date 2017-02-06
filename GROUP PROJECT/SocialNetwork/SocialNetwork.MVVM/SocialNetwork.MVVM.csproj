@@ -82,8 +82,14 @@
     <Compile Include="Views\Add.xaml.cs">
       <DependentUpon>Add.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddGroup.xaml.cs">
+      <DependentUpon>AddGroup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Edit.xaml.cs">
       <DependentUpon>Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListAllGroups.xaml.cs">
+      <DependentUpon>ListAllGroups.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListAllUsers.xaml.cs">
       <DependentUpon>ListAllUsers.xaml</DependentUpon>
@@ -93,6 +99,9 @@
     </Compile>
     <Compile Include="Views\Remove.xaml.cs">
       <DependentUpon>Remove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RemoveGroup.xaml.cs">
+      <DependentUpon>RemoveGroup.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -120,7 +129,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AddGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ListAllGroups.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Remove.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RemoveGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,7 +185,9 @@
     <Resource Include="Resources\Entypo.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SocialNetwork.DataAccess\SocialNetwork.DataAccess.csproj">
