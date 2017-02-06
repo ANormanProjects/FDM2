@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.MVVM", "Socia
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFHostingConsole", "WCFHostingConsole\WCFHostingConsole.csproj", "{039B591C-74DB-41FD-8DC7-4BC41ADBFB5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceHost", "WcfServiceHost\WcfServiceHost.csproj", "{F7721AA1-C521-4DAC-88EC-84D76EAE0834}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -60,6 +62,10 @@ Global
 		{039B591C-74DB-41FD-8DC7-4BC41ADBFB5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{039B591C-74DB-41FD-8DC7-4BC41ADBFB5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{039B591C-74DB-41FD-8DC7-4BC41ADBFB5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7721AA1-C521-4DAC-88EC-84D76EAE0834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7721AA1-C521-4DAC-88EC-84D76EAE0834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7721AA1-C521-4DAC-88EC-84D76EAE0834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7721AA1-C521-4DAC-88EC-84D76EAE0834}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
