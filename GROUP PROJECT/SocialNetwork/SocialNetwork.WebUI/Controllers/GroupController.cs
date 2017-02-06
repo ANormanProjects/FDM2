@@ -30,22 +30,8 @@ namespace SocialNetwork.WebUI.Controllers
                 _groupAccountLogic = new GroupAccountLogic(new PostLogic(new Repository<Post>(), new Repository<Comment>()), new Repository<Group>());
             }
 
-            List<GroupPostViewModel> posts = new List<GroupPostViewModel>();
-            User user;
-            UserAccountLogic logic = new UserAccountLogic(new Repository<User>());
-            user = logic.ViewAccountInfo(User.Identity.Name);
-            List<Group> groups = _groupAccountLogic.GetAllGroups(); 
-            var query = from u in groups
-                        where u.usersInGroup.Contains(user)
-                        select u; 
-
-            
-            
-
             return View("GroupPosts");
         }
 
-           
-        
     }
 }
