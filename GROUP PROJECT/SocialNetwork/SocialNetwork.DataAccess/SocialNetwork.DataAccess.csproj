@@ -70,6 +70,10 @@
     <Compile Include="IComment.cs" />
     <Compile Include="IGroup.cs" />
     <Compile Include="IUser.cs" />
+    <Compile Include="Migrations\201702061339121_reset.cs" />
+    <Compile Include="Migrations\201702061339121_reset.Designer.cs">
+      <DependentUpon>201702061339121_reset.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="GroupPost.cs" />
@@ -84,6 +88,11 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702061339121_reset.resx">
+      <DependentUpon>201702061339121_reset.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
