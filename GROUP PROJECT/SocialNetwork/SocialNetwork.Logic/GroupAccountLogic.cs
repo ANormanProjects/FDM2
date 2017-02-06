@@ -32,6 +32,30 @@ namespace SocialNetwork.Logic
             groupRepo = groupRepository;
         }
 
+        public void CreateGroup(Group group)
+        {
+            if (groupRepo.GetAll().Contains(group))
+            {
+                throw new EntityAlreadyExistsException();
+            }
+            else
+            {
+                groupRepo.Insert(group);
+            }
+        }
+
+        public void RemoveGroup(Group group)
+        {
+            if (groupRepo.GetAll().Contains(group))
+            {
+                groupRepo.Remove(group);
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
+        }
+
         public void AddUserToGroup(Group group, User user)
         {
             if (groupRepo.GetAll().Contains(group))
@@ -123,7 +147,7 @@ namespace SocialNetwork.Logic
             }
         }        
 
-        public List<Group> GetAllGroups()
+        public virtual List<Group> GetAllGroups()
         {
             List<Group> groups = new List<Group>();
             groups = groupRepo.GetAll();

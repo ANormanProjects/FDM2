@@ -9,7 +9,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
 
     <UserControl.DataContext>
-        <vm:WPFViewModel/>
+        <vm:UserWPFViewModel/>
     </UserControl.DataContext>
 
 
