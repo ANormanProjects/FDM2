@@ -85,8 +85,9 @@ namespace SocialNetwork.Logic
             if (currentUser.username == username && currentUser.password == password)
             {
                 return true;
-            } return false;
+            } 
 
+            return false;
         }
 
         public virtual bool CheckForDuplicates(User user)
