@@ -16,6 +16,7 @@ namespace SocialNetwork.DataAccess
         }
 
         private string _groupName;
+        [DisplayName("Group Name")]
         public string groupName
         {
             get { return _groupName; }
@@ -46,8 +47,6 @@ namespace SocialNetwork.DataAccess
 
         public Group()
         {
-            usersInGroup = new List<User>();
-            groupWall = new List<GroupPost>();
         }
 
         public override string ToString()

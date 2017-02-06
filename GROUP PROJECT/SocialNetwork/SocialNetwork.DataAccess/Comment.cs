@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
@@ -20,7 +21,6 @@ namespace SocialNetwork.DataAccess
         }
 
         private int _commentId;
-
         public int commentId
         {
             get { return _commentId; }
@@ -28,7 +28,7 @@ namespace SocialNetwork.DataAccess
         }        
 
         private string _content;
-
+        [DisplayName("Content")]
         public virtual string content
         {
             get { return _content; }
@@ -36,7 +36,6 @@ namespace SocialNetwork.DataAccess
         }        
 
         private User _user;
-
         public virtual User user
         {
             get { return _user; }
@@ -45,7 +44,6 @@ namespace SocialNetwork.DataAccess
 
 
         private Post _post;
-
         public virtual Post post
         {
             get { return _post; }
@@ -53,7 +51,7 @@ namespace SocialNetwork.DataAccess
         }
 
         private int _likes;
-
+        [DisplayName("Likes")]
         public virtual int likes
         {
             get { return _likes; }

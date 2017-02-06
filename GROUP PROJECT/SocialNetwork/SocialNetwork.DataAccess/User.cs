@@ -53,6 +53,7 @@ namespace SocialNetwork.DataAccess
         }       
         
         private string _role;
+        [DisplayName("Role")]
         public virtual string role
         {
             get { return _role; }
