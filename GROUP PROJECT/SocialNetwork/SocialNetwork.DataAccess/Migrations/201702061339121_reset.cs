@@ -31,8 +31,8 @@ namespace SocialNetwork.DataAccess.Migrations
                     })
                 .PrimaryKey(t => t.groupID)
                 .ForeignKey("dbo.Users", t => t.owner_userId)
-                .Index(t => t.owner_userId);
             
+                .Index(t => t.owner_userId);
             CreateTable(
                 "dbo.Users",
                 c => new
