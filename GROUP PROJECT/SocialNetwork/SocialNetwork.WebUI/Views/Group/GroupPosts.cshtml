@@ -1,4 +1,4 @@
-﻿@model ICollection<SocialNetwork.WebUI.Models.GroupPostViewModel>
+﻿@model ICollection<SocialNetwork.DataAccess.GroupPost>
 @{
     ViewBag.Title = "Group Posts";
 }
@@ -6,7 +6,7 @@
 <h2>Group Posts</h2>
 <hr />
 <h2 class="text-center">Recent Group Posts</h2>
-@foreach (SocialNetwork.WebUI.Models.GroupPostViewModel viewModel in Model)
+@foreach (SocialNetwork.DataAccess.GroupPost viewModel in Model)
 {
     @Html.Partial("_GroupPost", viewModel)
 }
