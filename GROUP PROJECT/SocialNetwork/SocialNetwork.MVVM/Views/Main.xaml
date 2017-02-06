@@ -17,7 +17,8 @@
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock FontSize="20" Grid.Row="0" Margin="10,0,-10,0">Admin Control Panel</TextBlock>
-        <TextBlock FontSize="15" Grid.Row="1" Margin="10,0,-10,0">Available options: List, Add, Edit, Remove.</TextBlock>
+        <TextBlock FontSize="15" Grid.Row="1" Margin="10,0,-10,0">Available options: List Users, Add User, Edit Uses, Remove User.</TextBlock>
+        <TextBlock FontSize="15" Grid.Row="1" Margin="10,0,-10,0">Additional options: List Group, Add Group, Remove Group.</TextBlock>
         <TextBlock FontSize="15" Grid.Row="2" Margin="10,0,-10,0" TextWrapping="Wrap">Admin Tasks:</TextBlock>
         <TextBlock FontSize="15" Grid.Row="3" Margin="10,0,-10,0" TextWrapping="Wrap"> - Populate the database.</TextBlock>
         <TextBlock FontSize="15" Grid.Row="4" Margin="10,0,-10,0" TextWrapping="Wrap"> - Remove any invalid accounts.</TextBlock>
