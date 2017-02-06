@@ -273,6 +273,23 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
+        public void Test_ListAllUsersCommand_Returns_NewListAllUsersCommand_WhenNull()
+        {
+            //ARRANGE
+            Mock<ICommand> nullCommand = new Mock<ICommand>();
+            nullCommand.Setup(c => c.CanExecute(null));
+
+            userWPFVMTests.ListAllUsersCommand = nullCommand.Object;
+
+            //ACT
+            var test = userWPFVMTests.ListAllUsersCommand = null;
+
+            //ASSERT         
+            Assert.AreEqual(nullCommand.Object, test);
+
+        }
+
+        [TestMethod]
         public void Test_AddUserCommand_Returns_AddUserCommand_WhenNotNull()
         {
             //ACT
