@@ -48,15 +48,31 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        public void Test_WPF_ListAllUsersViewModelConstructor()
+        public void Test_WPF_UserWPFViewModelConstructor()
         {
             //ARRANGE
-            UserWPFViewModel WPFVM = new UserWPFViewModel();
+            UserWPFViewModel UserWPFVM = new UserWPFViewModel();
             //ACT
 
             //ASSERT
-            Assert.IsNotNull(WPFVM._userRepository);
-            Assert.IsNotNull(WPFVM.userAccLogic);
+            Assert.IsNotNull(UserWPFVM._userRepository);
+            Assert.IsNotNull(UserWPFVM.userAccLogic);
+        }
+
+        [TestMethod]
+        public void Test_WPF_GroupWPFViewModelConstructor()
+        {
+            //ARRANGE
+            GroupWPFViewModel GroupWPFVM = new GroupWPFViewModel(); 
+            
+            //ACT
+
+            //ASSERT
+            Assert.IsNotNull(GroupWPFVM.groupRepo);
+            Assert.IsNotNull(GroupWPFVM.postRepo);
+            Assert.IsNotNull(GroupWPFVM.commentRepo);
+            Assert.IsNotNull(GroupWPFVM.userRepo);
+            Assert.IsNotNull(GroupWPFVM.groupAccLogic);
         }
 
         [TestMethod]
