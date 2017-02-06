@@ -1,7 +1,18 @@
-﻿@model ICollection<SocialNetwork.DataAccess.Group>
+﻿@model ICollection<SocialNetwork.WebUI.Models.GroupViewModels>
 @{
     ViewBag.Title = "Your Groups";
 }
 
 <h2>Your Groups</h2>
+
+<div class="col-xs-4 col-md-10">
+    <table class="table table-hover">
+        @foreach (SocialNetwork.WebUI.Models.GroupViewModels group in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => group.group.groupName)</td>
+            </tr>
+        }
+    </table>
+</div>
 
