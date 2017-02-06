@@ -12,9 +12,16 @@ namespace SocialNetwork.Logic
 
     public interface ICommentLogic
     {
+        [OperationContract]
         void AddComment(string commentText, User user, Post post);
+
+        [OperationContract]
         void DeleteComment(Comment comment);
+
+        [OperationContract]
         void EditComment(Comment comment, string newText);
+
+        [OperationContract]
         void LikeComment(Comment comment);
 
     }
