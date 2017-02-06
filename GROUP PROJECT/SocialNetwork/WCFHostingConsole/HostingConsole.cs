@@ -15,7 +15,7 @@ namespace WCFHostingConsole
         {
             using (ServiceHost host = new ServiceHost(typeof(SearchLogic)))
             {
-                string address = "http://" + Dns.GetHostName() + ":8081/Bookshop";
+                string address = "http://" + Dns.GetHostName() + ":8081/SocialNetwork";
                 host.AddServiceEndpoint(typeof(ISearchLogic), new BasicHttpBinding(), address); 
                 host.Open();                
             }
