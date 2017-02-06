@@ -276,30 +276,39 @@ namespace SocialNetwork.Tests
         public void Test_ListAllUsersCommand_Returns_NewListAllUsersCommand_WhenNull()
         {
             //ARRANGE
-            Mock<ICommand> nullCommand = new Mock<ICommand>();
-            nullCommand.Setup(c => c.CanExecute(null));
-
-            userWPFVMTests.ListAllUsersCommand = nullCommand.Object;
+            userWPFVMTests.ListAllUsersCommand = null;
 
             //ACT
-            var test = userWPFVMTests.ListAllUsersCommand = null;
 
             //ASSERT         
-            Assert.AreEqual(nullCommand.Object, test);
+            Assert.IsNotNull(userWPFVMTests.ListAllUsersCommand);
 
         }
 
         [TestMethod]
         public void Test_AddUserCommand_Returns_AddUserCommand_WhenNotNull()
         {
-            //ACT
+            //ARRANGE
             userWPFVMTests.addUserCommand = command.Object;
 
-            //ARRANGE
+            //ACT
             var test = userWPFVMTests.addUserCommand;
 
             //ASSERT
             Assert.AreEqual(command.Object, test);
+        }
+
+        [TestMethod]
+        public void Test_AddUserCommand_Returns_AddUserCommand_WhenNull()
+        {
+            //ARRANGE
+            userWPFVMTests.addUserCommand = null;
+
+            //ACT
+
+            //ASSERT
+            Assert.IsNotNull(userWPFVMTests.addUserCommand);
+
         }
 
         [TestMethod]
@@ -316,6 +325,18 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
+        public void Test_EditUserCommand_Returns_EditUserCommand_WhenNull()
+        {
+            //ARRANGE
+            userWPFVMTests.editUserCommand = null;
+            
+            //ACT
+
+            //ASSERT
+            Assert.IsNotNull(userWPFVMTests.editUserCommand);
+        }
+
+        [TestMethod]
         public void Test_RemoveUserCommand_Returns_RemoveUserCommand_WhenNotNull()
         {
             //ARRANGE
@@ -326,6 +347,18 @@ namespace SocialNetwork.Tests
 
             //ACT
             Assert.AreEqual(command.Object, test);
+        }
+
+        [TestMethod]
+        public void Test_RemoveUserCommand_Returns_RemoveUserCommand_WhenNull()
+        {
+            //ARRANGE
+            userWPFVMTests.removeUserCommand = null;
+
+            //ACT
+
+            //ASSERT
+            Assert.IsNotNull(userWPFVMTests.removeUserCommand);
         }
 
         [TestMethod]
@@ -344,6 +377,18 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
+        public void Test_ListAllGroupsCommand_ReturnsListAllGroupsCommand_WhenNull()
+        {
+            //ARRANGE
+            groupWPFVMTests.listAllGroupsCommand = null;
+            
+            //ACT
+
+            //ASSERT
+            Assert.IsNotNull(groupWPFVMTests.listAllGroupsCommand);
+        }
+
+        [TestMethod]
         public void Test_AddGroupCommand_Returns_AddGroupCommand_WhenNotNull()
         {
             //ARRANGE
@@ -354,6 +399,18 @@ namespace SocialNetwork.Tests
 
             //ASSERT
             Assert.AreEqual(command.Object, tests);
+        }
+
+        [TestMethod]
+        public void Test_AddGroupCommand_Return_AddGroupCommand_WhenNull()
+        {
+            //ARRANGE
+            groupWPFVMTests.addGroupCommand = null;
+
+            //ACT
+
+            //ASSERT
+            Assert.IsNotNull(groupWPFVMTests.addGroupCommand);
         }
 
         [TestMethod]
@@ -368,6 +425,18 @@ namespace SocialNetwork.Tests
 
             //ASSERT
             Assert.AreEqual(command.Object, test);
+        }
+
+        [TestMethod]
+        public void Test_RemoveGroupCommand_Return_RemoveGroupCommand_WhenNull()
+        {
+            //ARRANGE
+            groupWPFVMTests.removeGroupCommand = null;
+
+            //ACT
+
+            //ASSERT
+            Assert.IsNotNull(groupWPFVMTests.removeGroupCommand);
         }
 
     }
