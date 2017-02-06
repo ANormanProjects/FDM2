@@ -26,13 +26,13 @@ namespace SocialNetwork.WebUI.Controllers
         public ActionResult GroupList()
         {
 
-            return View("GroupPosts");
+            return View("GroupList");
         }
 
         //GET: GroupProfile
         public ActionResult GroupProfile()
         {
-            return View();
+            return View("GroupProfile");
         }
 
     }
