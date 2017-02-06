@@ -21,12 +21,8 @@ namespace WCFHostingConsole
             }
 
             Console.WriteLine("Press any key to stop hosting");
-            Console.ReadLine();
-
-
-          
-
-            
+            Console.ReadLine();      
+                        
         }
     }
 }

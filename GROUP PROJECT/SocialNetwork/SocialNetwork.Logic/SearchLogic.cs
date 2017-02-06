@@ -18,6 +18,12 @@ namespace SocialNetwork.Logic
             userRepo = UserRepo;
         }
 
+        public SearchLogic()
+        {
+            postRepo = new Repository<Post>();
+            userRepo = new Repository<IUser>();
+        }
+
         public List<IUser> SearchForUserByName(string name)
         {            
             List<IUser> userList = userRepo.Search(x => x.fullName.ToUpper() == name.ToUpper());
