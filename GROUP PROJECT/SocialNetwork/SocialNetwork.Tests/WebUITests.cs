@@ -158,6 +158,30 @@ namespace SocialNetwork.Tests
             Assert.AreEqual(expected, actual.ViewName);
         }
 
+        [TestMethod]
+        public void Test_RegisterInAccounts_UserFullNameIsValid_ReturnsAccountCreatedPartialView()
+        {
+            //Arrange
+            Mock<User> mockUser = new Mock<User>();
+            Mock<Repository<User>> mockUserRepository = new Mock<Repository<User>>();
+            mockUser.Setup(s => s.fullName).Returns("Donald Donaldson");
+            mockUser.Setup(s => s.password).Returns("password");
+            mockUser.Setup(s => s.username).Returns("Don");
+            mockUser.Setup(s => s.gender).Returns("male");
+            Mock<UserAccountLogic> userAccountLogic = new Mock<UserAccountLogic>(mockUserRepository.Object);
+            userAccountLogic.Setup(s => s.CheckForDuplicates(mockUser.Object)).Returns(false);
+
+            var expected = "_AccountCreated";
+
+            //Act
+            AccountController classunderTest = new AccountController(userAccountLogic.Object);
+
+            var actual = classunderTest.Register(mockUser.Object) as PartialViewResult;
+
+            //Assert
+            Assert.AreEqual(expected, actual.ViewName);
+        }
+
         //---------- Testing the CodeWallController ----------//
 
         [TestMethod]
