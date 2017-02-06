@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using SocialNetwork.Logic;
 using Moq;
 using SocialNetwork.DataAccess;
+using System.Web.Security;
 
 namespace SocialNetwork.Tests
 {
@@ -117,20 +118,24 @@ namespace SocialNetwork.Tests
         [TestMethod]
         public void Test_LoginInAccounts_ReturnsModelError_WhenWrongInfoIsGiven()
         {
-            var userRep = new Repository<User>();
-            var mockUserAccountLogic = new Mock<UserAccountLogic>(userRep);
+            Mock<User> mockUser = new Mock<User>();
+            Mock<Repository<User>> mockUserRepository = new Mock<Repository<User>>();
+            mockUser.Object.fullName = null;
+            Mock<UserAccountLogic> mockUserAccountLogic = new Mock<UserAccountLogic>(mockUserRepository.Object);
+            mockUser.Setup(s => s.fullName).Returns("Donald Donaldson");
+            mockUser.Setup(s => s.password).Returns("password");
+            mockUser.Setup(s => s.username).Returns("Don");
+            mockUser.Setup(s => s.gender).Returns("male");
 
-            User user = new User();
-            user.username = "tomjones";
-            user.password = "unusual";
+
             string returnUrl = "Account/Login";
-            var expected = "Error";
+            string expected = "Login";
 
             AccountController classUnderTest = new AccountController(mockUserAccountLogic.Object);
-            mockUserAccountLogic.Setup(s => s.Login(user.username, user.password)).Returns(false);
-            var actual = classUnderTest.Login(user, returnUrl) as PartialViewResult;
+            mockUserAccountLogic.Setup(s => s.Login(mockUser.Object.username, mockUser.Object.password)).Returns(false);
+            var actual = classUnderTest.Login(mockUser.Object, returnUrl) as ViewResult;
 
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual.ViewName);
         }
 
         //[TestMethod]
@@ -139,8 +144,9 @@ namespace SocialNetwork.Tests
         //    var userRep = new Repository<User>();
         //    Mock<UserAccountLogic> mockUserAccountLogic = new Mock<UserAccountLogic>(userRep);
         //    AccountController classUnderTest = new AccountController(mockUserAccountLogic.Object);
+            
         //    var actual = classUnderTest.LogOff() as RedirectToRouteResult;
-                       
+
         //    Assert.AreEqual("Index", actual.RouteValues["action"]);
         //}
 
