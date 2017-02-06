@@ -35,6 +35,8 @@ namespace SocialNetwork.Tests
             postLogic = new PostLogic(postRepo.Object, userRepo.Object, groupRepo.Object, commentRepo.Object);
             commentLogic = new Mock<CommentLogic>(postRepo.Object, commentRepo.Object, userRepo.Object);
             user = new Mock<User>();
+            user.SetupAllProperties();
+            user.Object.username = "test";
             friend = new Mock<User>();
             group = new Mock<Group>();
             anotherUser = new User();
