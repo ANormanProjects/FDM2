@@ -135,30 +135,6 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        public void Test_RegisterInAccounts_UserFullNameIsValid_ReturnsUserAlreadyExistsPartialView()
-        {
-            //Arrange
-            Mock<User> mockUser = new Mock<User>();
-            Mock<Repository<User>> mockUserRepository = new Mock<Repository<User>>();
-            mockUser.Setup(s => s.fullName).Returns("Donald Donaldson");
-            mockUser.Setup(s => s.password).Returns("password");
-            mockUser.Setup(s => s.username).Returns("Don");
-            mockUser.Setup(s => s.gender).Returns("male");
-            Mock<UserAccountLogic> userAccountLogic = new Mock<UserAccountLogic>(mockUserRepository.Object);
-            userAccountLogic.Setup(s => s.CheckForDuplicates(mockUser.Object)).Returns(true);
-            
-            var expected = "_UserAlreadyExists";
-
-            //Act
-            AccountController classunderTest = new AccountController(userAccountLogic.Object);
-
-            var actual = classunderTest.Register(mockUser.Object) as PartialViewResult;
-
-            //Assert
-            Assert.AreEqual(expected, actual.ViewName);
-        }
-
-        [TestMethod]
         public void Test_RegisterInAccounts_UserFullNameIsValid_ReturnsAccountCreatedPartialView()
         {
             //Arrange
@@ -184,17 +160,17 @@ namespace SocialNetwork.Tests
 
         //---------- Testing the CodeWallController ----------//
 
-        [TestMethod]
-        public void Test_WallInCodeWall_ReturnsWallView()
-        {
-            var expected = "Wall";
+        //[TestMethod]
+        //public void Test_WallInCodeWall_ReturnsWallView()
+        //{
+        //    var expected = "Wall";
 
-            CodeWallController classUnderTest = new CodeWallController();
+        //    CodeWallController classUnderTest = new CodeWallController();
 
-            var actual = classUnderTest.Wall() as ViewResult;
+        //    var actual = classUnderTest.Wall() as ViewResult;
 
-            Assert.AreEqual(expected, actual.ViewName);
-        }
+        //    Assert.AreEqual(expected, actual.ViewName);
+        //}
 
         //---------- Testing the SearchController ----------//
 

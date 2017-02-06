@@ -103,6 +103,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PostLogicTests.cs" />
     <Compile Include="SearchLogicTests.cs" />
+    <Compile Include="WebUITestsCodeWall.cs" />
     <Compile Include="UserAccountLogicTests.cs" />
     <Compile Include="WebUITests.cs" />
   </ItemGroup>
