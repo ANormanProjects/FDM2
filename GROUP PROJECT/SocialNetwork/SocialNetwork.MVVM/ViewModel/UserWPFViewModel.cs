@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace SocialNetwork.MVVM.ViewModel
 {
-    public class WPFViewModel : BaseViewModel
+    public class UserWPFViewModel : BaseViewModel
     {
         public Repository<User> _userRepository { get; set; }
         public UserAccountLogic userAccLogic { get; set; }
@@ -26,7 +26,7 @@ namespace SocialNetwork.MVVM.ViewModel
                 OnPropertyChanged("user");
             }
         }
-
+        
         private int _userId;
         public virtual int userId
         {
@@ -115,7 +115,7 @@ namespace SocialNetwork.MVVM.ViewModel
             {
                 if (_addUserCommand == null)
                 {
-                    _addUserCommand = new Command(Add);
+                    _addUserCommand = new Command(AddUser);
                 }
                 return _addUserCommand;
             }
@@ -129,7 +129,7 @@ namespace SocialNetwork.MVVM.ViewModel
             {
                 if (_editUserCommand == null)
                 {
-                    _editUserCommand = new Command(Edit);
+                    _editUserCommand = new Command(EditUser);
                 }
                 return _editUserCommand;
             }
@@ -143,15 +143,17 @@ namespace SocialNetwork.MVVM.ViewModel
             {
                 if (_removeUserCommand == null)
                 {
-                    _removeUserCommand = new Command(Remove);
+                    _removeUserCommand = new Command(RemoveUser);
                 }
                 return _removeUserCommand;
             }
             set { _removeUserCommand = value; }
         }
 
+
+
         //Live
-        public WPFViewModel()
+        public UserWPFViewModel()
         {
             _userRepository = new Repository<User>();
             userAccLogic = new UserAccountLogic(_userRepository);
@@ -159,7 +161,7 @@ namespace SocialNetwork.MVVM.ViewModel
         }
 
         //Test
-        public WPFViewModel(UserAccountLogic userAccountLogic)
+        public UserWPFViewModel(UserAccountLogic userAccountLogic)
         {
             this.userAccountLogic = userAccountLogic;
         }
@@ -170,7 +172,7 @@ namespace SocialNetwork.MVVM.ViewModel
             user = new ObservableCollection<User>(repoUsers);
         }
 
-        public void Add()
+        public void AddUser()
         {
             User newUser = new User();
 
@@ -183,7 +185,7 @@ namespace SocialNetwork.MVVM.ViewModel
             userAccLogic.Register(newUser);
         }
 
-        public void Edit()
+        public void EditUser()
         {
             try
             {
@@ -202,7 +204,7 @@ namespace SocialNetwork.MVVM.ViewModel
             }
         }
 
-        public void Remove()
+        public void RemoveUser()
         {
             try
             {

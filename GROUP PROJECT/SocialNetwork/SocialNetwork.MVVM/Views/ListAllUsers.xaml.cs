@@ -21,7 +21,7 @@ namespace SocialNetwork.MVVM.Views
     /// </summary>
     public partial class ListAllUsers : UserControl
     {
-        WPFViewModel wpfVM = new WPFViewModel();
+        UserWPFViewModel wpfVM = new UserWPFViewModel();
 
         public ListAllUsers()
         {

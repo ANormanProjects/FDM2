@@ -7,6 +7,7 @@ using SocialNetwork.Logic;
 using System.Collections.Generic;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
+using SocialNetwork.MVVM;
 
 namespace SocialNetwork.Tests
 {
@@ -15,9 +16,15 @@ namespace SocialNetwork.Tests
     {
 
         Mock<Repository<User>> userRepo;
+        Mock<Repository<Group>> groupRepo;
+        Mock<Repository<Post>> postRepo;
+        Mock<Repository<Comment>> commentRepo;
         Mock<UserAccountLogic> userAccountLogic;
+        Mock<GroupAccountLogic> groupAccountLogic;
         ObservableCollection<User> userList;
-        WPFViewModel WPFVMTests;
+        ObservableCollection<Group> groupList;
+        UserWPFViewModel userWPFVMTests;
+        GroupWPFViewModel groupWPFVMTests;
         Mock<ICommand> command;
         Mock<User> testUser;
 
@@ -25,19 +32,24 @@ namespace SocialNetwork.Tests
         public void Setup()
         {
             userRepo = new Mock<Repository<User>>();
+            groupRepo = new Mock<Repository<Group>>();
+            postRepo = new Mock<Repository<Post>>();
+            commentRepo = new Mock<Repository<Comment>>();
             userAccountLogic = new Mock<UserAccountLogic>(userRepo.Object);
-            WPFVMTests = new WPFViewModel(userAccountLogic.Object);
+            groupAccountLogic = new Mock<GroupAccountLogic>(groupRepo.Object, postRepo.Object, commentRepo.Object, userRepo.Object);
+            userWPFVMTests = new UserWPFViewModel(userAccountLogic.Object);
+            groupWPFVMTests = new GroupWPFViewModel(groupAccountLogic.Object);
             userList = new ObservableCollection<User>();
+            groupList = new ObservableCollection<Group>();
             command = new Mock<ICommand>();
             testUser = new Mock<User>();
-
         }
 
         [TestMethod]
-        public void Test_ListAllUsersViewModelConstructor()
+        public void Test_WPF_ListAllUsersViewModelConstructor()
         {
             //ARRANGE
-            WPFViewModel WPFVM = new WPFViewModel();
+            UserWPFViewModel WPFVM = new UserWPFViewModel();
             //ACT
 
             //ASSERT
@@ -46,52 +58,69 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        public void Test_ListOfAllUsers_RunsGetAllUsersToDisplayListToWPFApp()
+        public void Test_WPF_ListOfAllUsers_RunsGetAllUsersToDisplayListToWPFApp()
         {
             //ARRANGE
 
             List<User> newUserList = new List<User>();
             userAccountLogic.Setup(c => c.GetAllUserAccounts()).Returns(newUserList);
-            WPFVMTests.userAccLogic = userAccountLogic.Object;
+            userWPFVMTests.userAccLogic = userAccountLogic.Object;
 
             //ACT
-            WPFVMTests.ListAllUsers();
+            userWPFVMTests.ListAllUsers();
 
             //ASSERT
             userAccountLogic.Verify(c => c.GetAllUserAccounts(), Times.Once);
-            CollectionAssert.AreEquivalent(WPFVMTests.user, newUserList);
+            CollectionAssert.AreEquivalent(userWPFVMTests.user, newUserList);
+        }
+
+        [TestMethod]
+        public void Test_WPF_ListAllGroups_RunsGetAllGroupsToDisplayListToWPFApp()
+        {
+            //ARRANGE
+            List<Group> newGroupList = new List<Group>();
+            groupAccountLogic.Setup(c => c.GetAllGroups()).Returns(newGroupList);
+            groupWPFVMTests.groupAccLogic = groupAccountLogic.Object;
+
+            //ACT
+            groupWPFVMTests.ListAllGroups();
+
+            //ASSERT
+            groupAccountLogic.Verify(c => c.GetAllGroups(), Times.Once);
+            CollectionAssert.AreEquivalent(groupWPFVMTests.group, newGroupList);
         }
 
         
         [TestMethod]
-        public void Test_Add_UserMethod_RunsRegisterMethodWhenCalledToAddNewUserToTheDatabaseFromWPFApp()
+        public void Test_WPF_AddUserMethod_RunsRegisterMethodWhenCalledToAddNewUserToTheDatabaseFromWPFApp()
         {
             //ARRANGE
             userAccountLogic.Setup(c => c.Register(It.IsAny<User>()));
-            WPFVMTests.userAccLogic = userAccountLogic.Object;
+            userWPFVMTests.userAccLogic = userAccountLogic.Object;
 
             //ACT
-            WPFVMTests.Add();
+            userWPFVMTests.AddUser();
 
             //ASSERT
             userAccountLogic.Verify(c => c.Register(It.IsAny<User>()), Times.Once);
         }
 
         [TestMethod]
-        public void Test_Edit_UserMethod_RunsEditMethodWhenCalledToEditExistingUserInTheDatabaseFromWPFApp()
+        public void Test_WPF_EditUserMethod_RunsEditMethodWhenCalledToEditExistingUserInTheDatabaseFromWPFApp()
         {
             //ARRANGE
             userAccountLogic.Setup(c => c.ViewAccountInfo("Test")).Returns(testUser.Object);
             userAccountLogic.Setup(c => c.EditUser(testUser.Object, "Test", "Test", "Test", "Test"));
-            WPFVMTests.userAccLogic = userAccountLogic.Object;
-            WPFVMTests.username = "Test";
-            WPFVMTests.fullName = "Test";
-            WPFVMTests.gender = "Test";
-            WPFVMTests.role = "Test";
-            WPFVMTests.password = "Test";
+            userWPFVMTests.userAccLogic = userAccountLogic.Object;
+            userWPFVMTests.userId = 1;
+            userWPFVMTests.username = "Test";
+            userWPFVMTests.fullName = "Test";
+            userWPFVMTests.gender = "Test";
+            userWPFVMTests.role = "Test";
+            userWPFVMTests.password = "Test";
 
             //ACT
-            WPFVMTests.Edit();
+            userWPFVMTests.EditUser();
 
             //ASSERT
             userAccountLogic.Verify(c => c.ViewAccountInfo("Test"));
@@ -99,14 +128,19 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(EntityNotFoundException))]
-        public void Test_EditWPFMethod_ThrowsEntityNotFoundException_WhenUsernameIsNotInDatabase()
+        //[ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_WPF_EditUserMethod_ThrowsEntityNotFoundException_WhenUsernameIsNotInDatabase()
         {
             //ARRANGE
             userAccountLogic.Setup(c => c.ViewAccountInfo("Test")).Throws(new EntityNotFoundException());
-            WPFVMTests.username = "Test";
+            userWPFVMTests.username = "Test";
+
             //ACT
-            WPFVMTests.Edit();
+            userWPFVMTests.EditUser();
+
+            //ASSERT
+            userAccountLogic.Verify(c => c.ViewAccountInfo("Test"));
+            
         }
 
         [TestMethod]
@@ -115,12 +149,12 @@ namespace SocialNetwork.Tests
             //ARRANGE
             userAccountLogic.Setup(c => c.ViewAccountInfo("Test")).Returns(testUser.Object);
             userAccountLogic.Setup(c => c.RemoveUser(testUser.Object));
-            WPFVMTests.userAccLogic = userAccountLogic.Object;
-            WPFVMTests.username = "Test";
+            userWPFVMTests.userAccLogic = userAccountLogic.Object;
+            userWPFVMTests.username = "Test";
 
 
             //ACT
-            WPFVMTests.Remove();
+            userWPFVMTests.RemoveUser();
 
             //ASSERT
             userAccountLogic.Verify(c => c.ViewAccountInfo("Test"));
@@ -128,13 +162,29 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
+        //[ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_WPF_RemoveUserMethod_ThrowsEntityNotFoundException_WhenUsernameIsNotInDatabase()
+        {
+            //ARRANGE
+            userAccountLogic.Setup(c => c.ViewAccountInfo("Test")).Throws(new EntityNotFoundException());
+            userWPFVMTests.username = "Test";
+
+            //ACT
+            userWPFVMTests.RemoveUser();
+
+            //ASSERT
+            userAccountLogic.Verify(c => c.ViewAccountInfo("Test"));
+
+        }
+
+        [TestMethod]
         public void Test_ListAllUsersCommand_Returns_ListAllUsersCommand_WhenNotNull()
         {
             //ARRANGE
-            WPFVMTests.ListAllUsersCommand = command.Object;
+            userWPFVMTests.ListAllUsersCommand = command.Object;
 
             //ACT
-            var test = WPFVMTests.ListAllUsersCommand;
+            var test = userWPFVMTests.ListAllUsersCommand;
 
             //ASSERT
             Assert.AreEqual(command.Object, test);
@@ -144,10 +194,10 @@ namespace SocialNetwork.Tests
         public void Test_AddUserCommand_Returns_AddUserCommand_WhenNotNull()
         {
             //ACT
-            WPFVMTests.addUserCommand = command.Object;
+            userWPFVMTests.addUserCommand = command.Object;
 
             //ARRANGE
-            var test = WPFVMTests.addUserCommand;
+            var test = userWPFVMTests.addUserCommand;
 
             //ASSERT
             Assert.AreEqual(command.Object, test);
@@ -157,10 +207,10 @@ namespace SocialNetwork.Tests
         public void Test_EditUserCommand_Returns_EditUserCommand_WhenNotNull()
         {
             //ARRANGE
-            WPFVMTests.editUserCommand = command.Object;
+            userWPFVMTests.editUserCommand = command.Object;
 
             //ACT
-            var test = WPFVMTests.editUserCommand;
+            var test = userWPFVMTests.editUserCommand;
 
             //ASSERT
             Assert.AreEqual(command.Object, test);
@@ -170,10 +220,10 @@ namespace SocialNetwork.Tests
         public void Test_RemoveUserCommand_Returns_RemoveUserCommand_WhenNotNull()
         {
             //ARRANGE
-            WPFVMTests.removeUserCommand = command.Object;
+            userWPFVMTests.removeUserCommand = command.Object;
 
             //ACT
-            var test = WPFVMTests.removeUserCommand;
+            var test = userWPFVMTests.removeUserCommand;
 
             //ACT
             Assert.AreEqual(command.Object, test);
