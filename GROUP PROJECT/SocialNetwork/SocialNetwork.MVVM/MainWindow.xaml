@@ -48,19 +48,28 @@
             Controls:TabControlHelper.IsUnderlined="True"
             Controls:TabControlHelper.Transition="Up">
             <Controls:MetroTabItem Header="Home">
-                <views:Main></views:Main>
+                <views:Main/>
             </Controls:MetroTabItem>
-            <Controls:MetroTabItem Header="Users">
-                <views:ListAllUsers></views:ListAllUsers>
+            <Controls:MetroTabItem Header="List-Users">
+                <views:ListAllUsers/>
             </Controls:MetroTabItem>
-            <Controls:MetroTabItem Header="Add">
-                <views:Add></views:Add>
+            <Controls:MetroTabItem Header="Add-User">
+                <views:Add/>
             </Controls:MetroTabItem>
-            <Controls:MetroTabItem Header="Edit">
-                <views:Edit></views:Edit>
+            <Controls:MetroTabItem Header="Edit-User">
+                <views:Edit/>
             </Controls:MetroTabItem>
-            <Controls:MetroTabItem Header="Remove">
-                <views:Remove></views:Remove>
+            <Controls:MetroTabItem Header="Remove-User">
+                <views:Remove/>
+            </Controls:MetroTabItem>
+            <Controls:MetroTabItem Header="List-Groups">
+                <views:ListAllGroups/>
+            </Controls:MetroTabItem>
+            <Controls:MetroTabItem Header="Add-Group">
+                <views:AddGroup/>
+            </Controls:MetroTabItem>
+            <Controls:MetroTabItem Header="Remove-Group">
+                <views:RemoveGroup/>
             </Controls:MetroTabItem>
 
         </Controls:MetroAnimatedTabControl>
