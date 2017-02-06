@@ -80,7 +80,7 @@ namespace SocialNetwork.Logic
 
         }
 
-        public bool CheckForDuplicates(User user)
+        public virtual bool CheckForDuplicates(User user)
         {
 
             var userList = _userRepository.GetAll();
