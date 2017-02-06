@@ -117,7 +117,7 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        public void Test_RegisterInAccounts_UserAccountLogicIsNull_CreatesNewInstanceOfUserAccountLogic()
+        public void Test_RegisterInAccounts_UserFullNameIsNull_ReturnsFieldNotFilledPartialView()
         {
             //Arrange
             Mock<User> mockUser = new Mock<User>();
@@ -128,7 +128,7 @@ namespace SocialNetwork.Tests
 
             //Act
             AccountController classunderTest = new AccountController(userAccountLogic);
-            var actual = classunderTest.Register(mockUser.Object) as ViewResult;
+            var actual = classunderTest.Register(mockUser.Object) as PartialViewResult;
 
             //Assert
             Assert.AreEqual(expected,actual.ViewName);
