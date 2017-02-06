@@ -45,7 +45,7 @@ namespace SocialNetwork.Logic
             }
         }
 
-        public void CreateGroup(Group group)
+        public virtual void CreateGroup(Group group)
         {
             if (groupRepo.GetAll().Contains(group))
             {
@@ -57,7 +57,7 @@ namespace SocialNetwork.Logic
             }
         }
 
-        public void RemoveGroup(Group group)
+        public virtual void RemoveGroup(Group group)
         {
             if (groupRepo.GetAll().Contains(group))
             {

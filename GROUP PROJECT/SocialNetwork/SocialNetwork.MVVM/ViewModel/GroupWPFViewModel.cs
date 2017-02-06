@@ -120,19 +120,36 @@ namespace SocialNetwork.MVVM
 
         public void AddGroup()
         {
-            Group newGroup = new Group();
+            try
+            {
+                Group newGroup = new Group();
 
-            newGroup.groupID = groupID;
-            newGroup.groupName = groupName;
+                newGroup.groupID = groupID;
+                newGroup.groupName = groupName;
 
-            groupAccLogic.CreateGroup(newGroup);
+                groupAccLogic.CreateGroup(newGroup);
+            }
+
+            catch (EntityAlreadyExistsException)
+            {
+                return;
+            }
+
         }
 
         public void RemoveGroup()
         {
-            Group removeGroup = groupAccLogic.ViewGroupInfo(groupName);
+            try
+            {
+                Group removeGroup = groupAccLogic.ViewGroupInfo(groupName);
 
-            groupAccLogic.RemoveGroup(removeGroup);
+                groupAccLogic.RemoveGroup(removeGroup);
+            }
+
+            catch(EntityNotFoundException)
+            {
+                return;
+            }
         }
     }
 }

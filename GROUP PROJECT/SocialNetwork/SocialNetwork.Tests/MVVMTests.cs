@@ -27,6 +27,7 @@ namespace SocialNetwork.Tests
         GroupWPFViewModel groupWPFVMTests;
         Mock<ICommand> command;
         Mock<User> testUser;
+        Mock<Group> testGroup;
 
         [TestInitialize]
         public void Setup()
@@ -43,6 +44,7 @@ namespace SocialNetwork.Tests
             groupList = new ObservableCollection<Group>();
             command = new Mock<ICommand>();
             testUser = new Mock<User>();
+            testGroup = new Mock<Group>();
         }
 
         [TestMethod]
@@ -103,6 +105,36 @@ namespace SocialNetwork.Tests
 
             //ASSERT
             userAccountLogic.Verify(c => c.Register(It.IsAny<User>()), Times.Once);
+        }
+
+        [TestMethod]
+        public void Test_WPF_AddGroupMethod_RunsCreateGroupMethodWhenCalledToAddNewGroupToDatabaseFromWPFApp()
+        {
+            //ARRANGE
+            groupAccountLogic.Setup(c => c.CreateGroup(It.IsAny<Group>()));
+            groupWPFVMTests.groupAccLogic = groupAccountLogic.Object;
+
+            //ACT
+            groupWPFVMTests.AddGroup();
+
+            //ASSERT
+            groupAccountLogic.Verify(c => c.CreateGroup(It.IsAny<Group>()), Times.Once);
+        }      
+
+        [TestMethod]
+        //[ExpectedException(typeof(EntityAlreadyExistsException))]
+        public void Test_WPF_AddGroupMethod_ThrowsEntityAlreadyExistsExceptionWhenGroupNameIsAlreadyInTheDatabase()
+        {
+            //ARRANGE
+            groupAccountLogic.Setup(c => c.CreateGroup(It.IsAny<Group>())).Throws(new EntityAlreadyExistsException());
+            groupWPFVMTests.groupID = 1;
+            groupWPFVMTests.groupName = "Test";
+
+            //ACT
+            groupWPFVMTests.AddGroup();
+
+            //ASSERT
+            groupAccountLogic.Setup(c => c.CreateGroup(It.IsAny<Group>()));
         }
 
         [TestMethod]
@@ -177,6 +209,40 @@ namespace SocialNetwork.Tests
 
         }
 
+
+        [TestMethod]
+        public void Test_WPF_RemoveGroupMethod_RunsRemoveGroupMethodWhenCalledToRemoveGroupFromDatabase()
+        {
+            //ARRANGE
+            groupAccountLogic.Setup(c => c.ViewGroupInfo("Test")).Returns(testGroup.Object);
+            groupAccountLogic.Setup(c => c.RemoveGroup(testGroup.Object));
+            groupWPFVMTests.groupAccLogic = groupAccountLogic.Object;
+            groupWPFVMTests.groupName = "Test";
+
+            
+            //ACT
+            groupWPFVMTests.RemoveGroup();
+
+            //ASSERT
+            groupAccountLogic.Verify(c => c.ViewGroupInfo("Test"));
+            groupAccountLogic.Verify(c => c.RemoveGroup(testGroup.Object));
+        }
+
+        [TestMethod]
+        //[ExpectedException(typeof(EntityNotFoundException))]
+        public void Test_WPF_RemoveGroupMethod_ThrowsEntityNotFoundException_WhenGroupNameIsNotInDatabase()
+        {
+            //ARRANGE
+            groupAccountLogic.Setup(c => c.ViewGroupInfo("Test")).Throws(new EntityNotFoundException());
+            groupWPFVMTests.groupName = "Test";
+
+            //ACT
+            groupWPFVMTests.RemoveGroup();
+
+            //ASSERT
+            groupAccountLogic.Verify(c => c.ViewGroupInfo("Test"));
+        }
+
         [TestMethod]
         public void Test_ListAllUsersCommand_Returns_ListAllUsersCommand_WhenNotNull()
         {
@@ -226,6 +292,48 @@ namespace SocialNetwork.Tests
             var test = userWPFVMTests.removeUserCommand;
 
             //ACT
+            Assert.AreEqual(command.Object, test);
+        }
+
+        [TestMethod]
+        public void Test_ListAllGroupsCommand_Returns_ListAllGroupsCommand_WhenNotNull()
+        {
+            //ARRANGE
+            groupWPFVMTests.listAllGroupsCommand = command.Object;
+
+
+            //ACT
+            var tests = groupWPFVMTests.listAllGroupsCommand;
+
+            //ASSERT
+            Assert.AreEqual(command.Object, tests);
+
+        }
+
+        [TestMethod]
+        public void Test_AddGroupCommand_Returns_AddGroupCommand_WhenNotNull()
+        {
+            //ARRANGE
+            groupWPFVMTests.addGroupCommand = command.Object;
+
+            //ACT
+            var tests = groupWPFVMTests.addGroupCommand;
+
+            //ASSERT
+            Assert.AreEqual(command.Object, tests);
+        }
+
+        [TestMethod]
+        public void Test_RemoveGroupCommand_Return_RemoveGroupCommand_WhenNotNull()
+        {
+            //ARRANGE
+            groupWPFVMTests.removeGroupCommand = command.Object;
+
+
+            //ACT
+            var test = groupWPFVMTests.removeGroupCommand;
+
+            //ASSERT
             Assert.AreEqual(command.Object, test);
         }
 
