@@ -123,15 +123,39 @@ namespace SocialNetwork.Tests
             Mock<User> mockUser = new Mock<User>();
             Mock<Repository<User>> mockUserRepository = new Mock<Repository<User>>();
             mockUser.Object.fullName = null;
-            UserAccountLogic userAccountLogic = new UserAccountLogic(mockUserRepository.Object);
+            Mock<UserAccountLogic> userAccountLogic = new Mock<UserAccountLogic>(mockUserRepository.Object);
             var expected = "_FieldNotFilled";
 
             //Act
-            AccountController classunderTest = new AccountController(userAccountLogic);
+            AccountController classunderTest = new AccountController(userAccountLogic.Object);
             var actual = classunderTest.Register(mockUser.Object) as PartialViewResult;
 
             //Assert
             Assert.AreEqual(expected,actual.ViewName);
+        }
+
+        [TestMethod]
+        public void Test_RegisterInAccounts_UserFullNameIsValid_ReturnsUserAlreadyExistsPartialView()
+        {
+            //Arrange
+            Mock<User> mockUser = new Mock<User>();
+            Mock<Repository<User>> mockUserRepository = new Mock<Repository<User>>();
+            mockUser.Setup(s => s.fullName).Returns("Donald Donaldson");
+            mockUser.Setup(s => s.password).Returns("password");
+            mockUser.Setup(s => s.username).Returns("Don");
+            mockUser.Setup(s => s.gender).Returns("male");
+            Mock<UserAccountLogic> userAccountLogic = new Mock<UserAccountLogic>(mockUserRepository.Object);
+            userAccountLogic.Setup(s => s.CheckForDuplicates(mockUser.Object)).Returns(true);
+            
+            var expected = "_UserAlreadyExists";
+
+            //Act
+            AccountController classunderTest = new AccountController(userAccountLogic.Object);
+
+            var actual = classunderTest.Register(mockUser.Object) as PartialViewResult;
+
+            //Assert
+            Assert.AreEqual(expected, actual.ViewName);
         }
 
         //---------- Testing the CodeWallController ----------//
