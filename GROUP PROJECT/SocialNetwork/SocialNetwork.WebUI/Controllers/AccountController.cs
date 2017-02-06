@@ -121,7 +121,7 @@ namespace SocialNetwork.WebUI.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View();
+            return View("Login");
         }
 
         public ActionResult LogOff()
