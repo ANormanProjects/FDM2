@@ -366,9 +366,9 @@ namespace SocialNetwork.Tests
             userRepo.Setup(x => x.First(It.IsAny<Func<User, bool>>())).Returns(user.Object);
             //act
 
-            User uwser = userAccountLogic.ViewAccountInfo("fb");
+            User userTest = userAccountLogic.ViewAccountInfo("fb");
             //ass
-            Assert.AreEqual(user.Object, uwser);
+            Assert.AreEqual(user.Object, userTest);
             userRepo.Verify(c => c.First(It.IsAny<Func<User, bool>>()), Times.Once);
         
         }

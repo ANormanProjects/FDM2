@@ -32,6 +32,19 @@ namespace SocialNetwork.Logic
             groupRepo = groupRepository;
         }
 
+        public virtual Group ViewGroupInfo(string groupName)
+        {
+            Group groupToDisplay = groupRepo.First(c => c.groupName == groupName);
+            if (groupToDisplay != null)
+            {
+                return groupToDisplay;
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
+        }
+
         public void CreateGroup(Group group)
         {
             if (groupRepo.GetAll().Contains(group))

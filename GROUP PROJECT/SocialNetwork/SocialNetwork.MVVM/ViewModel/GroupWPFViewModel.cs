@@ -68,6 +68,34 @@ namespace SocialNetwork.MVVM
             set { _listAllGroupsCommand = value; }
         }
 
+        private ICommand _addGroupCommand;
+        public ICommand addGroupCommand
+        {
+            get
+            {
+                if (_addGroupCommand == null)
+                {
+                    _addGroupCommand = new Command(AddGroup);
+                }
+                return _addGroupCommand;
+            }
+            set { _addGroupCommand = value; }
+        }
+
+        private ICommand _removeGroupCommand;
+        public ICommand removeGroupCommand
+        {
+            get
+            {
+                if (_removeGroupCommand == null)
+                {
+                    _removeGroupCommand = new Command(RemoveGroup);
+                }
+                return _removeGroupCommand;
+            }
+            set { _removeGroupCommand = value; }
+        }
+
         //Live
         public GroupWPFViewModel()
         {
@@ -92,7 +120,19 @@ namespace SocialNetwork.MVVM
 
         public void AddGroup()
         {
+            Group newGroup = new Group();
 
+            newGroup.groupID = groupID;
+            newGroup.groupName = groupName;
+
+            groupAccLogic.CreateGroup(newGroup);
+        }
+
+        public void RemoveGroup()
+        {
+            Group removeGroup = groupAccLogic.ViewGroupInfo(groupName);
+
+            groupAccLogic.RemoveGroup(removeGroup);
         }
     }
 }
