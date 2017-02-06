@@ -95,7 +95,7 @@ namespace SocialNetwork.Tests
             //Arrange
             expectedPosts.Add(post.Object);
 
-            List<Post> userPosts = new List<Post>();
+            List<UserPost> userPosts = new List<UserPost>();
             userPosts.Add(post.Object);
             user.SetupGet(u => u.posts).Returns(userPosts);
             user.Setup(f => f.friends).Returns(new List<User>());
@@ -116,11 +116,11 @@ namespace SocialNetwork.Tests
             expectedPosts.Add(post.Object);
 
             // Mock user posts lists
-            List<Post> userPosts = new List<Post>();
+            List<UserPost> userPosts = new List<UserPost>();
             // Mock user friends
             List<User> userFriends = new List<User>();
             // Mock user friends posts
-            List<Post> userFriendsPosts = new List<Post>();
+            List<UserPost> userFriendsPosts = new List<UserPost>();
 
             userFriends.Add(friend.Object);
             userFriendsPosts.Add(post.Object);

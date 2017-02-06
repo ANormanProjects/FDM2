@@ -5,22 +5,22 @@
 }
 
 <h1 class="text-center">The Code Wall</h1>
-<h3 class="text-center">Create new post</h3>
-<div class="col-md-offset-2 col-md-8 pink">
+<h2 class="text-center">Create new post</h2>
+<div class="container make-post-form col-md-offset-2 col-md-8">    
     @Html.Partial("_MakePostForm", new SocialNetwork.WebUI.Models.UserPostViewModel())
 </div>
 
 
-<br />
 
 
-<hr />
-<h2 class="text-center">Recent Posts</h2>
-@foreach(SocialNetwork.WebUI.Models.UserPostViewModel viewModel in Model)
-{
-    @Html.Partial("_UserPost", viewModel)
-}
 
+<div class="container">
+    <h2 class="text-center">Recent Posts</h2>
+    @foreach (SocialNetwork.WebUI.Models.UserPostViewModel viewModel in Model)
+    {
+        @Html.Partial("_UserPost", viewModel)
+    }
+</div>
 
 
 

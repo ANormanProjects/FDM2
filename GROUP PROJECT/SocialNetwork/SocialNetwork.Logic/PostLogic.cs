@@ -27,20 +27,24 @@ namespace SocialNetwork.Logic
             commentLogic = new CommentLogic(_postRepository, _commentRepository, _userRepository);
         }
 
-        public PostLogic(Repository<Post> postRepository, Repository<Comment> commentRepository)
-        {
-            _postRepository = postRepository;
-            _commentRepository = commentRepository;
-            commentLogic = new CommentLogic(_postRepository, _commentRepository, _userRepository);
-        }
-
-        
-
         public PostLogic(CommentLogic CommentLogic, Repository<Post> postRepository, Repository<User> userRepository)
         {
             _postRepository = postRepository;
             commentLogic = CommentLogic;
             _userRepository = userRepository;
+        }
+
+        public PostLogic(Repository<Post> postRepository, Repository<Comment> commentRepository)
+        {
+            _postRepository = postRepository;
+            _commentRepository = commentRepository;
+            commentLogic = new CommentLogic(_postRepository, _commentRepository, _userRepository);
+        }      
+
+        public PostLogic(SocialNetworkDataModel context)
+        {
+            _postRepository = new Repository<Post>(context);
+            _userRepository = new Repository<User>(context);
         }
 
 
@@ -62,16 +66,16 @@ namespace SocialNetwork.Logic
                 postToWrite.code = code;
                 postToWrite.content = content;
                 postToWrite.group = group;
+                postToWrite.time = DateTime.Now;
 
                 _postRepository.Insert(postToWrite);
+                _postRepository.Save();
             }
             else
             {
                 //exception to throw - might need to add new exception 
                 throw new EntityNotFoundException();
-            }
-
-            _postRepository.Save();
+            }            
         }
 
         /// <summary>
@@ -84,7 +88,7 @@ namespace SocialNetwork.Logic
         /// <param name="content"></param>
         public virtual void WriteUserPost(int id, string title, string language, string code, string content, User user)
         {
-            if (_userRepository.GetAll().Contains(user))
+            if (_userRepository.GetAll().Contains(user, new GenericCompare<User>(u => u.username)))
             {
                 UserPost postToWrite = new UserPost();
                 postToWrite.title = title;
@@ -92,8 +96,10 @@ namespace SocialNetwork.Logic
                 postToWrite.code = code;
                 postToWrite.content = content;
                 postToWrite.user = user;
+                postToWrite.time = DateTime.Now;
 
                 _postRepository.Insert(postToWrite);
+                _postRepository.Save();
             }
             else
             {
@@ -101,7 +107,7 @@ namespace SocialNetwork.Logic
                 throw new EntityNotFoundException();
             }
 
-            _postRepository.Save();
+            
         }
 
         /// <summary>
@@ -115,7 +121,7 @@ namespace SocialNetwork.Logic
 
             if (_userRepository.GetAll().Contains(user))
             {
-                ICollection<Post> userPToAdd = user.posts;
+                ICollection<UserPost> userPToAdd = user.posts;
 
                 foreach (Post pToAdd in userPToAdd)
                 {
@@ -125,7 +131,7 @@ namespace SocialNetwork.Logic
                 //for each friend, get all posts, add to list,
                 foreach (User friend in user.friends)
                 {
-                    ICollection<Post> pToAdd = friend.posts;
+                    ICollection<UserPost> pToAdd = friend.posts;
 
                     foreach (Post friendPToAdd in pToAdd)
                     {

@@ -70,8 +70,8 @@ namespace SocialNetwork.DataAccess
         }
 
 
-        private ICollection<Post> _posts;
-        public virtual ICollection<Post> posts
+        private ICollection<UserPost> _posts;
+        public virtual ICollection<UserPost> posts
         {
             get { return _posts; }
             set { _posts = value; }

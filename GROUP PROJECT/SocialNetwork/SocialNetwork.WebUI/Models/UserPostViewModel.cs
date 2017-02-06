@@ -9,5 +9,6 @@ namespace SocialNetwork.WebUI.Models
     public class UserPostViewModel
     {
         public UserPost post { get; set; }
+        public User user { get; set; }
     }
 }
