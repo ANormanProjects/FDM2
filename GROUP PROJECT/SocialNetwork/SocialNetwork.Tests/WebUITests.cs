@@ -19,6 +19,24 @@ namespace SocialNetwork.Tests
     [TestClass]
     public class WebUITests
     {
+        Repository<User> userRep;
+        Mock<UserAccountLogic> mockUserAccountLogic;
+        User existingUser;
+        User user;
+        Mock<User> mockUser;
+        Mock<Repository<User>> mockUserRepository;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            userRep = new Repository<User>();
+            mockUserAccountLogic = new Mock<UserAccountLogic>(userRep);
+            existingUser = new User();
+            user = new User();
+            mockUser = new Mock<User>();
+            mockUserRepository = new Mock<Repository<User>>();
+        }
+
         [TestMethod]
         public void Test_IndexInHomeFolder_ReturnsIndexView()
         {
@@ -60,21 +78,13 @@ namespace SocialNetwork.Tests
         [TestMethod]
         public void Test_LoginInAccounts_CallsLoginMethod()
         {
-            var userRep = new Repository<User>();
-            var mockUserAccountLogic = new Mock<UserAccountLogic>(userRep);
-
-            User existingUser = new User();
             existingUser.username = "tomjones";
             existingUser.password = "delilah";
             mockUserAccountLogic.Setup(x => x.Register(existingUser));
-
             
-            User user = new User();
             user.username = "tomjones";
             user.password = "delilah";
             string returnUrl = "ProfilePage";
-
-            
 
             AccountController classUnderTest = new AccountController(mockUserAccountLogic.Object);
             
@@ -118,8 +128,6 @@ namespace SocialNetwork.Tests
         [TestMethod]
         public void Test_LoginInAccounts_ReturnsModelError_WhenWrongInfoIsGiven()
         {
-            Mock<User> mockUser = new Mock<User>();
-            Mock<Repository<User>> mockUserRepository = new Mock<Repository<User>>();
             mockUser.Object.fullName = null;
             Mock<UserAccountLogic> mockUserAccountLogic = new Mock<UserAccountLogic>(mockUserRepository.Object);
             mockUser.Setup(s => s.fullName).Returns("Donald Donaldson");
@@ -166,8 +174,6 @@ namespace SocialNetwork.Tests
         public void Test_RegisterInAccounts_UserFullNameIsNull_ReturnsFieldNotFilledPartialView()
         {
             //Arrange
-            Mock<User> mockUser = new Mock<User>();
-            Mock<Repository<User>> mockUserRepository = new Mock<Repository<User>>();
             mockUser.Object.fullName = null;
             Mock<UserAccountLogic> MockUserAccountLogic = new Mock<UserAccountLogic>(mockUserRepository.Object);
             var expected = "_FieldNotFilled";
@@ -184,8 +190,6 @@ namespace SocialNetwork.Tests
         public void Test_RegisterInAccounts_UserFullNameIsValid_ReturnsAccountCreatedPartialView()
         {
             //Arrange
-            Mock<User> mockUser = new Mock<User>();
-            Mock<Repository<User>> mockUserRepository = new Mock<Repository<User>>();
             mockUser.Setup(s => s.fullName).Returns("Donald Donaldson");
             mockUser.Setup(s => s.password).Returns("password");
             mockUser.Setup(s => s.username).Returns("Don");
