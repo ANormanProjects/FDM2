@@ -175,5 +175,19 @@ namespace SocialNetwork.Tests
 
             Assert.AreEqual(expected, actual.ViewName);
         }
+
+        //---------- Testing the GroupController ----------//
+
+        [TestMethod]
+        public void Test_GroupPostsInGroups_ReturnGroupPostsView()
+        {
+            var expected = "GroupPosts";
+
+            GroupController classUnderTest = new GroupController();
+
+            var actual = classUnderTest.GroupPosts() as ViewResult;
+
+            Assert.AreEqual(expected, actual.ViewName);
+        }
     }
 }
