@@ -84,6 +84,33 @@ namespace SocialNetwork.Tests
             mockUserAccountLogic.Verify(r => r.Login(user.username, user.password), Times.Once);
         }
 
+        public void Test_LoginInAccounts_RedirectsToActionProfilePage()
+        {
+            var userRep = new Repository<User>();
+            var mockUserAccountLogic = new Mock<UserAccountLogic>(userRep);
+
+            User existingUser = new User();
+            existingUser.username = "tomjones";
+            existingUser.password = "delilah";
+            mockUserAccountLogic.Setup(x => x.Register(existingUser));
+
+
+            User user = new User();
+            user.username = "tomjones";
+            user.password = "delilah";
+            string returnUrl = "a";
+
+
+
+            AccountController classUnderTest = new AccountController(mockUserAccountLogic.Object);
+
+            mockUserAccountLogic.Setup(s => s.Login(user.username, user.password)).Returns(true);
+
+            classUnderTest.Login(user, returnUrl);
+
+            mockUserAccountLogic.Verify(r => r.Login(user.username, user.password), Times.Once);
+        }
+
         [TestMethod]
         public void Test_LoginInAccounts_ReturnsModelError_WhenWrongInfoIsGiven()
         {
@@ -101,7 +128,6 @@ namespace SocialNetwork.Tests
             var actual = classUnderTest.Login(user, returnUrl) as PartialViewResult;
 
             Assert.AreEqual(expected, actual);
-            
         }
 
         [TestMethod]
