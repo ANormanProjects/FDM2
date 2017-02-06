@@ -84,7 +84,7 @@ namespace SocialNetwork.Tests
             mockUserAccountLogic.Verify(r => r.Login(user.username, user.password), Times.Once);
         }
 
-        //[TestMethod]
+        ////[TestMethod]
         //public void Test_LoginInAccounts_RedirectsToActionProfilePage()
         //{
         //    Mock<User> mockUser = new Mock<User>();
@@ -95,12 +95,12 @@ namespace SocialNetwork.Tests
         //    existingUser.username = "tomjones";
         //    existingUser.password = "delilah";
         //    mockUserAccountLogic.Setup(x => x.Register(existingUser));
-            
+
         //    User user = new User();
         //    user.username = "tomjones";
         //    user.password = "delilah";
         //    string returnUrl = "a";
-                        
+
         //    mockUser.Object.fullName = null;
 
         //    var expected = "ProfilePage";
@@ -108,11 +108,10 @@ namespace SocialNetwork.Tests
         //    //Act
         //    AccountController classUnderTest = new AccountController(mockUserAccountLogic.Object);
         //    var actual = classUnderTest.Login(user, returnUrl) as RedirectToRouteResult;
-            
+
 
         //    //Assert
-        //    Assert.AreEqual(expected, actual.RouteValues);
-
+        //    Assert.AreEqual("ProfilePage", actual.RouteValues["action"]);
         //}
 
         [TestMethod]
@@ -133,6 +132,17 @@ namespace SocialNetwork.Tests
 
             Assert.AreEqual(expected, actual);
         }
+
+        //[TestMethod]
+        //public void Test_LogOffInAccounts_RedirectsToIndex()
+        //{
+        //    var userRep = new Repository<User>();
+        //    Mock<UserAccountLogic> mockUserAccountLogic = new Mock<UserAccountLogic>(userRep);
+        //    AccountController classUnderTest = new AccountController(mockUserAccountLogic.Object);
+        //    var actual = classUnderTest.LogOff() as RedirectToRouteResult;
+                       
+        //    Assert.AreEqual("Index", actual.RouteValues["action"]);
+        //}
 
         [TestMethod]
         public void Test_RegisterInAccounts_ReturnsRegisterView()
