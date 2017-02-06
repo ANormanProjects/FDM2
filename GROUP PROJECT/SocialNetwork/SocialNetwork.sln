@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9578CD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.MVVM", "SocialNetwork.MVVM\SocialNetwork.MVVM.csproj", "{7EFA273B-78CF-424C-A166-EF0B75DD54B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFHostingConsole", "WCFHostingConsole\WCFHostingConsole.csproj", "{039B591C-74DB-41FD-8DC7-4BC41ADBFB5E}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -54,6 +56,10 @@ Global
 		{7EFA273B-78CF-424C-A166-EF0B75DD54B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EFA273B-78CF-424C-A166-EF0B75DD54B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EFA273B-78CF-424C-A166-EF0B75DD54B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{039B591C-74DB-41FD-8DC7-4BC41ADBFB5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{039B591C-74DB-41FD-8DC7-4BC41ADBFB5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{039B591C-74DB-41FD-8DC7-4BC41ADBFB5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{039B591C-74DB-41FD-8DC7-4BC41ADBFB5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
