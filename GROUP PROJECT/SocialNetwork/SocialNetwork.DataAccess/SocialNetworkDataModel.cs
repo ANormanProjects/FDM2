@@ -15,8 +15,19 @@ namespace SocialNetwork.DataAccess
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer<SocialNetworkDataModel>(null);
-            base.OnModelCreating(modelBuilder);
+            Database.SetInitializer<SocialNetworkDataModel>(null);            
+
+            modelBuilder.Entity<UserPost>().Map(m =>
+            {
+                m.MapInheritedProperties();
+                m.ToTable("UserPosts");
+            });
+
+            modelBuilder.Entity<GroupPost>().Map(m =>
+            {
+                m.MapInheritedProperties();
+                m.ToTable("GroupPosts");
+            }); 
 
             modelBuilder.Entity<Group>()
                 .HasMany<User>(g => g.usersInGroup)
@@ -39,6 +50,8 @@ namespace SocialNetwork.DataAccess
                     uf.ToTable("UserFriends");
                 }
                 );
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public virtual IDbSet<User> users { get; set; }

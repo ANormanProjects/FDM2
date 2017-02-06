@@ -45,6 +45,15 @@ namespace SocialNetwork.Logic
             _userRepository = userRepository;
         }
 
+        public UserAccountLogic(SocialNetworkDataModel context)
+        {
+            _userRepository = new Repository<User>(context);
+            _postRepository = new Repository<Post>(context);
+            _commentRepository = new Repository<Comment>(context);
+            _groupRepository = new Repository<Group>(context);
+        }
+
+
         public virtual bool Login(string username, string password)
         {
             bool result = false;

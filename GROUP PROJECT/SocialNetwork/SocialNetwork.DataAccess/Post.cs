@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -11,6 +12,7 @@ namespace SocialNetwork.DataAccess
     [DataContract]
     public abstract class Post
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int postId { get; set; }
 
         [DisplayName("Time")]
@@ -35,7 +37,6 @@ namespace SocialNetwork.DataAccess
 
         public Post()
         {
-            comments = new List<Comment>();
         }
 
     }

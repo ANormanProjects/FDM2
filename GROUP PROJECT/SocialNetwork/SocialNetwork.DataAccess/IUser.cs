@@ -23,7 +23,7 @@ namespace SocialNetwork.DataAccess
 
         ICollection<Group> groups { get; set; }
 
-        ICollection<Post> posts { get; set; }
+        ICollection<UserPost> posts { get; set; }
 
         ICollection<User> friends { get; set; }
 

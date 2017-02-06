@@ -11,7 +11,8 @@ namespace SocialNetwork.WebUI.Controllers
 {
     public class CodeWallController : Controller
     {
-        PostLogic _postLogic;
+        private PostLogic _postLogic;
+        private UserAccountLogic _userLogic;
 
         public CodeWallController() { }
 
@@ -47,23 +48,47 @@ namespace SocialNetwork.WebUI.Controllers
         [Authorize]
         public ActionResult MakePost(UserPostViewModel viewModel)
         {
+            SocialNetworkDataModel context = new SocialNetworkDataModel();
+            _postLogic = new PostLogic(context);
+            _userLogic = new UserAccountLogic(context);
+
+            try
+            {
+                User user = _userLogic.ViewAccountInfo(User.Identity.Name);
+                _postLogic.WriteUserPost(0, viewModel.post.title, viewModel.post.language, viewModel.post.code, viewModel.post.content, user);
+            }
+            catch (EntityNotFoundException)
+            {
+                return PartialView("_FieldNotFilled");
+            }
+
+
             return PartialView("_Success");
         }
 
-
+        /// <summary>
+        /// Returns a list of posts that the user has made themselves, encapsulated into a view model
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public List<UserPostViewModel> CreateViewModelsForUser(User user)
         {
             List<UserPostViewModel> posts = new List<UserPostViewModel>();
 
             foreach (UserPost p in user.posts)
             {
-                posts.Add(new UserPostViewModel() { post = p });
+                posts.Add(new UserPostViewModel() { post = p, user = user });
             }
 
             return posts;
         }
 
-
+        /// <summary>
+        /// Returns a list of posts that the user has made, their friends have made, and that groups they are a part of have made,
+        /// encapsulated into a view model
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public List<UserPostViewModel> CreateViewModelsForUserFriendsGroups(User user)
         {
             List<UserPostViewModel> posts = new List<UserPostViewModel>();
