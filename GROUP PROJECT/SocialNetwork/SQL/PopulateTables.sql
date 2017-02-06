@@ -1,7 +1,8 @@
  -- DELETE ALL TABLES (FOR THE LOVE OF GOD DONT RUN THESE)
  -- DROP TABLE __MigrationHistory;
  -- DROP TABLE Comments;
- -- DROP TABLE Posts;
+ -- DROP TABLE UserPosts;
+ -- DROP TABLE GroupPosts;
  -- DROP TABLE Users;
  -- DROP TABLE Groups;
  -- DROP TABLE UserFriends
@@ -19,7 +20,8 @@ DELETE FROM UserGroups
  -- RESEED PRIMARY KEY VALUES (START FROM 0 AGAIN)
 DBCC CHECKIDENT (Users, RESEED, 0)
 DBCC CHECKIDENT (Comments, RESEED, 0)
-DBCC CHECKIDENT (Posts, RESEED, 0)
+DBCC CHECKIDENT (GroupPosts, RESEED, 0)
+DBCC CHECKIDENT (UserPosts, RESEED, 0)
 DBCC CHECKIDENT (Groups, RESEED, 0)
 
 
@@ -135,30 +137,31 @@ INNER JOIN Users U ON U.userId = UserRefId
 INNER JOIN Groups G ON G.groupId = GroupRefId;
 
  -- Populate Posts
-INSERT INTO Posts(time, likes, title, content, code, language, user_userId, Discriminator) 
-VALUES (GETDATE(), 10, 'I Love C#', 'Hi Guys, here is my latest snippet of c# code!', 'Console.WriteLine("I LOVE C#!");', 'C#', 2, 'UserPost');
+INSERT INTO UserPosts(time, likes, title, content, code, language, user_userId) 
+VALUES (GETDATE(), 10, 'I Love C#', 'Hi Guys, here is my latest snippet of c# code!', 'Console.WriteLine("I LOVE C#!");', 'C#', 2);
 
-INSERT INTO Posts(time, likes, title, content, code, language, user_userId, Discriminator)
+INSERT INTO UserPosts(time, likes, title, content, code, language, user_userId)
 VALUES(GETDATE(), 15, 'Generic Repository', 'I have made a generic repository for you guys to share - Spencer', 
-'public class Repository<T> : IRepository<T> \n{\n\tCODE\n}', 'C#', 1, 'UserPost');
+'public class Repository<T> : IRepository<T> { CODE }', 'C#', 1);
 
-INSERT INTO Posts(time, likes, title, content, code, language, user_userId, Discriminator)
+INSERT INTO UserPosts(time, likes, title, content, code, language, user_userId)
 VALUES(GETDATE(), 97, 'MS Test', 'I have written some tests here, what do you guys think?', 
-'[TestMethod]\npublic void Test_Method_WhatIExpect_WhenIDoThis()\n{\n\n}', 'C#', 5, 'UserPost');
+'[TestMethod] public void Test_Method_WhatIExpect_WhenIDoThis() { }', 'C#', 5);
 
-INSERT INTO Posts(time, likes, title, content, code, language, user_userId, Discriminator)
+INSERT INTO UserPosts(time, likes, title, content, code, language, user_userId)
 VALUES(GETDATE(), 167, 'ASP.Net Website', 'Here is my Snazzy Website', 
-'<h4>My Snazzy Website</h4>', 'HTML', 6, 'UserPost');
+'<h4>My Snazzy Website</h4>', 'HTML', 6);
 
-INSERT INTO Posts(time, likes, title, content, code, language, user_userId, Discriminator)
+INSERT INTO UserPosts(time, likes, title, content, code, language, user_userId)
 VALUES(GETDATE(), 13, 'WPF Program', 'Im pretty proud of this WPF application I made for my group project :)', 
-'<Label Content="I am the best" />', 'XML', 7, 'UserPost');
+'<Label Content="I am the best" />', 'XML', 7);
 
-INSERT INTO Posts(time, likes, title, content, code, language, group_groupId, Discriminator) 
+INSERT INTO GroupPosts(time, likes, title, content, code, language, group_groupId) 
 VALUES (GETDATE(), 20, 'I Despise C#', 'I Hate C# so much, here is some terrible code to tell you about it.', 
-'Console.WriteLine("I HATE C#!!!");', 'C#', 1, 'GroupPost');
+'Console.WriteLine("I HATE C#!!!");', 'C#', 1);
 
-SELECT postId, time, likes, title, language, content, code, Discriminator, group_groupID, user_userId FROM Posts;
+SELECT postId, time, likes, title, language, content, code, user_userID FROM UserPosts;
+SELECT postId, time, likes, title, language, content, code, group_groupID FROM GroupPosts;
 
  -- Populate Comments
 INSERT INTO Comments(content, post_postId, user_userId, likes) VALUES ('This pretty good! Mind if I use it? - Bish', 2, 2, 1);
