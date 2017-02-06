@@ -20,19 +20,16 @@ namespace SocialNetwork.WebUI.Controllers
             _groupAccountLogic = groupAccountLogic;
         }
 
-        // GET: Group
+        // GET: GroupList
         [HttpGet]
         [Authorize]
-        public ActionResult GroupPosts()
+        public ActionResult GroupList()
         {
-            if (_groupAccountLogic == null)
-            {
-                _groupAccountLogic = new GroupAccountLogic(new PostLogic(new Repository<Post>(), new Repository<Comment>()), new Repository<Group>());
-            }
 
             return View("GroupPosts");
         }
 
+        //GET: GroupProfile
         public ActionResult GroupProfile()
         {
             return View();

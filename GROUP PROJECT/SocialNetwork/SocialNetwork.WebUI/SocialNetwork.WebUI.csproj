@@ -253,7 +253,7 @@
     <Content Include="Views\Shared\_GroupPost.cshtml" />
     <Content Include="Views\Shared\_Success.cshtml" />
     <Content Include="Views\Shared\_MakePostForm.cshtml" />
-    <Content Include="Views\Group\GroupPosts.cshtml" />
+    <Content Include="Views\Group\GroupList.cshtml" />
     <Content Include="Views\Group\GroupProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>

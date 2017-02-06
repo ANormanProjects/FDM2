@@ -249,7 +249,7 @@ namespace SocialNetwork.Tests
 
             GroupController classUnderTest = new GroupController();
 
-            var actual = classUnderTest.GroupPosts() as ViewResult;
+            var actual = classUnderTest.GroupList() as ViewResult;
 
             Assert.AreEqual(expected, actual.ViewName);
         }
