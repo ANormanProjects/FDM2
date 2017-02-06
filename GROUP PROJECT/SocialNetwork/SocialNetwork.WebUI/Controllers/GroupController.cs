@@ -33,5 +33,10 @@ namespace SocialNetwork.WebUI.Controllers
             return View("GroupPosts");
         }
 
+        public ActionResult GroupProfile()
+        {
+            return View();
+        }
+
     }
 }
