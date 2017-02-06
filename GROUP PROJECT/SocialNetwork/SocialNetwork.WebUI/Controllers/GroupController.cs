@@ -30,8 +30,16 @@ namespace SocialNetwork.WebUI.Controllers
                 _groupAccountLogic = new GroupAccountLogic(new PostLogic(new Repository<Post>(), new Repository<Comment>()), new Repository<Group>());
             }
 
+            var groups = _groupAccountLogic.GetAllGroups();
+            UserAccountLogic logic = new UserAccountLogic(new Repository<User>());
+            User user;
+            user = logic.ViewAccountInfo(User.Identity.Name);
 
-            return View("GroupList");
+            var query = from s in groups
+                        where s.usersInGroup == user
+                        select s;
+
+            return View("GroupList", query);
         }
 
         //GET: GroupProfile
