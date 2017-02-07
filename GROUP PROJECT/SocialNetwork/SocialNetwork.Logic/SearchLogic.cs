@@ -72,5 +72,17 @@ namespace SocialNetwork.Logic
                 throw new EntityNotFoundException();
             }
         }
+
+        //public void searchMachine(string searchString)
+        //{
+        //    List<Post> result = new List<Post>();
+
+        //    if (_userRepository.GetAll().Contains(searchString))
+        //    {
+        //        result = SearchForUserByName(searchString);
+        //    }
+
+        //    return result;
+        //}
     }
 }
