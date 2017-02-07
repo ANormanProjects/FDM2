@@ -111,9 +111,7 @@
     <Compile Include="SearchControllerTests.cs" />
     <Compile Include="SearchLogicTests.cs" />
     <Compile Include="SettingsControllerTests.cs" />
-    <Compile Include="WebUITestsCodeWall.cs" />
     <Compile Include="UserAccountLogicTests.cs" />
-    <Compile Include="WebUITests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
