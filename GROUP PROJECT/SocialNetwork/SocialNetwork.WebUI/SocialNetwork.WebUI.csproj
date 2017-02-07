@@ -243,7 +243,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\CodeWall\Wall.cshtml" />
-    <Content Include="Views\SearchResults\Results.cshtml" />
+    <Content Include="Views\Search\Results.cshtml" />
     <Content Include="Views\Account\ProfilePage.cshtml" />
     <Content Include="Views\Settings\SettingsPage.cshtml" />
     <Content Include="Views\Shared\_UserPost.cshtml" />
