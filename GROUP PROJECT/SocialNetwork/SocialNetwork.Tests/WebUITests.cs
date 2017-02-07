@@ -252,17 +252,17 @@ namespace SocialNetwork.Tests
 
         //---------- Testing the GroupController ----------//
 
-        [TestMethod]
-        public void Test_GroupListInGroups_ReturnGroupListView()
-        {
-            var expected = "GroupList";
+        //[TestMethod]
+        //public void Test_GroupListInGroups_ReturnGroupListView()
+        //{
+        //    var expected = "GroupList";
 
-            GroupController classUnderTest = new GroupController();
+        //    GroupController classUnderTest = new GroupController();
 
-            var actual = classUnderTest.GroupList() as ViewResult;
+        //    var actual = classUnderTest.GroupList() as ViewResult;
 
-            Assert.AreEqual(expected, actual.ViewName);
-        }
+        //    Assert.AreEqual(expected, actual.ViewName);
+        //}
 
         [TestMethod]
         public void Test_GroupProfileInGroups_ReturnGroupProfileView()
