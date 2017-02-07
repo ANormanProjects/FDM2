@@ -25,6 +25,7 @@ namespace SocialNetwork.WebUI.Controllers
         [Authorize]
         public ActionResult GroupList()
         {
+            IEnumerable<GroupViewModels> viewModels;
             if (_groupAccountLogic == null)
             {
                 _groupAccountLogic = new GroupAccountLogic(new PostLogic(new Repository<Post>(), new Repository<Comment>()), new Repository<Group>());
@@ -33,13 +34,11 @@ namespace SocialNetwork.WebUI.Controllers
             var groups = _groupAccountLogic.GetAllGroups();
             UserAccountLogic logic = new UserAccountLogic(new Repository<User>());
             User user;
+            Group group = new Group();
             user = logic.ViewAccountInfo(User.Identity.Name);
-
-            var query = from s in groups
-                        where s.usersInGroup == user
-                        select s;
-
-            return View("GroupList", query);
+            viewModels = CreateViewModels(group).Where(u => u.group.usersInGroup == user);
+  
+            return View("GroupList", viewModels);
         }
 
         //GET: GroupProfile
@@ -50,12 +49,19 @@ namespace SocialNetwork.WebUI.Controllers
 
         public List<GroupViewModels> CreateViewModels(Group group)
         {
+            if (_groupAccountLogic == null)
+            {
+                _groupAccountLogic = new GroupAccountLogic(new PostLogic(new Repository<Post>(), new Repository<Comment>()), new Repository<Group>());
+            }
+
+            var groupList = _groupAccountLogic.GetAllGroups();
+
             List<GroupViewModels> groups = new List<GroupViewModels>();
 
-            //foreach (Group g in group.group)
-            //{
-            //    groups.Add(new GroupViewModels() { group = g });
-            //}
+            foreach (Group g in groupList)
+            {
+                groups.Add(new GroupViewModels() { group = g });
+            }
 
             return groups;
         }
