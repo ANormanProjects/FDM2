@@ -39,5 +39,6 @@ namespace SocialNetwork.Tests
             var actual = classUnderTest.SettingsPage() as ViewResult;
 
             Assert.AreEqual(expected, actual.ViewName);
+        }
     }
 }
