@@ -11,9 +11,21 @@ namespace SocialNetwork.WebUI.Controllers
 {
     public class GroupController : Controller
     {
+        Repository<Group> groupRepo;
+        Repository<Post> postRepo;
+        Repository<Comment> commentRepo;
+        Repository<User> userRepo;
         GroupAccountLogic _groupAccountLogic;
-
-        public GroupController() { }
+        UserAccountLogic _userAccountLogic;
+        public GroupController()
+        {
+            commentRepo = new Repository<Comment>();
+            postRepo = new Repository<Post>();
+            userRepo = new Repository<User>();
+            groupRepo = new Repository<Group>();
+            _groupAccountLogic = new GroupAccountLogic(groupRepo, postRepo, commentRepo, userRepo);
+            _userAccountLogic = new UserAccountLogic(userRepo, postRepo, commentRepo, groupRepo);
+        }
 
         public GroupController(GroupAccountLogic groupAccountLogic)
         {
@@ -26,17 +38,17 @@ namespace SocialNetwork.WebUI.Controllers
         public ActionResult GroupList()
         {
             IEnumerable<GroupViewModels> viewModels;
-            if (_groupAccountLogic == null)
-            {
-                _groupAccountLogic = new GroupAccountLogic(new PostLogic(new Repository<Post>(), new Repository<Comment>()), new Repository<Group>());
-            }
+            //if (_groupAccountLogic == null)
+            //{
+            //    _groupAccountLogic = new GroupAccountLogic(new PostLogic(new Repository<Post>(), new Repository<Comment>()), new Repository<Group>());
+            //}
 
             var groups = _groupAccountLogic.GetAllGroups();
             UserAccountLogic logic = new UserAccountLogic(new Repository<User>());
             User user;
             Group group = new Group();
             user = logic.ViewAccountInfo(User.Identity.Name);
-            viewModels = CreateViewModels(group).Where(u => u.group.usersInGroup == user);
+            viewModels = CreateViewModels(user);
   
             return View("GroupList", viewModels);
         }
@@ -47,14 +59,9 @@ namespace SocialNetwork.WebUI.Controllers
             return View("GroupProfile");
         }
 
-        public List<GroupViewModels> CreateViewModels(Group group)
+        public List<GroupViewModels> CreateViewModels(User user)
         {
-            if (_groupAccountLogic == null)
-            {
-                _groupAccountLogic = new GroupAccountLogic(new PostLogic(new Repository<Post>(), new Repository<Comment>()), new Repository<Group>());
-            }
-
-            var groupList = _groupAccountLogic.GetAllGroups();
+            var groupList = _userAccountLogic.ViewAllGroupsFollowedByUser(user);
 
             List<GroupViewModels> groups = new List<GroupViewModels>();
 

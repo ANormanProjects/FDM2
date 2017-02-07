@@ -213,5 +213,30 @@ namespace SocialNetwork.Logic
             }
         }
 
+        public List<Group> ViewAllGroupsFollowedByUser(User user)
+        {
+            bool test = false;
+
+            foreach (User userTest in _userRepository.GetAll())
+            {
+                if (user.userId == userTest.userId)
+                {
+                    test = true;
+                }
+            }
+            if (test == true)
+            {
+                List<Group> groups = new List<Group>();
+
+                groups = user.groups.ToList();
+
+                return groups;
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
+        }
+
     }
 }
