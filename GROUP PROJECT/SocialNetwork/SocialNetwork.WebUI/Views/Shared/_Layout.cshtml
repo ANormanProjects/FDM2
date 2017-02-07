@@ -31,7 +31,7 @@
                     <li>@Html.ActionLink("dotNetwork", "Index", "Home", routeValues: null, htmlAttributes: new { id = "home", @class = "nav-title", @style = "color: #ffffff;" })</li>
                     <li>@Html.ActionLink("Code Wall", "Wall", "CodeWall", routeValues: null, htmlAttributes: new { id = "codeWall", @style = "color:#ffffff;" })</li>
                     <li>@Html.ActionLink("Your Profile", "ProfilePage", "Account", routeValues: null, htmlAttributes: new { id = "profile", @style = "color:#ffffff;" })</li>
-                    <li>@Html.ActionLink("Your Groups", "GroupPosts", "Group", routeValues: null, htmlAttributes: new { id = "profile", @style = "color:#ffffff;" })</li>
+                    <li>@Html.ActionLink("Your Groups", "GroupList", "Group", routeValues: null, htmlAttributes: new { id = "profile", @style = "color:#ffffff;" })</li>
                     <li>@Html.ActionLink("Settings", "SettingsPage", "Settings", routeValues: null, htmlAttributes: new { id = "settings", @style = "color:#ffffff;" })</li>
                     <li style="padding-top: 8px; padding-bottom: 8px;">@using (Html.BeginForm("SearchResults", "Search")){<p>Search: @Html.TextBox("SearchString")<input type="submit" value="Search" /></p>}</li>
                 </ul>
