@@ -137,19 +137,25 @@ namespace SocialNetwork.WebUI.Controllers
             string username = User.Identity.Name;
             Repository<User> userRepo = new Repository<User>();
             User user = userRepo.First(u => u.username == (User.Identity.Name == "" ? "snewton" : User.Identity.Name));
-            List<UserPostViewModel> viewModels = CreateViewModelsForUser(user);
+            ProfilePageViewModel viewModels = CreateViewModelsForUser(user);
 
             return View("ProfilePage", viewModels);
         }
 
-        public List<UserPostViewModel> CreateViewModelsForUser(User user)
+        public ProfilePageViewModel CreateViewModelsForUser(User user)
         {
-            List<UserPostViewModel> posts = new List<UserPostViewModel>();
+            ProfilePageViewModel posts = new ProfilePageViewModel();
+
+            List<UserPost> listposts = new List<UserPost>();
 
             foreach (UserPost p in user.posts)
             {
-                posts.Add(new UserPostViewModel() { post = p });
+                listposts.Add(p);
             }
+
+            posts.userpost = listposts;
+
+            posts.user = user;
 
             return posts;
         }

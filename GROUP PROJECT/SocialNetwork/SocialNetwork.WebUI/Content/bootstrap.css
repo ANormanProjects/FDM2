@@ -796,13 +796,18 @@ pre {
 }
 
 .container {
+    padding-right: 15px;
+    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
 
 /*<!--CUSTOM CONTAINER FOR FOOTER - DO NOT EDIT OR FACE WRATH OF BEN-->*/
 .container-layout {
-    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
     margin-bottom: 250px; 
 }
 
@@ -5173,20 +5178,17 @@ a.list-group-item.active > .badge,
 }
 
 .jumbotron2 {
+    padding: 60px;
     margin-bottom: 30px;
     text-shadow: 2px 2px 5px #000;
-    display: table;
     font-family: 'Nunito', sans-serif;
     font-size: 21px;
     font-weight: 200;
-    text-align: center;
     line-height: 2.1428571435;
     color: white;
-    height: 100vh;
-    width:100%;
-    position: relative;
+    background-color: #eeeeee;
     background-image: url("../Content/codecomputer.jpg");
-    background-size: cover;
+    background-size: 100%;
     /*border-radius: 20px 20px 20px 20px;*/
 }
 

@@ -171,17 +171,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702070944574_reset-tpt.cs" />
-    <Compile Include="Migrations\201702070944574_reset-tpt.Designer.cs">
-      <DependentUpon>201702070944574_reset-tpt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommentViewModel.cs" />
     <Compile Include="Models\GroupPostViewModel.cs" />
     <Compile Include="Models\GroupViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ProfilePageViewModel.cs" />
     <Compile Include="Models\UserPostViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -195,8 +191,8 @@
     <Content Include="Content\facebook.svg" />
     <Content Include="Content\linkedin.svg" />
     <Content Include="Content\mail.svg" />
-    <Content Include="Content\scrolljava.css" />
-    <Content Include="Content\skhan-cover.jpg" />
+    <Content Include="Content\cover.jpg" />
+    <Content Include="Content\snewton-placeholderprofile.jpg" />
     <Content Include="Content\twitter.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
