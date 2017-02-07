@@ -3,7 +3,7 @@
 <div class="container">
     <div class="post-container">
         <div class="container post-sidebar col-sm-2">
-            @if (Model.post.user.username != null)
+            @if (Model.post.user != null)
             {
                 <img class="post-profile-image" src="~/Content/@Model.post.user.username-profileimg.jpg" />
             }
