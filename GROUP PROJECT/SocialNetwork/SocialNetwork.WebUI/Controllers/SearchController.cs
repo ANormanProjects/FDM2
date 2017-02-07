@@ -37,15 +37,21 @@ namespace SocialNetwork.WebUI.Controllers
          
             UserAccountLogic logic = new UserAccountLogic(new Repository<User>());
             User user = logic.ViewAccountInfo(User.Identity.Name);
-            List<Post> results = searchLogic.SearchForCode(searchString);
-
-          
-            foreach (var result in results)
+           
+            try
             {
-                viewModels.Add(new UserPostViewModel() { post = (UserPost)result });
+                List<Post> results = searchLogic.SearchForCode(searchString);
+                foreach (var result in results)
+                {
+                    if (result is UserPost) viewModels.Add(new UserPostViewModel() { post = (UserPost)result });
+                }
+
+                return View("Results", viewModels);
             }
-                     
-            return View("Results", viewModels);
+            catch (EntityNotFoundException)
+            {
+                 return View("Error");
+            }
         }
        
     }
