@@ -10,6 +10,6 @@ namespace SocialNetwork.WebUI.Models
     {
         public Comment comment { get; set; }
         public User user { get; set; }
-        public Post post { get; set; }
+        public UserPost post { get; set; }
     }
 }

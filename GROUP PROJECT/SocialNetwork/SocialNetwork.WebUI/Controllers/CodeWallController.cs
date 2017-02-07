@@ -71,21 +71,22 @@ namespace SocialNetwork.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult LikePost(int postId)
+        public ActionResult LikePost(UserPostViewModel viewModel)
         {
             SocialNetworkDataModel context = new SocialNetworkDataModel();
             _postLogic = new PostLogic(context);
 
             try
             {
-                //_postLogic.LikePost(post);
+                Post post = _postLogic.GetPost(viewModel.post.postId);
+                _postLogic.LikePost(post);
             }
             catch (EntityNotFoundException)
             {
                 return PartialView("_EntityNotFound");
             }
 
-            return PartialView("_Liked");
+            return Wall();
         }
 
         [HttpPost]
@@ -99,7 +100,7 @@ namespace SocialNetwork.WebUI.Controllers
             try
             {
                 User user = _userLogic.ViewAccountInfo(User.Identity.Name);
-                Post post = _postLogic.GetPost(1);
+                Post post = _postLogic.GetPost(viewModel.post.postId);
                 _commentLogic.AddComment(viewModel.comment.content, user, post);
             }
             catch (EntityNotFoundException)
@@ -107,7 +108,7 @@ namespace SocialNetwork.WebUI.Controllers
                 return PartialView("_EntityNotFound");
             }
 
-            return PartialView("_Liked");
+            return Wall();
         }
 
         /// <summary>

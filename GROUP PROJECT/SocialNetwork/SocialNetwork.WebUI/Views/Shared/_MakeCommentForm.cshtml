@@ -6,8 +6,9 @@
     </div>
 
     <div class="container comment-content col-sm-10">
-        @using (Html.BeginForm("MakeComment", "CodeWall", new { postId = @Model.post.postId, username = User.Identity.Name }, FormMethod.Post))
+        @using (Html.BeginForm("MakeComment", "CodeWall", FormMethod.Post))
         {
+            @Html.HiddenFor(model => model.post.postId);
             <div class="make-post-form form-inline">
                 <div class="form-group col-md-8">
                     @Html.EditorFor(model => model.comment.content, new { htmlAttributes = new { @class = "form-control " } })
