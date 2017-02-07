@@ -256,6 +256,7 @@
     <Content Include="Views\Shared\_MakePostForm.cshtml" />
     <Content Include="Views\Group\GroupList.cshtml" />
     <Content Include="Views\Group\GroupProfile.cshtml" />
+    <Content Include="Views\Shared\_GroupPreview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
