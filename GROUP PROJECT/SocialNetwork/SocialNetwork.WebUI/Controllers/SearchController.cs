@@ -14,6 +14,9 @@ namespace SocialNetwork.WebUI.Controllers
         SearchLogic searchLogic;
         Repository<IUser> userRepo;
         Repository<Post> postRepo;
+        List<UserPostViewModel> viewModels;
+        List<UserViewModel> userModels;
+        UserAccountLogic logic;
 
 
         public SearchController()
@@ -21,21 +24,23 @@ namespace SocialNetwork.WebUI.Controllers
            postRepo = new Repository<Post>();
            userRepo = new Repository<IUser>();
            searchLogic = new SearchLogic(postRepo,userRepo);
-            
+           viewModels = new List<UserPostViewModel>();
+           userModels = new List<UserViewModel>();
+           logic = new UserAccountLogic(new Repository<User>());
         }
 
         // GET: Search
+        [HttpGet]
+        [Authorize]
         public ActionResult Search()
         {
             return View();
         }
 
-
+        [HttpPost]
+        [Authorize]
         public ActionResult SearchResults(string searchString)
         {
-            List<UserPostViewModel> viewModels = new List<UserPostViewModel>();
-         
-            UserAccountLogic logic = new UserAccountLogic(new Repository<User>());
             User user = logic.ViewAccountInfo(User.Identity.Name);
            
             try
@@ -53,6 +58,5 @@ namespace SocialNetwork.WebUI.Controllers
                  return View("Error");
             }
         }
-       
     }
 }
