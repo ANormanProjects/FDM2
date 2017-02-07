@@ -3,5 +3,13 @@
 <div class="container">
     <div class="post-container">
         <h2>@Model.group.groupName</h2>
+        <p>
+            <span>Group Owner:</span>
+            <span>@Model.group.owner.fullName</span>
+        </p>
+        <p>
+            <span>Number of members:</span>
+            <span>@Model.group.usersInGroup.Count</span>
+        </p>
     </div>
 </div>
