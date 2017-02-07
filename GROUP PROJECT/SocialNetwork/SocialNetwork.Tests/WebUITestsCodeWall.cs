@@ -22,7 +22,7 @@ namespace SocialNetwork.Tests
         Mock<Repository<Post>> postRepo;
 
         Mock<User> mockUser;
-        Mock<User> mockFriend; // tfw no friends
+        Mock<User> mockFriend; 
         Mock<UserPost> mockPost1;
         Mock<UserPost> mockPost2;
         List<UserPost> posts;
