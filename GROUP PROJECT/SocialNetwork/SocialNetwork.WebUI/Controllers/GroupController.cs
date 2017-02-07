@@ -38,10 +38,6 @@ namespace SocialNetwork.WebUI.Controllers
         public ActionResult GroupList()
         {
             IEnumerable<GroupViewModels> viewModels;
-            //if (_groupAccountLogic == null)
-            //{
-            //    _groupAccountLogic = new GroupAccountLogic(new PostLogic(new Repository<Post>(), new Repository<Comment>()), new Repository<Group>());
-            //}
 
             var groups = _groupAccountLogic.GetAllGroups();
             UserAccountLogic logic = new UserAccountLogic(new Repository<User>());
@@ -49,7 +45,7 @@ namespace SocialNetwork.WebUI.Controllers
             Group group = new Group();
             user = logic.ViewAccountInfo(User.Identity.Name);
             viewModels = CreateViewModels(user);
-  
+
             return View("GroupList", viewModels);
         }
 
