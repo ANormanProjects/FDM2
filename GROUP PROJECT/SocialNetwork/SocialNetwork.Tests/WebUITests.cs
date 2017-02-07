@@ -224,17 +224,17 @@ namespace SocialNetwork.Tests
 
         //---------- Testing the SearchController ----------//
 
-        [TestMethod]
-        public void Test_ResultsInSearchResults_ReturnsResultsView()
-        {
-            var expected = "Results";
+        //[TestMethod]
+        //public void Test_ResultsInSearchResults_ReturnsResultsView()
+        //{
+        //    var expected = "Results";
 
-            SearchController classUnderTest = new SearchController();
+        //    SearchController classUnderTest = new SearchController();
 
-            var actual = classUnderTest.Results() as ViewResult;
+        //    var actual = classUnderTest.Results() as ViewResult;
 
-            Assert.AreEqual(expected, actual.ViewName);
-        }
+        //    Assert.AreEqual(expected, actual.ViewName);
+        //}
 
         //---------- Testing the SettingsController ----------//
 
