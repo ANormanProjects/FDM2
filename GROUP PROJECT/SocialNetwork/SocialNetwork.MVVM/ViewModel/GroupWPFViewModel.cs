@@ -124,7 +124,6 @@ namespace SocialNetwork.MVVM
             {
                 Group newGroup = new Group();
 
-                newGroup.groupID = groupID;
                 newGroup.groupName = groupName;
 
                 groupAccLogic.CreateGroup(newGroup);
