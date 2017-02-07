@@ -54,6 +54,18 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
+        public void Test_Constructor_SetsAttributes()
+        {
+            SocialNetworkDataModel sndm = new SocialNetworkDataModel();
+            CommentLogic commentLogicTest = new CommentLogic(sndm);
+
+            Assert.IsNotNull(commentLogicTest.postRepo);
+            Assert.IsNotNull(commentLogicTest.commentRepo);
+            Assert.IsNotNull(commentLogicTest.userRepo);
+
+        }
+
+        [TestMethod]
         public void Test_RemoveComment_RemovesCommentFromPostCommentsAndCommentRepo()
         {
             //Arrange

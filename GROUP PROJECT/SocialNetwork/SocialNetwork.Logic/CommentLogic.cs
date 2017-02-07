@@ -11,9 +11,9 @@ namespace SocialNetwork.Logic
 {
     public class CommentLogic : ICommentLogic
     {
-        Repository<Post> postRepo = new Repository<Post>();
-        Repository<Comment> commentRepo = new Repository<Comment>();
-        Repository<User> userRepo = new Repository<User>();
+        public Repository<Post> postRepo { get; set; }
+        public Repository<Comment> commentRepo { get; set; }
+        public Repository<User> userRepo { get; set; }
 
         public CommentLogic(Repository<Post> PostRepo, Repository<Comment> CommentRepo, Repository<User> UserRepo)
         {
