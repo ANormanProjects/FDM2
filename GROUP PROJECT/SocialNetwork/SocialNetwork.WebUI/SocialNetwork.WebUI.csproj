@@ -195,6 +195,7 @@
     <Content Include="Content\facebook.svg" />
     <Content Include="Content\linkedin.svg" />
     <Content Include="Content\mail.svg" />
+    <Content Include="Content\scrolljava.css" />
     <Content Include="Content\skhan-cover.jpg" />
     <Content Include="Content\twitter.svg" />
     <Content Include="favicon.ico" />
