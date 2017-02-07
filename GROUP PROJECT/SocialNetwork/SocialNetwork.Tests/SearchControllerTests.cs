@@ -15,7 +15,7 @@ namespace SocialNetwork.Tests
 
             SearchController classUnderTest = new SearchController();
 
-            var actual = classUnderTest.Results() as ViewResult;
+            var actual = classUnderTest.Search() as ViewResult;
 
             Assert.AreEqual(expected, actual.ViewName);
         }
