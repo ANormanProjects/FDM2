@@ -44,6 +44,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="0">Group ID</Label>
                                 <Label Grid.Column="1">Group Name</Label>
+                                <Label Grid.Column="2">Owner</Label>
                             </Grid>
                             <ItemsPresenter></ItemsPresenter>
                         </DockPanel>
@@ -62,6 +63,7 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="{Binding groupID}" Grid.Column="0"></TextBlock>
                             <TextBlock Text="{Binding groupName}" Grid.Column="1"></TextBlock>
+                            <TextBlock Text="{Binding owner}" Grid.Column="2"></TextBlock>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
