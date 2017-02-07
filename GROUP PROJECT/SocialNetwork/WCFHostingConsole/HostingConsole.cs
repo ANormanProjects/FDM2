@@ -19,7 +19,7 @@ namespace WCFHostingConsole
                 host.AddServiceEndpoint(typeof(ISearchLogic), new NetTcpBinding(), address); 
                 host.Open();                
             }
-            Console.WriteLine(Dns.GetHostName());        
+            Console.WriteLine("net.tcp://" + Dns.GetHostName() + ":8081/SocialNetwork");        
             Console.WriteLine("Press any key to stop hosting");
             Console.ReadKey();      
                         
