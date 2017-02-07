@@ -86,7 +86,7 @@ namespace SocialNetwork.WebUI.Controllers
                 return PartialView("_EntityNotFound");
             }
 
-            return Wall();
+            return RedirectToAction("Wall");
         }
 
         [HttpPost]
@@ -108,7 +108,7 @@ namespace SocialNetwork.WebUI.Controllers
                 return PartialView("_EntityNotFound");
             }
 
-            return Wall();
+            return RedirectToAction("Wall");
         }
 
         /// <summary>
