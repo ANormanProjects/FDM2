@@ -2,7 +2,14 @@
 
 <div class="comment-container">
     <div class="container comment-sidebar col-sm-2">
-        <img class="comment-profile-image" src="~/Content/profile-picture-blank.gif" />
+        @if (Model.comment.user.username != null)
+        {
+            <img class="post-profile-image" src="~/Content/@Model.comment.user.username-profileimg.jpg" />
+        }
+        else
+        {
+            <img class="post-profile-image" src="~/Content/profile-picture-blank.gif" />
+        }
     </div>
 
     <div class="container comment-content col-sm-10">
