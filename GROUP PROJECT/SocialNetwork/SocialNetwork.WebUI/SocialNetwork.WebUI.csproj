@@ -265,6 +265,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -282,11 +283,6 @@
       <Project>{fd9724be-01c3-4e41-ba3f-2a103daeddf3}</Project>
       <Name>SocialNetwork.Logic</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702070944574_reset-tpt.resx">
-      <DependentUpon>201702070944574_reset-tpt.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
