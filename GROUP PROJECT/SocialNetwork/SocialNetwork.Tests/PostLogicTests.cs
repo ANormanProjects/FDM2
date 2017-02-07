@@ -68,7 +68,7 @@ namespace SocialNetwork.Tests
             postRepo.Setup(x => x.Insert(It.IsAny<Post>())).Verifiable();
             postRepo.Setup(x => x.GetAll()).Returns(new List<Post>() { post.Object });
             userRepo.Setup(x => x.GetAll()).Returns(new List<User>() { user.Object });
-
+            user.Setup(x => x.username).Returns("Bill");
             //Act
             postLogic.WriteUserPost(1, "a", "b", "c", "d", user.Object);
 
