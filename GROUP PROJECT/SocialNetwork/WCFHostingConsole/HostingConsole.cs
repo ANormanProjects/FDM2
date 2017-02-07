@@ -15,14 +15,30 @@ namespace WCFHostingConsole
         {
             using (ServiceHost host = new ServiceHost(typeof(SearchLogic)))
             {
-                string address = "net.tcp://" + Dns.GetHostName() + ":8081/SocialNetwork";
-                host.AddServiceEndpoint(typeof(ISearchLogic), new NetTcpBinding(), address); 
-                host.Open();                
+                string hostName = Dns.GetHostName();
+                string port = "60000";
+                string serviceName = "SocialNetwork";
+
+                string address = "net.tcp://" + hostName + ":" + port + "/" + serviceName;
+
+                Console.WriteLine("Host: Launching service on " + hostName);
+
+                Console.WriteLine();
+
+                var endPoint = host.AddServiceEndpoint(typeof(ISearchLogic), new NetTcpBinding(), address);
+
+                host.Open();
+
+                Console.WriteLine("Use this address {0}", address);
+
+                Console.WriteLine();
+
+                Console.WriteLine("Please hit ENTER to terminate SERVICE host....");
+
+                Console.Read();
+
             }
-            Console.WriteLine("net.tcp://" + Dns.GetHostName() + ":8081/SocialNetwork");        
-            Console.WriteLine("Press any key to stop hosting");
-            Console.ReadKey();      
-                        
-        }
+        }              
+
     }
 }
