@@ -17,17 +17,23 @@ namespace SocialNetwork.DataAccess
         {
             Database.SetInitializer<SocialNetworkDataModel>(null);            
 
-            modelBuilder.Entity<UserPost>().Map(m =>
-            {
-                m.MapInheritedProperties();
-                m.ToTable("UserPosts");
-            });
+            // TABLE PER TYPE
+            //modelBuilder.Entity<UserPost>().ToTable("UserPosts");
+            //modelBuilder.Entity<GroupPost>().ToTable("GroupPosts");
 
-            modelBuilder.Entity<GroupPost>().Map(m =>
-            {
-                m.MapInheritedProperties();
-                m.ToTable("GroupPosts");
-            }); 
+
+            // TABLE PER CONCRETE TYPE
+            //modelBuilder.Entity<UserPost>().Map(m =>
+            //{
+            //    m.MapInheritedProperties();
+            //    m.ToTable("UserPosts");
+            //});
+
+            //modelBuilder.Entity<GroupPost>().Map(m =>
+            //{
+            //    m.MapInheritedProperties();
+            //    m.ToTable("GroupPosts");
+            //}); 
 
             modelBuilder.Entity<Group>()
                 .HasMany<User>(g => g.usersInGroup)
@@ -56,6 +62,8 @@ namespace SocialNetwork.DataAccess
 
         public virtual IDbSet<User> users { get; set; }
         public virtual IDbSet<Post> posts { get; set; }
+        //public virtual IDbSet<UserPost> userPosts { get; set; }
+        //public virtual IDbSet<GroupPost> groupPosts { get; set; }
         public virtual IDbSet<Comment> comments { get; set; }
         public virtual IDbSet<Group> groups { get; set; }
     }
