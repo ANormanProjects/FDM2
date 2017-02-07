@@ -1,15 +1,22 @@
 ﻿@model SocialNetwork.WebUI.Models.GroupViewModels
 
 <div class="container">
-    <div class="post-container">
-        <h2>@Model.group.groupName</h2>
-        <p>
-            <span>Group Owner:</span>
-            <span>@Model.group.owner.fullName</span>
-        </p>
-        <p>
-            <span>Number of members:</span>
-            <span>@Model.group.usersInGroup.Count</span>
-        </p>
+    <div class="post-container" >
+        <div class="post-sidebar col-sm-2">
+            <h2>@Model.group.groupName</h2>
+            <p>
+                <span>Group Owner:</span>
+                <span>@Model.group.owner.fullName</span>
+            </p>
+            <p>
+                <span>Members:</span>
+                <span>@Model.group.usersInGroup.Count</span>
+            </p>
+            <input class="btn btn-default" type="submit" value="View Group">
+        </div>
+        <div class="col-sm-10">
+            <h3>Most recent post:</h3>
+            <p>@Model.group.groupWall.First()</p>
+        </div>
     </div>
 </div>
