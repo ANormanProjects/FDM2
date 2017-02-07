@@ -11,8 +11,9 @@ namespace SocialNetwork.WebUI.Controllers
 {
     public class CodeWallController : Controller
     {
-        private PostLogic _postLogic;
-        private UserAccountLogic _userLogic;
+        public PostLogic _postLogic;
+        public CommentLogic _commentLogic;
+        public UserAccountLogic _userLogic;
 
         public CodeWallController() { }
 
@@ -28,20 +29,19 @@ namespace SocialNetwork.WebUI.Controllers
         {
             List<UserPostViewModel> viewModels;
             User user;
-            UserAccountLogic logic = new UserAccountLogic(new Repository<User>());
+
+            if ( _userLogic == null ) _userLogic = new UserAccountLogic(new Repository<User>());
 
             try
             {
-                user = logic.ViewAccountInfo(User.Identity.Name);
+                user = _userLogic.ViewAccountInfo(User.Identity.Name);
                 viewModels = CreateViewModelsForUserFriendsGroups(user);
                 return View("Wall", viewModels);
             }
             catch (EntityNotFoundException)
             {
                 return View("Wall");
-            }       
-
-            
+            }                  
         }
 
         [HttpPost]
@@ -59,11 +59,55 @@ namespace SocialNetwork.WebUI.Controllers
             }
             catch (EntityNotFoundException)
             {
+                return PartialView("_EntityNotFound");
+            }
+            catch (EmptyInputException)
+            {
                 return PartialView("_FieldNotFilled");
             }
 
 
             return PartialView("_Success");
+        }
+
+        [HttpPost]
+        public ActionResult LikePost(int postId)
+        {
+            SocialNetworkDataModel context = new SocialNetworkDataModel();
+            _postLogic = new PostLogic(context);
+
+            try
+            {
+                //_postLogic.LikePost(post);
+            }
+            catch (EntityNotFoundException)
+            {
+                return PartialView("_EntityNotFound");
+            }
+
+            return PartialView("_Liked");
+        }
+
+        [HttpPost]
+        public ActionResult MakeComment(CommentViewModel viewModel)
+        {
+            SocialNetworkDataModel context = new SocialNetworkDataModel();
+            _commentLogic = new CommentLogic(context);
+            _postLogic = new PostLogic(context);
+            _userLogic = new UserAccountLogic(context);
+
+            try
+            {
+                User user = _userLogic.ViewAccountInfo(User.Identity.Name);
+                Post post = _postLogic.GetPost(1);
+                _commentLogic.AddComment(viewModel.comment.content, user, post);
+            }
+            catch (EntityNotFoundException)
+            {
+                return PartialView("_EntityNotFound");
+            }
+
+            return PartialView("_Liked");
         }
 
         /// <summary>

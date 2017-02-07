@@ -22,6 +22,14 @@ textarea {
     max-width: 280px;
 }
 
+.nav-title
+{
+    color: #ffffff;
+    font-family: 'VT323', monospace; 
+    font-size: 33px; 
+    padding-right: 40px;
+}
+
 .make-post-form
 {
     padding: 1em;

@@ -28,8 +28,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li style="font-family: 'VT323', monospace; font-size: 33px; padding-right: 40px;">dotNetwork</li>
-                    <li>@Html.ActionLink("Home", "Index", "Home", routeValues: null, htmlAttributes: new { id = "home", @style = "color:#ffffff;" })</li>
+                    <li>@Html.ActionLink("dotNetwork", "Index", "Home", routeValues: null, htmlAttributes: new { id = "home", @class = "nav-title", @style = "color: #ffffff;" })</li>
                     <li>@Html.ActionLink("Code Wall", "Wall", "CodeWall", routeValues: null, htmlAttributes: new { id = "codeWall", @style = "color:#ffffff;" })</li>
                     <li>@Html.ActionLink("Your Profile", "ProfilePage", "Account", routeValues: null, htmlAttributes: new { id = "profile", @style = "color:#ffffff;" })</li>
                     <li>@Html.ActionLink("Your Groups", "GroupList", "Group", routeValues: null, htmlAttributes: new { id = "profile", @style = "color:#ffffff;" })</li>

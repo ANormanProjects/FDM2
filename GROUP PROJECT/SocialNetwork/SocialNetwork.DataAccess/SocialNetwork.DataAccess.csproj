@@ -70,9 +70,9 @@
     <Compile Include="IComment.cs" />
     <Compile Include="IGroup.cs" />
     <Compile Include="IUser.cs" />
-    <Compile Include="Migrations\201702061339121_reset.cs" />
-    <Compile Include="Migrations\201702061339121_reset.Designer.cs">
-      <DependentUpon>201702061339121_reset.cs</DependentUpon>
+    <Compile Include="Migrations\201702070951458_reset-tpc.cs" />
+    <Compile Include="Migrations\201702070951458_reset-tpc.Designer.cs">
+      <DependentUpon>201702070951458_reset-tpc.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
@@ -90,8 +90,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702061339121_reset.resx">
-      <DependentUpon>201702061339121_reset.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702070951458_reset-tpc.resx">
+      <DependentUpon>201702070951458_reset-tpc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

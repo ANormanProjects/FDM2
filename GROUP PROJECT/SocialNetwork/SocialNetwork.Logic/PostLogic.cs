@@ -58,24 +58,30 @@ namespace SocialNetwork.Logic
         /// <param name="content"></param>
         public virtual void WriteGroupPost(int id, string title, string language, string code, string content, Group group)
         {
-            if (_groupRepository.GetAll().Contains(group))
+            if (title != null && language != null && code != null && content != null)
             {
-                GroupPost postToWrite = new GroupPost();
-                postToWrite.title = title;
-                postToWrite.language = language;
-                postToWrite.code = code;
-                postToWrite.content = content;
-                postToWrite.group = group;
-                postToWrite.time = DateTime.Now;
+                if (_groupRepository.GetAll().Contains(group, new GenericCompare<Group>(u => u.groupID)))
+                {
+                    GroupPost postToWrite = new GroupPost();
+                    postToWrite.title = title;
+                    postToWrite.language = language;
+                    postToWrite.code = code;
+                    postToWrite.content = content;
+                    postToWrite.group = group;
+                    postToWrite.time = DateTime.Now;
 
-                _postRepository.Insert(postToWrite);
-                _postRepository.Save();
+                    _postRepository.Insert(postToWrite);
+                    _postRepository.Save();
+                }
+                else
+                {
+                    throw new EntityNotFoundException();
+                }      
             }
             else
             {
-                //exception to throw - might need to add new exception 
-                throw new EntityNotFoundException();
-            }            
+                throw new EmptyInputException();
+            }
         }
 
         /// <summary>
@@ -88,23 +94,29 @@ namespace SocialNetwork.Logic
         /// <param name="content"></param>
         public virtual void WriteUserPost(int id, string title, string language, string code, string content, User user)
         {
-            if (_userRepository.GetAll().Contains(user, new GenericCompare<User>(u => u.username)))
+            if (title != null && language != null && code != null && content != null)
             {
-                UserPost postToWrite = new UserPost();
-                postToWrite.title = title;
-                postToWrite.language = language;
-                postToWrite.code = code;
-                postToWrite.content = content;
-                postToWrite.user = user;
-                postToWrite.time = DateTime.Now;
+                if (_userRepository.GetAll().Contains(user, new GenericCompare<User>(u => u.username)))
+                {
+                    UserPost postToWrite = new UserPost();
+                    postToWrite.title = title;
+                    postToWrite.language = language;
+                    postToWrite.code = code;
+                    postToWrite.content = content;
+                    postToWrite.user = user;
+                    postToWrite.time = DateTime.Now;
 
-                _postRepository.Insert(postToWrite);
-                _postRepository.Save();
+                    _postRepository.Insert(postToWrite);
+                    _postRepository.Save();
+                }
+                else
+                {
+                    throw new EntityNotFoundException();
+                } 
             }
             else
             {
-                //exception to throw - might need to add new exception 
-                throw new EntityNotFoundException();
+                throw new EmptyInputException();
             }
 
             
@@ -149,6 +161,12 @@ namespace SocialNetwork.Logic
             return timelinePosts;
         }
 
+        /// <summary>
+        /// Add a new comment to a specified post
+        /// </summary>
+        /// <param name="_post"></param>
+        /// <param name="UserInput"></param>
+        /// <param name="_user"></param>
         public void Reply(Post _post, string UserInput, User _user)
         {
             if (_postRepository.GetAll().Contains(_post))
@@ -169,9 +187,13 @@ namespace SocialNetwork.Logic
                 
         }
 
+        /// <summary>
+        /// A a like to a specific post
+        /// </summary>
+        /// <param name="_post"></param>
         public void LikePost(Post _post)
         {
-            if (_postRepository.GetAll().Contains(_post))
+            if (_postRepository.GetAll().Contains(_post, new GenericCompare<Post>(p => p.postId)))
             {
                 //post likes go up by 1
                 _post.likes = _post.likes + 1;
@@ -180,8 +202,12 @@ namespace SocialNetwork.Logic
             else
             {
                 throw new EntityNotFoundException();
-            }
-                
+            }                
+        }
+
+        public Post GetPost(int postId)
+        {
+            return _postRepository.First(p => p.postId == postId);
         }
 
         //public void SharePost(Post _post, User user)
