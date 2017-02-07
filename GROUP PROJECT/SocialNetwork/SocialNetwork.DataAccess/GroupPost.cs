@@ -10,8 +10,9 @@ namespace SocialNetwork.DataAccess
     [DataContract]
     public class GroupPost : Post
     {
+        [DataMember]
         public Group group { get; set; }
-
+        
         public GroupPost() : base() { }
 
         public override string ToString()

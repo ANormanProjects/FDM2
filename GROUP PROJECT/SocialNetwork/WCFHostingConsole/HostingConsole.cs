@@ -15,13 +15,13 @@ namespace WCFHostingConsole
         {
             using (ServiceHost host = new ServiceHost(typeof(SearchLogic)))
             {
-                string address = "http://" + Dns.GetHostName() + ":8081/SocialNetwork";
-                host.AddServiceEndpoint(typeof(ISearchLogic), new BasicHttpBinding(), address); 
+                string address = "net.tcp://" + Dns.GetHostName() + ":8081/SocialNetwork";
+                host.AddServiceEndpoint(typeof(ISearchLogic), new NetTcpBinding(), address); 
                 host.Open();                
             }
-
+            Console.WriteLine(Dns.GetHostName());        
             Console.WriteLine("Press any key to stop hosting");
-            Console.ReadLine();      
+            Console.ReadKey();      
                         
         }
     }
