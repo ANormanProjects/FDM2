@@ -66,7 +66,6 @@ html {
 body {
     margin: 0;
     margin-bottom: 300px; /*DO NOT EDIT*/
-
 }
 
 a:focus {
@@ -804,32 +803,30 @@ pre {
 
 /*<!--CUSTOM CONTAINER FOR FOOTER - DO NOT EDIT OR FACE WRATH OF BEN-->*/
 .container-layout {
-    padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 250px; 
+    margin-bottom: 250px;
 }
 
-    .container:before,
-    .container:after {
-        display: table;
-        content: " ";
-    }
+.container:before,
+.container:after {
+    display: table;
+    content: " ";
+}
 
-    .container:after {
-        clear: both;
-    }
+.container:after {
+    clear: both;
+}
 
-    .container:before,
-    .container:after {
-        display: table;
-        content: " ";
-    }
+.container:before,
+.container:after {
+    display: table;
+    content: " ";
+}
 
-    .container:after {
-        clear: both;
-    }
+.container:after {
+    clear: both;
+}
 
 .row {
     margin-right: -15px;
@@ -4460,7 +4457,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-nav {
     margin: 7.5px -15px;
     font-size: 20px;
-
 }
 
     .navbar-nav > li > a {
@@ -5186,9 +5182,11 @@ a.list-group-item.active > .badge,
     font-weight: 200;
     line-height: 2.1428571435;
     color: white;
+    width: 100%;
     background-color: #eeeeee;
     background-image: url("../Content/codecomputer.jpg");
     background-size: 100%;
+    background-size: cover;
     /*border-radius: 20px 20px 20px 20px;*/
 }
 
@@ -5205,14 +5203,14 @@ a.list-group-item.active > .badge,
     background-size: 100%;
 }*/
 
-    .jumbotron h1 {
-        line-height: 1;
-        color: inherit;
-    }
+.jumbotron h1 {
+    line-height: 1;
+    color: inherit;
+}
 
-    .jumbotron p {
-        line-height: 1.4;
-    }
+.jumbotron p {
+    line-height: 1.4;
+}
 
 .container .jumbotron {
     border-radius: 5px;
@@ -7161,30 +7159,60 @@ td.visible-print {
     }
 }
 
-.under
-{
+.under {
     position: absolute;
     left: 0px;
     top: 0px;
     z-index: -1;
 }
 
-.over
-{
+.over {
     position: absolute;
     left: 40px;
     top: 200px;
     z-index: -1;
 }
 
-.underImages
-{
+.underImages {
     position: absolute;
     top: 500px;
 }
 
-.UserPosts
-{
+.UserPosts {
     position: relative;
-    top:300px;
+    top: 300px;
+}
+
+#custom-search-form {
+    margin: 0;
+    margin-top: 5px;
+    padding: 0;
+}
+
+    #custom-search-form .search-query {
+        padding-right: 3px;
+        padding-right: 4px \9;
+        padding-left: 3px;
+        padding-left: 4px \9;
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    #custom-search-form button {
+        border: 0;
+        background: none;
+        padding: 2px 5px;
+        margin-top: 2px;
+        position: relative;
+        left: -28px;
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+.search-query:focus + button {
+    z-index: 3;
 }
