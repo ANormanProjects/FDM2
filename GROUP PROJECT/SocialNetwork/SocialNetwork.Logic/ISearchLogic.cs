@@ -14,7 +14,7 @@ namespace SocialNetwork.Logic
     public interface ISearchLogic
     {
         [OperationContract]
-        List<IUser> SearchForUserByName(string name);
+        List<User> SearchForUserByName(string name);
 
         [OperationContract]
         IUser SearchForUserById(int id);
