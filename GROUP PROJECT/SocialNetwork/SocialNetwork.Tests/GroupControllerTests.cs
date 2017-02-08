@@ -20,16 +20,16 @@ namespace SocialNetwork.Tests
             Assert.AreEqual(expected, actual.ViewName);
         }
 
-        [TestMethod]
-        public void Test_GroupProfileInGroups_ReturnGroupProfileView()
-        {
-            var expected = "GroupProfile";
+        //[TestMethod]
+        //public void Test_GroupProfileInGroups_ReturnGroupProfileView()
+        //{
+        //    var expected = "GroupProfile";
 
-            GroupController classUnderTest = new GroupController();
+        //    GroupController classUnderTest = new GroupController();
 
-            var actual = classUnderTest.GroupProfile() as ViewResult;
+        //    var actual = classUnderTest.GroupProfile() as ViewResult;
 
-            Assert.AreEqual(expected, actual.ViewName);
-        }
+        //    Assert.AreEqual(expected, actual.ViewName);
+        //}
     }
 }
