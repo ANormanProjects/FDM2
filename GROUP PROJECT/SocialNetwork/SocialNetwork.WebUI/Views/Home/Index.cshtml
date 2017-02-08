@@ -13,57 +13,58 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
+<section id="spencer">
+    <div class="row">
 
     </div>
-    <div class="col-md-4">
+</section>
 
+<div class="container-fluid text-center" style="margin-top: 50px; color: #255366;">
+    <h2>dotNetwork Features</h2>
+    <br>
+    <div class="row slideanim" style="margin-top: 50px; color: #255366;">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-phone logo-small" style="font-size: 75px;"></span>
+            <h4>MOBILE</h4>
+            <p>Access dotNetwork from anywhere!</p>
+            <p>Smartphone, tablet and your computer.</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-globe logo-small" style="font-size: 75px;"></span>
+            <h4>GLOBAL</h4>
+            <p>Available for all coders around the Globe</p>
+            <p>Share code snippets or take part in discussions instantly</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-cog logo-small" style="font-size: 75px;"></span>
+            <h4>Personal</h4>
+            <p>Customise your profile as much as you want</p>
+            <p>To best represent you as an individual</p>
+        </div>
     </div>
-    <div class="col-md-4">
-
+    <br><br>
+    <div class="row slideanim" style="margin-top: 50px; color: #255366;">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-leaf logo-small" style="font-size: 75px;"></span>
+            <h4>GREEN</h4>
+            <p>10% of our ad revenue goes towards projects for</p>
+            <p>conserving and protecting our global natural environment</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-phone-alt logo-small" style="font-size: 75px;"></span>
+            <h4>SUPPORT</h4>
+            <p>24/7 first-class support</p>
+            <p>& Admins to moderate the network</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-wrench logo-small" style="font-size: 75px;"></span>
+            <h4>FREE</h4>
+            <p>100% free! No sign up fees</p>
+            <p>or cheeky hidden costs</p>
+        </div>
     </div>
 </div>
 
-
-
-
-
-
-
 <script>
-    $(document).ready(function () {
-        // Add smooth scrolling to all links in navbar + footer link
-        $('a[href*=\\#]').on('click', function (event) {
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
 
-                // Store hash
-                var hash = this.hash;
-
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 900, function () {
-
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                });
-            } // End if
-        });
-
-        $(window).scroll(function () {
-            $(".slideanim").each(function () {
-                var pos = $(this).offset().top;
-
-                var winTop = $(window).scrollTop();
-                if (pos < winTop + 600) {
-                    $(this).addClass("slide");
-                }
-            });
-        });
-    })
 </script>
