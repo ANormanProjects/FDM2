@@ -184,16 +184,24 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\anorman-profileimg.jpg" />
+    <Content Include="Content\bbowes-profileimg.jpg" />
+    <Content Include="Content\bmeghani-profileimg.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\codecomputer.jpg" />
     <Content Include="Content\ConfusingCode.jpg" />
     <Content Include="Content\custom.css" />
+    <Content Include="Content\dmason-profileimg.jpg" />
+    <Content Include="Content\dtrump-profileimg.jpg" />
     <Content Include="Content\facebook.svg" />
     <Content Include="Content\linkedin.svg" />
     <Content Include="Content\mail.svg" />
     <Content Include="Content\cover.jpg" />
-    <Content Include="Content\snewton-placeholderprofile.jpg" />
+    <Content Include="Content\mreid-profileimg.jpg" />
+    <Content Include="Content\profile-placeholder.jpg" />
+    <Content Include="Content\skhan-profileimg.jpg" />
+    <Content Include="Content\snewton-profileimg.jpg" />
     <Content Include="Content\twitter.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
