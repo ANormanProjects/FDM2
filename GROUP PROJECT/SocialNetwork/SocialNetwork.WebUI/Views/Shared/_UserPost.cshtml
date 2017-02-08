@@ -40,14 +40,14 @@
                 }
             </p>
 
-            <div class="container post-comments col-sm-8">
+            <div class="container post-comments col-sm-10">
                 @foreach (SocialNetwork.DataAccess.Comment comment in Model.post.comments)
                 {
                     @Html.Partial("_Comment", new SocialNetwork.WebUI.Models.CommentViewModel() { comment = comment, user = comment.user, post = @Model.post })
                 }
             </div>
 
-            <div class="container post-comments col-sm-8">
+            <div class="container post-comments col-sm-10">
                 @Html.Partial("_MakeCommentForm", new SocialNetwork.WebUI.Models.CommentViewModel() { post = @Model.post })
             </div>
         </div>   
