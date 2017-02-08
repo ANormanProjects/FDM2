@@ -12,7 +12,7 @@
                 <span>Members:</span>
                 <span>@Model.group.usersInGroup.Count</span>
             </p>
-            <div>@Html.ActionLink("View Group", "GroupProfile", "Group")</div>
+            <div>@Html.ActionLink("View Group", "GroupProfile", "Group", new { id = Model.group.groupID})</div>
         </div>
         <div class="col-sm-10">
             <h3>Most recent post:</h3>
