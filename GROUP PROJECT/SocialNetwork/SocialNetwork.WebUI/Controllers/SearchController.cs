@@ -41,22 +41,36 @@ namespace SocialNetwork.WebUI.Controllers
         [Authorize]
         public ActionResult SearchResults(string searchString)
         {
-            User user = logic.ViewAccountInfo(User.Identity.Name);
-           
+            User user = logic.ViewAccountInfo(User.Identity.Name);          
+
             try
             {
-                List<Post> results = searchLogic.SearchForCode(searchString);
-                foreach (var result in results)
+                if (searchLogic.CheckIfSearchTermInPostDataBase(searchString) == true)
                 {
-                    if (result is UserPost) viewModels.Add(new UserPostViewModel() { post = (UserPost)result });
+                    List<Post> results = searchLogic.SearchForCode(searchString);
+                    foreach (var result in results)
+                    {
+                        if (result is UserPost) viewModels.Add(new UserPostViewModel() { post = (UserPost)result });
+                    }
+
+                    return View("Results", viewModels);
                 }
 
-                return View("Results", viewModels);
+                if (searchLogic.CheckIfSearchTermInUserDataBase(searchString) == true) 
+                {
+                    List<IUser> userResult = searchLogic.SearchForUserByName(searchString);
+                    foreach (var result in userResult)
+                    {
+                        if (result is User) userModels.Add(new UserViewModel() { user = (User)result });
+                    }
+                    return View("Results", userModels);                
+                }
             }
             catch (EntityNotFoundException)
             {
                  return View("Error");
             }
+            return View("Error");
         }
     }
 }
