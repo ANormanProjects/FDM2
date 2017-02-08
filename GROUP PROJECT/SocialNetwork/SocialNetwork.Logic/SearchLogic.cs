@@ -61,7 +61,7 @@ namespace SocialNetwork.Logic
 
         public List<Post> SearchForCode(string codeLanguage)
         {
-            List<Post> searchedPosts = postRepo.Search(x => x.language.ToUpper() == codeLanguage.ToUpper());
+            List<Post> searchedPosts = postRepo.Search(x => x.language.ToUpper().Contains(codeLanguage.ToUpper()));
 
             if (searchedPosts.Count() > 0)
             {
