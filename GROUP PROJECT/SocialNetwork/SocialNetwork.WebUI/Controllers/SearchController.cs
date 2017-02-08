@@ -16,7 +16,7 @@ namespace SocialNetwork.WebUI.Controllers
         Repository<Post> postRepo;
         List<UserPostViewModel> viewModels;
         List<UserViewModel> userModels;
-        UserAccountLogic logic;
+        UserAccountLogic userLogic;
 
 
         public SearchController()
@@ -26,7 +26,7 @@ namespace SocialNetwork.WebUI.Controllers
            searchLogic = new SearchLogic(postRepo,userRepo);
            viewModels = new List<UserPostViewModel>();
            userModels = new List<UserViewModel>();
-           logic = new UserAccountLogic(new Repository<User>());
+           userLogic = new UserAccountLogic(new Repository<User>());
         }
 
         // GET: Search
@@ -41,7 +41,7 @@ namespace SocialNetwork.WebUI.Controllers
         [Authorize]
         public ActionResult SearchResults(string searchString)
         {
-            User user = logic.ViewAccountInfo(User.Identity.Name);          
+            User user = userLogic.ViewAccountInfo(User.Identity.Name);          
 
             try
             {
@@ -71,6 +71,26 @@ namespace SocialNetwork.WebUI.Controllers
                  return View("Error");
             }
             return View("Error");
+        }
+
+        [HttpPost]
+        public ActionResult AddFriend(UserViewModel friendViewModel)
+        {
+            User friend = userLogic.ViewAccountInfo(friendViewModel.user.username);
+            User user = userLogic.ViewAccountInfo(User.Identity.Name);
+            try
+            {
+                userLogic.AddFriend(user, friend);
+                return PartialView("_FriendAdded");
+            }
+            catch (EntityAlreadyExistsException)
+            {
+                return PartialView("_FriendAlreadyAdded");
+            }
+            catch (SameEntityException)
+            {
+                return PartialView("_UserAddingItself");
+            }
         }
     }
 }

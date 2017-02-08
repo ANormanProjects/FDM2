@@ -216,6 +216,10 @@ namespace SocialNetwork.Logic
                 //exception to be added
                 throw new EntityAlreadyExistsException();
             }
+            else if(currentUser.username == userToAdd.username)
+            {
+                throw new SameEntityException();
+            }
             else 
             {
                 userToAdd.friends.Add(currentUser);
