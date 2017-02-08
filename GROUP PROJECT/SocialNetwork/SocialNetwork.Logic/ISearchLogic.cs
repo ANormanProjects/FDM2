@@ -21,5 +21,11 @@ namespace SocialNetwork.Logic
 
         [OperationContract]
         List<Post> SearchForCode(string codeLanguage);
+
+        [OperationContract]
+        bool CheckIfSearchTermInUserDataBase(string searchTerm);
+
+        [OperationContract]
+        bool CheckIfSearchTermInPostDataBase(string searchTerm);
     }
 }
