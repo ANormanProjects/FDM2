@@ -118,7 +118,7 @@ namespace SocialNetwork.DataAccess
         }
 
         /* ---------------------- ASYNCHRONOUS METHODS ---------------------- */
-
+        /*
         /// <summary>
         /// Asynchronously returns an List of data entities from the persistent data context based on the lambdaExpression funtion
         /// </summary>
@@ -160,6 +160,6 @@ namespace SocialNetwork.DataAccess
             await context.SaveChangesAsync();
             logger.Info("Changes saved to database");
         }
-
+        */
     }
 }
