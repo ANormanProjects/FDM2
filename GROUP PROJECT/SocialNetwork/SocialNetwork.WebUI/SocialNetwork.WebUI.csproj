@@ -262,6 +262,7 @@
     <Content Include="Views\Shared\_EntityNotFound.cshtml" />
     <Content Include="Views\Shared\_Liked.cshtml" />
     <Content Include="Views\Shared\_MakeCommentForm.cshtml" />
+    <Content Include="Views\Search\UserResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
