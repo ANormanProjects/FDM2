@@ -1,14 +1,19 @@
-﻿using SocialNetwork.DataAccess;
+﻿using log4net;
+using SocialNetwork.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+
 namespace SocialNetwork.Logic
 {
     public class UserAccountLogic : IUserAccountLogic
     {
+        private static readonly ILog logger = LogManager.GetLogger("UserLogic.cs");
+
         Repository<User> _userRepository = new Repository<User>();
         Repository<Post> _postRepository;
         Repository<Comment> _commentRepository;
@@ -77,6 +82,8 @@ namespace SocialNetwork.Logic
             {
                 result = LoginDetailVerification(username, password);
             }
+
+            logger.Info("Attempted Login: " + username + "-" + password);
 
             return result;
         }
