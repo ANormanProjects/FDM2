@@ -15,6 +15,8 @@ namespace SocialNetwork.WebUI.Controllers
     {
         SocialNetworkDataModel socNetDataModel = new SocialNetworkDataModel();
 
+        PostLogic postLogic;
+        CommentLogic commentLogic;
         UserAccountLogic userAccountLogic;
         Repository<User> userRepository;
 
@@ -153,6 +155,58 @@ namespace SocialNetwork.WebUI.Controllers
             ProfilePageViewModel viewModels = CreateViewModelsForUser(user);
 
             return View("ProfilePage", viewModels);
+        }
+
+        /// <summary>
+        /// Takes user input and sends it to be added to the database
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult MakeComment(CommentViewModel viewModel)
+        {
+            SocialNetworkDataModel context = new SocialNetworkDataModel();
+            commentLogic = new CommentLogic(context);
+            postLogic = new PostLogic(context);
+            userAccountLogic = new UserAccountLogic(context);
+
+            try
+            {
+                User user = userAccountLogic.ViewAccountInfo(User.Identity.Name);
+                Post post = postLogic.GetPost(viewModel.post.postId);
+                commentLogic.AddComment(viewModel.comment.content, user, post);
+            }
+            catch (EntityNotFoundException)
+            {
+                return PartialView("_EntityNotFound");
+            }
+            catch (StringNotCorrectLengthException)
+            {
+                return PartialView("_FieldNotFilled");
+            }
+
+            return PartialView("_Success");
+            //return RedirectToAction("Wall");
+        }
+
+        [HttpPost]
+        public ActionResult LikePost(UserPostViewModel viewModel)
+        {
+            SocialNetworkDataModel context = new SocialNetworkDataModel();
+            postLogic = new PostLogic(context);
+
+            try
+            {
+                Post post = postLogic.GetPost(viewModel.post.postId);
+                postLogic.LikePost(post);
+            }
+            catch (EntityNotFoundException)
+            {
+                return PartialView("_EntityNotFound");
+            }
+
+            return PartialView("_Liked");
+            //return RedirectToAction("Wall");
         }
 
         public ProfilePageViewModel CreateViewModelsForUser(User user)
