@@ -6,8 +6,14 @@
     </div>
 
     <div class="container comment-content col-sm-10">
-        @using (Html.BeginForm("MakeComment", "CodeWall", FormMethod.Post))
-        {
+       @* @using (Html.BeginForm("MakeComment", "CodeWall", FormMethod.Post))*@
+        @using (Ajax.BeginForm("MakeComment", "CodeWall", new AjaxOptions()
+                {
+                    HttpMethod = "POST",
+                    UpdateTargetId = "CommentForm" + Model.post.postId,
+                    InsertionMode = InsertionMode.ReplaceWith
+                }, new { @id = "CommentForm" + Model.post.postId }))
+        { 
             @Html.HiddenFor(model => model.post.postId);
             <div class="make-post-form form-inline">
                 <div class="form-group col-md-8">

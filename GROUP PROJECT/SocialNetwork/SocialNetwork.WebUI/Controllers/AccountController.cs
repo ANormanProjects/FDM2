@@ -96,8 +96,21 @@ namespace SocialNetwork.WebUI.Controllers
                 {
                     string username = _user.username;
                     string password = _user.password;
+                    bool userValid = false;
 
-                    bool userValid = _userAccountLogic.Login(username, password);
+                    try
+                    {
+                       userValid = _userAccountLogic.Login(username, password);
+                    }
+                    catch (EmptyInputException)
+                    {
+                        ModelState.AddModelError("", "The email or password provided is incorrect.");
+                    }
+                    catch (InputExceedsSpecifiedLimitException)
+                    {
+                        ModelState.AddModelError("", "The email or password provided is incorrect.");
+                    }
+
                     // User found in the database
                     if (userValid)
                     {

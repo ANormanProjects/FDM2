@@ -53,7 +53,12 @@ namespace SocialNetwork.Logic
             _groupRepository = new Repository<Group>(context);
         }
 
-
+        /// <summary>
+        /// Checks login details against database
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public virtual bool Login(string username, string password)
         {
             bool result = false;
@@ -76,13 +81,19 @@ namespace SocialNetwork.Logic
             return result;
         }
 
+        /// <summary>
+        /// Checks whether the password matches the username in the database
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public bool LoginDetailVerification(string username, string password)
         {
             User currentUser = new User();
                  
             currentUser = _userRepository.First(u => u.username == username);
 
-            if (currentUser.username == username && currentUser.password == password)
+            if ( currentUser != null && currentUser.username == username && currentUser.password == password)
             {
                 return true;
             } 
@@ -90,6 +101,11 @@ namespace SocialNetwork.Logic
             return false;
         }
 
+        /// <summary>
+        /// Checks database for users with the same username
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public virtual bool CheckForDuplicates(User user)
         {
 
@@ -110,12 +126,24 @@ namespace SocialNetwork.Logic
 
         }
                
+        /// <summary>
+        /// Adds new user to the database
+        /// </summary>
+        /// <param name="userToAdd"></param>
         public virtual void Register(User userToAdd)
         { 
             _userRepository.Insert(userToAdd);
             _userRepository.Save();
         }
 
+        /// <summary>
+        /// Changes the values of the user and saves it to the database
+        /// </summary>
+        /// <param name="userToEdit"></param>
+        /// <param name="newName"></param>
+        /// <param name="newGender"></param>
+        /// <param name="newRole"></param>
+        /// <param name="newPassword"></param>
         public virtual void EditUser(User userToEdit, string newName, string newGender, string newRole, string newPassword)
         {
             if(_userRepository.GetAll().Contains(userToEdit))
@@ -132,6 +160,10 @@ namespace SocialNetwork.Logic
             }
         }
 
+        /// <summary>
+        /// Removes a user from the database
+        /// </summary>
+        /// <param name="userToRemove"></param>
         public virtual void RemoveUser(User userToRemove)
         {
             if(_userRepository.GetAll().Contains(userToRemove))
@@ -146,6 +178,11 @@ namespace SocialNetwork.Logic
             }
         }
 
+        /// <summary>
+        /// Retrieves a user from the database
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
         public virtual User ViewAccountInfo(string username)
         {
             User userToDisplay = _userRepository.First(u => u.username == username);
@@ -159,6 +196,11 @@ namespace SocialNetwork.Logic
             }
         }
 
+        /// <summary>
+        /// Adds a friend to a user
+        /// </summary>
+        /// <param name="currentUser"></param>
+        /// <param name="userToAdd"></param>
         public void AddFriend(User currentUser, User userToAdd)
         {            
             
@@ -176,12 +218,24 @@ namespace SocialNetwork.Logic
 
         }
                
-
+        /// <summary>
+        /// Returns a list of all user accounts
+        /// </summary>
+        /// <returns></returns>
         public virtual List<User> GetAllUserAccounts()
         {
             return _userRepository.GetAll();
         }
 
+        /// <summary>
+        /// Adds a post to the database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="title"></param>
+        /// <param name="language"></param>
+        /// <param name="code"></param>
+        /// <param name="content"></param>
+        /// <param name="user"></param>
         public void WritePost(int id, string title, string language, string code, string content, User user)
         {
             if (_userRepository.GetAll().Contains(user))
@@ -194,6 +248,11 @@ namespace SocialNetwork.Logic
             }
         }
 
+        /// <summary>
+        /// Returns a list of posts from the groups a user follows
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public List<GroupPost> ViewAllPostByFollowedGroups(User user)
         {
             if (_userRepository.GetAll().Contains(user))
@@ -213,6 +272,11 @@ namespace SocialNetwork.Logic
             }
         }
 
+        /// <summary>
+        /// Returns a list of groups followed by a user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public List<Group> ViewAllGroupsFollowedByUser(User user)
         {
             bool test = false;
