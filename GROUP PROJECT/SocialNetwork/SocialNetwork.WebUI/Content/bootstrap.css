@@ -7176,6 +7176,15 @@ td.visible-print {
     z-index: -1;
 }
 
+.over-text
+{
+    position: absolute;
+    left: 240px;
+    top: 280px;
+    color: #035976;
+    z-index: -1;
+}
+
 .underImages {
     position: absolute;
     top: 500px;
