@@ -12,6 +12,7 @@
  
  --	DELETE ENTRIES FROM DATABASE (Not Tables)
 DELETE FROM Comments
+DELETE FROM Posts
 DELETE FROM UserPosts
 DELETE FROM GroupPosts
 DELETE FROM Groups
@@ -24,6 +25,7 @@ DBCC CHECKIDENT (Users, RESEED, 0)
 DBCC CHECKIDENT (Comments, RESEED, 0)
 DBCC CHECKIDENT (GroupPosts, RESEED, 0)
 DBCC CHECKIDENT (UserPosts, RESEED, 0)
+DBCC CHECKIDENT (Posts, RESEED, 0)
 DBCC CHECKIDENT (Groups, RESEED, 0)
 
 
@@ -144,7 +146,7 @@ VALUES (GETDATE(), 10, 'I Love C#', 'Hi Guys, here is my latest snippet of c# co
 
 INSERT INTO Posts(time, likes, title, content, code, language, user_userId, Discriminator)
 VALUES(GETDATE(), 15, 'Generic Repository', 'I have made a generic repository for you guys to share - Spencer', 
-'public class Repository<T> : IRepository<T> { CODE }', 'C#', 1, 'UserPost');
+'public class Repository-T- : IRepository-T- { CODE }', 'C#', 1, 'UserPost');
 
 INSERT INTO Posts(time, likes, title, content, code, language, user_userId, Discriminator)
 VALUES(GETDATE(), 97, 'MS Test', 'I have written some tests here, what do you guys think?', 
@@ -152,11 +154,11 @@ VALUES(GETDATE(), 97, 'MS Test', 'I have written some tests here, what do you gu
 
 INSERT INTO Posts(time, likes, title, content, code, language, user_userId, Discriminator)
 VALUES(GETDATE(), 167, 'ASP.Net Website', 'Here is my Snazzy Website', 
-'<h4>My Snazzy Website</h4>', 'HTML', 6, 'UserPost');
+'-h4-My Snazzy Website-/h4-', 'HTML', 6, 'UserPost');
 
 INSERT INTO Posts(time, likes, title, content, code, language, user_userId, Discriminator)
 VALUES(GETDATE(), 13, 'WPF Program', 'Im pretty proud of this WPF application I made for my group project :)', 
-'<Label Content="I am the best" />', 'XML', 7, 'UserPost');
+'-Label Content="I am the best" /-', 'XML', 7, 'UserPost');
 
 INSERT INTO Posts(time, likes, title, content, code, language, group_groupId, Discriminator) 
 VALUES (GETDATE(), 20, 'I Despise C#', 'I Hate C# so much, here is some terrible code to tell you about it.', 
