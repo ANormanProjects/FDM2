@@ -10,9 +10,9 @@ namespace SocialNetwork.Logic
     public class SearchLogic : ISearchLogic
     {
         Repository<Post> postRepo;
-        Repository<IUser> userRepo;
+        Repository<User> userRepo;
 
-        public SearchLogic(Repository<Post> PostRepo, Repository<IUser> UserRepo)
+        public SearchLogic(Repository<Post> PostRepo, Repository<User> UserRepo)
         {
             postRepo = PostRepo;
             userRepo = UserRepo;
@@ -21,12 +21,12 @@ namespace SocialNetwork.Logic
         public SearchLogic()
         {
             postRepo = new Repository<Post>();
-            userRepo = new Repository<IUser>();
+            userRepo = new Repository<User>();
         }
 
-        public List<IUser> SearchForUserByName(string name)
+        public List<User> SearchForUserByName(string name)
         {            
-            List<IUser> userList = userRepo.Search(x => x.fullName.ToUpper() == name.ToUpper());
+            List<User> userList = userRepo.Search(x => x.fullName.ToUpper().Contains(name.ToUpper()));
 
             if(userList.Count() > 0)
             {
@@ -73,9 +73,11 @@ namespace SocialNetwork.Logic
             }
         }
 
-        //public void searchMachine(string searchString)
+        //public List<T> searchEngine(string searchString)
         //{
-        //    List<Post> result = new List<Post>();
+        //    List<IUser> uResult = new List<IUser>();
+
+        //    List<Post> pResult = new List<Post>();
 
         //    if (_userRepository.GetAll().Contains(searchString))
         //    {
@@ -84,5 +86,33 @@ namespace SocialNetwork.Logic
 
         //    return result;
         //}
+
+        public bool CheckIfSearchTermInUserDataBase(string searchTerm)
+        {
+            foreach (User user in userRepo.GetAll())
+            {
+                if (user.fullName.ToUpper().Contains(searchTerm.ToUpper()))
+                {
+                    return true;
+                }
+                
+            }
+            return false;
+
+        }
+
+        public bool CheckIfSearchTermInPostDataBase(string searchTerm)
+        {
+            foreach (Post post in postRepo.GetAll())
+            {
+                if (post.language.ToUpper().Contains(searchTerm.ToUpper()))
+                {
+                    return true;
+                }
+
+            }
+            return false;
+
+        }
     }
 }
