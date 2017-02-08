@@ -272,6 +272,7 @@
     <Content Include="Views\Shared\_MakeCommentForm.cshtml" />
     <Content Include="Views\Search\UserResults.cshtml" />
     <Content Include="Views\Shared\_User.cshtml" />
+    <Content Include="Views\Shared\_PostsOnGroupProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

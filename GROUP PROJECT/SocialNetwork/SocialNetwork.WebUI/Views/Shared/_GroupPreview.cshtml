@@ -5,12 +5,10 @@
         <div class="post-sidebar col-sm-2">
             <h2>@Model.group.groupName</h2>
             <p>
-                <span>Group Owner:</span>
-                <span>@Model.group.owner.fullName</span>
+                <span>Group Owner: @Model.group.owner.fullName</span>
             </p>
             <p>
-                <span>Members:</span>
-                <span>@Model.group.usersInGroup.Count</span>
+                <span>Members: @Model.group.usersInGroup.Count</span>
             </p>
             <div>
                 @using (Html.BeginForm("GroupProfile", "Group", FormMethod.Post))
