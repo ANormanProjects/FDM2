@@ -34,7 +34,7 @@ namespace SocialNetwork.WebUI.Controllers
         [Authorize]
         public ActionResult Search()
         {
-            return View();
+            return View("Results");
         }
 
         [HttpPost]
