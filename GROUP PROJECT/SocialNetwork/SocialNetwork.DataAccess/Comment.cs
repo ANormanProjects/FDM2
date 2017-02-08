@@ -68,7 +68,10 @@ namespace SocialNetwork.DataAccess
             get { return _likes; }
             set { _likes = value; }
         }
-        
-        
+
+        public override string ToString()
+        {
+            return _commentId + "-" + content + "-" + likes + "-" + user + "-" + post;
+        }
     }
 }
