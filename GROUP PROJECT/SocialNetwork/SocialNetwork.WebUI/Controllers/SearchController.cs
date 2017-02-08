@@ -50,7 +50,7 @@ namespace SocialNetwork.WebUI.Controllers
                     List<Post> results = searchLogic.SearchForCode(searchString);
                     foreach (var result in results)
                     {
-                        if (result is UserPost) viewModels.Add(new UserPostViewModel() { post = (UserPost)result });
+                        if (result is UserPost) viewModels.Add(new UserPostViewModel() { post = (UserPost)result, user = user });
                     }
 
                     return View("Results", viewModels);
