@@ -12,7 +12,7 @@ namespace SocialNetwork.WebUI.Controllers
     public class SearchController : Controller
     {
         SearchLogic searchLogic;
-        Repository<IUser> userRepo;
+        Repository<User> userRepo;
         Repository<Post> postRepo;
         List<UserPostViewModel> viewModels;
         List<UserViewModel> userModels;
@@ -22,7 +22,7 @@ namespace SocialNetwork.WebUI.Controllers
         public SearchController()
         {
            postRepo = new Repository<Post>();
-           userRepo = new Repository<IUser>();
+           userRepo = new Repository<User>();
            searchLogic = new SearchLogic(postRepo,userRepo);
            viewModels = new List<UserPostViewModel>();
            userModels = new List<UserViewModel>();
@@ -58,7 +58,7 @@ namespace SocialNetwork.WebUI.Controllers
 
                 if (searchLogic.CheckIfSearchTermInUserDataBase(searchString) == true) 
                 {
-                    List<IUser> userResult = searchLogic.SearchForUserByName(searchString);
+                    List<User> userResult = searchLogic.SearchForUserByName(searchString);
                     foreach (var result in userResult)
                     {
                         if (result is User) userModels.Add(new UserViewModel() { user = (User)result });
