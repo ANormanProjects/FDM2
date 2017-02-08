@@ -1,0 +1,29 @@
+﻿@model SocialNetwork.WebUI.Models.UserViewModel
+
+<div class="container">
+    <div class="post-container">
+        <div class="container post-sidebar col-sm-2">
+            @if (Model.user != null)
+            {
+                <img class="post-profile-image" src="~/Content/@Model.user.username-profileimg.jpg" />
+            }
+            else
+            {
+                <img class="post-profile-image" src="~/Content/profile-picture-blank.gif" />
+            }
+
+            @if (Model.user != null)
+            {
+                @Model.user.fullName
+            }
+            
+            <p>
+                @using (Html.BeginForm("AddFriend", "Search", FormMethod.Post))
+                {
+                    @Html.HiddenFor(model => model.user.userId);
+                    <input type="submit" class="btn btn-primary"/>
+                }
+            </p>
+        </div>
+    </div>
+</div>
