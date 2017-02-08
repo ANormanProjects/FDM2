@@ -54,11 +54,11 @@ namespace SocialNetwork.WebUI.Controllers
 
         //GET: GroupProfile
         [Authorize]
-        public ActionResult GroupProfile(GroupViewModels model, int id)
+        public ActionResult GroupProfile(GroupViewModels model)
         {
             GroupViewModels viewModel;
             user = logic.ViewAccountInfo(User.Identity.Name);
-            viewModel = CreateGroupViewModel(user,id);
+            viewModel = CreateGroupViewModel(user, model.group.groupID);
             return View("GroupProfile", viewModel);
         }
 
