@@ -4,7 +4,7 @@
 }
 
 <div class="jumbotron">
-    <img src="~/Content/cover.jpg" alt="coverimg" class="under" style="width:100%;height:300px" />
+    <img src="~/Content/@Model.user.username-cover.jpg" alt="coverimg" class="under"/>
     <img src="~/Content/@Model.user.username-profileimg.jpg" alt="profileimg" class="over" style="width:200px;height:200px" />
     <h1 class="over-text text-center">@Model.user.fullName</h1>
 </div>
@@ -12,6 +12,6 @@
 <div class="UserPosts">
     @foreach (SocialNetwork.DataAccess.UserPost post in Model.userpost)
     {
-        @Html.Partial("_UserPost", new SocialNetwork.WebUI.Models.UserPostViewModel() { post = post })
+        @Html.Partial("_UserPostProfile", new SocialNetwork.WebUI.Models.UserPostViewModel() { post = post })
     }
 </div>
