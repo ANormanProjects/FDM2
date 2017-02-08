@@ -28,7 +28,12 @@
                 <pre>@Model.post.code</pre>
             </div>
             <p>
-                @using (Html.BeginForm("LikePost", "CodeWall", FormMethod.Post))
+                @using (Ajax.BeginForm("LikePost", "CodeWall", new AjaxOptions()
+                {
+                    HttpMethod = "POST",
+                    UpdateTargetId = "LikeForm" + Model.post.postId,
+                    InsertionMode = InsertionMode.ReplaceWith
+                }, new { @id = "LikeForm" + Model.post.postId }))
                 {
                     @Html.HiddenFor(model => model.post.postId);
                     <input type="submit" value="Like - @Model.post.likes" class="btn btn-primary" />

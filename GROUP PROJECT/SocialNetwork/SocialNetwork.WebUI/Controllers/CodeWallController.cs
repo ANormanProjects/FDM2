@@ -86,9 +86,15 @@ namespace SocialNetwork.WebUI.Controllers
                 return PartialView("_EntityNotFound");
             }
 
-            return RedirectToAction("Wall");
+            return PartialView("_Liked");
+            //return RedirectToAction("Wall");
         }
 
+        /// <summary>
+        /// Takes user input and sends it to be added to the database
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult MakeComment(CommentViewModel viewModel)
         {
@@ -107,8 +113,13 @@ namespace SocialNetwork.WebUI.Controllers
             {
                 return PartialView("_EntityNotFound");
             }
+            catch (StringNotCorrectLengthException)
+            {
+                return PartialView("_FieldNotFilled");
+            }
 
-            return RedirectToAction("Wall");
+            return PartialView("_Success");
+            //return RedirectToAction("Wall");
         }
 
         /// <summary>

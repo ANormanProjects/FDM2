@@ -41,7 +41,7 @@ namespace SocialNetwork.Logic
             {
                 if (postRepo.GetAll().Contains(post, new GenericCompare<Post>(p => p.postId)))
                 {
-                    if(commentText.Length > 0 && commentText.Length < 255)
+                    if(commentText != null && commentText.Length > 0 && commentText.Length < 255)
                     {
                         Comment comment = new Comment(commentText, user, post);
 
