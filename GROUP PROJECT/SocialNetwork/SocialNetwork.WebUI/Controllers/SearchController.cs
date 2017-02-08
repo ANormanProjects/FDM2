@@ -78,19 +78,23 @@ namespace SocialNetwork.WebUI.Controllers
         {
             User friend = userLogic.ViewAccountInfo(friendViewModel.user.username);
             User user = userLogic.ViewAccountInfo(User.Identity.Name);
-            try
+            if (Request.IsAjaxRequest())
             {
-                userLogic.AddFriend(user, friend);
-                return PartialView("_FriendAdded");
+                try
+                {
+                    userLogic.AddFriend(user, friend);
+                    return PartialView("_FriendAdded");
+                }
+                catch (EntityAlreadyExistsException)
+                {
+                    return PartialView("_FriendAlreadyAdded");
+                }
+                catch (SameEntityException)
+                {
+                    return PartialView("_UserAddingItself");
+                }                
             }
-            catch (EntityAlreadyExistsException)
-            {
-                return PartialView("_FriendAlreadyAdded");
-            }
-            catch (SameEntityException)
-            {
-                return PartialView("_UserAddingItself");
-            }
+            return RedirectToAction("AddFriend");
         }
     }
 }
