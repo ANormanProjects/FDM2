@@ -7,7 +7,7 @@
 <div class="container">
     @foreach (SocialNetwork.WebUI.Models.GroupViewModels group in Model)
     {
-        @Html.Partial("_GroupPreview", group)
+        @Html.Partial("_GroupPreview", group, new ViewDataDictionary {{ "groupID", group.group.groupID }});
     }
 </div>
 
