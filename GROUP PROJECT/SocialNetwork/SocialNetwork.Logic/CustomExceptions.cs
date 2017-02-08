@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace SocialNetwork.Logic
 {
+    public class SameEntityException : Exception
+    {
+        public SameEntityException() : base("Entities are the same")
+        {
+
+        }
+    }
     public class EntityNotFoundException : Exception
     {
         public EntityNotFoundException() : base("Entity is not in database")

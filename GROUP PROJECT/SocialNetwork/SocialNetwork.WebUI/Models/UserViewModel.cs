@@ -9,5 +9,6 @@ namespace SocialNetwork.WebUI.Models
     public class UserViewModel
     {
         public User user { get; set; }
+        public User friend { get; set; }
     }
 }
