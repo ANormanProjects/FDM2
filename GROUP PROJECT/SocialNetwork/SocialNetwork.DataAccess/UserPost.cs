@@ -17,7 +17,7 @@ namespace SocialNetwork.DataAccess
         public override string ToString()
         {
             return time.ToShortDateString() + "-" + postId + "-" + title + "-" + 
-                content + "-" + code + "-" + language + "-[User: " + user.ToString() + "]";
+                content + "-" + language + "-[User: " + user.ToString() + "]";
         }
     }
 }
