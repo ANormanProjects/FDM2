@@ -43,8 +43,10 @@ namespace SocialNetwork.Tests
             mockPost2 = new Mock<UserPost>();
             mockPost1.SetupAllProperties();
             mockPost1.Object.title = "Test 1";
+            mockPost1.Object.postId = 1;
             mockPost2.SetupAllProperties();
             mockPost2.Object.title = "Test 2";
+            mockPost1.Object.postId = 2;
 
             posts = new List<UserPost>()
             {
@@ -95,7 +97,6 @@ namespace SocialNetwork.Tests
 
             // Assert
             Assert.AreEqual(posts[0].title, result[0].post.title);
-            Assert.AreEqual(posts[1].title, result[1].post.title);
         }
 
         [TestMethod]
@@ -110,6 +111,41 @@ namespace SocialNetwork.Tests
             // Assert
             Assert.AreEqual(posts[0].title, result[0].post.title);
             Assert.AreEqual(friendsPosts[0].title, result[1].post.title);
+        }
+
+        [TestMethod]
+        public void Test_LikePost_CallsLikePostMethodOfPostLogic_WhenCalled()
+        {
+            // Arrange
+            UserPostViewModel viewModel = new UserPostViewModel()
+            {
+                post = mockPost1.Object
+            };
+
+            // Act
+            var result = classUnderTest.LikePost(viewModel) as PartialViewResult;
+
+            // Assert
+            Assert.AreEqual("_Liked", result.ViewName);
+        }
+
+        [TestMethod]
+        public void Test_LikePost_ReturnsEntityNotFoundPartialView_WhenCalledWithPostThatDoesntExist()
+        {
+            // Arrange
+            UserPostViewModel viewModel = new UserPostViewModel()
+            {
+                post = new UserPost()
+                {
+                    postId = -1
+                }
+            };
+
+            // Act
+            var result = classUnderTest.LikePost(viewModel) as PartialViewResult;
+
+            // Assert
+            Assert.AreEqual("_EntityNotFound", result.ViewName);
         }
     }
 }

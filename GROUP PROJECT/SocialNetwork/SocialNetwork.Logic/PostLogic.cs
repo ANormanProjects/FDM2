@@ -207,7 +207,17 @@ namespace SocialNetwork.Logic
 
         public Post GetPost(int postId)
         {
-            return _postRepository.First(p => p.postId == postId);
+            Post post = _postRepository.First(p => p.postId == postId);
+
+            if ( post == null )
+            {
+                throw new EntityNotFoundException();
+            }
+            else
+            {
+                return post;
+            }
+
         }
 
         //public void SharePost(Post _post, User user)
