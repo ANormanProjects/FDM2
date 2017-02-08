@@ -7,20 +7,30 @@
 </div>
 <div></div>
 <div class="text-center">
-    <h2>Group Name</h2>
-    @*<h2>@Model.group.groupName</h2>*@
+    <h2>@Model.group.groupName</h2>
 </div>
 <div class="container">
     <div class="col-sm-2">
         <div>
             <span>Owner:</span>
-            <span>@Model.group.groupName</span>
+            <span>@Model.group.owner.fullName</span>
         </div>
         <div>
             <span>Members:</span>
+            <span>@Model.group.usersInGroup.Count</span>
         </div>
     </div>
     <div class="col-sm-10">
-
+        @foreach (var post in Model.group.groupWall)
+        {
+            <div class="post-container">
+                <h4>@post.content</h4>
+                <div class="container post-code">
+                    <pre>@post.code</pre>
+                </div>
+                <h5>@post.time</h5>
+            </div>
+            @Html.Partial("_GroupPost")
+        }
     </div>
 </div>
