@@ -54,13 +54,12 @@ namespace SocialNetwork.WebUI.Controllers
 
         //GET: GroupProfile
         [Authorize]
-        public ActionResult GroupProfile(int id)
+        public ActionResult GroupProfile(GroupViewModels model)
         {
-            IEnumerable<GroupViewModels> viewModels;
+            GroupViewModels viewModel;
             user = logic.ViewAccountInfo(User.Identity.Name);
-
-            viewModels = CreateViewModels(user).Where(u => u.group.groupID == id);
-            return View("GroupProfile", viewModels);
+            viewModel = CreateGroupViewModel(user);
+            return View("GroupProfile", viewModel);
         }
 
         //Create view models for groups
@@ -76,6 +75,24 @@ namespace SocialNetwork.WebUI.Controllers
             }
 
             return groups;
+        }
+
+        //Create view model for one group
+        public GroupViewModels CreateGroupViewModel(User user)
+        {
+            GroupViewModels model = new GroupViewModels();
+            var groupList = _userAccountLogic.ViewAllGroupsFollowedByUser(user).Where(u => u.groupID == model.group.groupID);
+
+            List<GroupViewModels> groups = new List<GroupViewModels>();
+
+            foreach (Group g in groupList)
+            {
+                groups.Add(new GroupViewModels() { group = g });
+            }
+
+            var group = groups.First();
+
+            return group;
         }
     }
 }
