@@ -9,6 +9,5 @@ namespace SocialNetwork.WebUI.Models
     public class GroupViewModels
     {
         public Group group { get; set; }
-        public GroupPost groupPost { get; set; }
     }
 }
