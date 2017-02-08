@@ -63,7 +63,7 @@ namespace SocialNetwork.WebUI.Controllers
                     {
                         if (result is User) userModels.Add(new UserViewModel() { user = result });
                     }
-                    return View("Results", userModels);                
+                    return View("UserResults", userModels);                
                 }
             }
             catch (EntityNotFoundException)
