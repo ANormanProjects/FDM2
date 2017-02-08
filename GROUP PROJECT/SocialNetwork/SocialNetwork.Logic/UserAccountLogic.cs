@@ -83,7 +83,7 @@ namespace SocialNetwork.Logic
                 result = LoginDetailVerification(username, password);
             }
 
-            logger.Info("Attempted Login: " + username + "-" + password);
+            logger.Info("Attempted Login: " + username + "-" + password + "-" + result);
 
             return result;
         }
