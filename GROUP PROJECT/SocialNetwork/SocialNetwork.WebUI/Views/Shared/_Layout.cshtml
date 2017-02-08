@@ -23,7 +23,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
                 </button>
             </div>
             <div class="collapse navbar-collapse left" id="myNavbar">
@@ -32,7 +31,6 @@
                     <li>@Html.ActionLink("Code Wall", "Wall", "CodeWall", routeValues: null, htmlAttributes: new { id = "codeWall", @style = "color:#ffffff;" })</li>
                     <li>@Html.ActionLink("Profile", "ProfilePage", "Account", routeValues: null, htmlAttributes: new { id = "profile", @style = "color:#ffffff;" })</li>
                     <li>@Html.ActionLink("Groups", "GroupList", "Group", routeValues: null, htmlAttributes: new { id = "profile", @style = "color:#ffffff;" })</li>
-                    <li>@Html.ActionLink("Settings", "SettingsPage", "Settings", routeValues: null, htmlAttributes: new { id = "settings", @style = "color:#ffffff;" })</li>
                     <li style="padding-top: 8px; padding-bottom: 8px;">@using (Html.BeginForm("SearchResults", "Search")){<span>@Html.TextBox("SearchString")<input type="submit" value="Search" /></span>}</li>
                 </ul>
                 @Html.Partial("_LoginPartial", new { @class = "form-control" })
