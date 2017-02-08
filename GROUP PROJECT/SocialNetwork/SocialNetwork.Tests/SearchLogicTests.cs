@@ -123,5 +123,77 @@ namespace SocialNetwork.Tests
             searchLogic.SearchForCode("Java");
             //Assert
         }
+
+        [TestMethod]
+        public void Test_CheckIfSearchTermInUserDataBase_ReturnsTrue_WhenTermExists() 
+        {
+            //arr
+            bool resul = true;
+            userRepo.Setup(g => g.GetAll()).Returns(new List<User>() { user1.Object });
+            user1.Setup(u => u.fullName).Returns("user");
+
+            //user1.Object.fullName = "user";
+
+            //act
+            bool actual = searchLogic.CheckIfSearchTermInUserDataBase("user");
+
+            //ass 
+            Assert.AreEqual(resul, actual);
+            userRepo.Verify(d => d.GetAll(), Times.Once);
+        
+        }
+
+        [TestMethod]
+        public void Test_CheckIfSearchTermInUserDataBase_ReturnsFalse_WhenTermDoesNotExists()
+        {
+            //arr
+            bool resul = false;
+            userRepo.Setup(g => g.GetAll()).Returns(new List<User>() { user1.Object });
+            user1.Setup(u => u.fullName).Returns("use");
+
+            //user1.Object.fullName = "user";
+
+            //act
+            bool actual = searchLogic.CheckIfSearchTermInUserDataBase("user");
+
+            //ass 
+            Assert.AreEqual(resul, actual);
+            userRepo.Verify(d => d.GetAll(), Times.Once);
+
+        }
+
+        [TestMethod]
+        public void Test_CheckIfSearchTermInPostDataBase_ReturnsTrue_WhenTermExists()
+        {
+            //arr
+            bool resul = true;
+            postRepo.Setup(g => g.GetAll()).Returns(new List<Post>() { post1.Object });
+            post1.Setup(u => u.language).Returns("user");
+
+            //act
+            bool actual = searchLogic.CheckIfSearchTermInPostDataBase("user");
+
+            //ass 
+            Assert.AreEqual(resul, actual);
+            postRepo.Verify(d => d.GetAll(), Times.Once);
+
+        }
+
+        [TestMethod]
+        public void Test_CheckIfSearchTermInPostDataBase_ReturnsFalse_WhenTermDoesNotExists()
+        {
+            //arr
+            bool resul = false;
+            postRepo.Setup(g => g.GetAll()).Returns(new List<Post>() { post1.Object });
+            post1.Setup(u => u.language).Returns("user");
+
+            //act
+            bool actual = searchLogic.CheckIfSearchTermInPostDataBase("lo");
+
+            //ass 
+            Assert.AreEqual(resul, actual);
+            postRepo.Verify(d => d.GetAll(), Times.Once);
+
+        }
     }
 }
