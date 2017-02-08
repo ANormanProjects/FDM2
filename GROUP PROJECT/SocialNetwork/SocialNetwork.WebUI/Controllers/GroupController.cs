@@ -17,6 +17,7 @@ namespace SocialNetwork.WebUI.Controllers
         Repository<User> userRepo;
         GroupAccountLogic _groupAccountLogic;
         UserAccountLogic _userAccountLogic;
+        User user;
         public GroupController()
         {
             commentRepo = new Repository<Comment>();
@@ -41,7 +42,7 @@ namespace SocialNetwork.WebUI.Controllers
 
             var groups = _groupAccountLogic.GetAllGroups();
             UserAccountLogic logic = new UserAccountLogic(new Repository<User>());
-            User user;
+            
             Group group = new Group();
             user = logic.ViewAccountInfo(User.Identity.Name);
             viewModels = CreateViewModels(user);
@@ -51,9 +52,12 @@ namespace SocialNetwork.WebUI.Controllers
 
         //GET: GroupProfile
         [Authorize]
-        public ActionResult GroupProfile()
+        public ActionResult GroupProfile(int id)
         {
-            return View("GroupProfile");
+            var Id = from o in _userAccountLogic.ViewAllGroupsFollowedByUser(user)
+                     where o.groupID == id
+                     select o;
+            return View("GroupProfile", Id);
         }
 
         //Create view models for groups
