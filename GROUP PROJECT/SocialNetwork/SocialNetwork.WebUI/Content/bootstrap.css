@@ -2602,13 +2602,13 @@ input[type="button"].btn-block {
 
 .glyphicon {
     position: relative;
-    top: 1px;
+    top: 3px;
     display: inline-block;
     font-family: 'Glyphicons Halflings';
     -webkit-font-smoothing: antialiased;
     font-style: normal;
     font-weight: normal;
-    line-height: 1;
+    line-height: 0;
 }
 
 .glyphicon-asterisk:before {
@@ -3426,6 +3426,7 @@ input[type="button"].btn-block {
 
 .dropdown {
     position: relative;
+    color: white;
 }
 
 .dropdown-toggle:focus {
@@ -3907,7 +3908,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .input-group-addon,
 .input-group-btn {
-    width: 1%;
     white-space: nowrap;
     vertical-align: middle;
 }
@@ -3969,6 +3969,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .input-group-btn {
     position: relative;
     white-space: nowrap;
+
 }
 
     .input-group-btn > .btn {
@@ -4456,7 +4457,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-nav {
     margin: 7.5px -15px;
-    font-size: 20px;
+    font-size: 15px;
+    color: white;
 }
 
     .navbar-nav > li > a {
@@ -4796,7 +4798,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     .navbar-inverse .navbar-nav > .open > a:hover,
     .navbar-inverse .navbar-nav > .open > a:focus {
         color: #ffffff;
-        background-color: #080808;
+        background-color: darkgray;
     }
 
     .navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
@@ -7232,4 +7234,9 @@ td.visible-print {
 
 .search-query:focus + button {
     z-index: 3;
+}
+
+
+
+input.form-control {
 }

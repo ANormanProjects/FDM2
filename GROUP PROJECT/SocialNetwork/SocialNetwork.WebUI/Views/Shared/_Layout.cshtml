@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Cabin|Neuton:700|Nunito|VT323|Work+Sans" rel="stylesheet">
     <title>@ViewBag.Title - dotNetwork</title>
     @Styles.Render("~/Content/css")
@@ -11,9 +11,11 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
     <link href="https://fonts.googleapis.com/css?family=Cabin|Neuton:700|Nunito|VT323|Work+Sans" rel="stylesheet">
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
+                <a class="navbar-brand">@Html.ActionLink("dotNetwork", "Index", "Home", routeValues: null, htmlAttributes: new { id = "home", @class = "nav-title", @style = "color: #ffffff;" })</a>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>  
                 <span class="icon-bar"></span>
@@ -26,18 +28,40 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse left" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("dotNetwork", "Index", "Home", routeValues: null, htmlAttributes: new { id = "home", @class = "nav-title", @style = "color: #ffffff;" })</li>
+                <ul class="nav navbar-nav" style="color: white;">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white;">Explore<span class="caret" style="color: white;"></span></a>
+                        <ul class="dropdown-menu" style="background-color: #255366">
                     <li>@Html.ActionLink("Code Wall", "Wall", "CodeWall", routeValues: null, htmlAttributes: new { id = "codeWall", @style = "color:#ffffff;" })</li>
                     <li>@Html.ActionLink("Profile", "ProfilePage", "Account", routeValues: null, htmlAttributes: new { id = "profile", @style = "color:#ffffff;" })</li>
                     <li>@Html.ActionLink("Groups", "GroupList", "Group", routeValues: null, htmlAttributes: new { id = "profile", @style = "color:#ffffff;" })</li>
-                    <li style="padding-top: 8px; padding-bottom: 8px;">@using (Html.BeginForm("SearchResults", "Search")){<span>@Html.TextBox("SearchString")<input type="submit" value="Search" /></span>}</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top:8px;">
+                        @using (Html.BeginForm("SearchResults", "Search"))
+                        {
+
+                                <div class="input-group">
+                                    @Html.TextBox("searchString", "Search...", new { @class = "form-control" } )
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="submit">
+                                            <i class="glyphicon glyphicon-search" style="color: #255366;"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                        }
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial", new { @class = "form-control" })
             </div>
         </div>
     </div>
-    <div class="container-layout body-content" style="font-family: 'Cabin', sans-serif;"> @*DO NOT EDIT THIS*@
+
+
+
+
+    <div class="container-layout body-content" style="font-family: 'Cabin', sans-serif;">
+        @*DO NOT EDIT THIS*@
         @RenderBody()
     </div>
 
