@@ -33,7 +33,7 @@ namespace SocialNetwork.DataAccess
 
         [DataMember]
         [DisplayName("Language")]
-        public string language { get; set; }
+        public virtual string language { get; set; }
 
         [DataMember]
         [DisplayName("Content")]
