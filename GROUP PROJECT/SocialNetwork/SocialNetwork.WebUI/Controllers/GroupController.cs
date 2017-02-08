@@ -50,11 +50,13 @@ namespace SocialNetwork.WebUI.Controllers
         }
 
         //GET: GroupProfile
+        [Authorize]
         public ActionResult GroupProfile()
         {
             return View("GroupProfile");
         }
 
+        //Create view models for groups
         public List<GroupViewModels> CreateViewModels(User user)
         {
             var groupList = _userAccountLogic.ViewAllGroupsFollowedByUser(user);
