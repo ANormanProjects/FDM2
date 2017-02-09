@@ -62,4 +62,12 @@ namespace SocialNetwork.Logic
         }
     }
 
+    public class UserIsNotYourFriendException : Exception
+    {
+        public UserIsNotYourFriendException() : base("User isn't your friend Bishan")
+        {
+
+        }
+    }
+
 }
