@@ -21,19 +21,26 @@
         <div class="col-sm-10">
             <h3>Most recent post:</h3>
             <div class="container" style="background-color:#ffffff">
-                <h2>@Model.group.groupWall.First().title</h2>
-                <h4>@Model.group.groupWall.First().time</h4>
-                <p>@Model.group.groupWall.First().content</p>
-                <div class="container post-code">
-                    <pre>@Model.group.groupWall.First().code</pre>
-                </div>
-                <p>@Model.group.groupWall.First().likes</p>
-                <div class="comment-container col-sm-8">
-                    @foreach (SocialNetwork.DataAccess.Comment comment in Model.group.groupWall.First().comments)
-                    {
-                        @Html.Partial("_Comment", comment)
-                    }
-                </div>
+                @if (Model.group.groupWall.Count == 0)
+                {
+                    <p>This group has yet to post anything</p>
+                }
+                else
+                {
+                    <h2>@Model.group.groupWall.First().title</h2>
+                    <h4>@Model.group.groupWall.First().time</h4>
+                    <p>@Model.group.groupWall.First().content</p>
+                    <div class="container post-code">
+                        <pre>@Model.group.groupWall.First().code</pre>
+                    </div>
+                    <p>@Model.group.groupWall.First().likes</p>
+                    <div class="comment-container col-sm-8">
+                        @foreach (SocialNetwork.DataAccess.Comment comment in Model.group.groupWall.First().comments)
+                        {
+                            @Html.Partial("_Comment", comment)
+                        }
+                    </div>
+                }
             </div>
         </div>
     </div>
