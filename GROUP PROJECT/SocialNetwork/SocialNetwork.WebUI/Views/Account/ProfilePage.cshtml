@@ -4,10 +4,16 @@
 }
 
 @{
+    var coverAbsolutePath = "";
+    var profileAbsolutePath = "";
+
+    if (Model.user != null)
+    { 
     var coverPath = "Content/" + Model.user.username + "-cover.jpg";
-    var coverAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + coverPath);
+    coverAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + coverPath);
     var profilePath = "Content/" + Model.user.username + "-profileimg.jpg";
-    var profileAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + profilePath);    
+    profileAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + profilePath);    
+    }
 }
 
 <div class="jumbotron">

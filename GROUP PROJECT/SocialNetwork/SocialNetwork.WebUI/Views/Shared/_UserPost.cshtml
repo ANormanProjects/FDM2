@@ -1,8 +1,12 @@
 ﻿@model SocialNetwork.WebUI.Models.UserPostViewModel
 
 @{
-    var profilePath = "Content/" + Model.post.user.username + "-profileimg.jpg";
-    var profileAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + profilePath);
+    var profileAbsolutePath = "";
+    if (Model.post.user != null) 
+    { 
+        var profilePath = "Content/" + Model.post.user.username + "-profileimg.jpg";
+        profileAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + profilePath);
+    }
 }
 
 <div class="container">
