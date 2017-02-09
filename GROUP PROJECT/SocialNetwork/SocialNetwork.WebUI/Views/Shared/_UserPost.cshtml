@@ -30,7 +30,7 @@
 
         <div class="container post-content col-sm-10">
             <h2>@Model.post.title - @Model.post.language</h2>
-            <h4>@Model.post.time.ToShortDateString()</h4>
+            <h4>@Model.post.time.ToString("MMMM dd, yyyy")</h4>
             <p>@Model.post.content</p>
             <div class="container post-code">
                 <pre>@Model.post.code</pre>

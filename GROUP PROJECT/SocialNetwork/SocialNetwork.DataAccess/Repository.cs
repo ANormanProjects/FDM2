@@ -20,7 +20,6 @@ namespace SocialNetwork.DataAccess
         void Save();
         void Insert(T entity);
         void Remove(T entity);
-        //void Update(T entity, Func<T, bool> lambdaExpression);
         T First(Func<T, bool> lambdaExpression);
         List<T> Search(Func<T, bool> lambdaExpression);        
         List<T> GetAll();
