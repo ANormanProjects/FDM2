@@ -60,7 +60,7 @@ namespace SocialNetwork.WebUI.Controllers
             user = logic.ViewAccountInfo(User.Identity.Name);
             if (model.group == null)
             {
-                return View("GroupList");
+                return View("Index", "Home");
             }
             else
             {
