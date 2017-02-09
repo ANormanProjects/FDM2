@@ -1,14 +1,19 @@
 ﻿@model SocialNetwork.WebUI.Models.CommentViewModel
 
+@{
+    var profilePath = "Content/" + Model.comment.user.username + "-profileimg.jpg";
+    var profileAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + profilePath);
+}
+
 <div class="comment-container">
     <div class="container comment-sidebar col-sm-2">
-        @if (Model.comment.user != null)
+        @if (Model.comment.user != null && System.IO.File.Exists(profileAbsolutePath))
         {
             <img class="post-profile-image" src="~/Content/@Model.comment.user.username-profileimg.jpg" />
         }
         else
         {
-            <img class="post-profile-image" src="~/Content/profile-picture-blank.gif" />
+            <img class="post-profile-image" src="~/Content/placeholder-profileimg.jpg" />
         }
     </div>
 

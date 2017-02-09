@@ -68,6 +68,8 @@ textarea {
 
 .post-profile-image
 {
+    border: 1px solid black;
+    border-radius: 2px;
     max-width: 100%;
     height: auto;
     display: block;
