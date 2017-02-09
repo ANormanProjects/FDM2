@@ -3,9 +3,30 @@
     ViewBag.Title = "ProfilePage";
 }
 
+@{
+    var coverPath = "Content/" + Model.user.username + "-cover.jpg";
+    var coverAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + coverPath);
+    var profilePath = "Content/" + Model.user.username + "-profileimg.jpg";
+    var profileAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + profilePath);    
+}
+
 <div class="jumbotron">
-    <img src="~/Content/@Model.user.username-cover.jpg" alt="coverimg" class="under"/>
-    <img src="~/Content/@Model.user.username-profileimg.jpg" alt="profileimg" class="over" style="width:200px;height:200px" />
+    @if (System.IO.File.Exists(coverAbsolutePath))
+    {
+        <img src="~/Content/@Model.user.username-cover.jpg" alt="coverimg" class="under" />
+    }
+    else
+    {
+        <img src="~/Content/placeholder-cover.jpg" alt="coverimg" class="under" />
+    }
+    @if (System.IO.File.Exists(profileAbsolutePath))
+    {
+        <img src="~/Content/@Model.user.username-profileimg.jpg" alt="profileimg" class="over" style="width:200px;height:200px" />
+    }
+    else
+    {
+        <img src="~/Content/placeholder-profileimg.jpg" alt="profileimg" class="over" style="width:200px;height:200px" />
+    }    
     <h1 class="over-text text-center">@Model.user.fullName</h1>
 </div>
 

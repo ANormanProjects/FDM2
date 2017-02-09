@@ -1,15 +1,20 @@
 ﻿@model SocialNetwork.WebUI.Models.UserPostViewModel
 
+@{
+    var profilePath = "Content/" + Model.post.user.username + "-profileimg.jpg";
+    var profileAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + profilePath);
+}
+
 <div class="container">
     <div class="post-container">
         <div class="container post-sidebar col-sm-2">
-            @if (Model.post.user != null)
+            @if (Model.post.user != null && System.IO.File.Exists(profileAbsolutePath))
             {
                 <img class="post-profile-image" src="~/Content/@Model.post.user.username-profileimg.jpg" />
             }
             else
             {
-                <img class="post-profile-image" src="~/Content/profile-picture-blank.gif" />
+                <img class="post-profile-image" src="~/Content/placeholder-profileimg.jpg" />
             }
             <h4 class="text-center">
                 @if( Model.post.user != null) 
