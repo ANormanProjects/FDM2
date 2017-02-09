@@ -8,11 +8,11 @@
     var profileAbsolutePath = "";
 
     if (Model.user != null)
-    {
-        var coverPath = "Content/" + Model.user.username + "-cover.jpg";
-        coverAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + coverPath);
-        var profilePath = "Content/" + Model.user.username + "-profileimg.jpg";
-        profileAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + profilePath);
+    { 
+    var coverPath = "Content/" + Model.user.username + "-cover.jpg";
+    coverAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + coverPath);
+    var profilePath = "Content/" + Model.user.username + "-profileimg.jpg";
+    profileAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + profilePath);    
     }
 }
 
@@ -32,7 +32,7 @@
     else
     {
         <img src="~/Content/placeholder-profileimg.jpg" alt="profileimg" class="over" style="width:200px;height:200px" />
-    }
+    }    
     <h1 class="over-text text-center">@Model.user.fullName</h1>
 </div>
 
@@ -42,20 +42,20 @@
         <table class="table text-center">
             <h4>Friends List</h4>
             <thead style="background-color: #255366;">
-                <tr>
+            <tr>
                     <th><p class="text-center">Name</p></th>
                     <th><p class="text-center">Username</p></th>
 
-                </tr>
+            </tr>
             </thead>
             <tbody>
-                @foreach (SocialNetwork.DataAccess.User friend in Model.user.friends)
-                {
-                    <tr>
-                        <td>@friend.fullName</td>
-                        <td>@friend.username</td>
-                    </tr>
-                }
+            @foreach (SocialNetwork.DataAccess.User friend in Model.user.friends)
+            {
+                <tr>
+                    <td>@friend.fullName</td>
+                    <td>@friend.username</td>
+                </tr>
+            }
             </tbody>
         </table>
     </div>
