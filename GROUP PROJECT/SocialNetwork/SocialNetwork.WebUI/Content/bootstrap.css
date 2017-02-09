@@ -320,7 +320,7 @@ table {
 
     .table-bordered th,
     .table-bordered td {
-        border: 1px solid #ddd !important;
+        border: 4px solid #ddd !important;
     }
 }
 
@@ -1651,7 +1651,8 @@ th {
 }
 
 .table-bordered {
-    border: 1px solid #dddddd;
+    padding-left: 200px;
+    border: 4px solid #dddddd;
 }
 
     .table-bordered > thead > tr > th,
@@ -1660,7 +1661,7 @@ th {
     .table-bordered > thead > tr > td,
     .table-bordered > tbody > tr > td,
     .table-bordered > tfoot > tr > td {
-        border: 1px solid #dddddd;
+        border: 2px solid #dddddd;
     }
 
     .table-bordered > thead > tr > th,
@@ -5172,6 +5173,7 @@ a.list-group-item.active > .badge,
     font-weight: 200;
     line-height: 2.1428571435;
     color: inherit;
+    height: 300px;
     /*background-color: #eeeeee;*/
 }
 
@@ -7238,7 +7240,6 @@ td.visible-print {
 
 .UserPosts {
     position: relative;
-    top: 330px;
 }
 
 #custom-search-form {

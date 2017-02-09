@@ -10,5 +10,6 @@ namespace SocialNetwork.WebUI.Models
     {
         public List<UserPost> userpost { get; set; }       
         public User user { get; set; }
+        public ICollection<User> friends { get; set; }
     }
 }

@@ -226,6 +226,5 @@ namespace SocialNetwork.WebUI.Controllers
 
             return posts;
         }
-
     }
 }
