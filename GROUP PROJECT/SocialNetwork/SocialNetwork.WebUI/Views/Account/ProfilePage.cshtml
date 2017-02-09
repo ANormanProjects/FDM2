@@ -9,10 +9,10 @@
 
     if (Model.user != null)
     { 
-    var coverPath = "Content/" + Model.user.username + "-cover.jpg";
-    coverAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + coverPath);
-    var profilePath = "Content/" + Model.user.username + "-profileimg.jpg";
-    profileAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + profilePath);    
+        var coverPath = "Content/" + Model.user.username + "-cover.jpg";
+        coverAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + coverPath);
+        var profilePath = "Content/" + Model.user.username + "-profileimg.jpg";
+        profileAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + profilePath);    
     }
 }
 
@@ -37,7 +37,7 @@
 </div>
 
 
-<div class="container text-center" style="margin-top: 150px">
+<div class="container" style="margin-top: 150px">
     <div class="ListFriends col-md-2 slideanim">
         <table class="table text-center">
             <h4>Friends List</h4>

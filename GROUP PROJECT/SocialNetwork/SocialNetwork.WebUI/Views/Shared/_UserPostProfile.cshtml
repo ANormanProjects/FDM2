@@ -4,7 +4,7 @@
     <div class="post-container col-md-offset-2 col-md-8">
         <div class="container post-content">
             <h2>@Model.post.title - @Model.post.language</h2>
-            <h4>@Model.post.time.ToShortDateString()</h4>
+            <h4>@Model.post.time.ToString("MMMM dd, yyyy")</h4>
             <p>@Model.post.content</p>
             <div class="container post-code">
                 <pre>@Model.post.code</pre>
@@ -33,10 +33,7 @@
                 @Html.Partial("_MakeCommentForm", new SocialNetwork.WebUI.Models.CommentViewModel() { post = @Model.post })
             </div>
         </div>
-
-
     </div>
-
 </div>
 
 
