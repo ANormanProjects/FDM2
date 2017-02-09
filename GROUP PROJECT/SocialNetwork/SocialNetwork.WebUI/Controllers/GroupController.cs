@@ -58,8 +58,16 @@ namespace SocialNetwork.WebUI.Controllers
         {
             GroupViewModels viewModel;
             user = logic.ViewAccountInfo(User.Identity.Name);
-            viewModel = CreateGroupViewModel(user, model.group.groupID);
-            return View("GroupProfile", viewModel);
+            if (model.group == null)
+            {
+                return View("GroupList");
+            }
+            else
+            {
+                viewModel = CreateGroupViewModel(user, model.group.groupID);
+                return View("GroupProfile", viewModel);
+            }
+            
         }
 
         //Create view models for groups

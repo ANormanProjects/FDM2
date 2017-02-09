@@ -27,17 +27,19 @@
 <div class="container">
     <div class="col-sm-2">
         <div class="post-container">
-        <div>
-                <h4>Owner:@Model.group.owner.fullName</h4>
-        </div>
-        <div>
-                <h4>Member count: @Model.group.usersInGroup.Count</h4>
+            <div class="container" style="background-color:#f2f2f2">
+                <h3>Owner:</h3>
+                <h4>@Model.group.owner.fullName</h4>
             </div>
-            <div>
-                <h4>Members:</h4>
+            <div class="container" style="background-color:#f2f2f2">
+                <h3>Member count:</h3>
+                <h4>@Model.group.usersInGroup.Count</h4>
+            </div>
+            <div class="container" style="background-color:#f2f2f2">
+                <h3>Members:</h3>
                 @foreach (SocialNetwork.DataAccess.User member in Model.group.usersInGroup)
                 {
-                    <div class="container" >
+                    <div class="container">
                         <p>@member.fullName</p>
                     </div>
                 }
