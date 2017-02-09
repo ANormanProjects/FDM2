@@ -2,6 +2,24 @@
 @{
     ViewBag.Title = "Group Profile";
 }
+
+@{
+    var coverPath = "Content/" + Model.group.groupName + "-cover.jpg";
+    var coverAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + coverPath);
+}
+
+<div>
+    @if (System.IO.File.Exists(coverAbsolutePath))
+    {
+        <img src="~/Content/@Model.group.groupName-cover.jpg" style="width:100%;height:300px" />
+    }
+    else
+    {
+        <img src="~/Content/placeholder-cover.jpg" style="width:100%;height:300px" />
+    }
+    @*<img src="~/Content/cover.jpg" alt="coverimg" style="width:100%;height:300px" />*@
+</div>
+
 <div></div>
 <div class="text-center">
     <h2>@Model.group.groupName</h2>
@@ -9,10 +27,10 @@
 <div class="container">
     <div class="col-sm-2">
         <div class="post-container">
-            <div>
+        <div>
                 <h4>Owner:@Model.group.owner.fullName</h4>
-            </div>
-            <div>
+        </div>
+        <div>
                 <h4>Member count: @Model.group.usersInGroup.Count</h4>
             </div>
             <div>
