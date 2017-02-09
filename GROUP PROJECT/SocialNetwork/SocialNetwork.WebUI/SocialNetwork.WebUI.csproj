@@ -288,7 +288,7 @@
     <Content Include="Views\Shared\_UserPostProfile.cshtml" />
     <Content Include="Views\Shared\_PostsOnGroupProfile.cshtml" />
     <Content Include="Views\Search\_FriendRemoved.cshtml" />
-    <Content Include="Views\Search\_UserNotYourFriend.cshtml" />
+    <Content Include="Views\Search\_UserIsNotYourFriend.cshtml" />
     <Content Include="Views\Search\_UserNotInTheDatabase.cshtml" />
   </ItemGroup>
   <ItemGroup>

@@ -22,7 +22,7 @@
                 {
                     HttpMethod = "POST",
                     UpdateTargetId = "createForm" + Model.user.userId,
-                    InsertionMode = InsertionMode.InsertAfter
+                    InsertionMode = InsertionMode.ReplaceWith
 
                 }, new { @id = "createForm" + Model.user.userId }))
                 {
@@ -35,10 +35,10 @@
                 @using (Ajax.BeginForm("RemoveFriend", "Search", new AjaxOptions()
                 {
                     HttpMethod = "POST",
-                    UpdateTargetId = "createForm" + Model.user.userId,
-                    InsertionMode = InsertionMode.InsertAfter
+                    UpdateTargetId = "removeForm" + Model.user.userId,
+                    InsertionMode = InsertionMode.ReplaceWith
 
-                }, new { @id = "createForm" + Model.user.userId }))
+                }, new { @id = "removeForm" + Model.user.userId }))
                 {
                     @Html.HiddenFor(model => model.user.username);
                     <input type="submit" value="Remove Friend" class="btn btn-primary" />
