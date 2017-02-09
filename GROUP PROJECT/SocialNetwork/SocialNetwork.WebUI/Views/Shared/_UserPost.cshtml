@@ -21,9 +21,9 @@
                 <img class="post-profile-image" src="~/Content/placeholder-profileimg.jpg" />
             }
             <h4 class="text-center">
-                @if( Model.post.user != null) 
-                { 
-                    @Model.post.user.fullName 
+                @if (Model.post.user != null)
+                {
+                    @Model.post.user.fullName
                 }
             </h4>
         </div>
@@ -58,9 +58,10 @@
             <div class="container post-comments col-sm-10">
                 @Html.Partial("_MakeCommentForm", new SocialNetwork.WebUI.Models.CommentViewModel() { post = @Model.post })
             </div>
-        </div>   
+        </div>
 
-            
-    </div>  
-    
+
+    </div>
+
 </div>
+
