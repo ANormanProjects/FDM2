@@ -6380,7 +6380,7 @@ button.close {
     left: 0;
     width: 15%;
     font-size: 20px;
-    color: #ffffff;
+    color: #255366;
     text-align: center;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
     opacity: 0.5;
@@ -6406,6 +6406,11 @@ button.close {
         background-repeat: repeat-x;
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
     }
+
+    .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #255366;
+}
 
     .carousel-control:hover,
     .carousel-control:focus {
@@ -6462,7 +6467,7 @@ button.close {
         margin: 1px;
         text-indent: -999px;
         cursor: pointer;
-        border: 1px solid #ffffff;
+        border: 1px solid #255366;
         border-radius: 10px;
     }
 
@@ -6470,7 +6475,7 @@ button.close {
         width: 12px;
         height: 12px;
         margin: 0;
-        background-color: #ffffff;
+        background-color: #255366;
     }
 
 .carousel-caption {
@@ -7273,4 +7278,62 @@ td.visible-print {
 
 
 input.form-control {
+}
+
+.slideanim {visibility:hidden;}
+.slide {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    /* The duration of the animation */
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible; 
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    } 
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+.item span {
+    font-style: normal;
+}
+
+/*Index images*/
+
+.person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+}
+.person:hover {
+    border-color: #f1f1f1;
 }
