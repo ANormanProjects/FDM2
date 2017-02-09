@@ -109,16 +109,16 @@ divtxtblack {
         margin-bottom: 0;
     }
 
-.footer-container p {
-    max-width: 672px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 13px;
-    line-height: 20px;
-    margin-top: 56px;
-    margin-bottom: 0;
-    opacity: 0.3;
-}
+.footer-container p {                   
+    max-width: 672px;                   
+    margin-left: auto;                  
+    margin-right: auto;                 
+    font-size: 13px;                    
+    line-height: 20px;                  
+    margin-top: 56px;                   
+    margin-bottom: 0;                   
+    opacity: 0.3;                       
+}                                       
 
 @media(min-width: 664px) {
     .footer-container p {
