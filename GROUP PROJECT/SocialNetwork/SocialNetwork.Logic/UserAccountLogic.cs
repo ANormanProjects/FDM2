@@ -18,7 +18,7 @@ namespace SocialNetwork.Logic
         Repository<Post> _postRepository;
         Repository<Comment> _commentRepository;
         Repository<Group> _groupRepository;
-        IPostLogic postLogic; 
+        IPostLogic postLogic;
         GroupAccountLogic groupAccLogic;
 
 
@@ -97,13 +97,13 @@ namespace SocialNetwork.Logic
         public bool LoginDetailVerification(string username, string password)
         {
             User currentUser = new User();
-                 
+
             currentUser = _userRepository.First(u => u.username == username);
 
-            if ( currentUser != null && currentUser.username == username && currentUser.password == password)
+            if (currentUser != null && currentUser.username == username && currentUser.password == password)
             {
                 return true;
-            } 
+            }
 
             return false;
         }
@@ -132,13 +132,13 @@ namespace SocialNetwork.Logic
             return false;
 
         }
-               
+
         /// <summary>
         /// Adds new user to the database
         /// </summary>
         /// <param name="userToAdd"></param>
         public virtual void Register(User userToAdd)
-        { 
+        {
             _userRepository.Insert(userToAdd);
             _userRepository.Save();
         }
@@ -153,7 +153,7 @@ namespace SocialNetwork.Logic
         /// <param name="newPassword"></param>
         public virtual void EditUser(User userToEdit, string newName, string newGender, string newRole, string newPassword)
         {
-            if(_userRepository.GetAll().Contains(userToEdit))
+            if (_userRepository.GetAll().Contains(userToEdit))
             {
                 userToEdit.fullName = newName;
                 userToEdit.gender = newGender;
@@ -173,7 +173,7 @@ namespace SocialNetwork.Logic
         /// <param name="userToRemove"></param>
         public virtual void RemoveUser(User userToRemove)
         {
-            if(_userRepository.GetAll().Contains(userToRemove))
+            if (_userRepository.GetAll().Contains(userToRemove))
             {
 
                 _userRepository.Remove(userToRemove);
@@ -209,26 +209,26 @@ namespace SocialNetwork.Logic
         /// <param name="currentUser"></param>
         /// <param name="userToAdd"></param>
         public void AddFriend(User currentUser, User userToAdd)
-        {            
-            
+        {
+
             if (currentUser.friends.Contains(userToAdd))
             {
                 //exception to be added
                 throw new EntityAlreadyExistsException();
             }
-            else if(currentUser.username == userToAdd.username)
+            else if (currentUser.username == userToAdd.username)
             {
                 throw new SameEntityException();
             }
-            else 
+            else
             {
                 userToAdd.friends.Add(currentUser);
-                currentUser.friends.Add(userToAdd);                
+                currentUser.friends.Add(userToAdd);
             }
             _userRepository.Save();
 
         }
-               
+
         /// <summary>
         /// Returns a list of all user accounts
         /// </summary>
@@ -313,5 +313,38 @@ namespace SocialNetwork.Logic
             }
         }
 
+        public void RemoveFriend(User user, User friend)
+        {
+            bool userTest = false;
+            bool friendTest = false;
+            foreach (User testUser in _userRepository.GetAll())
+            {
+                if (user.username == testUser.username)
+                {
+                    userTest = true;
+                }
+                if (friend.username == testUser.username)
+                {
+                    friendTest = true;
+                }
+            }
+            if (userTest == true && friendTest == true)
+            {
+                if (user.friends.Contains(friend) == true && friend.friends.Contains(user))
+                {
+                    user.friends.Remove(friend);
+                    friend.friends.Remove(user);
+                }
+                else
+                {
+                    throw new UserIsNotYourFriendException();
+                }
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
+            _userRepository.Save();
+        }
     }
 }

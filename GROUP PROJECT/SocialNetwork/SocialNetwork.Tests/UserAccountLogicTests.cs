@@ -225,15 +225,13 @@ namespace SocialNetwork.Tests
         {
             //arr
             Mock<User> user = new Mock<User>();
-            user.Setup(id => id.userId).Returns(1);
+            user.Setup(id => id.username).Returns("1");
             user.Setup(friends => friends.friends).Returns(new List<User>());
 
             Mock<User> friend = new Mock<User>();
-            friend.Setup(id => id.userId).Returns(2);
+            friend.Setup(id => id.username).Returns("2");
             friend.Setup(friends => friends.friends).Returns(new List<User>());
 
-            userRepo.Setup(c => c.First(It.IsAny<Func<User, bool>>())).Returns(user.Object);
-            
             //act
             userAccountLogic.AddFriend(user.Object, friend.Object);
 
@@ -242,6 +240,38 @@ namespace SocialNetwork.Tests
             Assert.AreEqual(1, friend.Object.friends.Count);
             userRepo.Verify(c => c.Save(), Times.Once);
 
+        }
+
+        [ExpectedException(typeof(EntityAlreadyExistsException))]
+        [TestMethod]
+        public void Test_AddFriendMethod_ThrowsEntityAlreadyExistsException_WhenFriendIsAlreadyOnFriendsList()
+        {
+            //Arrange
+            Mock<User> user = new Mock<User>();
+            user.Setup(id => id.username).Returns("1");
+            Mock<User> friend = new Mock<User>();
+            friend.Setup(id => id.username).Returns("2");
+
+            user.Setup(friends => friends.friends).Returns(new List<User>() { friend.Object });
+            friend.Setup(friends => friends.friends).Returns(new List<User>());
+
+            //Act
+            userAccountLogic.AddFriend(user.Object, friend.Object);
+            //Assert
+        }
+
+        [ExpectedException(typeof(SameEntityException))]
+        [TestMethod]
+        public void Test_AddFriend_ThrowsSameEntityException_WhenInputUsersHaveSameUsername()
+        {
+            //Arrange
+            Mock<User> user = new Mock<User>();
+            user.Setup(id => id.username).Returns("1");
+            user.Setup(friends => friends.friends).Returns(new List<User>());
+
+            //Act
+            userAccountLogic.AddFriend(user.Object, user.Object);
+            //Assert
         }
 
         [TestMethod]
@@ -442,6 +472,112 @@ namespace SocialNetwork.Tests
             userAccountLogic.RemoveUser(user.Object);
 
 
+        }
+
+        [ExpectedException(typeof(EntityNotFoundException))]
+        [TestMethod]
+        public void Test_RemoveFriendMethod_ThrowsException_IfUserDoesntExist()
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+            Mock<User> friend = new Mock<User>();
+
+            user.Setup(c => c.username).Returns("Red");
+            friend.Setup(c => c.username).Returns("Blue");
+
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() { friend.Object });
+
+            //act
+            userAccountLogic.RemoveFriend(user.Object, friend.Object);
+
+        }
+
+        [ExpectedException(typeof(EntityNotFoundException))]
+        [TestMethod]
+        public void Test_RemoveFriendMethod_ThrowsException_IfFriendDoesntExist()
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+            Mock<User> friend = new Mock<User>();
+
+            user.Setup(c => c.username).Returns("Red");
+            friend.Setup(c => c.username).Returns("Blue");
+
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() { user.Object });
+
+            //act
+            userAccountLogic.RemoveFriend(user.Object, friend.Object);
+
+        }
+
+        [ExpectedException(typeof(UserIsNotYourFriendException))]
+        [TestMethod]
+        public void Test_RemoveFriendMethod_ThrowsException_IfFriendIsNotOnFriendsList()
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+            Mock<User> friend = new Mock<User>();
+
+            user.Setup(c => c.username).Returns("Red");
+            friend.Setup(c => c.username).Returns("Blue");
+
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() { user.Object, friend.Object });
+
+            user.Setup(c => c.friends).Returns(new List<User>());
+            friend.Setup(c => c.friends).Returns(new List<User>() { user.Object });
+
+            //act
+            userAccountLogic.RemoveFriend(user.Object, friend.Object);
+
+        }
+
+        [ExpectedException(typeof(UserIsNotYourFriendException))]
+        [TestMethod]
+        public void Test_RemoveFriendMethod_ThrowsException_IfUserIsNotOnFriendsFriendList()
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+            Mock<User> friend = new Mock<User>();
+
+            user.Setup(c => c.username).Returns("Red");
+            friend.Setup(c => c.username).Returns("Blue");
+
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() { user.Object, friend.Object });
+
+            user.Setup(c => c.friends).Returns(new List<User>() { friend.Object });
+            friend.Setup(c => c.friends).Returns(new List<User>() {});
+
+            //act
+            userAccountLogic.RemoveFriend(user.Object, friend.Object);
+
+        }
+
+        [TestMethod]
+        public void Test_RemoveFriendMethod_RemovesFriendFromUserAndFriend()
+        {
+            //Arrange
+            Mock<User> user = new Mock<User>();
+            Mock<User> friend = new Mock<User>();
+
+            user.Setup(c => c.username).Returns("Red");
+            friend.Setup(c => c.username).Returns("Blue");
+
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() { user.Object, friend.Object });
+            userRepo.Setup(c => c.Save()).Verifiable();
+
+            user.Setup(c => c.friends).Returns(new List<User>() { friend.Object });
+            friend.Setup(c => c.friends).Returns(new List<User>() { user.Object });
+
+            //Act
+            userAccountLogic.RemoveFriend(user.Object, friend.Object);
+
+            //Assert
+            userRepo.Verify(c => c.GetAll());
+            user.Verify(c => c.friends);
+            friend.Verify(c => c.friends);
+            userRepo.Verify(c => c.Save());
+            Assert.AreEqual(0, friend.Object.friends.Count);
+            Assert.AreEqual(0, user.Object.friends.Count);
         }
 
 

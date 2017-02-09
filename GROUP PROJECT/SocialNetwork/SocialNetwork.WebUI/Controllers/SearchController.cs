@@ -96,5 +96,30 @@ namespace SocialNetwork.WebUI.Controllers
             }
             return RedirectToAction("AddFriend");
         }
+
+        [HttpPost]
+        public ActionResult RemoveFriend(UserViewModel friendViewModel)
+        {
+            User friend = userLogic.ViewAccountInfo(friendViewModel.user.username);
+            User user = userLogic.ViewAccountInfo(User.Identity.Name);
+
+            if (Request.IsAjaxRequest())
+            {
+                try
+                {
+                    userLogic.RemoveFriend(user, friend);
+                    return PartialView("_FriendAdded");
+                }
+                catch (EntityAlreadyExistsException)
+                {
+                    return PartialView("_FriendAlreadyAdded");
+                }
+                catch (SameEntityException)
+                {
+                    return PartialView("_UserAddingItself");
+                }
+            }
+            return RedirectToAction("AddFriend");
+        }
     }
 }
