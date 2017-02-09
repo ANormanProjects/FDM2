@@ -8,18 +8,22 @@
 </div>
 <div class="container">
     <div class="col-sm-2">
-        <div>
-            <p>Owner:@Model.group.owner.fullName</p>
-        </div>
-        <div>
-            <p>Member count:@Model.group.usersInGroup.Count</p>
-        </div>
-        <div>
-            <p>Members</p>
-            @foreach (SocialNetwork.DataAccess.User member in Model.group.usersInGroup)
-            {
-                <p>@member.fullName</p>
-            }
+        <div class="post-container">
+            <div>
+                <h4>Owner:@Model.group.owner.fullName</h4>
+            </div>
+            <div>
+                <h4>Member count: @Model.group.usersInGroup.Count</h4>
+            </div>
+            <div>
+                <h4>Members:</h4>
+                @foreach (SocialNetwork.DataAccess.User member in Model.group.usersInGroup)
+                {
+                    <div class="container" >
+                        <p>@member.fullName</p>
+                    </div>
+                }
+            </div>
         </div>
     </div>
     <div class="col-sm-10">
@@ -33,7 +37,7 @@
                     <pre>@post.code</pre>
                 </div>
                 <p>Likes: @post.likes</p>
-                <div class="container post-comments col-sm-8">
+                <div class="comment-container col-sm-8">
                     @foreach (SocialNetwork.DataAccess.Comment comment in post.comments)
                     {
                         @Html.Partial("_Comment", comment)

@@ -28,7 +28,7 @@
                     <pre>@Model.group.groupWall.First().code</pre>
                 </div>
                 <p>@Model.group.groupWall.First().likes</p>
-                <div class="container post-comments col-sm-8">
+                <div class="comment-container col-sm-8">
                     @foreach (SocialNetwork.DataAccess.Comment comment in Model.group.groupWall.First().comments)
                     {
                         @Html.Partial("_Comment", comment)
