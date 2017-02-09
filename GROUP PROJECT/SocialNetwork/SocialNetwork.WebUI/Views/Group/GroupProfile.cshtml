@@ -4,8 +4,13 @@
 }
 
 @{
-    var coverPath = "Content/" + Model.group.groupName + "-cover.jpg";
-    var coverAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + coverPath);
+    var coverAbsolutePath = "";
+
+    if (Model.group != null) 
+    { 
+        var coverPath = "Content/" + Model.group.groupName + "-cover.jpg";
+        coverAbsolutePath = System.Web.HttpContext.Current.Server.MapPath("~/" + coverPath);
+    }
 }
 
 <div>
