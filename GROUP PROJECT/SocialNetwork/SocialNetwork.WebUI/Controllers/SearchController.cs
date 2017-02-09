@@ -108,18 +108,18 @@ namespace SocialNetwork.WebUI.Controllers
                 try
                 {
                     userLogic.RemoveFriend(user, friend);
-                    return PartialView("_FriendAdded");
+                    return PartialView("_FriendRemoved");
                 }
-                catch (EntityAlreadyExistsException)
+                catch (UserIsNotYourFriendException)
                 {
-                    return PartialView("_FriendAlreadyAdded");
+                    return PartialView("_UserIsNotYourFriend");
                 }
-                catch (SameEntityException)
+                catch (EntityNotFoundException)
                 {
-                    return PartialView("_UserAddingItself");
+                    return PartialView("_UserNotInTheDatabase");
                 }
             }
-            return RedirectToAction("AddFriend");
+            return RedirectToAction("RemoveFriend");
         }
     }
 }

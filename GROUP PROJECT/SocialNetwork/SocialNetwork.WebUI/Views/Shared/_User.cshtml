@@ -21,15 +21,29 @@
                 @using (Ajax.BeginForm("AddFriend", "Search", new AjaxOptions()
                 {
                     HttpMethod = "POST",
-                    UpdateTargetId = "createForm"+Model.user.userId,
+                    UpdateTargetId = "createForm" + Model.user.userId,
                     InsertionMode = InsertionMode.InsertAfter
 
                 }, new { @id = "createForm" + Model.user.userId }))
                 {
-                   @Html.HiddenFor(model => model.user.username);
+                    @Html.HiddenFor(model => model.user.username);
                     <input type="submit" value="Add Friend" class="btn btn-primary" />
                 }
-                
+
+            </p>
+            <p>
+                @using (Ajax.BeginForm("RemoveFriend", "Search", new AjaxOptions()
+                {
+                    HttpMethod = "POST",
+                    UpdateTargetId = "createForm" + Model.user.userId,
+                    InsertionMode = InsertionMode.InsertAfter
+
+                }, new { @id = "createForm" + Model.user.userId }))
+                {
+                    @Html.HiddenFor(model => model.user.username);
+                    <input type="submit" value="Remove Friend" class="btn btn-primary" />
+                }
+
             </p>
         </div>
     </div>
