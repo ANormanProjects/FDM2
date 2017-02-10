@@ -103,13 +103,13 @@ namespace SocialNetwork.MVVM
             postRepo = new Repository<Post>();
             commentRepo = new Repository<Comment>();
             userRepo = new Repository<User>();
-            groupAccLogic = new GroupAccountLogic(groupRepo, postRepo, commentRepo, userRepo);
+            groupAccLogic = new GroupAccountLogic(groupRepo);
             group = new ObservableCollection<Group>(groupAccLogic.GetAllGroups());
         }
 
         public GroupWPFViewModel(GroupAccountLogic groupAccountLogic)
         {
-            this.groupAccLogic = groupAccountLogic;
+            groupAccLogic = groupAccountLogic;
         }
 
         public void ListAllGroups()
