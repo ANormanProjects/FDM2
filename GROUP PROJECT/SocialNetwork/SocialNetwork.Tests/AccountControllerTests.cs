@@ -27,6 +27,7 @@ namespace SocialNetwork.Tests
             existingUser = new User();
             user = new User();
             mockUser = new Mock<User>();
+            mockUser.Setup(s => s.password).Returns("password");
             mockUserRepository = new Mock<Repository<User>>();
         }
 
@@ -117,7 +118,7 @@ namespace SocialNetwork.Tests
 
             //Act
             AccountController classUnderTest = new AccountController(MockUserAccountLogic.Object);
-            var actual = classUnderTest.Register(new UserRegisterViewModel() { user = mockUser.Object }) as PartialViewResult;
+            var actual = classUnderTest.Register(new UserRegisterViewModel() { user = mockUser.Object, confirmPassword = "password" }) as PartialViewResult;
 
             //Assert
             Assert.AreEqual(expected, actual.ViewName);
@@ -139,7 +140,7 @@ namespace SocialNetwork.Tests
             //Act
             AccountController classUnderTest = new AccountController(mockUserAccountLogic.Object);
 
-            var actual = classUnderTest.Register(new UserRegisterViewModel() { user = mockUser.Object }) as PartialViewResult;
+            var actual = classUnderTest.Register(new UserRegisterViewModel() { user = mockUser.Object, confirmPassword = "password" }) as PartialViewResult;
 
             //Assert
             Assert.AreEqual(expected, actual.ViewName);
