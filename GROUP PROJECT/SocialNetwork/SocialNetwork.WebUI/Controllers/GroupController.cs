@@ -70,29 +70,6 @@ namespace SocialNetwork.WebUI.Controllers
             
         }
 
-        //POST: Write Post
-        [HttpPost]
-        [Authorize]
-        public ActionResult WritePost(GroupViewModels model)
-        {
-            try
-            {
-                User user = logic.ViewAccountInfo(User.Identity.Name);
-                _groupAccountLogic.WritePost(0, model.group.groupWall.First().title, model.group.groupWall.First().language, model.group.groupWall.First().code, model.group.groupWall.First().content, model.group);
-            }
-            catch (EntityNotFoundException)
-            {
-                return PartialView("_EntityNotFound");
-            }
-            catch (EmptyInputException)
-            {
-                return PartialView("_FieldNotFilled");
-            }
-
-
-            return PartialView("_Success");
-        }
-
         //Create view models for groups
         public List<GroupViewModels> CreateViewModels(User user)
         {
