@@ -80,13 +80,12 @@ namespace SocialNetwork.WebUI.Controllers
             {
                 Post post = _postLogic.GetPost(viewModel.post.postId);
                 _postLogic.LikePost(post);
+                return PartialView("_Likes", post);
             }
             catch (EntityNotFoundException)
             {
                 return PartialView("_EntityNotFound");
             }
-
-            return PartialView("_Liked");
         }
 
         /// <summary>
