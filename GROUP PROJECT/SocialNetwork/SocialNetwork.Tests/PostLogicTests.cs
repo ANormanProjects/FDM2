@@ -76,19 +76,6 @@ namespace SocialNetwork.Tests
             postRepo.Verify(p => p.Insert(It.IsAny<Post>()), Times.Once);
         }
 
-        //[TestMethod]
-        //public void Test_ViewTimeline_RunsGetAllMethod()
-        //{
-        //    //Arrange
-            
-            
-        //    //Act
-        //    List<Post> userPToAdd = postLogic.ViewTimeline(user.Object);
-
-        //    //Assert
-        //    postRepo.Verify(p => p.GetAll());
-        //}
-
         [TestMethod]
         public void Test_ViewTimeline_ReturnsListOfTimelinePostsOfUser()
         {
@@ -194,55 +181,6 @@ namespace SocialNetwork.Tests
 
         }
 
-        //[TestMethod]
-        //public void Test_Reply_AddsCommentsToAPostIfTheUserInputIsNotNull()
-        //{
-        //    //Arrange
-
-        //    userInput.content = "bla";
-        //    listOfComments.Add(userInput);
-
-        //    //Act
-        //    post.SetupGet(u => u.comments).Returns(new List<Comment>());
-        //    postLogic.Reply(post.Object, userInput.content);
-
-        //    //Assert
-        //    Assert.AreEqual(userInput.content, post.Object.comments[0].content);
-        //}
-
-        //[TestMethod]
-        //[ExpectedException(typeof(EmptyInputException))]
-        //public void Test_Reply_ReturnsAnExceptionMessageIfUserInputIsNull()
-        //{
-        //    //Arrange
-
-        //    userInput.content = null;
-
-        //    //Act
-        //    post.SetupGet(u => u.comments).Returns(new List<Comment>());
-        //    postLogic.Reply(post.Object, userInput.content);
-
-        //    //Assert
-
-        //}
-
-        //[TestMethod]
-        //[ExpectedException(typeof(InputExceedsSpecifiedLimitException))]
-        //public void Test_Reply_ReturnsAnExceptionMessageIfUserInputCharacterCountIsMoreThanMaxLength()
-        //{
-        //    //Arrange
-
-        //    userInput.content = "abcdef";
-        //    postLogic.maxContentLength = 2;
-
-        //    //Act
-
-        //    post.SetupGet(u => u.comments).Returns(new List<Comment>());
-        //    postLogic.Reply(post.Object, userInput.content);
-
-        //    //Assert
-
-        //}
 
         [TestMethod]
         public void Test_LikePost_MakesLikeNumberGoUpByOne_WhenCalled()
