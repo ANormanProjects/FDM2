@@ -16,8 +16,6 @@ namespace SocialNetwork.Logic
         private Repository<Comment> _commentRepository;
         CommentLogic commentLogic;
 
-        // String Restrictions (number of characters)
-
         public PostLogic(Repository<Post> postRepository, Repository<User> userRepository, Repository<Group> groupRepository ,Repository<Comment> commentRepository)
         {
             _postRepository = postRepository;
@@ -220,10 +218,6 @@ namespace SocialNetwork.Logic
 
         }
 
-        //public void SharePost(Post _post, User user)
-        //{
-        //    WriteUserPost(_post.postId, _post.title, _post.language, _post.code, _post.content, user);
-        //}
     }
 
 }

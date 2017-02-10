@@ -45,10 +45,6 @@ namespace SocialNetwork.Logic
                     {
                         Comment comment = new Comment(commentText, user, post);
 
-                        // Just have to put in in the comment repo, entity framework will link it together
-                        //post.comments.Add(comment);
-                        //postRepo.Save();
-
                         commentRepo.Insert(comment);
                         commentRepo.Save();
                     }
