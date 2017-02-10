@@ -73,20 +73,6 @@ namespace SocialNetwork.Logic
             }
         }
 
-        //public List<T> searchEngine(string searchString)
-        //{
-        //    List<IUser> uResult = new List<IUser>();
-
-        //    List<Post> pResult = new List<Post>();
-
-        //    if (_userRepository.GetAll().Contains(searchString))
-        //    {
-        //        result = SearchForUserByName(searchString);
-        //    }
-
-        //    return result;
-        //}
-
         public bool CheckIfSearchTermInUserDataBase(string searchTerm)
         {
             foreach (User user in userRepo.GetAll())
