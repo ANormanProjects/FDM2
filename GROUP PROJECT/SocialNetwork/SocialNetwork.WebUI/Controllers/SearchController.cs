@@ -61,7 +61,7 @@ namespace SocialNetwork.WebUI.Controllers
                     List<User> userResult = searchLogic.SearchForUserByName(searchString);
                     foreach (var result in userResult)
                     {
-                        if (result is User) userModels.Add(new UserViewModel() { user = result });
+                        if (result is User) userModels.Add(new UserViewModel() { user = result, userLoggedIn = user });
                     }
                     return View("UserResults", userModels);                
                 }

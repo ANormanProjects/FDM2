@@ -10,5 +10,6 @@ namespace SocialNetwork.WebUI.Models
     {
         public User user { get; set; }
         public User friend { get; set; }
+        public User userLoggedIn { get; set; }
     }
 }
