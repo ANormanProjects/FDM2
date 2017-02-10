@@ -580,6 +580,62 @@ namespace SocialNetwork.Tests
             Assert.AreEqual(0, user.Object.friends.Count);
         }
 
+        [ExpectedException(typeof(EntityNotFoundException))]
+        [TestMethod]
+        public void Test_CheckIfUserIsFriendMethod_ThrowsException_IfUserDoesntExist()
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+            Mock<User> friend = new Mock<User>();
 
+            user.Setup(c => c.username).Returns("Red");
+            friend.Setup(c => c.username).Returns("Blue");
+
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() { user.Object });
+
+            //act
+            userAccountLogic.checkIfUserIsFriend(user.Object, friend.Object);
+
+        }
+
+        [ExpectedException(typeof(EntityNotFoundException))]
+        [TestMethod]
+        public void Test_CheckIfUserIsFriendMethod_ThrowsException_IfFriendDoesntExist()
+        {
+            //arr
+            Mock<User> user = new Mock<User>();
+            Mock<User> friend = new Mock<User>();
+
+            user.Setup(c => c.username).Returns("Red");
+            friend.Setup(c => c.username).Returns("Blue");
+
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() { friend.Object });
+
+            //act
+            userAccountLogic.checkIfUserIsFriend(user.Object, friend.Object);
+
+        }
+
+        [TestMethod]
+        public void Test_CheckIfUserIsFriendMethod_ReturnsTrue_WhenUserIsFriend()
+        {
+            //Arrange
+            Mock<User> user = new Mock<User>();
+            Mock<User> friend = new Mock<User>();
+
+            user.Setup(c => c.username).Returns("Red");
+            friend.Setup(c => c.username).Returns("Blue");
+
+            userRepo.Setup(c => c.GetAll()).Returns(new List<User>() { user.Object, friend.Object });
+
+            user.Setup(c => c.friends).Returns(new List<User>() { friend.Object });
+            friend.Setup(c => c.friends).Returns(new List<User>() { user.Object });
+
+            //Act
+            bool check = userAccountLogic.checkIfUserIsFriend(user.Object, friend.Object);
+
+            //Assert
+            Assert.AreEqual(true, check);
+        }
     }
 }
