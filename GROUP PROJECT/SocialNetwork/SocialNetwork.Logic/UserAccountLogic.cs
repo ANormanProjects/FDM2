@@ -346,5 +346,24 @@ namespace SocialNetwork.Logic
             }
             _userRepository.Save();
         }
+
+        public bool checkIfUserIsFriend(User user, User friend)
+        {
+            if (_userRepository.GetAll().Contains(user) && _userRepository.GetAll().Contains(friend))
+            {
+                if (user.friends.Contains(friend))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                throw new EntityNotFoundException();
+            }
+        }
     }
 }
