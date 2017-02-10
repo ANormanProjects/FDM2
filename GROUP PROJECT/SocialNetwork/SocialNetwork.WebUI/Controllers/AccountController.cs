@@ -48,19 +48,26 @@ namespace SocialNetwork.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(User user)
+        public ActionResult Register(UserRegisterViewModel viewModel)
         {
             if (_userAccountLogic == null)
             {
                 _userAccountLogic = new UserAccountLogic(new Repository<User>());
             }
-            if (user.fullName == null || user.password == null || user.username == null || user.gender == null)
+
+            if ( viewModel.user.password != viewModel.confirmPassword )
+            {
+                return PartialView("_PasswordsDoNotMatch");
+            }
+
+            if (viewModel.user.fullName == null || viewModel.user.password == null || 
+                viewModel.user.username == null || viewModel.user.gender == null)
             {
                 return PartialView("_FieldNotFilled");
             }
             else
             {
-                bool check = _userAccountLogic.CheckForDuplicates(user);
+                bool check = _userAccountLogic.CheckForDuplicates(viewModel.user);
 
                 if (check == true)
                 {
@@ -68,8 +75,8 @@ namespace SocialNetwork.WebUI.Controllers
                 }
                 else
                 {
-                    user.role = "User";
-                    _userAccountLogic.Register(user);
+                    viewModel.user.role = "User";
+                    _userAccountLogic.Register(viewModel.user);
                         
                     return PartialView("_AccountCreated");
                 }

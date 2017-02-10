@@ -35,18 +35,21 @@
             <div class="container post-code">
                 <pre>@Model.post.code</pre>
             </div>
-            <p>
+            <div>
                 @using (Ajax.BeginForm("LikePost", "CodeWall", new AjaxOptions()
                 {
                     HttpMethod = "POST",
                     UpdateTargetId = "LikeForm" + Model.post.postId,
-                    InsertionMode = InsertionMode.ReplaceWith
+                    InsertionMode = InsertionMode.Replace
                 }, new { @id = "LikeForm" + Model.post.postId }))
                 {
                     @Html.HiddenFor(model => model.post.postId);
-                    <input type="submit" value="Like - @Model.post.likes" class="btn btn-primary" />
+                    <button type="submit" value="Like" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-thumbs-up "/>
+                    </button>
                 }
-            </p>
+                <span>@Model.post.likes</span>
+            </div>
 
             <div class="container post-comments col-sm-10">
                 @foreach (SocialNetwork.DataAccess.Comment comment in Model.post.comments)

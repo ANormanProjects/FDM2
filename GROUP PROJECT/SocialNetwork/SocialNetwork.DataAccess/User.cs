@@ -23,7 +23,7 @@ namespace SocialNetwork.DataAccess
         [DataMember]
         private string _username;
         [DataMember]
-        [DisplayName("User Name")]
+        [DisplayName("Username")]
         public virtual string username
         {
             get { return _username; }
