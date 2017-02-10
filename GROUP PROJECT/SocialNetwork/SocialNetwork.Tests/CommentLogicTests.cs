@@ -34,11 +34,10 @@ namespace SocialNetwork.Tests
         [TestMethod]
         public void Test_AddCommentMethod_AddsNewCommentToPostCommentsAndCommentRepo()
         {
-            //Arrange
-            post.Setup(x => x.comments).Returns(commentList);
+            //Arrange           
 
             commentRepo.Setup(x => x.Insert(It.IsAny<Comment>())).Verifiable();
-            postRepo.Setup(x => x.Save()).Verifiable();
+            
             commentRepo.Setup(x => x.Save()).Verifiable();
             userRepo.Setup(x => x.GetAll()).Returns(new List<User>{user.Object});
             postRepo.Setup(x => x.GetAll()).Returns(new List<Post> { post.Object });
@@ -46,9 +45,8 @@ namespace SocialNetwork.Tests
             commentLogic.AddComment("1", user.Object, post.Object);
 
             //Assert
-            post.Verify(x => x.comments);           
+          
             commentRepo.Verify(x => x.Insert(It.IsAny<Comment>()));
-            postRepo.Verify(x => x.Save());
             commentRepo.Verify(x => x.Save());
            
         }
