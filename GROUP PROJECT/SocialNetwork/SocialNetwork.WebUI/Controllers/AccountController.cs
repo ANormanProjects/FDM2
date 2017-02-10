@@ -186,7 +186,6 @@ namespace SocialNetwork.WebUI.Controllers
             }
 
             return PartialView("_Success");
-            //return RedirectToAction("Wall");
         }
 
         [HttpPost]
@@ -206,7 +205,6 @@ namespace SocialNetwork.WebUI.Controllers
             }
 
             return PartialView("_Liked");
-            //return RedirectToAction("Wall");
         }
 
         public ProfilePageViewModel CreateViewModelsForUser(User user)
