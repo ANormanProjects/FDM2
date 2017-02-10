@@ -138,7 +138,6 @@ namespace SocialNetwork.Tests
         }      
 
         [TestMethod]
-        //[ExpectedException(typeof(EntityAlreadyExistsException))]
         public void Test_WPF_AddGroupMethod_ThrowsEntityAlreadyExistsExceptionWhenGroupNameIsAlreadyInTheDatabase()
         {
             //ARRANGE
@@ -176,7 +175,6 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        //[ExpectedException(typeof(EntityNotFoundException))]
         public void Test_WPF_EditUserMethod_ThrowsEntityNotFoundException_WhenUsernameIsNotInDatabase()
         {
             //ARRANGE
@@ -210,7 +208,6 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        //[ExpectedException(typeof(EntityNotFoundException))]
         public void Test_WPF_RemoveUserMethod_ThrowsEntityNotFoundException_WhenUsernameIsNotInDatabase()
         {
             //ARRANGE
@@ -244,7 +241,6 @@ namespace SocialNetwork.Tests
         }
 
         [TestMethod]
-        //[ExpectedException(typeof(EntityNotFoundException))]
         public void Test_WPF_RemoveGroupMethod_ThrowsEntityNotFoundException_WhenGroupNameIsNotInDatabase()
         {
             //ARRANGE
