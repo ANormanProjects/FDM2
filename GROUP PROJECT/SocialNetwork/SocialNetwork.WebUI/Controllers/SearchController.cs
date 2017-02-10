@@ -73,6 +73,7 @@ namespace SocialNetwork.WebUI.Controllers
             return View("Error");
         }
 
+
         [HttpPost]
         public ActionResult AddFriend(UserViewModel friendViewModel)
         {
@@ -120,6 +121,34 @@ namespace SocialNetwork.WebUI.Controllers
                 }
             }
             return RedirectToAction("RemoveFriend");
+        }
+
+        [Authorize]
+        public ActionResult ProfilePage(string username)
+        {
+            Repository<User> userRepo = new Repository<User>();
+            User user = userRepo.First(u => u.username == username);
+            ProfilePageViewModel viewModels = CreateViewModelsForUser(user);
+
+            return View("ProfilePage", viewModels);
+        }
+
+        public ProfilePageViewModel CreateViewModelsForUser(User user)
+        {
+            ProfilePageViewModel posts = new ProfilePageViewModel();
+
+            List<UserPost> listposts = new List<UserPost>();
+
+            foreach (UserPost p in user.posts)
+            {
+                listposts.Add(p);
+            }
+
+            posts.userpost = listposts;
+
+            posts.user = user;
+
+            return posts;
         }
     }
 }
