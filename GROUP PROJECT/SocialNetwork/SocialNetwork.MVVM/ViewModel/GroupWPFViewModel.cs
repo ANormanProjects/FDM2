@@ -19,6 +19,7 @@ namespace SocialNetwork.MVVM
         public Repository<Comment> commentRepo { get; set; }
         public Repository<User> userRepo { get; set; }
         public GroupAccountLogic groupAccLogic { get; set; }
+        public UserAccountLogic userAccLogic { get; set; }
 
         private ObservableCollection<Group> _group;
 
@@ -29,6 +30,18 @@ namespace SocialNetwork.MVVM
             {
                 _group = value;
                 OnPropertyChanged("group");
+            }
+        }
+
+        private ObservableCollection<User> _user;
+
+        public ObservableCollection<User> user
+        {
+            get { return _user; }
+            set
+            {
+                _user = value;
+                OnPropertyChanged("user");
             }
         }
 
@@ -115,7 +128,9 @@ namespace SocialNetwork.MVVM
             commentRepo = new Repository<Comment>();
             userRepo = new Repository<User>();
             groupAccLogic = new GroupAccountLogic(groupRepo, postRepo, commentRepo, userRepo);
+            userAccLogic = new UserAccountLogic(userRepo);
             group = new ObservableCollection<Group>(groupAccLogic.GetAllGroups());
+            user = new ObservableCollection<User>(userAccLogic.GetAllUserAccounts());
         }
 
         public GroupWPFViewModel(GroupAccountLogic groupAccountLogic)
