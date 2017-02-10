@@ -183,6 +183,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ProfilePageViewModel.cs" />
     <Compile Include="Models\UserPostViewModel.cs" />
+    <Compile Include="Models\UserRegisterViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -290,6 +291,7 @@
     <Content Include="Views\Search\_FriendRemoved.cshtml" />
     <Content Include="Views\Search\_UserIsNotYourFriend.cshtml" />
     <Content Include="Views\Search\_UserNotInTheDatabase.cshtml" />
+    <Content Include="Views\Shared\_PasswordsDoNotMatch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

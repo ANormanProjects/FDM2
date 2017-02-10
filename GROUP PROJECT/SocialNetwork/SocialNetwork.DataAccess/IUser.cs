@@ -11,7 +11,7 @@ namespace SocialNetwork.DataAccess
     public interface IUser
     {
         int userId { get; set; }
-        [DisplayName("User Name")]
+        [DisplayName("Username")]
         string username { get; set; }
         [DisplayName("Password")]
         string password { get; set; }
