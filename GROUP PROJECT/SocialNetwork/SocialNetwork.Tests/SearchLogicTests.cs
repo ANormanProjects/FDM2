@@ -4,6 +4,8 @@ using SocialNetwork.DataAccess;
 using Moq;
 using SocialNetwork.Logic;
 using System.Collections.Generic;
+using SocialNetwork.WebUI.Controllers;
+using SocialNetwork.WebUI.Models;
 
 namespace SocialNetwork.Tests
 {
@@ -195,5 +197,7 @@ namespace SocialNetwork.Tests
             postRepo.Verify(d => d.GetAll(), Times.Once);
 
         }
+
+        
     }
 }

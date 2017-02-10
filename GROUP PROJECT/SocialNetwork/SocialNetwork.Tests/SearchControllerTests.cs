@@ -25,7 +25,6 @@ namespace SocialNetwork.Tests
             Assert.AreEqual(expected, actual.ViewName);
         }
 
-// Can't test the rest due to FormsAuthentification
-        
+        // Can't test the rest due to FormsAuthentification
     }
 }
