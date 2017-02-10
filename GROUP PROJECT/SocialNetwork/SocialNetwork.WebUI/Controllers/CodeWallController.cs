@@ -87,7 +87,6 @@ namespace SocialNetwork.WebUI.Controllers
             }
 
             return PartialView("_Liked");
-            //return RedirectToAction("Wall");
         }
 
         /// <summary>
@@ -119,7 +118,6 @@ namespace SocialNetwork.WebUI.Controllers
             }
 
             return PartialView("_Success");
-            //return RedirectToAction("Wall");
         }
 
         /// <summary>
