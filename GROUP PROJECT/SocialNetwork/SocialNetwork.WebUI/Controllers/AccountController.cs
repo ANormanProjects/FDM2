@@ -33,13 +33,6 @@ namespace SocialNetwork.WebUI.Controllers
             _userAccountLogic = userAccountLogic;
         }
 
-        //// GET: Profile
-        //[Authorize]
-        //public ActionResult ProfilePage()
-        //{
-        //    return View("ProfilePage");
-        //}
-
         // GET: Register
         [HttpGet]
         public ActionResult Register()
