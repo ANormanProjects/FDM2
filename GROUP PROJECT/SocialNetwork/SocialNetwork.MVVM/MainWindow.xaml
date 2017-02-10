@@ -65,12 +65,12 @@
             <Controls:MetroTabItem Header="List-Groups">
                 <views:ListAllGroups/>
             </Controls:MetroTabItem>
-            <Controls:MetroTabItem Header="Add-Group">
+            <!--<Controls:MetroTabItem Header="Add-Group">
                 <views:AddGroup/>
             </Controls:MetroTabItem>
             <Controls:MetroTabItem Header="Remove-Group">
                 <views:RemoveGroup/>
-            </Controls:MetroTabItem>
+            </Controls:MetroTabItem>-->
 
         </Controls:MetroAnimatedTabControl>
 
