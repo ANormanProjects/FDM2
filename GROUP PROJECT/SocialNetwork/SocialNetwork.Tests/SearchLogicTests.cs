@@ -134,8 +134,6 @@ namespace SocialNetwork.Tests
             userRepo.Setup(g => g.GetAll()).Returns(new List<User>() { user1.Object });
             user1.Setup(u => u.fullName).Returns("user");
 
-            //user1.Object.fullName = "user";
-
             //act
             bool actual = searchLogic.CheckIfSearchTermInUserDataBase("user");
 
@@ -152,8 +150,6 @@ namespace SocialNetwork.Tests
             bool resul = false;
             userRepo.Setup(g => g.GetAll()).Returns(new List<User>() { user1.Object });
             user1.Setup(u => u.fullName).Returns("use");
-
-            //user1.Object.fullName = "user";
 
             //act
             bool actual = searchLogic.CheckIfSearchTermInUserDataBase("user");
