@@ -88,17 +88,11 @@ namespace SocialNetwork.Tests
             user1.Setup(x => x.username).Returns("Buble");
             user1.Setup(x => x.password).Returns("Michael");
 
-            //userRepo.Setup(x => x.First(It.IsAny<Func<IUser, bool>>())).Verifiable();
             //act
             bool r = userAccountLogic.Login(username, password);
 
             //assert
             Assert.AreEqual(true, r);
-
-
-            //userRepo.Verify(q => q.First(u => u.username == username), Times.Once);
-            //Assert.AreEqual(false, r);
-
 
         }
 
@@ -117,7 +111,6 @@ namespace SocialNetwork.Tests
 
             user1.Setup(x => x.password).Returns("Michael");
 
-            //userRepo.Setup(x => x.First(It.IsAny<Func<IUser, bool>>())).Verifiable();
             //act
             bool r = userAccountLogic.Login(username, password);
 
@@ -291,7 +284,7 @@ namespace SocialNetwork.Tests
         }
 
         [ExpectedException(typeof(EntityNotFoundException))]
-        [TestMethod] //double check
+        [TestMethod] 
         public void Test_WritePostMethod_ThrowsAnException_GivenAUserThatsNotINDB() 
         {
             //arr
@@ -312,7 +305,7 @@ namespace SocialNetwork.Tests
             
         }
 
-        [TestMethod] //double check
+        [TestMethod] 
         public void Test_WritePostMethod_CallsWritePostLogic_GivenAUser()
         {
             //arr
@@ -333,7 +326,6 @@ namespace SocialNetwork.Tests
 
             //ass
             userRepo.Verify(x => x.GetAll(), Times.Once);
-            //postLogic.Verify(a => a.WriteUserPost(1, "Post", "c#", "codeycode", "contyconty", user.Object), Times.Once);
 
         }
 
@@ -434,8 +426,6 @@ namespace SocialNetwork.Tests
             Mock<GroupAccountLogic> groupLogic = new Mock<GroupAccountLogic>(postLogic.Object, groupRepo.Object);
             UserAccountLogic userLogic = new UserAccountLogic(groupLogic.Object, userRepo.Object);
             userRepo.Setup(c => c.GetAll()).Returns(new List<User>() {  });
-            
-           
 
             //Act
             var actual = userLogic.ViewAllPostByFollowedGroups(user.Object);
