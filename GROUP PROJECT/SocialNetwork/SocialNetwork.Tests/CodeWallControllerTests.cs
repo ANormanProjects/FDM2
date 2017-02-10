@@ -73,18 +73,7 @@ namespace SocialNetwork.Tests
 
         //---------- Testing the CodeWallController ----------//
 
-        [TestMethod]
-        public void Test_WallInCodeWall_ReturnsWallView()
-        {
-            //arr
-            var expected = "Wall";
 
-            //act
-            var actual = classUnderTest.Wall() as ViewResult;
-
-            //ass
-            Assert.AreEqual(expected, actual.ViewName);
-        }
 
         [TestMethod]
         public void Test_CreateViewModelsForUser_ReturnsNewViewModelsForUsersPosts_WhenCalledForAUser()
