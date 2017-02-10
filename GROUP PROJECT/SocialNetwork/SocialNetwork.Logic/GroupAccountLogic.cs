@@ -59,6 +59,7 @@ namespace SocialNetwork.Logic
             else
             {
                 groupRepo.Insert(group);
+                groupRepo.Save();
             }
         }
 
@@ -67,6 +68,7 @@ namespace SocialNetwork.Logic
             if (groupRepo.GetAll().Contains(group))
             {
                 groupRepo.Remove(group);
+                groupRepo.Save();
             }
             else
             {
@@ -87,6 +89,7 @@ namespace SocialNetwork.Logic
                     else
                     {
                         group.usersInGroup.Add(user);
+                        groupRepo.Save();
                     }
                 }
                 else
@@ -107,6 +110,7 @@ namespace SocialNetwork.Logic
                 if (userRepo.GetAll().Contains(user))
                 {
                     group.usersInGroup.Remove(user);
+                    groupRepo.Save();
                 }
                 else
                 {
