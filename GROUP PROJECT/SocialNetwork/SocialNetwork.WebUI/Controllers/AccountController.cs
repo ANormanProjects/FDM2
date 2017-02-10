@@ -155,17 +155,7 @@ namespace SocialNetwork.WebUI.Controllers
             ProfilePageViewModel viewModels = CreateViewModelsForUser(user);
 
             return View("ProfilePage", viewModels);
-        }
-
-        [Authorize]
-        public ActionResult ProfilePage(string username)
-        {
-            Repository<User> userRepo = new Repository<User>();
-            User user = userRepo.First(u => u.username == username);
-            ProfilePageViewModel viewModels = CreateViewModelsForUser(user);
-
-            return View("ProfilePage", viewModels);
-        }
+        }        
 
         /// <summary>
         /// Takes user input and sends it to be added to the database

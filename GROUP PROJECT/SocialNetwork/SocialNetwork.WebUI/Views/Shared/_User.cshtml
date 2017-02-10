@@ -58,7 +58,7 @@
                             @Html.HiddenFor(model => model.user.username);
                             <input type="submit" value="Remove Friend" class="btn btn-primary" />
                         }
-
+                        @Html.ActionLink("View Profile", "ProfilePage", "Search", new { username = @Model.user.username }, htmlAttributes: new { @class = "text-center" })
                     </p>
                 }
             }

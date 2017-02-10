@@ -126,7 +126,7 @@ namespace SocialNetwork.Tests
             var result = classUnderTest.LikePost(viewModel) as PartialViewResult;
 
             // Assert
-            Assert.AreEqual("_Liked", result.ViewName);
+            Assert.AreEqual("_Likes", result.ViewName);
         }
 
         [TestMethod]
