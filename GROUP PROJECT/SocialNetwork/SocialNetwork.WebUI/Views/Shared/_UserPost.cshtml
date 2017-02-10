@@ -39,15 +39,15 @@
                 @using (Ajax.BeginForm("LikePost", "CodeWall", new AjaxOptions()
                 {
                     HttpMethod = "POST",
-                    UpdateTargetId = "likes" + Model.post.postId,
+                    UpdateTargetId = "likes+" + Model.post.postId,
                     InsertionMode = InsertionMode.ReplaceWith
-                }, new { @id = "LikeForm" + Model.post.postId }))
+                }))
                 {
                     @Html.HiddenFor(model => model.post.postId)
                     <button type="submit" class="btn btn-primary" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-thumbs-up glyphicon-align-left" aria-hidden="true"></span> Like
-                    </button>                    
-                    <span></span>
+                        <span class="glyphicon glyphicon-thumbs-up glyphicon-align-left" aria-hidden="true"></span> 
+                        <span id="#likes+@Model.post.postId">@Html.Partial("_Likes", @Model.post)</span>
+                    </button>
                 }                
             </div>
 
