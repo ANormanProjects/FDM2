@@ -94,7 +94,6 @@ namespace SocialNetwork.MVVM.ViewModel
         }
 
         private ICommand _ListAllUsersCommand;
-        private UserAccountLogic userAccountLogic;
         public ICommand ListAllUsersCommand
         {
             get
