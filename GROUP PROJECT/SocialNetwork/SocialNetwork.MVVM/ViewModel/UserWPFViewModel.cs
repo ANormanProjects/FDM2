@@ -150,8 +150,6 @@ namespace SocialNetwork.MVVM.ViewModel
             set { _removeUserCommand = value; }
         }
 
-
-
         //Live
         public UserWPFViewModel()
         {
@@ -163,7 +161,7 @@ namespace SocialNetwork.MVVM.ViewModel
         //Test
         public UserWPFViewModel(UserAccountLogic userAccountLogic)
         {
-            this.userAccountLogic = userAccountLogic;
+            userAccLogic = userAccountLogic;
         }
 
         public void ListAllUsers()
@@ -189,14 +187,17 @@ namespace SocialNetwork.MVVM.ViewModel
         {
             try
             {
-                User user1 = userAccountLogic.ViewAccountInfo(username);
+                
+                User userToEdit = userAccLogic.ViewAccountInfo(username);
 
                 string newName = fullName;
                 string newGender = gender;
                 string newRole = role;
                 string newPassword = password;
 
-                userAccLogic.EditUser(user1, newName, newGender, newRole, newPassword);
+                userAccLogic.EditUser(userToEdit, newName, newGender, newRole, newPassword);
+
+                return;
             }
             catch (EntityNotFoundException)
             {
@@ -208,8 +209,11 @@ namespace SocialNetwork.MVVM.ViewModel
         {
             try
             {
-                User user1 = userAccountLogic.ViewAccountInfo(username);
-                userAccLogic.RemoveUser(user1);
+                User userToRemove = new User();
+                userToRemove = userAccLogic.ViewAccountInfo(username);
+                userAccLogic.RemoveUser(userToRemove);     
+       
+                return;
             }
             catch (EntityNotFoundException)
             {
