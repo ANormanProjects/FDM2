@@ -31,17 +31,7 @@ namespace SocialNetwork.Tests
             mockUserRepository = new Mock<Repository<User>>();
         }
 
-        [TestMethod]
-        public void Test_ProfilePageInAccounts_ReturnsProfilePageView()
-        {
-            var expected = "ProfilePage";
-
-            AccountController classUnderTest = new AccountController();
-
-            var actual = classUnderTest.ProfilePage() as ViewResult;
-
-            Assert.AreEqual(expected, actual.ViewName);
-        }
+        
 
         [TestMethod]
         public void Test_LoginInAccounts_ReturnsLoginView()
