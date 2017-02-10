@@ -153,6 +153,8 @@ namespace SocialNetwork.MVVM
                 newGroup.groupName = groupName;
 
                 groupAccLogic.CreateGroup(newGroup);
+
+                return;
             }
 
             catch (EntityAlreadyExistsException)
@@ -166,9 +168,13 @@ namespace SocialNetwork.MVVM
         {
             try
             {
-                Group removeGroup = groupAccLogic.ViewGroupInfo(groupName);
+                Group removeGroup = new Group();
+                    
+                removeGroup = groupAccLogic.ViewGroupInfo(groupName);
 
                 groupAccLogic.RemoveGroup(removeGroup);
+
+                return;
             }
 
             catch(EntityNotFoundException)
