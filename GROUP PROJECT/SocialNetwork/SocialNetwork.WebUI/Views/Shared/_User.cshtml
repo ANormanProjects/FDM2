@@ -16,35 +16,52 @@
             {
                 @Model.user.fullName
             }
-            
-            <p>
-                @using (Ajax.BeginForm("AddFriend", "Search", new AjaxOptions()
+
+            @{
+                bool check = false;
+
+                foreach (var friend in Model.userLoggedIn.friends)
+                {
+                    if (Model.user.username == friend.username)
+                    {
+                        check = true;
+                    }
+                }
+                if (check == false && Model.user.username != Model.userLoggedIn.username)
+                {
+                    <p>
+                        @using (Ajax.BeginForm("AddFriend", "Search", new AjaxOptions()
                 {
                     HttpMethod = "POST",
                     UpdateTargetId = "createForm" + Model.user.userId,
                     InsertionMode = InsertionMode.ReplaceWith
 
                 }, new { @id = "createForm" + Model.user.userId }))
-                {
-                    @Html.HiddenFor(model => model.user.username);
-                    <input type="submit" value="Add Friend" class="btn btn-primary" />
-                }
+                        {
+                            @Html.HiddenFor(model => model.user.username);
+                            <input type="submit" value="Add Friend" class="btn btn-primary" />
+                        }
 
-            </p>
-            <p>
-                @using (Ajax.BeginForm("RemoveFriend", "Search", new AjaxOptions()
+                    </p>
+                }
+                if (check == true)
+                {
+                    <p>
+                        @using (Ajax.BeginForm("RemoveFriend", "Search", new AjaxOptions()
                 {
                     HttpMethod = "POST",
                     UpdateTargetId = "removeForm" + Model.user.userId,
                     InsertionMode = InsertionMode.ReplaceWith
 
                 }, new { @id = "removeForm" + Model.user.userId }))
-                {
-                    @Html.HiddenFor(model => model.user.username);
-                    <input type="submit" value="Remove Friend" class="btn btn-primary" />
-                }
+                        {
+                            @Html.HiddenFor(model => model.user.username);
+                            <input type="submit" value="Remove Friend" class="btn btn-primary" />
+                        }
 
-            </p>
+                    </p>
+                }
+            }
         </div>
     </div>
 </div>
