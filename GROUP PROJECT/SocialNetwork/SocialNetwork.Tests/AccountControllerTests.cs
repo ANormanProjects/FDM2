@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using SocialNetwork.DataAccess;
 using Moq;
 using SocialNetwork.Logic;
+using SocialNetwork.WebUI.Models;
 
 namespace SocialNetwork.Tests
 {
@@ -116,7 +117,7 @@ namespace SocialNetwork.Tests
 
             //Act
             AccountController classUnderTest = new AccountController(MockUserAccountLogic.Object);
-            var actual = classUnderTest.Register(mockUser.Object) as PartialViewResult;
+            var actual = classUnderTest.Register(new UserRegisterViewModel() { user = mockUser.Object }) as PartialViewResult;
 
             //Assert
             Assert.AreEqual(expected, actual.ViewName);
@@ -138,7 +139,7 @@ namespace SocialNetwork.Tests
             //Act
             AccountController classUnderTest = new AccountController(mockUserAccountLogic.Object);
 
-            var actual = classUnderTest.Register(mockUser.Object) as PartialViewResult;
+            var actual = classUnderTest.Register(new UserRegisterViewModel() { user = mockUser.Object }) as PartialViewResult;
 
             //Assert
             Assert.AreEqual(expected, actual.ViewName);

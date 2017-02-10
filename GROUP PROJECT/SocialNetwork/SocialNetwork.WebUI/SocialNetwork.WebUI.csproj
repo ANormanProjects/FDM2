@@ -279,7 +279,7 @@
     <Content Include="Views\Group\GroupProfile.cshtml" />
     <Content Include="Views\Shared\_GroupPreview.cshtml" />
     <Content Include="Views\Shared\_EntityNotFound.cshtml" />
-    <Content Include="Views\Shared\_Liked.cshtml" />
+    <Content Include="Views\Shared\_Likes.cshtml" />
     <Content Include="Views\Shared\_MakeCommentForm.cshtml" />
     <Content Include="Views\Search\UserResults.cshtml" />
     <Content Include="Views\Shared\_User.cshtml" />

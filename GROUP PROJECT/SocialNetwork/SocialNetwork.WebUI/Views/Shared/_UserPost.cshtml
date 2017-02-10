@@ -39,16 +39,16 @@
                 @using (Ajax.BeginForm("LikePost", "CodeWall", new AjaxOptions()
                 {
                     HttpMethod = "POST",
-                    UpdateTargetId = "LikeForm" + Model.post.postId,
-                    InsertionMode = InsertionMode.Replace
+                    UpdateTargetId = "likes" + Model.post.postId,
+                    InsertionMode = InsertionMode.ReplaceWith
                 }, new { @id = "LikeForm" + Model.post.postId }))
                 {
-                    @Html.HiddenFor(model => model.post.postId);
-                    <button type="submit" value="Like" class="btn btn-primary">
-                        <span class="glyphicon glyphicon-thumbs-up "/>
-                    </button>
-                }
-                <span>@Model.post.likes</span>
+                    @Html.HiddenFor(model => model.post.postId)
+                    <button type="submit" class="btn btn-primary" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-thumbs-up glyphicon-align-left" aria-hidden="true"></span> Like
+                    </button>                    
+                    <span></span>
+                }                
             </div>
 
             <div class="container post-comments col-sm-10">
