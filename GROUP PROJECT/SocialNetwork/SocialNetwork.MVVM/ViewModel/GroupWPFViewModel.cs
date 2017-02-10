@@ -54,6 +54,17 @@ namespace SocialNetwork.MVVM
             }
         }
 
+        private User _owner;
+        public User owner
+        {
+            get { return _owner; }
+            set 
+            { 
+                _owner = value;
+                OnPropertyChanged("owner");
+            }
+        }
+
         private ICommand _listAllGroupsCommand;
         public ICommand listAllGroupsCommand
         {
@@ -103,7 +114,7 @@ namespace SocialNetwork.MVVM
             postRepo = new Repository<Post>();
             commentRepo = new Repository<Comment>();
             userRepo = new Repository<User>();
-            groupAccLogic = new GroupAccountLogic(groupRepo);
+            groupAccLogic = new GroupAccountLogic(groupRepo, postRepo, commentRepo, userRepo);
             group = new ObservableCollection<Group>(groupAccLogic.GetAllGroups());
         }
 
