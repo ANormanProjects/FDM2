@@ -63,8 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Basket.cs" />
+    <Compile Include="BasketRepository.cs" />
     <Compile Include="E-CommerceDataModel.cs" />
     <Compile Include="IBasket.cs" />
+    <Compile Include="IBasketRepository.cs" />
     <Compile Include="IItem.cs" />
     <Compile Include="IItemRepository.cs" />
     <Compile Include="Item.cs" />

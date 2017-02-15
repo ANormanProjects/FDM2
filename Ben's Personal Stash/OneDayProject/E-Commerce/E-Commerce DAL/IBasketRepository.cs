@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace E_Commerce_DAL
 {
-    public interface IBasket
+    public interface IBasketRepository
     {
-        int basketId { get; set; }
+        List<Basket> GetAllBaskets();
 
-        //List<Item> itemsInBasket { get; set; }
+        void addNewBasket(Basket basket);
 
-        ICollection<Item> itemsInBasket { get; set; }
+        void Save();
     }
 }

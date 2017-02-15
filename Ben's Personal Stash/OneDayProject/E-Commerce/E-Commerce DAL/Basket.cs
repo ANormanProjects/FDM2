@@ -32,13 +32,13 @@ namespace E_Commerce_DAL
         //    set { _itemsInBasket = value; }
         //}
 
-        //private ICollection<Item> _itemsInBasket;
+        private ICollection<Item> _itemsInBasket;
 
-        //public ICollection<Item> itemsInBasket
-        //{
-        //    get { return _itemsInBasket; }
-        //    set { _itemsInBasket = value; }
-        //}
+        public ICollection<Item> itemsInBasket
+        {
+            get { return _itemsInBasket; }
+            set { _itemsInBasket = value; }
+        }
         
         
     }

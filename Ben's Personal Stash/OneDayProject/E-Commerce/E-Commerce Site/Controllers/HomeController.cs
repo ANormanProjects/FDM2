@@ -31,21 +31,19 @@ namespace E_Commerce_Site.Controllers
 
         public ActionResult Index()
         {
-            return View("Index", itemLogic.GetAllItems());
+            return View("Index");
         }
 
-        public ActionResult About()
+        public ActionResult ItemList()
         {
-            ViewBag.Message = "Your application description page.";
 
-            return View();
+            return View("ItemList", itemLogic.GetAllItems());
         }
 
-        public ActionResult Contact()
+        public ActionResult Basket()
         {
-            ViewBag.Message = "Your contact page.";
 
-            return View();
+            return View("Basket");
         }
     }
 }
