@@ -1,6 +1,5 @@
 ﻿using E_Commerce_DAL;
 using E_Commerce_Logic;
-using E_Commerce_Site.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,26 +75,31 @@ namespace E_Commerce_Site.Controllers
 
             basketLogic.addItemToBasket(targetBasket, itemChoice);
 
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_successDeposit");
+            }
+
             return View("AddToBasket");
         }
 
         public ActionResult BasketList()
         {
-            Basket basketList = null;
-            //Basket customerBasket = new Basket();
-            //customerBasket.basketId = 4;
-            //customerBasket.basketName = "MyBasket";
+            Basket userBasket = null;
+
             int basketId = 4;
 
             foreach (Basket basket in basketRepo.GetAllBaskets())
             {
                 if(basketId == basket.basketId)
                 {
-                    basketList = basket;
+                    userBasket = basket;
                 }
             }
 
-            return View("Basket", basketList);
+            List<Item> basketlist = basketLogic.GetAllItemsInBasket(userBasket);
+
+            return View("BasketList", basketlist);
         }
     }
 }

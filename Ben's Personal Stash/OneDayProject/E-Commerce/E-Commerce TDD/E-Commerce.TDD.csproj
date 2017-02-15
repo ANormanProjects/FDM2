@@ -67,12 +67,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="DALTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ItemLogicTests.cs" />
     <Compile Include="ItemRepoTest.cs" />
     <Compile Include="BasketLogicTests.cs" />
     <Compile Include="BasketRepoTest.cs" />
+    <Compile Include="ControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

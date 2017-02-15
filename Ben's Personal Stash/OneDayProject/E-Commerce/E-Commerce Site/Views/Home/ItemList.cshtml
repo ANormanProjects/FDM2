@@ -4,16 +4,16 @@
 }
 
     <h2>List of all Items</h2>
+<h2>Each item only has one stock at the moment as we are a new shop.</h2>
+
 
     <table class="table">
         <tr>
-            <th>id</th>
             <th>Name</th>
         </tr>
         @foreach (var item in Model)
         {
             <tr>
-                <td>@Html.DisplayFor(modelItem => item.id)</td>
                 <td>@Html.DisplayFor(modelItem => item.name)</td>
             </tr>
         }
