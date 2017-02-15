@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce DAL", "E-Commerce DAL\E-Commerce DAL.csproj", "{419EF824-953A-4C57-94F5-02414D2998B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce Logic", "E-Commerce Logic\E-Commerce Logic.csproj", "{DEBD8251-6787-4612-835D-099B4F18CDBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce TDD", "E-Commerce TDD\E-Commerce TDD.csproj", "{CFF89E07-833E-4309-8119-31A8A8C1E3C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{419EF824-953A-4C57-94F5-02414D2998B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{419EF824-953A-4C57-94F5-02414D2998B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{419EF824-953A-4C57-94F5-02414D2998B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{419EF824-953A-4C57-94F5-02414D2998B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEBD8251-6787-4612-835D-099B4F18CDBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEBD8251-6787-4612-835D-099B4F18CDBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEBD8251-6787-4612-835D-099B4F18CDBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEBD8251-6787-4612-835D-099B4F18CDBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFF89E07-833E-4309-8119-31A8A8C1E3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFF89E07-833E-4309-8119-31A8A8C1E3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFF89E07-833E-4309-8119-31A8A8C1E3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFF89E07-833E-4309-8119-31A8A8C1E3C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
