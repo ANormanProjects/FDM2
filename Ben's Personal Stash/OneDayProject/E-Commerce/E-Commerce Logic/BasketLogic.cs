@@ -12,10 +12,10 @@ namespace E_Commerce_Logic
         ItemRepository itemRepo;
         BasketRepository basketRepo;
 
-        public BasketLogic()
+        public BasketLogic(ItemRepository _itemRepo, BasketRepository _basketRepo)
         {
-            itemRepo = new ItemRepository();
-            basketRepo = new BasketRepository();
+            itemRepo = _itemRepo;
+            basketRepo = _basketRepo;
         }
 
         public virtual void startNewBasket(Basket basket)
@@ -24,10 +24,13 @@ namespace E_Commerce_Logic
             {
                 throw new BasketAlreadyExistsException();
             }
-            basketRepo.addNewBasket(basket);
-            basketRepo.Save();
+            else
+            {
+                basketRepo.addNewBasket(basket);
+                basketRepo.Save();
+            }
         }
-
+        
         public virtual List<Item> GetAllItemsInBasket(Basket basket)
         {
             List<Item> items = new List<Item>();
@@ -46,8 +49,15 @@ namespace E_Commerce_Logic
         {
             if(basketRepo.GetAllBaskets().Contains(basket))
             {
-                basket.itemsInBasket.Add(item);
-                basketRepo.Save();
+                if (itemRepo.GetAllItems().Contains(item))
+                {
+                    basket.itemsInBasket.Add(item);
+                    basketRepo.Save();
+                }
+                else
+                {
+                    throw new ItemDoesNotExistException();
+                }
             }
         }
     }

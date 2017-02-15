@@ -1,0 +1,18 @@
+﻿@model IEnumerable<E_Commerce_DAL.Basket>
+@{
+    ViewBag.Title = "BasketList";
+}
+
+<h2>Items in Basket</h2>
+
+<table class="table">
+    <tr>
+        <th>Items</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.itemsInBasket)</td>
+        </tr>
+    }
+</table>

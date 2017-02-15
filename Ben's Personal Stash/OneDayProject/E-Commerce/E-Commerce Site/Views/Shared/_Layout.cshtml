@@ -23,7 +23,9 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Items", "ItemList", "Home")</li>
-                    <li>@Html.ActionLink("Basket", "Basket", "Home")</li>
+                    <li>@Html.ActionLink("Add To Basket", "AddToBasket", "Home")</li>
+                    <li>@Html.ActionLink("My Basket", "BasketList", "Home")</li>
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
