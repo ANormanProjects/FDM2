@@ -34,7 +34,7 @@ namespace E_Commerce_DAL
 
         private ICollection<Item> _itemsInBasket;
 
-        public ICollection<Item> itemsInBasket
+        public virtual ICollection<Item> itemsInBasket
         {
             get { return _itemsInBasket; }
             set { _itemsInBasket = value; }
