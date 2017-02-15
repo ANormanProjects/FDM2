@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E_Commerce_DAL
+namespace E_Commerce_Logic
 {
-    public interface IItem
+    public interface IBasketLogic
     {
-        int id { get; set; }
-
-        string name { get; set; }
-
-
+        void getAllItemsInBasket();
+        void addItemToBasket();        
     }
 }

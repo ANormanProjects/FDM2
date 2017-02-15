@@ -6,9 +6,9 @@ namespace E_Commerce_TDD
     [TestClass]
     public class LogicTests
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
+        //[TestMethod]
+        //public void TestMethod1()
+        //{
+        //}
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_Commerce_Logic
 {
-    public class Logic
+    class ItemLogic
     {
     }
 }
