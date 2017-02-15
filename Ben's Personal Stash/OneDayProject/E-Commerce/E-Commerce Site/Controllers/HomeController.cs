@@ -22,7 +22,6 @@ namespace E_Commerce_Site.Controllers
             basketRepo = new BasketRepository(ecommerceDataModel);
             itemLogic = new ItemLogic(itemRepo);
             basketLogic = new BasketLogic(itemRepo, basketRepo);
-
         }
 
         //Tests
@@ -30,8 +29,6 @@ namespace E_Commerce_Site.Controllers
         {
             itemLogic = _itemLogic;
         }
-
-
 
         public ActionResult Index()
         {
