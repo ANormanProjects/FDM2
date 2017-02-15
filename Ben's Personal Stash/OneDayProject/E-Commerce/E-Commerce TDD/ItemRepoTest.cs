@@ -9,7 +9,7 @@ using System.Linq;
 namespace E_Commerce_TDD
 {
     [TestClass]
-    public class ItemsTest
+    public class ItemRepoTest
     {
         Mock<DbSet<Item>> dbSetMock;
 

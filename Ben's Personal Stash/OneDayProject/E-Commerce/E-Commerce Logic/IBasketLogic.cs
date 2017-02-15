@@ -9,6 +9,7 @@ namespace E_Commerce_Logic
 {
     public interface IBasketLogic
     {
+        void startNewBasket(Basket basket);
         List<Item> getAllItemsInBasket(Basket basket);
         void addItemToBasket(Basket basket, Item item);        
     }

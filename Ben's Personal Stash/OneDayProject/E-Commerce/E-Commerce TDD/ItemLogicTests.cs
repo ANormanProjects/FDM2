@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace E_Commerce_TDD
 {
     [TestClass]
-    public class LogicTests
+    public class ItemLogicTests
     {
         [TestInitialize]
         public void Setup()
@@ -29,8 +29,7 @@ namespace E_Commerce_TDD
             itemLogicTest.GetAllItems();
 
             //ASSERT
-            mockItemRepo.Verify(c => c.GetAllItems());
-           
+            mockItemRepo.Verify(c => c.GetAllItems());           
         }
     }
 }
