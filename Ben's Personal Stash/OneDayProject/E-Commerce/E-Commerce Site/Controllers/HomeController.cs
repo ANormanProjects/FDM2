@@ -74,7 +74,7 @@ namespace E_Commerce_Site.Controllers
 
             if (Request.IsAjaxRequest())
             {
-                return PartialView("_successDeposit");
+                return PartialView("_addedToBasketSuccess");
             }
 
             return View("AddToBasket");
