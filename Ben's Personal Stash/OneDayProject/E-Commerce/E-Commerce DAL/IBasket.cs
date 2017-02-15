@@ -10,7 +10,7 @@ namespace E_Commerce_DAL
     {
         int basketId { get; set; }
 
-        //List<Item> itemsInBasket { get; set; }
+        string basketName { get; set; }
 
         ICollection<Item> itemsInBasket { get; set; }
     }

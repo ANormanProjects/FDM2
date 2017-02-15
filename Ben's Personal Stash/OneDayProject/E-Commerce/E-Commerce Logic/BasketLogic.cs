@@ -18,6 +18,16 @@ namespace E_Commerce_Logic
             basketRepo = new BasketRepository();
         }
 
+        public virtual void startNewBasket(Basket basket)
+        {
+            if (basketRepo.GetAllBaskets().Contains(basket))
+            {
+                throw new BasketAlreadyExistsException();
+            }
+            basketRepo.addNewBasket(basket);
+            basketRepo.Save();
+        }
+
         public virtual List<Item> GetAllItemsInBasket(Basket basket)
         {
             List<Item> items = new List<Item>();

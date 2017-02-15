@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasketLogic.cs" />
+    <Compile Include="CustomExceptions.cs" />
     <Compile Include="IBasketLogic.cs" />
     <Compile Include="IItemLogic.cs" />
     <Compile Include="ItemLogic.cs" />
