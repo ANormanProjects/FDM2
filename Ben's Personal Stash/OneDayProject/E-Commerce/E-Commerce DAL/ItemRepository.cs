@@ -15,6 +15,11 @@ namespace E_Commerce_DAL
             context = _context;
         }
 
+        public ItemRepository()
+        {
+
+        }
+
         public virtual List<Item> GetAllItems()
         {
             return context.items.ToList();
