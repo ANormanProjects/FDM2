@@ -13,4 +13,20 @@ namespace E_Commerce_Logic
 
         }
     }
+
+    public class BasketDoesNotExistException : Exception
+    {
+        public BasketDoesNotExistException() : base("Basket Does Not Exist In Database")
+        {
+
+        }
+    }
+
+    public class ItemDoesNotExistException : Exception
+    {
+        public ItemDoesNotExistException() : base("Item Does Not Exist In Database")
+        {
+
+        }
+    }
 }
