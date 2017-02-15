@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E_Commerce_DAL
+namespace E_Commerce_Logic
 {
-    public class Class1
+    interface IItemLogic
     {
     }
 }

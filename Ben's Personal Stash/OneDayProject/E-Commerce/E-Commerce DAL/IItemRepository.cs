@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace E_Commerce_DAL
 {
-    public interface IRepository
+    public interface IItemRepository
     {
+        List<Item> GetAllItems();
+
+        void addNewItem(Item item);
     }
 }
