@@ -11,7 +11,5 @@ namespace E_Commerce_DAL
         int id { get; set; }
 
         string name { get; set; }
-
-
     }
 }

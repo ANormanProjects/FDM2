@@ -9,7 +9,6 @@ namespace E_Commerce_Logic
 {
     public interface IItemLogic
     {
-        List<Item> GetAllItems();
-        
+        List<Item> GetAllItems();        
     }
 }

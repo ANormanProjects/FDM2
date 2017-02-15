@@ -47,7 +47,7 @@ namespace E_Commerce_TDD
         public void Test_BasketAlreadyExistsExceptionThrown_WhenBasketIsNotInDatabase_WhenStartNewBasketIsRun()
         {
             //ARRANGE
-            mockBasketRepo.Setup(c => c.GetAllBaskets()).Returns(new List<Basket>() { mockBasket.Object } );
+            mockBasketRepo.Setup(c => c.GetAllBaskets()).Returns(new List<Basket>() { mockBasket.Object });
 
             //ACT
             basketLogic.startNewBasket(mockBasket.Object);
@@ -58,7 +58,7 @@ namespace E_Commerce_TDD
         {
             //ARRANGE
 
-            mockBasketRepo.Setup(c => c.GetAllBaskets()).Returns(new List<Basket>(){ mockBasket.Object });
+            mockBasketRepo.Setup(c => c.GetAllBaskets()).Returns(new List<Basket>() { mockBasket.Object });
             mockBasket.Setup(c => c.itemsInBasket).Returns(new List<Item>() { mockItem.Object });
 
             List<Item> expected = new List<Item>() { mockItem.Object };
@@ -71,8 +71,6 @@ namespace E_Commerce_TDD
             CollectionAssert.AreEqual(expected, actual);
         }
 
-
-
         [TestMethod]
         public void Test_AddNewItemToBasket_CallsAddNewItemToBasket_SaveChangesOnContext()
         {
@@ -83,7 +81,7 @@ namespace E_Commerce_TDD
             List<Item> items = new List<Item>();
 
             mockBasket.Setup(c => c.itemsInBasket).Returns(items);
-            List<Item> expected = new List<Item>(){ mockItem.Object };
+            List<Item> expected = new List<Item>() { mockItem.Object };
 
             //ACT
             basketLogic.addItemToBasket(mockBasket.Object, mockItem.Object);
