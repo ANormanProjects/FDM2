@@ -77,17 +77,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\E-Commerce DAL\E-Commerce DAL.csproj">
+    <ProjectReference Include="..\E-Commerce DAL\E-Commerce.DAL.csproj">
       <Project>{419ef824-953a-4c57-94f5-02414d2998b3}</Project>
-      <Name>E-Commerce DAL</Name>
+      <Name>E-Commerce.DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\E-Commerce Logic\E-Commerce Logic.csproj">
+    <ProjectReference Include="..\E-Commerce Logic\E-Commerce.Logic.csproj">
       <Project>{debd8251-6787-4612-835d-099b4f18cdbe}</Project>
-      <Name>E-Commerce Logic</Name>
+      <Name>E-Commerce.Logic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\E-CommerceAPP\E-CommerceAPP.csproj">
+    <ProjectReference Include="..\E-CommerceAPP\E-Commerce.APP.csproj">
       <Project>{35395f90-e823-4087-87d0-e1db666e8df7}</Project>
-      <Name>E-CommerceAPP</Name>
+      <Name>E-Commerce.APP</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

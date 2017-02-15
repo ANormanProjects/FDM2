@@ -3,20 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce DAL", "E-Commerce DAL\E-Commerce DAL.csproj", "{419EF824-953A-4C57-94F5-02414D2998B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce.DAL", "E-Commerce DAL\E-Commerce.DAL.csproj", "{419EF824-953A-4C57-94F5-02414D2998B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce Logic", "E-Commerce Logic\E-Commerce Logic.csproj", "{DEBD8251-6787-4612-835D-099B4F18CDBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce.Logic", "E-Commerce Logic\E-Commerce.Logic.csproj", "{DEBD8251-6787-4612-835D-099B4F18CDBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce TDD", "E-Commerce TDD\E-Commerce TDD.csproj", "{CFF89E07-833E-4309-8119-31A8A8C1E3C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce.TDD", "E-Commerce TDD\E-Commerce.TDD.csproj", "{CFF89E07-833E-4309-8119-31A8A8C1E3C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce Site", "E-Commerce Site\E-Commerce Site.csproj", "{B525A9CA-C117-4140-BC61-79384A2AF3FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce.Site", "E-Commerce Site\E-Commerce.Site.csproj", "{B525A9CA-C117-4140-BC61-79384A2AF3FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{80A06348-BF89-42EA-917F-797D4B3A6AC1}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-CommerceAPP", "E-CommerceAPP\E-CommerceAPP.csproj", "{35395F90-E823-4087-87D0-E1DB666E8DF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce.APP", "E-CommerceAPP\E-Commerce.APP.csproj", "{35395F90-E823-4087-87D0-E1DB666E8DF7}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
