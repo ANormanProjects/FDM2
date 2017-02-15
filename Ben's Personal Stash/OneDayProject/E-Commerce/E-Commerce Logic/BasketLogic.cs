@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_Commerce_DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,36 @@ namespace E_Commerce_Logic
 {
     public class BasketLogic
     {
+        ItemRepository itemRepo;
+        BasketRepository basketRepo;
+
+        public BasketLogic()
+        {
+            itemRepo = new ItemRepository();
+            basketRepo = new BasketRepository();
+        }
+
+        public virtual List<Item> GetAllItemsInBasket(Basket basket)
+        {
+            List<Item> items = new List<Item>();
+            if (basketRepo.GetAllBaskets().Contains(basket))
+            {
+                foreach(Item item in basket.itemsInBasket)
+                {
+                    items.Add(item);
+                }
+                basketRepo.Save();
+            }
+            return items;
+        }
+
+        public void addItemToBasket(Basket basket, Item item)
+        {
+            if(basketRepo.GetAllBaskets().Contains(basket))
+            {
+                basket.itemsInBasket.Add(item);
+                basketRepo.Save();
+            }
+        }
     }
 }
