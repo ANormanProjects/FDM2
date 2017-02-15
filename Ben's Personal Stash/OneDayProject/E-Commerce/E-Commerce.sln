@@ -9,7 +9,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce Logic", "E-Comme
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce TDD", "E-Commerce TDD\E-Commerce TDD.csproj", "{CFF89E07-833E-4309-8119-31A8A8C1E3C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce Site", "E-Commerce Site\E-Commerce Site.csproj", "{B525A9CA-C117-4140-BC61-79384A2AF3FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{80A06348-BF89-42EA-917F-797D4B3A6AC1}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -27,6 +38,10 @@ Global
 		{CFF89E07-833E-4309-8119-31A8A8C1E3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFF89E07-833E-4309-8119-31A8A8C1E3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFF89E07-833E-4309-8119-31A8A8C1E3C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B525A9CA-C117-4140-BC61-79384A2AF3FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B525A9CA-C117-4140-BC61-79384A2AF3FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B525A9CA-C117-4140-BC61-79384A2AF3FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B525A9CA-C117-4140-BC61-79384A2AF3FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
