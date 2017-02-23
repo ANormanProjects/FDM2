@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCodeTest.Question1", "CSCodeTest.Question1\CSCodeTest.Question1.csproj", "{9F83A151-0585-4560-8213-BE84A94D0F5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCodeTest.Tests", "CSCodeTest.Tests\CSCodeTest.Tests.csproj", "{1243505D-BEC5-47AA-B3E3-C6EB0CB80E2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCodeTest.Question2", "CSCodeTest.Question2\CSCodeTest.Question2.csproj", "{9D95526F-DB72-4B1D-85D4-D4341D34FFE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCodeTest.Question3", "CSCodeTest.Question3\CSCodeTest.Question3.csproj", "{F7627332-4C89-4FD7-B4F3-B1403664E195}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCodeTest.Question4", "CSCodeTest.Question4\CSCodeTest.Question4.csproj", "{644ED049-9AE5-486A-97F4-514F286C4D42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCodeTest.Question5", "CSCodeTest.Question5\CSCodeTest.Question5.csproj", "{D6E3BD4E-339F-4088-BD1A-69DF064D17FB}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F83A151-0585-4560-8213-BE84A94D0F5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F83A151-0585-4560-8213-BE84A94D0F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F83A151-0585-4560-8213-BE84A94D0F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F83A151-0585-4560-8213-BE84A94D0F5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1243505D-BEC5-47AA-B3E3-C6EB0CB80E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1243505D-BEC5-47AA-B3E3-C6EB0CB80E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1243505D-BEC5-47AA-B3E3-C6EB0CB80E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1243505D-BEC5-47AA-B3E3-C6EB0CB80E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D95526F-DB72-4B1D-85D4-D4341D34FFE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D95526F-DB72-4B1D-85D4-D4341D34FFE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D95526F-DB72-4B1D-85D4-D4341D34FFE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D95526F-DB72-4B1D-85D4-D4341D34FFE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7627332-4C89-4FD7-B4F3-B1403664E195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7627332-4C89-4FD7-B4F3-B1403664E195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7627332-4C89-4FD7-B4F3-B1403664E195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7627332-4C89-4FD7-B4F3-B1403664E195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{644ED049-9AE5-486A-97F4-514F286C4D42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{644ED049-9AE5-486A-97F4-514F286C4D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{644ED049-9AE5-486A-97F4-514F286C4D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{644ED049-9AE5-486A-97F4-514F286C4D42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E3BD4E-339F-4088-BD1A-69DF064D17FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E3BD4E-339F-4088-BD1A-69DF064D17FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E3BD4E-339F-4088-BD1A-69DF064D17FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E3BD4E-339F-4088-BD1A-69DF064D17FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
