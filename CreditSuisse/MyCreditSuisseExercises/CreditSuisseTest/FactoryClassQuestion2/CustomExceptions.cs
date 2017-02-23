@@ -8,7 +8,7 @@ namespace FactoryClassQuestion2
 {
     public class EntityNotFoundException : Exception
     {
-        public EntityNotFoundException()
+        public EntityNotFoundException() : base("Entity Not Found.")
         {
 
         }
