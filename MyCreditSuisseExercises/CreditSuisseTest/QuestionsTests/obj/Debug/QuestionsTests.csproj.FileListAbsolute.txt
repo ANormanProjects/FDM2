@@ -1,0 +1,15 @@
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\bin\Debug\QuestionsTests.dll
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\bin\Debug\QuestionsTests.pdb
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\bin\Debug\AccountUnsafeQuestion3.dll
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\bin\Debug\FactoryClassQuestion2.dll
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\bin\Debug\MissingDependencyQuestion4.dll
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\bin\Debug\Question5v2.exe
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\bin\Debug\SingletonPattern.dll
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\bin\Debug\AccountUnsafeQuestion3.pdb
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\bin\Debug\FactoryClassQuestion2.pdb
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\bin\Debug\MissingDependencyQuestion4.pdb
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\bin\Debug\Question5v2.pdb
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\bin\Debug\SingletonPattern.pdb
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\obj\Debug\QuestionsTests.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\obj\Debug\QuestionsTests.dll
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\QuestionsTests\obj\Debug\QuestionsTests.pdb
