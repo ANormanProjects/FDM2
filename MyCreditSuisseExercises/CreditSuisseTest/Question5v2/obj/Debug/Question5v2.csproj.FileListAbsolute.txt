@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\Question5v2\bin\Debug\Question5v2.exe.config
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\Question5v2\bin\Debug\Question5v2.exe
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\Question5v2\bin\Debug\Question5v2.pdb
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\Question5v2\obj\Debug\Question5v2.exe
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\Question5v2\obj\Debug\Question5v2.pdb
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\Question5v2\obj\Debug\Question5v2.csprojResolveAssemblyReference.cache
