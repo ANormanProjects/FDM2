@@ -1,5 +1,0 @@
-C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\CreditSuisseTest\bin\Debug\CreditSuisseTest.dll
-C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\CreditSuisseTest\bin\Debug\CreditSuisseTest.pdb
-C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\CreditSuisseTest\obj\Debug\CreditSuisseTest.csprojResolveAssemblyReference.cache
-C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\CreditSuisseTest\obj\Debug\CreditSuisseTest.dll
-C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\CreditSuisseTest\obj\Debug\CreditSuisseTest.pdb

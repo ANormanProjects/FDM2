@@ -1,5 +1,0 @@
-C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\AccountUnsafeQuestion3\bin\Debug\AccountUnsafeQuestion3.dll
-C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\AccountUnsafeQuestion3\bin\Debug\AccountUnsafeQuestion3.pdb
-C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\AccountUnsafeQuestion3\obj\Debug\AccountUnsafeQuestion3.csprojResolveAssemblyReference.cache
-C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\AccountUnsafeQuestion3\obj\Debug\AccountUnsafeQuestion3.dll
-C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\AccountUnsafeQuestion3\obj\Debug\AccountUnsafeQuestion3.pdb
