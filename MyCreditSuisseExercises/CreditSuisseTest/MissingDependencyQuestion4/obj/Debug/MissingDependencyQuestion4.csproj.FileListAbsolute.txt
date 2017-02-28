@@ -1,0 +1,5 @@
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\MissingDependencyQuestion4\bin\Debug\MissingDependencyQuestion4.dll
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\MissingDependencyQuestion4\bin\Debug\MissingDependencyQuestion4.pdb
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\MissingDependencyQuestion4\obj\Debug\MissingDependencyQuestion4.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\MissingDependencyQuestion4\obj\Debug\MissingDependencyQuestion4.dll
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\MissingDependencyQuestion4\obj\Debug\MissingDependencyQuestion4.pdb
