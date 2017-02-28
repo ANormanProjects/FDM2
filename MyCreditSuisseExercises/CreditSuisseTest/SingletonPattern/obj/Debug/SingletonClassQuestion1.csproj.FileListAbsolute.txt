@@ -1,4 +1,0 @@
-C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\SingletonPattern\bin\Debug\SingletonPattern.dll
-C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\SingletonPattern\bin\Debug\SingletonPattern.pdb
-C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\SingletonPattern\obj\Debug\SingletonPattern.dll
-C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\SingletonPattern\obj\Debug\SingletonPattern.pdb
