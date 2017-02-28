@@ -1,0 +1,6 @@
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\FactoryClassQuestion2\bin\Debug\FactoryClassQuestion2.dll.config
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\FactoryClassQuestion2\bin\Debug\FactoryClassQuestion2.dll
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\FactoryClassQuestion2\bin\Debug\FactoryClassQuestion2.pdb
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\FactoryClassQuestion2\obj\Debug\FactoryClassQuestion2.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\FactoryClassQuestion2\obj\Debug\FactoryClassQuestion2.dll
+C:\Users\benjamin.bowes\Desktop\MyCreditSuisseExercises\CreditSuisseTest\FactoryClassQuestion2\obj\Debug\FactoryClassQuestion2.pdb
