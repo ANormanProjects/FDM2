@@ -1,0 +1,22 @@
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\SupermarketCheckoutTDD.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\SupermarketCheckoutTDD.pdb
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\SupermarketCheckout\SupermarketCheckoutTDD\obj\Debug\SupermarketCheckoutTDD.csprojResolveAssemblyReference.cache
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\SupermarketCheckout\SupermarketCheckoutTDD\obj\Debug\SupermarketCheckoutTDD.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\SupermarketCheckout\SupermarketCheckoutTDD\obj\Debug\SupermarketCheckoutTDD.pdb
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\SupermarketCheckout.exe
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\SupermarketCheckout.pdb
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\Castle.Core.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\Moq.dll
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\Castle.Core.xml
+\\filbtn002\trainees\benjamin.bowes\visual studio 2013\Projects\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\Moq.xml
+C:\Users\benjamin.bowes\Desktop\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\SupermarketCheckoutTDD.dll
+C:\Users\benjamin.bowes\Desktop\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\SupermarketCheckoutTDD.pdb
+C:\Users\benjamin.bowes\Desktop\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\Castle.Core.dll
+C:\Users\benjamin.bowes\Desktop\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\Moq.dll
+C:\Users\benjamin.bowes\Desktop\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\SupermarketCheckout.exe
+C:\Users\benjamin.bowes\Desktop\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\SupermarketCheckout.pdb
+C:\Users\benjamin.bowes\Desktop\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\Castle.Core.xml
+C:\Users\benjamin.bowes\Desktop\SupermarketCheckout\SupermarketCheckoutTDD\bin\Debug\Moq.xml
+C:\Users\benjamin.bowes\Desktop\SupermarketCheckout\SupermarketCheckoutTDD\obj\Debug\SupermarketCheckoutTDD.csprojResolveAssemblyReference.cache
+C:\Users\benjamin.bowes\Desktop\SupermarketCheckout\SupermarketCheckoutTDD\obj\Debug\SupermarketCheckoutTDD.dll
+C:\Users\benjamin.bowes\Desktop\SupermarketCheckout\SupermarketCheckoutTDD\obj\Debug\SupermarketCheckoutTDD.pdb
